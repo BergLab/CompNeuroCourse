@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Bonus notebook: Introduction to Brian part 3: Simulations
+# # Introduction to Brian part 3: Simulations
 
 # *Credit: The first three notebooks from week3 are part of the [Brian2 documentation](brian2.readthedocs.io).
 # 
