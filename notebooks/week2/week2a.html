@@ -58,8 +58,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="2. Introduction to Brian part 1: Neurons" href="../week3/week3a.html" />
-    <link rel="prev" title="Applications of Linear Transformations" href="../week1/week1c-Applications_LT.html" />
+    <link rel="next" title="2. Dynamical systems as Linear Transformations" href="week2b-Applications_LT.html" />
+    <link rel="prev" title="Linear Algebra basics" href="../week1/week1b-Linear_Algebra.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -100,7 +100,7 @@ const thebe_selector_output = ".output, .cell_output"
         
       
       
-      <img src="../../_static/Cajal_ThePyramidalNeuron_1904.jpg" class="logo" alt="logo">
+      <img src="../../_static/cajal1.png" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">Computational Neuroscience</h1>
@@ -121,7 +121,7 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Code Review
+  Week 1. Math review
  </span>
 </p>
 <ul class="nav bd-sidenav">
@@ -135,27 +135,15 @@ const thebe_selector_output = ".output, .cell_output"
    Introduction to NumPy and Matplotlib
   </a>
  </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Math Review
- </span>
-</p>
-<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../week1/week1b-Linear_Algebra.html">
    Linear Algebra basics
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../week1/week1c-Applications_LT.html">
-   Applications of Linear Transformations
-  </a>
- </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  A. Differential equations and neuron models
+  Week 2. Differential equations and neuron models
  </span>
 </p>
 <ul class="current nav bd-sidenav">
@@ -164,55 +152,60 @@ const thebe_selector_output = ".output, .cell_output"
    1. Introduction modelling with differential equations
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="week2b-Applications_LT.html">
+   2. Dynamical systems as Linear Transformations
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  B. Simulation of neural population
+  Week 3. Simulation of neural population
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../week3/week3a.html">
-   2. Introduction to Brian part 1: Neurons
+   3. Introduction to Brian part 1: Neurons
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../week3/week3b.html">
-   3. Introduction to Brian part 2: Synapses
+   4. Introduction to Brian part 2: Synapses
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../week3/week3c.html">
-   4. Bonus notebook: Introduction to Brian part 3: Simulations
+   5. Introduction to Brian part 3: Simulations
   </a>
  </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  C. Data analysis and Machine learning
+  Week 4. Data analysis and Machine learning
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../week4/week4a.html">
-   5. Introduction to Data Analysis with Pandas
+   6. Introduction to Data Analysis with Pandas
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../week4/week4b.html">
-   6. Introduction to Machine learning with scikit-learn
+   7. Introduction to Machine learning with scikit-learn
   </a>
  </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  D. Network analysis
+  Week 5. Network analysis
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../week5/week5.html">
-   7. Network science
+   8. Network science
   </a>
  </li>
 </ul>
@@ -575,6 +568,17 @@ title="Print to PDF"
 <h1><span class="section-number">1. </span>Introduction modelling with differential equations<a class="headerlink" href="#introduction-modelling-with-differential-equations" title="Permalink to this headline">#</a></h1>
 <p><em>Credit: <a class="reference external" href="https://github.com/hasan2014/assignment-bank">Sri Vallabha</a> and <a class="reference external" href="http://www.scholarpedia.org/article/Predator-prey_model">Frank Hoppensteadt (2006) Predator-prey model. Scholarpedia, 1(10):1563</a> under CC BY 3.0 with changes.</em></p>
 <p>⚠️ Remeber to watch the <a class="reference external" href="https://www.youtube.com/watch?v=p_di4Zn4wz4">3blue1brown introduction to differential equations</a> to get an intuition on <strong>why</strong> we use differential equations to understand the behavior of any system.</p>
+<iframe width="720" height="480" src="https://www.youtube.com/watch?v=p_di4Zn4wz4" title="YouTube video player" frameborder="0" ></iframe><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%html</span>
+<span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;700&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;500&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://www.youtube.com/watch?v=p_di4Zn4wz4&quot;</span> <span class="na">title</span><span class="o">=</span><span class="s">&quot;YouTube video player&quot;</span> <span class="na">frameborder</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">allow</span><span class="o">=</span><span class="s">&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot;</span> <span class="na">allowfullscreen</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><iframe width="700" height="500" src="https://www.youtube.com/watch?v=p_di4Zn4wz4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div></div>
+</div>
 <section id="analytical-vs-numerical-solutions">
 <h2><span class="section-number">1.1. </span>Analytical vs Numerical solutions<a class="headerlink" href="#analytical-vs-numerical-solutions" title="Permalink to this headline">#</a></h2>
 <p>In a nutshell, solutions to differential system can be <strong>analytical</strong>: meaning that the solution to the differential equation is a symbolic expression or <strong>numerical</strong>: meaning that the solution to the differential equation is a set of values. If you have the analytical solution, you can easily obtained the numerical values but the opposite is not true.</p>
@@ -659,7 +663,7 @@ I(t) = \frac{\tau_{m}}{R_{m}} \frac{dV(t)}{dt} + \frac{V(t)-V_{rest}}{R_{m}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/week2a_13_0.png" src="../../_images/week2a_13_0.png" />
+<img alt="../../_images/week2a_15_0.png" src="../../_images/week2a_15_0.png" />
 </div>
 </div>
 <p>We see what we get a straight line as a solution for the Integrate-Fire neuron. This makes sense since we are basically solving a single differential equation of the form <span class="math notranslate nohighlight">\(y' = k\)</span>, where <span class="math notranslate nohighlight">\(k\)</span> is a constant. From calculus, you know that that equation has a solution of the form <span class="math notranslate nohighlight">\(ky\)</span> which geometrically represents a straight line.</p>
@@ -693,7 +697,7 @@ I(t) = C_{m} \frac{dV(t)}{dt} + \frac{V(t)}{R_{m}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">]</span>
     <span class="c1">## Your code here</span>
                      <span class="o">^</span>
 <span class="ne">IndentationError</span>: expected an indented block
@@ -996,17 +1000,17 @@ dy/dt = \delta x y -\gamma y
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../week1/week1c-Applications_LT.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../week1/week1b-Linear_Algebra.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Applications of Linear Transformations</p>
+            <p class="prev-next-title">Linear Algebra basics</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../week3/week3a.html" title="next page">
+    <a class='right-next' id="next-link" href="week2b-Applications_LT.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">2. </span>Introduction to Brian part 1: Neurons</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>Dynamical systems as Linear Transformations</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

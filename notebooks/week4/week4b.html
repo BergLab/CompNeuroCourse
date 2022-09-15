@@ -100,7 +100,7 @@ const thebe_selector_output = ".output, .cell_output"
         
       
       
-      <img src="../../_static/Cajal_ThePyramidalNeuron_1904.jpg" class="logo" alt="logo">
+      <img src="../../_static/cajal1.png" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">Computational Neuroscience</h1>
@@ -154,7 +154,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../week2/week2b-Applications_LT.html">
-   2. Applications of Linear Transformations
+   2. Dynamical systems as Linear Transformations
   </a>
  </li>
 </ul>
@@ -176,7 +176,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../week3/week3c.html">
-   5. Bonus notebook: Introduction to Brian part 3: Simulations
+   5. Introduction to Brian part 3: Simulations
   </a>
  </li>
 </ul>
@@ -843,10 +843,10 @@ If you are working on Colab, you will need to upload the data.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Score on training:  0.9992036365758806
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Score on training:  0.9997835668706867
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x137126760&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x13ebb8760&gt;
 </pre></div>
 </div>
 <img alt="../../_images/week4b_18_2.png" src="../../_images/week4b_18_2.png" />
@@ -938,8 +938,8 @@ If you are working on Colab, you will need to upload the data.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Score on training set:  0.9145951642893543
-Score on test set:  0.900049882997516
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Score on training set:  0.9108391723306226
+Score on test set:  0.8793814823404422
 </pre></div>
 </div>
 </div>
@@ -955,7 +955,7 @@ Score on test set:  0.900049882997516
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x137321820&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x13eddd370&gt;]
 </pre></div>
 </div>
 <img alt="../../_images/week4b_36_1.png" src="../../_images/week4b_36_1.png" />
@@ -1007,7 +1007,7 @@ Let’s now visualise how the different variables relate to each other so we can
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x11e9b1a60&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x13ee1f070&gt;
 </pre></div>
 </div>
 <img alt="../../_images/week4b_43_1.png" src="../../_images/week4b_43_1.png" />
@@ -1073,7 +1073,7 @@ Accuracy on test:  0.8541666666666666
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.inspection</span> <span class="kn">import</span> <span class="n">DecisionBoundaryDisplay</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">12</span><span class="p">))</span>
 
 <span class="n">DecisionBoundaryDisplay</span><span class="o">.</span><span class="n">from_estimator</span><span class="p">(</span>
     <span class="n">model</span><span class="p">,</span> <span class="c1"># the model we just train</span>
@@ -1099,7 +1099,7 @@ Accuracy on test:  0.8541666666666666
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 864x576 with 0 Axes&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 1152x864 with 0 Axes&gt;
 </pre></div>
 </div>
 <img alt="../../_images/week4b_54_1.png" src="../../_images/week4b_54_1.png" />
