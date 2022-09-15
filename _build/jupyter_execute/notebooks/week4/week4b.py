@@ -334,7 +334,7 @@ print('Accuracy on test: ', model.score(X_test, y_test))
 
 from sklearn.inspection import DecisionBoundaryDisplay
 
-plt.figure(figsize=(12,8))
+plt.figure(figsize=(16,12))
 
 DecisionBoundaryDisplay.from_estimator(
     model, # the model we just train

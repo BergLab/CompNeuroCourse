@@ -343,7 +343,7 @@ df[['Temperature','Type']].boxplot(by='Type', figsize=(10,7))
 # In[32]:
 
 
-fig, ax = plt.subplots(2,2)
+fig, ax = plt.subplots(2,2, figsize=(16, 12))
 fig.set_figwidth(14)
 fig.set_figheight(10)
 

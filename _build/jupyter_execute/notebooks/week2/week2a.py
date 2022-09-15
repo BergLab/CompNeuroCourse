@@ -7,6 +7,14 @@
 
 # ⚠️ Remeber to watch the [3blue1brown introduction to differential equations](https://www.youtube.com/watch?v=p_di4Zn4wz4) to get an intuition on **why** we use differential equations to understand the behavior of any system.
 
+# <iframe width="560" height="315" src="https://www.youtube.com/watch?v=p_di4Zn4wz4" title="YouTube video player" frameborder="0" ></iframe>
+
+# In[1]:
+
+
+get_ipython().run_cell_magic('html', '', '<iframe width="700" height="500" src="https://www.youtube.com/watch?v=p_di4Zn4wz4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>\n')
+
+
 # ### Analytical vs Numerical solutions
 
 # In a nutshell, solutions to differential system can be **analytical**: meaning that the solution to the differential equation is a symbolic expression or **numerical**: meaning that the solution to the differential equation is a set of values. If you have the analytical solution, you can easily obtained the numerical values but the opposite is not true.
@@ -63,7 +71,7 @@
 
 # As we did to solve the predator-prey model, in order to solve the differential equation we need to define a function that return the right hand side of the equation in the form $\frac{dV}{dt}=f(...)$, where $V$ is the variable we want to solve for. In our case, we are interested in finding what is the membrane potential $V$:
 
-# In[1]:
+# In[2]:
 
 
 import numpy as np
@@ -121,7 +129,7 @@ plt.show()
 # 
 # - Define a function `LIF` which returns the right hand side of the above equation:
 
-# In[2]:
+# In[3]:
 
 
 import numpy as np
