@@ -1,0 +1,37 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+# https://jupyterbook.org/en/stable/start/create.html
+# https://github.com/whitead/dmol-book
+
+format: jb-book
+root: intro
+parts:
+- caption: Week 1. Math review
+  numbered: false
+  chapters:
+  - file: notebooks/week1/week1-IntroColab
+  - file: notebooks/week1/week1a-Numpy_Introduction
+  - file: notebooks/week1/week1b-Linear_Algebra
+- caption: Week 2. Differential equations and neuron models
+  numbered: true
+  chapters:
+  - file: notebooks/week2/week2a
+  - file: notebooks/week2/week2b-Applications_LT
+- caption: Week 3. Simulation of neural population
+  numbered: true
+  chapters:
+  - file: notebooks/week3/week3a
+  - file: notebooks/week3/week3b
+  - file: notebooks/week3/week3c
+- caption: Week 4. Data analysis and Machine learning
+  numbered: true
+  chapters:
+  - file: notebooks/week4/week4a
+  - file: notebooks/week4/week4b
+- caption: Week 5. Network analysis
+  numbered: true
+  chapters:
+  - file: notebooks/week5/week5.ipynb
+# - file: markdown
+# - file: notebooks
+# - file: markdown-notebooks
