@@ -1,0 +1,1045 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>1. Introduction modelling with differential equations &#8212; Computational Neuroscience</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="3. Introduction to Brian part 1: Neurons" href="../week3/week3a.html" />
+    <link rel="prev" title="15. Applications of Linear Transformations" href="../week1/week1c-Applications_LT.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/Cajal_ThePyramidalNeuron_1904.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Computational Neuroscience</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Computational Neuroscience
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  A. Code Review
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week1/week1-IntroColab.html">
+   1. Google’s Colab
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  B. Math Review
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week1/week1a-Numpy_Introduction.html">
+   5. Introduction to NumPy and Matplotlib
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week1/week1b-Linear_Algebra.html">
+   6. Concepts and Notation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week1/week1c-Applications_LT.html">
+   15. Applications of Linear Transformations
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  1. Differential equations and neuron models
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   1. Introduction modelling with differential equations
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  2. Simulation of neural population
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week3/week3a.html">
+   3. Introduction to Brian part 1: Neurons
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week3/week3b.html">
+   4. Introduction to Brian part 2: Synapses
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week3/week3c.html">
+   5. Bonus notebook: Introduction to Brian part 3: Simulations
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  3. Data analysis and Machine learning
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week4/week4a.html">
+   6. Introduction to Data Analysis with Pandas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week4/week4b.html">
+   7. Introduction to Machine learning with scikit-learn
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  4. Network analysis
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week5/week5.html">
+   11. Introduction to network science
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/BergLab/CompNeuroBook/master?urlpath=tree/docs/notebooks/week2/week2a.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/BergLab/CompNeuroBook"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/BergLab/CompNeuroBook/issues/new?title=Issue%20on%20page%20%2Fnotebooks/week2/week2a.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/notebooks/week2/week2a.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   1. Introduction modelling with differential equations
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#analytical-vs-numerical-solutions">
+     1.1. Analytical vs Numerical solutions
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#predatorprey-systems">
+     1.2. Predator–prey systems
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercises">
+     1.3. Exercises
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#phase-space-analysis">
+       1.3.1. Phase space analysis
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#modelling-neural-population">
+   2. Modelling neural population
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#point-neurons">
+     2.1. Point-neurons
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#integrate-and-fire-if-and-leaky-integrate-and-fire-lif-neurons">
+     2.2. Integrate and fire (IF) and Leaky-integrate and fire (LIF) neurons
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#numerically-solve-if-neuron-model">
+     2.3. Numerically solve IF neuron model
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-solve-lif-neuron-model-numerically">
+     2.4.
+     <strong>
+      Exercise: Solve LIF neuron model numerically
+     </strong>
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Introduction modelling with differential equations</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   1. Introduction modelling with differential equations
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#analytical-vs-numerical-solutions">
+     1.1. Analytical vs Numerical solutions
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#predatorprey-systems">
+     1.2. Predator–prey systems
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercises">
+     1.3. Exercises
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#phase-space-analysis">
+       1.3.1. Phase space analysis
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#modelling-neural-population">
+   2. Modelling neural population
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#point-neurons">
+     2.1. Point-neurons
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#integrate-and-fire-if-and-leaky-integrate-and-fire-lif-neurons">
+     2.2. Integrate and fire (IF) and Leaky-integrate and fire (LIF) neurons
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#numerically-solve-if-neuron-model">
+     2.3. Numerically solve IF neuron model
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-solve-lif-neuron-model-numerically">
+     2.4.
+     <strong>
+      Exercise: Solve LIF neuron model numerically
+     </strong>
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <p><em>Credit: <a class="reference external" href="https://github.com/hasan2014/assignment-bank">Sri Vallabha</a> and <a class="reference external" href="http://www.scholarpedia.org/article/Predator-prey_model">Frank Hoppensteadt (2006) Predator-prey model. Scholarpedia, 1(10):1563</a> under CC BY 3.0 with changes.</em></p>
+<p>⚠️ Before starting, go to the menu and click on: <code class="docutils literal notranslate"><span class="pre">View</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">Expand</span> <span class="pre">sections</span></code></p>
+<section id="introduction-modelling-with-differential-equations">
+<h1><span class="section-number">1. </span>Introduction modelling with differential equations<a class="headerlink" href="#introduction-modelling-with-differential-equations" title="Permalink to this headline">#</a></h1>
+<p>⚠️ Remeber to watch the <a class="reference external" href="https://www.youtube.com/watch?v=p_di4Zn4wz4">3blue1brown introduction to differential equations</a> to get an intuition on <strong>why</strong> we use differential equations to understand the behavior of any system.</p>
+<section id="analytical-vs-numerical-solutions">
+<h2><span class="section-number">1.1. </span>Analytical vs Numerical solutions<a class="headerlink" href="#analytical-vs-numerical-solutions" title="Permalink to this headline">#</a></h2>
+<p>In a nutshell, solutions to differential system can be <strong>analytical</strong>: meaning that the solution to the differential equation is a symbolic expression or <strong>numerical</strong>: meaning that the solution to the differential equation is a set of values. If you have the analytical solution, you can easily obtained the numerical values but the opposite is not true.</p>
+</section>
+<section id="predatorprey-systems">
+<h2><span class="section-number">1.2. </span>Predator–prey systems<a class="headerlink" href="#predatorprey-systems" title="Permalink to this headline">#</a></h2>
+<p>Predator-prey models are arguably the building blocks of the bio- and ecosystems as biomasses are grown out of their resource masses. Species compete, evolve and disperse simply for the purpose of seeking resources to sustain their struggle for their very existence. Depending on their specific settings of applications, they can take the forms of resource-consumer, plant-herbivore, parasite-host, tumor cells (virus)-immune system, susceptible-infectious interactions, etc. They deal with the general loss-win interactions and hence may have applications outside of ecosystems. When seemingly competitive interactions are carefully examined, they are often in fact some forms of predator-prey interaction in disguise.</p>
+<p>The Lotka–Volterra equations, also known as the predator–prey equations, are a pair of first-order, non-linear, autonomous* differential equations. They are frequently used to describe the dynamics of biological systems in which two species interact, one as a predator and the other as prey. You can read more about this from Wikipedia <a class="reference external" href="http://en.wikipedia.org/wiki/Lotka-Volterra_equation">http://en.wikipedia.org/wiki/Lotka-Volterra_equation</a>.</p>
+<p><em>Autonomous system or autonomous differential equation is a system of ordinary differential equations which does not explicitly depend on the independent variable, typically dynamical systems are autonomous if the state of the system does not <strong>explicitly</strong> depend on the time <span class="math notranslate nohighlight">\(t\)</span>.</em></p>
+<p>Their populations change with time according to the following pair of equations:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{dx}{dt} = x ( \alpha - \beta y  ) 
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\frac{dy}{dt} = -y( \gamma - \delta x )
+\]</div>
+<p>where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(x\)</span> is the number of prey (say rabbits),</p></li>
+<li><p><span class="math notranslate nohighlight">\(y\)</span> is the number of predators (say foxes).</p></li>
+<li><p><span class="math notranslate nohighlight">\(dx/dt, dy/dt\)</span> gives the rate of change of their respective populations over
+time <span class="math notranslate nohighlight">\(t\)</span>.</p></li>
+</ul>
+<p><span class="math notranslate nohighlight">\(\alpha, \beta, \gamma, \delta \)</span> are the parameters describing the interaction between the two species:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\alpha\)</span> is the reproduction rate of species x (the prey) in the absence of interaction with species y (the predators), ie. assuming it’s not predated and has infinite food supply available.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta\)</span> is the eating rate of predator per prey (equals to the death rate of prey per predator)</p></li>
+<li><p><span class="math notranslate nohighlight">\(\gamma\)</span> is the death rate of species y (the predators) in the absence of interaction with species x, eg. if no preys are available.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\delta\)</span> is the reproduction rate of predator per prey.</p></li>
+</ul>
+<p>The above equations can be written in a slightly different form to interpret the physical meaning of the four parameters used.</p>
+<p>1.Equation for prey</p>
+<div class="math notranslate nohighlight">
+\[
+dx/dt = \alpha x - \beta x y 
+\]</div>
+<p>The prey are supposed to have unlimited supply of food and <span class="math notranslate nohighlight">\(\alpha x\)</span> represents the rate of population growth of prey. Rate of decrease of population of prey is
+assumed to be proportional to the rate at which predator and prey meet and is given by <span class="math notranslate nohighlight">\( \beta y x\)</span></p>
+<p>2.Equation for predator</p>
+<div class="math notranslate nohighlight">
+\[
+dy/dt = \delta x y -\gamma y
+\]</div>
+<p>For the predators, <span class="math notranslate nohighlight">\(\delta x y \)</span> gives the rate of growth of predator population. Note that this is similar to the rate of decrease of population of prey. The second term
+<span class="math notranslate nohighlight">\(\gamma y \)</span> gives the rate of population decrease for predators due to natural death or emigration.</p>
+<p>To solve this system of two differential equations using python, we first need to type the equations as functions as well as it parameters. The function simply needs to return the right hand side of the equations</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Define the function that represents the Lotka-Volterra equations</span>
+<span class="k">def</span> <span class="nf">predatorprey</span><span class="p">(</span><span class="n">xy</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="n">delta</span><span class="p">,</span> <span class="n">gamma</span><span class="p">):</span>
+    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">xy</span>
+    <span class="n">dxdt</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="p">(</span><span class="n">alpha</span> <span class="o">-</span> <span class="n">beta</span> <span class="o">*</span> <span class="n">y</span><span class="p">)</span>
+    <span class="n">dydt</span> <span class="o">=</span> <span class="o">-</span> <span class="n">y</span> <span class="o">*</span> <span class="p">(</span><span class="n">gamma</span> <span class="o">-</span> <span class="n">delta</span> <span class="o">*</span> <span class="n">x</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">dxdt</span><span class="p">,</span> <span class="n">dydt</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we will use python library Scipy to numerically solve the system. Speciafically we will use the function <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.odeint.html">scipy.integrate.odeint()</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># We import scipy ordinary differential equations solver</span>
+<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">odeint</span>
+
+<span class="c1">#Defined the model parameters</span>
+<span class="n">alpha</span> <span class="o">=</span> <span class="mf">1.</span>
+<span class="n">beta</span> <span class="o">=</span> <span class="mf">1.2</span>
+<span class="n">gamma</span> <span class="o">=</span> <span class="mf">4.</span>
+<span class="n">delta</span> <span class="o">=</span> <span class="mf">1.</span>
+
+<span class="c1"># Initial population size of each species</span>
+<span class="n">x0</span> <span class="o">=</span> <span class="mf">10.</span>
+<span class="n">y0</span> <span class="o">=</span> <span class="mf">2.</span>
+<span class="n">X0</span> <span class="o">=</span> <span class="p">[</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">]</span>
+
+<span class="c1"># Simulation timesteps</span>
+<span class="n">T</span>  <span class="o">=</span> <span class="mf">30.0</span>                             <span class="c1"># final time (the units will depend on what units we have chosen for the model constants)</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">10000</span>                             <span class="c1"># number of time-steps for the simulation</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span><span class="n">T</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+
+<span class="c1"># Call differential equation solver and stores result in variable res</span>
+<span class="n">solution</span> <span class="o">=</span> <span class="n">odeint</span><span class="p">(</span><span class="n">predatorprey</span><span class="p">,</span> <span class="n">X0</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">args</span> <span class="o">=</span> <span class="p">(</span><span class="n">alpha</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="n">delta</span><span class="p">,</span> <span class="n">gamma</span><span class="p">))</span>
+
+<span class="c1"># Unpack the solution values into two variables</span>
+<span class="n">x_solution</span><span class="p">,</span> <span class="n">y_solution</span> <span class="o">=</span> <span class="n">solution</span><span class="o">.</span><span class="n">T</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We will now plot the variation of population for each species with time:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Predator-prey dynamics&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x_solution</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Prey&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y_solution</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;Predator&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time t, [days]&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Population&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/week2a_14_0.png" src="../../_images/week2a_14_0.png" />
+</div>
+</div>
+<p>A better understanding of the system behaviour can be obtained by a phase plot of the population of predators vs. the population of prey. It will tell us if the system sustains or collapses over time. For the choice of parameters <span class="math notranslate nohighlight">\( \alpha, \beta, \gamma \)</span> and <span class="math notranslate nohighlight">\( \delta \)</span> made above, we see that the maximum population of each species keeps increasing each cycle. You can read more about that in the Wikipedia link mentioned above.</p>
+</section>
+<section id="exercises">
+<h2><span class="section-number">1.3. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Play with parameters to get a sense of the bahaviour of the system and diccuss with your group the system behaviours that you observe. Try to interpret the physical meaning of the changes to the model parameters.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title  { run: &quot;auto&quot;, vertical-output: true }</span>
+<span class="n">alpha</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="c1">#@param {type:&quot;slider&quot;, min:0.1, max:4, step:0.1}</span>
+<span class="n">beta</span>  <span class="o">=</span> <span class="mf">1.2</span> <span class="c1">#@param {type:&quot;slider&quot;, min:0.1, max:4, step:0.1}</span>
+<span class="n">gamma</span> <span class="o">=</span> <span class="mf">4.0</span> <span class="c1">#@param {type:&quot;slider&quot;, min:0.1, max:8, step:0.1}</span>
+<span class="n">delta</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="c1">#@param {type:&quot;slider&quot;, min:0.1, max:4, step:0.1}</span>
+
+<span class="c1"># Initial population size of each species</span>
+<span class="n">preys</span> <span class="o">=</span> <span class="mi">5</span> <span class="c1">#@param {type:&quot;slider&quot;, min:2, max:10, step:1}</span>
+<span class="n">predactors</span> <span class="o">=</span> <span class="mi">9</span> <span class="c1">#@param {type:&quot;slider&quot;, min:2, max:10, step:1}</span>
+
+<span class="n">X0</span> <span class="o">=</span> <span class="p">[</span><span class="n">preys</span><span class="p">,</span> <span class="n">predactors</span><span class="p">]</span>
+
+<span class="c1"># Simulation timesteps</span>
+<span class="n">T</span>  <span class="o">=</span> <span class="mf">30.0</span>                             <span class="c1"># final time, units depend the constant&#39;s units chosen </span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">10000</span>                             <span class="c1"># number of time-steps for the simulation</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span><span class="n">T</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+
+<span class="c1"># Call differential equation solver and stores result in variable res</span>
+<span class="n">solution</span> <span class="o">=</span> <span class="n">odeint</span><span class="p">(</span><span class="n">predatorprey</span><span class="p">,</span> <span class="n">X0</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">args</span> <span class="o">=</span> <span class="p">(</span><span class="n">alpha</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="n">delta</span><span class="p">,</span> <span class="n">gamma</span><span class="p">))</span>
+
+<span class="c1"># Unpack the solution values into two variables</span>
+<span class="n">x_solution</span><span class="p">,</span> <span class="n">y_solution</span> <span class="o">=</span> <span class="n">solution</span><span class="o">.</span><span class="n">T</span>
+
+<span class="c1"># Plot results</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Predator-prey solved with scipy odeint&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x_solution</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Prey&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y_solution</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;Predator&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Populations size&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/week2a_17_0.png" src="../../_images/week2a_17_0.png" />
+</div>
+</div>
+<ul class="simple">
+<li><p>Can you find a set of parameters for which the preyed population become extinct?</p></li>
+</ul>
+<section id="phase-space-analysis">
+<h3><span class="section-number">1.3.1. </span>Phase space analysis<a class="headerlink" href="#phase-space-analysis" title="Permalink to this headline">#</a></h3>
+<p>If instead of interesting ourselves into how the population evolve overtime, we look at a population value as a function of the other, we call this <strong>phase analysis</strong> of the system. We can easily plot phase space by plotting the results previously obtained:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Predator-prey Phase space&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_solution</span><span class="p">,</span> <span class="n">y_solution</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Prey&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Prey&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Predator&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/week2a_20_0.png" src="../../_images/week2a_20_0.png" />
+</div>
+</div>
+<ul class="simple">
+<li><p>We can also look at both the time evolution and phase representation at the same time. Is the shape of the phase space preserved for different model values?</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title  { run: &quot;auto&quot;, vertical-output: true }</span>
+<span class="n">alpha</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1">#@param {type:&quot;slider&quot;, min:0.1, max:4, step:0.1}</span>
+<span class="n">beta</span>  <span class="o">=</span> <span class="mf">1.2</span> <span class="c1">#@param {type:&quot;slider&quot;, min:0.1, max:4, step:0.1}</span>
+<span class="n">gamma</span> <span class="o">=</span> <span class="mf">4.0</span> <span class="c1">#@param {type:&quot;slider&quot;, min:0.1, max:8, step:0.1}</span>
+<span class="n">delta</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="c1">#@param {type:&quot;slider&quot;, min:0.1, max:4, step:0.1}</span>
+
+<span class="c1"># Initial population size of each species</span>
+<span class="n">preys</span> <span class="o">=</span> <span class="mi">5</span> <span class="c1">#@param {type:&quot;slider&quot;, min:5, max:20, step:1}</span>
+<span class="n">predactors</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1">#@param {type:&quot;slider&quot;, min:5, max:20, step:1}</span>
+
+<span class="n">X0</span> <span class="o">=</span> <span class="p">[</span><span class="n">preys</span><span class="p">,</span> <span class="n">predactors</span><span class="p">]</span>
+
+<span class="c1"># Simulation timesteps</span>
+<span class="n">T</span>  <span class="o">=</span> <span class="mf">30.0</span>                             <span class="c1"># final time, units depend the constant&#39;s units chosen </span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">10000</span>                             <span class="c1"># number of time-steps for the simulation</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span><span class="n">T</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+
+<span class="c1"># Call differential equation solver and stores result in variable res</span>
+<span class="n">solution</span> <span class="o">=</span> <span class="n">odeint</span><span class="p">(</span><span class="n">predatorprey</span><span class="p">,</span> <span class="n">X0</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">args</span> <span class="o">=</span> <span class="p">(</span><span class="n">alpha</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="n">delta</span><span class="p">,</span> <span class="n">gamma</span><span class="p">))</span>
+
+<span class="c1"># Unpack the solution values into two variables</span>
+<span class="n">x_solution</span><span class="p">,</span> <span class="n">y_solution</span> <span class="o">=</span> <span class="n">solution</span><span class="o">.</span><span class="n">T</span>
+
+<span class="c1"># Plot results</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Predator-prey population dynamics&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x_solution</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Prey&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y_solution</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;Predator&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Populations size&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Predator-prey Phase space&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_solution</span><span class="p">,</span> <span class="n">y_solution</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Prey&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Predator&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/week2a_22_0.png" src="../../_images/week2a_22_0.png" />
+<img alt="../../_images/week2a_22_1.png" src="../../_images/week2a_22_1.png" />
+</div>
+</div>
+<p>Phase spaces are a powerful tool that allow us to understand the relations between the variables of a dynamical system. Be it relation between predators and preys, between two neurotransmitters or any other dynamical variables.</p>
+</section>
+</section>
+</section>
+<section id="modelling-neural-population">
+<h1><span class="section-number">2. </span>Modelling neural population<a class="headerlink" href="#modelling-neural-population" title="Permalink to this headline">#</a></h1>
+<p>It will not come as a surprise: the basic unit of study in neuroscience is the neuron. The neuron acts as the epistemological center of gravity around which all modelling scales orbit. Neurons are specialised cells that possess an electrically excitable membrane and whose main purpose is integrating and transmitting information. They can present very different morphologies, each endowing them of distinct computational capabilities.</p>
+<p>In their homeostatic state, neuron membranes observe a potential of <span class="math notranslate nohighlight">\(\sim -70mV\)</span> between the interior and the exterior of the cell; in this state the cell is said to be polarised. Neurons’ electric excitability arises from the presence of ion channels and ion pumps in their membranes. Ion channels are proteins that regulate the flux of ions between the inside and outside of the cell. By doing so, they enable neurons to communicate: when positively charged ions enter the cell they reduce the membrane potential, a process referred as depolarisation. If the depolarisation reaches a threshold, it will trigger a positive feedback by which more ion channels are opened and the neuron generates an electric binary signal referred to as <em>spike</em> or <em>action potential</em>. Spikes are pulse-like currents that constitute the fundamental unit of communication between neurons. When a spike reaches the postsynaptic axon terminal, it dissolves the vesicles containing neurotransmitters, releasing them into the postsynaptic cleft.</p>
+<p>If the influx of ions into the postsynaptic neuron is positively charged, we talk about excitatory postsynaptic potential (EPSP), conversely, an influx of negatively charged ions that will further polarise the cell is referred to as an inhibitory postsynaptic potential (IPSP). Whether a presynaptic neuron generates EPSPs or IPSPs depends on its neurotransmitter profile which will determine which ion channels open up and, hence, if we have an inhibitory -i.e. polarizing- current (negatively-charged ions) or a excitatory -i.e. depolarizing- current (positively-charged ions). The neurotransmitter profile of a neuron -ie. if it releases inhibitory or excitatory neurotransmitters when activated- determine its inhibitory/excitatory nature and, along with its morphology, determines the computational properties of the neuron. In our computational models, we abstract the notion of inhibitory/excitatory synapses by negative/positive weights in the connectivity matrix of the neural population. For the spiking models these connectivity weights have Volt units [V], reflecting how much the membrane potential of the post-synaptic neuron is decreased/increased when the pre-synaptic neuron is activated; for rate-based models, the connectivity has hertz units [Hz], indicating how much the firing rate of the post-synaptic neuron  decreases/increases when the pre-synaptic neuron is activated.</p>
+<p>Both chemical and electrical synapses are modelled in the same fashion: as a set of coupled non-linear differential equations capturing the activity of the ion channels.</p>
+<section id="point-neurons">
+<h2><span class="section-number">2.1. </span>Point-neurons<a class="headerlink" href="#point-neurons" title="Permalink to this headline">#</a></h2>
+<p>The dynamics of the activations between two neurons require taking into account the distribution of ion-channels across the different sections of the membrane surface as well as the morphology of the membrane itself. This results in  non-linear differential models which are highly faithful but significantly complex.
+An useful abstraction is to consider neurons to be point-like, that is, disregarding the spatial properties of the cell membrane similarly to the point particle approximation in physics. In point neurons, dendrites are abstracted into the connectivity the neuron. This abstraction is often used in computational neuroscience but has its limitations, for instance, neurons have been shown to perform crucial computations on their dendrites. Throughout this week and next week exercises, we will restrict our models to point-neurons.</p>
+</section>
+<section id="integrate-and-fire-if-and-leaky-integrate-and-fire-lif-neurons">
+<h2><span class="section-number">2.2. </span>Integrate and fire (IF) and Leaky-integrate and fire (LIF) neurons<a class="headerlink" href="#integrate-and-fire-if-and-leaky-integrate-and-fire-lif-neurons" title="Permalink to this headline">#</a></h2>
+<p>Integrate-and-fire (IF) models capture the integration of postsynaptic potentials (PSPs) as a simple summation and combine them. If the cumulative sum of PSPs crosses a threshold then the neuron fires a spike. This model can be described with a differential equation used to characterise an electrical RC circuit where the cell membrane acts as a capacitor insulating the conductive intra-cellular and extra-cellular fluids; <span class="math notranslate nohighlight">\(V\)</span> is the membrane potential, <span class="math notranslate nohighlight">\(I(t)\)</span> is the sum of ionic input currents from presynaptic neurons and <span class="math notranslate nohighlight">\(C_{m}\)</span> is the membrane capacitance. It is the ability of the cell membrane to accumulate charges over time that enables the neuron to integrate inputs over time and therefore it is able to perform computations.</p>
+<div class="math notranslate nohighlight">
+\[
+I(t) = C_{m} \frac{dV(t)}{dt}
+\]</div>
+<p>As previously discussed, in order to fire, the membrane voltage of a neuron needs to attain a threshold which, once reached, will inescapably trigger a spike. These activation dynamics can be fully described with the Hodgkin and Huxley ionic currents model. However, IF models do not intrinsically give rise to spikes, instead, a firing-threshold mechanism is added <em>ad hoc</em> to generate spikes once the defined threshold is reached and subsequently reset the membrane voltage to its resting value.
+This approach has the advantage of greatly reducing the analytical and numerical complexity of differential equation models, which is especially convenient when simulating networks with hundreds of thousands of neurons.</p>
+<p>Leaky integrate-and-fire (LIF) is a variation of Integrate-and-fire which adds a term describing the diffusion -or leak- of ions across the cell’s membrane that is experimentally observed in neurons.
+We start with Kirchhoff’s conservation of current law for the current arriving to the cell membrane:</p>
+<div class="math notranslate nohighlight">
+\[
+I(t) = I_{C_{m}} + I_{leak}
+\]</div>
+<p>The cell membrane is not a perfect insulator, therefore besides the current charging the capacitor <span class="math notranslate nohighlight">\(I_{C_{m}}\)</span>, we have another <em>leak current</em> <span class="math notranslate nohighlight">\(I_{leak}\)</span> representing the movement of charges -in the form of ions- through the cell membrane. This translates into adding the extra leaky term <span class="math notranslate nohighlight">\(I_{leak}=\frac{V(t)}{R_{m}}\)</span> to previous equation which results in the following equation:</p>
+<div class="math notranslate nohighlight">
+\[
+I(t) = C_{m} \frac{dV(t)}{dt} + \frac{V(t)}{R_{m}}
+\]</div>
+<p>In the case <span class="math notranslate nohighlight">\(R_{m} \rightarrow \infty\)</span>, we retrieve the non-leaky IF model. Finally, to account for the resting potential observed on neurons in the absence of any input current, we add a resting potential term <span class="math notranslate nohighlight">\(V_{rest}\)</span> and replace the capacitance term by <span class="math notranslate nohighlight">\(\tau_{m}/R_{m}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+I(t) = \frac{\tau_{m}}{R_{m}} \frac{dV(t)}{dt} + \frac{V(t)-V_{rest}}{R_{m}}
+\]</div>
+</section>
+<section id="numerically-solve-if-neuron-model">
+<h2><span class="section-number">2.3. </span>Numerically solve IF neuron model<a class="headerlink" href="#numerically-solve-if-neuron-model" title="Permalink to this headline">#</a></h2>
+<p>As we did to solve the predator-prey model, in order to solve the differential equation we need to define a function that return the right hand side of the equation in the form <span class="math notranslate nohighlight">\(\frac{dV}{dt}=f(...)\)</span>, where <span class="math notranslate nohighlight">\(V\)</span> is the variable we want to solve for. In our case, we are interested in finding what is the membrane potential <span class="math notranslate nohighlight">\(V\)</span>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+<span class="c1"># Define the IF neuron model</span>
+<span class="k">def</span> <span class="nf">IF</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">input_current</span><span class="p">,</span> <span class="n">membrane_capacitance</span><span class="p">):</span>
+    <span class="n">dvdt</span> <span class="o">=</span> <span class="n">input_current</span><span class="o">/</span><span class="n">membrane_capacitance</span>
+    <span class="k">return</span> <span class="n">dvdt</span>
+
+<span class="c1"># We import scipy ordinary differential equations solver</span>
+<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">odeint</span>
+
+<span class="c1">#Defined the model parameters</span>
+<span class="n">membrane_capacitance</span> <span class="o">=</span> <span class="mf">1.</span>
+<span class="n">input_current</span> <span class="o">=</span> <span class="mf">1.</span>
+
+<span class="c1"># Initial value of the neuron membrane potential v0</span>
+<span class="n">v0</span> <span class="o">=</span> <span class="mf">1.</span>
+
+<span class="c1"># Simulation timesteps</span>
+<span class="n">T</span>  <span class="o">=</span> <span class="mf">30.0</span>                             <span class="c1"># final time (the units will depend on what units we have chosen for the model constants)</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">10000</span>                             <span class="c1"># number of time-steps for the simulation</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span><span class="n">T</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+
+<span class="c1"># Call differential equation solver and stores result in variable res</span>
+<span class="n">solution_membrane_potential</span> <span class="o">=</span> <span class="n">odeint</span><span class="p">(</span><span class="n">IF</span><span class="p">,</span> <span class="n">v0</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">args</span> <span class="o">=</span> <span class="p">(</span><span class="n">input_current</span><span class="p">,</span> <span class="n">membrane_capacitance</span><span class="p">))</span>
+
+<span class="c1"># Plot results</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;IF neuron solved with scipy odeint&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">solution_membrane_potential</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Neuron membrane potential&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/week2a_32_0.png" src="../../_images/week2a_32_0.png" />
+</div>
+</div>
+<p>We see what we get a straight line as a solution for the Integrate-Fire neuron. This makes sense since we are basically solving a single differential equation of the form <span class="math notranslate nohighlight">\(y' = k\)</span>, where <span class="math notranslate nohighlight">\(k\)</span> is a constant. From calculus, you know that that equation has a solution of the form <span class="math notranslate nohighlight">\(ky\)</span> which geometrically represents a straight line.</p>
+</section>
+<section id="exercise-solve-lif-neuron-model-numerically">
+<h2><span class="section-number">2.4. </span><strong>Exercise: Solve LIF neuron model numerically</strong><a class="headerlink" href="#exercise-solve-lif-neuron-model-numerically" title="Permalink to this headline">#</a></h2>
+<p>To make our model more interesting, we will add a leaky term. That is, a current of ions that is constantly leaving the cell.
+As we did before, we first need to write of differential equation in the form of <span class="math notranslate nohighlight">\(\frac{dV}{dt}=f(...)\)</span>, we can simply re-arrange the terms of LIF equation given above</p>
+<div class="math notranslate nohighlight">
+\[
+I(t) = C_{m} \frac{dV(t)}{dt} + \frac{V(t)}{R_{m}}
+\]</div>
+<p>to the form:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{dV(t)}{dt} = \frac{I(t) - \frac{V(t)}{R_{m}} }{C_{m}}
+\]</div>
+<ul class="simple">
+<li><p>Define a function <code class="docutils literal notranslate"><span class="pre">LIF</span></code> which returns the right hand side of the above equation:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+<span class="c1"># Define the LIF neuron model</span>
+<span class="k">def</span> <span class="nf">LIF</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">input_current</span><span class="p">,</span> <span class="n">membrane_capacitance</span><span class="p">,</span> <span class="n">membrane_resistance</span><span class="p">):</span>
+    
+    <span class="c1">## Your code here</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">8</span><span class="p">]</span>
+    <span class="c1">## Your code here</span>
+                     <span class="o">^</span>
+<span class="ne">IndentationError</span>: expected an indented block
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Use the code from above that we used to solve the IF model and adapt it as needed to solve this new neuron model:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Plot the found membrane potential and discuss its biological interpretation.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Explore the behavior of the neuron membrane for different values of the model. Add all the code you have used to solve the neuron LIF model: the <code class="docutils literal notranslate"><span class="pre">LIF</span></code> function definition, the calling to Scipy ODE solver and the plotting. The lines already written are responsible for making an interactive plot in the Colab. They model will be solve with the new constants every time you change their values on the slide. Notice that you can easily define ranges for the slides. This Colab feature —and its <a class="reference external" href="https://ipywidgets.readthedocs.io/en/latest/examples/Using%20Interact.html">IPython Jupiter notebooks equivalent</a>— are a great way of quickly exploring models behaviors.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title  { run: &quot;auto&quot;, vertical-output: true }</span>
+<span class="n">membrane_capacitance</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="c1">#@param {type:&quot;slider&quot;, min:1, max:10, step:0.5}</span>
+<span class="n">membrane_resistance</span>  <span class="o">=</span> <span class="mf">1.0</span> <span class="c1">#@param {type:&quot;slider&quot;, min:1, max:10, step:0.5}</span>
+<span class="n">input_current</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="c1">#@param {type:&quot;slider&quot;, min:1, max:10, step:0.5}</span>
+<span class="n">initial_membrane_potential</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1">#@param {type:&quot;slider&quot;, min:-20, max:20, step:0.5}</span>
+
+<span class="c1">## Your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice that the behavior of these neuron model does not produce action potentials. To observe action potentials, LIF models are coupled with a reset mechanism that resets the membrane potential after it has reached a given value. Since this behavior does not emerge from the LIF differential equation, we would need to manually implement ourselves in the code. Next week we will see how we can use <span class="xref myst">Brian2</span> to simulate populations of LIF neurons and obtain spiking behaviors. Brian will deal under the hood with solving the differential equations and we will focus on defining our model.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notebooks/week2"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../week1/week1c-Applications_LT.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">15. </span>Applications of Linear Transformations</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../week3/week3a.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>Introduction to Brian part 1: Neurons</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Elias Najarro & Rune Berg<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
