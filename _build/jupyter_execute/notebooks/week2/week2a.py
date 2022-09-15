@@ -7,7 +7,7 @@
 
 # ⚠️ Remeber to watch the [3blue1brown introduction to differential equations](https://www.youtube.com/watch?v=p_di4Zn4wz4) to get an intuition on **why** we use differential equations to understand the behavior of any system.
 
-# <iframe width="560" height="315" src="https://www.youtube.com/watch?v=p_di4Zn4wz4" title="YouTube video player" frameborder="0" ></iframe>
+# <iframe width="720" height="480" src="https://www.youtube.com/watch?v=p_di4Zn4wz4" title="YouTube video player" frameborder="0" ></iframe>
 
 # In[1]:
 

@@ -3,7 +3,7 @@
 
 title: Computational Neuroscience 
 author: Elias Najarro & Rune Berg
-logo: _static/media/Cajal_ThePyramidalNeuron_1904.jpg
+logo: _static/media/cajal1.png
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
