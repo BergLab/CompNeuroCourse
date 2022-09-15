@@ -26,6 +26,7 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -42,6 +43,7 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
+    <script src="_static/custom.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -50,6 +52,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://dmol.pub/markdown-notebooks.html" />
+    <link rel="shortcut icon" href="_static/favicon.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -113,98 +117,98 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  A. Code Review
+  Code Review
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="notebooks/week1/week1-IntroColab.html">
-   1. Google’s Colab
+   Google’s Colab
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="notebooks/week1/week1a-Numpy_Introduction.html">
+   Introduction to NumPy and Matplotlib
   </a>
  </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  B. Math Review
+  Math Review
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="notebooks/week1/week1a-Numpy_Introduction.html">
-   5. Introduction to NumPy and Matplotlib
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="notebooks/week1/week1b-Linear_Algebra.html">
-   6. Concepts and Notation
+   Linear Algebra basics
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="notebooks/week1/week1c-Applications_LT.html">
-   15. Applications of Linear Transformations
+   Applications of Linear Transformations
   </a>
  </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  1. Differential equations and neuron models
+  A. Differential equations and neuron models
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="notebooks/week2/week2a.html">
-   16. Introduction modelling with differential equations
+   1. Introduction modelling with differential equations
   </a>
  </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  2. Simulation of neural population
+  B. Simulation of neural population
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="notebooks/week3/week3a.html">
-   18. Introduction to Brian part 1: Neurons
+   2. Introduction to Brian part 1: Neurons
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="notebooks/week3/week3b.html">
-   19. Introduction to Brian part 2: Synapses
+   3. Introduction to Brian part 2: Synapses
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="notebooks/week3/week3c.html">
-   20. Bonus notebook: Introduction to Brian part 3: Simulations
+   4. Bonus notebook: Introduction to Brian part 3: Simulations
   </a>
  </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  3. Data analysis and Machine learning
+  C. Data analysis and Machine learning
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="notebooks/week4/week4a.html">
-   21. Introduction to Data Analysis with Pandas
+   5. Introduction to Data Analysis with Pandas
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="notebooks/week4/week4b.html">
-   22. Introduction to Machine learning with scikit-learn
+   6. Introduction to Machine learning with scikit-learn
   </a>
  </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  4. Network analysis
+  D. Network analysis
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="notebooks/week5/week5.html">
-   26. Introduction to network science
+   7. Network science
   </a>
  </li>
 </ul>
@@ -266,19 +270,19 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/BergLab/CompNeuroBook/master?urlpath=tree/docs/markdown-notebooks.md"
+        <a href="https://colab.research.google.com/github/BergLab/CompNeuroBook/blob/master/docs/markdown-notebooks.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
-title="Launch on Binder"
+title="Launch on Colab"
 >
   
 
 <span class="headerbtn__icon-container">
   
-    <img src="_static/images/logo_binder.svg">
+    <img src="_static/images/logo_colab.png">
   </span>
-<span class="headerbtn__text-container">Binder</span>
+<span class="headerbtn__text-container">Colab</span>
 </a>
 
       </li>
@@ -338,6 +342,23 @@ title="Open an issue"
   <i class="fas fa-lightbulb"></i>
   </span>
 <span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/BergLab/CompNeuroBook/edit/master/docs/markdown-notebooks.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
 </a>
 
       </li>
@@ -573,6 +594,9 @@ See the YAML at the top of this page for example.</p></li>
     By Elias Najarro & Rune Berg<br/>
   
       &copy; Copyright 2022.<br/>
+    <div class="extra_footer">
+      <a href="https://berg-lab.net/">berg-lab.net</a> <div id="wh-modal"> <button class="wh-venti-button" aria-label="close modal" id="wh-modal-close">✕</button> <img id="wh-modal-img"> </div>
+    </div>
 </p>
         </footer>
     </div>

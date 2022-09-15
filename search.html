@@ -25,6 +25,7 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -42,6 +43,7 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
+    <script src="_static/custom.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -52,6 +54,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <script src="_static/searchtools.js"></script>
     <script src="_static/language_data.js"></script>
+    <link rel="canonical" href="https://dmol.pub/search.html" />
+    <link rel="shortcut icon" href="_static/favicon.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="#" />
   <script src="searchindex.js" defer></script>
@@ -118,41 +122,29 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  A. Code Review
+  Week 1. Math review
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="notebooks/week1/week1-IntroColab.html">
-   1. Google’s Colab
+   Google’s Colab
   </a>
  </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  B. Math Review
- </span>
-</p>
-<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="notebooks/week1/week1a-Numpy_Introduction.html">
-   5. Introduction to NumPy and Matplotlib
+   Introduction to NumPy and Matplotlib
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="notebooks/week1/week1b-Linear_Algebra.html">
-   6. Concepts and Notation
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="notebooks/week1/week1c-Applications_LT.html">
-   15. Applications of Linear Transformations
+   Linear Algebra basics
   </a>
  </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  1. Differential equations and neuron models
+  Week 2. Differential equations and neuron models
  </span>
 </p>
 <ul class="nav bd-sidenav">
@@ -161,10 +153,15 @@ const thebe_selector_output = ".output, .cell_output"
    1. Introduction modelling with differential equations
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="notebooks/week2/week2b-Applications_LT.html">
+   2. Dynamical systems as Linear Transformations
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  2. Simulation of neural population
+  Week 3. Simulation of neural population
  </span>
 </p>
 <ul class="nav bd-sidenav">
@@ -186,7 +183,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  3. Data analysis and Machine learning
+  Week 4. Data analysis and Machine learning
  </span>
 </p>
 <ul class="nav bd-sidenav">
@@ -203,13 +200,13 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  4. Network analysis
+  Week 5. Network analysis
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="notebooks/week5/week5.html">
-   11. Introduction to network science
+   8. Network science
   </a>
  </li>
 </ul>
@@ -393,6 +390,9 @@ title="Open an issue"
     By Elias Najarro & Rune Berg<br/>
   
       &copy; Copyright 2022.<br/>
+    <div class="extra_footer">
+      <a href="https://berg-lab.net/">berg-lab.net</a> <div id="wh-modal"> <button class="wh-venti-button" aria-label="close modal" id="wh-modal-close">✕</button> <img id="wh-modal-img"> </div>
+    </div>
 </p>
         </footer>
     </div>

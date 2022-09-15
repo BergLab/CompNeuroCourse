@@ -22,7 +22,7 @@ nbclient.exceptions.CellExecutionError: An error occurred while executing the fo
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mDimensionMismatchError[0m                    Traceback (most recent call last)
-Input [0;32mIn [8][0m, in [0;36m<cell line: 1>[0;34m()[0m
+Input [0;32mIn [7][0m, in [0;36m<cell line: 1>[0;34m()[0m
 [0;32m----> 1[0m [38;5;241;43m5[39;49m[38;5;241;43m*[39;49m[43mamp[49m[38;5;241;43m+[39;49m[38;5;241;43m10[39;49m[38;5;241;43m*[39;49m[43mvolt[49m
 
 File [0;32m~/.virtualenvs/p39/lib/python3.9/site-packages/brian2/units/fundamentalunits.py:1422[0m, in [0;36mQuantity.__add__[0;34m(self, other)[0m

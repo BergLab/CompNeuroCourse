@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>1. Google’s Colab &#8212; Computational Neuroscience</title>
+    <title>Google’s Colab &#8212; Computational Neuroscience</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -26,6 +26,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -42,6 +43,7 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/custom.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -52,9 +54,11 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="canonical" href="https://dmol.pub/notebooks/week1/week1-IntroColab.html" />
+    <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="5. Introduction to NumPy and Matplotlib" href="week1a-Numpy_Introduction.html" />
+    <link rel="next" title="Introduction to NumPy and Matplotlib" href="week1a-Numpy_Introduction.html" />
     <link rel="prev" title="Computational Neuroscience" href="../../intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -117,98 +121,98 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  A. Code Review
+  Code Review
  </span>
 </p>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   1. Google’s Colab
+   Google’s Colab
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="week1a-Numpy_Introduction.html">
+   Introduction to NumPy and Matplotlib
   </a>
  </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  B. Math Review
+  Math Review
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="week1a-Numpy_Introduction.html">
-   5. Introduction to NumPy and Matplotlib
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="week1b-Linear_Algebra.html">
-   6. Concepts and Notation
+   Linear Algebra basics
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="week1c-Applications_LT.html">
-   15. Applications of Linear Transformations
+   Applications of Linear Transformations
   </a>
  </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  1. Differential equations and neuron models
+  A. Differential equations and neuron models
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../week2/week2a.html">
-   16. Introduction modelling with differential equations
+   1. Introduction modelling with differential equations
   </a>
  </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  2. Simulation of neural population
+  B. Simulation of neural population
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../week3/week3a.html">
-   18. Introduction to Brian part 1: Neurons
+   2. Introduction to Brian part 1: Neurons
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../week3/week3b.html">
-   19. Introduction to Brian part 2: Synapses
+   3. Introduction to Brian part 2: Synapses
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../week3/week3c.html">
-   20. Bonus notebook: Introduction to Brian part 3: Simulations
+   4. Bonus notebook: Introduction to Brian part 3: Simulations
   </a>
  </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  3. Data analysis and Machine learning
+  C. Data analysis and Machine learning
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../week4/week4a.html">
-   21. Introduction to Data Analysis with Pandas
+   5. Introduction to Data Analysis with Pandas
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../week4/week4b.html">
-   22. Introduction to Machine learning with scikit-learn
+   6. Introduction to Machine learning with scikit-learn
   </a>
  </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  4. Network analysis
+  D. Network analysis
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../week5/week5.html">
-   26. Introduction to network science
+   7. Network science
   </a>
  </li>
 </ul>
@@ -270,19 +274,19 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/BergLab/CompNeuroBook/master?urlpath=tree/docs/notebooks/week1/week1-IntroColab.ipynb"
+        <a href="https://colab.research.google.com/github/BergLab/CompNeuroBook/blob/master/docs/notebooks/week1/week1-IntroColab.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
-title="Launch on Binder"
+title="Launch on Colab"
 >
   
 
 <span class="headerbtn__icon-container">
   
-    <img src="../../_static/images/logo_binder.svg">
+    <img src="../../_static/images/logo_colab.png">
   </span>
-<span class="headerbtn__text-container">Binder</span>
+<span class="headerbtn__text-container">Colab</span>
 </a>
 
       </li>
@@ -342,6 +346,23 @@ title="Open an issue"
   <i class="fas fa-lightbulb"></i>
   </span>
 <span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/BergLab/CompNeuroBook/edit/master/docs/notebooks/week1/week1-IntroColab.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
 </a>
 
       </li>
@@ -417,91 +438,82 @@ title="Print to PDF"
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   1. Google’s Colab
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#cells">
-   2. Cells
+   Cells
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#code-cells">
-     2.1. Code cells
+     Code cells
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#comments-in-code-cells">
-     2.2. Comments in code cells
+     Comments in code cells
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#text-cells">
-     2.3. Text cells
+     Text cells
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#adding-and-moving-cells">
-     2.4. Adding and moving cells
+     Adding and moving cells
     </a>
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#working-with-python">
-   3. Working with python
+   Working with python
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#terminal-commands">
-     3.1. Terminal commands
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#installing-external-libraries">
-     3.2. Installing external libraries
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#automatic-completions-and-exploring-code">
-     3.3. Automatic completions and exploring code
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exception-formatting">
-     3.4. Exception Formatting
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#rich-interactive-outputs">
-     3.5. Rich, interactive outputs
-    </a>
-   </li>
-  </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#integration-with-drive">
-   4. Integration with Drive
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#terminal-commands">
+   Terminal commands
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#loading-public-notebooks-directly-from-github">
-     4.1. Loading Public Notebooks Directly from GitHub
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#commenting-on-a-cell">
-     4.2. Commenting on a cell
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#advance-the-cell-magics-in-ipython">
-     4.3. Advance: The cell magics in IPython
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#installing-external-libraries">
+   Installing external libraries
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#automatic-completions-and-exploring-code">
+   Automatic completions and exploring code
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exception-formatting">
+   Exception Formatting
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rich-interactive-outputs">
+   Rich, interactive outputs
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#integration-with-drive">
+   Integration with Drive
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#loading-public-notebooks-directly-from-github">
+   Loading Public Notebooks Directly from GitHub
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#commenting-on-a-cell">
+   Commenting on a cell
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#advance-the-cell-magics-in-ipython">
+   Advance: The cell magics in IPython
+  </a>
  </li>
 </ul>
 
@@ -522,91 +534,82 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   1. Google’s Colab
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#cells">
-   2. Cells
+   Cells
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#code-cells">
-     2.1. Code cells
+     Code cells
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#comments-in-code-cells">
-     2.2. Comments in code cells
+     Comments in code cells
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#text-cells">
-     2.3. Text cells
+     Text cells
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#adding-and-moving-cells">
-     2.4. Adding and moving cells
+     Adding and moving cells
     </a>
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#working-with-python">
-   3. Working with python
+   Working with python
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#terminal-commands">
-     3.1. Terminal commands
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#installing-external-libraries">
-     3.2. Installing external libraries
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#automatic-completions-and-exploring-code">
-     3.3. Automatic completions and exploring code
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exception-formatting">
-     3.4. Exception Formatting
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#rich-interactive-outputs">
-     3.5. Rich, interactive outputs
-    </a>
-   </li>
-  </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#integration-with-drive">
-   4. Integration with Drive
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#terminal-commands">
+   Terminal commands
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#loading-public-notebooks-directly-from-github">
-     4.1. Loading Public Notebooks Directly from GitHub
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#commenting-on-a-cell">
-     4.2. Commenting on a cell
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#advance-the-cell-magics-in-ipython">
-     4.3. Advance: The cell magics in IPython
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#installing-external-libraries">
+   Installing external libraries
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#automatic-completions-and-exploring-code">
+   Automatic completions and exploring code
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exception-formatting">
+   Exception Formatting
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rich-interactive-outputs">
+   Rich, interactive outputs
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#integration-with-drive">
+   Integration with Drive
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#loading-public-notebooks-directly-from-github">
+   Loading Public Notebooks Directly from GitHub
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#commenting-on-a-cell">
+   Commenting on a cell
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#advance-the-cell-magics-in-ipython">
+   Advance: The cell magics in IPython
+  </a>
  </li>
 </ul>
 
@@ -619,7 +622,7 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="google-s-colab">
-<h1><span class="section-number">1. </span>Google’s Colab<a class="headerlink" href="#google-s-colab" title="Permalink to this headline">#</a></h1>
+<h1>Google’s Colab<a class="headerlink" href="#google-s-colab" title="Permalink to this headline">#</a></h1>
 <p>Have a look around. On the left side of the window you see there are four menu items:</p>
 <ul class="simple">
 <li><p>Table of content: shows the table of content of the notebook</p></li>
@@ -627,12 +630,11 @@ title="Print to PDF"
 <li><p>Variables: keep tracks of evaluated variables, their type and values</p></li>
 <li><p>Files: the files present in the working directory</p></li>
 </ul>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="cells">
-<h1><span class="section-number">2. </span>Cells<a class="headerlink" href="#cells" title="Permalink to this headline">#</a></h1>
+<section id="cells">
+<h2>Cells<a class="headerlink" href="#cells" title="Permalink to this headline">#</a></h2>
 <p>A notebook is a list of cells. Cells contain either explanatory text or executable code and its output. Click a cell to select it.</p>
 <section id="code-cells">
-<h2><span class="section-number">2.1. </span>Code cells<a class="headerlink" href="#code-cells" title="Permalink to this headline">#</a></h2>
+<h3>Code cells<a class="headerlink" href="#code-cells" title="Permalink to this headline">#</a></h3>
 <p>Below is a <strong>code cell</strong>. Once the toolbar button indicates CONNECTED, click in the cell to select it and execute the contents in the following ways:</p>
 <ul class="simple">
 <li><p>Click the <strong>Play icon</strong> in the left gutter of the cell;</p></li>
@@ -656,7 +658,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="comments-in-code-cells">
-<h2><span class="section-number">2.2. </span>Comments in code cells<a class="headerlink" href="#comments-in-code-cells" title="Permalink to this headline">#</a></h2>
+<h3>Comments in code cells<a class="headerlink" href="#comments-in-code-cells" title="Permalink to this headline">#</a></h3>
 <p>In python we can add comments in our code by appending the symbol <code class="docutils literal notranslate"><span class="pre">#</span></code> before line. Comments are a great way of adding notes on the code for ourself or for someone we’re sharing the code with (including our future self). Like python, Notebooks/Colab code cells also accept comments:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -689,7 +691,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="text-cells">
-<h2><span class="section-number">2.3. </span>Text cells<a class="headerlink" href="#text-cells" title="Permalink to this headline">#</a></h2>
+<h3>Text cells<a class="headerlink" href="#text-cells" title="Permalink to this headline">#</a></h3>
 <p>This is a <strong>text cell</strong>. You can <strong>double-click</strong> to edit this cell. Text cells
 use markdown syntax. To learn more, see our <span class="xref myst">markdown
 guide</span>.</p>
@@ -699,14 +701,14 @@ within a pair of <strong>$</strong> signs. For example <code class="docutils lit
 <span class="math notranslate nohighlight">\(\sqrt{3x-1}+(1+x)^2.\)</span></p>
 </section>
 <section id="adding-and-moving-cells">
-<h2><span class="section-number">2.4. </span>Adding and moving cells<a class="headerlink" href="#adding-and-moving-cells" title="Permalink to this headline">#</a></h2>
+<h3>Adding and moving cells<a class="headerlink" href="#adding-and-moving-cells" title="Permalink to this headline">#</a></h3>
 <p>You can add new cells by using the <strong>+ CODE</strong> and <strong>+ TEXT</strong> buttons that show when you hover between cells. These buttons are also in the toolbar above the notebook where they can be used to add a cell below the currently selected cell.</p>
 <p>You can move a cell by selecting it and clicking <strong>Cell Up</strong> or <strong>Cell Down</strong> in the top toolbar.</p>
 <p>Consecutive cells can be selected by “lasso selection” by dragging from outside one cell and through the group.  Non-adjacent cells can be selected concurrently by clicking one and then holding down Ctrl while clicking another.  Similarly, using Shift instead of Ctrl will select all intermediate cells.</p>
 </section>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="working-with-python">
-<h1><span class="section-number">3. </span>Working with python<a class="headerlink" href="#working-with-python" title="Permalink to this headline">#</a></h1>
+<section id="working-with-python">
+<h2>Working with python<a class="headerlink" href="#working-with-python" title="Permalink to this headline">#</a></h2>
 <p>Colaboratory is built on top of <a class="reference external" href="https://jupyter.org/">Jupyter Notebook</a>. Below are some examples of convenience functions provided.</p>
 <p>Long running python processes can be interrupted. Run the following cell and select <strong>Runtime -&gt; Interrupt execution</strong> (<em>hotkey: Cmd/Ctrl-M I</em>) to stop execution.</p>
 <div class="cell docutils container">
@@ -735,8 +737,9 @@ within a pair of <strong>$</strong> signs. For example <code class="docutils lit
 </div>
 </div>
 </div>
+</section>
 <section id="terminal-commands">
-<h2><span class="section-number">3.1. </span>Terminal commands<a class="headerlink" href="#terminal-commands" title="Permalink to this headline">#</a></h2>
+<h2>Terminal commands<a class="headerlink" href="#terminal-commands" title="Permalink to this headline">#</a></h2>
 <p>You can use the cells as you would normally use the terminal by simply adding the exclamation mark <em>!</em> before the command.</p>
 <p>If you click on the left side menu item <em>files</em>, you’ll see that there is a folder named <em>sampled_data</em>. Let’s use the terminal command <code class="docutils literal notranslate"><span class="pre">cd</span></code> to enter the folder and the command <code class="docutils literal notranslate"><span class="pre">ls</span></code> to show the files present in the folder. The command <code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code> allow use to link two terminal commands.</p>
 <div class="cell docutils container">
@@ -748,7 +751,7 @@ within a pair of <strong>$</strong> signs. For example <code class="docutils lit
 </div>
 </section>
 <section id="installing-external-libraries">
-<h2><span class="section-number">3.2. </span>Installing external libraries<a class="headerlink" href="#installing-external-libraries" title="Permalink to this headline">#</a></h2>
+<h2>Installing external libraries<a class="headerlink" href="#installing-external-libraries" title="Permalink to this headline">#</a></h2>
 <p>Colabs come with a set of basic python libraries by default like <em>numpy</em> or <em>matplotlib</em>. However, other libraries are present by the default.</p>
 <p>For example, in week 3 we will Brian2 library to simulate spiking neural populations, let’s try to import it:</p>
 <div class="cell docutils container">
@@ -776,7 +779,7 @@ within a pair of <strong>$</strong> signs. For example <code class="docutils lit
 </div>
 </section>
 <section id="automatic-completions-and-exploring-code">
-<h2><span class="section-number">3.3. </span>Automatic completions and exploring code<a class="headerlink" href="#automatic-completions-and-exploring-code" title="Permalink to this headline">#</a></h2>
+<h2>Automatic completions and exploring code<a class="headerlink" href="#automatic-completions-and-exploring-code" title="Permalink to this headline">#</a></h2>
 <p>Colab provides automatic completions to explore attributes of Python objects, as well as to quickly view documentation strings. As an example, first run the following cell to import the  <a class="reference external" href="http://www.numpy.org"><code class="docutils literal notranslate"><span class="pre">numpy</span></code></a> module.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -805,7 +808,7 @@ within a pair of <strong>$</strong> signs. For example <code class="docutils lit
 <p>When hovering over the method name the <code class="docutils literal notranslate"><span class="pre">Open</span> <span class="pre">in</span> <span class="pre">tab</span></code> link will open the documentation in a persistent pane. The <code class="docutils literal notranslate"><span class="pre">View</span> <span class="pre">source</span></code> link will navigate to the source code for the method.</p>
 </section>
 <section id="exception-formatting">
-<h2><span class="section-number">3.4. </span>Exception Formatting<a class="headerlink" href="#exception-formatting" title="Permalink to this headline">#</a></h2>
+<h2>Exception Formatting<a class="headerlink" href="#exception-formatting" title="Permalink to this headline">#</a></h2>
 <p>Exceptions are formatted nicely in Colab outputs:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -818,7 +821,7 @@ within a pair of <strong>$</strong> signs. For example <code class="docutils lit
 </div>
 </section>
 <section id="rich-interactive-outputs">
-<h2><span class="section-number">3.5. </span>Rich, interactive outputs<a class="headerlink" href="#rich-interactive-outputs" title="Permalink to this headline">#</a></h2>
+<h2>Rich, interactive outputs<a class="headerlink" href="#rich-interactive-outputs" title="Permalink to this headline">#</a></h2>
 <p>Until now all of the generated outputs have been text, but they can be more interesting, like the chart below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -838,16 +841,16 @@ within a pair of <strong>$</strong> signs. For example <code class="docutils lit
 </div>
 </div>
 </section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="integration-with-drive">
-<h1><span class="section-number">4. </span>Integration with Drive<a class="headerlink" href="#integration-with-drive" title="Permalink to this headline">#</a></h1>
+<section id="integration-with-drive">
+<h2>Integration with Drive<a class="headerlink" href="#integration-with-drive" title="Permalink to this headline">#</a></h2>
 <p>Colaboratory is integrated with Google Drive. It allows you to share, comment, and collaborate on the same document with multiple people:</p>
 <ul class="simple">
 <li><p>The <strong>SHARE</strong> button (top-right of the toolbar) allows you to share the notebook and control permissions set on it.</p></li>
 <li><p><strong>File-&gt;Make a Copy</strong> creates a copy of the notebook in Drive.</p></li>
 </ul>
+</section>
 <section id="loading-public-notebooks-directly-from-github">
-<h2><span class="section-number">4.1. </span>Loading Public Notebooks Directly from GitHub<a class="headerlink" href="#loading-public-notebooks-directly-from-github" title="Permalink to this headline">#</a></h2>
+<h2>Loading Public Notebooks Directly from GitHub<a class="headerlink" href="#loading-public-notebooks-directly-from-github" title="Permalink to this headline">#</a></h2>
 <p>Colab can load public github notebooks directly, this is a quick way of using other people notebooks!
 There are different ways of doing this:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>* Open Colab, click on file -&gt; Open -&gt; GitHub and search for the username and repo where the .ipynb you want to open is found
@@ -857,7 +860,7 @@ There are different ways of doing this:</p>
 </div>
 </section>
 <section id="commenting-on-a-cell">
-<h2><span class="section-number">4.2. </span>Commenting on a cell<a class="headerlink" href="#commenting-on-a-cell" title="Permalink to this headline">#</a></h2>
+<h2>Commenting on a cell<a class="headerlink" href="#commenting-on-a-cell" title="Permalink to this headline">#</a></h2>
 <p>You can comment on a Colaboratory notebook like you would on a Google Document. Comments are attached to cells, and are displayed next to the cell they refer to. Comments are a nice tool to discuss some code with other people.</p>
 <p>If you have edit or comment permissions you can comment by:</p>
 <ol class="simple">
@@ -867,7 +870,7 @@ There are different ways of doing this:</p>
 <p>The Comment button in the top-right corner of the page shows all comments attached to the notebook.</p>
 </section>
 <section id="advance-the-cell-magics-in-ipython">
-<h2><span class="section-number">4.3. </span>Advance: The cell magics in IPython<a class="headerlink" href="#advance-the-cell-magics-in-ipython" title="Permalink to this headline">#</a></h2>
+<h2>Advance: The cell magics in IPython<a class="headerlink" href="#advance-the-cell-magics-in-ipython" title="Permalink to this headline">#</a></h2>
 <p>IPython has a system of commands we call ‘magics’ that provide effectively a mini command language that is orthogonal to the syntax of Python and is extensible by the user with new commands. Magics are meant to be typed interactively, so they use command-line conventions, such as using whitespace for separating arguments, dashes for options and other conventions typical of a command-line environment.</p>
 <p>Magics come in two kinds:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Line magics: these are commands prepended by one % character and whose arguments only extend to the end of the current line.
@@ -937,7 +940,7 @@ Cell magics: these use two percent characters as a marker (%%), and they receive
     <a class='right-next' id="next-link" href="week1a-Numpy_Introduction.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">5. </span>Introduction to NumPy and Matplotlib</p>
+        <p class="prev-next-title">Introduction to NumPy and Matplotlib</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
@@ -951,6 +954,9 @@ Cell magics: these use two percent characters as a marker (%%), and they receive
     By Elias Najarro & Rune Berg<br/>
   
       &copy; Copyright 2022.<br/>
+    <div class="extra_footer">
+      <a href="https://berg-lab.net/">berg-lab.net</a> <div id="wh-modal"> <button class="wh-venti-button" aria-label="close modal" id="wh-modal-close">✕</button> <img id="wh-modal-img"> </div>
+    </div>
 </p>
         </footer>
     </div>

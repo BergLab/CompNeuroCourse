@@ -26,6 +26,7 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -42,6 +43,7 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
+    <script src="_static/custom.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -50,9 +52,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://dmol.pub/intro.html" />
+    <link rel="shortcut icon" href="_static/favicon.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="1. Google’s Colab" href="notebooks/week1/week1-IntroColab.html" />
+    <link rel="next" title="Google’s Colab" href="notebooks/week1/week1-IntroColab.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -114,41 +118,29 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  A. Code Review
+  Week 1. Math review
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="notebooks/week1/week1-IntroColab.html">
-   1. Google’s Colab
+   Google’s Colab
   </a>
  </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  B. Math Review
- </span>
-</p>
-<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="notebooks/week1/week1a-Numpy_Introduction.html">
-   5. Introduction to NumPy and Matplotlib
+   Introduction to NumPy and Matplotlib
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="notebooks/week1/week1b-Linear_Algebra.html">
-   6. Concepts and Notation
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="notebooks/week1/week1c-Applications_LT.html">
-   15. Applications of Linear Transformations
+   Linear Algebra basics
   </a>
  </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  1. Differential equations and neuron models
+  Week 2. Differential equations and neuron models
  </span>
 </p>
 <ul class="nav bd-sidenav">
@@ -157,10 +149,15 @@ const thebe_selector_output = ".output, .cell_output"
    1. Introduction modelling with differential equations
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="notebooks/week2/week2b-Applications_LT.html">
+   2. Dynamical systems as Linear Transformations
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  2. Simulation of neural population
+  Week 3. Simulation of neural population
  </span>
 </p>
 <ul class="nav bd-sidenav">
@@ -182,7 +179,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  3. Data analysis and Machine learning
+  Week 4. Data analysis and Machine learning
  </span>
 </p>
 <ul class="nav bd-sidenav">
@@ -199,13 +196,13 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  4. Network analysis
+  Week 5. Network analysis
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="notebooks/week5/week5.html">
-   11. Introduction to network science
+   8. Network science
   </a>
  </li>
 </ul>
@@ -314,6 +311,23 @@ title="Open an issue"
 
       </li>
       
+      <li>
+        <a href="https://github.com/BergLab/CompNeuroBook/edit/master/docs/intro.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
     </ul>
   </div>
 </div>
@@ -387,7 +401,7 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#before-the-course-starts">
-   🤓 Before the course starts
+   Before the course starts
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -403,8 +417,8 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise-sessions-timeline-and-weekly-supporting-material">
-   📜 Exercise sessions timeline and weekly supporting material
+  <a class="reference internal nav-link" href="#syllabus">
+   Syllabus
   </a>
   <ul class="nav section-nav flex-column">
   </ul>
@@ -435,7 +449,7 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#before-the-course-starts">
-   🤓 Before the course starts
+   Before the course starts
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -451,8 +465,8 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise-sessions-timeline-and-weekly-supporting-material">
-   📜 Exercise sessions timeline and weekly supporting material
+  <a class="reference internal nav-link" href="#syllabus">
+   Syllabus
   </a>
   <ul class="nav section-nav flex-column">
   </ul>
@@ -484,7 +498,7 @@ You’re welcome to meet before the exercise class to work through the exercises
 <li><p>The <strong>invited talks</strong>: simply relax and enjoy.</p></li>
 </ul>
 <section id="before-the-course-starts">
-<h2>🤓 Before the course starts<a class="headerlink" href="#before-the-course-starts" title="Permalink to this headline">#</a></h2>
+<h2>Before the course starts<a class="headerlink" href="#before-the-course-starts" title="Permalink to this headline">#</a></h2>
 <section id="preparation">
 <h3>Preparation<a class="headerlink" href="#preparation" title="Permalink to this headline">#</a></h3>
 <p>If you have never coded or used python before (or it’s been a while), we strongly recommend that you take this introduction course to python. It covers all the coding requirements you need for the course: <a class="reference external" href="https://www.kaggle.com/learn/python">https://www.kaggle.com/learn/python</a></p>
@@ -495,49 +509,32 @@ You’re welcome to meet before the exercise class to work through the exercises
 <p>Similarly to the aforementioned python course, our course exercises will take the form of “notebooks”, notebooks a document format that allows you to run code, write text and generate plots in the same document. They are made of <em>cells</em>, which can be <em>code cells</em> or <em>text cells</em>. In most notebooks, you can execute a cell by pressing <em>Shift + Enter</em>.</p>
 <p>You have two options for doing the exercises:</p>
 <ul class="simple">
-<li><p>the simplest one is to use Google Colab which lets you do the exercises online so you don’t need to do any set-up on your computer. To open the exercises simply click on badge “Open in Colab” of the notebook and you’re ready to start coding. Watch <a class="reference external" href="https://www.youtube.com/watch?v=inN8seMm7UI">Introduction to Colab</a> for a quick video intro, you’ll see that Colab is very similar to the Kaggle notebooks from python intro course. The first week exercices contains a notebook covering the basics of Colab:     <a href="https://colab.research.google.com/github/BergLab/CompNeuro22/blob/main/notebooks/week1/week1-IntroColab.ipynb"> <img src="https://colab.research.google.com/assets/colab-badge.svg" width = '' ></a></p></li>
-<li><p>The second option is to install an editor (the app where you type code) and python in your computer. This option has the advantage of letting you work more easily with your own data and having some nice extra features. If you pick this option, we recommend you get editor Spyder. A simple way of installing both Spyder editor and Python is to install Anaconda: <a class="reference external" href="https://www.anaconda.com/products/distribution">https://www.anaconda.com/products/distribution</a> . Then you can simply download the notebooks folder in this repository and open them in your computer.</p></li>
+<li><p>the simplest one is to use Google Colab which lets you do the exercises online so you don’t need to do any set-up on your computer. To open a chapter in Colab simply click on rocket symbol 🚀 on the top of the page and click on Colab. badge “Open in Colab” of the notebook and you’re ready to start coding. Watch <a class="reference external" href="https://www.youtube.com/watch?v=inN8seMm7UI">Introduction to Colab</a> for a quick video intro. If you have take the preparatory <a class="reference external" href="https://www.kaggle.com/learn/python">python introduction course</a>, you’ll see that Colab is very similar to the Kaggle notebooks.</p></li>
+<li><p>The second option is to install an editor (the app where you type code) and python in your computer. This option has the advantage of letting you work more easily with your own data and having some nice extra features. If you pick this option, we recommend you get editor Spyder. A simple way of installing both Spyder editor and Python is to <a class="reference external" href="https://www.anaconda.com/products/distribution">install Anaconda</a>. Then you can simply download the notebooks folder in this repository and open them in your computer.</p></li>
 </ul>
 <p>If you’re already comfortable using other editor, you’re more than welcome to keep it using.</p>
 </section>
 </section>
-<section id="exercise-sessions-timeline-and-weekly-supporting-material">
-<h2>📜 Exercise sessions timeline and weekly supporting material<a class="headerlink" href="#exercise-sessions-timeline-and-weekly-supporting-material" title="Permalink to this headline">#</a></h2>
-<p>Here you can find the table of content of each week and its corresponding exercises.</p>
+<section id="syllabus">
+<h2>Syllabus<a class="headerlink" href="#syllabus" title="Permalink to this headline">#</a></h2>
+<p>Here you can find the table of content of each week and its corresponding supporting material and assgiments.</p>
 <div class="toctree-wrapper compound">
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">A. Code Review</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 1. Math review</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/week1/week1-IntroColab.html">1. Google’s Colab</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/week1/week1-IntroColab.html#cells">2. Cells</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/week1/week1-IntroColab.html#working-with-python">3. Working with python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/week1/week1-IntroColab.html#integration-with-drive">4. Integration with Drive</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/week1/week1-IntroColab.html">Google’s Colab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/week1/week1a-Numpy_Introduction.html">Introduction to NumPy and Matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/week1/week1b-Linear_Algebra.html">Linear Algebra basics</a></li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">B. Math Review</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/week1/week1a-Numpy_Introduction.html">5. Introduction to NumPy and Matplotlib</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/week1/week1b-Linear_Algebra.html">6. Concepts and Notation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/week1/week1b-Linear_Algebra.html#vector-spaces">7. Vector Spaces</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/week1/week1b-Linear_Algebra.html#linear-systems">8. Linear Systems</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/week1/week1b-Linear_Algebra.html#inverse-matrices">9. Inverse Matrices</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/week1/week1b-Linear_Algebra.html#linear-combinations">10. Linear Combinations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/week1/week1b-Linear_Algebra.html#linear-independence">11. Linear Independence</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/week1/week1b-Linear_Algebra.html#null-space">12. Null space</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/week1/week1b-Linear_Algebra.html#orthogonalization">13. Orthogonalization</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/week1/week1b-Linear_Algebra.html#eigenvectors-and-eigenvalues">14. Eigenvectors and eigenvalues</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/week1/week1c-Applications_LT.html">15. Applications of Linear Transformations</a></li>
-</ul>
-</div>
-<div class="toctree-wrapper compound">
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">1. Differential equations and neuron models</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 2. Differential equations and neuron models</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="notebooks/week2/week2a.html">1. Introduction modelling with differential equations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/week2/week2a.html#modelling-neural-population">2. Modelling neural population</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/week2/week2b-Applications_LT.html">2. Dynamical systems as Linear Transformations</a></li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">2. Simulation of neural population</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 3. Simulation of neural population</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="notebooks/week3/week3a.html">3. Introduction to Brian part 1: Neurons</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notebooks/week3/week3b.html">4. Introduction to Brian part 2: Synapses</a></li>
@@ -545,19 +542,16 @@ You’re welcome to meet before the exercise class to work through the exercises
 </ul>
 </div>
 <div class="toctree-wrapper compound">
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">3. Data analysis and Machine learning</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 4. Data analysis and Machine learning</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="notebooks/week4/week4a.html">6. Introduction to Data Analysis with Pandas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notebooks/week4/week4b.html">7. Introduction to Machine learning with scikit-learn</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/week4/week4b.html#computing-correlations">8. Computing correlations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/week4/week4b.html#supervised-learning">9. Supervised Learning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/week4/week4b.html#bonus-clustering">10. Bonus: Clustering</a></li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">4. Network analysis</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 5. Network analysis</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/week5/week5.html">11. Introduction to network science</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/week5/week5.html">8. Network science</a></li>
 </ul>
 </div>
 </section>
@@ -610,7 +604,7 @@ You’re welcome to meet before the exercise class to work through the exercises
     <a class='right-next' id="next-link" href="notebooks/week1/week1-IntroColab.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">1. </span>Google’s Colab</p>
+        <p class="prev-next-title">Google’s Colab</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
@@ -624,6 +618,9 @@ You’re welcome to meet before the exercise class to work through the exercises
     By Elias Najarro & Rune Berg<br/>
   
       &copy; Copyright 2022.<br/>
+    <div class="extra_footer">
+      <a href="https://berg-lab.net/">berg-lab.net</a> <div id="wh-modal"> <button class="wh-venti-button" aria-label="close modal" id="wh-modal-close">✕</button> <img id="wh-modal-img"> </div>
+    </div>
 </p>
         </footer>
     </div>

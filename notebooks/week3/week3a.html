@@ -26,6 +26,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -42,6 +43,7 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/custom.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -52,10 +54,12 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="canonical" href="https://dmol.pub/notebooks/week3/week3a.html" />
+    <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="4. Introduction to Brian part 2: Synapses" href="week3b.html" />
-    <link rel="prev" title="1. Introduction modelling with differential equations" href="../week2/week2a.html" />
+    <link rel="prev" title="2. Applications of Linear Transformations" href="../week2/week2b-Applications_LT.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -117,41 +121,29 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  A. Code Review
+  Week 1. Math review
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../week1/week1-IntroColab.html">
-   1. Google’s Colab
+   Google’s Colab
   </a>
  </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  B. Math Review
- </span>
-</p>
-<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../week1/week1a-Numpy_Introduction.html">
-   5. Introduction to NumPy and Matplotlib
+   Introduction to NumPy and Matplotlib
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../week1/week1b-Linear_Algebra.html">
-   6. Concepts and Notation
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../week1/week1c-Applications_LT.html">
-   15. Applications of Linear Transformations
+   Linear Algebra basics
   </a>
  </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  1. Differential equations and neuron models
+  Week 2. Differential equations and neuron models
  </span>
 </p>
 <ul class="nav bd-sidenav">
@@ -160,10 +152,15 @@ const thebe_selector_output = ".output, .cell_output"
    1. Introduction modelling with differential equations
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week2/week2b-Applications_LT.html">
+   2. Applications of Linear Transformations
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  2. Simulation of neural population
+  Week 3. Simulation of neural population
  </span>
 </p>
 <ul class="current nav bd-sidenav">
@@ -185,7 +182,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  3. Data analysis and Machine learning
+  Week 4. Data analysis and Machine learning
  </span>
 </p>
 <ul class="nav bd-sidenav">
@@ -202,13 +199,13 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  4. Network analysis
+  Week 5. Network analysis
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../week5/week5.html">
-   11. Introduction to network science
+   8. Network science
   </a>
  </li>
 </ul>
@@ -270,19 +267,19 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/BergLab/CompNeuroBook/master?urlpath=tree/docs/notebooks/week3/week3a.ipynb"
+        <a href="https://colab.research.google.com/github/BergLab/CompNeuroBook/blob/master/docs/notebooks/week3/week3a.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
-title="Launch on Binder"
+title="Launch on Colab"
 >
   
 
 <span class="headerbtn__icon-container">
   
-    <img src="../../_static/images/logo_binder.svg">
+    <img src="../../_static/images/logo_colab.png">
   </span>
-<span class="headerbtn__text-container">Binder</span>
+<span class="headerbtn__text-container">Colab</span>
 </a>
 
       </li>
@@ -342,6 +339,23 @@ title="Open an issue"
   <i class="fas fa-lightbulb"></i>
   </span>
 <span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/BergLab/CompNeuroBook/edit/master/docs/notebooks/week3/week3a.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
 </a>
 
       </li>
@@ -526,29 +540,27 @@ title="Print to PDF"
                 
               <div>
                 
-  <p><em>Credit: The first three notebooks from week3 are part of the <span class="xref myst">Brian2 documentation</span></em> with minor changes.</p>
-<p><strong>⚠️ Before starting, go to the menu and click on: <code class="docutils literal notranslate"><span class="pre">View</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">Expand</span> <span class="pre">sections</span></code></strong></p>
-<section class="tex2jax_ignore mathjax_ignore" id="introduction-to-brian-part-1-neurons">
+  <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-brian-part-1-neurons">
 <h1><span class="section-number">3. </span>Introduction to Brian part 1: Neurons<a class="headerlink" href="#introduction-to-brian-part-1-neurons" title="Permalink to this headline">#</a></h1>
+<p><em>Credit: The first three notebooks from week3 are part of the <span class="xref myst">Brian2 documentation</span></em> with minor changes.</p>
 <p>All Brian scripts start with the following. If you’re trying this notebook out in the Jupyter notebook, you should start by running this cell.</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip3 install brian2
 <span class="kn">from</span> <span class="nn">brian2</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: brian2 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (2.5.1)
-Requirement already satisfied: sympy&gt;=1.2 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from brian2) (1.10.1)
-Requirement already satisfied: jinja2&gt;=2.7 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from brian2) (3.1.2)
-Requirement already satisfied: pyparsing in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from brian2) (3.0.7)
-Requirement already satisfied: cython&gt;=0.29 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from brian2) (0.29.30)
 Requirement already satisfied: setuptools&gt;=24.2 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from brian2) (60.10.0)
 Requirement already satisfied: numpy&gt;=1.17 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from brian2) (1.22.0)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: MarkupSafe&gt;=2.0 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from jinja2&gt;=2.7-&gt;brian2) (2.1.1)
+Requirement already satisfied: pyparsing in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from brian2) (3.0.7)
+Requirement already satisfied: jinja2&gt;=2.7 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from brian2) (3.1.2)
+Requirement already satisfied: cython&gt;=0.29 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from brian2) (0.29.30)
+Requirement already satisfied: sympy&gt;=1.2 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from brian2) (1.10.1)
+Requirement already satisfied: MarkupSafe&gt;=2.0 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from jinja2&gt;=2.7-&gt;brian2) (2.1.1)
 Requirement already satisfied: mpmath&gt;=0.19 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from sympy&gt;=1.2-&gt;brian2) (1.2.1)
 </pre></div>
 </div>
@@ -559,15 +571,6 @@ Requirement already satisfied: mpmath&gt;=0.19 in /Users/enaj/.virtualenvs/p39/l
 </div>
 </div>
 </div>
-<p>Later we’ll do some plotting in the notebook, so we activate inline plotting in the notebook by doing this:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
-</pre></div>
-</div>
-</div>
-</div>
-<p>If you are not using the Jupyter notebook to run this example (e.g. you are using a standard Python terminal, or you copy&amp;paste these example into an editor and run them as a script), then plots will not automatically be displayed. In this case, call the <code class="docutils literal notranslate"><span class="pre">show()</span></code> command explicitly after the plotting commands.</p>
 <section id="units-system">
 <h2><span class="section-number">3.1. </span>Units system<a class="headerlink" href="#units-system" title="Permalink to this headline">#</a></h2>
 <p>Brian has a system for using quantities with physical dimensions:</p>
@@ -638,7 +641,7 @@ Requirement already satisfied: mpmath&gt;=0.19 in /Users/enaj/.virtualenvs/p39/l
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">DimensionMismatchError</span><span class="g g-Whitespace">                    </span>Traceback (most recent call last)
-<span class="nn">Input In [8],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="nn">Input In [7],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="mi">5</span><span class="o">*</span><span class="n">amp</span><span class="o">+</span><span class="mi">10</span><span class="o">*</span><span class="n">volt</span>
 
 <span class="nn">File ~/.virtualenvs/p39/lib/python3.9/site-packages/brian2/units/fundamentalunits.py:1422,</span> in <span class="ni">Quantity.__add__</span><span class="nt">(self, other)</span>
@@ -1129,11 +1132,11 @@ Note that we also changed the <code class="docutils literal notranslate"><span c
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../week2/week2a.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../week2/week2b-Applications_LT.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">1. </span>Introduction modelling with differential equations</p>
+            <p class="prev-next-title"><span class="section-number">2. </span>Applications of Linear Transformations</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="week3b.html" title="next page">
@@ -1153,6 +1156,9 @@ Note that we also changed the <code class="docutils literal notranslate"><span c
     By Elias Najarro & Rune Berg<br/>
   
       &copy; Copyright 2022.<br/>
+    <div class="extra_footer">
+      <a href="https://berg-lab.net/">berg-lab.net</a> <div id="wh-modal"> <button class="wh-venti-button" aria-label="close modal" id="wh-modal-close">✕</button> <img id="wh-modal-img"> </div>
+    </div>
 </p>
         </footer>
     </div>

@@ -14,7 +14,7 @@ You're welcome to meet before the exercise class to work through the exercises w
 
 
 
-## 🤓 Before the course starts
+## Before the course starts
 
 ### Preparation
 
@@ -28,15 +28,15 @@ It's made of 7 lessons covering all you need to know about python to complete ou
 Similarly to the aforementioned python course, our course exercises will take the form of "notebooks", notebooks a document format that allows you to run code, write text and generate plots in the same document. They are made of *cells*, which can be *code cells* or *text cells*. In most notebooks, you can execute a cell by pressing *Shift + Enter*.
 
 You have two options for doing the exercises: 
-  * the simplest one is to use Google Colab which lets you do the exercises online so you don't need to do any set-up on your computer. To open the exercises simply click on badge "Open in Colab" of the notebook and you're ready to start coding. Watch [Introduction to Colab](https://www.youtube.com/watch?v=inN8seMm7UI) for a quick video intro, you'll see that Colab is very similar to the Kaggle notebooks from python intro course. The first week exercices contains a notebook covering the basics of Colab:     <a href="https://colab.research.google.com/github/BergLab/CompNeuro22/blob/main/notebooks/week1/week1-IntroColab.ipynb"> <img src="https://colab.research.google.com/assets/colab-badge.svg" width = '' ></a>  
+  * the simplest one is to use Google Colab which lets you do the exercises online so you don't need to do any set-up on your computer. To open a chapter in Colab simply click on rocket symbol 🚀 on the top of the page and click on Colab. badge "Open in Colab" of the notebook and you're ready to start coding. Watch [Introduction to Colab](https://www.youtube.com/watch?v=inN8seMm7UI) for a quick video intro. If you have take the preparatory [python introduction course](https://www.kaggle.com/learn/python), you'll see that Colab is very similar to the Kaggle notebooks.
 
-  * The second option is to install an editor (the app where you type code) and python in your computer. This option has the advantage of letting you work more easily with your own data and having some nice extra features. If you pick this option, we recommend you get editor Spyder. A simple way of installing both Spyder editor and Python is to install Anaconda: https://www.anaconda.com/products/distribution . Then you can simply download the notebooks folder in this repository and open them in your computer.
+  * The second option is to install an editor (the app where you type code) and python in your computer. This option has the advantage of letting you work more easily with your own data and having some nice extra features. If you pick this option, we recommend you get editor Spyder. A simple way of installing both Spyder editor and Python is to [install Anaconda](https://www.anaconda.com/products/distribution). Then you can simply download the notebooks folder in this repository and open them in your computer.
 
 If you're already comfortable using other editor, you're more than welcome to keep it using. 
 
-## 📜 Exercise sessions timeline and weekly supporting material
+## Syllabus
 
-Here you can find the table of content of each week and its corresponding exercises.
+Here you can find the table of content of each week and its corresponding supporting material and assgiments.
 
 ```{tableofcontents}
 ```

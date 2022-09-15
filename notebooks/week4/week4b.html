@@ -26,6 +26,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -42,6 +43,7 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/custom.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -52,9 +54,11 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="canonical" href="https://dmol.pub/notebooks/week4/week4b.html" />
+    <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="11. Introduction to network science" href="../week5/week5.html" />
+    <link rel="next" title="8. Network science" href="../week5/week5.html" />
     <link rel="prev" title="6. Introduction to Data Analysis with Pandas" href="week4a.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -117,41 +121,29 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  A. Code Review
+  Week 1. Math review
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../week1/week1-IntroColab.html">
-   1. Google’s Colab
+   Google’s Colab
   </a>
  </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  B. Math Review
- </span>
-</p>
-<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../week1/week1a-Numpy_Introduction.html">
-   5. Introduction to NumPy and Matplotlib
+   Introduction to NumPy and Matplotlib
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../week1/week1b-Linear_Algebra.html">
-   6. Concepts and Notation
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../week1/week1c-Applications_LT.html">
-   15. Applications of Linear Transformations
+   Linear Algebra basics
   </a>
  </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  1. Differential equations and neuron models
+  Week 2. Differential equations and neuron models
  </span>
 </p>
 <ul class="nav bd-sidenav">
@@ -160,10 +152,15 @@ const thebe_selector_output = ".output, .cell_output"
    1. Introduction modelling with differential equations
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week2/week2b-Applications_LT.html">
+   2. Applications of Linear Transformations
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  2. Simulation of neural population
+  Week 3. Simulation of neural population
  </span>
 </p>
 <ul class="nav bd-sidenav">
@@ -185,7 +182,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  3. Data analysis and Machine learning
+  Week 4. Data analysis and Machine learning
  </span>
 </p>
 <ul class="current nav bd-sidenav">
@@ -202,13 +199,13 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  4. Network analysis
+  Week 5. Network analysis
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../week5/week5.html">
-   11. Introduction to network science
+   8. Network science
   </a>
  </li>
 </ul>
@@ -270,19 +267,19 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/BergLab/CompNeuroBook/master?urlpath=tree/docs/notebooks/week4/week4b.ipynb"
+        <a href="https://colab.research.google.com/github/BergLab/CompNeuroBook/blob/master/docs/notebooks/week4/week4b.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
-title="Launch on Binder"
+title="Launch on Colab"
 >
   
 
 <span class="headerbtn__icon-container">
   
-    <img src="../../_static/images/logo_binder.svg">
+    <img src="../../_static/images/logo_colab.png">
   </span>
-<span class="headerbtn__text-container">Binder</span>
+<span class="headerbtn__text-container">Colab</span>
 </a>
 
       </li>
@@ -342,6 +339,23 @@ title="Open an issue"
   <i class="fas fa-lightbulb"></i>
   </span>
 <span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/BergLab/CompNeuroBook/edit/master/docs/notebooks/week4/week4b.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
 </a>
 
       </li>
@@ -417,91 +431,84 @@ title="Print to PDF"
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   7. Introduction to Machine learning with scikit-learn
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-description">
+   7.1. Data description
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#data-description">
-     7.1. Data description
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#loading-libraries-and-data">
-     7.2. Loading libraries and data
-    </a>
-   </li>
-  </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#loading-libraries-and-data">
+   7.2. Loading libraries and data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#computing-correlations">
-   8. Computing correlations
+   7.3. Computing correlations
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exercise">
-     8.1. Exercise
+     7.3.1. Exercise
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#non-linear-correlations">
-     8.2. Non-linear correlations
+     7.3.2. Non-linear correlations
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#the-relation-between-correlation-coefficients-and-predictive-models">
-     8.3. The relation between correlation coefficients and predictive models
+     7.3.3. The relation between correlation coefficients and predictive models
     </a>
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#supervised-learning">
-   9. Supervised Learning
+   7.4. Supervised Learning
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#regression">
-     9.1. Regression
+     7.4.1. Regression
     </a>
     <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
+     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#id1">
-       9.1.1. Exercise
+       7.4.1.1. Exercise
       </a>
      </li>
     </ul>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#real-data">
-     9.2. Real data
+     7.4.2. Real data
     </a>
     <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
+     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#id2">
-       9.2.1. Exercise
+       7.4.2.1. Exercise
       </a>
      </li>
     </ul>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#classification">
-     9.3. Classification
+     7.4.3. Classification
     </a>
     <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
+     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#id3">
-       9.3.1. Exercise
+       7.4.3.1. Exercise
       </a>
      </li>
     </ul>
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#bonus-clustering">
-   10. Bonus: Clustering
+   7.5. Bonus: Clustering
   </a>
  </li>
 </ul>
@@ -523,91 +530,84 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   7. Introduction to Machine learning with scikit-learn
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-description">
+   7.1. Data description
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#data-description">
-     7.1. Data description
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#loading-libraries-and-data">
-     7.2. Loading libraries and data
-    </a>
-   </li>
-  </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#loading-libraries-and-data">
+   7.2. Loading libraries and data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#computing-correlations">
-   8. Computing correlations
+   7.3. Computing correlations
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exercise">
-     8.1. Exercise
+     7.3.1. Exercise
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#non-linear-correlations">
-     8.2. Non-linear correlations
+     7.3.2. Non-linear correlations
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#the-relation-between-correlation-coefficients-and-predictive-models">
-     8.3. The relation between correlation coefficients and predictive models
+     7.3.3. The relation between correlation coefficients and predictive models
     </a>
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#supervised-learning">
-   9. Supervised Learning
+   7.4. Supervised Learning
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#regression">
-     9.1. Regression
+     7.4.1. Regression
     </a>
     <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
+     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#id1">
-       9.1.1. Exercise
+       7.4.1.1. Exercise
       </a>
      </li>
     </ul>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#real-data">
-     9.2. Real data
+     7.4.2. Real data
     </a>
     <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
+     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#id2">
-       9.2.1. Exercise
+       7.4.2.1. Exercise
       </a>
      </li>
     </ul>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#classification">
-     9.3. Classification
+     7.4.3. Classification
     </a>
     <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
+     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#id3">
-       9.3.1. Exercise
+       7.4.3.1. Exercise
       </a>
      </li>
     </ul>
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#bonus-clustering">
-   10. Bonus: Clustering
+   7.5. Bonus: Clustering
   </a>
  </li>
 </ul>
@@ -620,8 +620,7 @@ title="Print to PDF"
                 
               <div>
                 
-  <p><strong>⚠️ Before starting, go to the menu and click on: <code class="docutils literal notranslate"><span class="pre">View</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">Expand</span> <span class="pre">sections</span></code></strong></p>
-<section id="introduction-to-machine-learning-with-scikit-learn">
+  <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-machine-learning-with-scikit-learn">
 <h1><span class="section-number">7. </span>Introduction to Machine learning with scikit-learn<a class="headerlink" href="#introduction-to-machine-learning-with-scikit-learn" title="Permalink to this headline">#</a></h1>
 <p><a class="reference external" href="https://scikit-learn.org/stable/tutorial/index.html">Scikit-learn</a> is a python library that allows to build many machine learning models with an simple interface. On the other hand, other ML libraries like Pytorch or Tensorflow are focused on machine with neural networks only.</p>
 <p>We will use the same dataset we used on the previous notebook.</p>
@@ -744,9 +743,8 @@ If you are working on Colab, you will need to upload the data.</p>
 </div></div></div>
 </div>
 </section>
-</section>
 <section id="computing-correlations">
-<h1><span class="section-number">8. </span>Computing correlations<a class="headerlink" href="#computing-correlations" title="Permalink to this headline">#</a></h1>
+<h2><span class="section-number">7.3. </span>Computing correlations<a class="headerlink" href="#computing-correlations" title="Permalink to this headline">#</a></h2>
 <p>Let’s explore the linear correlations of the data. <strong>Pearson correlation coefficient</strong> <span class="math notranslate nohighlight">\(\rho\)</span> is a measure of how linearly correlated two variables are: it’s 1 if there is a positive correlation, -1 if negative and zero if none.</p>
 <div align="center">
 <p style="text-align:center;"><img src="https://upload.wikimedia.org/wikipedia/commons/3/34/Correlation_coefficient.png" width="500"/>
@@ -765,7 +763,7 @@ If you are working on Colab, you will need to upload the data.</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;Temperature&#39;, ylabel=&#39;Temperature&#39;&gt;
 </pre></div>
 </div>
-<img alt="../../_images/week4b_9_1.png" src="../../_images/week4b_9_1.png" />
+<img alt="../../_images/week4b_8_1.png" src="../../_images/week4b_8_1.png" />
 </div>
 </div>
 <p>What value of the pearson correlation coefficient do expect to have? If it’s not obvious to you, think about it before running the next code cell.</p>
@@ -786,14 +784,14 @@ If you are working on Colab, you will need to upload the data.</p>
 </div>
 <p>A variable always has correlation coefficient of one with itself. Let’s now explore the rest of the data.</p>
 <section id="exercise">
-<h2><span class="section-number">8.1. </span>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">#</a></h2>
+<h3><span class="section-number">7.3.1. </span>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Find the two pairs of variables with the highest absolute correlation # Hint: You can use Scipy’s stats.pearsonr function, otherwise Pandas data frames have a method <code class="docutils literal notranslate"><span class="pre">corr()</span></code> that outputs Pearson correlation between the different variables. # Hint 2 : If you wanna plot you can use <code class="docutils literal notranslate"><span class="pre">dataframe_name.corr().style.background_gradient(cmap='coolwarm')</span></code></p></li>
 <li><p>Once you find the two variables, make their scatter plot again but this apply the logarithmic function <code class="docutils literal notranslate"><span class="pre">np.log(df['whichever</span> <span class="pre">variable'])</span></code> before computing the Pearson correlation coefficient again. How does the Pearson correlation coefficient  changes after applying the logarithmic transformation?</p></li>
 </ul>
 </section>
 <section id="non-linear-correlations">
-<h2><span class="section-number">8.2. </span>Non-linear correlations<a class="headerlink" href="#non-linear-correlations" title="Permalink to this headline">#</a></h2>
+<h3><span class="section-number">7.3.2. </span>Non-linear correlations<a class="headerlink" href="#non-linear-correlations" title="Permalink to this headline">#</a></h3>
 <p>Look at the following figure, the number above each dataset is their Pearson coefficient:</p>
 <div align="center">
 <p style="text-align:center;"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Correlation_examples2.svg/2880px-Correlation_examples2.svg.png" width="500"/>
@@ -802,16 +800,16 @@ If you are working on Colab, you will need to upload the data.</p>
 <p>There exist <em>many</em> types of correlations coefficients we can compute, some of the like Spearman, can even capture non linear correlations. We won’t go explore them further here, but be aware that they exist if you ever are suspicious your data may be trying to hide non-linear correlations.</p>
 </section>
 <section id="the-relation-between-correlation-coefficients-and-predictive-models">
-<h2><span class="section-number">8.3. </span>The relation between correlation coefficients and predictive models<a class="headerlink" href="#the-relation-between-correlation-coefficients-and-predictive-models" title="Permalink to this headline">#</a></h2>
+<h3><span class="section-number">7.3.3. </span>The relation between correlation coefficients and predictive models<a class="headerlink" href="#the-relation-between-correlation-coefficients-and-predictive-models" title="Permalink to this headline">#</a></h3>
 <p>Machine learning models (as any other model) are typically used to connect one variable to another. What happens if these two variables are not correlated? Well then it’s simply not possible to build a model predicting one variable as a function of the other. If two variables X and Y are independent —ie. not correlated— that means that knowing X does not provide us any information about Y. The opposite is true, if two quantities are correlated, we should —in principle— be able to build a model linking them.</p>
 <p>Now, in most natural phenomena, quantities are high-dimensional and non-linearly correlated so we can’t simply predict if we would be able to build a model based on some correlation coefficient. In these cases, training and evaluating the model is the only way of looking for correlations.</p>
 </section>
 </section>
 <section id="supervised-learning">
-<h1><span class="section-number">9. </span>Supervised Learning<a class="headerlink" href="#supervised-learning" title="Permalink to this headline">#</a></h1>
+<h2><span class="section-number">7.4. </span>Supervised Learning<a class="headerlink" href="#supervised-learning" title="Permalink to this headline">#</a></h2>
 <p>Supervised learning (SL) is the most common type of task in machine learning. It consist in finding a function that maps on space onto another, eg. the size of star to its luminosity. It can sub-divide into two types of task: regression and classification.</p>
 <section id="regression">
-<h2><span class="section-number">9.1. </span>Regression<a class="headerlink" href="#regression" title="Permalink to this headline">#</a></h2>
+<h3><span class="section-number">7.4.1. </span>Regression<a class="headerlink" href="#regression" title="Permalink to this headline">#</a></h3>
 <p>Let’s start by performing a regression (mapping one continual variable onto another one) on fake data so we make sure our set-up allows us to train models properly. We will generate the values from a sine function and train a neural network on them. Read the code line by line and make sure you understand what’s going on.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -845,18 +843,18 @@ If you are working on Colab, you will need to upload the data.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Score on training:  0.9996505150997614
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Score on training:  0.9992036365758806
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1390c1700&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x137126760&gt;
 </pre></div>
 </div>
-<img alt="../../_images/week4b_19_2.png" src="../../_images/week4b_19_2.png" />
+<img alt="../../_images/week4b_18_2.png" src="../../_images/week4b_18_2.png" />
 </div>
 </div>
 <p>It seems to be working, the score should be close to 1.0 —which would be a perfect fit.</p>
 <section id="id1">
-<h3><span class="section-number">9.1.1. </span>Exercise<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<h4><span class="section-number">7.4.1.1. </span>Exercise<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h4>
 <ul class="simple">
 <li><p>Extend the plot of the model we just trained so it predicts values outside of the range of those we used to train it. Does it still perform well on that range?</p></li>
 </ul>
@@ -870,7 +868,7 @@ If you are working on Colab, you will need to upload the data.</p>
 </section>
 </section>
 <section id="real-data">
-<h2><span class="section-number">9.2. </span>Real data<a class="headerlink" href="#real-data" title="Permalink to this headline">#</a></h2>
+<h3><span class="section-number">7.4.2. </span>Real data<a class="headerlink" href="#real-data" title="Permalink to this headline">#</a></h3>
 <p>Moving on onto real data. Both the <em>Luminosity</em> and <em>Absolute Magnitude</em> relate to how bright a star is. Let’s try to figure out what the exact relation between them is. Let’s plot them.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -882,7 +880,7 @@ If you are working on Colab, you will need to upload the data.</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;Luminosity&#39;, ylabel=&#39;A_M&#39;&gt;
 </pre></div>
 </div>
-<img alt="../../_images/week4b_24_1.png" src="../../_images/week4b_24_1.png" />
+<img alt="../../_images/week4b_23_1.png" src="../../_images/week4b_23_1.png" />
 </div>
 </div>
 <p>As you already knew, there is indeed a strong correlation between these two variables. You could even try to guess what the analytical formula is given the shape —or google it— but rather let’s see if we can instead build a model to predict the absolute magnitude for each luminosity. We could try a linear model but the relation is not quite linear, is it? Ie. it’s not a straight line. We could also try to fit a polynomial or a logarithmic function.. Instead we will build a neural network model so we don’t need to make any assumption about the relation between the variables.</p>
@@ -940,8 +938,8 @@ If you are working on Colab, you will need to upload the data.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Score on training set:  0.9081356462058049
-Score on test set:  0.9011815589985711
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Score on training set:  0.9145951642893543
+Score on test set:  0.900049882997516
 </pre></div>
 </div>
 </div>
@@ -957,15 +955,15 @@ Score on test set:  0.9011815589985711
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1391cc760&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x137321820&gt;]
 </pre></div>
 </div>
-<img alt="../../_images/week4b_37_1.png" src="../../_images/week4b_37_1.png" />
+<img alt="../../_images/week4b_36_1.png" src="../../_images/week4b_36_1.png" />
 </div>
 </div>
 <p>Congratulations, you just trained your first neural network on real data! The red line should hopefully fit the dataset points.</p>
 <section id="id2">
-<h3><span class="section-number">9.2.1. </span>Exercise<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
+<h4><span class="section-number">7.4.2.1. </span>Exercise<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h4>
 <ul class="simple">
 <li><p>Train a neural network model to predict the absolute magnitude of the stars based on their temperature and size. Leave out 20% of the data as test set and evaluate the accuracy of the trained model on both the training set and the test set.</p></li>
 <li><p>Change the ratio of training vs test set. How does this affect the accuracy of the model?</p></li>
@@ -980,7 +978,7 @@ Score on test set:  0.9011815589985711
 </section>
 </section>
 <section id="classification">
-<h2><span class="section-number">9.3. </span>Classification<a class="headerlink" href="#classification" title="Permalink to this headline">#</a></h2>
+<h3><span class="section-number">7.4.3. </span>Classification<a class="headerlink" href="#classification" title="Permalink to this headline">#</a></h3>
 <p>Our dataset contains a categorical variable “Spectral Class”. This variable represents the color of the star. Let’s see if we could predict the spectral class of the stars based on the other features of the dataset.</p>
 <p>Let’s visualise how many stars of each type there are in the data. If the amount of stars of one category was very small and another one too big, it would make the training quite difficult since the model would just learn to predict those over-represented in the data:</p>
 <div class="cell docutils container">
@@ -994,7 +992,7 @@ Score on test set:  0.9011815589985711
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:ylabel=&#39;None&#39;&gt;
 </pre></div>
 </div>
-<img alt="../../_images/week4b_42_1.png" src="../../_images/week4b_42_1.png" />
+<img alt="../../_images/week4b_41_1.png" src="../../_images/week4b_41_1.png" />
 </div>
 </div>
 <p>It seems the data is balanced with respect to stars types so we can safely move on.
@@ -1009,10 +1007,10 @@ Let’s now visualise how the different variables relate to each other so we can
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x1392a64f0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x11e9b1a60&gt;
 </pre></div>
 </div>
-<img alt="../../_images/week4b_44_1.png" src="../../_images/week4b_44_1.png" />
+<img alt="../../_images/week4b_43_1.png" src="../../_images/week4b_43_1.png" />
 </div>
 </div>
 <p>We start by selecting the data that we are gonna feed our model —the input— and the data that we want our model to predict —ie. to output—. In our case, we’re gonna try to predict the star type (White Dwarf, Super giants..) based on their temperature and absolute magnitude.</p>
@@ -1104,11 +1102,11 @@ Accuracy on test:  0.8541666666666666
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 864x576 with 0 Axes&gt;
 </pre></div>
 </div>
-<img alt="../../_images/week4b_55_1.png" src="../../_images/week4b_55_1.png" />
+<img alt="../../_images/week4b_54_1.png" src="../../_images/week4b_54_1.png" />
 </div>
 </div>
 <section id="id3">
-<h3><span class="section-number">9.3.1. </span>Exercise<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
+<h4><span class="section-number">7.4.3.1. </span>Exercise<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h4>
 <ul class="simple">
 <li><p>Use the <code class="docutils literal notranslate"><span class="pre">predict()</span></code> method of the model we just trained to predict the category of the stars with the following temperatures and absolute magnitude. Check that the predictions are compatible with those found in the Hertzsprung-Russell Diagram below. # Hint: you’ll need to add extra pair of brackets <code class="docutils literal notranslate"><span class="pre">[[temperature</span> <span class="pre">value,</span> <span class="pre">absolute</span> <span class="pre">magnitude]]</span></code> when calling the predict method of the model.</p></li>
 </ul>
@@ -1153,11 +1151,12 @@ Accuracy on test:  0.8541666666666666
 </section>
 </section>
 <section id="bonus-clustering">
-<h1><span class="section-number">10. </span>Bonus: Clustering<a class="headerlink" href="#bonus-clustering" title="Permalink to this headline">#</a></h1>
+<h2><span class="section-number">7.5. </span>Bonus: Clustering<a class="headerlink" href="#bonus-clustering" title="Permalink to this headline">#</a></h2>
 <p>Cluster analysis or clustering consist in grouping objects such that the distance between similar objects is small while the distance between different objects is big. When objects are represented by high-dimensional data —think for instance of cell types represented by their proteomics or stars represented by their physical properties—, then the task of clustering becomes challenging.</p>
 <p>Humans are great, but they have not evolved to easily understand and visualise high-dimensional data. To compensate this shortcoming, a first step when looking to cluster data is to <em>reduce its dimensionality</em>, meaning that we find some representation of the data in 2 or 3 dimension such that we obtain meaningful clusters.</p>
 <p>The downside of performing dimensionality reduction is that there exist different low-dimensional representations of the same data. Therefore, finding which features of the data are relevant and how to project them to a low dimensional space is critical.</p>
 <p>In the previous notebook, you have already done some manual clustering of some of the stars by simply selecting some range of the features —eg. temperature &gt; 5000, certain luminosity, etc.— In this section we are gonna explore less manual approaches. Scikit-learn provides for <a class="reference external" href="https://scikit-learn.org/stable/modules/clustering.html">a number of clustering algorithms</a>, with <a class="reference external" href="https://scikit-learn.org/stable/modules/clustering.html#k-means">K-Means</a> being the go-to clustering method. K-Means computes clusters based on the similarity of the feature vectors.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1197,7 +1196,7 @@ Accuracy on test:  0.8541666666666666
     <a class='right-next' id="next-link" href="../week5/week5.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">11. </span>Introduction to network science</p>
+        <p class="prev-next-title"><span class="section-number">8. </span>Network science</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
@@ -1211,6 +1210,9 @@ Accuracy on test:  0.8541666666666666
     By Elias Najarro & Rune Berg<br/>
   
       &copy; Copyright 2022.<br/>
+    <div class="extra_footer">
+      <a href="https://berg-lab.net/">berg-lab.net</a> <div id="wh-modal"> <button class="wh-venti-button" aria-label="close modal" id="wh-modal-close">✕</button> <img id="wh-modal-img"> </div>
+    </div>
 </p>
         </footer>
     </div>
