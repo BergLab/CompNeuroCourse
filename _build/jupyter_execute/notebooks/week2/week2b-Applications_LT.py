@@ -151,7 +151,7 @@ s = results[0,:]
 i = results[1,:]
 r = results[2,:]
 
-fig,ax = plt.subplots()
+fig,ax = plt.subplots(figsize=(16, 12))
 
 ## The optional label keyword argument provides text that is used to create a legend
 ax.plot(t,s,'b+',label="Susceptible");
