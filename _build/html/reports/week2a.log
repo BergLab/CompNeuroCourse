@@ -27,7 +27,7 @@ def LIF(v, t, input_current, membrane_capacitance, membrane_resistance):
 
 ------------------
 
-[0;36m  Input [0;32mIn [3][0;36m[0m
+[0;36m  Input [0;32mIn [2][0;36m[0m
 [0;31m    ## Your code here[0m
 [0m                     ^[0m
 [0;31mIndentationError[0m[0;31m:[0m expected an indented block
