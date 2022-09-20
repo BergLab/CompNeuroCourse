@@ -968,7 +968,7 @@ Examples of applications of network science are ecosystems, biological pathways,
 <li><p>Write down the connectivity matrices of the following networks (in paper and as a numpy array):</p></li>
 </ul>
 <div align="center">
-<p style="text-align:center;"><img src="https://github.com/BergLab/CompNeuro22/blob/main/notebooks/week5/graphs.png?raw=true" width="500"/>
+<p style="text-align:center;"><img src="https://github.com/BergLab/CompNeuroBook/blob/main/notebooks/week5/graphs.png?raw=true" width="500"/>
 </div>
 <ul class="simple">
 <li><p>Using the connectivity matrices you just wrote, create a graph with NetworkX for each of them and draw them using <code class="docutils literal notranslate"><span class="pre">draw_networkx()</span></code> function.</p></li>
@@ -1115,7 +1115,7 @@ Average shortest path: 1.4842105263157894
 <h3><span class="section-number">8.4.4. </span>Clustering coefficient<a class="headerlink" href="#clustering-coefficient" title="Permalink to this headline">#</a></h3>
 <p>The clustering coefficient (CC) —or cliquishness— of node represents the fraction of interconnections between neighbors of node i. It’s a measure of how much nodes in the network tend to cluster together. Eg. In a social graph it measures the proportion of your friends that are also friends with each other. The global CC of network is simply the average of the CC of all the nodes.</p>
 <div align="center">
-<p style="text-align:center;"><img src="https://github.com/BergLab/CompNeuro22/blob/main/notebooks/week5/cc.png?raw=true" width="500"/>
+<p style="text-align:center;"><img src="https://github.com/BergLab/CompNeuroBook/blob/main/notebooks/week5/cc.png?raw=true" width="500"/>
 </div>
 <p>A large clustering coefficient (CC) indicates large locality in the sense that neighbors of a given node tend to be directly connected while if a node has low CC it means that its neighbors aren’t connected to each other, eg. high CC is a society where nearly everybody has common friends while low CC: people have friends but these friends don’t tend to know each other.</p>
 </section>
@@ -1138,7 +1138,7 @@ Average shortest path: 1.4842105263157894
 <h3><span class="section-number">8.4.6. </span>Motifs and motifs analysis<a class="headerlink" href="#motifs-and-motifs-analysis" title="Permalink to this headline">#</a></h3>
 <p>Motifs are sub-graphs present in a network that are responsible for the functions of a network. Some motifs —like positive and negative feedback— are found across networks describing many phenomena. However, much more complex motifs exist. When networks are small we can try to understand the motifs present, however, when network are too big to be understood directly, we can do a <strong>motif network analysis</strong>: we create a set of random networks and compare the distribution of motifs present  in the real network vs the random ones.</p>
 <div align="center">
-<p style="text-align:center;"><img src="https://github.com/BergLab/CompNeuro22/blob/main/notebooks/week5/motifs.png?raw=true" width="500"/>
+<p style="text-align:center;"><img src="https://github.com/BergLab/CompNeuroBook/blob/main/notebooks/week5/motifs.png?raw=true" width="500"/>
 </div><p>We can easily compute the clustering coefficient of a graph with NetworkX:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1201,7 +1201,7 @@ Average shortest path: 1.4842105263157894
 <h3><span class="section-number">8.4.7. </span>Scale free networks<a class="headerlink" href="#scale-free-networks" title="Permalink to this headline">#</a></h3>
 <p>Intuitively, a network is said to be scale-free if we zoom it to a subpart of the network it will look the same as if we zoom out. We can formalize this intuition by noting that the degree distribution <span class="math notranslate nohighlight">\(P(k)\)</span> of a scale-free network follows a power law: <span class="math notranslate nohighlight">\(P(k) \propto k^{-\gamma}\)</span>, where typically <span class="math notranslate nohighlight">\(\gamma \in [2,3]\)</span> . That is, we compute the dree of each node, create an histogram and look at the resulting distribution it will be thick-tailed (ie. decays slower than exponential).</p>
 <div align="center">
-<p style="text-align:center;"><img src="https://github.com/BergLab/CompNeuro22/blob/main/notebooks/week5/scale-free.png?raw=true" width="500"/>
+<p style="text-align:center;"><img src="https://github.com/BergLab/CompNeuroBook/blob/main/notebooks/week5/scale-free.png?raw=true" width="500"/>
 </div>
 </section>
 <section id="small-world-networks">

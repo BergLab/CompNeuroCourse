@@ -115,7 +115,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../../intro.html">
-                    Computational Neuroscience
+                    Course overview
                 </a>
             </li>
         </ul>
@@ -822,9 +822,34 @@ title="Print to PDF"
                 
               <div>
                 
-  <p><em>Credit: <a class="reference external" href="https://bvanderlei.github.io/jupyter-guide-to-linear-algebra/">Ben Vanderlei’s Jupyter Guide to Linear Algebra</a> and <a class="reference external" href="http://damir.cavar.me/">Damir Cavar notebooks</a> under CC BY 4.0 with minor adaptations.</em></p>
-<section class="tex2jax_ignore mathjax_ignore" id="linear-algebra-basics">
+  <section class="tex2jax_ignore mathjax_ignore" id="linear-algebra-basics">
 <h1>Linear Algebra basics<a class="headerlink" href="#linear-algebra-basics" title="Permalink to this headline">#</a></h1>
+<p><em>Credit: <a class="reference external" href="https://bvanderlei.github.io/jupyter-guide-to-linear-algebra/">Ben Vanderlei’s Jupyter Guide to Linear Algebra</a> and <a class="reference external" href="http://damir.cavar.me/">Damir Cavar notebooks</a> under CC BY 4.0 with minor adaptations.</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Video 1: Introduction</span>
+<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">widgets</span>
+
+<span class="n">out1</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Output</span><span class="p">()</span>
+<span class="k">with</span> <span class="n">out1</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
+    <span class="n">video</span> <span class="o">=</span> <span class="n">YouTubeVideo</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;fNk_zzaMoSs&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">730</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">410</span><span class="p">,</span> <span class="n">fs</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">rel</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Video available at https://youtube.com/watch?v=&quot;</span> <span class="o">+</span> <span class="n">video</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">video</span><span class="p">)</span>
+
+<span class="n">out</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Tab</span><span class="p">([</span><span class="n">out1</span><span class="p">,</span> <span class="n">out1</span><span class="p">])</span>
+<span class="n">out</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;Youtube&#39;</span><span class="p">)</span>
+<span class="n">out</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;Other player&#39;</span><span class="p">)</span>
+
+<span class="n">display</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "3a8e5d4acc314d2fbdb71364152a2d6a"}
+</script></div>
+</div>
 <section id="concepts-and-notation">
 <h2>Concepts and Notation<a class="headerlink" href="#concepts-and-notation" title="Permalink to this headline">#</a></h2>
 <p>A <strong>scalar</strong> is an element in a vector, containing a real number <strong>value</strong>. In a vector space model or a vector mapping of (symbolic, qualitative, or quantitative) properties the scalar holds the concrete value or property of a variable.</p>
@@ -901,7 +926,7 @@ U_2 = \left[ \begin{array}{r} 2 \\  -1   \end{array}\right]
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/week1b-Linear_Algebra_5_0.png" src="../../_images/week1b-Linear_Algebra_5_0.png" />
+<img alt="../../_images/week1b-Linear_Algebra_6_0.png" src="../../_images/week1b-Linear_Algebra_6_0.png" />
 </div>
 </div>
 <p>It is important to understand that it is the <em>length and direction</em> of this arrow that defines <span class="math notranslate nohighlight">\(U_1\)</span>, not the actual position.  We could draw the arrow in any number of locations, and it would still represent <span class="math notranslate nohighlight">\(U_1\)</span>.</p>
@@ -922,7 +947,7 @@ U_2 = \left[ \begin{array}{r} 2 \\  -1   \end{array}\right]
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/week1b-Linear_Algebra_7_0.png" src="../../_images/week1b-Linear_Algebra_7_0.png" />
+<img alt="../../_images/week1b-Linear_Algebra_8_0.png" src="../../_images/week1b-Linear_Algebra_8_0.png" />
 </div>
 </div>
 <p>When we perform a scalar multiplication, such as <span class="math notranslate nohighlight">\(2U_1\)</span>, we interpret it as multiplying the <em>length of the arrow</em> by the scalar.</p>
@@ -947,7 +972,7 @@ U_2 = \left[ \begin{array}{r} 2 \\  -1   \end{array}\right]
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/week1b-Linear_Algebra_9_0.png" src="../../_images/week1b-Linear_Algebra_9_0.png" />
+<img alt="../../_images/week1b-Linear_Algebra_10_0.png" src="../../_images/week1b-Linear_Algebra_10_0.png" />
 </div>
 </div>
 <p>If the scalar is negative, we interpret the scalar multiplication as <em>reversing the direction</em> of the arrow, as well as changing the length.</p>
@@ -972,7 +997,7 @@ U_2 = \left[ \begin{array}{r} 2 \\  -1   \end{array}\right]
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/week1b-Linear_Algebra_11_0.png" src="../../_images/week1b-Linear_Algebra_11_0.png" />
+<img alt="../../_images/week1b-Linear_Algebra_12_0.png" src="../../_images/week1b-Linear_Algebra_12_0.png" />
 </div>
 </div>
 <p>We can interpret the sum of two vectors as the result of aligning the two arrows tip to tail.</p>
@@ -999,7 +1024,7 @@ U_2 = \left[ \begin{array}{r} 2 \\  -1   \end{array}\right]
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/week1b-Linear_Algebra_13_0.png" src="../../_images/week1b-Linear_Algebra_13_0.png" />
+<img alt="../../_images/week1b-Linear_Algebra_14_0.png" src="../../_images/week1b-Linear_Algebra_14_0.png" />
 </div>
 </div>
 <div class="math notranslate nohighlight">
@@ -1065,7 +1090,7 @@ x_1 - 2x_2 &amp; = &amp; -5 \\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/week1b-Linear_Algebra_19_0.png" src="../../_images/week1b-Linear_Algebra_19_0.png" />
+<img alt="../../_images/week1b-Linear_Algebra_20_0.png" src="../../_images/week1b-Linear_Algebra_20_0.png" />
 </div>
 </div>
 <p>We are looking for a unique solution for the two variables <span class="math notranslate nohighlight">\(x_1\)</span> and <span class="math notranslate nohighlight">\(x_2\)</span>.  The system can be described as <span class="math notranslate nohighlight">\(Ax = b\)</span> with the matrices :</p>
@@ -1118,7 +1143,7 @@ x_1 + 3x_2 &amp; = &amp; 0 \\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/week1b-Linear_Algebra_24_0.png" src="../../_images/week1b-Linear_Algebra_24_0.png" />
+<img alt="../../_images/week1b-Linear_Algebra_25_0.png" src="../../_images/week1b-Linear_Algebra_25_0.png" />
 </div>
 </div>
 </section>
@@ -1153,7 +1178,7 @@ x_1 + 3x_2 &amp; = &amp; 5 \\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/week1b-Linear_Algebra_26_0.png" src="../../_images/week1b-Linear_Algebra_26_0.png" />
+<img alt="../../_images/week1b-Linear_Algebra_27_0.png" src="../../_images/week1b-Linear_Algebra_27_0.png" />
 </div>
 </div>
 <p>These examples illustrate all of the possibile types of solution sets that might arise in a system of two equations with two unknowns.  Either there will be exactly one solution, no solutions, or an infinite collection of solutions.  A fundamental fact about linear systems is that their solution sets are <em>always</em> one of these three cases.</p>
@@ -1243,7 +1268,7 @@ I
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [11],</span> in <span class="ni">&lt;cell line: 3&gt;</span><span class="nt">()</span>
+<span class="nn">Input In [12],</span> in <span class="ni">&lt;cell line: 3&gt;</span><span class="nt">()</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">linalg</span>
 <span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">C_inverse</span> <span class="o">=</span> <span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">C</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="nb">print</span><span class="p">(</span><span class="n">C_inverse</span><span class="p">)</span>
