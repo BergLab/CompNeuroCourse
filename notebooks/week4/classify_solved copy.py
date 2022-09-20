@@ -9,7 +9,7 @@ from matplotlib import cm
 import plotly.express as px
 
 #%%
-# data = np.loadtxt('/Users/enaj/SUND/CompNeuro course/CompNeuro22/notebooks/week4/Stars.csv', skiprows=1)
+# data = np.loadtxt('/Users/enaj/SUND/CompNeuro course/CompNeuroBook/notebooks/week4/Stars.csv', skiprows=1)
 df = pd.read_csv('Stars.csv')
 df.head()
 

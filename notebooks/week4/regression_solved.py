@@ -8,7 +8,7 @@ from sklearn.neural_network import MLPClassifier, MLPRegressor
 import pandas as pd
 
 #%%
-# data = np.loadtxt('/Users/enaj/SUND/CompNeuro course/CompNeuro22/notebooks/week4/Stars.csv', skiprows=1)
+# data = np.loadtxt('/Users/enaj/SUND/CompNeuro course/CompNeuroBook/notebooks/week4/Stars.csv', skiprows=1)
 df = pd.read_csv('Stars.csv')
 df.head()
 #%%

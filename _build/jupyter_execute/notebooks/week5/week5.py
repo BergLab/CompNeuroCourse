@@ -217,7 +217,7 @@ plt.show()
 #   - Write down the connectivity matrices of the following networks (in paper and as a numpy array):
 # 
 # <div align="center">
-# <p style="text-align:center;"><img src="https://github.com/BergLab/CompNeuro22/blob/main/notebooks/week5/graphs.png?raw=true" width="500"/>
+# <p style="text-align:center;"><img src="https://github.com/BergLab/CompNeuroBook/blob/main/notebooks/week5/graphs.png?raw=true" width="500"/>
 # </div>
 # 
 #   - Using the connectivity matrices you just wrote, create a graph with NetworkX for each of them and draw them using `draw_networkx()` function.
@@ -329,7 +329,7 @@ print(f'Average shortest path: {nx.average_shortest_path_length(G)}')
 # 
 # 
 # <div align="center">
-# <p style="text-align:center;"><img src="https://github.com/BergLab/CompNeuro22/blob/main/notebooks/week5/cc.png?raw=true" width="500"/>
+# <p style="text-align:center;"><img src="https://github.com/BergLab/CompNeuroBook/blob/main/notebooks/week5/cc.png?raw=true" width="500"/>
 # </div>
 # 
 # A large clustering coefficient (CC) indicates large locality in the sense that neighbors of a given node tend to be directly connected while if a node has low CC it means that its neighbors aren't connected to each other, eg. high CC is a society where nearly everybody has common friends while low CC: people have friends but these friends don't tend to know each other. 
@@ -360,7 +360,7 @@ print(f'Average shortest path: {nx.average_shortest_path_length(G)}')
 # 
 # 
 # <div align="center">
-# <p style="text-align:center;"><img src="https://github.com/BergLab/CompNeuro22/blob/main/notebooks/week5/motifs.png?raw=true" width="500"/>
+# <p style="text-align:center;"><img src="https://github.com/BergLab/CompNeuroBook/blob/main/notebooks/week5/motifs.png?raw=true" width="500"/>
 # </div>
 
 # We can easily compute the clustering coefficient of a graph with NetworkX:
@@ -395,7 +395,7 @@ print(f'The global CC of the network is {global_CC}')
 # Intuitively, a network is said to be scale-free if we zoom it to a subpart of the network it will look the same as if we zoom out. We can formalize this intuition by noting that the degree distribution $P(k)$ of a scale-free network follows a power law: $P(k) \propto k^{-\gamma}$, where typically $\gamma \in [2,3]$ . That is, we compute the dree of each node, create an histogram and look at the resulting distribution it will be thick-tailed (ie. decays slower than exponential). 
 # 
 # <div align="center">
-# <p style="text-align:center;"><img src="https://github.com/BergLab/CompNeuro22/blob/main/notebooks/week5/scale-free.png?raw=true" width="500"/>
+# <p style="text-align:center;"><img src="https://github.com/BergLab/CompNeuroBook/blob/main/notebooks/week5/scale-free.png?raw=true" width="500"/>
 # </div>
 # 
 # 

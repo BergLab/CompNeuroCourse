@@ -13,7 +13,7 @@ from sklearn.decomposition import PCA
 from sklearn.preprocessing import StandardScaler
 from mpl_toolkits.mplot3d import Axes3D
 #%%
-df = pd.read_csv('/Users/enaj/SUND/CompNeuro course/CompNeuro22/notebooks/week4/Stars.csv')
+df = pd.read_csv('/Users/enaj/SUND/CompNeuro course/CompNeuroBook/notebooks/week4/Stars.csv')
 df.head()
 
 target_feature = 'A_M'

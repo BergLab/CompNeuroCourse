@@ -12,7 +12,7 @@ from mpl_toolkits.mplot3d import Axes3D
 # 2D PCA #######
 ################
 
-df = pd.read_csv('/Users/enaj/SUND/CompNeuro course/CompNeuro22/notebooks/week4/Stars.csv')
+df = pd.read_csv('/Users/enaj/SUND/CompNeuro course/CompNeuroBook/notebooks/week4/Stars.csv')
 df.head()
 
 feature_cols = ['Temperature', 'Size', 'A_M']
@@ -58,7 +58,7 @@ plt.ylabel('Second Principal Component')
 ################
 
     
-df = pd.read_csv('/Users/enaj/SUND/CompNeuro course/CompNeuro22/notebooks/week4/Stars.csv')
+df = pd.read_csv('/Users/enaj/SUND/CompNeuro course/CompNeuroBook/notebooks/week4/Stars.csv')
 df.head()
 
 feature_cols = ['Temperature', 'Size', 'A_M']

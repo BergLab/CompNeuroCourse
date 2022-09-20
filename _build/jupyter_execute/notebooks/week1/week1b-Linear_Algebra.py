@@ -1,9 +1,29 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+# # Linear Algebra basics
+
 # *Credit: [Ben Vanderlei's Jupyter Guide to Linear Algebra](https://bvanderlei.github.io/jupyter-guide-to-linear-algebra/) and [Damir Cavar notebooks](http://damir.cavar.me/) under CC BY 4.0 with minor adaptations.*
 
-# # Linear Algebra basics
+# In[1]:
+
+
+# @title Video 1: Introduction
+from ipywidgets import widgets
+
+out1 = widgets.Output()
+with out1:
+    from IPython.display import YouTubeVideo
+    video = YouTubeVideo(id=f"fNk_zzaMoSs", width=730, height=410, fs=1, rel=0)
+    print("Video available at https://youtube.com/watch?v=" + video.id)
+    display(video)
+
+out = widgets.Tab([out1, out1])
+out.set_title(0, 'Youtube')
+out.set_title(1, 'Other player')
+
+display(out)
+
 
 # ## Concepts and Notation
 
@@ -81,7 +101,7 @@
 # 
 # The vector $U_1$ can be visualized as an arrow that points in the direction defined by 1 unit to the right, and 3 units up.
 
-# In[1]:
+# In[2]:
 
 
 get_ipython().run_line_magic('matplotlib', 'inline')
@@ -103,7 +123,7 @@ ax.grid(True,ls=':')
 
 # It is important to understand that it is the *length and direction* of this arrow that defines $U_1$, not the actual position.  We could draw the arrow in any number of locations, and it would still represent $U_1$.
 
-# In[2]:
+# In[3]:
 
 
 fig, ax = plt.subplots()
@@ -121,7 +141,7 @@ ax.grid(True,ls=':')
 
 # When we perform a scalar multiplication, such as $2U_1$, we interpret it as multiplying the *length of the arrow* by the scalar.
 
-# In[3]:
+# In[4]:
 
 
 fig, ax = plt.subplots()
@@ -143,7 +163,7 @@ ax.set_yticks(np.arange(0,7,step = 1));
 
 # If the scalar is negative, we interpret the scalar multiplication as *reversing the direction* of the arrow, as well as changing the length.
 
-# In[4]:
+# In[5]:
 
 
 fig, ax = plt.subplots()
@@ -165,7 +185,7 @@ ax.set_yticks(np.arange(0,7,step = 1));
 
 # We can interpret the sum of two vectors as the result of aligning the two arrows tip to tail.
 
-# In[5]:
+# In[6]:
 
 
 fig, ax = plt.subplots()
@@ -228,7 +248,7 @@ ax.set_yticks(np.arange(0,5,step = 1));
 # The solution set for each equation can be represented by a line, and the solution set for the linear system is represented by all points that lie on both lines.  In this case the lines intersect at a single point and there is only one pair of values that satisfy both equations, $x_1 = -1$, $x_2 = 2$.
 # 
 
-# In[6]:
+# In[7]:
 
 
 get_ipython().run_line_magic('matplotlib', 'inline')
@@ -266,7 +286,7 @@ ax.grid(True,ls=':')
 # 
 # -Are the solution to the above system of equations scalars or vectors?
 
-# In[7]:
+# In[8]:
 
 
 ## Dicuss the question with your group mates. Ask us in case of doubts :)
@@ -283,7 +303,7 @@ ax.grid(True,ls=':')
 # 
 # In this example the solution sets of the individual equations represent lines that are parallel.  There is no pair of values that satisfy both equations simultaneously. 
 
-# In[8]:
+# In[9]:
 
 
 fig, ax = plt.subplots()
@@ -315,7 +335,7 @@ ax.grid(True,ls=':')
 # 
 # In the final example, the second equation is a multiple of the first equation.  The solution set for both equations is represented by the same line and thus every point on the line is a solution to the linear system.
 
-# In[9]:
+# In[10]:
 
 
 fig, ax = plt.subplots()
@@ -405,7 +425,7 @@ ax.grid(True,ls=':')
 # 
 # - Write down the matrix $C$ using a numpy array
 
-# In[10]:
+# In[11]:
 
 
 ## Code solution here
@@ -416,7 +436,7 @@ ax.grid(True,ls=':')
 # 
 # The $\texttt{inv}$ function is used to compute inverse matrices in the SciPy $\texttt{linalg}$ module.  Once the module is imported, the usage of $\texttt{inv}$ is exactly the same as the function we just created.
 
-# In[11]:
+# In[12]:
 
 
 from scipy import linalg
