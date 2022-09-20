@@ -1,5 +1,5 @@
 <!-- https://jupyterbook.org -->
-# Computational Neuroscience
+# Course overview
 
 *Please, read carefully all the information here before the course starts*
 
