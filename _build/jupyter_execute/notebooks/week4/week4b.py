@@ -1,7 +1,31 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Introduction to Machine learning with scikit-learn
+# # Machine Learning 
+
+# 
+
+# ## Machine learning models
+# 
+# ### Decision trees
+# 
+# 
+# ### Neural networks
+# 
+# #### MLP
+# 
+# #### Convolutional neural networks 
+# Convolutional neural networks (CNN), the deep neural network class, that is most commonly applied to image analysis and computer vision applications.
+# 
+# You've heard it before: images are made of pixels, so the CNN leverages the *convolution operation* to calculate latent (hidden) features for different pixels based on their surrounding pixel values. It does this by sliding a kernel (a.k.a. filter) over the input image and calculating the dot product between that small filter and the overlapping image area. This dot product leads to aggregate the neighboring pixel values to one representative scaler. Now let us twist our conceptualization of images a little bit and think of images as a graphs. 
+# 
+# + add link to visualsation of conv opeartion
+# 
+# #### RNN
+# 
+# 
+
+# ## Introduction to Machine learning with scikit-learn
 # 
 # [Scikit-learn](https://scikit-learn.org/stable/tutorial/index.html) is a python library that allows to build many machine learning models with an simple interface. On the other hand, other ML libraries like Pytorch or Tensorflow are focused on machine with neural networks only. 
 # 
@@ -27,8 +51,6 @@
 # 
 # - Spectral_Class -- O,B,A,F,G,K,M / SMASS - [Stellar classification](https://en.wikipedia.org/wiki/Stellar_classification)
 # 
-
-# ### Loading libraries and data
 
 # In[1]:
 

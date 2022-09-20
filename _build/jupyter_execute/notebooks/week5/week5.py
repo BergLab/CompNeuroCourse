@@ -63,6 +63,31 @@
 # 
 # If the network is non-directed the adjacency matrix will be symmetrical.
 # 
+# 
+# ### Graphs with features
+# Nodes may contain features, such as activations:
+# 
+# <div align="center">
+# <p style="text-align:center;"><img src="https://github.com/BergLab/CompNeuroBook/blob/main/notebooks/week5/graphfeatures.png?raw=true" width="500"/>
+# </div>
+# 
+# In this case, we can represent the structure of the graph with the weight / adjacency $W$ matrix and the features of the nodes with a vector $F$. The product $W F$ represents a new feature vector representing the propagation of the features values across the network, i.e. the feature value of a node will be the sum of the features of its connected nodes weighted by the respective edge values.
+# 
+# #### Features normalisation
+# 
+# A common practice prevent the explossion of the features of a graph is to normalise by using the **degree matrix** $D$: diagonal matrix that contains information about the number of edges attached to each vertex. So we get: $F_{normalised} = D^{-1} W F$  
+# 
+# #### Feature activation
+# 
+# Like in machine learning neural networks, we can apply a non-linearity $\sigma$ to the output of the feature propagation:
+# 
+# $F^{'} = \sigma(D^{-1} W F )$  
+# 
+# #### Extra Linear transformations
+# 
+# Extra linear transformations —equivalent to linear layers in ANN— can be addded by simply adding an extra learnable matrix $L$. Remeber linar applications are not commutative.
+# 
+# $F^{'} = \sigma(L W D^{-1} F )$  
 
 # ## Using NetworkX
 # 

@@ -58,7 +58,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="prev" title="7. Introduction to Machine learning with scikit-learn" href="../week4/week4b.html" />
+    <link rel="prev" title="7. Machine Learning" href="../week4/week4b.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -114,7 +114,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../../intro.html">
-                    Computational Neuroscience
+                    Course overview
                 </a>
             </li>
         </ul>
@@ -192,7 +192,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../week4/week4b.html">
-   7. Introduction to Machine learning with scikit-learn
+   7. Machine Learning
   </a>
  </li>
 </ul>
@@ -460,6 +460,28 @@ title="Print to PDF"
      8.2.4. Directed vs undirected network
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#graphs-with-features">
+     8.2.5. Graphs with features
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#features-normalisation">
+       8.2.5.1. Features normalisation
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#feature-activation">
+       8.2.5.2. Feature activation
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#extra-linear-transformations">
+       8.2.5.3. Extra Linear transformations
+      </a>
+     </li>
+    </ul>
+   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -610,6 +632,28 @@ title="Print to PDF"
     <a class="reference internal nav-link" href="#directed-vs-undirected-network">
      8.2.4. Directed vs undirected network
     </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#graphs-with-features">
+     8.2.5. Graphs with features
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#features-normalisation">
+       8.2.5.1. Features normalisation
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#feature-activation">
+       8.2.5.2. Feature activation
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#extra-linear-transformations">
+       8.2.5.3. Extra Linear transformations
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -773,6 +817,28 @@ Examples of applications of network science are ecosystems, biological pathways,
 </div>
 <p>If the network is non-directed the adjacency matrix will be symmetrical.</p>
 </section>
+<section id="graphs-with-features">
+<h3><span class="section-number">8.2.5. </span>Graphs with features<a class="headerlink" href="#graphs-with-features" title="Permalink to this headline">#</a></h3>
+<p>Nodes may contain features, such as activations:</p>
+<div align="center">
+<p style="text-align:center;"><img src="https://github.com/BergLab/CompNeuroBook/blob/main/notebooks/week5/graphfeatures.png?raw=true" width="500"/>
+</div>
+<p>In this case, we can represent the structure of the graph with the weight / adjacency <span class="math notranslate nohighlight">\(W\)</span> matrix and the features of the nodes with a vector <span class="math notranslate nohighlight">\(F\)</span>. The product <span class="math notranslate nohighlight">\(W F\)</span> represents a new feature vector representing the propagation of the features values across the network, i.e. the feature value of a node will be the sum of the features of its connected nodes weighted by the respective edge values.</p>
+<section id="features-normalisation">
+<h4><span class="section-number">8.2.5.1. </span>Features normalisation<a class="headerlink" href="#features-normalisation" title="Permalink to this headline">#</a></h4>
+<p>A common practice prevent the explossion of the features of a graph is to normalise by using the <strong>degree matrix</strong> <span class="math notranslate nohighlight">\(D\)</span>: diagonal matrix that contains information about the number of edges attached to each vertex. So we get: <span class="math notranslate nohighlight">\(F_{normalised} = D^{-1} W F\)</span></p>
+</section>
+<section id="feature-activation">
+<h4><span class="section-number">8.2.5.2. </span>Feature activation<a class="headerlink" href="#feature-activation" title="Permalink to this headline">#</a></h4>
+<p>Like in machine learning neural networks, we can apply a non-linearity <span class="math notranslate nohighlight">\(\sigma\)</span> to the output of the feature propagation:</p>
+<p><span class="math notranslate nohighlight">\(F^{'} = \sigma(D^{-1} W F )\)</span></p>
+</section>
+<section id="extra-linear-transformations">
+<h4><span class="section-number">8.2.5.3. </span>Extra Linear transformations<a class="headerlink" href="#extra-linear-transformations" title="Permalink to this headline">#</a></h4>
+<p>Extra linear transformations —equivalent to linear layers in ANN— can be addded by simply adding an extra learnable matrix <span class="math notranslate nohighlight">\(L\)</span>. Remeber linar applications are not commutative.</p>
+<p><span class="math notranslate nohighlight">\(F^{'} = \sigma(L W D^{-1} F )\)</span></p>
+</section>
+</section>
 </section>
 <section id="using-networkx">
 <h2><span class="section-number">8.3. </span>Using NetworkX<a class="headerlink" href="#using-networkx" title="Permalink to this headline">#</a></h2>
@@ -861,16 +927,16 @@ Examples of applications of network science are ecosystems, biological pathways,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1. 1. 0. 1. 0. 0. 0. 0. 0. 0.]
- [1. 0. 0. 0. 0. 0. 0. 0. 1. 0.]
- [0. 0. 1. 1. 0. 0. 0. 0. 0. 0.]
- [1. 0. 1. 0. 0. 1. 1. 0. 0. 0.]
- [0. 0. 0. 0. 0. 1. 0. 0. 0. 0.]
- [0. 0. 0. 1. 1. 0. 1. 1. 1. 0.]
- [0. 0. 0. 1. 0. 1. 0. 1. 1. 1.]
- [0. 0. 0. 0. 0. 1. 1. 0. 0. 0.]
- [0. 1. 0. 0. 0. 1. 1. 0. 0. 0.]
- [0. 0. 0. 0. 0. 0. 1. 0. 0. 0.]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0. 1. 0. 0. 0. 0. 1. 0. 0. 0.]
+ [1. 0. 1. 0. 0. 0. 0. 0. 0. 0.]
+ [0. 1. 0. 1. 0. 1. 1. 1. 0. 0.]
+ [0. 0. 1. 0. 0. 1. 1. 0. 1. 0.]
+ [0. 0. 0. 0. 0. 1. 0. 1. 0. 0.]
+ [0. 0. 1. 1. 1. 0. 0. 0. 0. 1.]
+ [1. 0. 1. 1. 0. 0. 0. 0. 0. 1.]
+ [0. 0. 1. 0. 1. 0. 0. 0. 0. 1.]
+ [0. 0. 0. 1. 0. 0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 0. 1. 1. 1. 0. 0.]]
 </pre></div>
 </div>
 </div>
@@ -898,13 +964,13 @@ Examples of applications of network science are ecosystems, biological pathways,
 <img alt="../../_images/week5_11_0.png" src="../../_images/week5_11_0.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Adjacency matrix:
 
-[[1 0 0 0 1 1 1]
- [1 1 0 0 0 1 1]
- [0 1 0 1 0 0 0]
- [1 1 0 1 0 0 0]
- [1 0 1 1 0 1 0]
- [0 1 0 1 0 0 0]
- [0 1 1 0 1 0 1]]
+[[0 1 0 1 1 1 0]
+ [1 0 1 1 1 0 0]
+ [1 1 0 1 0 1 1]
+ [1 0 1 1 1 0 0]
+ [0 0 1 0 0 0 0]
+ [0 0 1 1 1 0 0]
+ [0 0 1 1 1 0 1]]
 </pre></div>
 </div>
 </div>
@@ -929,7 +995,7 @@ Examples of applications of network science are ecosystems, biological pathways,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Graph with 10 nodes and 18 edges
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Graph with 10 nodes and 19 edges
 </pre></div>
 </div>
 </div>
@@ -1017,27 +1083,27 @@ Another quantification of a node centrality is <em>betweenness</em>. <strong>Bet
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(0, 11), (1, 9), (2, 13), (3, 9), (4, 10), (5, 12), (6, 11), (7, 11), (8, 8), (9, 11), (10, 10), (11, 11), (12, 10), (13, 11), (14, 6), (15, 8), (16, 13), (17, 6), (18, 11), (19, 5)]
-Node 0 has degree 11
-Node 1 has degree 9
-Node 2 has degree 13
-Node 3 has degree 9
-Node 4 has degree 10
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(0, 10), (1, 7), (2, 10), (3, 10), (4, 8), (5, 12), (6, 9), (7, 7), (8, 9), (9, 10), (10, 7), (11, 11), (12, 11), (13, 9), (14, 10), (15, 8), (16, 10), (17, 12), (18, 12), (19, 10)]
+Node 0 has degree 10
+Node 1 has degree 7
+Node 2 has degree 10
+Node 3 has degree 10
+Node 4 has degree 8
 Node 5 has degree 12
-Node 6 has degree 11
-Node 7 has degree 11
-Node 8 has degree 8
-Node 9 has degree 11
-Node 10 has degree 10
+Node 6 has degree 9
+Node 7 has degree 7
+Node 8 has degree 9
+Node 9 has degree 10
+Node 10 has degree 7
 Node 11 has degree 11
-Node 12 has degree 10
-Node 13 has degree 11
-Node 14 has degree 6
+Node 12 has degree 11
+Node 13 has degree 9
+Node 14 has degree 10
 Node 15 has degree 8
-Node 16 has degree 13
-Node 17 has degree 6
-Node 18 has degree 11
-Node 19 has degree 5
+Node 16 has degree 10
+Node 17 has degree 12
+Node 18 has degree 12
+Node 19 has degree 10
 </pre></div>
 </div>
 </div>
@@ -1093,11 +1159,11 @@ Node 19 has degree 5
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Graph with 20 nodes and 98 edges
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Graph with 20 nodes and 96 edges
 Number of nodes: 20
-Number of edges: 98
+Number of edges: 96
 Network diameter: 2
-Average shortest path: 1.4842105263157894
+Average shortest path: 1.4947368421052631
 </pre></div>
 </div>
 </div>
@@ -1152,26 +1218,26 @@ Average shortest path: 1.4842105263157894
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{0: 0.45454545454545453,
- 1: 0.4,
- 2: 0.5,
- 3: 0.3888888888888889,
- 4: 0.509090909090909,
- 5: 0.5714285714285714,
- 6: 0.5,
- 7: 0.48484848484848486,
- 8: 0.5714285714285714,
- 9: 0.5,
- 10: 0.42857142857142855,
- 11: 0.4666666666666667,
- 12: 0.46153846153846156,
- 13: 0.5,
- 14: 0.42857142857142855,
- 15: 0.4642857142857143,
- 16: 0.5333333333333333,
- 17: 0.5238095238095238,
- 18: 0.4727272727272727,
- 19: 0.4727272727272727}
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{0: 0.42857142857142855,
+ 1: 0.47435897435897434,
+ 2: 0.39285714285714285,
+ 3: 0.48484848484848486,
+ 4: 0.4,
+ 5: 0.5111111111111111,
+ 6: 0.5714285714285714,
+ 7: 0.35555555555555557,
+ 8: 0.5238095238095238,
+ 9: 0.5714285714285714,
+ 10: 0.4666666666666667,
+ 11: 0.4444444444444444,
+ 12: 0.47619047619047616,
+ 13: 0.5277777777777778,
+ 14: 0.4393939393939394,
+ 15: 0.5714285714285714,
+ 16: 0.4642857142857143,
+ 17: 0.6071428571428571,
+ 18: 0.5,
+ 19: 0.43636363636363634}
 </pre></div>
 </div>
 </div>
@@ -1185,7 +1251,7 @@ Average shortest path: 1.4842105263157894
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The global CC of the network is 0.48162309912309914
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The global CC of the network is 0.48238317238317235
 </pre></div>
 </div>
 </div>
@@ -1282,28 +1348,29 @@ Average shortest path: 1.4842105263157894
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="nn">Input In [17],</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">omega</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">omega</span><span class="p">(</span><span class="n">smallWorldNet</span><span class="p">)</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">sigma</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">sigma</span><span class="p">(</span><span class="n">smallWorldNet</span><span class="p">)</span>
+<span class="nn">Input In [17],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">omega</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">omega</span><span class="p">(</span><span class="n">smallWorldNet</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">sigma</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">sigma</span><span class="p">(</span><span class="n">smallWorldNet</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Omega: </span><span class="si">{</span><span class="n">omega</span><span class="si">}</span><span class="s1">, Sigma: </span><span class="si">{</span><span class="n">sigma</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 
 <span class="nn">File ~/.virtualenvs/p39/lib/python3.9/site-packages/networkx/utils/decorators.py:845,</span> in <span class="ni">argmap.__call__.&lt;locals&gt;.func</span><span class="nt">(_argmap__wrapper, *args, **kwargs)</span>
 <span class="g g-Whitespace">    </span><span class="mi">844</span> <span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">__wrapper</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="ne">--&gt; </span><span class="mi">845</span>     <span class="k">return</span> <span class="n">argmap</span><span class="o">.</span><span class="n">_lazy_compile</span><span class="p">(</span><span class="n">__wrapper</span><span class="p">)(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
-<span class="nn">File &lt;class &#39;networkx.utils.decorators.argmap&#39;&gt; compilation 60:6,</span> in <span class="ni">argmap_sigma_55</span><span class="nt">(G, niter, nrand, seed)</span>
+<span class="nn">File &lt;class &#39;networkx.utils.decorators.argmap&#39;&gt; compilation 38:6,</span> in <span class="ni">argmap_omega_33</span><span class="nt">(G, niter, nrand, seed)</span>
 <span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">inspect</span>
 <span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">import</span> <span class="nn">itertools</span>
 <span class="ne">----&gt; </span><span class="mi">6</span> <span class="kn">import</span> <span class="nn">re</span>
 <span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
 <span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="kn">from</span> <span class="nn">contextlib</span> <span class="kn">import</span> <span class="n">contextmanager</span>
 
-<span class="nn">File ~/.virtualenvs/p39/lib/python3.9/site-packages/networkx/algorithms/smallworld.py:283,</span> in <span class="ni">sigma</span><span class="nt">(G, niter, nrand, seed)</span>
-<span class="g g-Whitespace">    </span><span class="mi">281</span> <span class="n">randMetrics</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;C&quot;</span><span class="p">:</span> <span class="p">[],</span> <span class="s2">&quot;L&quot;</span><span class="p">:</span> <span class="p">[]}</span>
-<span class="g g-Whitespace">    </span><span class="mi">282</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nrand</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">283</span>     <span class="n">Gr</span> <span class="o">=</span> <span class="n">random_reference</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">niter</span><span class="o">=</span><span class="n">niter</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="n">seed</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">284</span>     <span class="n">randMetrics</span><span class="p">[</span><span class="s2">&quot;C&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">nx</span><span class="o">.</span><span class="n">transitivity</span><span class="p">(</span><span class="n">Gr</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">285</span>     <span class="n">randMetrics</span><span class="p">[</span><span class="s2">&quot;L&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">nx</span><span class="o">.</span><span class="n">average_shortest_path_length</span><span class="p">(</span><span class="n">Gr</span><span class="p">))</span>
+<span class="nn">File ~/.virtualenvs/p39/lib/python3.9/site-packages/networkx/algorithms/smallworld.py:367,</span> in <span class="ni">omega</span><span class="nt">(G, niter, nrand, seed)</span>
+<span class="g g-Whitespace">    </span><span class="mi">363</span> <span class="n">niter_random_reference</span> <span class="o">=</span> <span class="n">niter</span> <span class="o">*</span> <span class="mi">2</span>
+<span class="g g-Whitespace">    </span><span class="mi">365</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nrand</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">366</span>     <span class="c1"># Generate random graph</span>
+<span class="ne">--&gt; </span><span class="mi">367</span>     <span class="n">Gr</span> <span class="o">=</span> <span class="n">random_reference</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">niter</span><span class="o">=</span><span class="n">niter_random_reference</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="n">seed</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">368</span>     <span class="n">randMetrics</span><span class="p">[</span><span class="s2">&quot;L&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">nx</span><span class="o">.</span><span class="n">average_shortest_path_length</span><span class="p">(</span><span class="n">Gr</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">370</span>     <span class="c1"># Generate lattice graph</span>
 
 <span class="nn">File &lt;class &#39;networkx.utils.decorators.argmap&#39;&gt; compilation 44:6,</span> in <span class="ni">argmap_random_reference_39</span><span class="nt">(G, niter, connectivity, seed)</span>
 <span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">inspect</span>
@@ -1320,10 +1387,25 @@ Average shortest path: 1.4842105263157894
 <span class="g g-Whitespace">    </span><span class="mi">102</span>     <span class="n">G</span><span class="o">.</span><span class="n">remove_edge</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">103</span>     <span class="n">G</span><span class="o">.</span><span class="n">remove_edge</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
 
-<span class="nn">File ~/.virtualenvs/p39/lib/python3.9/site-packages/networkx/algorithms/connectivity/connectivity.py:649,</span> in <span class="ni">local_edge_connectivity</span><span class="nt">(G, s, t, flow_func, auxiliary, residual, cutoff)</span>
-<span class="g g-Whitespace">    </span><span class="mi">646</span> <span class="k">elif</span> <span class="n">flow_func</span> <span class="ow">is</span> <span class="n">boykov_kolmogorov</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">647</span>     <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;cutoff&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">cutoff</span>
-<span class="ne">--&gt; </span><span class="mi">649</span> <span class="k">return</span> <span class="n">nx</span><span class="o">.</span><span class="n">maximum_flow_value</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="nn">File ~/.virtualenvs/p39/lib/python3.9/site-packages/networkx/algorithms/connectivity/connectivity.py:634,</span> in <span class="ni">local_edge_connectivity</span><span class="nt">(G, s, t, flow_func, auxiliary, residual, cutoff)</span>
+<span class="g g-Whitespace">    </span><span class="mi">631</span>     <span class="n">flow_func</span> <span class="o">=</span> <span class="n">default_flow_func</span>
+<span class="g g-Whitespace">    </span><span class="mi">633</span> <span class="k">if</span> <span class="n">auxiliary</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">634</span>     <span class="n">H</span> <span class="o">=</span> <span class="n">build_auxiliary_edge_connectivity</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">635</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">636</span>     <span class="n">H</span> <span class="o">=</span> <span class="n">auxiliary</span>
+
+<span class="nn">File ~/.virtualenvs/p39/lib/python3.9/site-packages/networkx/algorithms/connectivity/utils.py:84,</span> in <span class="ni">build_auxiliary_edge_connectivity</span><span class="nt">(G)</span>
+<span class="g g-Whitespace">     </span><span class="mi">82</span> <span class="n">H</span><span class="o">.</span><span class="n">add_nodes_from</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">())</span>
+<span class="g g-Whitespace">     </span><span class="mi">83</span> <span class="k">for</span> <span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">():</span>
+<span class="ne">---&gt; </span><span class="mi">84</span>     <span class="n">H</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">([(</span><span class="n">source</span><span class="p">,</span> <span class="n">target</span><span class="p">),</span> <span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="n">source</span><span class="p">)],</span> <span class="n">capacity</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">85</span> <span class="k">return</span> <span class="n">H</span>
+
+<span class="nn">File ~/.virtualenvs/p39/lib/python3.9/site-packages/networkx/classes/digraph.py:686,</span> in <span class="ni">DiGraph.add_edges_from</span><span class="nt">(self, ebunch_to_add, **attr)</span>
+<span class="g g-Whitespace">    </span><span class="mi">684</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">ebunch_to_add</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">685</span>     <span class="n">ne</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">686</span>     <span class="k">if</span> <span class="n">ne</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">687</span>         <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">dd</span> <span class="o">=</span> <span class="n">e</span>
+<span class="g g-Whitespace">    </span><span class="mi">688</span>     <span class="k">elif</span> <span class="n">ne</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
@@ -1420,7 +1502,7 @@ Average shortest path: 1.4842105263157894
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">7. </span>Introduction to Machine learning with scikit-learn</p>
+            <p class="prev-next-title"><span class="section-number">7. </span>Machine Learning</p>
         </div>
     </a>
 </div>
