@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>7. Introduction to Machine learning with scikit-learn &#8212; Computational Neuroscience</title>
+    <title>7. Machine Learning &#8212; Computational Neuroscience</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -115,7 +115,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../../intro.html">
-                    Computational Neuroscience
+                    Course overview
                 </a>
             </li>
         </ul>
@@ -193,7 +193,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   7. Introduction to Machine learning with scikit-learn
+   7. Machine Learning
   </a>
  </li>
 </ul>
@@ -432,14 +432,50 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#data-description">
-   7.1. Data description
+  <a class="reference internal nav-link" href="#machine-learning-models">
+   7.1. Machine learning models
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#decision-trees">
+     7.1.1. Decision trees
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#neural-networks">
+     7.1.2. Neural networks
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#mlp">
+       7.1.2.1. MLP
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#convolutional-neural-networks">
+       7.1.2.2. Convolutional neural networks
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#rnn">
+       7.1.2.3. RNN
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#loading-libraries-and-data">
-   7.2. Loading libraries and data
+  <a class="reference internal nav-link" href="#introduction-to-machine-learning-with-scikit-learn">
+   7.2. Introduction to Machine learning with scikit-learn
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-description">
+     7.2.1. Data description
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#computing-correlations">
@@ -520,7 +556,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Introduction to Machine learning with scikit-learn</h1>
+                <h1>Machine Learning</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -531,14 +567,50 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#data-description">
-   7.1. Data description
+  <a class="reference internal nav-link" href="#machine-learning-models">
+   7.1. Machine learning models
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#decision-trees">
+     7.1.1. Decision trees
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#neural-networks">
+     7.1.2. Neural networks
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#mlp">
+       7.1.2.1. MLP
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#convolutional-neural-networks">
+       7.1.2.2. Convolutional neural networks
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#rnn">
+       7.1.2.3. RNN
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#loading-libraries-and-data">
-   7.2. Loading libraries and data
+  <a class="reference internal nav-link" href="#introduction-to-machine-learning-with-scikit-learn">
+   7.2. Introduction to Machine learning with scikit-learn
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-description">
+     7.2.1. Data description
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#computing-correlations">
@@ -620,12 +692,37 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-machine-learning-with-scikit-learn">
-<h1><span class="section-number">7. </span>Introduction to Machine learning with scikit-learn<a class="headerlink" href="#introduction-to-machine-learning-with-scikit-learn" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="machine-learning">
+<h1><span class="section-number">7. </span>Machine Learning<a class="headerlink" href="#machine-learning" title="Permalink to this headline">#</a></h1>
+<section id="machine-learning-models">
+<h2><span class="section-number">7.1. </span>Machine learning models<a class="headerlink" href="#machine-learning-models" title="Permalink to this headline">#</a></h2>
+<section id="decision-trees">
+<h3><span class="section-number">7.1.1. </span>Decision trees<a class="headerlink" href="#decision-trees" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="neural-networks">
+<h3><span class="section-number">7.1.2. </span>Neural networks<a class="headerlink" href="#neural-networks" title="Permalink to this headline">#</a></h3>
+<section id="mlp">
+<h4><span class="section-number">7.1.2.1. </span>MLP<a class="headerlink" href="#mlp" title="Permalink to this headline">#</a></h4>
+</section>
+<section id="convolutional-neural-networks">
+<h4><span class="section-number">7.1.2.2. </span>Convolutional neural networks<a class="headerlink" href="#convolutional-neural-networks" title="Permalink to this headline">#</a></h4>
+<p>Convolutional neural networks (CNN), the deep neural network class, that is most commonly applied to image analysis and computer vision applications.</p>
+<p>You’ve heard it before: images are made of pixels, so the CNN leverages the <em>convolution operation</em> to calculate latent (hidden) features for different pixels based on their surrounding pixel values. It does this by sliding a kernel (a.k.a. filter) over the input image and calculating the dot product between that small filter and the overlapping image area. This dot product leads to aggregate the neighboring pixel values to one representative scaler. Now let us twist our conceptualization of images a little bit and think of images as a graphs.</p>
+<ul class="simple">
+<li><p>add link to visualsation of conv opeartion</p></li>
+</ul>
+</section>
+<section id="rnn">
+<h4><span class="section-number">7.1.2.3. </span>RNN<a class="headerlink" href="#rnn" title="Permalink to this headline">#</a></h4>
+</section>
+</section>
+</section>
+<section id="introduction-to-machine-learning-with-scikit-learn">
+<h2><span class="section-number">7.2. </span>Introduction to Machine learning with scikit-learn<a class="headerlink" href="#introduction-to-machine-learning-with-scikit-learn" title="Permalink to this headline">#</a></h2>
 <p><a class="reference external" href="https://scikit-learn.org/stable/tutorial/index.html">Scikit-learn</a> is a python library that allows to build many machine learning models with an simple interface. On the other hand, other ML libraries like Pytorch or Tensorflow are focused on machine with neural networks only.</p>
 <p>We will use the same dataset we used on the previous notebook.</p>
 <section id="data-description">
-<h2><span class="section-number">7.1. </span>Data description<a class="headerlink" href="#data-description" title="Permalink to this headline">#</a></h2>
+<h3><span class="section-number">7.2.1. </span>Data description<a class="headerlink" href="#data-description" title="Permalink to this headline">#</a></h3>
 <p>Each row represent a star.</p>
 <p>Feature vectors:</p>
 <ul class="simple">
@@ -637,9 +734,6 @@ title="Print to PDF"
 <li><p>Type – Red Dwarf, Brown Dwarf, White Dwarf, Main Sequence , Super Giants, Hyper Giants</p></li>
 <li><p>Spectral_Class – O,B,A,F,G,K,M / SMASS - <a class="reference external" href="https://en.wikipedia.org/wiki/Stellar_classification">Stellar classification</a></p></li>
 </ul>
-</section>
-<section id="loading-libraries-and-data">
-<h2><span class="section-number">7.2. </span>Loading libraries and data<a class="headerlink" href="#loading-libraries-and-data" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -743,6 +837,7 @@ If you are working on Colab, you will need to upload the data.</p>
 </div></div></div>
 </div>
 </section>
+</section>
 <section id="computing-correlations">
 <h2><span class="section-number">7.3. </span>Computing correlations<a class="headerlink" href="#computing-correlations" title="Permalink to this headline">#</a></h2>
 <p>Let’s explore the linear correlations of the data. <strong>Pearson correlation coefficient</strong> <span class="math notranslate nohighlight">\(\rho\)</span> is a measure of how linearly correlated two variables are: it’s 1 if there is a positive correlation, -1 if negative and zero if none.</p>
@@ -763,7 +858,7 @@ If you are working on Colab, you will need to upload the data.</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;Temperature&#39;, ylabel=&#39;Temperature&#39;&gt;
 </pre></div>
 </div>
-<img alt="../../_images/week4b_8_1.png" src="../../_images/week4b_8_1.png" />
+<img alt="../../_images/week4b_10_1.png" src="../../_images/week4b_10_1.png" />
 </div>
 </div>
 <p>What value of the pearson correlation coefficient do expect to have? If it’s not obvious to you, think about it before running the next code cell.</p>
@@ -843,13 +938,13 @@ If you are working on Colab, you will need to upload the data.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Score on training:  0.9997835668706867
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Score on training:  0.999650986326513
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x13ebb8760&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x145e366d0&gt;
 </pre></div>
 </div>
-<img alt="../../_images/week4b_18_2.png" src="../../_images/week4b_18_2.png" />
+<img alt="../../_images/week4b_20_2.png" src="../../_images/week4b_20_2.png" />
 </div>
 </div>
 <p>It seems to be working, the score should be close to 1.0 —which would be a perfect fit.</p>
@@ -880,7 +975,7 @@ If you are working on Colab, you will need to upload the data.</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;Luminosity&#39;, ylabel=&#39;A_M&#39;&gt;
 </pre></div>
 </div>
-<img alt="../../_images/week4b_23_1.png" src="../../_images/week4b_23_1.png" />
+<img alt="../../_images/week4b_25_1.png" src="../../_images/week4b_25_1.png" />
 </div>
 </div>
 <p>As you already knew, there is indeed a strong correlation between these two variables. You could even try to guess what the analytical formula is given the shape —or google it— but rather let’s see if we can instead build a model to predict the absolute magnitude for each luminosity. We could try a linear model but the relation is not quite linear, is it? Ie. it’s not a straight line. We could also try to fit a polynomial or a logarithmic function.. Instead we will build a neural network model so we don’t need to make any assumption about the relation between the variables.</p>
@@ -938,8 +1033,8 @@ If you are working on Colab, you will need to upload the data.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Score on training set:  0.9108391723306226
-Score on test set:  0.8793814823404422
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Score on training set:  0.9064112716789304
+Score on test set:  0.9542290128802828
 </pre></div>
 </div>
 </div>
@@ -955,10 +1050,10 @@ Score on test set:  0.8793814823404422
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x13eddd370&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x145fd18b0&gt;]
 </pre></div>
 </div>
-<img alt="../../_images/week4b_36_1.png" src="../../_images/week4b_36_1.png" />
+<img alt="../../_images/week4b_38_1.png" src="../../_images/week4b_38_1.png" />
 </div>
 </div>
 <p>Congratulations, you just trained your first neural network on real data! The red line should hopefully fit the dataset points.</p>
@@ -992,7 +1087,7 @@ Score on test set:  0.8793814823404422
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:ylabel=&#39;None&#39;&gt;
 </pre></div>
 </div>
-<img alt="../../_images/week4b_41_1.png" src="../../_images/week4b_41_1.png" />
+<img alt="../../_images/week4b_43_1.png" src="../../_images/week4b_43_1.png" />
 </div>
 </div>
 <p>It seems the data is balanced with respect to stars types so we can safely move on.
@@ -1007,10 +1102,10 @@ Let’s now visualise how the different variables relate to each other so we can
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x13ee1f070&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x14609b070&gt;
 </pre></div>
 </div>
-<img alt="../../_images/week4b_43_1.png" src="../../_images/week4b_43_1.png" />
+<img alt="../../_images/week4b_45_1.png" src="../../_images/week4b_45_1.png" />
 </div>
 </div>
 <p>We start by selecting the data that we are gonna feed our model —the input— and the data that we want our model to predict —ie. to output—. In our case, we’re gonna try to predict the star type (White Dwarf, Super giants..) based on their temperature and absolute magnitude.</p>
@@ -1102,7 +1197,7 @@ Accuracy on test:  0.8541666666666666
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 1152x864 with 0 Axes&gt;
 </pre></div>
 </div>
-<img alt="../../_images/week4b_54_1.png" src="../../_images/week4b_54_1.png" />
+<img alt="../../_images/week4b_56_1.png" src="../../_images/week4b_56_1.png" />
 </div>
 </div>
 <section id="id3">
