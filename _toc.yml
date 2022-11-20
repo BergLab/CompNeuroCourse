@@ -6,7 +6,7 @@
 format: jb-book
 root: intro
 parts:
-- caption: Coding tool for researchers 
+- caption: Coding tools for researchers 
   numbered: false
   chapters:
   - file: notebooks/missing_semester/intro
