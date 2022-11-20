@@ -30,7 +30,7 @@ repository:
 html:
   favicon                   : "favicon.png"  # A path to a favicon image
   use_edit_page_button      : false  # Whether to add an "edit this page" button to pages. If `true`, repository information in repository: must be filled in
-  # extra_footer              : <a href="https://berg-lab.net/">berg-lab.net</a> <div id="wh-modal"> <button class="wh-venti-button" aria-label="close modal" id="wh-modal-close">✕</button> <img id="wh-modal-img"> </div>  # Will be displayed underneath the footer.
+  extra_footer              : <a href="https://neurowithpython.com/">neurowithpython.com</a> <div id="wh-modal"> <button class="wh-venti-button" aria-label="close modal" id="wh-modal-close">✕</button> <img id="wh-modal-img"> </div>  # Will be displayed underneath the footer.
   baseurl                   : "https://neurowithpython.com"  # The base URL where your book will be hosted. Used for creating image previews and social links. e.g.: https://mypage.com/mybook/
   use_repository_button     : true
   use_issues_button         : true  # Whether to add an "open an issue" button
@@ -43,4 +43,4 @@ launch_buttons:
 # only_build_toc_files: true
 exclude_patterns : ['_build', '**.ipynb_checkpoints']
 
-nbsphinx_timeout : 100
+nbsphinx_timeout : -1
