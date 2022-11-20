@@ -6,7 +6,7 @@
 format: jb-book
 root: intro
 parts:
-- caption: Week 1. Math review
+- caption: Week 1. Math review with Python
   numbered: false
   chapters:
   - file: notebooks/week1/week1-IntroColab
@@ -35,7 +35,8 @@ parts:
 - caption: Week 6. Network analysis
   numbered: true
   chapters:
-  - file: notebooks/week5/week5.ipynb
+  - file: notebooks/week6/week6.ipynb
+  
 # - file: markdown
 # - file: notebooks
 # - file: markdown-notebooks
