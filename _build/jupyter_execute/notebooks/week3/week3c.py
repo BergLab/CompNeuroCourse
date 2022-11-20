@@ -59,7 +59,7 @@ ylabel('Firing rate (sp/s)');
 
 # Now if you're running the notebook, you'll see that this was a little slow to run. The reason is that for each loop, you're recreating the objects from scratch. We can improve that by setting up the network just once. We store a copy of the state of the network before the loop, and restore it at the beginning of each iteration.
 
-# In[ ]:
+# In[3]:
 
 
 start_scope() 
@@ -94,7 +94,7 @@ ylabel('Firing rate (sp/s)');
 # 
 # You can also see that the output curve is very noisy and doesn't increase monotonically like we'd expect. The noise is coming from the fact that we run the Poisson group afresh each time. If we only wanted to see the effect of the time constant, we could make sure that the spikes were the same each time (although note that really, you ought to do multiple runs and take an average). We do this by running just the Poisson group once, recording its spikes, and then creating a new `SpikeGeneratorGroup` that will output those recorded spikes each time.
 
-# In[ ]:
+# In[4]:
 
 
 start_scope() 
@@ -143,7 +143,7 @@ ylabel('Firing rate (sp/s)');
 # 
 # The techniques we've looked at so far are the conceptually most simple way to do multiple runs, but not always the most efficient. Since there's only a single output neuron in the model above, we can simply duplicate that output neuron and make the time constant a parameter of the group.
 
-# In[ ]:
+# In[5]:
 
 
 start_scope() 
@@ -176,7 +176,7 @@ ylabel('Firing rate (sp/s)');
 # 
 # Let's finish with this example by having a quick look at how the mean and standard deviation of the interspike intervals depends on the time constant.
 
-# In[ ]:
+# In[6]:
 
 
 trains = M.spike_trains()
@@ -198,7 +198,7 @@ ylabel('Interspike interval (ms)');
 # 
 # Imagine an experiment where you inject current into a neuron, and change the amplitude randomly every 10 ms. Let's see if we can model that using a Hodgkin-Huxley type neuron.
 
-# In[ ]:
+# In[7]:
 
 
 start_scope()
@@ -244,7 +244,7 @@ ylabel('v (mV)');
 
 # In the code above, we used a loop over multiple runs to achieve this. That's fine, but it's not the most efficient way to do it because each time we call ``run`` we have to do a lot of initialisation work that slows everything down. It also won't work as well with the more efficient standalone mode of Brian. Here's another way.
 
-# In[ ]:
+# In[8]:
 
 
 start_scope()
@@ -271,7 +271,7 @@ ylabel('v (mV)');
 
 # We've replaced the loop that had multiple ``run`` calls with a ``run_regularly``. This makes the specified block of code run every ``dt=10*ms``. The ``run_regularly`` lets you run code specific to a single `NeuronGroup`, but sometimes you might need more flexibility. For this, you can use `network_operation` which lets you run arbitrary Python code (but won't work with the standalone mode).
 
-# In[ ]:
+# In[9]:
 
 
 start_scope()
@@ -299,7 +299,7 @@ ylabel('v (mV)');
 
 # Now let's extend this example to run on multiple neurons, each with a different capacitance to see how that affects the behaviour of the cell.
 
-# In[ ]:
+# In[10]:
 
 
 start_scope()
@@ -337,7 +337,7 @@ ylabel('v (mV)');
 
 # So that runs, but something looks wrong! The injected currents look like they're different for all the different neurons! Let's check:
 
-# In[ ]:
+# In[11]:
 
 
 plot(statemon.t/ms, statemon.I.T/nA, '-')
@@ -347,7 +347,7 @@ ylabel('I (nA)');
 
 # Sure enough, it's different each time. But why? We wrote ``group.run_regularly('I = rand()*50*nA', dt=10*ms)`` which seems like it should give the same value of I for each neuron. But, like threshold and reset statements, ``run_regularly`` code is interpreted as being run separately for each neuron, and because I is a parameter, it can be different for each neuron. We can fix this by making I into a *shared* variable, meaning it has the same value for each neuron.
 
-# In[ ]:
+# In[12]:
 
 
 start_scope()
@@ -387,7 +387,7 @@ ylabel('v (mV)');
 # 
 # Now let's think about a neuron being driven by a sinusoidal input. Let's go back to a leaky integrate-and-fire to simplify the equations a bit.
 
-# In[ ]:
+# In[13]:
 
 
 start_scope()
@@ -410,7 +410,7 @@ legend(loc='best');
 
 # So far, so good and the sort of thing we saw in the first tutorial. Now, what if that input current were something we had recorded and saved in a file? In that case, we can use `TimedArray`. Let's start by reproducing the picture above but using `TimedArray`.
 
-# In[ ]:
+# In[14]:
 
 
 start_scope()
@@ -438,7 +438,7 @@ legend(loc='best');
 # 
 # Now just to show that ``TimedArray`` works for arbitrary currents, let's make a weird "recorded" current and run it on that.
 
-# In[ ]:
+# In[15]:
 
 
 start_scope()
@@ -469,7 +469,7 @@ legend(loc='best');
 
 # Finally, let's finish on an example that actually reads in some data from a file. See if you can work out how this example works.
 
-# In[ ]:
+# In[16]:
 
 
 start_scope()

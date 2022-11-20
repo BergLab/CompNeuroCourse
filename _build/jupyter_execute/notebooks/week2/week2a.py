@@ -11,6 +11,10 @@
 
 # In a nutshell, solutions to differential system can be **analytical**: meaning that the solution to the differential equation is a symbolic expression or **numerical**: meaning that the solution to the differential equation is a set of values. If you have the analytical solution, you can easily obtained the numerical values but the opposite is not true.
 
+# ### Open vs closed dynamical systems
+# 
+# In a closed dynamical system, the map —also called flow— maintains its shape in the state space for all time. On the other hand, in a open system the state-space orbits are not statics and can change over time due to the a changing flow.
+
 # ## Modelling neural population
 # 
 # 

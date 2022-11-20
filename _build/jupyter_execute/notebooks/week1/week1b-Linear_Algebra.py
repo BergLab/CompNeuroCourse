@@ -849,6 +849,8 @@ V = np.array([4,2])
 # ## Eigenvectors and eigenvalues
 # 
 
+# > "Eigenvalues are just the TLDR for a matrix", @KyleMorgenstein
+
 # In this chapter we shift focus away from solving linear systems, and look closer at the effect of matrix multiplication.  We restrict our attention now to square matrices, which define linear transformations from $\mathbb{R}^n$ to $\mathbb{R}^n$.  In this context we will study special values called eigenvalues, and corresponding vectors called eigenvectors, that can be used to analyze the effect of a corresponding matrix.
 # 
 # Given a square $n\times n$ matrix $A$, a scalar $\lambda$ is called an **eigenvalue** of $A$ if there exists some nonzero vector $V$ in $\mathbb{R}^n$ such that $AV=\lambda V$.  The vector $V$ is the **eigenvector** associated with $\lambda$.  The equation states that when an eigenvector of $A$ is multiplied by $A$, the result is simply a multiple of the eigenvector.  In general, there may be multiple eigenvalues associated with a given matrix, and we will label them as $\lambda_1$, $\lambda_2$, etc., to keep an orderly notation.  We will lable eigenvectors in a similar way in order to track which eigenvectors are associated with which eigenvalues.  
