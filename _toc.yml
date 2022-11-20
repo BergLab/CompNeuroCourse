@@ -35,7 +35,7 @@ parts:
 - caption: Week 5. Reinforcement Learning and Control Theory
   numbered: true
   chapters:
-  - file: notebooks/week5/week5.ipynb
+  - file: notebooks/week5/CT.ipynb
 - caption: Week 6. Network analysis
   numbered: true
   chapters:
