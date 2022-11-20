@@ -9,7 +9,7 @@ parts:
 - caption: Coding tools for researchers 
   numbered: false
   chapters:
-  - file: notebooks/missing_semester/intro
+  - file: notebooks/week0/codingtoolsforresearch
 - caption: Week 1. Math review with Python
   numbered: false
   chapters:
