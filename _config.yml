@@ -40,4 +40,4 @@ launch_buttons:
   colab_url: "https://colab.research.google.com"
   binderhub_url: ""
 
-only_build_toc_files: true
+# only_build_toc_files: true
