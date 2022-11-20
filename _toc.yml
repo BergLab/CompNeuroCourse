@@ -9,7 +9,7 @@ parts:
 - caption: Coding tool for researchers 
   numbered: false
   chapters:
-  - file: notebooks/missing_semester/intro.ipynb
+  - file: notebooks/missing_semester/intro
 - caption: Week 1. Math review with Python
   numbered: false
   chapters:
@@ -35,11 +35,11 @@ parts:
 - caption: Week 5. Reinforcement Learning and Control Theory
   numbered: true
   chapters:
-  - file: notebooks/week5/CT.ipynb
+  - file: notebooks/week5/CT
 - caption: Week 6. Network analysis
   numbered: true
   chapters:
-  - file: notebooks/week6/week6.ipynb
+  - file: notebooks/week6/week6
 
 # - file: markdown
 # - file: notebooks
