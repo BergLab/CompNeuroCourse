@@ -6,6 +6,10 @@
 format: jb-book
 root: intro
 parts:
+- caption: Coding tool for researchers 
+  numbered: false
+  chapters:
+  - file: notebooks/missing_semester/intro.ipynb
 - caption: Week 1. Math review with Python
   numbered: false
   chapters:
@@ -36,7 +40,7 @@ parts:
   numbered: true
   chapters:
   - file: notebooks/week6/week6.ipynb
-  
+
 # - file: markdown
 # - file: notebooks
 # - file: markdown-notebooks
