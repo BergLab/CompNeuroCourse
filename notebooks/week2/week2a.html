@@ -468,8 +468,8 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#modelling-neural-population">
-   1.3. Modelling neural population
+  <a class="reference internal nav-link" href="#modelling-neurons">
+   1.3. Modelling neurons
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -495,19 +495,21 @@ title="Print to PDF"
      </strong>
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#predatorprey-systems">
-     1.3.5. Predator–prey systems
-    </a>
-   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#predatorprey-systems">
+   1.4. Predator–prey systems
+  </a>
+  <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exercises">
-     1.3.6. Exercises
+     1.4.1. Exercises
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#phase-space-analysis">
-       1.3.6.1. Phase space analysis
+       1.4.1.1. Phase space analysis
       </a>
      </li>
     </ul>
@@ -544,8 +546,8 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#modelling-neural-population">
-   1.3. Modelling neural population
+  <a class="reference internal nav-link" href="#modelling-neurons">
+   1.3. Modelling neurons
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -571,19 +573,21 @@ title="Print to PDF"
      </strong>
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#predatorprey-systems">
-     1.3.5. Predator–prey systems
-    </a>
-   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#predatorprey-systems">
+   1.4. Predator–prey systems
+  </a>
+  <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exercises">
-     1.3.6. Exercises
+     1.4.1. Exercises
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#phase-space-analysis">
-       1.3.6.1. Phase space analysis
+       1.4.1.1. Phase space analysis
       </a>
      </li>
     </ul>
@@ -612,8 +616,8 @@ title="Print to PDF"
 <h2><span class="section-number">1.2. </span>Open vs closed dynamical systems<a class="headerlink" href="#open-vs-closed-dynamical-systems" title="Permalink to this heading">#</a></h2>
 <p>In a closed dynamical system, the map —also called flow— maintains its shape in the state space for all time. On the other hand, in a open system the state-space orbits are not statics and can change over time due to the a changing flow.</p>
 </section>
-<section id="modelling-neural-population">
-<h2><span class="section-number">1.3. </span>Modelling neural population<a class="headerlink" href="#modelling-neural-population" title="Permalink to this heading">#</a></h2>
+<section id="modelling-neurons">
+<h2><span class="section-number">1.3. </span>Modelling neurons<a class="headerlink" href="#modelling-neurons" title="Permalink to this heading">#</a></h2>
 <p>It will not come as a surprise: the basic unit of study in neuroscience is the neuron. The neuron acts as the epistemological center of gravity around which all modelling scales orbit. Neurons are specialised cells that possess an electrically excitable membrane and whose main purpose is integrating and transmitting information. They can present very different morphologies, each endowing them of distinct computational capabilities.</p>
 <p>In their homeostatic state, neuron membranes observe a potential of <span class="math notranslate nohighlight">\(\sim -70mV\)</span> between the interior and the exterior of the cell; in this state the cell is said to be polarised. Neurons’ electric excitability arises from the presence of ion channels and ion pumps in their membranes. Ion channels are proteins that regulate the flux of ions between the inside and outside of the cell. By doing so, they enable neurons to communicate: when positively charged ions enter the cell they reduce the membrane potential, a process referred as depolarisation. If the depolarisation reaches a threshold, it will trigger a positive feedback by which more ion channels are opened and the neuron generates an electric binary signal referred to as <em>spike</em> or <em>action potential</em>. Spikes are pulse-like currents that constitute the fundamental unit of communication between neurons. When a spike reaches the postsynaptic axon terminal, it dissolves the vesicles containing neurotransmitters, releasing them into the postsynaptic cleft.</p>
 <p>If the influx of ions into the postsynaptic neuron is positively charged, we talk about excitatory postsynaptic potential (EPSP), conversely, an influx of negatively charged ions that will further polarise the cell is referred to as an inhibitory postsynaptic potential (IPSP). Whether a presynaptic neuron generates EPSPs or IPSPs depends on its neurotransmitter profile which will determine which ion channels open up and, hence, if we have an inhibitory -i.e. polarizing- current (negatively-charged ions) or a excitatory -i.e. depolarizing- current (positively-charged ions). The neurotransmitter profile of a neuron -ie. if it releases inhibitory or excitatory neurotransmitters when activated- determine its inhibitory/excitatory nature and, along with its morphology, determines the computational properties of the neuron. In our computational models, we abstract the notion of inhibitory/excitatory synapses by negative/positive weights in the connectivity matrix of the neural population. For the spiking models these connectivity weights have Volt units [V], reflecting how much the membrane potential of the post-synaptic neuron is decreased/increased when the pre-synaptic neuron is activated; for rate-based models, the connectivity has hertz units [Hz], indicating how much the firing rate of the post-synaptic neuron  decreases/increases when the pre-synaptic neuron is activated.</p>
@@ -772,9 +776,11 @@ I(t) = C_{m} \frac{dV(t)}{dt} + \frac{V(t)}{R_{m}}
 </div>
 <p>Notice that the behavior of these neuron model does not produce action potentials. To observe action potentials, LIF models are coupled with a reset mechanism that resets the membrane potential after it has reached a given value. Since this behavior does not emerge from the LIF differential equation, we would need to manually implement ourselves in the code. Next week we will see how we can use <span class="xref myst">Brian2</span> to simulate populations of LIF neurons and obtain spiking behaviors. Brian will deal under the hood with solving the differential equations and we will focus on defining our model.</p>
 </section>
+</section>
 <section id="predatorprey-systems">
-<h3><span class="section-number">1.3.5. </span>Predator–prey systems<a class="headerlink" href="#predatorprey-systems" title="Permalink to this heading">#</a></h3>
-<p>Predator-prey models are arguably the building blocks of the bio- and ecosystems as biomasses are grown out of their resource masses. Species compete, evolve and disperse simply for the purpose of seeking resources to sustain their struggle for their very existence. Depending on their specific settings of applications, they can take the forms of resource-consumer, plant-herbivore, parasite-host, tumor cells (virus)-immune system, susceptible-infectious interactions, etc. They deal with the general loss-win interactions and hence may have applications outside of ecosystems. When seemingly competitive interactions are carefully examined, they are often in fact some forms of predator-prey interaction in disguise.</p>
+<h2><span class="section-number">1.4. </span>Predator–prey systems<a class="headerlink" href="#predatorprey-systems" title="Permalink to this heading">#</a></h2>
+<p>In the previous section we have modelled the activity of a single neuron using a single differential equation. What if we want to model the activity of systems with several interacting elements —like a population of neurons? In this case we will need to introduce at least one differential equation per system component. That is, if we have a population of 10 neurons connected to each other —<em>coupled</em>—, we will need at least 10 differential equations to model the whole network activity: we say then that we have a <em>system of coupled differential equations</em>. In the chapter <em>Simulation of neural population</em>, we will do precisely so; but first, let us have a short break from neurons and look at another coupled system</p>
+<p>Predator-prey models are a popular model to describe how species intreractions in ecosystems. Species compete, evolve and disperse simply for the purpose of seeking resources to sustain their struggle for their very existence. Depending on their specific settings of applications, they can take the forms of resource-consumer, plant-herbivore, parasite-host, tumor cells (virus)-immune system, susceptible-infectious interactions, etc. They deal with the general loss-win interactions and hence may have applications outside of ecosystems. When seemingly competitive interactions are carefully examined, they are often in fact some forms of predator-prey interaction in disguise.</p>
 <p>The Lotka–Volterra equations, also known as the predator–prey equations, are a pair of first-order, non-linear, autonomous* differential equations. They are frequently used to describe the dynamics of biological systems in which two species interact, one as a predator and the other as prey. You can read more about this from Wikipedia <a class="reference external" href="http://en.wikipedia.org/wiki/Lotka-Volterra_equation">http://en.wikipedia.org/wiki/Lotka-Volterra_equation</a>.</p>
 <p><em>Autonomous system or autonomous differential equation is a system of ordinary differential equations which does not explicitly depend on the independent variable, typically dynamical systems are autonomous if the state of the system does not <strong>explicitly</strong> depend on the time <span class="math notranslate nohighlight">\(t\)</span>.</em></p>
 <p>Their populations change with time according to the following pair of equations:</p>
@@ -880,9 +886,8 @@ dy/dt = \delta x y -\gamma y
 </div>
 </div>
 <p>A better understanding of the system behaviour can be obtained by a phase plot of the population of predators vs. the population of prey. It will tell us if the system sustains or collapses over time. For the choice of parameters <span class="math notranslate nohighlight">\( \alpha, \beta, \gamma \)</span> and <span class="math notranslate nohighlight">\( \delta \)</span> made above, we see that the maximum population of each species keeps increasing each cycle. You can read more about that in the Wikipedia link mentioned above.</p>
-</section>
 <section id="exercises">
-<h3><span class="section-number">1.3.6. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.4.1. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Play with parameters to get a sense of the bahaviour of the system and diccuss with your group the system behaviours that you observe. Try to interpret the physical meaning of the changes to the model parameters.</p></li>
 </ul>
@@ -929,7 +934,7 @@ dy/dt = \delta x y -\gamma y
 <li><p>Can you find a set of parameters for which the preyed population become extinct?</p></li>
 </ul>
 <section id="phase-space-analysis">
-<h4><span class="section-number">1.3.6.1. </span>Phase space analysis<a class="headerlink" href="#phase-space-analysis" title="Permalink to this heading">#</a></h4>
+<h4><span class="section-number">1.4.1.1. </span>Phase space analysis<a class="headerlink" href="#phase-space-analysis" title="Permalink to this heading">#</a></h4>
 <p>If instead of interesting ourselves into how the population evolve overtime, we look at a population value as a function of the other, we call this <strong>phase analysis</strong> of the system. We can easily plot phase space by plotting the results previously obtained:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
