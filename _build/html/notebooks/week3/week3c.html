@@ -1,0 +1,1165 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>5. Introduction to Brian part 3: Simulations &#8212; Computational Neuroscience</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/custom.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://neurowithpython.com/notebooks/week3/week3c.html" />
+    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="6. Introduction to Data Analysis with Pandas" href="../week4/week4a.html" />
+    <link rel="prev" title="4. Introduction to Brian part 2: Synapses" href="week3b.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/cajal1.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Computational Neuroscience</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Course overview
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Coding tools for researchers
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week0/codingtoolsforresearch.html">
+   Coding tools for researchers
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 1. Math review with Python
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week1/week1-IntroColab.html">
+   Google’s Colab
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week1/week1a-Numpy_Introduction.html">
+   Introduction to NumPy and Matplotlib
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week1/week1b-Linear_Algebra.html">
+   Linear Algebra basics
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 2. Differential equations and neuron models
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week2/week2a.html">
+   1. Introduction modelling with differential equations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week2/week2b-Applications_LT.html">
+   2. Dynamical systems as Linear Transformations
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 3. Simulation of neural population
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="week3a.html">
+   3. Introduction to Brian part 1: Neurons
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="week3b.html">
+   4. Introduction to Brian part 2: Synapses
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   5. Introduction to Brian part 3: Simulations
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 4. Data analysis and Machine learning
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week4/week4a.html">
+   6. Introduction to Data Analysis with Pandas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week4/week4b.html">
+   7. Machine Learning
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 5. Reinforcement Learning and Control Theory
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week5/CT.html">
+   8. Control Theory
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 6. Network analysis
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week6/week6.html">
+   9. Network science
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://colab.research.google.com/github/BergLab/CompNeuroBook/blob/master/docs/notebooks/week3/week3c.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/BergLab/CompNeuroBook"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/BergLab/CompNeuroBook/issues/new?title=Issue%20on%20page%20%2Fnotebooks/week3/week3c.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/BergLab/CompNeuroBook/edit/master/docs/notebooks/week3/week3c.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/notebooks/week3/week3c.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#multiple-runs">
+   5.1. Multiple runs
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#changing-things-during-a-run">
+   5.2. Changing things during a run
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adding-input">
+   5.3. Adding input
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Introduction to Brian part 3: Simulations</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#multiple-runs">
+   5.1. Multiple runs
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#changing-things-during-a-run">
+   5.2. Changing things during a run
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adding-input">
+   5.3. Adding input
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-brian-part-3-simulations">
+<h1><span class="section-number">5. </span>Introduction to Brian part 3: Simulations<a class="headerlink" href="#introduction-to-brian-part-3-simulations" title="Permalink to this heading">#</a></h1>
+<p>*Credit: The first three notebooks from week3 are part of the <span class="xref myst">Brian2 documentation</span>.</p>
+<p>If you haven’t yet read parts 1 and 2 on Neurons and Synapses, go read them first.</p>
+<p>This tutorial is about managing the slightly more complicated tasks that crop up in research problems, rather than the toy examples we’ve been looking at so far. So we cover things like inputting sensory data, modelling experimental conditions, etc.</p>
+<p>As before we start by importing the Brian package and setting up matplotlib for IPython:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip3 install brian2
+<span class="kn">from</span> <span class="nn">brian2</span> <span class="kn">import</span> <span class="o">*</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: brian2 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (2.5.1)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: sympy&gt;=1.2 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from brian2) (1.10.1)
+Requirement already satisfied: setuptools&gt;=24.2 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from brian2) (60.10.0)
+Requirement already satisfied: jinja2&gt;=2.7 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from brian2) (3.1.2)
+Requirement already satisfied: pyparsing in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from brian2) (3.0.7)
+Requirement already satisfied: cython&gt;=0.29 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from brian2) (0.29.30)
+Requirement already satisfied: numpy&gt;=1.17 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from brian2) (1.22.0)
+Requirement already satisfied: MarkupSafe&gt;=2.0 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from jinja2&gt;=2.7-&gt;brian2) (2.1.1)
+Requirement already satisfied: mpmath&gt;=0.19 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from sympy&gt;=1.2-&gt;brian2) (1.2.1)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">WARNING: You are using pip version 22.0.4; however, version 22.3.1 is available.</span>
+<span class=" -Color -Color-Yellow">You should consider upgrading via the &#39;/Users/enaj/.virtualenvs/p39/bin/python3.9 -m pip install --upgrade pip&#39; command.</span>
+
+</pre></div>
+</div>
+</div>
+</div>
+<section id="multiple-runs">
+<h2><span class="section-number">5.1. </span>Multiple runs<a class="headerlink" href="#multiple-runs" title="Permalink to this heading">#</a></h2>
+<p>Let’s start by looking at a very common task: doing multiple runs of a simulation with some parameter that changes. Let’s start off with something very simple, how does the firing rate of a leaky integrate-and-fire neuron driven by Poisson spiking neurons change depending on its membrane time constant? Let’s set that up.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># remember, this is here for running separate simulations in the same notebook</span>
+<span class="n">start_scope</span><span class="p">()</span> 
+<span class="c1"># Parameters</span>
+<span class="n">num_inputs</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">input_rate</span> <span class="o">=</span> <span class="mi">10</span><span class="o">*</span><span class="n">Hz</span>
+<span class="n">weight</span> <span class="o">=</span> <span class="mf">0.1</span>
+<span class="c1"># Range of time constants</span>
+<span class="n">tau_range</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span><span class="o">*</span><span class="n">ms</span>
+<span class="c1"># Use this list to store output rates</span>
+<span class="n">output_rates</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="c1"># Iterate over range of time constants</span>
+<span class="k">for</span> <span class="n">tau</span> <span class="ow">in</span> <span class="n">tau_range</span><span class="p">:</span>
+    <span class="c1"># Construct the network each time</span>
+    <span class="n">P</span> <span class="o">=</span> <span class="n">PoissonGroup</span><span class="p">(</span><span class="n">num_inputs</span><span class="p">,</span> <span class="n">rates</span><span class="o">=</span><span class="n">input_rate</span><span class="p">)</span>
+    <span class="n">eqs</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">    dv/dt = -v/tau : 1</span>
+<span class="s1">    &#39;&#39;&#39;</span>
+    <span class="n">G</span> <span class="o">=</span> <span class="n">NeuronGroup</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">eqs</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="s1">&#39;v&gt;1&#39;</span><span class="p">,</span> <span class="n">reset</span><span class="o">=</span><span class="s1">&#39;v=0&#39;</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;exact&#39;</span><span class="p">)</span>
+    <span class="n">S</span> <span class="o">=</span> <span class="n">Synapses</span><span class="p">(</span><span class="n">P</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">on_pre</span><span class="o">=</span><span class="s1">&#39;v += weight&#39;</span><span class="p">)</span>
+    <span class="n">S</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
+    <span class="n">M</span> <span class="o">=</span> <span class="n">SpikeMonitor</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+    <span class="c1"># Run it and store the output firing rate in the list</span>
+    <span class="n">run</span><span class="p">(</span><span class="mi">1</span><span class="o">*</span><span class="n">second</span><span class="p">)</span>
+    <span class="n">output_rates</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">M</span><span class="o">.</span><span class="n">num_spikes</span><span class="o">/</span><span class="n">second</span><span class="p">)</span>
+<span class="c1"># And plot it</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">tau_range</span><span class="o">/</span><span class="n">ms</span><span class="p">,</span> <span class="n">output_rates</span><span class="p">)</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\tau$ (ms)&#39;</span><span class="p">)</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Firing rate (sp/s)&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/week3c_5_0.png" src="../../_images/week3c_5_0.png" />
+</div>
+</div>
+<p>Now if you’re running the notebook, you’ll see that this was a little slow to run. The reason is that for each loop, you’re recreating the objects from scratch. We can improve that by setting up the network just once. We store a copy of the state of the network before the loop, and restore it at the beginning of each iteration.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">start_scope</span><span class="p">()</span> 
+<span class="n">num_inputs</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">input_rate</span> <span class="o">=</span> <span class="mi">10</span><span class="o">*</span><span class="n">Hz</span>
+<span class="n">weight</span> <span class="o">=</span> <span class="mf">0.1</span>
+<span class="n">tau_range</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span><span class="o">*</span><span class="n">ms</span>
+<span class="n">output_rates</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="c1"># Construct the network just once</span>
+<span class="n">P</span> <span class="o">=</span> <span class="n">PoissonGroup</span><span class="p">(</span><span class="n">num_inputs</span><span class="p">,</span> <span class="n">rates</span><span class="o">=</span><span class="n">input_rate</span><span class="p">)</span>
+<span class="n">eqs</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">dv/dt = -v/tau : 1</span>
+<span class="s1">&#39;&#39;&#39;</span>
+<span class="n">G</span> <span class="o">=</span> <span class="n">NeuronGroup</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">eqs</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="s1">&#39;v&gt;1&#39;</span><span class="p">,</span> <span class="n">reset</span><span class="o">=</span><span class="s1">&#39;v=0&#39;</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;exact&#39;</span><span class="p">)</span>
+<span class="n">S</span> <span class="o">=</span> <span class="n">Synapses</span><span class="p">(</span><span class="n">P</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">on_pre</span><span class="o">=</span><span class="s1">&#39;v += weight&#39;</span><span class="p">)</span>
+<span class="n">S</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
+<span class="n">M</span> <span class="o">=</span> <span class="n">SpikeMonitor</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+<span class="c1"># Store the current state of the network</span>
+<span class="n">store</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">tau</span> <span class="ow">in</span> <span class="n">tau_range</span><span class="p">:</span>
+    <span class="c1"># Restore the original state of the network</span>
+    <span class="n">restore</span><span class="p">()</span>
+    <span class="c1"># Run it with the new value of tau</span>
+    <span class="n">run</span><span class="p">(</span><span class="mi">1</span><span class="o">*</span><span class="n">second</span><span class="p">)</span>
+    <span class="n">output_rates</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">M</span><span class="o">.</span><span class="n">num_spikes</span><span class="o">/</span><span class="n">second</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">tau_range</span><span class="o">/</span><span class="n">ms</span><span class="p">,</span> <span class="n">output_rates</span><span class="p">)</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\tau$ (ms)&#39;</span><span class="p">)</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Firing rate (sp/s)&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/week3c_7_0.png" src="../../_images/week3c_7_0.png" />
+</div>
+</div>
+<p>That’s a very simple example of using store and restore, but you can use it in much more complicated situations. For example, you might want to run a long training run, and then run multiple test runs afterwards. Simply put a store after the long training run, and a restore before each testing run.</p>
+<p>You can also see that the output curve is very noisy and doesn’t increase monotonically like we’d expect. The noise is coming from the fact that we run the Poisson group afresh each time. If we only wanted to see the effect of the time constant, we could make sure that the spikes were the same each time (although note that really, you ought to do multiple runs and take an average). We do this by running just the Poisson group once, recording its spikes, and then creating a new <code class="docutils literal notranslate"><span class="pre">SpikeGeneratorGroup</span></code> that will output those recorded spikes each time.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">start_scope</span><span class="p">()</span> 
+<span class="n">num_inputs</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">input_rate</span> <span class="o">=</span> <span class="mi">10</span><span class="o">*</span><span class="n">Hz</span>
+<span class="n">weight</span> <span class="o">=</span> <span class="mf">0.1</span>
+<span class="n">tau_range</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span><span class="o">*</span><span class="n">ms</span>
+<span class="n">output_rates</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="c1"># Construct the Poisson spikes just once</span>
+<span class="n">P</span> <span class="o">=</span> <span class="n">PoissonGroup</span><span class="p">(</span><span class="n">num_inputs</span><span class="p">,</span> <span class="n">rates</span><span class="o">=</span><span class="n">input_rate</span><span class="p">)</span>
+<span class="n">MP</span> <span class="o">=</span> <span class="n">SpikeMonitor</span><span class="p">(</span><span class="n">P</span><span class="p">)</span>
+<span class="c1"># We use a Network object because later on we don&#39;t</span>
+<span class="c1"># want to include these objects</span>
+<span class="n">net</span> <span class="o">=</span> <span class="n">Network</span><span class="p">(</span><span class="n">P</span><span class="p">,</span> <span class="n">MP</span><span class="p">)</span>
+<span class="n">net</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="mi">1</span><span class="o">*</span><span class="n">second</span><span class="p">)</span>
+<span class="c1"># And keep a copy of those spikes</span>
+<span class="n">spikes_i</span> <span class="o">=</span> <span class="n">MP</span><span class="o">.</span><span class="n">i</span>
+<span class="n">spikes_t</span> <span class="o">=</span> <span class="n">MP</span><span class="o">.</span><span class="n">t</span>
+<span class="c1"># Now construct the network that we run each time</span>
+<span class="c1"># SpikeGeneratorGroup gets the spikes that we created before</span>
+<span class="n">SGG</span> <span class="o">=</span> <span class="n">SpikeGeneratorGroup</span><span class="p">(</span><span class="n">num_inputs</span><span class="p">,</span> <span class="n">spikes_i</span><span class="p">,</span> <span class="n">spikes_t</span><span class="p">)</span>
+<span class="n">eqs</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">dv/dt = -v/tau : 1</span>
+<span class="s1">&#39;&#39;&#39;</span>
+<span class="n">G</span> <span class="o">=</span> <span class="n">NeuronGroup</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">eqs</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="s1">&#39;v&gt;1&#39;</span><span class="p">,</span> <span class="n">reset</span><span class="o">=</span><span class="s1">&#39;v=0&#39;</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;exact&#39;</span><span class="p">)</span>
+<span class="n">S</span> <span class="o">=</span> <span class="n">Synapses</span><span class="p">(</span><span class="n">SGG</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">on_pre</span><span class="o">=</span><span class="s1">&#39;v += weight&#39;</span><span class="p">)</span>
+<span class="n">S</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
+<span class="n">M</span> <span class="o">=</span> <span class="n">SpikeMonitor</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+<span class="c1"># Store the current state of the network</span>
+<span class="n">net</span> <span class="o">=</span> <span class="n">Network</span><span class="p">(</span><span class="n">SGG</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">M</span><span class="p">)</span>
+<span class="n">net</span><span class="o">.</span><span class="n">store</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">tau</span> <span class="ow">in</span> <span class="n">tau_range</span><span class="p">:</span>
+    <span class="c1"># Restore the original state of the network</span>
+    <span class="n">net</span><span class="o">.</span><span class="n">restore</span><span class="p">()</span>
+    <span class="c1"># Run it with the new value of tau</span>
+    <span class="n">net</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="mi">1</span><span class="o">*</span><span class="n">second</span><span class="p">)</span>
+    <span class="n">output_rates</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">M</span><span class="o">.</span><span class="n">num_spikes</span><span class="o">/</span><span class="n">second</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">tau_range</span><span class="o">/</span><span class="n">ms</span><span class="p">,</span> <span class="n">output_rates</span><span class="p">)</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\tau$ (ms)&#39;</span><span class="p">)</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Firing rate (sp/s)&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/week3c_9_0.png" src="../../_images/week3c_9_0.png" />
+</div>
+</div>
+<p>You can see that now there is much less noise and it increases monotonically because the input spikes are the same each time, meaning we’re seeing the effect of the time constant, not the random spikes.</p>
+<p>Note that in the code above, we created <code class="docutils literal notranslate"><span class="pre">Network</span></code> objects. The reason is that in the loop, if we just called <code class="docutils literal notranslate"><span class="pre">run</span></code> it would try to simulate all the objects, including the Poisson neurons <code class="docutils literal notranslate"><span class="pre">P</span></code>, and we only want to run that once. We use <code class="docutils literal notranslate"><span class="pre">Network</span></code> to specify explicitly which objects we want to include.</p>
+<p>The techniques we’ve looked at so far are the conceptually most simple way to do multiple runs, but not always the most efficient. Since there’s only a single output neuron in the model above, we can simply duplicate that output neuron and make the time constant a parameter of the group.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">start_scope</span><span class="p">()</span> 
+<span class="n">num_inputs</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">input_rate</span> <span class="o">=</span> <span class="mi">10</span><span class="o">*</span><span class="n">Hz</span>
+<span class="n">weight</span> <span class="o">=</span> <span class="mf">0.1</span>
+<span class="n">tau_range</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span><span class="o">*</span><span class="n">ms</span>
+<span class="n">num_tau</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">tau_range</span><span class="p">)</span>
+<span class="n">P</span> <span class="o">=</span> <span class="n">PoissonGroup</span><span class="p">(</span><span class="n">num_inputs</span><span class="p">,</span> <span class="n">rates</span><span class="o">=</span><span class="n">input_rate</span><span class="p">)</span>
+<span class="c1"># We make tau a parameter of the group</span>
+<span class="n">eqs</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">dv/dt = -v/tau : 1</span>
+<span class="s1">tau : second</span>
+<span class="s1">&#39;&#39;&#39;</span>
+<span class="c1"># And we have num_tau output neurons, each with a different tau</span>
+<span class="n">G</span> <span class="o">=</span> <span class="n">NeuronGroup</span><span class="p">(</span><span class="n">num_tau</span><span class="p">,</span> <span class="n">eqs</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="s1">&#39;v&gt;1&#39;</span><span class="p">,</span> <span class="n">reset</span><span class="o">=</span><span class="s1">&#39;v=0&#39;</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;exact&#39;</span><span class="p">)</span>
+<span class="n">G</span><span class="o">.</span><span class="n">tau</span> <span class="o">=</span> <span class="n">tau_range</span>
+<span class="n">S</span> <span class="o">=</span> <span class="n">Synapses</span><span class="p">(</span><span class="n">P</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">on_pre</span><span class="o">=</span><span class="s1">&#39;v += weight&#39;</span><span class="p">)</span>
+<span class="n">S</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
+<span class="n">M</span> <span class="o">=</span> <span class="n">SpikeMonitor</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+<span class="c1"># Now we can just run once with no loop</span>
+<span class="n">run</span><span class="p">(</span><span class="mi">1</span><span class="o">*</span><span class="n">second</span><span class="p">)</span>
+<span class="n">output_rates</span> <span class="o">=</span> <span class="n">M</span><span class="o">.</span><span class="n">count</span><span class="o">/</span><span class="n">second</span> <span class="c1"># firing rate is count/duration</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">tau_range</span><span class="o">/</span><span class="n">ms</span><span class="p">,</span> <span class="n">output_rates</span><span class="p">)</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\tau$ (ms)&#39;</span><span class="p">)</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Firing rate (sp/s)&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING    &#39;tau&#39; is an internal variable of group &#39;neurongroup_2&#39;, but also exists in the run namespace with the value 10. * msecond. The internal variable will be used. [brian2.groups.group.Group.resolve.resolution_conflict]
+</pre></div>
+</div>
+<img alt="../../_images/week3c_11_1.png" src="../../_images/week3c_11_1.png" />
+</div>
+</div>
+<p>You can see that this is much faster again! It’s a little bit more complicated conceptually, and it’s not always possible to do this trick, but it can be much more efficient if it’s possible.</p>
+<p>Let’s finish with this example by having a quick look at how the mean and standard deviation of the interspike intervals depends on the time constant.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">trains</span> <span class="o">=</span> <span class="n">M</span><span class="o">.</span><span class="n">spike_trains</span><span class="p">()</span>
+<span class="n">isi_mu</span> <span class="o">=</span> <span class="n">full</span><span class="p">(</span><span class="n">num_tau</span><span class="p">,</span> <span class="n">nan</span><span class="p">)</span><span class="o">*</span><span class="n">second</span>
+<span class="n">isi_std</span> <span class="o">=</span> <span class="n">full</span><span class="p">(</span><span class="n">num_tau</span><span class="p">,</span> <span class="n">nan</span><span class="p">)</span><span class="o">*</span><span class="n">second</span>
+<span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_tau</span><span class="p">):</span>
+    <span class="n">train</span> <span class="o">=</span> <span class="n">diff</span><span class="p">(</span><span class="n">trains</span><span class="p">[</span><span class="n">idx</span><span class="p">])</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">train</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">1</span><span class="p">:</span>
+        <span class="n">isi_mu</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">mean</span><span class="p">(</span><span class="n">train</span><span class="p">)</span>
+        <span class="n">isi_std</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">std</span><span class="p">(</span><span class="n">train</span><span class="p">)</span>
+<span class="n">errorbar</span><span class="p">(</span><span class="n">tau_range</span><span class="o">/</span><span class="n">ms</span><span class="p">,</span> <span class="n">isi_mu</span><span class="o">/</span><span class="n">ms</span><span class="p">,</span> <span class="n">yerr</span><span class="o">=</span><span class="n">isi_std</span><span class="o">/</span><span class="n">ms</span><span class="p">)</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\tau$ (ms)&#39;</span><span class="p">)</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Interspike interval (ms)&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/week3c_13_0.png" src="../../_images/week3c_13_0.png" />
+</div>
+</div>
+<p>Notice that we used the <code class="docutils literal notranslate"><span class="pre">spike_trains()</span></code> method of <code class="docutils literal notranslate"><span class="pre">SpikeMonitor</span></code>. This is a dictionary with keys being the indices of the neurons and values being the array of spike times for that neuron.</p>
+</section>
+<section id="changing-things-during-a-run">
+<h2><span class="section-number">5.2. </span>Changing things during a run<a class="headerlink" href="#changing-things-during-a-run" title="Permalink to this heading">#</a></h2>
+<p>Imagine an experiment where you inject current into a neuron, and change the amplitude randomly every 10 ms. Let’s see if we can model that using a Hodgkin-Huxley type neuron.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">start_scope</span><span class="p">()</span>
+<span class="c1"># Parameters</span>
+<span class="n">area</span> <span class="o">=</span> <span class="mi">20000</span><span class="o">*</span><span class="n">umetre</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">Cm</span> <span class="o">=</span> <span class="mi">1</span><span class="o">*</span><span class="n">ufarad</span><span class="o">*</span><span class="n">cm</span><span class="o">**-</span><span class="mi">2</span> <span class="o">*</span> <span class="n">area</span>
+<span class="n">gl</span> <span class="o">=</span> <span class="mf">5e-5</span><span class="o">*</span><span class="n">siemens</span><span class="o">*</span><span class="n">cm</span><span class="o">**-</span><span class="mi">2</span> <span class="o">*</span> <span class="n">area</span>
+<span class="n">El</span> <span class="o">=</span> <span class="o">-</span><span class="mi">65</span><span class="o">*</span><span class="n">mV</span>
+<span class="n">EK</span> <span class="o">=</span> <span class="o">-</span><span class="mi">90</span><span class="o">*</span><span class="n">mV</span>
+<span class="n">ENa</span> <span class="o">=</span> <span class="mi">50</span><span class="o">*</span><span class="n">mV</span>
+<span class="n">g_na</span> <span class="o">=</span> <span class="mi">100</span><span class="o">*</span><span class="n">msiemens</span><span class="o">*</span><span class="n">cm</span><span class="o">**-</span><span class="mi">2</span> <span class="o">*</span> <span class="n">area</span>
+<span class="n">g_kd</span> <span class="o">=</span> <span class="mi">30</span><span class="o">*</span><span class="n">msiemens</span><span class="o">*</span><span class="n">cm</span><span class="o">**-</span><span class="mi">2</span> <span class="o">*</span> <span class="n">area</span>
+<span class="n">VT</span> <span class="o">=</span> <span class="o">-</span><span class="mi">63</span><span class="o">*</span><span class="n">mV</span>
+<span class="c1"># The model</span>
+<span class="n">eqs_HH</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">dv/dt = (gl*(El-v) - g_na*(m*m*m)*h*(v-ENa) - g_kd*(n*n*n*n)*(v-EK) + I)/Cm : volt</span>
+<span class="s1">dm/dt = 0.32*(mV**-1)*(13.*mV-v+VT)/</span>
+<span class="s1">    (exp((13.*mV-v+VT)/(4.*mV))-1.)/ms*(1-m)-0.28*(mV**-1)*(v-VT-40.*mV)/</span>
+<span class="s1">    (exp((v-VT-40.*mV)/(5.*mV))-1.)/ms*m : 1</span>
+<span class="s1">dn/dt = 0.032*(mV**-1)*(15.*mV-v+VT)/</span>
+<span class="s1">    (exp((15.*mV-v+VT)/(5.*mV))-1.)/ms*(1.-n)-.5*exp((10.*mV-v+VT)/(40.*mV))/ms*n : 1</span>
+<span class="s1">dh/dt = 0.128*exp((17.*mV-v+VT)/(18.*mV))/ms*(1.-h)-4./(1+exp((40.*mV-v+VT)/(5.*mV)))/ms*h : 1</span>
+<span class="s1">I : amp</span>
+<span class="s1">&#39;&#39;&#39;</span>
+<span class="n">group</span> <span class="o">=</span> <span class="n">NeuronGroup</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">eqs_HH</span><span class="p">,</span>
+                    <span class="n">threshold</span><span class="o">=</span><span class="s1">&#39;v &gt; -40*mV&#39;</span><span class="p">,</span>
+                    <span class="n">refractory</span><span class="o">=</span><span class="s1">&#39;v &gt; -40*mV&#39;</span><span class="p">,</span>
+                    <span class="n">method</span><span class="o">=</span><span class="s1">&#39;exponential_euler&#39;</span><span class="p">)</span>
+<span class="n">group</span><span class="o">.</span><span class="n">v</span> <span class="o">=</span> <span class="n">El</span>
+<span class="n">statemon</span> <span class="o">=</span> <span class="n">StateMonitor</span><span class="p">(</span><span class="n">group</span><span class="p">,</span> <span class="s1">&#39;v&#39;</span><span class="p">,</span> <span class="n">record</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">spikemon</span> <span class="o">=</span> <span class="n">SpikeMonitor</span><span class="p">(</span><span class="n">group</span><span class="p">,</span> <span class="n">variables</span><span class="o">=</span><span class="s1">&#39;v&#39;</span><span class="p">)</span>
+<span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="n">group</span><span class="o">.</span><span class="n">I</span> <span class="o">=</span> <span class="n">rand</span><span class="p">()</span><span class="o">*</span><span class="mi">50</span><span class="o">*</span><span class="n">nA</span>
+    <span class="n">run</span><span class="p">(</span><span class="mi">10</span><span class="o">*</span><span class="n">ms</span><span class="p">)</span>
+    <span class="n">axvline</span><span class="p">(</span><span class="n">l</span><span class="o">*</span><span class="mi">10</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">axhline</span><span class="p">(</span><span class="n">El</span><span class="o">/</span><span class="n">mV</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;lightgray&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">statemon</span><span class="o">.</span><span class="n">t</span><span class="o">/</span><span class="n">ms</span><span class="p">,</span> <span class="n">statemon</span><span class="o">.</span><span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">mV</span><span class="p">,</span> <span class="s1">&#39;-b&#39;</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">spikemon</span><span class="o">.</span><span class="n">t</span><span class="o">/</span><span class="n">ms</span><span class="p">,</span> <span class="n">spikemon</span><span class="o">.</span><span class="n">v</span><span class="o">/</span><span class="n">mV</span><span class="p">,</span> <span class="s1">&#39;ob&#39;</span><span class="p">)</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (ms)&#39;</span><span class="p">)</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;v (mV)&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/week3c_15_0.png" src="../../_images/week3c_15_0.png" />
+</div>
+</div>
+<p>In the code above, we used a loop over multiple runs to achieve this. That’s fine, but it’s not the most efficient way to do it because each time we call <code class="docutils literal notranslate"><span class="pre">run</span></code> we have to do a lot of initialisation work that slows everything down. It also won’t work as well with the more efficient standalone mode of Brian. Here’s another way.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">start_scope</span><span class="p">()</span>
+<span class="n">group</span> <span class="o">=</span> <span class="n">NeuronGroup</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">eqs_HH</span><span class="p">,</span>
+                    <span class="n">threshold</span><span class="o">=</span><span class="s1">&#39;v &gt; -40*mV&#39;</span><span class="p">,</span>
+                    <span class="n">refractory</span><span class="o">=</span><span class="s1">&#39;v &gt; -40*mV&#39;</span><span class="p">,</span>
+                    <span class="n">method</span><span class="o">=</span><span class="s1">&#39;exponential_euler&#39;</span><span class="p">)</span>
+<span class="n">group</span><span class="o">.</span><span class="n">v</span> <span class="o">=</span> <span class="n">El</span>
+<span class="n">statemon</span> <span class="o">=</span> <span class="n">StateMonitor</span><span class="p">(</span><span class="n">group</span><span class="p">,</span> <span class="s1">&#39;v&#39;</span><span class="p">,</span> <span class="n">record</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">spikemon</span> <span class="o">=</span> <span class="n">SpikeMonitor</span><span class="p">(</span><span class="n">group</span><span class="p">,</span> <span class="n">variables</span><span class="o">=</span><span class="s1">&#39;v&#39;</span><span class="p">)</span>
+<span class="c1"># we replace the loop with a run_regularly</span>
+<span class="n">group</span><span class="o">.</span><span class="n">run_regularly</span><span class="p">(</span><span class="s1">&#39;I = rand()*50*nA&#39;</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="mi">10</span><span class="o">*</span><span class="n">ms</span><span class="p">)</span>
+<span class="n">run</span><span class="p">(</span><span class="mi">50</span><span class="o">*</span><span class="n">ms</span><span class="p">)</span>
+<span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="c1"># we keep the loop just to draw the vertical lines</span>
+<span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="n">axvline</span><span class="p">(</span><span class="n">l</span><span class="o">*</span><span class="mi">10</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">axhline</span><span class="p">(</span><span class="n">El</span><span class="o">/</span><span class="n">mV</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;lightgray&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">statemon</span><span class="o">.</span><span class="n">t</span><span class="o">/</span><span class="n">ms</span><span class="p">,</span> <span class="n">statemon</span><span class="o">.</span><span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">mV</span><span class="p">,</span> <span class="s1">&#39;-b&#39;</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">spikemon</span><span class="o">.</span><span class="n">t</span><span class="o">/</span><span class="n">ms</span><span class="p">,</span> <span class="n">spikemon</span><span class="o">.</span><span class="n">v</span><span class="o">/</span><span class="n">mV</span><span class="p">,</span> <span class="s1">&#39;ob&#39;</span><span class="p">)</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (ms)&#39;</span><span class="p">)</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;v (mV)&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/week3c_17_0.png" src="../../_images/week3c_17_0.png" />
+</div>
+</div>
+<p>We’ve replaced the loop that had multiple <code class="docutils literal notranslate"><span class="pre">run</span></code> calls with a <code class="docutils literal notranslate"><span class="pre">run_regularly</span></code>. This makes the specified block of code run every <code class="docutils literal notranslate"><span class="pre">dt=10*ms</span></code>. The <code class="docutils literal notranslate"><span class="pre">run_regularly</span></code> lets you run code specific to a single <code class="docutils literal notranslate"><span class="pre">NeuronGroup</span></code>, but sometimes you might need more flexibility. For this, you can use <code class="docutils literal notranslate"><span class="pre">network_operation</span></code> which lets you run arbitrary Python code (but won’t work with the standalone mode).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">start_scope</span><span class="p">()</span>
+<span class="n">group</span> <span class="o">=</span> <span class="n">NeuronGroup</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">eqs_HH</span><span class="p">,</span>
+                    <span class="n">threshold</span><span class="o">=</span><span class="s1">&#39;v &gt; -40*mV&#39;</span><span class="p">,</span>
+                    <span class="n">refractory</span><span class="o">=</span><span class="s1">&#39;v &gt; -40*mV&#39;</span><span class="p">,</span>
+                    <span class="n">method</span><span class="o">=</span><span class="s1">&#39;exponential_euler&#39;</span><span class="p">)</span>
+<span class="n">group</span><span class="o">.</span><span class="n">v</span> <span class="o">=</span> <span class="n">El</span>
+<span class="n">statemon</span> <span class="o">=</span> <span class="n">StateMonitor</span><span class="p">(</span><span class="n">group</span><span class="p">,</span> <span class="s1">&#39;v&#39;</span><span class="p">,</span> <span class="n">record</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">spikemon</span> <span class="o">=</span> <span class="n">SpikeMonitor</span><span class="p">(</span><span class="n">group</span><span class="p">,</span> <span class="n">variables</span><span class="o">=</span><span class="s1">&#39;v&#39;</span><span class="p">)</span>
+<span class="c1"># we replace the loop with a network_operation</span>
+<span class="nd">@network_operation</span><span class="p">(</span><span class="n">dt</span><span class="o">=</span><span class="mi">10</span><span class="o">*</span><span class="n">ms</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">change_I</span><span class="p">():</span>
+    <span class="n">group</span><span class="o">.</span><span class="n">I</span> <span class="o">=</span> <span class="n">rand</span><span class="p">()</span><span class="o">*</span><span class="mi">50</span><span class="o">*</span><span class="n">nA</span>
+<span class="n">run</span><span class="p">(</span><span class="mi">50</span><span class="o">*</span><span class="n">ms</span><span class="p">)</span>
+<span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="n">axvline</span><span class="p">(</span><span class="n">l</span><span class="o">*</span><span class="mi">10</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">axhline</span><span class="p">(</span><span class="n">El</span><span class="o">/</span><span class="n">mV</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;lightgray&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">statemon</span><span class="o">.</span><span class="n">t</span><span class="o">/</span><span class="n">ms</span><span class="p">,</span> <span class="n">statemon</span><span class="o">.</span><span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">mV</span><span class="p">,</span> <span class="s1">&#39;-b&#39;</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">spikemon</span><span class="o">.</span><span class="n">t</span><span class="o">/</span><span class="n">ms</span><span class="p">,</span> <span class="n">spikemon</span><span class="o">.</span><span class="n">v</span><span class="o">/</span><span class="n">mV</span><span class="p">,</span> <span class="s1">&#39;ob&#39;</span><span class="p">)</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (ms)&#39;</span><span class="p">)</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;v (mV)&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/week3c_19_0.png" src="../../_images/week3c_19_0.png" />
+</div>
+</div>
+<p>Now let’s extend this example to run on multiple neurons, each with a different capacitance to see how that affects the behaviour of the cell.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">start_scope</span><span class="p">()</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">eqs_HH_2</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">dv/dt = (gl*(El-v) - g_na*(m*m*m)*h*(v-ENa) - g_kd*(n*n*n*n)*(v-EK) + I)/C : volt</span>
+<span class="s1">dm/dt = 0.32*(mV**-1)*(13.*mV-v+VT)/</span>
+<span class="s1">    (exp((13.*mV-v+VT)/(4.*mV))-1.)/ms*(1-m)-0.28*(mV**-1)*(v-VT-40.*mV)/</span>
+<span class="s1">    (exp((v-VT-40.*mV)/(5.*mV))-1.)/ms*m : 1</span>
+<span class="s1">dn/dt = 0.032*(mV**-1)*(15.*mV-v+VT)/</span>
+<span class="s1">    (exp((15.*mV-v+VT)/(5.*mV))-1.)/ms*(1.-n)-.5*exp((10.*mV-v+VT)/(40.*mV))/ms*n : 1</span>
+<span class="s1">dh/dt = 0.128*exp((17.*mV-v+VT)/(18.*mV))/ms*(1.-h)-4./(1+exp((40.*mV-v+VT)/(5.*mV)))/ms*h : 1</span>
+<span class="s1">I : amp</span>
+<span class="s1">C : farad</span>
+<span class="s1">&#39;&#39;&#39;</span>
+<span class="n">group</span> <span class="o">=</span> <span class="n">NeuronGroup</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">eqs_HH_2</span><span class="p">,</span>
+                    <span class="n">threshold</span><span class="o">=</span><span class="s1">&#39;v &gt; -40*mV&#39;</span><span class="p">,</span>
+                    <span class="n">refractory</span><span class="o">=</span><span class="s1">&#39;v &gt; -40*mV&#39;</span><span class="p">,</span>
+                    <span class="n">method</span><span class="o">=</span><span class="s1">&#39;exponential_euler&#39;</span><span class="p">)</span>
+<span class="n">group</span><span class="o">.</span><span class="n">v</span> <span class="o">=</span> <span class="n">El</span>
+<span class="c1"># initialise with some different capacitances</span>
+<span class="n">group</span><span class="o">.</span><span class="n">C</span> <span class="o">=</span> <span class="n">array</span><span class="p">([</span><span class="mf">0.8</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">])</span><span class="o">*</span><span class="n">ufarad</span><span class="o">*</span><span class="n">cm</span><span class="o">**-</span><span class="mi">2</span><span class="o">*</span><span class="n">area</span>
+<span class="n">statemon</span> <span class="o">=</span> <span class="n">StateMonitor</span><span class="p">(</span><span class="n">group</span><span class="p">,</span> <span class="n">variables</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">record</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="c1"># we go back to run_regularly</span>
+<span class="n">group</span><span class="o">.</span><span class="n">run_regularly</span><span class="p">(</span><span class="s1">&#39;I = rand()*50*nA&#39;</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="mi">10</span><span class="o">*</span><span class="n">ms</span><span class="p">)</span>
+<span class="n">run</span><span class="p">(</span><span class="mi">50</span><span class="o">*</span><span class="n">ms</span><span class="p">)</span>
+<span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="n">axvline</span><span class="p">(</span><span class="n">l</span><span class="o">*</span><span class="mi">10</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">axhline</span><span class="p">(</span><span class="n">El</span><span class="o">/</span><span class="n">mV</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;lightgray&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">statemon</span><span class="o">.</span><span class="n">t</span><span class="o">/</span><span class="n">ms</span><span class="p">,</span> <span class="n">statemon</span><span class="o">.</span><span class="n">v</span><span class="o">.</span><span class="n">T</span><span class="o">/</span><span class="n">mV</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">)</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (ms)&#39;</span><span class="p">)</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;v (mV)&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/week3c_21_0.png" src="../../_images/week3c_21_0.png" />
+</div>
+</div>
+<p>So that runs, but something looks wrong! The injected currents look like they’re different for all the different neurons! Let’s check:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="p">(</span><span class="n">statemon</span><span class="o">.</span><span class="n">t</span><span class="o">/</span><span class="n">ms</span><span class="p">,</span> <span class="n">statemon</span><span class="o">.</span><span class="n">I</span><span class="o">.</span><span class="n">T</span><span class="o">/</span><span class="n">nA</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">)</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (ms)&#39;</span><span class="p">)</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;I (nA)&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/week3c_23_0.png" src="../../_images/week3c_23_0.png" />
+</div>
+</div>
+<p>Sure enough, it’s different each time. But why? We wrote <code class="docutils literal notranslate"><span class="pre">group.run_regularly('I</span> <span class="pre">=</span> <span class="pre">rand()*50*nA',</span> <span class="pre">dt=10*ms)</span></code> which seems like it should give the same value of I for each neuron. But, like threshold and reset statements, <code class="docutils literal notranslate"><span class="pre">run_regularly</span></code> code is interpreted as being run separately for each neuron, and because I is a parameter, it can be different for each neuron. We can fix this by making I into a <em>shared</em> variable, meaning it has the same value for each neuron.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">start_scope</span><span class="p">()</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">eqs_HH_3</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">dv/dt = (gl*(El-v) - g_na*(m*m*m)*h*(v-ENa) - g_kd*(n*n*n*n)*(v-EK) + I)/C : volt</span>
+<span class="s1">dm/dt = 0.32*(mV**-1)*(13.*mV-v+VT)/</span>
+<span class="s1">    (exp((13.*mV-v+VT)/(4.*mV))-1.)/ms*(1-m)-0.28*(mV**-1)*(v-VT-40.*mV)/</span>
+<span class="s1">    (exp((v-VT-40.*mV)/(5.*mV))-1.)/ms*m : 1</span>
+<span class="s1">dn/dt = 0.032*(mV**-1)*(15.*mV-v+VT)/</span>
+<span class="s1">    (exp((15.*mV-v+VT)/(5.*mV))-1.)/ms*(1.-n)-.5*exp((10.*mV-v+VT)/(40.*mV))/ms*n : 1</span>
+<span class="s1">dh/dt = 0.128*exp((17.*mV-v+VT)/(18.*mV))/ms*(1.-h)-4./(1+exp((40.*mV-v+VT)/(5.*mV)))/ms*h : 1</span>
+<span class="s1">I : amp (shared) # everything is the same except we&#39;ve added this shared</span>
+<span class="s1">C : farad</span>
+<span class="s1">&#39;&#39;&#39;</span>
+<span class="n">group</span> <span class="o">=</span> <span class="n">NeuronGroup</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">eqs_HH_3</span><span class="p">,</span>
+                    <span class="n">threshold</span><span class="o">=</span><span class="s1">&#39;v &gt; -40*mV&#39;</span><span class="p">,</span>
+                    <span class="n">refractory</span><span class="o">=</span><span class="s1">&#39;v &gt; -40*mV&#39;</span><span class="p">,</span>
+                    <span class="n">method</span><span class="o">=</span><span class="s1">&#39;exponential_euler&#39;</span><span class="p">)</span>
+<span class="n">group</span><span class="o">.</span><span class="n">v</span> <span class="o">=</span> <span class="n">El</span>
+<span class="n">group</span><span class="o">.</span><span class="n">C</span> <span class="o">=</span> <span class="n">array</span><span class="p">([</span><span class="mf">0.8</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">])</span><span class="o">*</span><span class="n">ufarad</span><span class="o">*</span><span class="n">cm</span><span class="o">**-</span><span class="mi">2</span><span class="o">*</span><span class="n">area</span>
+<span class="n">statemon</span> <span class="o">=</span> <span class="n">StateMonitor</span><span class="p">(</span><span class="n">group</span><span class="p">,</span> <span class="s1">&#39;v&#39;</span><span class="p">,</span> <span class="n">record</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">group</span><span class="o">.</span><span class="n">run_regularly</span><span class="p">(</span><span class="s1">&#39;I = rand()*50*nA&#39;</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="mi">10</span><span class="o">*</span><span class="n">ms</span><span class="p">)</span>
+<span class="n">run</span><span class="p">(</span><span class="mi">50</span><span class="o">*</span><span class="n">ms</span><span class="p">)</span>
+<span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="n">axvline</span><span class="p">(</span><span class="n">l</span><span class="o">*</span><span class="mi">10</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">axhline</span><span class="p">(</span><span class="n">El</span><span class="o">/</span><span class="n">mV</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;lightgray&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">statemon</span><span class="o">.</span><span class="n">t</span><span class="o">/</span><span class="n">ms</span><span class="p">,</span> <span class="n">statemon</span><span class="o">.</span><span class="n">v</span><span class="o">.</span><span class="n">T</span><span class="o">/</span><span class="n">mV</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">)</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (ms)&#39;</span><span class="p">)</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;v (mV)&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/week3c_25_0.png" src="../../_images/week3c_25_0.png" />
+</div>
+</div>
+<p>Ahh, that’s more like it!</p>
+</section>
+<section id="adding-input">
+<h2><span class="section-number">5.3. </span>Adding input<a class="headerlink" href="#adding-input" title="Permalink to this heading">#</a></h2>
+<p>Now let’s think about a neuron being driven by a sinusoidal input. Let’s go back to a leaky integrate-and-fire to simplify the equations a bit.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">start_scope</span><span class="p">()</span>
+<span class="n">A</span> <span class="o">=</span> <span class="mf">2.5</span>
+<span class="n">f</span> <span class="o">=</span> <span class="mi">10</span><span class="o">*</span><span class="n">Hz</span>
+<span class="n">tau</span> <span class="o">=</span> <span class="mi">5</span><span class="o">*</span><span class="n">ms</span>
+<span class="n">eqs</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">dv/dt = (I-v)/tau : 1</span>
+<span class="s1">I = A*sin(2*pi*f*t) : 1</span>
+<span class="s1">&#39;&#39;&#39;</span>
+<span class="n">G</span> <span class="o">=</span> <span class="n">NeuronGroup</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">eqs</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="s1">&#39;v&gt;1&#39;</span><span class="p">,</span> <span class="n">reset</span><span class="o">=</span><span class="s1">&#39;v=0&#39;</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;euler&#39;</span><span class="p">)</span>
+<span class="n">M</span> <span class="o">=</span> <span class="n">StateMonitor</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">variables</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">record</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">run</span><span class="p">(</span><span class="mi">200</span><span class="o">*</span><span class="n">ms</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">M</span><span class="o">.</span><span class="n">t</span><span class="o">/</span><span class="n">ms</span><span class="p">,</span> <span class="n">M</span><span class="o">.</span><span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;v&#39;</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">M</span><span class="o">.</span><span class="n">t</span><span class="o">/</span><span class="n">ms</span><span class="p">,</span> <span class="n">M</span><span class="o">.</span><span class="n">I</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;I&#39;</span><span class="p">)</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (ms)&#39;</span><span class="p">)</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;v&#39;</span><span class="p">)</span>
+<span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/week3c_27_0.png" src="../../_images/week3c_27_0.png" />
+</div>
+</div>
+<p>So far, so good and the sort of thing we saw in the first tutorial. Now, what if that input current were something we had recorded and saved in a file? In that case, we can use <code class="docutils literal notranslate"><span class="pre">TimedArray</span></code>. Let’s start by reproducing the picture above but using <code class="docutils literal notranslate"><span class="pre">TimedArray</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">start_scope</span><span class="p">()</span>
+<span class="n">A</span> <span class="o">=</span> <span class="mf">2.5</span>
+<span class="n">f</span> <span class="o">=</span> <span class="mi">10</span><span class="o">*</span><span class="n">Hz</span>
+<span class="n">tau</span> <span class="o">=</span> <span class="mi">5</span><span class="o">*</span><span class="n">ms</span>
+<span class="c1"># Create a TimedArray and set the equations to use it</span>
+<span class="n">t_recorded</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="mi">200</span><span class="o">*</span><span class="n">ms</span><span class="o">/</span><span class="n">defaultclock</span><span class="o">.</span><span class="n">dt</span><span class="p">))</span><span class="o">*</span><span class="n">defaultclock</span><span class="o">.</span><span class="n">dt</span>
+<span class="n">I_recorded</span> <span class="o">=</span> <span class="n">TimedArray</span><span class="p">(</span><span class="n">A</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="o">*</span><span class="n">f</span><span class="o">*</span><span class="n">t_recorded</span><span class="p">),</span> <span class="n">dt</span><span class="o">=</span><span class="n">defaultclock</span><span class="o">.</span><span class="n">dt</span><span class="p">)</span>
+<span class="n">eqs</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">dv/dt = (I-v)/tau : 1</span>
+<span class="s1">I = I_recorded(t) : 1</span>
+<span class="s1">&#39;&#39;&#39;</span>
+<span class="n">G</span> <span class="o">=</span> <span class="n">NeuronGroup</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">eqs</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="s1">&#39;v&gt;1&#39;</span><span class="p">,</span> <span class="n">reset</span><span class="o">=</span><span class="s1">&#39;v=0&#39;</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;exact&#39;</span><span class="p">)</span>
+<span class="n">M</span> <span class="o">=</span> <span class="n">StateMonitor</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">variables</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">record</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">run</span><span class="p">(</span><span class="mi">200</span><span class="o">*</span><span class="n">ms</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">M</span><span class="o">.</span><span class="n">t</span><span class="o">/</span><span class="n">ms</span><span class="p">,</span> <span class="n">M</span><span class="o">.</span><span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;v&#39;</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">M</span><span class="o">.</span><span class="n">t</span><span class="o">/</span><span class="n">ms</span><span class="p">,</span> <span class="n">M</span><span class="o">.</span><span class="n">I</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;I&#39;</span><span class="p">)</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (ms)&#39;</span><span class="p">)</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;v&#39;</span><span class="p">)</span>
+<span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/week3c_29_0.png" src="../../_images/week3c_29_0.png" />
+</div>
+</div>
+<p>Note that for the example where we put the <code class="docutils literal notranslate"><span class="pre">sin</span></code> function directly in the equations, we had to use the <code class="docutils literal notranslate"><span class="pre">method='euler'</span></code> argument because the exact integrator wouldn’t work here (try it!). However, <code class="docutils literal notranslate"><span class="pre">TimedArray</span></code> is considered to be constant over its time step and so the linear integrator can be used. This means you won’t get the same behaviour from these two methods for two reasons. Firstly, the numerical integration methods <code class="docutils literal notranslate"><span class="pre">exact</span></code> and <code class="docutils literal notranslate"><span class="pre">euler</span></code> give slightly different results. Secondly, <code class="docutils literal notranslate"><span class="pre">sin</span></code> is not constant over a timestep whereas <code class="docutils literal notranslate"><span class="pre">TimedArray</span></code> is.</p>
+<p>Now just to show that <code class="docutils literal notranslate"><span class="pre">TimedArray</span></code> works for arbitrary currents, let’s make a weird “recorded” current and run it on that.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">start_scope</span><span class="p">()</span>
+<span class="n">A</span> <span class="o">=</span> <span class="mf">2.5</span>
+<span class="n">f</span> <span class="o">=</span> <span class="mi">10</span><span class="o">*</span><span class="n">Hz</span>
+<span class="n">tau</span> <span class="o">=</span> <span class="mi">5</span><span class="o">*</span><span class="n">ms</span>
+<span class="c1"># Let&#39;s create an array that couldn&#39;t be</span>
+<span class="c1"># reproduced with a formula</span>
+<span class="n">num_samples</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mi">200</span><span class="o">*</span><span class="n">ms</span><span class="o">/</span><span class="n">defaultclock</span><span class="o">.</span><span class="n">dt</span><span class="p">)</span>
+<span class="n">I_arr</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">(</span><span class="n">num_samples</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="n">num_samples</span><span class="p">)</span>
+    <span class="n">I_arr</span><span class="p">[</span><span class="n">a</span><span class="p">:</span><span class="n">a</span><span class="o">+</span><span class="mi">100</span><span class="p">]</span> <span class="o">=</span> <span class="n">rand</span><span class="p">()</span>
+<span class="n">I_recorded</span> <span class="o">=</span> <span class="n">TimedArray</span><span class="p">(</span><span class="n">A</span><span class="o">*</span><span class="n">I_arr</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="n">defaultclock</span><span class="o">.</span><span class="n">dt</span><span class="p">)</span>
+<span class="n">eqs</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">dv/dt = (I-v)/tau : 1</span>
+<span class="s1">I = I_recorded(t) : 1</span>
+<span class="s1">&#39;&#39;&#39;</span>
+<span class="n">G</span> <span class="o">=</span> <span class="n">NeuronGroup</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">eqs</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="s1">&#39;v&gt;1&#39;</span><span class="p">,</span> <span class="n">reset</span><span class="o">=</span><span class="s1">&#39;v=0&#39;</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;exact&#39;</span><span class="p">)</span>
+<span class="n">M</span> <span class="o">=</span> <span class="n">StateMonitor</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">variables</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">record</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">run</span><span class="p">(</span><span class="mi">200</span><span class="o">*</span><span class="n">ms</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">M</span><span class="o">.</span><span class="n">t</span><span class="o">/</span><span class="n">ms</span><span class="p">,</span> <span class="n">M</span><span class="o">.</span><span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;v&#39;</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">M</span><span class="o">.</span><span class="n">t</span><span class="o">/</span><span class="n">ms</span><span class="p">,</span> <span class="n">M</span><span class="o">.</span><span class="n">I</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;I&#39;</span><span class="p">)</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (ms)&#39;</span><span class="p">)</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;v&#39;</span><span class="p">)</span>
+<span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/week3c_31_0.png" src="../../_images/week3c_31_0.png" />
+</div>
+</div>
+<p>Finally, let’s finish on an example that actually reads in some data from a file. See if you can work out how this example works.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">start_scope</span><span class="p">()</span>
+<span class="kn">from</span> <span class="nn">matplotlib.image</span> <span class="kn">import</span> <span class="n">imread</span>
+<span class="n">img</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;brian.png&#39;</span><span class="p">))[::</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">T</span>
+<span class="n">num_samples</span><span class="p">,</span> <span class="n">N</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">shape</span>
+<span class="n">ta</span> <span class="o">=</span> <span class="n">TimedArray</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="mi">1</span><span class="o">*</span><span class="n">ms</span><span class="p">)</span> <span class="c1"># 228</span>
+<span class="n">A</span> <span class="o">=</span> <span class="mf">1.5</span>
+<span class="n">tau</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">ms</span>
+<span class="n">eqs</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">dv/dt = (A*ta(t, i)-v)/tau+0.8*xi*tau**-0.5 : 1</span>
+<span class="s1">&#39;&#39;&#39;</span>
+<span class="n">G</span> <span class="o">=</span> <span class="n">NeuronGroup</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">eqs</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="s1">&#39;v&gt;1&#39;</span><span class="p">,</span> <span class="n">reset</span><span class="o">=</span><span class="s1">&#39;v=0&#39;</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;euler&#39;</span><span class="p">)</span>
+<span class="n">M</span> <span class="o">=</span> <span class="n">SpikeMonitor</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+<span class="n">run</span><span class="p">(</span><span class="n">num_samples</span><span class="o">*</span><span class="n">ms</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">M</span><span class="o">.</span><span class="n">t</span><span class="o">/</span><span class="n">ms</span><span class="p">,</span> <span class="n">M</span><span class="o">.</span><span class="n">i</span><span class="p">,</span> <span class="s1">&#39;.k&#39;</span><span class="p">,</span> <span class="n">ms</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">num_samples</span><span class="p">)</span>
+<span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (ms)&#39;</span><span class="p">)</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Neuron index&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="nn">Input In [16],</span> in <span class="ni">&lt;cell line: 3&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">start_scope</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">matplotlib.image</span> <span class="kn">import</span> <span class="n">imread</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">img</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;brian.png&#39;</span><span class="p">))[::</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">T</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">num_samples</span><span class="p">,</span> <span class="n">N</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">shape</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">ta</span> <span class="o">=</span> <span class="n">TimedArray</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="mi">1</span><span class="o">*</span><span class="n">ms</span><span class="p">)</span> <span class="c1"># 228</span>
+
+<span class="nn">File ~/.virtualenvs/p39/lib/python3.9/site-packages/matplotlib/image.py:1560,</span> in <span class="ni">imread</span><span class="nt">(fname, format)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1558</span>                 <span class="n">response</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+<span class="g g-Whitespace">   </span><span class="mi">1559</span>             <span class="k">return</span> <span class="n">imread</span><span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="n">ext</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1560</span> <span class="k">with</span> <span class="n">img_open</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span> <span class="k">as</span> <span class="n">image</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1561</span>     <span class="k">return</span> <span class="p">(</span><span class="n">_pil_png_to_float_array</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1562</span>             <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">PIL</span><span class="o">.</span><span class="n">PngImagePlugin</span><span class="o">.</span><span class="n">PngImageFile</span><span class="p">)</span> <span class="k">else</span>
+<span class="g g-Whitespace">   </span><span class="mi">1563</span>             <span class="n">pil_to_array</span><span class="p">(</span><span class="n">image</span><span class="p">))</span>
+
+<span class="nn">File ~/.virtualenvs/p39/lib/python3.9/site-packages/PIL/ImageFile.py:104,</span> in <span class="ni">ImageFile.__init__</span><span class="nt">(self, fp, filename)</span>
+<span class="g g-Whitespace">    </span><span class="mi">100</span> <span class="bp">self</span><span class="o">.</span><span class="n">decodermaxblock</span> <span class="o">=</span> <span class="n">MAXBLOCK</span>
+<span class="g g-Whitespace">    </span><span class="mi">102</span> <span class="k">if</span> <span class="n">isPath</span><span class="p">(</span><span class="n">fp</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">103</span>     <span class="c1"># filename</span>
+<span class="ne">--&gt; </span><span class="mi">104</span>     <span class="bp">self</span><span class="o">.</span><span class="n">fp</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">fp</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">105</span>     <span class="bp">self</span><span class="o">.</span><span class="n">filename</span> <span class="o">=</span> <span class="n">fp</span>
+<span class="g g-Whitespace">    </span><span class="mi">106</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_exclusive_fp</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;brian.png&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notebooks/week3"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="week3b.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">4. </span>Introduction to Brian part 2: Synapses</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../week4/week4a.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">6. </span>Introduction to Data Analysis with Pandas</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Elias Najarro & Rune Berg<br/>
+  
+      &copy; Copyright 2022.<br/>
+    <div class="extra_footer">
+      <a href="https://neurowithpython.com/">neurowithpython.com</a> <div id="wh-modal"> <button class="wh-venti-button" aria-label="close modal" id="wh-modal-close">✕</button> <img id="wh-modal-img"> </div>
+    </div>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
