@@ -18,6 +18,12 @@
 # **In the current deep learning paradigm, there is an entire ecosystem of tools designed to make it easy to train and deploy neural network models. It is also relatively straightforward to train the parameters of a neural network with deep learning frameworks by providing it with a dataset 9, or a simulated task environment 26. Deep learning tools are designed to be used by anyone with a basic programming background.**
 # +add now an extension of the holy trinity which incorporate training libraries and hardware "the holy pentagon"
 # 
+# 
+# <div align="center">
+# <p style="text-align:center;"><img src="https://github.com/BergLab/CompNeuroBook/blob/main/notebooks/week4/trianglepentagon.png?raw=true" width="500"/>
+# </div>
+# 
+
 # #### MLP
 # 
 # #### Convolutional neural networks 
@@ -28,7 +34,6 @@
 # + add link to visualsation of conv opeartion
 # 
 # #### RNN
-# 
 # 
 
 # ## Introduction to Machine learning with scikit-learn
@@ -308,7 +313,7 @@ seaborn.pairplot(df[features], hue="Type", palette="husl")
 
 #  and the data that we want our model to predict —ie. to output—. In our case, we're gonna try to predict the star type (White Dwarf, Super giants..) based on their temperature and absolute magnitude.
 
-# In[17]:
+# In[ ]:
 
 
 feature_cols = ['Temperature', 'A_M']
@@ -319,7 +324,7 @@ Y = df[target_feature].values
 
 # We split the data between training data and test data:
 
-# In[18]:
+# In[ ]:
 
 
 random_seed = 9716 # This allow us to have reproducible results since both the splitting and training have stochastic component
@@ -328,7 +333,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size=0.2, random_
 
 # We can now train the model, we are going to use a neural network model `MLPClassifier`. So like usual, we import it and define its parameters:
 
-# In[19]:
+# In[ ]:
 
 
 from sklearn.neural_network import MLPClassifier
@@ -345,7 +350,7 @@ model = MLPClassifier(solver='adam',
 
 # All that's left is to train it by calling the `.fit()` method on the model. Beware, this might take some point to run.
 
-# In[20]:
+# In[ ]:
 
 
 model.fit(X_train, y_train)
@@ -357,7 +362,7 @@ print('Accuracy on test: ', model.score(X_test, y_test))
 # Since we are making predictions based on only two dimensions (temperature and absolute magnitude) we can make a figure with the decision boundaries for our model. To do so, we use Scikit-learn `DecisionBoundaryDisplay` function. ⚠️ Sadly, Google Colab doesn't run the last version of Scipy which implements the `DecisionBoundaryDisplay` function. You will have to run this part locally on your computer or come talk to use to see what it looks like and just skip it.
 # 
 
-# In[21]:
+# In[ ]:
 
 
 from sklearn.inspection import DecisionBoundaryDisplay
@@ -402,7 +407,7 @@ plt.show()
 # 
 # <p style="text-align:center;"><img src="https://upload.wikimedia.org/wikipedia/commons/7/78/H-R_diagram_-edited-3.gif" width="500"/>
 
-# In[22]:
+# In[ ]:
 
 
 ## Your code here
@@ -410,7 +415,7 @@ plt.show()
 
 # - Train a neural network model to predict the Spectral Class of the stars, compute its accuracy and plot the decision boundaries (if you're working locally). You can decide on which feature vectors you want to train the model as well as the size of your neural network model (argument `hidden_layer_sizes` in the model definition). # Hint: ML models models require manually tweaking the parameters, play with different network sizes until you get a good performance.
 
-# In[23]:
+# In[ ]:
 
 
 ## Your code here

@@ -732,6 +732,9 @@ title="Print to PDF"
 Deep learning (DL) is a class of machine learning methods that uses multi-layer (“deep”) neural networks for representation learning. While artificial neural networks, trained with the backpropagation algorithm, first appeared in the 1980s 57, deep neural networks did not receive widespread attention until 2012 when a deep artificial neural network solution trained on GPUs 35 won an annual image recognition competition 15 by a significant margin over the non-DL runner up methods. This success demonstrated that DL, when combined with fast hardware-accelerated implementations and the availability of large datasets, is capable of achieving exceptionally better results in non-trivial tasks than conventional methods. Researchers and practitioners alike soon quickly incorporated DL to address the long-standing problems in several other fields spanning computer vision (CV) 24,47,60, natural language processing (NLP) 5,48,49, reinforcement learning (RL) 37,59,68 and computational biology 32,58, many of which have technological breakthroughs and achieved state-of-the-art results.
 <strong>In the current deep learning paradigm, there is an entire ecosystem of tools designed to make it easy to train and deploy neural network models. It is also relatively straightforward to train the parameters of a neural network with deep learning frameworks by providing it with a dataset 9, or a simulated task environment 26. Deep learning tools are designed to be used by anyone with a basic programming background.</strong>
 +add now an extension of the holy trinity which incorporate training libraries and hardware “the holy pentagon”</p>
+<div align="center">
+<p style="text-align:center;"><img src="https://github.com/BergLab/CompNeuroBook/blob/main/notebooks/week4/trianglepentagon.png?raw=true" width="500"/>
+</div>
 <section id="mlp">
 <h4><span class="section-number">7.1.2.1. </span>MLP<a class="headerlink" href="#mlp" title="Permalink to this heading">#</a></h4>
 </section>
@@ -886,10 +889,14 @@ If you are working on Colab, you will need to upload the data.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;Temperature&#39;, ylabel=&#39;Temperature&#39;&gt;
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages/pandas/plotting/_matplotlib/core.py:1070: UserWarning: No data for colormapping provided via &#39;c&#39;. Parameters &#39;cmap&#39; will be ignored
+  scatter = ax.scatter(
 </pre></div>
 </div>
-<img alt="../../_images/week4b_10_1.png" src="../../_images/week4b_10_1.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot: xlabel=&#39;Temperature&#39;, ylabel=&#39;Temperature&#39;&gt;
+</pre></div>
+</div>
+<img alt="../../_images/week4b_11_2.png" src="../../_images/week4b_11_2.png" />
 </div>
 </div>
 <p>What value of the pearson correlation coefficient do expect to have? If it’s not obvious to you, think about it before running the next code cell.</p>
@@ -969,13 +976,13 @@ If you are working on Colab, you will need to upload the data.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Score on training:  0.9997646882409821
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Score on training:  0.9993426972249772
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x148647460&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x14958c250&gt;
 </pre></div>
 </div>
-<img alt="../../_images/week4b_20_2.png" src="../../_images/week4b_20_2.png" />
+<img alt="../../_images/week4b_21_2.png" src="../../_images/week4b_21_2.png" />
 </div>
 </div>
 <p>It seems to be working, the score should be close to 1.0 —which would be a perfect fit.</p>
@@ -1003,10 +1010,14 @@ If you are working on Colab, you will need to upload the data.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;Luminosity&#39;, ylabel=&#39;A_M&#39;&gt;
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages/pandas/plotting/_matplotlib/core.py:1070: UserWarning: No data for colormapping provided via &#39;c&#39;. Parameters &#39;cmap&#39; will be ignored
+  scatter = ax.scatter(
 </pre></div>
 </div>
-<img alt="../../_images/week4b_25_1.png" src="../../_images/week4b_25_1.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot: xlabel=&#39;Luminosity&#39;, ylabel=&#39;A_M&#39;&gt;
+</pre></div>
+</div>
+<img alt="../../_images/week4b_26_2.png" src="../../_images/week4b_26_2.png" />
 </div>
 </div>
 <p>As you already knew, there is indeed a strong correlation between these two variables. You could even try to guess what the analytical formula is given the shape —or google it— but rather let’s see if we can instead build a model to predict the absolute magnitude for each luminosity. We could try a linear model but the relation is not quite linear, is it? Ie. it’s not a straight line. We could also try to fit a polynomial or a logarithmic function.. Instead we will build a neural network model so we don’t need to make any assumption about the relation between the variables.</p>
@@ -1064,8 +1075,8 @@ If you are working on Colab, you will need to upload the data.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Score on training set:  0.9094335070922284
-Score on test set:  0.9074061601693109
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Score on training set:  0.9074042384440644
+Score on test set:  0.9609682762030545
 </pre></div>
 </div>
 </div>
@@ -1081,10 +1092,14 @@ Score on test set:  0.9074061601693109
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x14888e4c0&gt;]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages/pandas/plotting/_matplotlib/core.py:1070: UserWarning: No data for colormapping provided via &#39;c&#39;. Parameters &#39;cmap&#39; will be ignored
+  scatter = ax.scatter(
 </pre></div>
 </div>
-<img alt="../../_images/week4b_38_1.png" src="../../_images/week4b_38_1.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x149620ee0&gt;]
+</pre></div>
+</div>
+<img alt="../../_images/week4b_39_2.png" src="../../_images/week4b_39_2.png" />
 </div>
 </div>
 <p>Congratulations, you just trained your first neural network on real data! The red line should hopefully fit the dataset points.</p>
@@ -1115,10 +1130,10 @@ Score on test set:  0.9074061601693109
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:ylabel=&#39;None&#39;&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot: ylabel=&#39;None&#39;&gt;
 </pre></div>
 </div>
-<img alt="../../_images/week4b_43_1.png" src="../../_images/week4b_43_1.png" />
+<img alt="../../_images/week4b_44_1.png" src="../../_images/week4b_44_1.png" />
 </div>
 </div>
 <p>It seems the data is balanced with respect to stars types so we can safely move on.
@@ -1133,10 +1148,118 @@ Let’s now visualise how the different variables relate to each other so we can
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x1488abdf0&gt;
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">Input In [16],</span> in <span class="ni">&lt;cell line: 4&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">seaborn</span> <span class="c1"># seaborn is a library similar to matplotlib but with some extra features and nicer default color schemes</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">features</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Size&#39;</span><span class="p">,</span> <span class="s1">&#39;A_M&#39;</span><span class="p">,</span> <span class="s1">&#39;Temperature&#39;</span><span class="p">,</span> <span class="s1">&#39;Type&#39;</span><span class="p">]</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">seaborn</span><span class="o">.</span><span class="n">pairplot</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">features</span><span class="p">],</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;Type&quot;</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s2">&quot;husl&quot;</span><span class="p">)</span>
+
+<span class="nn">File ~/.virtualenvs/p39/lib/python3.9/site-packages/seaborn/_decorators.py:46,</span> in <span class="ni">_deprecate_positional_args.&lt;locals&gt;.inner_f</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">36</span>     <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">37</span>         <span class="s2">&quot;Pass the following variable</span><span class="si">{}</span><span class="s2"> as </span><span class="si">{}</span><span class="s2">keyword arg</span><span class="si">{}</span><span class="s2">: </span><span class="si">{}</span><span class="s2">. &quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">38</span>         <span class="s2">&quot;From version 0.12, the only valid positional argument &quot;</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">43</span>         <span class="ne">FutureWarning</span>
+<span class="g g-Whitespace">     </span><span class="mi">44</span>     <span class="p">)</span>
+<span class="nn">     45 kwargs.update({k: arg for k, arg</span> in <span class="ni">zip</span><span class="nt">(sig.parameters, args)})</span>
+<span class="ne">---&gt; </span><span class="mi">46</span> <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">File ~/.virtualenvs/p39/lib/python3.9/site-packages/seaborn/axisgrid.py:2130,</span> in <span class="ni">pairplot</span><span class="nt">(data, hue, hue_order, palette, vars, x_vars, y_vars, kind, diag_kind, markers, height, aspect, corner, dropna, plot_kws, diag_kws, grid_kws, size)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2128</span>     <span class="n">diag_kws</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s2">&quot;fill&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2129</span>     <span class="n">diag_kws</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s2">&quot;warn_singular&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">2130</span>     <span class="n">grid</span><span class="o">.</span><span class="n">map_diag</span><span class="p">(</span><span class="n">kdeplot</span><span class="p">,</span> <span class="o">**</span><span class="n">diag_kws</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2132</span> <span class="c1"># Maybe plot on the off-diagonals</span>
+<span class="g g-Whitespace">   </span><span class="mi">2133</span> <span class="k">if</span> <span class="n">diag_kind</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+
+<span class="nn">File ~/.virtualenvs/p39/lib/python3.9/site-packages/seaborn/axisgrid.py:1478,</span> in <span class="ni">PairGrid.map_diag</span><span class="nt">(self, func, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1476</span>     <span class="n">plot_kwargs</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s2">&quot;hue_order&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hue_order</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1477</span>     <span class="n">plot_kwargs</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s2">&quot;palette&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_orig_palette</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1478</span>     <span class="n">func</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">vector</span><span class="p">,</span> <span class="o">**</span><span class="n">plot_kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1479</span>     <span class="n">ax</span><span class="o">.</span><span class="n">legend_</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="g g-Whitespace">   </span><span class="mi">1481</span> <span class="bp">self</span><span class="o">.</span><span class="n">_add_axis_labels</span><span class="p">()</span>
+
+<span class="nn">File ~/.virtualenvs/p39/lib/python3.9/site-packages/seaborn/_decorators.py:46,</span> in <span class="ni">_deprecate_positional_args.&lt;locals&gt;.inner_f</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">36</span>     <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">37</span>         <span class="s2">&quot;Pass the following variable</span><span class="si">{}</span><span class="s2"> as </span><span class="si">{}</span><span class="s2">keyword arg</span><span class="si">{}</span><span class="s2">: </span><span class="si">{}</span><span class="s2">. &quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">38</span>         <span class="s2">&quot;From version 0.12, the only valid positional argument &quot;</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">43</span>         <span class="ne">FutureWarning</span>
+<span class="g g-Whitespace">     </span><span class="mi">44</span>     <span class="p">)</span>
+<span class="nn">     45 kwargs.update({k: arg for k, arg</span> in <span class="ni">zip</span><span class="nt">(sig.parameters, args)})</span>
+<span class="ne">---&gt; </span><span class="mi">46</span> <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">File ~/.virtualenvs/p39/lib/python3.9/site-packages/seaborn/distributions.py:1770,</span> in <span class="ni">kdeplot</span><span class="nt">(x, y, shade, vertical, kernel, bw, gridsize, cut, clip, legend, cumulative, shade_lowest, cbar, cbar_ax, cbar_kws, ax, weights, hue, palette, hue_order, hue_norm, multiple, common_norm, common_grid, levels, thresh, bw_method, bw_adjust, log_scale, color, fill, data, data2, warn_singular, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1767</span>     <span class="k">if</span> <span class="n">color</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1768</span>         <span class="n">plot_kws</span><span class="p">[</span><span class="s2">&quot;color&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">color</span>
+<span class="ne">-&gt; </span><span class="mi">1770</span>     <span class="n">p</span><span class="o">.</span><span class="n">plot_univariate_density</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1771</span>         <span class="n">multiple</span><span class="o">=</span><span class="n">multiple</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1772</span>         <span class="n">common_norm</span><span class="o">=</span><span class="n">common_norm</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1773</span>         <span class="n">common_grid</span><span class="o">=</span><span class="n">common_grid</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1774</span>         <span class="n">fill</span><span class="o">=</span><span class="n">fill</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1775</span>         <span class="n">legend</span><span class="o">=</span><span class="n">legend</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1776</span>         <span class="n">warn_singular</span><span class="o">=</span><span class="n">warn_singular</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1777</span>         <span class="n">estimate_kws</span><span class="o">=</span><span class="n">estimate_kws</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1778</span>         <span class="o">**</span><span class="n">plot_kws</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1779</span>     <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1781</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1783</span>     <span class="n">p</span><span class="o">.</span><span class="n">plot_bivariate_density</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1784</span>         <span class="n">common_norm</span><span class="o">=</span><span class="n">common_norm</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1785</span>         <span class="n">fill</span><span class="o">=</span><span class="n">fill</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1795</span>         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1796</span>     <span class="p">)</span>
+
+<span class="nn">File ~/.virtualenvs/p39/lib/python3.9/site-packages/seaborn/distributions.py:1015,</span> in <span class="ni">_DistributionPlotter.plot_univariate_density</span><span class="nt">(self, multiple, common_norm, common_grid, warn_singular, fill, legend, estimate_kws, **plot_kws)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1012</span> <span class="k">if</span> <span class="s2">&quot;x&quot;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">variables</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1014</span>     <span class="k">if</span> <span class="n">fill</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1015</span>         <span class="n">artist</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1016</span>             <span class="n">support</span><span class="p">,</span> <span class="n">fill_from</span><span class="p">,</span> <span class="n">density</span><span class="p">,</span> <span class="o">**</span><span class="n">artist_kws</span>
+<span class="g g-Whitespace">   </span><span class="mi">1017</span>         <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1018</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1019</span>         <span class="n">artist</span><span class="p">,</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">support</span><span class="p">,</span> <span class="n">density</span><span class="p">,</span> <span class="o">**</span><span class="n">artist_kws</span><span class="p">)</span>
+
+<span class="nn">File ~/.virtualenvs/p39/lib/python3.9/site-packages/matplotlib/__init__.py:1423,</span> in <span class="ni">_preprocess_data.&lt;locals&gt;.inner</span><span class="nt">(ax, data, *args, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1420</span> <span class="nd">@functools</span><span class="o">.</span><span class="n">wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1421</span> <span class="k">def</span> <span class="nf">inner</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1422</span>     <span class="k">if</span> <span class="n">data</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1423</span>         <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="o">*</span><span class="nb">map</span><span class="p">(</span><span class="n">sanitize_sequence</span><span class="p">,</span> <span class="n">args</span><span class="p">),</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1425</span>     <span class="n">bound</span> <span class="o">=</span> <span class="n">new_sig</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1426</span>     <span class="n">auto_label</span> <span class="o">=</span> <span class="p">(</span><span class="n">bound</span><span class="o">.</span><span class="n">arguments</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">label_namer</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1427</span>                   <span class="ow">or</span> <span class="n">bound</span><span class="o">.</span><span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">label_namer</span><span class="p">))</span>
+
+<span class="nn">File ~/.virtualenvs/p39/lib/python3.9/site-packages/matplotlib/axes/_axes.py:5367,</span> in <span class="ni">Axes.fill_between</span><span class="nt">(self, x, y1, y2, where, interpolate, step, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">5365</span> <span class="k">def</span> <span class="nf">fill_between</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">y2</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">interpolate</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">5366</span>                  <span class="n">step</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="ne">-&gt; </span><span class="mi">5367</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fill_between_x_or_y</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">5368</span>         <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">5369</span>         <span class="n">where</span><span class="o">=</span><span class="n">where</span><span class="p">,</span> <span class="n">interpolate</span><span class="o">=</span><span class="n">interpolate</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="n">step</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">File ~/.virtualenvs/p39/lib/python3.9/site-packages/matplotlib/axes/_axes.py:5272,</span> in <span class="ni">Axes._fill_between_x_or_y</span><span class="nt">(self, ind_dir, ind, dep1, dep2, where, interpolate, step, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">5268</span>         <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;facecolor&quot;</span><span class="p">]</span> <span class="o">=</span> \
+<span class="g g-Whitespace">   </span><span class="mi">5269</span>             <span class="bp">self</span><span class="o">.</span><span class="n">_get_patches_for_fill</span><span class="o">.</span><span class="n">get_next_color</span><span class="p">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">5271</span> <span class="c1"># Handle united data, such as dates</span>
+<span class="ne">-&gt; </span><span class="mi">5272</span> <span class="n">ind</span><span class="p">,</span> <span class="n">dep1</span><span class="p">,</span> <span class="n">dep2</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">5273</span>     <span class="n">ma</span><span class="o">.</span><span class="n">masked_invalid</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_process_unit_info</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">5274</span>         <span class="p">[(</span><span class="n">ind_dir</span><span class="p">,</span> <span class="n">ind</span><span class="p">),</span> <span class="p">(</span><span class="n">dep_dir</span><span class="p">,</span> <span class="n">dep1</span><span class="p">),</span> <span class="p">(</span><span class="n">dep_dir</span><span class="p">,</span> <span class="n">dep2</span><span class="p">)],</span> <span class="n">kwargs</span><span class="p">))</span>
+<span class="g g-Whitespace">   </span><span class="mi">5276</span> <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">array</span> <span class="ow">in</span> <span class="p">[</span>
+<span class="g g-Whitespace">   </span><span class="mi">5277</span>         <span class="p">(</span><span class="n">ind_dir</span><span class="p">,</span> <span class="n">ind</span><span class="p">),</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">dep_dir</span><span class="si">}</span><span class="s2">1&quot;</span><span class="p">,</span> <span class="n">dep1</span><span class="p">),</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">dep_dir</span><span class="si">}</span><span class="s2">2&quot;</span><span class="p">,</span> <span class="n">dep2</span><span class="p">)]:</span>
+<span class="g g-Whitespace">   </span><span class="mi">5278</span>     <span class="k">if</span> <span class="n">array</span><span class="o">.</span><span class="n">ndim</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+
+<span class="nn">File ~/.virtualenvs/p39/lib/python3.9/site-packages/numpy/ma/core.py:2360,</span> in <span class="ni">masked_invalid</span><span class="nt">(a, copy)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2332</span> <span class="k">def</span> <span class="nf">masked_invalid</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">2333</span>     <span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">2334</span><span class="sd">     Mask an array where invalid values occur (NaNs or infs).</span>
+<span class="g g-Whitespace">   </span><span class="mi">2335</span><span class="sd"> </span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2357</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">2358</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">2360</span>     <span class="k">return</span> <span class="n">masked_where</span><span class="p">(</span><span class="o">~</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">getdata</span><span class="p">(</span><span class="n">a</span><span class="p">))),</span> <span class="n">a</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="n">copy</span><span class="p">)</span>
+
+<span class="ne">TypeError</span>: ufunc &#39;isfinite&#39; not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule &#39;&#39;safe&#39;&#39;
 </pre></div>
 </div>
-<img alt="../../_images/week4b_45_1.png" src="../../_images/week4b_45_1.png" />
+<img alt="../../_images/week4b_46_1.png" src="../../_images/week4b_46_1.png" />
 </div>
 </div>
 <p>We start by selecting the data that we are gonna feed our model —the input— and the data that we want our model to predict —ie. to output—. In our case, we’re gonna try to predict the star type (White Dwarf, Super giants..) based on their temperature and absolute magnitude.</p>
@@ -1187,12 +1310,6 @@ Let’s now visualise how the different variables relate to each other so we can
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy on training:  0.9322916666666666
-Accuracy on test:  0.8541666666666666
-</pre></div>
-</div>
-</div>
 </div>
 <p>Since we are making predictions based on only two dimensions (temperature and absolute magnitude) we can make a figure with the decision boundaries for our model. To do so, we use Scikit-learn <code class="docutils literal notranslate"><span class="pre">DecisionBoundaryDisplay</span></code> function. ⚠️ Sadly, Google Colab doesn’t run the last version of Scipy which implements the <code class="docutils literal notranslate"><span class="pre">DecisionBoundaryDisplay</span></code> function. You will have to run this part locally on your computer or come talk to use to see what it looks like and just skip it.</p>
 <div class="cell docutils container">
@@ -1223,12 +1340,6 @@ Accuracy on test:  0.8541666666666666
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 1152x864 with 0 Axes&gt;
-</pre></div>
-</div>
-<img alt="../../_images/week4b_56_1.png" src="../../_images/week4b_56_1.png" />
 </div>
 </div>
 <section id="id3">
