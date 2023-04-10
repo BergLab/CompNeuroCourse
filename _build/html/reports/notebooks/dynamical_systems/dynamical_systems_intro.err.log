@@ -31,7 +31,7 @@ def LIF(v, t, input_current, membrane_capacitance, membrane_resistance):
 
 ------------------
 
-[0;36m  Cell [0;32mIn[2], line 7[0;36m[0m
+[0;36m  Cell [0;32mIn[4], line 7[0;36m[0m
 [0;31m    ## Your code here[0m
 [0m                     ^[0m
 [0;31mSyntaxError[0m[0;31m:[0m incomplete input

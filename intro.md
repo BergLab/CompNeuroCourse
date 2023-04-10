@@ -4,9 +4,9 @@
 
 The course will consists of three types of classes: **Lectures** where you learn some concepts relevant in computational neuroscience, **Coding exercises** where you get to practice what you learn during lecture and **Invited talks** researches will come talk about their current research.
 
-  * The **lectures** will follow a hybrid flipped classroom structure: we will give you some material —typically a video— that you need to watch before coming to class. These materials are meant for you to refresh some notions of build an intuitions about the concepts, the corresponding lecture will build on them.
+  * The **lectures** will follow a hybrid flipped classroom structure: we ask you to go through the supporting materials that we link on each chapter —typically videos— before coming to class. These materials are meant for you to refresh some notions of build an intuitions about the concepts, the corresponding lecture will build on them.
 
-  * The **coding workshops**: here you will have the chance of putting the concepts introduced in the lecture into practice by building models, analysis data and running simulations. The workshop classes will follow a flipped classroom structure: we will work together to solve the week's problems. Note that the exam assignments will be variations of the problems solved during the workshops.
+  * The **coding workshops**: here you will have the chance of putting the concepts introduced in the lecture into practice by building models, analysis data and running simulations. The workshop classes will follow a flipped classroom structure: we will work together to solve the week's problems (we will give you some time to solve an exercise and then go through it together). Note that the exam assignments will be variations of the problems solved during the workshops.
 
   * The **invited talks**: these are meant for you to get a sense of current research being done in the field. Simply relax and enjoy.  
 
