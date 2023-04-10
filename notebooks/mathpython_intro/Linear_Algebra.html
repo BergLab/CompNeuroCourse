@@ -436,6 +436,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supporting-material">Supporting material</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concepts-and-notation">Concepts and Notation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-spaces">Vector Spaces</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-systems">Linear Systems</a><ul class="nav section-nav flex-column">
@@ -493,42 +494,17 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="linear-algebra-basics">
 <h1>Linear Algebra basics<a class="headerlink" href="#linear-algebra-basics" title="Permalink to this heading">#</a></h1>
-<p><em>Credit: <a class="reference external" href="https://bvanderlei.github.io/jupyter-guide-to-linear-algebra/">Ben Vanderlei’s Jupyter Guide to Linear Algebra</a> and <a class="reference external" href="http://damir.cavar.me/">Damir Cavar notebooks</a> under CC BY 4.0 with minor adaptations.</em></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># # @title Video 1: Introduction</span>
-<span class="c1"># from ipywidgets import widgets</span>
-
-<span class="c1"># out1 = widgets.Output()</span>
-<span class="c1"># with out1:</span>
-<span class="c1">#     from IPython.display import YouTubeVideo</span>
-<span class="c1">#     video = YouTubeVideo(id=f&quot;fNk_zzaMoSs&quot;, width=730, height=410, fs=1, rel=0)</span>
-<span class="c1">#     print(&quot;Video available at https://youtube.com/watch?v=&quot; + video.id)</span>
-<span class="c1">#     display(video)</span>
-
-<span class="c1"># out = widgets.Tab([out1, out1])</span>
-<span class="c1"># out.set_title(0, &#39;Youtube&#39;)</span>
-<span class="c1"># out.set_title(1, &#39;Other player&#39;)</span>
-
-<span class="c1"># display(out)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
-<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s2">&quot;fNk_zzaMoSs&quot;</span><span class="p">)</span>
-
-<span class="c1"># https://www.3blue1brown.com/topics/linear-algebra</span>
-</pre></div>
-</div>
-</div>
+<p><em><strong>Credit</strong>: <a class="reference external" href="https://bvanderlei.github.io/jupyter-guide-to-linear-algebra/">Ben Vanderlei’s Jupyter Guide to Linear Algebra</a> and <a class="reference external" href="http://damir.cavar.me/">Damir Cavar notebooks</a> under CC BY 4.0 with minor adaptations.</em></p>
+<section id="supporting-material">
+<h2>Supporting material<a class="headerlink" href="#supporting-material" title="Permalink to this heading">#</a></h2>
+<p>This chapter’s supporting material is <a class="reference external" href="https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab">3blue1brown Essence to Linear Algebra</a>.
+You are encouraged to watch the whole playlist (it’s really good!) but specially relevant to this course are chapters 1 to 6 and chapters 14 to 16.</p>
+<div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html">
         <iframe
-            width="400"
-            height="300"
+            width="600"
+            height="400"
             src="https://www.youtube.com/embed/fNk_zzaMoSs"
             frameborder="0"
             allowfullscreen
@@ -536,6 +512,7 @@ document.write(`
         ></iframe>
         </div></div>
 </div>
+</section>
 <section id="concepts-and-notation">
 <h2>Concepts and Notation<a class="headerlink" href="#concepts-and-notation" title="Permalink to this heading">#</a></h2>
 <p>A <strong>scalar</strong> is an element in a vector, containing a real number <strong>value</strong>. In a vector space model or a vector mapping of (symbolic, qualitative, or quantitative) properties the scalar holds the concrete value or property of a variable.</p>
@@ -954,7 +931,7 @@ I
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">13</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">12</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">linalg</span>
 <span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">C_inverse</span> <span class="o">=</span> <span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">C</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="nb">print</span><span class="p">(</span><span class="n">C_inverse</span><span class="p">)</span>
@@ -1569,6 +1546,7 @@ D = \left[ \begin{array}{cc} -0.6 &amp; -0.8 \\ -0.8 &amp; 0.6 \end{array}\right
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supporting-material">Supporting material</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concepts-and-notation">Concepts and Notation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-spaces">Vector Spaces</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-systems">Linear Systems</a><ul class="nav section-nav flex-column">
