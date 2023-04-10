@@ -1,52 +1,61 @@
 
+
 <!DOCTYPE html>
 
-<html lang="en">
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>9. Network science &#8212; Computational Neuroscience</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/custom.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -56,62 +65,94 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/week6/week6';</script>
     <link rel="canonical" href="https://neurowithpython.com/notebooks/week6/week6.html" />
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="prev" title="8. Control Theory" href="../week5/CT.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
-
-    
-
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../../index.html">
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../../_static/cajal1.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Computational Neuroscience</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="../../_static/cajal1.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/cajal1.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -120,679 +161,333 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Coding tools for researchers
- </span>
-</p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Coding tools for researchers</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../week0/codingtoolsforresearch.html">
-   Coding tools for researchers
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../week0/codingtoolsforresearch.html">Coding tools for researchers</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Week 1. Math review with Python
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 1. Math review with Python</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../week1/week1-IntroColab.html">
-   Google’s Colab
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../week1/week1a-Numpy_Introduction.html">
-   Introduction to NumPy and Matplotlib
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../week1/week1b-Linear_Algebra.html">
-   Linear Algebra basics
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../week1/week1-IntroColab.html">Google’s Colab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week1/week1a-Numpy_Introduction.html">Introduction to NumPy and Matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week1/week1b-Linear_Algebra.html">Linear Algebra basics</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Week 2. Differential equations and neuron models
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 2. Differential equations and neuron models</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../week2/week2a.html">
-   1. Introduction modelling with differential equations
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../week2/week2b-Applications_LT.html">
-   2. Dynamical systems as Linear Transformations
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../week2/week2a.html">1. Introduction modelling with differential equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week2/week2b-Applications_LT.html">2. Dynamical systems as Linear Transformations</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Week 3. Simulation of neural population
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 3. Simulation of neural population</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../week3/week3a.html">
-   3. Introduction to Brian part 1: Neurons
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../week3/week3b.html">
-   4. Introduction to Brian part 2: Synapses
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../week3/week3c.html">
-   5. Introduction to Brian part 3: Simulations
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../week3/week3a.html">3. Introduction to Brian part 1: Neurons</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week3/week3b.html">4. Introduction to Brian part 2: Synapses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week3/week3c.html">5. Introduction to Brian part 3: Simulations</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Week 4. Data analysis and Machine learning
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 4. Data analysis and Machine learning</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../week4/week4a.html">
-   6. Introduction to Data Analysis with Pandas
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../week4/week4b.html">
-   7. Machine Learning
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../week4/week4a.html">6. Introduction to Data Analysis with Pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week4/week4b.html">7. Machine Learning</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Week 5. Reinforcement Learning and Control Theory
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 5. Reinforcement Learning and Control Theory</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../week5/CT.html">
-   8. Control Theory
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../week5/CT.html">8. Control Theory</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Week 6. Network analysis
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 6. Network analysis</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   9. Network science
-  </a>
- </li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">9. Network science</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
-          
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
 
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
 <div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
 
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://colab.research.google.com/github/BergLab/CompNeuroBook/blob/master/docs/notebooks/week6/week6.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Colab"
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/BergLab/CompNeuroBook/blob/master/docs/notebooks/week6/week6.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   
     <img src="../../_static/images/logo_colab.png">
   </span>
-<span class="headerbtn__text-container">Colab</span>
+<span class="btn__text-container">Colab</span>
 </a>
-
-      </li>
+</li>
       
-    </ul>
-  </div>
+  </ul>
 </div>
 
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/BergLab/CompNeuroBook" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/BergLab/CompNeuroBook/edit/master/docs/notebooks/week6/week6.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/BergLab/CompNeuroBook/issues/new?title=Issue%20on%20page%20%2Fnotebooks/week6/week6.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/notebooks/week6/week6.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/BergLab/CompNeuroBook"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/BergLab/CompNeuroBook/issues/new?title=Issue%20on%20page%20%2Fnotebooks/week6/week6.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/BergLab/CompNeuroBook/edit/master/docs/notebooks/week6/week6.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Edit this page"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-pencil-alt"></i>
-  </span>
-<span class="headerbtn__text-container">suggest edit</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../../_sources/notebooks/week6/week6.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#why-networks">
-   9.1. Why networks?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#basic-network-concepts">
-   9.2. Basic network concepts
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#nodes-and-edges">
-     9.2.1. Nodes and edges
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#network-connectivity">
-     9.2.2. Network Connectivity
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#connected-network">
-     9.2.3. Connected Network
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#directed-vs-undirected-network">
-     9.2.4. Directed vs undirected network
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#graphs-with-features">
-     9.2.5. Graphs with features
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#features-normalisation">
-       9.2.5.1. Features normalisation
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#feature-activation">
-       9.2.5.2. Feature activation
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#extra-linear-transformations">
-       9.2.5.3. Extra Linear transformations
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#using-networkx">
-   9.3. Using NetworkX
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercises">
-     9.3.1. Exercises 🧑‍💻🔨
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#measures-used-to-characterise-networks">
-   9.4. Measures used to characterise networks
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#degree-of-connectivity">
-     9.4.1. Degree of connectivity
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#distance-diameter-and-shortest-path">
-     9.4.2. Distance, diameter and shortest path
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#centrality">
-     9.4.3. Centrality
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id1">
-       9.4.3.1. Exercises 🧑‍💻🔨
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#clustering-coefficient">
-     9.4.4. Clustering coefficient
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#cliques">
-     9.4.5. Cliques
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#motifs-and-motifs-analysis">
-     9.4.6. Motifs and motifs analysis
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#exercise">
-       9.4.6.1. Exercise 🧑‍💻🔨
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#scale-free-networks">
-     9.4.7. Scale free networks
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#small-world-networks">
-     9.4.8. Small-world networks
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#bonus-evaluating-the-small-worldness-of-a-network-g">
-       9.4.8.1. Bonus: Evaluating the small-worldness of a network G
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id2">
-       9.4.8.2. Exercise 🧑‍💻🔨
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#propagation-or-replication-in-a-network">
-     9.4.9. Propagation -or replication- in a network
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#diffusion-in-a-network">
-     9.4.10. Diffusion in a network
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#spectral-graph-theory">
-     9.4.11. Spectral graph theory
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Network science</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#why-networks">
-   9.1. Why networks?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#basic-network-concepts">
-   9.2. Basic network concepts
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#nodes-and-edges">
-     9.2.1. Nodes and edges
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#network-connectivity">
-     9.2.2. Network Connectivity
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#connected-network">
-     9.2.3. Connected Network
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#directed-vs-undirected-network">
-     9.2.4. Directed vs undirected network
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#graphs-with-features">
-     9.2.5. Graphs with features
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#features-normalisation">
-       9.2.5.1. Features normalisation
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#feature-activation">
-       9.2.5.2. Feature activation
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#extra-linear-transformations">
-       9.2.5.3. Extra Linear transformations
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#using-networkx">
-   9.3. Using NetworkX
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercises">
-     9.3.1. Exercises 🧑‍💻🔨
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#measures-used-to-characterise-networks">
-   9.4. Measures used to characterise networks
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#degree-of-connectivity">
-     9.4.1. Degree of connectivity
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#distance-diameter-and-shortest-path">
-     9.4.2. Distance, diameter and shortest path
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#centrality">
-     9.4.3. Centrality
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id1">
-       9.4.3.1. Exercises 🧑‍💻🔨
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#clustering-coefficient">
-     9.4.4. Clustering coefficient
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#cliques">
-     9.4.5. Cliques
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#motifs-and-motifs-analysis">
-     9.4.6. Motifs and motifs analysis
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#exercise">
-       9.4.6.1. Exercise 🧑‍💻🔨
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#scale-free-networks">
-     9.4.7. Scale free networks
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#small-world-networks">
-     9.4.8. Small-world networks
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#bonus-evaluating-the-small-worldness-of-a-network-g">
-       9.4.8.1. Bonus: Evaluating the small-worldness of a network G
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id2">
-       9.4.8.2. Exercise 🧑‍💻🔨
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#propagation-or-replication-in-a-network">
-     9.4.9. Propagation -or replication- in a network
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#diffusion-in-a-network">
-     9.4.10. Diffusion in a network
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#spectral-graph-theory">
-     9.4.11. Spectral graph theory
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Network science</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-networks">9.1. Why networks?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-network-concepts">9.2. Basic network concepts</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nodes-and-edges">9.2.1. Nodes and edges</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#network-connectivity">9.2.2. Network Connectivity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#connected-network">9.2.3. Connected Network</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#directed-vs-undirected-network">9.2.4. Directed vs undirected network</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graphs-with-features">9.2.5. Graphs with features</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#features-normalisation">9.2.5.1. Features normalisation</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-activation">9.2.5.2. Feature activation</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#extra-linear-transformations">9.2.5.3. Extra Linear transformations</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-networkx">9.3. Using NetworkX</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">9.3.1. Exercises 🧑‍💻🔨</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#measures-used-to-characterise-networks">9.4. Measures used to characterise networks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#degree-of-connectivity">9.4.1. Degree of connectivity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distance-diameter-and-shortest-path">9.4.2. Distance, diameter and shortest path</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#centrality">9.4.3. Centrality</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">9.4.3.1. Exercises 🧑‍💻🔨</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clustering-coefficient">9.4.4. Clustering coefficient</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cliques">9.4.5. Cliques</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#motifs-and-motifs-analysis">9.4.6. Motifs and motifs analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">9.4.6.1. Exercise 🧑‍💻🔨</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scale-free-networks">9.4.7. Scale free networks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#small-world-networks">9.4.8. Small-world networks</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-evaluating-the-small-worldness-of-a-network-g">9.4.8.1. Bonus: Evaluating the small-worldness of a network G</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">9.4.8.2. Exercise 🧑‍💻🔨</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#propagation-or-replication-in-a-network">9.4.9. Propagation -or replication- in a network</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#diffusion-in-a-network">9.4.10. Diffusion in a network</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spectral-graph-theory">9.4.11. Spectral graph theory</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <section class="tex2jax_ignore mathjax_ignore" id="network-science">
 <h1><span class="section-number">9. </span>Network science<a class="headerlink" href="#network-science" title="Permalink to this heading">#</a></h1>
 <p>Network science is a discipline that deals with systems —made of many elements— and studies how the connectivity of the system affects its observed behavior.
@@ -880,6 +575,18 @@ Examples of applications of network science are ecosystems, biological pathways,
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;networkx&#39;
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -914,7 +621,7 @@ Examples of applications of network science are ecosystems, biological pathways,
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/week6_5_0.png" src="../../_images/week6_5_0.png" />
+<img alt="../../_images/2c0001ef57eb6e1adf3c956af54ad39243bcf29750f76ae57353a2c5c76fab13.png" src="../../_images/2c0001ef57eb6e1adf3c956af54ad39243bcf29750f76ae57353a2c5c76fab13.png" />
 </div>
 </div>
 <p>Instead of adding the nodes and edges one by one we can use a loop. Let’s create a random graph. Notice that since we’re randomly sampling the edges we may get a disjoint graph.</p>
@@ -941,28 +648,28 @@ Examples of applications of network science are ecosystems, biological pathways,
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/week6_7_0.png" src="../../_images/week6_7_0.png" />
+<img alt="../../_images/ac769a3aed6959bfa6240731b570fa9740aa55e1d3e61ad443c4a80228cfcbb5.png" src="../../_images/ac769a3aed6959bfa6240731b570fa9740aa55e1d3e61ad443c4a80228cfcbb5.png" />
 </div>
 </div>
 <p>We can easily obtain the adjacency matrix representation of the graph:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">adjacency_matrix</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">to_numpy_matrix</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">adjacency_matrix</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">to_numpy_array</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">adjacency_matrix</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0. 1. 0. 0. 0. 0. 1. 0. 0. 0.]
- [1. 1. 0. 0. 0. 0. 1. 1. 0. 0.]
- [0. 0. 0. 1. 0. 0. 0. 0. 0. 0.]
- [0. 0. 1. 0. 0. 0. 0. 1. 0. 0.]
- [0. 0. 0. 0. 1. 1. 0. 1. 0. 1.]
- [0. 0. 0. 0. 1. 0. 1. 0. 1. 0.]
- [1. 1. 0. 0. 0. 1. 0. 1. 1. 0.]
- [0. 1. 0. 1. 1. 0. 1. 1. 0. 0.]
- [0. 0. 0. 0. 0. 1. 1. 0. 0. 0.]
- [0. 0. 0. 0. 1. 0. 0. 0. 0. 0.]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0. 1. 1. 1. 0. 0. 1. 0. 0. 1.]
+ [1. 0. 0. 1. 0. 0. 0. 1. 1. 0.]
+ [1. 0. 1. 1. 1. 0. 0. 0. 1. 0.]
+ [1. 1. 1. 1. 1. 0. 0. 0. 0. 0.]
+ [0. 0. 1. 1. 1. 1. 1. 0. 0. 0.]
+ [0. 0. 0. 0. 1. 0. 0. 0. 1. 0.]
+ [1. 0. 0. 0. 1. 0. 0. 0. 0. 0.]
+ [0. 1. 0. 0. 0. 0. 0. 0. 1. 0.]
+ [0. 1. 1. 0. 0. 1. 0. 1. 0. 0.]
+ [1. 0. 0. 0. 0. 0. 0. 0. 0. 0.]]
 </pre></div>
 </div>
 </div>
@@ -973,7 +680,7 @@ Examples of applications of network science are ecosystems, biological pathways,
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create random network</span>
 <span class="n">networkSize</span> <span class="o">=</span> <span class="mi">7</span>
 <span class="n">adj_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">low</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">networkSize</span><span class="p">,</span> <span class="n">networkSize</span><span class="p">))</span> <span class="c1"># create a square random matrix with 0s and 1s of of size networkSize</span>
-<span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">from_numpy_matrix</span><span class="p">(</span><span class="n">adj_matrix</span><span class="p">,</span> <span class="n">create_using</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">)</span>
+<span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">from_numpy_array</span><span class="p">(</span><span class="n">adj_matrix</span><span class="p">,</span> <span class="n">create_using</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">)</span>
 
 <span class="c1"># Draw network</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
@@ -987,16 +694,16 @@ Examples of applications of network science are ecosystems, biological pathways,
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/week6_11_0.png" src="../../_images/week6_11_0.png" />
+<img alt="../../_images/df886d58361899a13df6e9243e2c4a1e4c694a2e42962016389c863a5517a7a9.png" src="../../_images/df886d58361899a13df6e9243e2c4a1e4c694a2e42962016389c863a5517a7a9.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Adjacency matrix:
 
-[[1 0 0 1 1 1 1]
- [1 1 0 1 0 1 0]
- [0 1 0 0 0 0 0]
- [1 0 0 1 0 0 0]
- [0 1 0 0 1 0 1]
- [1 1 0 1 0 1 1]
- [1 0 1 1 0 0 0]]
+[[1 1 1 0 1 1 1]
+ [1 0 1 1 1 1 1]
+ [1 1 1 0 0 0 1]
+ [0 0 1 1 1 0 0]
+ [1 0 1 1 0 1 1]
+ [1 0 1 1 1 0 1]
+ [1 1 1 1 1 0 1]]
 </pre></div>
 </div>
 </div>
@@ -1015,13 +722,13 @@ Examples of applications of network science are ecosystems, biological pathways,
 <span class="n">rng</span> <span class="o">=</span> <span class="n">default_rng</span><span class="p">()</span>
 <span class="n">rvs</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="n">minWeight</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">maxWeight</span> <span class="o">-</span> <span class="n">minWeight</span><span class="p">)</span><span class="o">.</span><span class="n">rvs</span>
 <span class="n">sparse_adj_matrix</span> <span class="o">=</span> <span class="n">sparse</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="n">networkSize</span><span class="p">,</span> <span class="n">networkSize</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="n">sparsity</span><span class="p">,</span> <span class="n">data_rvs</span><span class="o">=</span><span class="n">rvs</span><span class="p">)</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
-<span class="n">G_sparse</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">from_numpy_matrix</span><span class="p">(</span><span class="n">sparse_adj_matrix</span><span class="p">)</span>
+<span class="n">G_sparse</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">from_numpy_array</span><span class="p">(</span><span class="n">sparse_adj_matrix</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">G_sparse</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Graph with 10 nodes and 19 edges
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Graph with 10 nodes and 17 edges
 </pre></div>
 </div>
 </div>
@@ -1035,7 +742,7 @@ Examples of applications of network science are ecosystems, biological pathways,
 <span class="n">minWeight</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
 <span class="n">maxWeight</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">adj_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">low</span><span class="o">=</span><span class="n">minWeight</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="n">maxWeight</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">networkSize</span><span class="p">,</span> <span class="n">networkSize</span><span class="p">))</span> <span class="c1"># create a square random matrix with 0s and 1s of of size networkSize</span>
-<span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">from_numpy_matrix</span><span class="p">(</span><span class="n">adj_matrix</span><span class="p">,</span> <span class="n">create_using</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">)</span>
+<span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">from_numpy_array</span><span class="p">(</span><span class="n">adj_matrix</span><span class="p">,</span> <span class="n">create_using</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">)</span>
 
 
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">12</span><span class="p">))</span>
@@ -1051,7 +758,11 @@ Examples of applications of network science are ecosystems, biological pathways,
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/week6_16_0.png" src="../../_images/week6_16_0.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/jw/bb3wy2wj6bv8jf69svd8cqdc0000gn/T/ipykernel_4671/408222333.py:15: MatplotlibDeprecationWarning: Unable to determine Axes to steal space for Colorbar. Using gca(), but will raise in the future. Either provide the *cax* argument to use as the Axes for the Colorbar, provide the *ax* argument to steal space from it, or add *mappable* to an Axes.
+  plt.colorbar(plt.cm.ScalarMappable(cmap=plt.cm.viridis, norm=plt.Normalize(vmin = edge_colors.min(), vmax=edge_colors.max())))
+</pre></div>
+</div>
+<img alt="../../_images/627cead75c23b74b4200c671ac6681aaaef7673ea415c17af2854816986d589a.png" src="../../_images/627cead75c23b74b4200c671ac6681aaaef7673ea415c17af2854816986d589a.png" />
 </div>
 </div>
 <section id="exercises">
@@ -1109,26 +820,26 @@ Another quantification of a node centrality is <em>betweenness</em>. <strong>Bet
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(0, 7), (1, 11), (2, 13), (3, 12), (4, 5), (5, 12), (6, 6), (7, 9), (8, 8), (9, 8), (10, 4), (11, 12), (12, 8), (13, 9), (14, 10), (15, 9), (16, 10), (17, 9), (18, 9), (19, 9)]
-Node 0 has degree 7
-Node 1 has degree 11
-Node 2 has degree 13
-Node 3 has degree 12
-Node 4 has degree 5
-Node 5 has degree 12
-Node 6 has degree 6
-Node 7 has degree 9
-Node 8 has degree 8
-Node 9 has degree 8
-Node 10 has degree 4
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(0, 8), (1, 8), (2, 7), (3, 9), (4, 11), (5, 8), (6, 12), (7, 11), (8, 10), (9, 12), (10, 11), (11, 12), (12, 14), (13, 10), (14, 11), (15, 12), (16, 7), (17, 7), (18, 11), (19, 9)]
+Node 0 has degree 8
+Node 1 has degree 8
+Node 2 has degree 7
+Node 3 has degree 9
+Node 4 has degree 11
+Node 5 has degree 8
+Node 6 has degree 12
+Node 7 has degree 11
+Node 8 has degree 10
+Node 9 has degree 12
+Node 10 has degree 11
 Node 11 has degree 12
-Node 12 has degree 8
-Node 13 has degree 9
-Node 14 has degree 10
-Node 15 has degree 9
-Node 16 has degree 10
-Node 17 has degree 9
-Node 18 has degree 9
+Node 12 has degree 14
+Node 13 has degree 10
+Node 14 has degree 11
+Node 15 has degree 12
+Node 16 has degree 7
+Node 17 has degree 7
+Node 18 has degree 11
 Node 19 has degree 9
 </pre></div>
 </div>
@@ -1148,7 +859,7 @@ Node 19 has degree 9
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/week6_23_0.png" src="../../_images/week6_23_0.png" />
+<img alt="../../_images/dcc500f5b3a001b1f83432c6bed3f4f9e4f3d7b586f685133c8032b186397ce1.png" src="../../_images/dcc500f5b3a001b1f83432c6bed3f4f9e4f3d7b586f685133c8032b186397ce1.png" />
 </div>
 </div>
 <p>Now that we know the degree of each node we can compute the <strong>degree distribution</strong>:</p>
@@ -1170,7 +881,7 @@ Node 19 has degree 9
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;P(k)&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/week6_25_1.png" src="../../_images/week6_25_1.png" />
+<img alt="../../_images/96a67925890f558e524612822974a644fc57a4d3186b67ff65b7767d915bd050.png" src="../../_images/96a67925890f558e524612822974a644fc57a4d3186b67ff65b7767d915bd050.png" />
 </div>
 </div>
 <p>Let’s also compute the other quantities we have introduced:</p>
@@ -1185,11 +896,11 @@ Node 19 has degree 9
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Graph with 20 nodes and 90 edges
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Graph with 20 nodes and 100 edges
 Number of nodes: 20
-Number of edges: 90
-Network diameter: 3
-Average shortest path: 1.5315789473684212
+Number of edges: 100
+Network diameter: 2
+Average shortest path: 1.4736842105263157
 </pre></div>
 </div>
 </div>
@@ -1244,26 +955,26 @@ Average shortest path: 1.5315789473684212
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{0: 0.7619047619047619,
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{0: 0.4166666666666667,
  1: 0.42857142857142855,
- 2: 0.5555555555555556,
- 3: 0.45714285714285713,
- 4: 0.6785714285714286,
- 5: 0.4666666666666667,
- 6: 0.6666666666666666,
- 7: 0.5357142857142857,
- 8: 0.5833333333333334,
- 9: 0.5277777777777778,
- 10: 0.4393939393939394,
- 11: 0.6222222222222222,
+ 2: 0.47619047619047616,
+ 3: 0.4722222222222222,
+ 4: 0.4666666666666667,
+ 5: 0.3611111111111111,
+ 6: 0.4642857142857143,
+ 7: 0.4642857142857143,
+ 8: 0.3888888888888889,
+ 9: 0.4222222222222222,
+ 10: 0.4666666666666667,
+ 11: 0.37777777777777777,
  12: 0.42857142857142855,
- 13: 0.4166666666666667,
- 14: 0.5636363636363636,
- 15: 0.43636363636363634,
- 16: 0.4857142857142857,
- 17: 0.5274725274725275,
- 18: 0.5357142857142857,
- 19: 0.4727272727272727}
+ 13: 0.35555555555555557,
+ 14: 0.35555555555555557,
+ 15: 0.5,
+ 16: 0.4444444444444444,
+ 17: 0.3611111111111111,
+ 18: 0.4166666666666667,
+ 19: 0.4444444444444444}
 </pre></div>
 </div>
 </div>
@@ -1277,7 +988,7 @@ Average shortest path: 1.5315789473684212
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The global CC of the network is 0.5295193695193696
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The global CC of the network is 0.425595238095238
 </pre></div>
 </div>
 </div>
@@ -1336,11 +1047,11 @@ Average shortest path: 1.5315789473684212
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/week6_39_0.png" src="../../_images/week6_39_0.png" />
+<img alt="../../_images/f32fcc90a8dac4555911ff07d264e56699f56acd8ed9256a3fecaa735c5929f0.png" src="../../_images/f32fcc90a8dac4555911ff07d264e56699f56acd8ed9256a3fecaa735c5929f0.png" />
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;P(k)&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/week6_39_2.png" src="../../_images/week6_39_2.png" />
+<img alt="../../_images/e4ebafcabbfa5704428bf96c366aecfa1845abfca96920292c4813997c085405.png" src="../../_images/e4ebafcabbfa5704428bf96c366aecfa1845abfca96920292c4813997c085405.png" />
 </div>
 </div>
 <p>NetowrkX also allows us to generate small-world networks:</p>
@@ -1358,11 +1069,43 @@ Average shortest path: 1.5315789473684212
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/week6_41_0.png" src="../../_images/week6_41_0.png" />
+<img alt="../../_images/f3d9539260b13a6eb533f25d3f29b510260154531b989be15958d6363d9839b5.png" src="../../_images/f3d9539260b13a6eb533f25d3f29b510260154531b989be15958d6363d9839b5.png" />
 </div>
 </div>
 <p>Bonus: <span class="math notranslate nohighlight">\(\sigma\)</span> and <span class="math notranslate nohighlight">\(\omega\)</span> are two quantities used to charectise small world networks. Let’s compare their values for a random and small world network.</p>
 <p>⚠️ The cell below will take some time to run for big networks ⚠️</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<span class="n">tic</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">omega</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">omega</span><span class="p">(</span><span class="n">smallWorldNet</span><span class="p">)</span>
+<span class="n">toc</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Omega of the network is </span><span class="si">{</span><span class="n">omega</span><span class="si">}</span><span class="s1"> and it took </span><span class="si">{</span><span class="n">toc</span><span class="o">-</span><span class="n">tic</span><span class="si">}</span><span class="s1"> seconds to compute it&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Omega of the network is -0.3647973856209149 and it took 11.039140939712524 seconds to compute it
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<span class="n">tic</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">omega</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">sigma</span><span class="p">(</span><span class="n">smallWorldNet</span><span class="p">)</span>
+<span class="n">toc</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Sigma of the network is </span><span class="si">{</span><span class="n">omega</span><span class="si">}</span><span class="s1"> and it took </span><span class="si">{</span><span class="n">toc</span><span class="o">-</span><span class="n">tic</span><span class="si">}</span><span class="s1"> seconds to compute it&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sigma of the network is 5.088936170212765 and it took 101.430340051651 seconds to compute it
+</pre></div>
+</div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">omega</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">omega</span><span class="p">(</span><span class="n">smallWorldNet</span><span class="p">)</span>
@@ -1372,68 +1115,7 @@ Average shortest path: 1.5315789473684212
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Unexpected exception formatting exception. Falling back to standard exception
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;/Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages/IPython/core/interactiveshell.py&quot;, line 3397, in run_code
-    exec(code_obj, self.user_global_ns, self.user_ns)
-  File &quot;/var/folders/jw/bb3wy2wj6bv8jf69svd8cqdc0000gn/T/ipykernel_45684/3620909259.py&quot;, line 1, in &lt;cell line: 1&gt;
-    omega = nx.omega(smallWorldNet)
-  File &quot;/Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages/networkx/utils/decorators.py&quot;, line 795, in func
-    return argmap._lazy_compile(__wrapper)(*args, **kwargs)
-  File &quot;&lt;class &#39;networkx.utils.decorators.argmap&#39;&gt; compilation 38&quot;, line 6, in argmap_omega_33
-  File &quot;/Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages/networkx/algorithms/smallworld.py&quot;, line 358, in omega
-    Gr = random_reference(G, niter=niter, seed=seed)
-  File &quot;&lt;class &#39;networkx.utils.decorators.argmap&#39;&gt; compilation 44&quot;, line 6, in argmap_random_reference_39
-  File &quot;/Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages/networkx/algorithms/smallworld.py&quot;, line 101, in random_reference
-    if connectivity and local_conn(G, a, b) == 0:
-  File &quot;/Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages/networkx/algorithms/connectivity/connectivity.py&quot;, line 647, in local_edge_connectivity
-    return nx.maximum_flow_value(H, s, t, **kwargs)
-  File &quot;/Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages/networkx/algorithms/flow/maxflow.py&quot;, line 307, in maximum_flow_value
-    R = flow_func(flowG, _s, _t, capacity=capacity, value_only=True, **kwargs)
-  File &quot;/Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages/networkx/algorithms/flow/edmondskarp.py&quot;, line 237, in edmonds_karp
-    R = edmonds_karp_impl(G, s, t, capacity, residual, cutoff)
-  File &quot;/Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages/networkx/algorithms/flow/edmondskarp.py&quot;, line 104, in edmonds_karp_impl
-    R = build_residual_network(G, capacity)
-  File &quot;/Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages/networkx/algorithms/flow/utils.py&quot;, line 107, in build_residual_network
-    edge_list = [
-  File &quot;/Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages/networkx/algorithms/flow/utils.py&quot;, line 107, in &lt;listcomp&gt;
-    edge_list = [
-  File &quot;/Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages/networkx/classes/reportviews.py&quot;, line 727, in &lt;genexpr&gt;
-    self._report(n, nbr, dd)
-KeyboardInterrupt
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File &quot;/Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages/IPython/core/interactiveshell.py&quot;, line 1992, in showtraceback
-    stb = self.InteractiveTB.structured_traceback(
-  File &quot;/Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages/IPython/core/ultratb.py&quot;, line 1118, in structured_traceback
-    return FormattedTB.structured_traceback(
-  File &quot;/Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages/IPython/core/ultratb.py&quot;, line 1012, in structured_traceback
-    return VerboseTB.structured_traceback(
-  File &quot;/Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages/IPython/core/ultratb.py&quot;, line 865, in structured_traceback
-    formatted_exception = self.format_exception_as_a_whole(etype, evalue, etb, number_of_lines_of_context,
-  File &quot;/Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages/IPython/core/ultratb.py&quot;, line 818, in format_exception_as_a_whole
-    frames.append(self.format_record(r))
-  File &quot;/Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages/IPython/core/ultratb.py&quot;, line 736, in format_record
-    result += &#39;&#39;.join(_format_traceback_lines(frame_info.lines, Colors, self.has_colors, lvals))
-  File &quot;/Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages/stack_data/utils.py&quot;, line 145, in cached_property_wrapper
-    value = obj.__dict__[self.func.__name__] = self.func(obj)
-  File &quot;/Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages/stack_data/core.py&quot;, line 698, in lines
-    pieces = self.included_pieces
-  File &quot;/Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages/stack_data/utils.py&quot;, line 145, in cached_property_wrapper
-    value = obj.__dict__[self.func.__name__] = self.func(obj)
-  File &quot;/Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages/stack_data/core.py&quot;, line 649, in included_pieces
-    pos = scope_pieces.index(self.executing_piece)
-  File &quot;/Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages/stack_data/utils.py&quot;, line 145, in cached_property_wrapper
-    value = obj.__dict__[self.func.__name__] = self.func(obj)
-  File &quot;/Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages/stack_data/core.py&quot;, line 628, in executing_piece
-    return only(
-  File &quot;/Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages/executing/executing.py&quot;, line 164, in only
-    raise NotOneValueFound(&#39;Expected one value, found 0&#39;)
-executing.executing.NotOneValueFound: Expected one value, found 0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Omega: -0.3297312828814243, Sigma: 4.511823899371069
 </pre></div>
 </div>
 </div>
@@ -1509,7 +1191,7 @@ executing.executing.NotOneValueFound: Expected one value, found 0
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./notebooks/week6"
         },
         predefinedOutput: true
@@ -1517,46 +1199,140 @@ executing.executing.NotOneValueFound: Expected one value, found 0
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../week5/CT.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">8. </span>Control Theory</p>
-        </div>
-    </a>
-</div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-    By Elias Najarro & Rune Berg<br/>
-  
-      &copy; Copyright 2022.<br/>
-    <div class="extra_footer">
-      <a href="https://neurowithpython.com/">neurowithpython.com</a> <div id="wh-modal"> <button class="wh-venti-button" aria-label="close modal" id="wh-modal-close">✕</button> <img id="wh-modal-img"> </div>
-    </div>
-</p>
-        </footer>
-    </div>
-    
-</div>
 
-
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../week5/CT.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">8. </span>Control Theory</p>
       </div>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-networks">9.1. Why networks?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-network-concepts">9.2. Basic network concepts</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nodes-and-edges">9.2.1. Nodes and edges</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#network-connectivity">9.2.2. Network Connectivity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#connected-network">9.2.3. Connected Network</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#directed-vs-undirected-network">9.2.4. Directed vs undirected network</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graphs-with-features">9.2.5. Graphs with features</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#features-normalisation">9.2.5.1. Features normalisation</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-activation">9.2.5.2. Feature activation</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#extra-linear-transformations">9.2.5.3. Extra Linear transformations</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-networkx">9.3. Using NetworkX</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">9.3.1. Exercises 🧑‍💻🔨</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#measures-used-to-characterise-networks">9.4. Measures used to characterise networks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#degree-of-connectivity">9.4.1. Degree of connectivity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distance-diameter-and-shortest-path">9.4.2. Distance, diameter and shortest path</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#centrality">9.4.3. Centrality</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">9.4.3.1. Exercises 🧑‍💻🔨</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clustering-coefficient">9.4.4. Clustering coefficient</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cliques">9.4.5. Cliques</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#motifs-and-motifs-analysis">9.4.6. Motifs and motifs analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">9.4.6.1. Exercise 🧑‍💻🔨</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scale-free-networks">9.4.7. Scale free networks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#small-world-networks">9.4.8. Small-world networks</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-evaluating-the-small-worldness-of-a-network-g">9.4.8.1. Bonus: Evaluating the small-worldness of a network G</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">9.4.8.2. Exercise 🧑‍💻🔨</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#propagation-or-replication-in-a-network">9.4.9. Propagation -or replication- in a network</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#diffusion-in-a-network">9.4.10. Diffusion in a network</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spectral-graph-theory">9.4.11. Spectral graph theory</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Elias Najarro & Rune Berg
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <a href="https://neurowithpython.com/">neurowithpython.com</a> <div id="wh-modal"> <button class="wh-venti-button" aria-label="close modal" id="wh-modal-close">✕</button> <img id="wh-modal-img"> </div>
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

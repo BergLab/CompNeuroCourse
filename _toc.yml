@@ -9,37 +9,41 @@ parts:
 - caption: Coding tools for researchers 
   numbered: false
   chapters:
-  - file: notebooks/week0/codingtoolsforresearch
-- caption: Week 1. Math review with Python
+  - file: notebooks/coding_intro/codingtoolsforresearch
+- caption: Math review with Python
   numbered: false
   chapters:
-  - file: notebooks/week1/week1-IntroColab
-  - file: notebooks/week1/week1a-Numpy_Introduction
-  - file: notebooks/week1/week1b-Linear_Algebra
-- caption: Week 2. Differential equations and neuron models
+  - file: notebooks/mathpython_intro/IntroColab
+  - file: notebooks/mathpython_intro/Numpy_Introduction
+  - file: notebooks/mathpython_intro/Linear_Algebra
+- caption: Chapter 1. Introduction to modeling in neuroscience
   numbered: true
   chapters:
-  - file: notebooks/week2/week2a
-  - file: notebooks/week2/week2b-Applications_LT
-- caption: Week 3. Simulation of neural population
+  - file: notebooks/modelling_intro/a
+- caption: Chapter 2. Differential equations and neuron models
   numbered: true
   chapters:
-  - file: notebooks/week3/week3a
-  - file: notebooks/week3/week3b
-  - file: notebooks/week3/week3c
-- caption: Week 4. Data analysis and Machine learning
+  - file: notebooks/dynamical_systems/dynamical_systems_intro
+  - file: notebooks/dynamical_systems/Applications_LT
+- caption: Chapter 3. Simulation of neural population
   numbered: true
   chapters:
-  - file: notebooks/week4/week4a
-  - file: notebooks/week4/week4b
-- caption: Week 5. Reinforcement Learning and Control Theory
+  - file: notebooks/simulation_neuralsystems/a
+  - file: notebooks/simulation_neuralsystems/b
+  - file: notebooks/simulation_neuralsystems/c
+- caption: Chapter 4. Data analysis and Machine learning
   numbered: true
   chapters:
-  - file: notebooks/week5/CT
-- caption: Week 6. Network analysis
+  - file: notebooks/ML/a
+  - file: notebooks/ML/b
+# - caption: Chapter 5. Reinforcement Learning and Control Theory
+#   numbered: true
+#   chapters:
+#   - file: notebooks/week5/CT
+- caption: Chapter 5. Network theory
   numbered: true
   chapters:
-  - file: notebooks/week6/week6
+  - file: notebooks/network_theory/a
 
 # - file: markdown
 # - file: notebooks
