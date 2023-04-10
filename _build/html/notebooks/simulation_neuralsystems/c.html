@@ -1,61 +1,52 @@
 
-
 <!DOCTYPE html>
 
-
-<html lang="en" >
-
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>3. Introduction to Brian part 3: Simulations &#8212; Computational Neuroscience</title>
-  
-  
-  
-  <script data-cfasync="false">
-    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
-  </script>
-  
+    
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
-  
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
-  
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/custom.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -63,94 +54,62 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/simulation_neuralsystems/c';</script>
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="1. Introduction to Data Analysis with Pandas" href="../ML/a.html" />
     <link rel="prev" title="2. Introduction to Brian part 2: Synapses" href="b.html" />
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en">
+    
+
+    <!-- Google Analytics -->
+    
   </head>
-  
-  
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
 
-  
-  
-  <a class="skip-link" href="#main-content">Skip to main content</a>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
-<form class="bd-search d-flex align-items-center"
-      action="../../search.html"
-      method="get">
-  <i class="fa-solid fa-magnifying-glass"></i>
-  <input type="search"
-         class="form-control"
-         name="q"
-         id="search-input"
-         placeholder="Search this book..."
-         aria-label="Search this book..."
-         autocomplete="off"
-         autocorrect="off"
-         autocapitalize="off"
-         spellcheck="false"/>
-  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
-  
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
-  
-  <div class="bd-container">
-    <div class="bd-container__inner bd-page-width">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
       
-      <div class="bd-sidebar-primary bd-sidebar">
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
         
-
-  
-  <div class="sidebar-header-items sidebar-primary__section">
-    
-    
-    
-    
-  </div>
-  
-    <div class="sidebar-primary-items__start sidebar-primary__section">
-        <div class="sidebar-primary-item">
-  
-
-<a class="navbar-brand logo" href="../../intro.html">
-  
-  
-  
-  
-    
-    
       
-    
-    
-    <img src="../../_static/cajal1.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../../_static/cajal1.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
-  
-  
-</a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item navbar-nav active">
+      
+      <img src="../../_static/cajal1.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Computational Neuroscience</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -159,295 +118,401 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Coding tools for researchers</span></p>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Coding tools for researchers
+ </span>
+</p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../coding_intro/codingtoolsforresearch.html">First things first</a></li>
-
+ <li class="toctree-l1">
+  <a class="reference internal" href="../coding_intro/codingtoolsforresearch.html">
+   First things first
+  </a>
+ </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Math review with Python</span></p>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Math review with Python
+ </span>
+</p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../mathpython_intro/IntroColab.html">Google’s Colab</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../mathpython_intro/Numpy_Introduction.html">Introduction to NumPy and Matplotlib</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../mathpython_intro/Linear_Algebra.html">Linear Algebra basics</a></li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../mathpython_intro/IntroColab.html">
+   Google’s Colab
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../mathpython_intro/Numpy_Introduction.html">
+   Introduction to NumPy and Matplotlib
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../mathpython_intro/Linear_Algebra.html">
+   Linear Algebra basics
+  </a>
+ </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 1. Introduction to modeling in neuroscience</span></p>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Chapter 1. Introduction to modeling in neuroscience
+ </span>
+</p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../modelling_intro/a.html">1. What is computational neuroscience?</a></li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../modelling_intro/a.html">
+   1. What is computational neuroscience?
+  </a>
+ </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 2. Differential equations and neuron models</span></p>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Chapter 2. Differential equations and neuron models
+ </span>
+</p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../dynamical_systems/dynamical_systems_intro.html">1. Introduction modelling with differential equations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../dynamical_systems/Applications_LT.html">2. Dynamical systems as Linear Transformations</a></li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../dynamical_systems/dynamical_systems_intro.html">
+   1. Introduction modelling with differential equations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../dynamical_systems/Applications_LT.html">
+   2. Dynamical systems as Linear Transformations
+  </a>
+ </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 3. Simulation of neural population</span></p>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Chapter 3. Simulation of neural population
+ </span>
+</p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="a.html">1. Introduction to Brian part 1: Neurons</a></li>
-<li class="toctree-l1"><a class="reference internal" href="b.html">2. Introduction to Brian part 2: Synapses</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">3. Introduction to Brian part 3: Simulations</a></li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a.html">
+   1. Introduction to Brian part 1: Neurons
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="b.html">
+   2. Introduction to Brian part 2: Synapses
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   3. Introduction to Brian part 3: Simulations
+  </a>
+ </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 4. Data analysis and Machine learning</span></p>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Chapter 4. Data analysis and Machine learning
+ </span>
+</p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../ML/a.html">1. Introduction to Data Analysis with Pandas</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ML/b.html">2. Machine Learning</a></li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ML/a.html">
+   1. Introduction to Data Analysis with Pandas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ML/b.html">
+   2. Machine Learning
+  </a>
+ </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 5. Network theory</span></p>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Chapter 5. Network theory
+ </span>
+</p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../network_theory/a.html">1. Network science</a></li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../network_theory/a.html">
+   1. Network science
+  </a>
+ </li>
 </ul>
 
     </div>
 </nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
     </div>
-  
-  
-  <div class="sidebar-primary-items__end sidebar-primary__section">
-  </div>
-  
-  <div id="rtd-footer-container"></div>
+    <div id="rtd-footer-container"></div>
+</div>
 
 
-      </div>
-      
-      <main id="main-content" class="bd-main">
-        
-        
+          
 
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
 <div class="sbt-scroll-pixel-helper"></div>
-
-          <div class="bd-content">
-            <div class="bd-article-container">
-              
-              <div class="bd-header-article">
-<div class="header-article-items header-article__inner">
-  
-    <div class="header-article-items__start">
-      
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <span class="fa-solid fa-bars"></span>
-</label></div>
-      
-    </div>
-  
-  
-    <div class="header-article-items__end">
-      
-        <div class="header-article-item">
-
-<div class="article-header-buttons">
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
 
 
 
-
-
-<div class="dropdown dropdown-launch-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
-    <i class="fas fa-rocket"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="https://colab.research.google.com/github/BergLab/CompNeuroBook/blob/main/notebooks/simulation_neuralsystems/c.ipynb" target="_blank"
-   class="btn btn-sm dropdown-item"
-   title="Launch onColab"
-   data-bs-placement="left" data-bs-toggle="tooltip"
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
 >
   
 
-<span class="btn__icon-container">
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://colab.research.google.com/github/BergLab/CompNeuroBook/blob/main/notebooks/simulation_neuralsystems/c.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
   
     <img src="../../_static/images/logo_colab.png">
   </span>
-<span class="btn__text-container">Colab</span>
+<span class="headerbtn__text-container">Colab</span>
 </a>
-</li>
+
+      </li>
       
-  </ul>
+    </ul>
+  </div>
 </div>
-
-
-
-
-
-
-<div class="dropdown dropdown-source-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
-    <i class="fab fa-github"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="https://github.com/BergLab/CompNeuroBook" target="_blank"
-   class="btn btn-sm btn-source-repository-button dropdown-item"
-   title="Source repository"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="btn__text-container">Repository</span>
-</a>
-</li>
-      
-      
-      
-      
-      <li><a href="https://github.com/BergLab/CompNeuroBook/edit/main/notebooks/simulation_neuralsystems/c.ipynb" target="_blank"
-   class="btn btn-sm btn-source-edit-button dropdown-item"
-   title="Suggest edit"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-pencil-alt"></i>
-  </span>
-<span class="btn__text-container">Suggest edit</span>
-</a>
-</li>
-      
-      
-      
-      
-      <li><a href="https://github.com/BergLab/CompNeuroBook/issues/new?title=Issue%20on%20page%20%2Fnotebooks/simulation_neuralsystems/c.html&body=Your%20issue%20content%20here." target="_blank"
-   class="btn btn-sm btn-source-issues-button dropdown-item"
-   title="Open an issue"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="btn__text-container">Open issue</span>
-</a>
-</li>
-      
-  </ul>
-</div>
-
-
-
-
-
-
-<div class="dropdown dropdown-download-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
-    <i class="fas fa-download"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="../../_sources/notebooks/simulation_neuralsystems/c.ipynb" target="_blank"
-   class="btn btn-sm btn-download-source-button dropdown-item"
-   title="Download source file"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="btn__text-container">.ipynb</span>
-</a>
-</li>
-      
-      
-      
-      
-      <li>
-<button onclick="window.print()"
-  class="btn btn-sm btn-download-pdf-button dropdown-item"
-  title="Print to PDF"
-  data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="btn__text-container">.pdf</span>
-</button>
-</li>
-      
-  </ul>
-</div>
-
-
-
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
-  title="Fullscreen mode"
-  data-bs-placement="bottom" data-bs-toggle="tooltip"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
 >
   
 
-<span class="btn__icon-container">
+<span class="headerbtn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-
-<script>
-document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
   </button>
-`);
-</script>
-
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
-</div></div>
-      
-    </div>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/BergLab/CompNeuroBook"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
   
-</div>
-</div>
-              
-              
 
-<div id="jb-print-docs-body" class="onlyprint">
-    <h1>Introduction to Brian part 3: Simulations</h1>
-    <!-- Table of contents -->
-    <div id="print-main-content">
-        <div id="jb-print-toc">
-            
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-runs">3.1. Multiple runs</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#changing-things-during-a-run">3.2. Changing things during a run</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-input">3.3. Adding input</a></li>
-</ul>
-            </nav>
-        </div>
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/BergLab/CompNeuroBook/issues/new?title=Issue%20on%20page%20%2Fnotebooks/simulation_neuralsystems/c.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/BergLab/CompNeuroBook/edit/main/notebooks/simulation_neuralsystems/c.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/notebooks/simulation_neuralsystems/c.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
     </div>
 </div>
 
-              
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#multiple-runs">
+   3.1. Multiple runs
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#changing-things-during-a-run">
+   3.2. Changing things during a run
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adding-input">
+   3.3. Adding input
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Introduction to Brian part 3: Simulations</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#multiple-runs">
+   3.1. Multiple runs
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#changing-things-during-a-run">
+   3.2. Changing things during a run
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adding-input">
+   3.3. Adding input
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
                 
-<div id="searchbox"></div>
-                <article class="bd-article" role="main">
-                  
+              <div>
+                
   <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-brian-part-3-simulations">
 <h1><span class="section-number">3. </span>Introduction to Brian part 3: Simulations<a class="headerlink" href="#introduction-to-brian-part-3-simulations" title="Permalink to this heading">#</a></h1>
 <p>*Credit: The first three notebooks from week3 are part of the <span class="xref myst">Brian2 documentation</span>.</p>
@@ -456,43 +521,28 @@ document.write(`
 <p>As before we start by importing the Brian package and setting up matplotlib for IPython:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip3<span class="w"> </span>install<span class="w"> </span>brian2
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip3 install brian2
 <span class="kn">from</span> <span class="nn">brian2</span> <span class="kn">import</span> <span class="o">*</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">WARNING: Skipping /usr/local/lib/python3.11/site-packages/six-1.16.0-py3.11.egg-info due to invalid metadata entry &#39;name&#39;</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: brian2 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (2.5.1)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: cython&gt;=0.29 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from brian2) (0.29.30)
+Requirement already satisfied: sympy&gt;=1.2 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from brian2) (1.10.1)
+Requirement already satisfied: setuptools&gt;=24.2 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from brian2) (60.10.0)
+Requirement already satisfied: numpy&gt;=1.17 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from brian2) (1.23.5)
+Requirement already satisfied: jinja2&gt;=2.7 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from brian2) (3.1.2)
+Requirement already satisfied: pyparsing in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from brian2) (3.0.7)
+Requirement already satisfied: MarkupSafe&gt;=2.0 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from jinja2&gt;=2.7-&gt;brian2) (2.1.1)
+Requirement already satisfied: mpmath&gt;=0.19 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from sympy&gt;=1.2-&gt;brian2) (1.2.1)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">WARNING: You are using pip version 22.0.4; however, version 23.0.1 is available.</span>
+<span class=" -Color -Color-Yellow">You should consider upgrading via the &#39;/Users/enaj/.virtualenvs/p39/bin/python3.9 -m pip install --upgrade pip&#39; command.</span>
 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">WARNING: Skipping /usr/local/lib/python3.11/site-packages/six-1.16.0-py3.11.egg-info due to invalid metadata entry &#39;name&#39;</span>
-Requirement already satisfied: brian2 in /usr/local/lib/python3.11/site-packages (2.5.1)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: numpy&gt;=1.17 in /usr/local/lib/python3.11/site-packages (from brian2) (1.24.2)
-Requirement already satisfied: cython&gt;=0.29 in /usr/local/lib/python3.11/site-packages (from brian2) (0.29.34)
-Requirement already satisfied: sympy&gt;=1.2 in /usr/local/lib/python3.11/site-packages (from brian2) (1.11.1)
-Requirement already satisfied: pyparsing in /usr/local/Cellar/graph-tool/2.46/libexec/lib/python3.11/site-packages (from brian2) (3.0.9)
-Requirement already satisfied: jinja2&gt;=2.7 in /usr/local/lib/python3.11/site-packages (from brian2) (3.1.2)
-Requirement already satisfied: setuptools&gt;=24.2 in /usr/local/lib/python3.11/site-packages (from brian2) (65.6.3)
-Requirement already satisfied: MarkupSafe&gt;=2.0 in /usr/local/lib/python3.11/site-packages (from jinja2&gt;=2.7-&gt;brian2) (2.1.2)
-Requirement already satisfied: mpmath&gt;=0.19 in /usr/local/lib/python3.11/site-packages (from sympy&gt;=1.2-&gt;brian2) (1.3.0)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">WARNING: Skipping /usr/local/lib/python3.11/site-packages/six-1.16.0-py3.11.egg-info due to invalid metadata entry &#39;name&#39;</span>
-
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">WARNING: Skipping /usr/local/lib/python3.11/site-packages/six-1.16.0-py3.11.egg-info due to invalid metadata entry &#39;name&#39;</span>
-<span class=" -Color -Color-Yellow">WARNING: Skipping /usr/local/lib/python3.11/site-packages/six-1.16.0-py3.11.egg-info due to invalid metadata entry &#39;name&#39;</span>
-
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">WARNING: Skipping /usr/local/lib/python3.11/site-packages/six-1.16.0-py3.11.egg-info due to invalid metadata entry &#39;name&#39;</span>
-
-<span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> A new release of pip available: <span class=" -Color -Color-Red">22.3.1</span> -&gt; <span class=" -Color -Color-Green">23.0.1</span>
-<span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> To update, run: <span class=" -Color -Color-Green">python3.11 -m pip install --upgrade pip</span>
 </pre></div>
 </div>
 </div>
@@ -533,9 +583,6 @@ Requirement already satisfied: mpmath&gt;=0.19 in /usr/local/lib/python3.11/site
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../../_images/6241b4a98333339041228c5f2ffd68fab4bd87568ee3a0fac492dc9fa76067e8.png" src="../../_images/6241b4a98333339041228c5f2ffd68fab4bd87568ee3a0fac492dc9fa76067e8.png" />
-</div>
 </div>
 <p>Now if you’re running the notebook, you’ll see that this was a little slow to run. The reason is that for each loop, you’re recreating the objects from scratch. We can improve that by setting up the network just once. We store a copy of the state of the network before the loop, and restore it at the beginning of each iteration.</p>
 <div class="cell docutils container">
@@ -568,9 +615,6 @@ Requirement already satisfied: mpmath&gt;=0.19 in /usr/local/lib/python3.11/site
 <span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Firing rate (sp/s)&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/4dbcd8497324b6d7766c93d86bddb46b0600b71c96c2e6db82d2e8b23ff1c4c8.png" src="../../_images/4dbcd8497324b6d7766c93d86bddb46b0600b71c96c2e6db82d2e8b23ff1c4c8.png" />
 </div>
 </div>
 <p>That’s a very simple example of using store and restore, but you can use it in much more complicated situations. For example, you might want to run a long training run, and then run multiple test runs afterwards. Simply put a store after the long training run, and a restore before each testing run.</p>
@@ -618,9 +662,6 @@ Requirement already satisfied: mpmath&gt;=0.19 in /usr/local/lib/python3.11/site
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../../_images/390176e58f8881d97f0b9bc4994f990f01f3810baec875f8382907a522112560.png" src="../../_images/390176e58f8881d97f0b9bc4994f990f01f3810baec875f8382907a522112560.png" />
-</div>
 </div>
 <p>You can see that now there is much less noise and it increases monotonically because the input spikes are the same each time, meaning we’re seeing the effect of the time constant, not the random spikes.</p>
 <p>Note that in the code above, we created <code class="docutils literal notranslate"><span class="pre">Network</span></code> objects. The reason is that in the loop, if we just called <code class="docutils literal notranslate"><span class="pre">run</span></code> it would try to simulate all the objects, including the Poisson neurons <code class="docutils literal notranslate"><span class="pre">P</span></code>, and we only want to run that once. We use <code class="docutils literal notranslate"><span class="pre">Network</span></code> to specify explicitly which objects we want to include.</p>
@@ -654,12 +695,6 @@ Requirement already satisfied: mpmath&gt;=0.19 in /usr/local/lib/python3.11/site
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING    &#39;tau&#39; is an internal variable of group &#39;neurongroup_2&#39;, but also exists in the run namespace with the value 10. * msecond. The internal variable will be used. [brian2.groups.group.Group.resolve.resolution_conflict]
-</pre></div>
-</div>
-<img alt="../../_images/8a39a46794712652a19f818c207ec8e32fd5b2201bb6a65833f47d9008dbf291.png" src="../../_images/8a39a46794712652a19f818c207ec8e32fd5b2201bb6a65833f47d9008dbf291.png" />
-</div>
 </div>
 <p>You can see that this is much faster again! It’s a little bit more complicated conceptually, and it’s not always possible to do this trick, but it can be much more efficient if it’s possible.</p>
 <p>Let’s finish with this example by having a quick look at how the mean and standard deviation of the interspike intervals depends on the time constant.</p>
@@ -678,9 +713,6 @@ Requirement already satisfied: mpmath&gt;=0.19 in /usr/local/lib/python3.11/site
 <span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Interspike interval (ms)&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/8283a2ab497320dac1e8df66ed60a2e0c41e31ee575d702a308022a2fd14ac6b.png" src="../../_images/8283a2ab497320dac1e8df66ed60a2e0c41e31ee575d702a308022a2fd14ac6b.png" />
 </div>
 </div>
 <p>Notice that we used the <code class="docutils literal notranslate"><span class="pre">spike_trains()</span></code> method of <code class="docutils literal notranslate"><span class="pre">SpikeMonitor</span></code>. This is a dictionary with keys being the indices of the neurons and values being the array of spike times for that neuron.</p>
@@ -732,9 +764,6 @@ Requirement already satisfied: mpmath&gt;=0.19 in /usr/local/lib/python3.11/site
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../../_images/cdd37d44b63d5e41e8006899a222355cd55d8eb8ec07f905a34e818350aee80f.png" src="../../_images/cdd37d44b63d5e41e8006899a222355cd55d8eb8ec07f905a34e818350aee80f.png" />
-</div>
 </div>
 <p>In the code above, we used a loop over multiple runs to achieve this. That’s fine, but it’s not the most efficient way to do it because each time we call <code class="docutils literal notranslate"><span class="pre">run</span></code> we have to do a lot of initialisation work that slows everything down. It also won’t work as well with the more efficient standalone mode of Brian. Here’s another way.</p>
 <div class="cell docutils container">
@@ -761,9 +790,6 @@ Requirement already satisfied: mpmath&gt;=0.19 in /usr/local/lib/python3.11/site
 <span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;v (mV)&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/bc7de18cc218e04635988a44ebe1bd3a8bd9ee97f9d838a2f3fd3417a5370f26.png" src="../../_images/bc7de18cc218e04635988a44ebe1bd3a8bd9ee97f9d838a2f3fd3417a5370f26.png" />
 </div>
 </div>
 <p>We’ve replaced the loop that had multiple <code class="docutils literal notranslate"><span class="pre">run</span></code> calls with a <code class="docutils literal notranslate"><span class="pre">run_regularly</span></code>. This makes the specified block of code run every <code class="docutils literal notranslate"><span class="pre">dt=10*ms</span></code>. The <code class="docutils literal notranslate"><span class="pre">run_regularly</span></code> lets you run code specific to a single <code class="docutils literal notranslate"><span class="pre">NeuronGroup</span></code>, but sometimes you might need more flexibility. For this, you can use <code class="docutils literal notranslate"><span class="pre">network_operation</span></code> which lets you run arbitrary Python code (but won’t work with the standalone mode).</p>
@@ -792,9 +818,6 @@ Requirement already satisfied: mpmath&gt;=0.19 in /usr/local/lib/python3.11/site
 <span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;v (mV)&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/2326b716617d205e6b5afe94abbc745d1a6805ac5674d7ab79c8efe6ce23bb75.png" src="../../_images/2326b716617d205e6b5afe94abbc745d1a6805ac5674d7ab79c8efe6ce23bb75.png" />
 </div>
 </div>
 <p>Now let’s extend this example to run on multiple neurons, each with a different capacitance to see how that affects the behaviour of the cell.</p>
@@ -834,9 +857,6 @@ Requirement already satisfied: mpmath&gt;=0.19 in /usr/local/lib/python3.11/site
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../../_images/45f7aed9d98ba1a2b3140d6a71c15f42168339e2e613aaaa13febded505b936d.png" src="../../_images/45f7aed9d98ba1a2b3140d6a71c15f42168339e2e613aaaa13febded505b936d.png" />
-</div>
 </div>
 <p>So that runs, but something looks wrong! The injected currents look like they’re different for all the different neurons! Let’s check:</p>
 <div class="cell docutils container">
@@ -846,9 +866,6 @@ Requirement already satisfied: mpmath&gt;=0.19 in /usr/local/lib/python3.11/site
 <span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;I (nA)&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/0237b1f81585e19974328ad7f1c1d5674a647e56b14358c07e285ea110848db6.png" src="../../_images/0237b1f81585e19974328ad7f1c1d5674a647e56b14358c07e285ea110848db6.png" />
 </div>
 </div>
 <p>Sure enough, it’s different each time. But why? We wrote <code class="docutils literal notranslate"><span class="pre">group.run_regularly('I</span> <span class="pre">=</span> <span class="pre">rand()*50*nA',</span> <span class="pre">dt=10*ms)</span></code> which seems like it should give the same value of I for each neuron. But, like threshold and reset statements, <code class="docutils literal notranslate"><span class="pre">run_regularly</span></code> code is interpreted as being run separately for each neuron, and because I is a parameter, it can be different for each neuron. We can fix this by making I into a <em>shared</em> variable, meaning it has the same value for each neuron.</p>
@@ -886,9 +903,6 @@ Requirement already satisfied: mpmath&gt;=0.19 in /usr/local/lib/python3.11/site
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../../_images/01040b3f2ac0c0da0283116b5895ea4abf822421592c0f660998363a9e352f26.png" src="../../_images/01040b3f2ac0c0da0283116b5895ea4abf822421592c0f660998363a9e352f26.png" />
-</div>
 </div>
 <p>Ahh, that’s more like it!</p>
 </section>
@@ -916,9 +930,6 @@ Requirement already satisfied: mpmath&gt;=0.19 in /usr/local/lib/python3.11/site
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../../_images/2587b7c32c859858745df9a3b1fc9b436aad6bb0c202e4c0874e68b3a272160d.png" src="../../_images/2587b7c32c859858745df9a3b1fc9b436aad6bb0c202e4c0874e68b3a272160d.png" />
-</div>
 </div>
 <p>So far, so good and the sort of thing we saw in the first tutorial. Now, what if that input current were something we had recorded and saved in a file? In that case, we can use <code class="docutils literal notranslate"><span class="pre">TimedArray</span></code>. Let’s start by reproducing the picture above but using <code class="docutils literal notranslate"><span class="pre">TimedArray</span></code>.</p>
 <div class="cell docutils container">
@@ -944,9 +955,6 @@ Requirement already satisfied: mpmath&gt;=0.19 in /usr/local/lib/python3.11/site
 <span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/225d39889fea9b954f34519b4aae3f71d07c11bb44c2f43fc36843bafbf5b25a.png" src="../../_images/225d39889fea9b954f34519b4aae3f71d07c11bb44c2f43fc36843bafbf5b25a.png" />
 </div>
 </div>
 <p>Note that for the example where we put the <code class="docutils literal notranslate"><span class="pre">sin</span></code> function directly in the equations, we had to use the <code class="docutils literal notranslate"><span class="pre">method='euler'</span></code> argument because the exact integrator wouldn’t work here (try it!). However, <code class="docutils literal notranslate"><span class="pre">TimedArray</span></code> is considered to be constant over its time step and so the linear integrator can be used. This means you won’t get the same behaviour from these two methods for two reasons. Firstly, the numerical integration methods <code class="docutils literal notranslate"><span class="pre">exact</span></code> and <code class="docutils literal notranslate"><span class="pre">euler</span></code> give slightly different results. Secondly, <code class="docutils literal notranslate"><span class="pre">sin</span></code> is not constant over a timestep whereas <code class="docutils literal notranslate"><span class="pre">TimedArray</span></code> is.</p>
@@ -980,9 +988,6 @@ Requirement already satisfied: mpmath&gt;=0.19 in /usr/local/lib/python3.11/site
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../../_images/ab3e0e1404b86612ca19303797e7b8a5e473ba8aac75fdc96f8db9f60bbef5da.png" src="../../_images/ab3e0e1404b86612ca19303797e7b8a5e473ba8aac75fdc96f8db9f60bbef5da.png" />
-</div>
 </div>
 <p>Finally, let’s finish on an example that actually reads in some data from a file. See if you can work out how this example works.</p>
 <div class="cell docutils container">
@@ -1008,41 +1013,6 @@ Requirement already satisfied: mpmath&gt;=0.19 in /usr/local/lib/python3.11/site
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">16</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">start_scope</span><span class="p">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">matplotlib.image</span> <span class="kn">import</span> <span class="n">imread</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">img</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;brian.png&#39;</span><span class="p">))[::</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">T</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">num_samples</span><span class="p">,</span> <span class="n">N</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">shape</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">ta</span> <span class="o">=</span> <span class="n">TimedArray</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="mi">1</span><span class="o">*</span><span class="n">ms</span><span class="p">)</span> <span class="c1"># 228</span>
-
-<span class="nn">File /usr/local/Cellar/graph-tool/2.46/libexec/lib/python3.11/site-packages/matplotlib/image.py:1541,</span> in <span class="ni">imread</span><span class="nt">(fname, format)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1534</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">parse</span><span class="o">.</span><span class="n">urlparse</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span><span class="o">.</span><span class="n">scheme</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1535</span>     <span class="c1"># Pillow doesn&#39;t handle URLs directly.</span>
-<span class="g g-Whitespace">   </span><span class="mi">1536</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1537</span>         <span class="s2">&quot;Please open the URL for reading and pass the &quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1538</span>         <span class="s2">&quot;result to Pillow, e.g. with &quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1539</span>         <span class="s2">&quot;``np.array(PIL.Image.open(urllib.request.urlopen(url)))``.&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1540</span>         <span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1541</span> <span class="k">with</span> <span class="n">img_open</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span> <span class="k">as</span> <span class="n">image</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1542</span>     <span class="k">return</span> <span class="p">(</span><span class="n">_pil_png_to_float_array</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1543</span>             <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">PIL</span><span class="o">.</span><span class="n">PngImagePlugin</span><span class="o">.</span><span class="n">PngImageFile</span><span class="p">)</span> <span class="k">else</span>
-<span class="g g-Whitespace">   </span><span class="mi">1544</span>             <span class="n">pil_to_array</span><span class="p">(</span><span class="n">image</span><span class="p">))</span>
-
-<span class="nn">File /usr/local/lib/python3.11/site-packages/PIL/ImageFile.py:105,</span> in <span class="ni">ImageFile.__init__</span><span class="nt">(self, fp, filename)</span>
-<span class="g g-Whitespace">    </span><span class="mi">101</span> <span class="bp">self</span><span class="o">.</span><span class="n">decodermaxblock</span> <span class="o">=</span> <span class="n">MAXBLOCK</span>
-<span class="g g-Whitespace">    </span><span class="mi">103</span> <span class="k">if</span> <span class="n">is_path</span><span class="p">(</span><span class="n">fp</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">104</span>     <span class="c1"># filename</span>
-<span class="ne">--&gt; </span><span class="mi">105</span>     <span class="bp">self</span><span class="o">.</span><span class="n">fp</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">fp</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">106</span>     <span class="bp">self</span><span class="o">.</span><span class="n">filename</span> <span class="o">=</span> <span class="n">fp</span>
-<span class="g g-Whitespace">    </span><span class="mi">107</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_exclusive_fp</span> <span class="o">=</span> <span class="kc">True</span>
-
-<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;brian.png&#39;
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 </section>
@@ -1059,7 +1029,7 @@ Requirement already satisfied: mpmath&gt;=0.19 in /usr/local/lib/python3.11/site
             mode: "python"
         },
         kernelOptions: {
-            name: "python3",
+            kernelName: "python3",
             path: "./notebooks/simulation_neuralsystems"
         },
         predefinedOutput: true
@@ -1067,107 +1037,50 @@ Requirement already satisfied: mpmath&gt;=0.19 in /usr/local/lib/python3.11/site
     </script>
     <script>kernelName = 'python3'</script>
 
-                </article>
+              </div>
               
-
-              
-              
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
-<div class="prev-next-area">
-    <a class="left-prev"
-       href="b.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">2. </span>Introduction to Brian part 2: Synapses</p>
-      </div>
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="b.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">2. </span>Introduction to Brian part 2: Synapses</p>
+        </div>
     </a>
-    <a class="right-next"
-       href="../ML/a.html"
-       title="next page">
-      <div class="prev-next-info">
+    <a class='right-next' id="next-link" href="../ML/a.html" title="next page">
+    <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title"><span class="section-number">1. </span>Introduction to Data Analysis with Pandas</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
-</div></div>
-  
-</div>
-
-                </footer>
-              
-            </div>
-            
-            
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-runs">3.1. Multiple runs</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#changing-things-during-a-run">3.2. Changing things during a run</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-input">3.3. Adding input</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
-              
-            
-          </div>
-          <footer class="bd-footer-content">
-            
-<div class="bd-footer-content__inner container">
-  
-  <div class="footer-item">
-    
-<p class="component-author">
-By Elias Najarro & Rune Berg
-</p>
-
-  </div>
-  
-  <div class="footer-item">
-    
-  <p class="copyright">
-    
-      © Copyright 2022.
-      <br/>
-    
-  </p>
-
-  </div>
-  
-  <div class="footer-item">
-    
-  </div>
-  
-  <div class="footer-item">
-    
-  </div>
-  
-</div>
-          </footer>
-        
-
-      </main>
     </div>
-  </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Elias Najarro & Rune Berg<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
 
-  <footer class="bd-footer">
-  </footer>
+
   </body>
 </html>
