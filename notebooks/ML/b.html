@@ -1,61 +1,52 @@
 
-
 <!DOCTYPE html>
 
-
-<html lang="en" >
-
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>2. Machine Learning &#8212; Computational Neuroscience</title>
-  
-  
-  
-  <script data-cfasync="false">
-    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
-  </script>
-  
+    
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
-  
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
-  
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/custom.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -65,94 +56,62 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/ML/b';</script>
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="1. Network science" href="../network_theory/a.html" />
     <link rel="prev" title="1. Introduction to Data Analysis with Pandas" href="a.html" />
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en">
+    
+
+    <!-- Google Analytics -->
+    
   </head>
-  
-  
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
 
-  
-  
-  <a class="skip-link" href="#main-content">Skip to main content</a>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
-<form class="bd-search d-flex align-items-center"
-      action="../../search.html"
-      method="get">
-  <i class="fa-solid fa-magnifying-glass"></i>
-  <input type="search"
-         class="form-control"
-         name="q"
-         id="search-input"
-         placeholder="Search this book..."
-         aria-label="Search this book..."
-         autocomplete="off"
-         autocorrect="off"
-         autocapitalize="off"
-         spellcheck="false"/>
-  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
-  
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
-  
-  <div class="bd-container">
-    <div class="bd-container__inner bd-page-width">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
       
-      <div class="bd-sidebar-primary bd-sidebar">
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
         
-
-  
-  <div class="sidebar-header-items sidebar-primary__section">
-    
-    
-    
-    
-  </div>
-  
-    <div class="sidebar-primary-items__start sidebar-primary__section">
-        <div class="sidebar-primary-item">
-  
-
-<a class="navbar-brand logo" href="../../intro.html">
-  
-  
-  
-  
-    
-    
       
-    
-    
-    <img src="../../_static/cajal1.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../../_static/cajal1.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
-  
-  
-</a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item navbar-nav active">
+      
+      <img src="../../_static/cajal1.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Computational Neuroscience</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -161,367 +120,719 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Coding tools for researchers</span></p>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Coding tools for researchers
+ </span>
+</p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../coding_intro/codingtoolsforresearch.html">First things first</a></li>
-
+ <li class="toctree-l1">
+  <a class="reference internal" href="../coding_intro/codingtoolsforresearch.html">
+   First things first
+  </a>
+ </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Math review with Python</span></p>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Math review with Python
+ </span>
+</p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../mathpython_intro/IntroColab.html">Google’s Colab</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../mathpython_intro/Numpy_Introduction.html">Introduction to NumPy and Matplotlib</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../mathpython_intro/Linear_Algebra.html">Linear Algebra basics</a></li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../mathpython_intro/IntroColab.html">
+   Google’s Colab
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../mathpython_intro/Numpy_Introduction.html">
+   Introduction to NumPy and Matplotlib
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../mathpython_intro/Linear_Algebra.html">
+   Linear Algebra basics
+  </a>
+ </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 1. Introduction to modeling in neuroscience</span></p>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Chapter 1. Introduction to modeling in neuroscience
+ </span>
+</p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../modelling_intro/a.html">1. What is computational neuroscience?</a></li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../modelling_intro/a.html">
+   1. What is computational neuroscience?
+  </a>
+ </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 2. Differential equations and neuron models</span></p>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Chapter 2. Differential equations and neuron models
+ </span>
+</p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../dynamical_systems/dynamical_systems_intro.html">1. Introduction modelling with differential equations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../dynamical_systems/Applications_LT.html">2. Dynamical systems as Linear Transformations</a></li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../dynamical_systems/dynamical_systems_intro.html">
+   1. Introduction modelling with differential equations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../dynamical_systems/Applications_LT.html">
+   2. Dynamical systems as Linear Transformations
+  </a>
+ </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 3. Simulation of neural population</span></p>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Chapter 3. Simulating neural population
+ </span>
+</p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../simulation_neuralsystems/a.html">1. Introduction to Brian part 1: Neurons</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../simulation_neuralsystems/b.html">2. Introduction to Brian part 2: Synapses</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../simulation_neuralsystems/c.html">3. Introduction to Brian part 3: Simulations</a></li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../simulation_neuralsystems/neuralsimulation_intro.html">
+   1. Simulating neural populations
+  </a>
+ </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 4. Data analysis and Machine learning</span></p>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Chapter 4. Data analysis and Machine learning
+ </span>
+</p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="a.html">1. Introduction to Data Analysis with Pandas</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">2. Machine Learning</a></li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a.html">
+   1. Introduction to Data Analysis with Pandas
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   2. Machine Learning
+  </a>
+ </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 5. Network theory</span></p>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Chapter 5. Network theory
+ </span>
+</p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../network_theory/a.html">1. Network science</a></li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../network_theory/a.html">
+   1. Network science
+  </a>
+ </li>
 </ul>
 
     </div>
 </nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
     </div>
-  
-  
-  <div class="sidebar-primary-items__end sidebar-primary__section">
-  </div>
-  
-  <div id="rtd-footer-container"></div>
+    <div id="rtd-footer-container"></div>
+</div>
 
 
-      </div>
-      
-      <main id="main-content" class="bd-main">
-        
-        
+          
 
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
 <div class="sbt-scroll-pixel-helper"></div>
-
-          <div class="bd-content">
-            <div class="bd-article-container">
-              
-              <div class="bd-header-article">
-<div class="header-article-items header-article__inner">
-  
-    <div class="header-article-items__start">
-      
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <span class="fa-solid fa-bars"></span>
-</label></div>
-      
-    </div>
-  
-  
-    <div class="header-article-items__end">
-      
-        <div class="header-article-item">
-
-<div class="article-header-buttons">
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
 
 
 
-
-
-<div class="dropdown dropdown-launch-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
-    <i class="fas fa-rocket"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="https://colab.research.google.com/github/BergLab/CompNeuroBook/blob/main/notebooks/ML/b.ipynb" target="_blank"
-   class="btn btn-sm dropdown-item"
-   title="Launch onColab"
-   data-bs-placement="left" data-bs-toggle="tooltip"
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
 >
   
 
-<span class="btn__icon-container">
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://colab.research.google.com/github/BergLab/CompNeuroBook/blob/main/notebooks/ML/b.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
   
     <img src="../../_static/images/logo_colab.png">
   </span>
-<span class="btn__text-container">Colab</span>
+<span class="headerbtn__text-container">Colab</span>
 </a>
-</li>
+
+      </li>
       
-  </ul>
+    </ul>
+  </div>
 </div>
-
-
-
-
-
-
-<div class="dropdown dropdown-source-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
-    <i class="fab fa-github"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="https://github.com/BergLab/CompNeuroBook" target="_blank"
-   class="btn btn-sm btn-source-repository-button dropdown-item"
-   title="Source repository"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="btn__text-container">Repository</span>
-</a>
-</li>
-      
-      
-      
-      
-      <li><a href="https://github.com/BergLab/CompNeuroBook/edit/main/notebooks/ML/b.ipynb" target="_blank"
-   class="btn btn-sm btn-source-edit-button dropdown-item"
-   title="Suggest edit"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-pencil-alt"></i>
-  </span>
-<span class="btn__text-container">Suggest edit</span>
-</a>
-</li>
-      
-      
-      
-      
-      <li><a href="https://github.com/BergLab/CompNeuroBook/issues/new?title=Issue%20on%20page%20%2Fnotebooks/ML/b.html&body=Your%20issue%20content%20here." target="_blank"
-   class="btn btn-sm btn-source-issues-button dropdown-item"
-   title="Open an issue"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="btn__text-container">Open issue</span>
-</a>
-</li>
-      
-  </ul>
-</div>
-
-
-
-
-
-
-<div class="dropdown dropdown-download-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
-    <i class="fas fa-download"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="../../_sources/notebooks/ML/b.ipynb" target="_blank"
-   class="btn btn-sm btn-download-source-button dropdown-item"
-   title="Download source file"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="btn__text-container">.ipynb</span>
-</a>
-</li>
-      
-      
-      
-      
-      <li>
-<button onclick="window.print()"
-  class="btn btn-sm btn-download-pdf-button dropdown-item"
-  title="Print to PDF"
-  data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="btn__text-container">.pdf</span>
-</button>
-</li>
-      
-  </ul>
-</div>
-
-
-
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
-  title="Fullscreen mode"
-  data-bs-placement="bottom" data-bs-toggle="tooltip"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
 >
   
 
-<span class="btn__icon-container">
+<span class="headerbtn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-
-<script>
-document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
   </button>
-`);
-</script>
-
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
-</div></div>
-      
-    </div>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/BergLab/CompNeuroBook"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
   
-</div>
-</div>
-              
-              
 
-<div id="jb-print-docs-body" class="onlyprint">
-    <h1>Machine Learning</h1>
-    <!-- Table of contents -->
-    <div id="print-main-content">
-        <div id="jb-print-toc">
-            
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#machine-learning-models">2.1. Machine learning models</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decision-trees">2.1.1. Decision trees</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deep-learning">2.1.2. Deep learning</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mlp">2.1.2.1. MLP</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#convolutional-neural-networks">2.1.2.2. Convolutional neural networks</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#rnn">2.1.2.3. RNN</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-machine-learning-with-scikit-learn">2.2. Introduction to Machine learning with scikit-learn</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-description">2.2.1. Data description</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computing-correlations">2.3. Computing correlations</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">2.3.1. Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#non-linear-correlations">2.3.2. Non-linear correlations</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-relation-between-correlation-coefficients-and-predictive-models">2.3.3. The relation between correlation coefficients and predictive models</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supervised-learning">2.4. Supervised Learning</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regression">2.4.1. Regression</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">2.4.1.1. Exercise</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#real-data">2.4.2. Real data</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2.4.2.1. Exercise</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classification">2.4.3. Classification</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">2.4.3.1. Exercise</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-clustering">2.5. Bonus: Clustering</a></li>
-</ul>
-            </nav>
-        </div>
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/BergLab/CompNeuroBook/issues/new?title=Issue%20on%20page%20%2Fnotebooks/ML/b.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/BergLab/CompNeuroBook/edit/main/notebooks/ML/b.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/notebooks/ML/b.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
     </div>
 </div>
 
-              
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#supporting-material">
+   2.1. Supporting material
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#machine-learning-and-neuroscience">
+   2.2. Machine learning and Neuroscience
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#machine-learning-models">
+   2.3. Machine learning models
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#decision-trees">
+     2.3.1. Decision trees
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#deep-learning">
+     2.3.2. Deep learning
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#mlp">
+       2.3.2.1. MLP
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#cnn">
+       2.3.2.2. CNN
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ensemble-methods">
+     2.3.3. Ensemble methods
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#boosted-decision-trees-vs-deep-learning">
+     2.3.4. Boosted decision trees vs deep learning
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#optimising-the-models">
+   2.4. Optimising the models
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#gradient-descent-vs-backpropagation">
+     2.4.1. Gradient descent vs Backpropagation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction-to-machine-learning-with-scikit-learn">
+   2.5. Introduction to Machine learning with scikit-learn
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-description">
+     2.5.1. Data description
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#computing-correlations">
+   2.6. Computing correlations
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise">
+     2.6.1. Exercise
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#non-linear-correlations">
+     2.6.2. Non-linear correlations
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-relation-between-correlation-coefficients-and-predictive-models">
+     2.6.3. The relation between correlation coefficients and predictive models
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#supervised-learning">
+   2.7. Supervised Learning
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#regression">
+     2.7.1. Regression
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id1">
+       2.7.1.1. Exercise
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#real-data">
+     2.7.2. Real data
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id2">
+       2.7.2.1. Exercise
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#classification">
+     2.7.3. Classification
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id3">
+       2.7.3.1. Exercise
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bonus-clustering">
+   2.8. Bonus: Clustering
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Machine Learning</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#supporting-material">
+   2.1. Supporting material
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#machine-learning-and-neuroscience">
+   2.2. Machine learning and Neuroscience
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#machine-learning-models">
+   2.3. Machine learning models
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#decision-trees">
+     2.3.1. Decision trees
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#deep-learning">
+     2.3.2. Deep learning
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#mlp">
+       2.3.2.1. MLP
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#cnn">
+       2.3.2.2. CNN
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ensemble-methods">
+     2.3.3. Ensemble methods
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#boosted-decision-trees-vs-deep-learning">
+     2.3.4. Boosted decision trees vs deep learning
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#optimising-the-models">
+   2.4. Optimising the models
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#gradient-descent-vs-backpropagation">
+     2.4.1. Gradient descent vs Backpropagation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction-to-machine-learning-with-scikit-learn">
+   2.5. Introduction to Machine learning with scikit-learn
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-description">
+     2.5.1. Data description
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#computing-correlations">
+   2.6. Computing correlations
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise">
+     2.6.1. Exercise
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#non-linear-correlations">
+     2.6.2. Non-linear correlations
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-relation-between-correlation-coefficients-and-predictive-models">
+     2.6.3. The relation between correlation coefficients and predictive models
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#supervised-learning">
+   2.7. Supervised Learning
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#regression">
+     2.7.1. Regression
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id1">
+       2.7.1.1. Exercise
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#real-data">
+     2.7.2. Real data
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id2">
+       2.7.2.1. Exercise
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#classification">
+     2.7.3. Classification
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id3">
+       2.7.3.1. Exercise
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bonus-clustering">
+   2.8. Bonus: Clustering
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
                 
-<div id="searchbox"></div>
-                <article class="bd-article" role="main">
-                  
+              <div>
+                
   <section class="tex2jax_ignore mathjax_ignore" id="machine-learning">
 <h1><span class="section-number">2. </span>Machine Learning<a class="headerlink" href="#machine-learning" title="Permalink to this heading">#</a></h1>
+<section id="supporting-material">
+<h2><span class="section-number">2.1. </span>Supporting material<a class="headerlink" href="#supporting-material" title="Permalink to this heading">#</a></h2>
+<p>This chapter’s supporting material is <a class="reference external" href="https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi4">3blue1brown  Neural networks playlist</a>.</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe
+    width="600"
+    height="400"
+    src="https://www.youtube.com/embed/aircAruvnKk"
+    frameborder="0"
+    allowfullscreen
+
+></iframe>
+</div></div>
+</div>
+</section>
+<section id="machine-learning-and-neuroscience">
+<h2><span class="section-number">2.2. </span>Machine learning and Neuroscience<a class="headerlink" href="#machine-learning-and-neuroscience" title="Permalink to this heading">#</a></h2>
+<p>Machine learning —and <a class="reference external" href="https://www.nature.com/articles/s41593-019-0520-2">specifically Deep Learning</a>— holds great interest for neuroscientists, both as a research tool and as a set of algorithms that share similarities with the learning processes observed in biological brains. Machine learning models, particularly neural networks, are inspired by the structure and functionality of biological neural systems, making them an exciting area of study for understanding and potentially replicating aspects of brain function. These algorithms’ ability to learn complex patterns, adapt to new information, and generalize across different scenarios offers insights into the principles that may underlie human and animal learning. Additionally, machine learning can serve as a valuable tool for neuroscientists, enabling them to analyze large, complex datasets, model neural activity, and predict cognitive or behavioral outcomes. Thus, the intersection of machine learning and neuroscience not only facilitates the development of more advanced artificial intelligence systems but also contributes to our understanding of the brain and its remarkable learning capabilities.</p>
+<p>Machine learning encompasses a variety of models and techniques that enable computers to learn from data and improve their performance over time. While neural networks have gained significant attention for their capabilities, there are numerous other models that cater to different problem types and requirements. Examples include linear regression, logistic regression, and support vector machines (SVMs) for continuous and categorical predictions, k-nearest neighbors (KNN) for instance-based learning, and clustering algorithms like k-means and DBSCAN for unsupervised learning tasks. Ensemble methods, such as random forests and gradient boosting machines, combine the outputs of multiple base models to improve prediction accuracy and stability. Additionally, Bayesian methods like Naïve Bayes and Gaussian processes facilitate probabilistic reasoning and uncertainty quantification. These diverse machine learning models, each with their own strengths and weaknesses, offer a rich toolkit for tackling a wide range of real-world problems, demonstrating that the field extends well beyond neural networks alone.</p>
+<p>A machine learning task consist of three elements: the <strong>data</strong>, a <strong>model</strong> and an <strong>optimisation</strong> algorithm. Let’s first have a look at a few models:</p>
+</section>
 <section id="machine-learning-models">
-<h2><span class="section-number">2.1. </span>Machine learning models<a class="headerlink" href="#machine-learning-models" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.3. </span>Machine learning models<a class="headerlink" href="#machine-learning-models" title="Permalink to this heading">#</a></h2>
 <section id="decision-trees">
-<h3><span class="section-number">2.1.1. </span>Decision trees<a class="headerlink" href="#decision-trees" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">2.3.1. </span>Decision trees<a class="headerlink" href="#decision-trees" title="Permalink to this heading">#</a></h3>
+<p>Decision trees are a popular and intuitive machine learning technique used for both classification and regression tasks. They function by recursively partitioning the data into subsets based on the feature values, ultimately forming a tree-like structure with decision nodes and leaf nodes. At each decision node, the algorithm selects the most informative feature to split the data, while the leaf nodes represent the final output or class labels. Decision trees offer a transparent and easily interpretable model, allowing users to visualize and understand the underlying decision-making process. However, they can be prone to overfitting, especially when the tree grows too deep. To mitigate this issue, techniques such as pruning can be employed to balance the model’s complexity and predictive power.</p>
+<p>For many data applications, a type of decision tree model called boosted trees is often a better choice than neural networks. Boosted trees are an ensemble method that combines the predictions of multiple weak learners, usually shallow decision trees, to create a more robust and accurate model. Boosting algorithms, such as AdaBoost and Gradient Boosting, iteratively build these trees by focusing on the instances that are difficult to predict and assigning them higher importance in the subsequent tree construction. Boosted trees offer several advantages over neural networks, such as faster training times, easier interpretability, and lower susceptibility to overfitting. Furthermore, they generally perform well with smaller datasets and require less computational resources, making them a practical and powerful choice for a wide range of real-world data applications.</p>
 </section>
 <section id="deep-learning">
-<h3><span class="section-number">2.1.2. </span>Deep learning<a class="headerlink" href="#deep-learning" title="Permalink to this heading">#</a></h3>
-<p><strong>Rephase text, this is from david’s ha paper</strong>
-<strong>+add the traingle diagram of the data, model, optimisation algo</strong>
-Deep learning (DL) is a class of machine learning methods that uses multi-layer (“deep”) neural networks for representation learning. While artificial neural networks, trained with the backpropagation algorithm, first appeared in the 1980s 57, deep neural networks did not receive widespread attention until 2012 when a deep artificial neural network solution trained on GPUs 35 won an annual image recognition competition 15 by a significant margin over the non-DL runner up methods. This success demonstrated that DL, when combined with fast hardware-accelerated implementations and the availability of large datasets, is capable of achieving exceptionally better results in non-trivial tasks than conventional methods. Researchers and practitioners alike soon quickly incorporated DL to address the long-standing problems in several other fields spanning computer vision (CV) 24,47,60, natural language processing (NLP) 5,48,49, reinforcement learning (RL) 37,59,68 and computational biology 32,58, many of which have technological breakthroughs and achieved state-of-the-art results.
-<strong>In the current deep learning paradigm, there is an entire ecosystem of tools designed to make it easy to train and deploy neural network models. It is also relatively straightforward to train the parameters of a neural network with deep learning frameworks by providing it with a dataset 9, or a simulated task environment 26. Deep learning tools are designed to be used by anyone with a basic programming background.</strong>
-+add now an extension of the holy trinity which incorporate training libraries and hardware “the holy pentagon”</p>
-<div align="center">
-<p style="text-align:center;"><img src="https://github.com/BergLab/CompNeuroBook/blob/main/notebooks/ML/trianglepentagon.png?raw=true" width="500"/>
-</div>
+<h3><span class="section-number">2.3.2. </span>Deep learning<a class="headerlink" href="#deep-learning" title="Permalink to this heading">#</a></h3>
+<p>Deep learning is a subset of machine learning that focuses on multi-layered neural networks, known as “deep” neural networks, for representation learning. Although artificial neural networks trained with <strong>backpropagation</strong> first emerged in the 1980s, it wasn’t until 2012 that deep learning gained widespread attention. This occurred when a deep neural network trained on GPUs significantly outperformed non-deep learning methods in an annual image recognition competition. This accomplishment showcased that deep learning, in conjunction with fast hardware-accelerated implementations and large datasets, can yield exceptionally better results in non-trivial tasks compared to conventional methods. Consequently, researchers and practitioners rapidly adopted deep learning to tackle long-standing problems across various fields, including computer vision, natural language processing, reinforcement learning, and computational biology. This adoption led to numerous technological breakthroughs and state-of-the-art results in these domains.</p>
 <section id="mlp">
-<h4><span class="section-number">2.1.2.1. </span>MLP<a class="headerlink" href="#mlp" title="Permalink to this heading">#</a></h4>
+<h4><span class="section-number">2.3.2.1. </span>MLP<a class="headerlink" href="#mlp" title="Permalink to this heading">#</a></h4>
+<p>Multilayer perceptrons (MLPs) are a class of feedforward artificial neural networks consisting of multiple layers of interconnected nodes or neurons. MLPs are organized into an input layer, one or more hidden layers, and an output layer. Each node within a layer is connected to every other node in the subsequent layer, forming a densely connected network. MLPs are capable of modeling complex, non-linear relationships within data, making them a versatile choice for various machine learning tasks, such as classification and regression. The learning process in MLPs involves adjusting the weights and biases of connections using an optimization algorithm like gradient descent in combination with backpropagation to compute the gradients. The incorporation of non-linear activation functions, such as the sigmoid or ReLU, allows MLPs to learn and represent non-linear mappings between inputs and outputs. Despite their simplicity compared to more advanced deep learning models, MLPs have proven to be effective in a wide range of applications and serve as a fundamental building block in the field of neural networks.</p>
 </section>
-<section id="convolutional-neural-networks">
-<h4><span class="section-number">2.1.2.2. </span>Convolutional neural networks<a class="headerlink" href="#convolutional-neural-networks" title="Permalink to this heading">#</a></h4>
+<section id="cnn">
+<h4><span class="section-number">2.3.2.2. </span>CNN<a class="headerlink" href="#cnn" title="Permalink to this heading">#</a></h4>
 <p>Convolutional neural networks (CNN), the deep neural network class, that is most commonly applied to image analysis and computer vision applications.</p>
 <p>You’ve heard it before: images are made of pixels, so the CNN leverages the <em>convolution operation</em> to calculate latent (hidden) features for different pixels based on their surrounding pixel values. It does this by sliding a kernel (a.k.a. filter) over the input image and calculating the dot product between that small filter and the overlapping image area. This dot product leads to aggregate the neighboring pixel values to one representative scaler. Now let us twist our conceptualization of images a little bit and think of images as a graphs.</p>
-<ul class="simple">
-<li><p>add link to visualsation of conv opeartion</p></li>
-</ul>
+<p>Convolutional neural networks are of special interest in neuroscience as <a class="reference external" href="https://www.annualreviews.org/doi/full/10.1146/annurev-vision-082114-035447">there is extensive research</a> studying the representational similarity between their activations and that of the human visual system.</p>
+<p>Check out <a class="reference external" href="https://adamharley.com/nn_vis/cnn/3d.html">this interactive visualistion</a> of the inner workings of a CNN caught in action classifying some digits.</p>
 </section>
-<section id="rnn">
-<h4><span class="section-number">2.1.2.3. </span>RNN<a class="headerlink" href="#rnn" title="Permalink to this heading">#</a></h4>
 </section>
+<section id="ensemble-methods">
+<h3><span class="section-number">2.3.3. </span>Ensemble methods<a class="headerlink" href="#ensemble-methods" title="Permalink to this heading">#</a></h3>
+<p>Ensemble methods are a powerful approach in machine learning that leverage the collective wisdom of multiple base models to achieve more accurate and robust predictions. The underlying principle is that by combining diverse models, each with their own strengths and weaknesses, the ensemble can compensate for individual errors and capture a broader range of patterns in the data. This leads to improved overall performance and greater stability. Popular ensemble techniques include bagging, which averages the predictions of models trained on different random subsets of the data; boosting, which focuses on incrementally improving the performance of weak learners; and stacking, which uses a higher-level model to optimally combine the outputs of multiple base models. Ensemble methods have demonstrated success across a wide range of applications, offering a versatile and effective strategy for enhancing model performance in both classification and regression tasks.</p>
+</section>
+<section id="boosted-decision-trees-vs-deep-learning">
+<h3><span class="section-number">2.3.4. </span>Boosted decision trees vs deep learning<a class="headerlink" href="#boosted-decision-trees-vs-deep-learning" title="Permalink to this heading">#</a></h3>
+<p>Choosing between boosted trees and neural networks depends on the problem, data characteristics, and desired outcomes. Boosted trees are often the preferred choice for structured data, such as tabular datasets, where the relationships between features are relatively simple. They offer advantages in terms of interpretability, computational efficiency, and resistance to overfitting, making them suitable for applications with limited data or resources. On the other hand, neural networks, particularly deep learning models, excel in handling complex, high-dimensional, and unstructured data, such as images, audio, or text. They are well-suited for tasks like image recognition, natural language processing, and speech recognition, where the ability to capture hierarchical representations is essential. Additionally, neural networks are more adept at modeling sequential or temporal dependencies, as seen in time-series analysis or text processing. Ultimately, the choice between boosted trees and neural networks should be guided by the specific problem, data, and requirements, weighing the trade-offs between performance, interpretability, and resource constraints.</p>
+</section>
+</section>
+<section id="optimising-the-models">
+<h2><span class="section-number">2.4. </span>Optimising the models<a class="headerlink" href="#optimising-the-models" title="Permalink to this heading">#</a></h2>
+<p>Optimization in the context of machine learning is the process of searching for the best values for the free parameters of a model, ensuring that it performs well on a given task. These free parameters, such as weights and biases in a neural network, determine the relationship between the input features and the output predictions. The goal of optimization is to minimize a predefined loss function, which quantifies the discrepancy between the model’s predictions and the actual target values. By iteratively updating the parameter values, the optimization algorithm navigates the model’s parameter space to find a set of values that yield the lowest possible loss. This process effectively tunes the model to capture underlying patterns and relationships in the data, ultimately improving its performance and generalization capabilities. The choice of optimization algorithm, along with appropriate hyperparameter settings, significantly impacts the efficiency and effectiveness of this search for optimal parameter values.</p>
+<section id="gradient-descent-vs-backpropagation">
+<h3><span class="section-number">2.4.1. </span>Gradient descent vs Backpropagation<a class="headerlink" href="#gradient-descent-vs-backpropagation" title="Permalink to this heading">#</a></h3>
+<p>Although often used interchangly in the context of deep learning, gradient descent and backpropagation are two distinct concepts.</p>
+<p>Gradient descent is an optimization algorithm used for minimizing a loss function by iteratively updating the parameters of a model or a function. It operates by calculating the gradient of the loss function with respect to each parameter and adjusting the parameters in the direction of the negative gradient. The algorithm aims to find a set of parameter values that minimize the loss function.</p>
+<p>On the other hand, backpropagation is a specific technique for computing the gradients of the loss function with respect to the parameters in a neural network. Backpropagation is the backbone optimization algorithm in modern machine learning, particularly for training deep neural networks. It is an efficient and elegant method for computing gradients of the loss function with respect to the model’s parameters, such as weights and biases. At its core, backpropagation involves the application of the chain rule from calculus to calculate partial derivatives, i.e. simple high-school mathematics. By iteratively adjusting the model’s parameters in the direction of the negative gradient, backpropagation minimizes the loss and improves the model’s performance. This simple yet powerful technique has been instrumental in the widespread adoption and success of neural networks across various domains, making it an essential component of contemporary machine learning.</p>
 </section>
 </section>
 <section id="introduction-to-machine-learning-with-scikit-learn">
-<h2><span class="section-number">2.2. </span>Introduction to Machine learning with scikit-learn<a class="headerlink" href="#introduction-to-machine-learning-with-scikit-learn" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.5. </span>Introduction to Machine learning with scikit-learn<a class="headerlink" href="#introduction-to-machine-learning-with-scikit-learn" title="Permalink to this heading">#</a></h2>
 <p><a class="reference external" href="https://scikit-learn.org/stable/tutorial/index.html">Scikit-learn</a> is a python library that allows to build many machine learning models with an simple interface. On the other hand, other ML libraries like Pytorch or Tensorflow are focused on machine with neural networks only.</p>
 <p>We will use the same dataset we used on the previous notebook.</p>
 <section id="data-description">
-<h3><span class="section-number">2.2.1. </span>Data description<a class="headerlink" href="#data-description" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">2.5.1. </span>Data description<a class="headerlink" href="#data-description" title="Permalink to this heading">#</a></h3>
 <p>Each row represent a star.</p>
 <p>Feature vectors:</p>
 <ul class="simple">
@@ -533,28 +844,20 @@ Deep learning (DL) is a class of machine learning methods that uses multi-layer 
 <li><p>Type – Red Dwarf, Brown Dwarf, White Dwarf, Main Sequence , Super Giants, Hyper Giants</p></li>
 <li><p>Spectral_Class – O,B,A,F,G,K,M / SMASS - <a class="reference external" href="https://en.wikipedia.org/wiki/Stellar_classification">Stellar classification</a></p></li>
 </ul>
+<div class="cell tag_remove-input tag_remove-output docutils container">
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="n">pd</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">mode</span><span class="o">.</span><span class="n">chained_assignment</span> <span class="o">=</span> <span class="kc">None</span>  
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">pd</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">mode</span><span class="o">.</span><span class="n">chained_assignment</span> <span class="o">=</span> <span class="kc">None</span>  
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
-</pre></div>
 </div>
-</div>
+<div class="cell tag_remove-input tag_remove-output docutils container">
 </div>
 <p>The DataFrame can be created from a csv file using the read_csv method.
 If you are working on Colab, you will need to upload the data.</p>
@@ -565,11 +868,93 @@ If you are working on Colab, you will need to upload the data.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Temperature</th>
+      <th>Luminosity</th>
+      <th>Size</th>
+      <th>A_M</th>
+      <th>Color</th>
+      <th>Spectral_Class</th>
+      <th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>3068</td>
+      <td>0.002400</td>
+      <td>0.1700</td>
+      <td>16.12</td>
+      <td>Red</td>
+      <td>M</td>
+      <td>Red Dwarf</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>3042</td>
+      <td>0.000500</td>
+      <td>0.1542</td>
+      <td>16.60</td>
+      <td>Red</td>
+      <td>M</td>
+      <td>Red Dwarf</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2600</td>
+      <td>0.000300</td>
+      <td>0.1020</td>
+      <td>18.70</td>
+      <td>Red</td>
+      <td>M</td>
+      <td>Red Dwarf</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2800</td>
+      <td>0.000200</td>
+      <td>0.1600</td>
+      <td>16.65</td>
+      <td>Red</td>
+      <td>M</td>
+      <td>Red Dwarf</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1939</td>
+      <td>0.000138</td>
+      <td>0.1030</td>
+      <td>20.06</td>
+      <td>Red</td>
+      <td>M</td>
+      <td>Red Dwarf</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </section>
 </section>
 <section id="computing-correlations">
-<h2><span class="section-number">2.3. </span>Computing correlations<a class="headerlink" href="#computing-correlations" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.6. </span>Computing correlations<a class="headerlink" href="#computing-correlations" title="Permalink to this heading">#</a></h2>
 <p>Let’s explore the linear correlations of the data. <strong>Pearson correlation coefficient</strong> <span class="math notranslate nohighlight">\(\rho\)</span> is a measure of how linearly correlated two variables are: it’s 1 if there is a positive correlation, -1 if negative and zero if none.</p>
 <div align="center">
 <p style="text-align:center;"><img src="https://upload.wikimedia.org/wikipedia/commons/3/34/Correlation_coefficient.png" width="500"/>
@@ -580,9 +965,12 @@ If you are working on Colab, you will need to upload the data.</p>
 <p>Let’s start by doing a sanity check, a variable should be VERY correlated to itself, right? Let’s plot the temperature against the temperature using a scatter plot:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s1">&#39;Temperature&#39;</span><span class="p">,</span><span class="s1">&#39;Temperature&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">7</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s1">&#39;Temperature&#39;</span><span class="p">,</span><span class="s1">&#39;Temperature&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span><span class="mi">10</span><span class="p">));</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/b_14_0.png" src="../../_images/b_14_0.png" />
 </div>
 </div>
 <p>What value of the pearson correlation coefficient do expect to have? If it’s not obvious to you, think about it before running the next code cell.</p>
@@ -595,17 +983,22 @@ If you are working on Colab, you will need to upload the data.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The correlation coefficient is 1.0
+</pre></div>
+</div>
+</div>
 </div>
 <p>A variable always has correlation coefficient of one with itself. Let’s now explore the rest of the data.</p>
 <section id="exercise">
-<h3><span class="section-number">2.3.1. </span>Exercise<a class="headerlink" href="#exercise" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">2.6.1. </span>Exercise<a class="headerlink" href="#exercise" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Find the two pairs of variables with the highest absolute correlation # Hint: You can use Scipy’s stats.pearsonr function, otherwise Pandas data frames have a method <code class="docutils literal notranslate"><span class="pre">corr()</span></code> that outputs Pearson correlation between the different variables. # Hint 2 : If you wanna plot you can use <code class="docutils literal notranslate"><span class="pre">dataframe_name.corr().style.background_gradient(cmap='coolwarm')</span></code></p></li>
 <li><p>Once you find the two variables, make their scatter plot again but this apply the logarithmic function <code class="docutils literal notranslate"><span class="pre">np.log(df['whichever</span> <span class="pre">variable'])</span></code> before computing the Pearson correlation coefficient again. How does the Pearson correlation coefficient  changes after applying the logarithmic transformation?</p></li>
 </ul>
 </section>
 <section id="non-linear-correlations">
-<h3><span class="section-number">2.3.2. </span>Non-linear correlations<a class="headerlink" href="#non-linear-correlations" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">2.6.2. </span>Non-linear correlations<a class="headerlink" href="#non-linear-correlations" title="Permalink to this heading">#</a></h3>
 <p>Look at the following figure, the number above each dataset is their Pearson coefficient:</p>
 <div align="center">
 <p style="text-align:center;"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Correlation_examples2.svg/2880px-Correlation_examples2.svg.png" width="500"/>
@@ -614,16 +1007,16 @@ If you are working on Colab, you will need to upload the data.</p>
 <p>There exist <em>many</em> types of correlations coefficients we can compute, some of the like Spearman, can even capture non linear correlations. We won’t go explore them further here, but be aware that they exist if you ever are suspicious your data may be trying to hide non-linear correlations.</p>
 </section>
 <section id="the-relation-between-correlation-coefficients-and-predictive-models">
-<h3><span class="section-number">2.3.3. </span>The relation between correlation coefficients and predictive models<a class="headerlink" href="#the-relation-between-correlation-coefficients-and-predictive-models" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">2.6.3. </span>The relation between correlation coefficients and predictive models<a class="headerlink" href="#the-relation-between-correlation-coefficients-and-predictive-models" title="Permalink to this heading">#</a></h3>
 <p>Machine learning models (as any other model) are typically used to connect one variable to another. What happens if these two variables are not correlated? Well then it’s simply not possible to build a model predicting one variable as a function of the other. If two variables X and Y are independent —ie. not correlated— that means that knowing X does not provide us any information about Y. The opposite is true, if two quantities are correlated, we should —in principle— be able to build a model linking them.</p>
 <p>Now, in most natural phenomena, quantities are high-dimensional and non-linearly correlated so we can’t simply predict if we would be able to build a model based on some correlation coefficient. In these cases, training and evaluating the model is the only way of looking for correlations.</p>
 </section>
 </section>
 <section id="supervised-learning">
-<h2><span class="section-number">2.4. </span>Supervised Learning<a class="headerlink" href="#supervised-learning" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.7. </span>Supervised Learning<a class="headerlink" href="#supervised-learning" title="Permalink to this heading">#</a></h2>
 <p>Supervised learning (SL) is the most common type of task in machine learning. It consist in finding a function that maps on space onto another, eg. the size of star to its luminosity. It can sub-divide into two types of task: regression and classification.</p>
 <section id="regression">
-<h3><span class="section-number">2.4.1. </span>Regression<a class="headerlink" href="#regression" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">2.7.1. </span>Regression<a class="headerlink" href="#regression" title="Permalink to this heading">#</a></h3>
 <p>Let’s start by performing a regression (mapping one continual variable onto another one) on fake data so we make sure our set-up allows us to train models properly. We will generate the values from a sine function and train a neural network on them. Read the code line by line and make sure you understand what’s going on.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -647,19 +1040,25 @@ If you are working on Colab, you will need to upload the data.</p>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Score on training: &#39;</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">))</span>
 
 <span class="c1"># Predict data values with model and plot along original data</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Original data&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">10</span><span class="p">));</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Original data&#39;</span><span class="p">);</span>
 <span class="n">input_x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">X</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="mi">10000</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">pred_y</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">input_x</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">input_x</span><span class="p">,</span><span class="n">pred_y</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Model prediction&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">input_x</span><span class="p">,</span><span class="n">pred_y</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Model prediction&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">);</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Score on training:  0.9990330474516838
+</pre></div>
+</div>
+<img alt="../../_images/b_24_1.png" src="../../_images/b_24_1.png" />
 </div>
 </div>
 <p>It seems to be working, the score should be close to 1.0 —which would be a perfect fit.</p>
 <section id="id1">
-<h4><span class="section-number">2.4.1.1. </span>Exercise<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h4>
+<h4><span class="section-number">2.7.1.1. </span>Exercise<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Extend the plot of the model we just trained so it predicts values outside of the range of those we used to train it. Does it still perform well on that range?</p></li>
 </ul>
@@ -673,13 +1072,16 @@ If you are working on Colab, you will need to upload the data.</p>
 </section>
 </section>
 <section id="real-data">
-<h3><span class="section-number">2.4.2. </span>Real data<a class="headerlink" href="#real-data" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">2.7.2. </span>Real data<a class="headerlink" href="#real-data" title="Permalink to this heading">#</a></h3>
 <p>Moving on onto real data. Both the <em>Luminosity</em> and <em>Absolute Magnitude</em> relate to how bright a star is. Let’s try to figure out what the exact relation between them is. Let’s plot them.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s1">&#39;Luminosity&#39;</span><span class="p">,</span><span class="s1">&#39;A_M&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">7</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s1">&#39;Luminosity&#39;</span><span class="p">,</span><span class="s1">&#39;A_M&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">10</span><span class="p">));</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/b_29_0.png" src="../../_images/b_29_0.png" />
 </div>
 </div>
 <p>As you already knew, there is indeed a strong correlation between these two variables. You could even try to guess what the analytical formula is given the shape —or google it— but rather let’s see if we can instead build a model to predict the absolute magnitude for each luminosity. We could try a linear model but the relation is not quite linear, is it? Ie. it’s not a straight line. We could also try to fit a polynomial or a logarithmic function.. Instead we will build a neural network model so we don’t need to make any assumption about the relation between the variables.</p>
@@ -723,6 +1125,10 @@ If you are working on Colab, you will need to upload the data.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>#sk-container-id-1 {color: black;background-color: white;}#sk-container-id-1 pre{padding: 0;}#sk-container-id-1 div.sk-toggleable {background-color: white;}#sk-container-id-1 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-container-id-1 label.sk-toggleable__label-arrow:before {content: "▸";float: left;margin-right: 0.25em;color: #696969;}#sk-container-id-1 label.sk-toggleable__label-arrow:hover:before {color: black;}#sk-container-id-1 div.sk-estimator:hover label.sk-toggleable__label-arrow:before {color: black;}#sk-container-id-1 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-container-id-1 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-container-id-1 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-container-id-1 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {content: "▾";}#sk-container-id-1 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-container-id-1 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-container-id-1 div.sk-estimator:hover {background-color: #d4ebff;}#sk-container-id-1 div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-container-id-1 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: 0;}#sk-container-id-1 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;position: relative;}#sk-container-id-1 div.sk-item {position: relative;z-index: 1;}#sk-container-id-1 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;position: relative;}#sk-container-id-1 div.sk-item::before, #sk-container-id-1 div.sk-parallel-item::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: -1;}#sk-container-id-1 div.sk-parallel-item {display: flex;flex-direction: column;z-index: 1;position: relative;background-color: white;}#sk-container-id-1 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-container-id-1 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-container-id-1 div.sk-parallel-item:only-child::after {width: 0;}#sk-container-id-1 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;}#sk-container-id-1 div.sk-label label {font-family: monospace;font-weight: bold;display: inline-block;line-height: 1.2em;}#sk-container-id-1 div.sk-label-container {text-align: center;}#sk-container-id-1 div.sk-container {/* jupyter's `normalize.less` sets `[hidden] { display: none; }` but bootstrap.min.css set `[hidden] { display: none !important; }` so we also need the `!important` here to be able to override the default hidden behavior on the sphinx rendered scikit-learn.org. See: https://github.com/scikit-learn/scikit-learn/issues/21755 */display: inline-block !important;position: relative;}#sk-container-id-1 div.sk-text-repr-fallback {display: none;}</style><div id="sk-container-id-1" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>MLPRegressor(activation=&#x27;tanh&#x27;, hidden_layer_sizes=(300, 300, 300),
+             learning_rate=&#x27;adaptive&#x27;, learning_rate_init=5e-05, max_iter=1000)</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-1" type="checkbox" checked><label for="sk-estimator-id-1" class="sk-toggleable__label sk-toggleable__label-arrow">MLPRegressor</label><div class="sk-toggleable__content"><pre>MLPRegressor(activation=&#x27;tanh&#x27;, hidden_layer_sizes=(300, 300, 300),
+             learning_rate=&#x27;adaptive&#x27;, learning_rate_init=5e-05, max_iter=1000)</pre></div></div></div></div></div></div></div>
 </div>
 <p>Let’s print the score:</p>
 <div class="cell docutils container">
@@ -732,21 +1138,31 @@ If you are working on Colab, you will need to upload the data.</p>
 </pre></div>
 </div>
 </div>
-</div>
-<p>Finally, let’s print our the data along with the values predicted by the model. We generate a set of luminosity values <code class="docutils literal notranslate"><span class="pre">input_x</span></code> and use the method <code class="docutils literal notranslate"><span class="pre">model.prediction()</span></code> to use our trained model to predict values.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s1">&#39;Luminosity&#39;</span><span class="p">,</span><span class="s1">&#39;A_M&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">7</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Data&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
-<span class="n">input_x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">X</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="mi">100000</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">pred_y</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">input_x</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">input_x</span><span class="p">,</span><span class="n">pred_y</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Model prediction&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Score on training set:  0.9054184861000923
+Score on test set:  0.9618664374130491
 </pre></div>
 </div>
 </div>
 </div>
+<p>Finally, let’s print our the data along with the values predicted by the model. We generate a set of luminosity values <code class="docutils literal notranslate"><span class="pre">input_x</span></code> and use the method <code class="docutils literal notranslate"><span class="pre">model.prediction()</span></code> to use our trained model to predict values.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s1">&#39;Luminosity&#39;</span><span class="p">,</span><span class="s1">&#39;A_M&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Data&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">);</span>
+<span class="n">input_x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">X</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="mi">100000</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">pred_y</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">input_x</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">input_x</span><span class="p">,</span><span class="n">pred_y</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Model prediction&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/b_42_0.png" src="../../_images/b_42_0.png" />
+</div>
+</div>
 <p>Congratulations, you just trained your first neural network on real data! The red line should hopefully fit the dataset points.</p>
 <section id="id2">
-<h4><span class="section-number">2.4.2.1. </span>Exercise<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h4>
+<h4><span class="section-number">2.7.2.1. </span>Exercise<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Train a neural network model to predict the absolute magnitude of the stars based on their temperature and size. Leave out 20% of the data as test set and evaluate the accuracy of the trained model on both the training set and the test set.</p></li>
 <li><p>Change the ratio of training vs test set. How does this affect the accuracy of the model?</p></li>
@@ -761,27 +1177,34 @@ If you are working on Colab, you will need to upload the data.</p>
 </section>
 </section>
 <section id="classification">
-<h3><span class="section-number">2.4.3. </span>Classification<a class="headerlink" href="#classification" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">2.7.3. </span>Classification<a class="headerlink" href="#classification" title="Permalink to this heading">#</a></h3>
 <p>Our dataset contains a categorical variable “Spectral Class”. This variable represents the color of the star. Let’s see if we could predict the spectral class of the stars based on the other features of the dataset.</p>
 <p>Let’s visualise how many stars of each type there are in the data. If the amount of stars of one category was very small and another one too big, it would make the training quite difficult since the model would just learn to predict those over-represented in the data:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">cm</span>
-<span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Type&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;pie&#39;</span><span class="p">,</span> <span class="n">autopct</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%.2f</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cm</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="s1">&#39;Spectral&#39;</span><span class="p">))</span>
+<span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Type&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;pie&#39;</span><span class="p">,</span> <span class="n">autopct</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%.2f</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cm</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="s1">&#39;Spectral&#39;</span><span class="p">),</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">16</span><span class="p">),</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">26</span><span class="p">);</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/b_47_0.png" src="../../_images/b_47_0.png" />
 </div>
 </div>
 <p>It seems the data is balanced with respect to stars types so we can safely move on.
 Let’s now visualise how the different variables relate to each other so we can pick features that would allow us to separate the stars based on their type:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="c1"># seaborn is a library similar to matplotlib but with some extra features and nicer default color schemes</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span><span class="c1"># seaborn is a library similar to matplotlib but with some extra features and nicer default color schemes</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">font_scale</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span>
 
 <span class="n">features</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Size&#39;</span><span class="p">,</span> <span class="s1">&#39;A_M&#39;</span><span class="p">,</span> <span class="s1">&#39;Temperature&#39;</span><span class="p">,</span> <span class="s1">&#39;Type&#39;</span><span class="p">]</span>
-<span class="n">seaborn</span><span class="o">.</span><span class="n">pairplot</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">features</span><span class="p">],</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;Type&quot;</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s2">&quot;husl&quot;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">pairplot</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">features</span><span class="p">],</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;Type&quot;</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s2">&quot;husl&quot;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">5</span><span class="p">);</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/b_49_0.png" src="../../_images/b_49_0.png" />
 </div>
 </div>
 <p>We start by selecting the data that we are gonna feed our model —the input— and the data that we want our model to predict —ie. to output—. In our case, we’re gonna try to predict the star type (White Dwarf, Super giants..) based on their temperature and absolute magnitude.</p>
@@ -832,13 +1255,17 @@ Let’s now visualise how the different variables relate to each other so we can
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy on training:  0.9322916666666666
+Accuracy on test:  0.8541666666666666
+</pre></div>
 </div>
-<p>Since we are making predictions based on only two dimensions (temperature and absolute magnitude) we can make a figure with the decision boundaries for our model. To do so, we use Scikit-learn <code class="docutils literal notranslate"><span class="pre">DecisionBoundaryDisplay</span></code> function. ⚠️ Sadly, Google Colab doesn’t run the last version of Scipy which implements the <code class="docutils literal notranslate"><span class="pre">DecisionBoundaryDisplay</span></code> function. You will have to run this part locally on your computer or come talk to use to see what it looks like and just skip it.</p>
+</div>
+</div>
+<p>Since we are making predictions based on only two dimensions (temperature and absolute magnitude) we can make a figure with the decision boundaries for our model. To do so, we use Scikit-learn <code class="docutils literal notranslate"><span class="pre">DecisionBoundaryDisplay</span></code> function. ⚠️ It is possible that Google Colab doesn’t run the support the last version of Scipy which implements the <code class="docutils literal notranslate"><span class="pre">DecisionBoundaryDisplay</span></code> function. You will have to run this part locally on your computer or come talk to use to see what it looks like and just skip it.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.inspection</span> <span class="kn">import</span> <span class="n">DecisionBoundaryDisplay</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">12</span><span class="p">))</span>
 
 <span class="n">DecisionBoundaryDisplay</span><span class="o">.</span><span class="n">from_estimator</span><span class="p">(</span>
     <span class="n">model</span><span class="p">,</span> <span class="c1"># the model we just train</span>
@@ -850,22 +1277,25 @@ Let’s now visualise how the different variables relate to each other so we can
     <span class="n">xlabel</span><span class="o">=</span><span class="n">feature_cols</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
     <span class="n">ylabel</span><span class="o">=</span><span class="n">feature_cols</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
     <span class="n">eps</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
-<span class="p">)</span>
+<span class="p">);</span>
 
 <span class="c1"># We plot the stars with each type on a different color</span>
 <span class="n">colors</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="s1">&#39;hsv&#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">target_feature</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()))</span>
 <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">startype</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">target_feature</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()):</span>
     <span class="n">stars_one_type</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="n">target_feature</span><span class="p">]</span> <span class="o">==</span> <span class="n">startype</span><span class="p">][</span><span class="n">feature_cols</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">stars_one_type</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">stars_one_type</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">color</span> <span class="o">=</span> <span class="n">colors</span><span class="p">(</span><span class="n">index</span><span class="p">),</span> <span class="n">edgecolors</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">startype</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">stars_one_type</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">stars_one_type</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">color</span> <span class="o">=</span> <span class="n">colors</span><span class="p">(</span><span class="n">index</span><span class="p">),</span> <span class="n">edgecolors</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">startype</span><span class="p">);</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../../_images/b_60_0.png" src="../../_images/b_60_0.png" />
+</div>
 </div>
 <section id="id3">
-<h4><span class="section-number">2.4.3.1. </span>Exercise<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h4>
+<h4><span class="section-number">2.7.3.1. </span>Exercise<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Use the <code class="docutils literal notranslate"><span class="pre">predict()</span></code> method of the model we just trained to predict the category of the stars with the following temperatures and absolute magnitude. Check that the predictions are compatible with those found in the Hertzsprung-Russell Diagram below. # Hint: you’ll need to add extra pair of brackets <code class="docutils literal notranslate"><span class="pre">[[temperature</span> <span class="pre">value,</span> <span class="pre">absolute</span> <span class="pre">magnitude]]</span></code> when calling the predict method of the model.</p></li>
 </ul>
@@ -910,7 +1340,7 @@ Let’s now visualise how the different variables relate to each other so we can
 </section>
 </section>
 <section id="bonus-clustering">
-<h2><span class="section-number">2.5. </span>Bonus: Clustering<a class="headerlink" href="#bonus-clustering" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.8. </span>Bonus: Clustering<a class="headerlink" href="#bonus-clustering" title="Permalink to this heading">#</a></h2>
 <p>Cluster analysis or clustering consist in grouping objects such that the distance between similar objects is small while the distance between different objects is big. When objects are represented by high-dimensional data —think for instance of cell types represented by their proteomics or stars represented by their physical properties—, then the task of clustering becomes challenging.</p>
 <p>Humans are great, but they have not evolved to easily understand and visualise high-dimensional data. To compensate this shortcoming, a first step when looking to cluster data is to <em>reduce its dimensionality</em>, meaning that we find some representation of the data in 2 or 3 dimension such that we obtain meaningful clusters.</p>
 <p>The downside of performing dimensionality reduction is that there exist different low-dimensional representations of the same data. Therefore, finding which features of the data are relevant and how to project them to a low dimensional space is critical.</p>
@@ -930,7 +1360,7 @@ Let’s now visualise how the different variables relate to each other so we can
             mode: "python"
         },
         kernelOptions: {
-            name: "python3",
+            kernelName: "python3",
             path: "./notebooks/ML"
         },
         predefinedOutput: true
@@ -938,140 +1368,50 @@ Let’s now visualise how the different variables relate to each other so we can
     </script>
     <script>kernelName = 'python3'</script>
 
-                </article>
+              </div>
               
-
-              
-              
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
-<div class="prev-next-area">
-    <a class="left-prev"
-       href="a.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">1. </span>Introduction to Data Analysis with Pandas</p>
-      </div>
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="a.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">1. </span>Introduction to Data Analysis with Pandas</p>
+        </div>
     </a>
-    <a class="right-next"
-       href="../network_theory/a.html"
-       title="next page">
-      <div class="prev-next-info">
+    <a class='right-next' id="next-link" href="../network_theory/a.html" title="next page">
+    <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title"><span class="section-number">1. </span>Network science</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
-</div></div>
-  
-</div>
-
-                </footer>
-              
-            </div>
-            
-            
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#machine-learning-models">2.1. Machine learning models</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decision-trees">2.1.1. Decision trees</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deep-learning">2.1.2. Deep learning</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mlp">2.1.2.1. MLP</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#convolutional-neural-networks">2.1.2.2. Convolutional neural networks</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#rnn">2.1.2.3. RNN</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-machine-learning-with-scikit-learn">2.2. Introduction to Machine learning with scikit-learn</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-description">2.2.1. Data description</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computing-correlations">2.3. Computing correlations</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">2.3.1. Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#non-linear-correlations">2.3.2. Non-linear correlations</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-relation-between-correlation-coefficients-and-predictive-models">2.3.3. The relation between correlation coefficients and predictive models</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supervised-learning">2.4. Supervised Learning</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regression">2.4.1. Regression</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">2.4.1.1. Exercise</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#real-data">2.4.2. Real data</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2.4.2.1. Exercise</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classification">2.4.3. Classification</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">2.4.3.1. Exercise</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-clustering">2.5. Bonus: Clustering</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
-              
-            
-          </div>
-          <footer class="bd-footer-content">
-            
-<div class="bd-footer-content__inner container">
-  
-  <div class="footer-item">
-    
-<p class="component-author">
-By Elias Najarro & Rune Berg
-</p>
-
-  </div>
-  
-  <div class="footer-item">
-    
-  <p class="copyright">
-    
-      © Copyright 2022.
-      <br/>
-    
-  </p>
-
-  </div>
-  
-  <div class="footer-item">
-    
-  </div>
-  
-  <div class="footer-item">
-    
-  </div>
-  
-</div>
-          </footer>
-        
-
-      </main>
     </div>
-  </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Elias Najarro & Rune Berg<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
 
-  <footer class="bd-footer">
-  </footer>
+
   </body>
 </html>

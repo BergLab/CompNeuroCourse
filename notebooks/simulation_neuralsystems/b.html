@@ -1,61 +1,52 @@
 
-
 <!DOCTYPE html>
 
-
-<html lang="en" >
-
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>2. Introduction to Brian part 2: Synapses &#8212; Computational Neuroscience</title>
-  
-  
-  
-  <script data-cfasync="false">
-    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
-  </script>
-  
+    
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
-  
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
-  
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/custom.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -65,94 +56,62 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/simulation_neuralsystems/b';</script>
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="3. Introduction to Brian part 3: Simulations" href="c.html" />
     <link rel="prev" title="1. Introduction to Brian part 1: Neurons" href="a.html" />
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en">
+    
+
+    <!-- Google Analytics -->
+    
   </head>
-  
-  
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
 
-  
-  
-  <a class="skip-link" href="#main-content">Skip to main content</a>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
-<form class="bd-search d-flex align-items-center"
-      action="../../search.html"
-      method="get">
-  <i class="fa-solid fa-magnifying-glass"></i>
-  <input type="search"
-         class="form-control"
-         name="q"
-         id="search-input"
-         placeholder="Search this book..."
-         aria-label="Search this book..."
-         autocomplete="off"
-         autocorrect="off"
-         autocapitalize="off"
-         spellcheck="false"/>
-  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
-  
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
-  
-  <div class="bd-container">
-    <div class="bd-container__inner bd-page-width">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
       
-      <div class="bd-sidebar-primary bd-sidebar">
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
         
-
-  
-  <div class="sidebar-header-items sidebar-primary__section">
-    
-    
-    
-    
-  </div>
-  
-    <div class="sidebar-primary-items__start sidebar-primary__section">
-        <div class="sidebar-primary-item">
-  
-
-<a class="navbar-brand logo" href="../../intro.html">
-  
-  
-  
-  
-    
-    
       
-    
-    
-    <img src="../../_static/cajal1.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../../_static/cajal1.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
-  
-  
-</a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item navbar-nav active">
+      
+      <img src="../../_static/cajal1.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Computational Neuroscience</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -161,308 +120,483 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Coding tools for researchers</span></p>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Coding tools for researchers
+ </span>
+</p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../coding_intro/codingtoolsforresearch.html">First things first</a></li>
-
+ <li class="toctree-l1">
+  <a class="reference internal" href="../coding_intro/codingtoolsforresearch.html">
+   First things first
+  </a>
+ </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Math review with Python</span></p>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Math review with Python
+ </span>
+</p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../mathpython_intro/IntroColab.html">Google’s Colab</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../mathpython_intro/Numpy_Introduction.html">Introduction to NumPy and Matplotlib</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../mathpython_intro/Linear_Algebra.html">Linear Algebra basics</a></li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../mathpython_intro/IntroColab.html">
+   Google’s Colab
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../mathpython_intro/Numpy_Introduction.html">
+   Introduction to NumPy and Matplotlib
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../mathpython_intro/Linear_Algebra.html">
+   Linear Algebra basics
+  </a>
+ </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 1. Introduction to modeling in neuroscience</span></p>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Chapter 1. Introduction to modeling in neuroscience
+ </span>
+</p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../modelling_intro/a.html">1. What is computational neuroscience?</a></li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../modelling_intro/a.html">
+   1. What is computational neuroscience?
+  </a>
+ </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 2. Differential equations and neuron models</span></p>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Chapter 2. Differential equations and neuron models
+ </span>
+</p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../dynamical_systems/dynamical_systems_intro.html">1. Introduction modelling with differential equations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../dynamical_systems/Applications_LT.html">2. Dynamical systems as Linear Transformations</a></li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../dynamical_systems/dynamical_systems_intro.html">
+   1. Introduction modelling with differential equations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../dynamical_systems/Applications_LT.html">
+   2. Dynamical systems as Linear Transformations
+  </a>
+ </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 3. Simulation of neural population</span></p>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Chapter 3. Simulation of neural population
+ </span>
+</p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="a.html">1. Introduction to Brian part 1: Neurons</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">2. Introduction to Brian part 2: Synapses</a></li>
-<li class="toctree-l1"><a class="reference internal" href="c.html">3. Introduction to Brian part 3: Simulations</a></li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a.html">
+   1. Introduction to Brian part 1: Neurons
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   2. Introduction to Brian part 2: Synapses
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="c.html">
+   3. Introduction to Brian part 3: Simulations
+  </a>
+ </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 4. Data analysis and Machine learning</span></p>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Chapter 4. Data analysis and Machine learning
+ </span>
+</p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../ML/a.html">1. Introduction to Data Analysis with Pandas</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ML/b.html">2. Machine Learning</a></li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ML/a.html">
+   1. Introduction to Data Analysis with Pandas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ML/b.html">
+   2. Machine Learning
+  </a>
+ </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 5. Network theory</span></p>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Chapter 5. Network theory
+ </span>
+</p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../network_theory/a.html">1. Network science</a></li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../network_theory/a.html">
+   1. Network science
+  </a>
+ </li>
 </ul>
 
     </div>
 </nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
     </div>
-  
-  
-  <div class="sidebar-primary-items__end sidebar-primary__section">
-  </div>
-  
-  <div id="rtd-footer-container"></div>
+    <div id="rtd-footer-container"></div>
+</div>
 
 
-      </div>
-      
-      <main id="main-content" class="bd-main">
-        
-        
+          
 
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
 <div class="sbt-scroll-pixel-helper"></div>
-
-          <div class="bd-content">
-            <div class="bd-article-container">
-              
-              <div class="bd-header-article">
-<div class="header-article-items header-article__inner">
-  
-    <div class="header-article-items__start">
-      
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <span class="fa-solid fa-bars"></span>
-</label></div>
-      
-    </div>
-  
-  
-    <div class="header-article-items__end">
-      
-        <div class="header-article-item">
-
-<div class="article-header-buttons">
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
 
 
 
-
-
-<div class="dropdown dropdown-launch-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
-    <i class="fas fa-rocket"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="https://colab.research.google.com/github/BergLab/CompNeuroBook/blob/main/notebooks/simulation_neuralsystems/b.ipynb" target="_blank"
-   class="btn btn-sm dropdown-item"
-   title="Launch onColab"
-   data-bs-placement="left" data-bs-toggle="tooltip"
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
 >
   
 
-<span class="btn__icon-container">
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://colab.research.google.com/github/BergLab/CompNeuroBook/blob/main/notebooks/simulation_neuralsystems/b.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
   
     <img src="../../_static/images/logo_colab.png">
   </span>
-<span class="btn__text-container">Colab</span>
+<span class="headerbtn__text-container">Colab</span>
 </a>
-</li>
+
+      </li>
       
-  </ul>
+    </ul>
+  </div>
 </div>
-
-
-
-
-
-
-<div class="dropdown dropdown-source-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
-    <i class="fab fa-github"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="https://github.com/BergLab/CompNeuroBook" target="_blank"
-   class="btn btn-sm btn-source-repository-button dropdown-item"
-   title="Source repository"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="btn__text-container">Repository</span>
-</a>
-</li>
-      
-      
-      
-      
-      <li><a href="https://github.com/BergLab/CompNeuroBook/edit/main/notebooks/simulation_neuralsystems/b.ipynb" target="_blank"
-   class="btn btn-sm btn-source-edit-button dropdown-item"
-   title="Suggest edit"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-pencil-alt"></i>
-  </span>
-<span class="btn__text-container">Suggest edit</span>
-</a>
-</li>
-      
-      
-      
-      
-      <li><a href="https://github.com/BergLab/CompNeuroBook/issues/new?title=Issue%20on%20page%20%2Fnotebooks/simulation_neuralsystems/b.html&body=Your%20issue%20content%20here." target="_blank"
-   class="btn btn-sm btn-source-issues-button dropdown-item"
-   title="Open an issue"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="btn__text-container">Open issue</span>
-</a>
-</li>
-      
-  </ul>
-</div>
-
-
-
-
-
-
-<div class="dropdown dropdown-download-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
-    <i class="fas fa-download"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="../../_sources/notebooks/simulation_neuralsystems/b.ipynb" target="_blank"
-   class="btn btn-sm btn-download-source-button dropdown-item"
-   title="Download source file"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="btn__text-container">.ipynb</span>
-</a>
-</li>
-      
-      
-      
-      
-      <li>
-<button onclick="window.print()"
-  class="btn btn-sm btn-download-pdf-button dropdown-item"
-  title="Print to PDF"
-  data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="btn__text-container">.pdf</span>
-</button>
-</li>
-      
-  </ul>
-</div>
-
-
-
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
-  title="Fullscreen mode"
-  data-bs-placement="bottom" data-bs-toggle="tooltip"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
 >
   
 
-<span class="btn__icon-container">
+<span class="headerbtn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-
-<script>
-document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
   </button>
-`);
-</script>
-
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
-</div></div>
-      
-    </div>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/BergLab/CompNeuroBook"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
   
-</div>
-</div>
-              
-              
 
-<div id="jb-print-docs-body" class="onlyprint">
-    <h1>Introduction to Brian part 2: Synapses</h1>
-    <!-- Table of contents -->
-    <div id="print-main-content">
-        <div id="jb-print-toc">
-            
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-simplest-synapse">2.1. The simplest Synapse</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-a-weight">2.2. Adding a weight</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">2.2.1. Exercise</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-complex-connectivity">2.3. More complex connectivity</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-synapses-via-weight-matrix">2.4. Creating synapses via weight matrix</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">2.4.1. Exercise</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-exercises">2.4.1.1. Bonus exercises</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-exercise-2-simulation-of-a-balance-network">2.4.1.2. Bonus exercise 2: Simulation of a balance network</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-content-introducing-a-delay">2.5. Bonus content: Introducing a delay</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-content-more-complex-synapse-models-stdp">2.6. Bonus content: More complex synapse models: STDP</a></li>
-</ul>
-            </nav>
-        </div>
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/BergLab/CompNeuroBook/issues/new?title=Issue%20on%20page%20%2Fnotebooks/simulation_neuralsystems/b.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/BergLab/CompNeuroBook/edit/main/notebooks/simulation_neuralsystems/b.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/notebooks/simulation_neuralsystems/b.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
     </div>
 </div>
 
-              
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-simplest-synapse">
+   2.1. The simplest Synapse
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adding-a-weight">
+   2.2. Adding a weight
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise">
+     2.2.1. Exercise
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#more-complex-connectivity">
+   2.3. More complex connectivity
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creating-synapses-via-weight-matrix">
+   2.4. Creating synapses via weight matrix
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     2.4.1. Exercise
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#bonus-exercises">
+       2.4.1.1. Bonus exercises
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#bonus-exercise-2-simulation-of-a-balance-network">
+       2.4.1.2. Bonus exercise 2: Simulation of a balance network
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bonus-content-introducing-a-delay">
+   2.5. Bonus content: Introducing a delay
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bonus-content-more-complex-synapse-models-stdp">
+   2.6. Bonus content: More complex synapse models: STDP
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Introduction to Brian part 2: Synapses</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-simplest-synapse">
+   2.1. The simplest Synapse
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adding-a-weight">
+   2.2. Adding a weight
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise">
+     2.2.1. Exercise
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#more-complex-connectivity">
+   2.3. More complex connectivity
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creating-synapses-via-weight-matrix">
+   2.4. Creating synapses via weight matrix
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     2.4.1. Exercise
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#bonus-exercises">
+       2.4.1.1. Bonus exercises
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#bonus-exercise-2-simulation-of-a-balance-network">
+       2.4.1.2. Bonus exercise 2: Simulation of a balance network
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bonus-content-introducing-a-delay">
+   2.5. Bonus content: Introducing a delay
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bonus-content-more-complex-synapse-models-stdp">
+   2.6. Bonus content: More complex synapse models: STDP
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
                 
-<div id="searchbox"></div>
-                <article class="bd-article" role="main">
-                  
+              <div>
+                
   <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-brian-part-2-synapses">
 <h1><span class="section-number">2. </span>Introduction to Brian part 2: Synapses<a class="headerlink" href="#introduction-to-brian-part-2-synapses" title="Permalink to this heading">#</a></h1>
 <p><em>Credit: The first three notebooks from week3 are part of the <span class="xref myst">Brian2 documentation</span></em> with minor changes.</p>
@@ -470,46 +604,26 @@ document.write(`
 <p>As before we start by importing the Brian package and setting up matplotlib for IPython:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip3<span class="w"> </span>install<span class="w"> </span>brian2
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip3 install brian2
 <span class="kn">from</span> <span class="nn">brian2</span> <span class="kn">import</span> <span class="o">*</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">WARNING: Skipping /usr/local/lib/python3.11/site-packages/six-1.16.0-py3.11.egg-info due to invalid metadata entry &#39;name&#39;</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: brian2 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (2.5.1)
+Requirement already satisfied: numpy&gt;=1.17 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from brian2) (1.23.5)
+Requirement already satisfied: jinja2&gt;=2.7 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from brian2) (3.1.2)
+Requirement already satisfied: pyparsing in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from brian2) (3.0.7)
+Requirement already satisfied: cython&gt;=0.29 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from brian2) (0.29.30)
+Requirement already satisfied: setuptools&gt;=24.2 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from brian2) (60.10.0)
+Requirement already satisfied: sympy&gt;=1.2 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from brian2) (1.10.1)
+Requirement already satisfied: MarkupSafe&gt;=2.0 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from jinja2&gt;=2.7-&gt;brian2) (2.1.1)
+Requirement already satisfied: mpmath&gt;=0.19 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from sympy&gt;=1.2-&gt;brian2) (1.2.1)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">WARNING: You are using pip version 22.0.4; however, version 23.0.1 is available.</span>
+<span class=" -Color -Color-Yellow">You should consider upgrading via the &#39;/Users/enaj/.virtualenvs/p39/bin/python3.9 -m pip install --upgrade pip&#39; command.</span>
 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">WARNING: Skipping /usr/local/lib/python3.11/site-packages/six-1.16.0-py3.11.egg-info due to invalid metadata entry &#39;name&#39;</span>
-
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: brian2 in /usr/local/lib/python3.11/site-packages (2.5.1)
-Requirement already satisfied: numpy&gt;=1.17 in /usr/local/lib/python3.11/site-packages (from brian2) (1.24.2)
-Requirement already satisfied: cython&gt;=0.29 in /usr/local/lib/python3.11/site-packages (from brian2) (0.29.34)
-Requirement already satisfied: sympy&gt;=1.2 in /usr/local/lib/python3.11/site-packages (from brian2) (1.11.1)
-Requirement already satisfied: pyparsing in /usr/local/Cellar/graph-tool/2.46/libexec/lib/python3.11/site-packages (from brian2) (3.0.9)
-Requirement already satisfied: jinja2&gt;=2.7 in /usr/local/lib/python3.11/site-packages (from brian2) (3.1.2)
-Requirement already satisfied: setuptools&gt;=24.2 in /usr/local/lib/python3.11/site-packages (from brian2) (65.6.3)
-Requirement already satisfied: MarkupSafe&gt;=2.0 in /usr/local/lib/python3.11/site-packages (from jinja2&gt;=2.7-&gt;brian2) (2.1.2)
-Requirement already satisfied: mpmath&gt;=0.19 in /usr/local/lib/python3.11/site-packages (from sympy&gt;=1.2-&gt;brian2) (1.3.0)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">WARNING: Skipping /usr/local/lib/python3.11/site-packages/six-1.16.0-py3.11.egg-info due to invalid metadata entry &#39;name&#39;</span>
-
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">WARNING: Skipping /usr/local/lib/python3.11/site-packages/six-1.16.0-py3.11.egg-info due to invalid metadata entry &#39;name&#39;</span>
-
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">WARNING: Skipping /usr/local/lib/python3.11/site-packages/six-1.16.0-py3.11.egg-info due to invalid metadata entry &#39;name&#39;</span>
-<span class=" -Color -Color-Yellow">WARNING: Skipping /usr/local/lib/python3.11/site-packages/six-1.16.0-py3.11.egg-info due to invalid metadata entry &#39;name&#39;</span>
-
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> A new release of pip available: <span class=" -Color -Color-Red">22.3.1</span> -&gt; <span class=" -Color -Color-Green">23.0.1</span>
-<span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> To update, run: <span class=" -Color -Color-Green">python3.11 -m pip install --upgrade pip</span>
 </pre></div>
 </div>
 </div>
@@ -546,7 +660,7 @@ Requirement already satisfied: mpmath&gt;=0.19 in /usr/local/lib/python3.11/site
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/f2b106c5e55a675811e171e4be6d03e5e49d43ae2b025b3ed29bebd15fd04248.png" src="../../_images/f2b106c5e55a675811e171e4be6d03e5e49d43ae2b025b3ed29bebd15fd04248.png" />
+<img alt="../../_images/b_5_0.png" src="../../_images/b_5_0.png" />
 </div>
 </div>
 <p>There are a few things going on here. First of all, let’s recap what is going on with the <code class="docutils literal notranslate"><span class="pre">NeuronGroup</span></code>. We’ve created two neurons, each of which has the same differential equation but different values for parameters I and tau. Neuron 0 has <code class="docutils literal notranslate"><span class="pre">I=2</span></code> and <code class="docutils literal notranslate"><span class="pre">tau=10*ms</span></code> which means that is driven to repeatedly spike at a fairly high rate. Neuron 1 has <code class="docutils literal notranslate"><span class="pre">I=0</span></code> and <code class="docutils literal notranslate"><span class="pre">tau=100*ms</span></code> which means that on its own - without the synapses - it won’t spike at all (the driving current I is 0). You can prove this to yourself by commenting out the two lines that define the synapse.</p>
@@ -587,7 +701,7 @@ Requirement already satisfied: mpmath&gt;=0.19 in /usr/local/lib/python3.11/site
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/fe4f75cd584c7faccca52bb6c0a1f80ea1bd7738b303f102aaebfe34e1eea874.png" src="../../_images/fe4f75cd584c7faccca52bb6c0a1f80ea1bd7738b303f102aaebfe34e1eea874.png" />
+<img alt="../../_images/b_8_0.png" src="../../_images/b_8_0.png" />
 </div>
 </div>
 <p>This example behaves very similarly to the previous example, but now there’s a synaptic weight variable <code class="docutils literal notranslate"><span class="pre">w</span></code>. The string <code class="docutils literal notranslate"><span class="pre">'w</span> <span class="pre">:</span> <span class="pre">1'</span></code> is an equation string, precisely the same as for neurons, that defines a single dimensionless parameter <code class="docutils literal notranslate"><span class="pre">w</span></code>. We changed the behaviour on a spike to <code class="docutils literal notranslate"><span class="pre">on_pre='v_post</span> <span class="pre">+=</span> <span class="pre">w'</span></code> now, so that each synapse can behave differently depending on the value of <code class="docutils literal notranslate"><span class="pre">w</span></code>. To illustrate this, we’ve made a third neuron which behaves precisely the same as the second neuron, and connected neuron 0 to both neurons 1 and 2. We’ve also set the weights via <code class="docutils literal notranslate"><span class="pre">S.w</span> <span class="pre">=</span> <span class="pre">'j*0.2'</span></code>. When <code class="docutils literal notranslate"><span class="pre">i</span></code> and <code class="docutils literal notranslate"><span class="pre">j</span></code> occur in the context of synapses, <code class="docutils literal notranslate"><span class="pre">i</span></code> refers to the source neuron index, and <code class="docutils literal notranslate"><span class="pre">j</span></code> to the target neuron index. So this will give a synaptic connection from 0 to 1 with weight <code class="docutils literal notranslate"><span class="pre">0.2=0.2*1</span></code> and from 0 to 2 with weight <code class="docutils literal notranslate"><span class="pre">0.4=0.2*2</span></code>.</p>
@@ -641,7 +755,7 @@ Requirement already satisfied: mpmath&gt;=0.19 in /usr/local/lib/python3.11/site
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/3fcd00585679bfaeb5a261ba8e02453c6238a2f289c3f31c2c0ef5be737f98ff.png" src="../../_images/3fcd00585679bfaeb5a261ba8e02453c6238a2f289c3f31c2c0ef5be737f98ff.png" />
+<img alt="../../_images/b_14_0.png" src="../../_images/b_14_0.png" />
 </div>
 </div>
 <p>There are two plots here. On the left hand side, you see a vertical line of circles indicating source neurons on the left, and a vertical line indicating target neurons on the right, and a line between two neurons that have a synapse. On the right hand side is another way of visualising the same thing. Here each black dot is a synapse, with x value the source neuron index, and y value the target neuron index.</p>
@@ -662,9 +776,9 @@ Requirement already satisfied: mpmath&gt;=0.19 in /usr/local/lib/python3.11/site
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/59e105f33252416efd0cb930eeddac0fdd9200f61a730ea38f91eeb78cbf6058.png" src="../../_images/59e105f33252416efd0cb930eeddac0fdd9200f61a730ea38f91eeb78cbf6058.png" />
-<img alt="../../_images/893bf869ac5c3e82a039413c3fa2939617eb3fffd4eaee86d25abb41787d6ce8.png" src="../../_images/893bf869ac5c3e82a039413c3fa2939617eb3fffd4eaee86d25abb41787d6ce8.png" />
-<img alt="../../_images/aa70beea3937b708614cbc1653ada2dc77fd49178075e2aea9becd0831cb02f6.png" src="../../_images/aa70beea3937b708614cbc1653ada2dc77fd49178075e2aea9becd0831cb02f6.png" />
+<img alt="../../_images/b_16_0.png" src="../../_images/b_16_0.png" />
+<img alt="../../_images/b_16_1.png" src="../../_images/b_16_1.png" />
+<img alt="../../_images/b_16_2.png" src="../../_images/b_16_2.png" />
 </div>
 </div>
 <p>And let’s see what another connectivity condition looks like. This one will only connect neighbouring neurons.</p>
@@ -682,7 +796,7 @@ Requirement already satisfied: mpmath&gt;=0.19 in /usr/local/lib/python3.11/site
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/788701d9c3e6782ec045c495f782846ee0ebd3e2b8720f0e1cf9ad81a54e894c.png" src="../../_images/788701d9c3e6782ec045c495f782846ee0ebd3e2b8720f0e1cf9ad81a54e894c.png" />
+<img alt="../../_images/b_18_0.png" src="../../_images/b_18_0.png" />
 </div>
 </div>
 </section>
@@ -698,36 +812,36 @@ Requirement already satisfied: mpmath&gt;=0.19 in /usr/local/lib/python3.11/site
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[-6.78849862e-03 -8.03410741e-03  9.10375323e-03 -8.99098823e-03
-  -3.51926572e-04  6.83263036e-03  4.36390146e-03  2.59699874e-03
-  -3.58911910e-03  3.65535667e-03]
- [-6.25951885e-03 -1.43406430e-03  3.59163687e-04 -1.51964489e-03
-   1.14657206e-03 -6.98747341e-03 -7.86625759e-03  6.38491514e-03
-  -4.44534641e-03 -3.14801051e-03]
- [ 9.62405839e-03  9.76517904e-03  1.00687687e-04  2.94875270e-03
-  -9.09051308e-03 -2.76094753e-03  8.74643038e-03  5.83588301e-03
-  -4.93277227e-03  9.14163673e-03]
- [ 6.45257193e-03 -3.91416880e-03  2.24399857e-03 -2.78871256e-03
-  -2.18939742e-03 -4.29185144e-03 -3.83735294e-03  6.67177701e-03
-  -1.10687346e-03 -3.29478555e-03]
- [ 8.53538985e-03  9.35483182e-03  7.32644675e-03  6.82481775e-03
-   7.54812535e-03  9.57074483e-03 -6.02446171e-03  4.28776823e-03
-  -1.95915409e-03  2.59805392e-03]
- [ 9.14663734e-04 -4.25452586e-05  5.51767961e-03  7.28910175e-03
-   3.26933862e-03 -7.32615566e-04  3.24391542e-03  7.75921396e-03
-   9.55958547e-03  6.55923736e-03]
- [-5.14390521e-03 -7.97599303e-03 -5.80283215e-03 -9.85464020e-03
-  -1.01936717e-03  1.54573106e-03  5.80050384e-03 -6.91331337e-03
-  -5.08987428e-03  4.11698509e-04]
- [ 6.59481387e-03  8.30804423e-03  9.08824463e-03  1.00411568e-03
-  -1.18712585e-03 -4.66311316e-03 -3.87514272e-03  9.33146631e-03
-   5.10711248e-03  9.77895119e-03]
- [-6.61766562e-05 -1.34908534e-03  6.78682267e-03  3.08586198e-03
-  -7.27646851e-04 -4.90037660e-03  4.79144852e-04 -9.66415024e-03
-   1.37122249e-03  4.12501725e-03]
- [ 3.41530070e-04  5.87404442e-03 -7.74473026e-03 -7.38896148e-03
-   7.17853629e-03  9.91167186e-03 -8.51385192e-03  4.98602528e-03
-  -5.52488516e-03  8.32686818e-03]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[-7.40528076e-04  5.90697006e-03 -6.48276158e-03  8.46134038e-03
+  -1.69695570e-03  8.67935619e-03 -4.66550388e-03  3.36320809e-03
+   7.57921261e-03 -3.22962780e-05]
+ [-3.84939250e-03  2.91867135e-03  1.60339626e-03  4.40399219e-03
+  -8.88948546e-03 -2.26259339e-03  4.37715850e-03 -8.50429410e-03
+  -1.36023366e-03 -6.95185125e-03]
+ [ 8.34759896e-03 -8.75299325e-03  7.79980240e-03 -3.65689661e-03
+  -8.45169086e-03 -8.84154920e-03  1.45194939e-04  8.72351919e-03
+  -4.28096233e-03  4.88355903e-03]
+ [ 3.89370853e-03 -4.72470521e-03 -9.14620730e-03 -6.42405100e-03
+  -3.97234425e-03  2.40633786e-03 -1.38228969e-03  3.17249987e-03
+  -7.18369119e-03  6.41153492e-03]
+ [-9.94521201e-03 -7.30919783e-03  9.14232373e-03  6.08738853e-03
+  -5.04702910e-03  2.34875182e-03 -3.58432498e-03  7.55012266e-03
+  -8.69692700e-03  7.84371656e-03]
+ [ 1.44646858e-03  5.29119923e-04 -3.87290031e-03  4.80978265e-03
+  -1.41545646e-03  8.46889780e-03  3.98876642e-04 -6.78915910e-03
+  -5.05758640e-03 -3.64774175e-03]
+ [ 1.48651308e-03  7.74935913e-03  4.06070345e-03 -6.22776632e-03
+  -9.34869315e-03 -6.89828556e-03 -3.97326726e-03 -8.03112206e-03
+   1.57090882e-03  4.41684012e-03]
+ [-2.13098850e-03 -3.01359712e-03 -4.21585929e-03 -4.43493008e-03
+   8.50172636e-03  5.44583444e-04  1.21236937e-03 -6.99211800e-03
+  -9.56097739e-03  4.39119127e-03]
+ [ 4.86809205e-03 -9.40928940e-03  1.78615159e-03 -5.63506584e-03
+  -3.81298714e-03  5.16813388e-03  4.59173750e-03 -5.12665706e-03
+   7.28069106e-03  2.31783338e-03]
+ [ 8.10702008e-03  1.04223492e-05 -3.99573472e-03  5.40099117e-03
+  -6.34333545e-03 -7.66836885e-03  4.13058082e-03 -6.03020878e-03
+  -6.93289483e-03 -2.55288093e-03]]
 </pre></div>
 </div>
 </div>
@@ -835,10 +949,10 @@ Requirement already satisfied: mpmath&gt;=0.19 in /usr/local/lib/python3.11/site
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1a41c9150&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x120851820&gt;
 </pre></div>
 </div>
-<img alt="../../_images/72c0a55aa9e663f89924fea63059e3320eaeb72c728e8d256ba298744e3e1b4f.png" src="../../_images/72c0a55aa9e663f89924fea63059e3320eaeb72c728e8d256ba298744e3e1b4f.png" />
+<img alt="../../_images/b_31_1.png" src="../../_images/b_31_1.png" />
 </div>
 </div>
 <p>As you can see, that’s as simple as adding a line <code class="docutils literal notranslate"><span class="pre">S.delay</span> <span class="pre">=</span> <span class="pre">'j*2*ms'</span></code> so that the synapse from 0 to 1 has a delay of 2 ms, and from 0 to 2 has a delay of 4 ms.</p>
@@ -872,7 +986,7 @@ A_{post} e^{\Delta t/\tau_{post}} &amp; \Delta t&lt;0
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/9537a1021eb12dc4d259477cd3e3b48a12b12bb63a19683b2fba3f8caf08f94f.png" src="../../_images/9537a1021eb12dc4d259477cd3e3b48a12b12bb63a19683b2fba3f8caf08f94f.png" />
+<img alt="../../_images/b_34_0.png" src="../../_images/b_34_0.png" />
 </div>
 </div>
 <p>Simulating it directly using this equation though would be very inefficient, because we would have to sum over all pairs of spikes. That would also be physiologically unrealistic because the neuron cannot remember all its previous spike times. It turns out there is a more efficient and physiologically more plausible way to get the same effect.</p>
@@ -913,7 +1027,7 @@ w &amp;\rightarrow w+a_{pre}
 <span class="n">G</span> <span class="o">=</span> <span class="n">NeuronGroup</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;v:1&#39;</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="s1">&#39;v&gt;1&#39;</span><span class="p">,</span> <span class="n">reset</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
 
 <span class="n">S</span> <span class="o">=</span> <span class="n">Synapses</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span>
-<span class="w">             </span><span class="sd">&#39;&#39;&#39;</span>
+             <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">             w : 1</span>
 <span class="sd">             dapre/dt = -apre/taupre : 1 (event-driven)</span>
 <span class="sd">             dapost/dt = -apost/taupost : 1 (event-driven)</span>
@@ -947,7 +1061,7 @@ w &amp;\rightarrow w+a_{pre}
 <span class="n">G</span> <span class="o">=</span> <span class="n">NeuronGroup</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;v:1&#39;</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="s1">&#39;t&gt;(1+i)*10*ms&#39;</span><span class="p">,</span> <span class="n">refractory</span><span class="o">=</span><span class="mi">100</span><span class="o">*</span><span class="n">ms</span><span class="p">)</span>
 
 <span class="n">S</span> <span class="o">=</span> <span class="n">Synapses</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span>
-<span class="w">             </span><span class="sd">&#39;&#39;&#39;</span>
+             <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">             w : 1</span>
 <span class="sd">             dapre/dt = -apre/taupre : 1 (clock-driven)</span>
 <span class="sd">             dapost/dt = -apost/taupost : 1 (clock-driven)</span>
@@ -979,7 +1093,7 @@ w &amp;\rightarrow w+a_{pre}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/520e27031131a8ea8f14f6672634b8ce2a90fdbdf52f6ce1219f0a1367e02223.png" src="../../_images/520e27031131a8ea8f14f6672634b8ce2a90fdbdf52f6ce1219f0a1367e02223.png" />
+<img alt="../../_images/b_38_0.png" src="../../_images/b_38_0.png" />
 </div>
 </div>
 <p>A couple of things to note here. First of all, we’ve used a trick to make neuron 0 fire a spike at time 10 ms, and neuron 1 at time 20 ms. Can you see how that works?</p>
@@ -1005,7 +1119,7 @@ w &amp;\rightarrow w+a_{pre}
 <span class="n">H</span><span class="o">.</span><span class="n">tspike</span> <span class="o">=</span> <span class="s1">&#39;(N-1-i)*tmax/(N-1)&#39;</span>
 
 <span class="n">S</span> <span class="o">=</span> <span class="n">Synapses</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">H</span><span class="p">,</span>
-<span class="w">             </span><span class="sd">&#39;&#39;&#39;</span>
+             <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">             w : 1</span>
 <span class="sd">             dapre/dt = -apre/taupre : 1 (event-driven)</span>
 <span class="sd">             dapost/dt = -apost/taupost : 1 (event-driven)</span>
@@ -1030,7 +1144,7 @@ w &amp;\rightarrow w+a_{pre}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/d58893f8ec24cfb1c9c0852e24329c5cc0604ff2a68f11a757f4d88a65dd98b4.png" src="../../_images/d58893f8ec24cfb1c9c0852e24329c5cc0604ff2a68f11a757f4d88a65dd98b4.png" />
+<img alt="../../_images/b_40_0.png" src="../../_images/b_40_0.png" />
 </div>
 </div>
 </section>
@@ -1048,7 +1162,7 @@ w &amp;\rightarrow w+a_{pre}
             mode: "python"
         },
         kernelOptions: {
-            name: "python3",
+            kernelName: "python3",
             path: "./notebooks/simulation_neuralsystems"
         },
         predefinedOutput: true
@@ -1056,120 +1170,50 @@ w &amp;\rightarrow w+a_{pre}
     </script>
     <script>kernelName = 'python3'</script>
 
-                </article>
+              </div>
               
-
-              
-              
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
-<div class="prev-next-area">
-    <a class="left-prev"
-       href="a.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">1. </span>Introduction to Brian part 1: Neurons</p>
-      </div>
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="a.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">1. </span>Introduction to Brian part 1: Neurons</p>
+        </div>
     </a>
-    <a class="right-next"
-       href="c.html"
-       title="next page">
-      <div class="prev-next-info">
+    <a class='right-next' id="next-link" href="c.html" title="next page">
+    <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title"><span class="section-number">3. </span>Introduction to Brian part 3: Simulations</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
-</div></div>
-  
-</div>
-
-                </footer>
-              
-            </div>
-            
-            
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-simplest-synapse">2.1. The simplest Synapse</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-a-weight">2.2. Adding a weight</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">2.2.1. Exercise</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-complex-connectivity">2.3. More complex connectivity</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-synapses-via-weight-matrix">2.4. Creating synapses via weight matrix</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">2.4.1. Exercise</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-exercises">2.4.1.1. Bonus exercises</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-exercise-2-simulation-of-a-balance-network">2.4.1.2. Bonus exercise 2: Simulation of a balance network</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-content-introducing-a-delay">2.5. Bonus content: Introducing a delay</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-content-more-complex-synapse-models-stdp">2.6. Bonus content: More complex synapse models: STDP</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
-              
-            
-          </div>
-          <footer class="bd-footer-content">
-            
-<div class="bd-footer-content__inner container">
-  
-  <div class="footer-item">
-    
-<p class="component-author">
-By Elias Najarro & Rune Berg
-</p>
-
-  </div>
-  
-  <div class="footer-item">
-    
-  <p class="copyright">
-    
-      © Copyright 2022.
-      <br/>
-    
-  </p>
-
-  </div>
-  
-  <div class="footer-item">
-    
-  </div>
-  
-  <div class="footer-item">
-    
-  </div>
-  
-</div>
-          </footer>
-        
-
-      </main>
     </div>
-  </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Elias Najarro & Rune Berg<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
 
-  <footer class="bd-footer">
-  </footer>
+
   </body>
 </html>
