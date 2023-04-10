@@ -36,6 +36,7 @@ html:
   use_issues_button         : true  # Whether to add an "open an issue" button
   use_edit_page_button      : true
   default_mode : light # https://pydata-sphinx-theme.readthedocs.io/en/latest/user_guide/light-dark.html
+  use_multitoc_numbering : false
 
 html_theme_options:
   navbar_end : ["navbar-icon-links"]

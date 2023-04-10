@@ -1,7 +1,6 @@
 # Table of contents
 # Learn more at https://jupyterbook.org/customize/toc.html
 # https://jupyterbook.org/en/stable/start/create.html
-# https://github.com/whitead/dmol-book
 
 format: jb-book
 root: intro
