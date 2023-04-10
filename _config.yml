@@ -36,6 +36,10 @@ html:
   use_repository_button     : true
   use_issues_button         : true  # Whether to add an "open an issue" button
   use_edit_page_button      : true
+  default_mode : light
+
+html_theme_options:
+  navbar_end : ["navbar-icon-links"]
 
 launch_buttons:
   colab_url: "https://colab.research.google.com"
