@@ -1,0 +1,1175 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>2. Introduction to Brian part 2: Synapses &#8212; Computational Neuroscience</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/custom.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/simulation_neuralsystems/b';</script>
+    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="3. Introduction to Brian part 3: Simulations" href="c.html" />
+    <link rel="prev" title="1. Introduction to Brian part 1: Neurons" href="a.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/cajal1.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/cajal1.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Course overview
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Coding tools for researchers</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../coding_intro/codingtoolsforresearch.html">First things first</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Math review with Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../mathpython_intro/IntroColab.html">Google’s Colab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mathpython_intro/Numpy_Introduction.html">Introduction to NumPy and Matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mathpython_intro/Linear_Algebra.html">Linear Algebra basics</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 1. Introduction to modeling in neuroscience</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../modelling_intro/a.html">1. What is computational neuroscience?</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 2. Differential equations and neuron models</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../dynamical_systems/dynamical_systems_intro.html">1. Introduction modelling with differential equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dynamical_systems/Applications_LT.html">2. Dynamical systems as Linear Transformations</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 3. Simulation of neural population</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="a.html">1. Introduction to Brian part 1: Neurons</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">2. Introduction to Brian part 2: Synapses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="c.html">3. Introduction to Brian part 3: Simulations</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 4. Data analysis and Machine learning</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../ML/a.html">1. Introduction to Data Analysis with Pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ML/b.html">2. Machine Learning</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 5. Network theory</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../network_theory/a.html">1. Network science</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/BergLab/CompNeuroBook/blob/main/notebooks/simulation_neuralsystems/b.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/BergLab/CompNeuroBook" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/BergLab/CompNeuroBook/edit/main/notebooks/simulation_neuralsystems/b.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/BergLab/CompNeuroBook/issues/new?title=Issue%20on%20page%20%2Fnotebooks/simulation_neuralsystems/b.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/notebooks/simulation_neuralsystems/b.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Introduction to Brian part 2: Synapses</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-simplest-synapse">2.1. The simplest Synapse</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-a-weight">2.2. Adding a weight</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">2.2.1. Exercise</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-complex-connectivity">2.3. More complex connectivity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-synapses-via-weight-matrix">2.4. Creating synapses via weight matrix</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">2.4.1. Exercise</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-exercises">2.4.1.1. Bonus exercises</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-exercise-2-simulation-of-a-balance-network">2.4.1.2. Bonus exercise 2: Simulation of a balance network</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-content-introducing-a-delay">2.5. Bonus content: Introducing a delay</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-content-more-complex-synapse-models-stdp">2.6. Bonus content: More complex synapse models: STDP</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-brian-part-2-synapses">
+<h1><span class="section-number">2. </span>Introduction to Brian part 2: Synapses<a class="headerlink" href="#introduction-to-brian-part-2-synapses" title="Permalink to this heading">#</a></h1>
+<p><em>Credit: The first three notebooks from week3 are part of the <span class="xref myst">Brian2 documentation</span></em> with minor changes.</p>
+<p>If you haven’t yet read part 1: Neurons, go read that now.</p>
+<p>As before we start by importing the Brian package and setting up matplotlib for IPython:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip3<span class="w"> </span>install<span class="w"> </span>brian2
+<span class="kn">from</span> <span class="nn">brian2</span> <span class="kn">import</span> <span class="o">*</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">WARNING: Skipping /usr/local/lib/python3.11/site-packages/six-1.16.0-py3.11.egg-info due to invalid metadata entry &#39;name&#39;</span>
+
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">WARNING: Skipping /usr/local/lib/python3.11/site-packages/six-1.16.0-py3.11.egg-info due to invalid metadata entry &#39;name&#39;</span>
+
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: brian2 in /usr/local/lib/python3.11/site-packages (2.5.1)
+Requirement already satisfied: numpy&gt;=1.17 in /usr/local/lib/python3.11/site-packages (from brian2) (1.24.2)
+Requirement already satisfied: cython&gt;=0.29 in /usr/local/lib/python3.11/site-packages (from brian2) (0.29.34)
+Requirement already satisfied: sympy&gt;=1.2 in /usr/local/lib/python3.11/site-packages (from brian2) (1.11.1)
+Requirement already satisfied: pyparsing in /usr/local/Cellar/graph-tool/2.46/libexec/lib/python3.11/site-packages (from brian2) (3.0.9)
+Requirement already satisfied: jinja2&gt;=2.7 in /usr/local/lib/python3.11/site-packages (from brian2) (3.1.2)
+Requirement already satisfied: setuptools&gt;=24.2 in /usr/local/lib/python3.11/site-packages (from brian2) (65.6.3)
+Requirement already satisfied: MarkupSafe&gt;=2.0 in /usr/local/lib/python3.11/site-packages (from jinja2&gt;=2.7-&gt;brian2) (2.1.2)
+Requirement already satisfied: mpmath&gt;=0.19 in /usr/local/lib/python3.11/site-packages (from sympy&gt;=1.2-&gt;brian2) (1.3.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">WARNING: Skipping /usr/local/lib/python3.11/site-packages/six-1.16.0-py3.11.egg-info due to invalid metadata entry &#39;name&#39;</span>
+
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">WARNING: Skipping /usr/local/lib/python3.11/site-packages/six-1.16.0-py3.11.egg-info due to invalid metadata entry &#39;name&#39;</span>
+
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">WARNING: Skipping /usr/local/lib/python3.11/site-packages/six-1.16.0-py3.11.egg-info due to invalid metadata entry &#39;name&#39;</span>
+<span class=" -Color -Color-Yellow">WARNING: Skipping /usr/local/lib/python3.11/site-packages/six-1.16.0-py3.11.egg-info due to invalid metadata entry &#39;name&#39;</span>
+
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> A new release of pip available: <span class=" -Color -Color-Red">22.3.1</span> -&gt; <span class=" -Color -Color-Green">23.0.1</span>
+<span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> To update, run: <span class=" -Color -Color-Green">python3.11 -m pip install --upgrade pip</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="the-simplest-synapse">
+<h2><span class="section-number">2.1. </span>The simplest Synapse<a class="headerlink" href="#the-simplest-synapse" title="Permalink to this heading">#</a></h2>
+<p>Once you have some neurons, the next step is to connect them up via synapses. We’ll start out with doing the simplest possible type of synapse that causes an instantaneous change in a variable after a spike.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">start_scope</span><span class="p">()</span>
+
+<span class="n">eqs</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">dv/dt = (I-v)/tau : 1</span>
+<span class="s1">I : 1</span>
+<span class="s1">tau : second</span>
+<span class="s1">&#39;&#39;&#39;</span>
+<span class="n">G</span> <span class="o">=</span> <span class="n">NeuronGroup</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">eqs</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="s1">&#39;v&gt;1&#39;</span><span class="p">,</span> <span class="n">reset</span><span class="o">=</span><span class="s1">&#39;v = 0&#39;</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;exact&#39;</span><span class="p">)</span>
+<span class="n">G</span><span class="o">.</span><span class="n">I</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">G</span><span class="o">.</span><span class="n">tau</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">]</span><span class="o">*</span><span class="n">ms</span> <span class="c1"># If you wanted a single value of tau for all the neurons: G.tau = 100*ms</span>
+
+<span class="n">S</span> <span class="o">=</span> <span class="n">Synapses</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">on_pre</span><span class="o">=</span><span class="s1">&#39;v_post += 0.2&#39;</span><span class="p">)</span>
+<span class="n">S</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">j</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">M</span> <span class="o">=</span> <span class="n">StateMonitor</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="s1">&#39;v&#39;</span><span class="p">,</span> <span class="n">record</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">run</span><span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="n">ms</span><span class="p">)</span>
+
+<span class="n">plot</span><span class="p">(</span><span class="n">M</span><span class="o">.</span><span class="n">t</span><span class="o">/</span><span class="n">ms</span><span class="p">,</span> <span class="n">M</span><span class="o">.</span><span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Neuron 0&#39;</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">M</span><span class="o">.</span><span class="n">t</span><span class="o">/</span><span class="n">ms</span><span class="p">,</span> <span class="n">M</span><span class="o">.</span><span class="n">v</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Neuron 1&#39;</span><span class="p">)</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (ms)&#39;</span><span class="p">)</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;v&#39;</span><span class="p">)</span>
+<span class="n">legend</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/f2b106c5e55a675811e171e4be6d03e5e49d43ae2b025b3ed29bebd15fd04248.png" src="../../_images/f2b106c5e55a675811e171e4be6d03e5e49d43ae2b025b3ed29bebd15fd04248.png" />
+</div>
+</div>
+<p>There are a few things going on here. First of all, let’s recap what is going on with the <code class="docutils literal notranslate"><span class="pre">NeuronGroup</span></code>. We’ve created two neurons, each of which has the same differential equation but different values for parameters I and tau. Neuron 0 has <code class="docutils literal notranslate"><span class="pre">I=2</span></code> and <code class="docutils literal notranslate"><span class="pre">tau=10*ms</span></code> which means that is driven to repeatedly spike at a fairly high rate. Neuron 1 has <code class="docutils literal notranslate"><span class="pre">I=0</span></code> and <code class="docutils literal notranslate"><span class="pre">tau=100*ms</span></code> which means that on its own - without the synapses - it won’t spike at all (the driving current I is 0). You can prove this to yourself by commenting out the two lines that define the synapse.</p>
+<p>Next we define the synapses: <code class="docutils literal notranslate"><span class="pre">Synapses(source,</span> <span class="pre">target,</span> <span class="pre">...)</span></code> means that we are defining a synaptic model that goes from <code class="docutils literal notranslate"><span class="pre">source</span></code> to <code class="docutils literal notranslate"><span class="pre">target</span></code>. In this case, the source and target are both the same, the group <code class="docutils literal notranslate"><span class="pre">G</span></code>. The syntax <code class="docutils literal notranslate"><span class="pre">on_pre='v_post</span> <span class="pre">+=</span> <span class="pre">0.2'</span></code> means that when a spike occurs in the presynaptic neuron (hence <code class="docutils literal notranslate"><span class="pre">on_pre</span></code>) it causes an instantaneous change to happen <code class="docutils literal notranslate"><span class="pre">v_post</span> <span class="pre">+=</span> <span class="pre">0.2</span></code>. The <code class="docutils literal notranslate"><span class="pre">_post</span></code> means that the value of <code class="docutils literal notranslate"><span class="pre">v</span></code> referred to is the post-synaptic value, and it is increased by 0.2. So in total, what this model says is that whenever two neurons in G are connected by a synapse, when the source neuron fires a spike the target neuron will have its value of <code class="docutils literal notranslate"><span class="pre">v</span></code> increased by 0.2.</p>
+<p>However, at this point we have only defined the synapse model, we haven’t actually created any synapses. The next line <code class="docutils literal notranslate"><span class="pre">S.connect(i=0,</span> <span class="pre">j=1)</span></code> creates a synapse from neuron 0 to neuron 1.</p>
+</section>
+<section id="adding-a-weight">
+<h2><span class="section-number">2.2. </span>Adding a weight<a class="headerlink" href="#adding-a-weight" title="Permalink to this heading">#</a></h2>
+<p>In the previous section, we hard coded the weight of the synapse to be the value 0.2 by indicating <code class="docutils literal notranslate"><span class="pre">on_pre='v_post</span> <span class="pre">+=</span> <span class="pre">0.2'</span></code>, but often we would to allow this to be different for different synapses. We do that by introducing synapse equations, we use tha argument <code class="docutils literal notranslate"> <span class="pre">on_pre='v_post</span> <span class="pre">+=</span> <span class="pre">w'</span></code> in the synapses model and then specify the synaptic values values <span class="math notranslate nohighlight">\(w\)</span>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">start_scope</span><span class="p">()</span>
+
+<span class="n">eqs</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">dv/dt = (I-v)/tau : 1</span>
+<span class="s1">I : 1</span>
+<span class="s1">tau : second</span>
+<span class="s1">&#39;&#39;&#39;</span>
+<span class="n">G</span> <span class="o">=</span> <span class="n">NeuronGroup</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">eqs</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="s1">&#39;v&gt;1&#39;</span><span class="p">,</span> <span class="n">reset</span><span class="o">=</span><span class="s1">&#39;v = 0&#39;</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;exact&#39;</span><span class="p">)</span>
+<span class="n">G</span><span class="o">.</span><span class="n">I</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="c1"># The input current to each neuron of the population</span>
+<span class="n">G</span><span class="o">.</span><span class="n">tau</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">]</span><span class="o">*</span><span class="n">ms</span> <span class="c1"># The membrane time constants of each neuron of the population</span>
+
+<span class="n">S</span> <span class="o">=</span> <span class="n">Synapses</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="s1">&#39;w : 1&#39;</span><span class="p">,</span> <span class="n">on_pre</span><span class="o">=</span><span class="s1">&#39;v_post += w&#39;</span><span class="p">)</span>
+<span class="n">S</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">j</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+<span class="n">S</span><span class="o">.</span><span class="n">w</span> <span class="o">=</span> <span class="s1">&#39;j*0.2&#39;</span>
+
+<span class="n">M</span> <span class="o">=</span> <span class="n">StateMonitor</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="s1">&#39;v&#39;</span><span class="p">,</span> <span class="n">record</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">run</span><span class="p">(</span><span class="mi">50</span><span class="o">*</span><span class="n">ms</span><span class="p">)</span>
+
+<span class="n">plot</span><span class="p">(</span><span class="n">M</span><span class="o">.</span><span class="n">t</span><span class="o">/</span><span class="n">ms</span><span class="p">,</span> <span class="n">M</span><span class="o">.</span><span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Neuron 0&#39;</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">M</span><span class="o">.</span><span class="n">t</span><span class="o">/</span><span class="n">ms</span><span class="p">,</span> <span class="n">M</span><span class="o">.</span><span class="n">v</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Neuron 1&#39;</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">M</span><span class="o">.</span><span class="n">t</span><span class="o">/</span><span class="n">ms</span><span class="p">,</span> <span class="n">M</span><span class="o">.</span><span class="n">v</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Neuron 2&#39;</span><span class="p">)</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (ms)&#39;</span><span class="p">)</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;v&#39;</span><span class="p">)</span>
+<span class="n">legend</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/fe4f75cd584c7faccca52bb6c0a1f80ea1bd7738b303f102aaebfe34e1eea874.png" src="../../_images/fe4f75cd584c7faccca52bb6c0a1f80ea1bd7738b303f102aaebfe34e1eea874.png" />
+</div>
+</div>
+<p>This example behaves very similarly to the previous example, but now there’s a synaptic weight variable <code class="docutils literal notranslate"><span class="pre">w</span></code>. The string <code class="docutils literal notranslate"><span class="pre">'w</span> <span class="pre">:</span> <span class="pre">1'</span></code> is an equation string, precisely the same as for neurons, that defines a single dimensionless parameter <code class="docutils literal notranslate"><span class="pre">w</span></code>. We changed the behaviour on a spike to <code class="docutils literal notranslate"><span class="pre">on_pre='v_post</span> <span class="pre">+=</span> <span class="pre">w'</span></code> now, so that each synapse can behave differently depending on the value of <code class="docutils literal notranslate"><span class="pre">w</span></code>. To illustrate this, we’ve made a third neuron which behaves precisely the same as the second neuron, and connected neuron 0 to both neurons 1 and 2. We’ve also set the weights via <code class="docutils literal notranslate"><span class="pre">S.w</span> <span class="pre">=</span> <span class="pre">'j*0.2'</span></code>. When <code class="docutils literal notranslate"><span class="pre">i</span></code> and <code class="docutils literal notranslate"><span class="pre">j</span></code> occur in the context of synapses, <code class="docutils literal notranslate"><span class="pre">i</span></code> refers to the source neuron index, and <code class="docutils literal notranslate"><span class="pre">j</span></code> to the target neuron index. So this will give a synaptic connection from 0 to 1 with weight <code class="docutils literal notranslate"><span class="pre">0.2=0.2*1</span></code> and from 0 to 2 with weight <code class="docutils literal notranslate"><span class="pre">0.4=0.2*2</span></code>.</p>
+<section id="exercise">
+<h3><span class="section-number">2.2.1. </span>Exercise<a class="headerlink" href="#exercise" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Comment out the lines defined the synapses and re-run the simulation. How does this affect the resulting activity of the population?</p></li>
+</ul>
+</section>
+</section>
+<section id="more-complex-connectivity">
+<h2><span class="section-number">2.3. </span>More complex connectivity<a class="headerlink" href="#more-complex-connectivity" title="Permalink to this heading">#</a></h2>
+<p>So far, we specified the synaptic connectivity explicitly, but for larger networks this isn’t usually possible. For that, we usually want to specify some condition.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">start_scope</span><span class="p">()</span>
+
+<span class="n">N</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">G</span> <span class="o">=</span> <span class="n">NeuronGroup</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="s1">&#39;v:1&#39;</span><span class="p">)</span>
+<span class="n">S</span> <span class="o">=</span> <span class="n">Synapses</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">G</span><span class="p">)</span>
+<span class="n">S</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">condition</span><span class="o">=</span><span class="s1">&#39;i!=j&#39;</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here we’ve created a dummy neuron group of N neurons and a dummy synapses model that doens’t actually do anything just to demonstrate the connectivity. The line <code class="docutils literal notranslate"><span class="pre">S.connect(condition='i!=j',</span> <span class="pre">p=1.0)</span></code> will connect all pairs of neurons <code class="docutils literal notranslate"><span class="pre">i</span></code> and <code class="docutils literal notranslate"><span class="pre">j</span></code> with probability 100% as long as the condition <code class="docutils literal notranslate"><span class="pre">i!=j</span></code> holds. So, how can we see that connectivity? Here’s a little function that will let us visualise it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">visualise_connectivity</span><span class="p">(</span><span class="n">S</span><span class="p">):</span>
+    <span class="n">Ns</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">S</span><span class="o">.</span><span class="n">source</span><span class="p">)</span>
+    <span class="n">Nt</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">S</span><span class="o">.</span><span class="n">target</span><span class="p">)</span>
+    <span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+    <span class="n">subplot</span><span class="p">(</span><span class="mi">121</span><span class="p">)</span>
+    <span class="n">plot</span><span class="p">(</span><span class="n">zeros</span><span class="p">(</span><span class="n">Ns</span><span class="p">),</span> <span class="n">arange</span><span class="p">(</span><span class="n">Ns</span><span class="p">),</span> <span class="s1">&#39;ok&#39;</span><span class="p">,</span> <span class="n">ms</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+    <span class="n">plot</span><span class="p">(</span><span class="n">ones</span><span class="p">(</span><span class="n">Nt</span><span class="p">),</span> <span class="n">arange</span><span class="p">(</span><span class="n">Nt</span><span class="p">),</span> <span class="s1">&#39;ok&#39;</span><span class="p">,</span> <span class="n">ms</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">S</span><span class="o">.</span><span class="n">i</span><span class="p">,</span> <span class="n">S</span><span class="o">.</span><span class="n">j</span><span class="p">):</span>
+        <span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">],</span> <span class="s1">&#39;-k&#39;</span><span class="p">)</span>
+    <span class="n">xticks</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;Source&#39;</span><span class="p">,</span> <span class="s1">&#39;Target&#39;</span><span class="p">])</span>
+    <span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Neuron index&#39;</span><span class="p">)</span>
+    <span class="n">xlim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">)</span>
+    <span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="nb">max</span><span class="p">(</span><span class="n">Ns</span><span class="p">,</span> <span class="n">Nt</span><span class="p">))</span>
+    <span class="n">subplot</span><span class="p">(</span><span class="mi">122</span><span class="p">)</span>
+    <span class="n">plot</span><span class="p">(</span><span class="n">S</span><span class="o">.</span><span class="n">i</span><span class="p">,</span> <span class="n">S</span><span class="o">.</span><span class="n">j</span><span class="p">,</span> <span class="s1">&#39;ok&#39;</span><span class="p">)</span>
+    <span class="n">xlim</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">Ns</span><span class="p">)</span>
+    <span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">Nt</span><span class="p">)</span>
+    <span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Source neuron index&#39;</span><span class="p">)</span>
+    <span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Target neuron index&#39;</span><span class="p">)</span>
+    
+<span class="n">visualise_connectivity</span><span class="p">(</span><span class="n">S</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/3fcd00585679bfaeb5a261ba8e02453c6238a2f289c3f31c2c0ef5be737f98ff.png" src="../../_images/3fcd00585679bfaeb5a261ba8e02453c6238a2f289c3f31c2c0ef5be737f98ff.png" />
+</div>
+</div>
+<p>There are two plots here. On the left hand side, you see a vertical line of circles indicating source neurons on the left, and a vertical line indicating target neurons on the right, and a line between two neurons that have a synapse. On the right hand side is another way of visualising the same thing. Here each black dot is a synapse, with x value the source neuron index, and y value the target neuron index.</p>
+<p>Let’s see how these figures change as we change the probability of a connection:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">start_scope</span><span class="p">()</span>
+
+<span class="n">N</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">G</span> <span class="o">=</span> <span class="n">NeuronGroup</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="s1">&#39;v:1&#39;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">]:</span>
+    <span class="n">S</span> <span class="o">=</span> <span class="n">Synapses</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">G</span><span class="p">)</span>
+    <span class="n">S</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">condition</span><span class="o">=</span><span class="s1">&#39;i!=j&#39;</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="n">p</span><span class="p">)</span>
+    <span class="n">visualise_connectivity</span><span class="p">(</span><span class="n">S</span><span class="p">)</span>
+    <span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;p = &#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">p</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/59e105f33252416efd0cb930eeddac0fdd9200f61a730ea38f91eeb78cbf6058.png" src="../../_images/59e105f33252416efd0cb930eeddac0fdd9200f61a730ea38f91eeb78cbf6058.png" />
+<img alt="../../_images/893bf869ac5c3e82a039413c3fa2939617eb3fffd4eaee86d25abb41787d6ce8.png" src="../../_images/893bf869ac5c3e82a039413c3fa2939617eb3fffd4eaee86d25abb41787d6ce8.png" />
+<img alt="../../_images/aa70beea3937b708614cbc1653ada2dc77fd49178075e2aea9becd0831cb02f6.png" src="../../_images/aa70beea3937b708614cbc1653ada2dc77fd49178075e2aea9becd0831cb02f6.png" />
+</div>
+</div>
+<p>And let’s see what another connectivity condition looks like. This one will only connect neighbouring neurons.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">start_scope</span><span class="p">()</span>
+
+<span class="n">N</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">G</span> <span class="o">=</span> <span class="n">NeuronGroup</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="s1">&#39;v:1&#39;</span><span class="p">)</span>
+
+<span class="n">S</span> <span class="o">=</span> <span class="n">Synapses</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">G</span><span class="p">)</span>
+<span class="n">S</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">condition</span><span class="o">=</span><span class="s1">&#39;abs(i-j)&lt;4 and i!=j&#39;</span><span class="p">)</span>
+<span class="n">visualise_connectivity</span><span class="p">(</span><span class="n">S</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/788701d9c3e6782ec045c495f782846ee0ebd3e2b8720f0e1cf9ad81a54e894c.png" src="../../_images/788701d9c3e6782ec045c495f782846ee0ebd3e2b8720f0e1cf9ad81a54e894c.png" />
+</div>
+</div>
+</section>
+<section id="creating-synapses-via-weight-matrix">
+<h2><span class="section-number">2.4. </span>Creating synapses via weight matrix<a class="headerlink" href="#creating-synapses-via-weight-matrix" title="Permalink to this heading">#</a></h2>
+<p>Another option to define the synapses of a network is explicitly providing a weight matrix.</p>
+<p>We start by sampling a random connectivity matrix:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">random_connectivity</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">low</span><span class="o">=-</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="n">N</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">random_connectivity</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[-6.78849862e-03 -8.03410741e-03  9.10375323e-03 -8.99098823e-03
+  -3.51926572e-04  6.83263036e-03  4.36390146e-03  2.59699874e-03
+  -3.58911910e-03  3.65535667e-03]
+ [-6.25951885e-03 -1.43406430e-03  3.59163687e-04 -1.51964489e-03
+   1.14657206e-03 -6.98747341e-03 -7.86625759e-03  6.38491514e-03
+  -4.44534641e-03 -3.14801051e-03]
+ [ 9.62405839e-03  9.76517904e-03  1.00687687e-04  2.94875270e-03
+  -9.09051308e-03 -2.76094753e-03  8.74643038e-03  5.83588301e-03
+  -4.93277227e-03  9.14163673e-03]
+ [ 6.45257193e-03 -3.91416880e-03  2.24399857e-03 -2.78871256e-03
+  -2.18939742e-03 -4.29185144e-03 -3.83735294e-03  6.67177701e-03
+  -1.10687346e-03 -3.29478555e-03]
+ [ 8.53538985e-03  9.35483182e-03  7.32644675e-03  6.82481775e-03
+   7.54812535e-03  9.57074483e-03 -6.02446171e-03  4.28776823e-03
+  -1.95915409e-03  2.59805392e-03]
+ [ 9.14663734e-04 -4.25452586e-05  5.51767961e-03  7.28910175e-03
+   3.26933862e-03 -7.32615566e-04  3.24391542e-03  7.75921396e-03
+   9.55958547e-03  6.55923736e-03]
+ [-5.14390521e-03 -7.97599303e-03 -5.80283215e-03 -9.85464020e-03
+  -1.01936717e-03  1.54573106e-03  5.80050384e-03 -6.91331337e-03
+  -5.08987428e-03  4.11698509e-04]
+ [ 6.59481387e-03  8.30804423e-03  9.08824463e-03  1.00411568e-03
+  -1.18712585e-03 -4.66311316e-03 -3.87514272e-03  9.33146631e-03
+   5.10711248e-03  9.77895119e-03]
+ [-6.61766562e-05 -1.34908534e-03  6.78682267e-03  3.08586198e-03
+  -7.27646851e-04 -4.90037660e-03  4.79144852e-04 -9.66415024e-03
+   1.37122249e-03  4.12501725e-03]
+ [ 3.41530070e-04  5.87404442e-03 -7.74473026e-03 -7.38896148e-03
+   7.17853629e-03  9.91167186e-03 -8.51385192e-03  4.98602528e-03
+  -5.52488516e-03  8.32686818e-03]]
+</pre></div>
+</div>
+</div>
+</div>
+<p>In order to use the random values as the network connectivity:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">start_scope</span><span class="p">()</span>
+
+<span class="n">N</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">G</span> <span class="o">=</span> <span class="n">NeuronGroup</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="s1">&#39;v:1&#39;</span><span class="p">)</span>
+<span class="n">S</span> <span class="o">=</span> <span class="n">Synapses</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s1">&#39;w : 1&#39;</span><span class="p">)</span>
+<span class="n">S</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span> 
+<span class="n">S</span><span class="o">.</span><span class="n">w</span> <span class="o">=</span> <span class="n">random_connectivity</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice a few things from the code:</p>
+<ul class="simple">
+<li><p>We had to add the argument <code class="docutils literal notranslate"><span class="pre">model='w</span> <span class="pre">:</span> <span class="pre">volt'</span></code> when creating the synapses.</p></li>
+<li><p>We had to flatten the random connectivity matrix</p></li>
+<li><p>We had to add the units, in this case <code class="docutils literal notranslate"><span class="pre">mV</span></code>.</p></li>
+</ul>
+<section id="id1">
+<h3><span class="section-number">2.4.1. </span>Exercise<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Add SpikeMonitor to track the spiking activity of one of the previously simulated populations and create a raster plot.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="bonus-exercises">
+<h4><span class="section-number">2.4.1.1. </span>Bonus exercises<a class="headerlink" href="#bonus-exercises" title="Permalink to this heading">#</a></h4>
+<p>Create a population of 100 neurons with the following properties:</p>
+<ul class="simple">
+<li><p>A weight matrix sampled from a Normal distribution <span class="math notranslate nohighlight">\(N(0,1)mV\)</span></p></li>
+<li><p>Initialize the neuron membranes potentials with random values from an uniform distribution <span class="math notranslate nohighlight">\(U(0,20)mV\)</span></p></li>
+<li><p>All the neuron have a constant input current of <span class="math notranslate nohighlight">\(25mV\)</span></p></li>
+<li><p>Refractory period of <span class="math notranslate nohighlight">\(2ms\)</span>, reset voltage of <span class="math notranslate nohighlight">\(0mV\)</span>, a firing threshold of <span class="math notranslate nohighlight">\(20mV\)</span> and a membrane time scale of <span class="math notranslate nohighlight">\(20mS\)</span>.</p></li>
+</ul>
+<p>Run the simulation for 0.5s and create a raster plot.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="bonus-exercise-2-simulation-of-a-balance-network">
+<h4><span class="section-number">2.4.1.2. </span>Bonus exercise 2: Simulation of a balance network<a class="headerlink" href="#bonus-exercise-2-simulation-of-a-balance-network" title="Permalink to this heading">#</a></h4>
+<p>In the previous exercises we have been creating neuron populations and connecting them to themselves. Now, we will create two different populations —one of excitatory neurons and one inhibitory— and connect them to each other.</p>
+<p>Create two two populations of neurons <span class="math notranslate nohighlight">\(G_{exct}\)</span> and <span class="math notranslate nohighlight">\(G_{inhb}\)</span> using the same parameters indicated in the previous exercise, except:</p>
+<ul class="simple">
+<li><p>The connectivity of <span class="math notranslate nohighlight">\(G_{exct}\)</span> should be sampled from on a positive range, eg. from <span class="math notranslate nohighlight">\(U(0,20)mV\)</span> while the inhibitory population <span class="math notranslate nohighlight">\(G_{exct}\)</span> should have a connectivity with negative weights, eg. <span class="math notranslate nohighlight">\(U(-20,0)mV\)</span></p></li>
+<li><p>Simulate the resulting network and make the raster plot for each of the populations.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="bonus-content-introducing-a-delay">
+<h2><span class="section-number">2.5. </span>Bonus content: Introducing a delay<a class="headerlink" href="#bonus-content-introducing-a-delay" title="Permalink to this heading">#</a></h2>
+<p>So far, the synapses have been instantaneous, but we can also make them act with a certain delay.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">start_scope</span><span class="p">()</span>
+
+<span class="n">eqs</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">dv/dt = (I-v)/tau : 1</span>
+<span class="s1">I : 1</span>
+<span class="s1">tau : second</span>
+<span class="s1">&#39;&#39;&#39;</span>
+<span class="n">G</span> <span class="o">=</span> <span class="n">NeuronGroup</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">eqs</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="s1">&#39;v&gt;1&#39;</span><span class="p">,</span> <span class="n">reset</span><span class="o">=</span><span class="s1">&#39;v = 0&#39;</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;exact&#39;</span><span class="p">)</span>
+<span class="n">G</span><span class="o">.</span><span class="n">I</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">G</span><span class="o">.</span><span class="n">tau</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">]</span><span class="o">*</span><span class="n">ms</span>
+
+<span class="n">S</span> <span class="o">=</span> <span class="n">Synapses</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="s1">&#39;w : 1&#39;</span><span class="p">,</span> <span class="n">on_pre</span><span class="o">=</span><span class="s1">&#39;v_post += w&#39;</span><span class="p">)</span>
+<span class="n">S</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">j</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+<span class="n">S</span><span class="o">.</span><span class="n">w</span> <span class="o">=</span> <span class="s1">&#39;j*0.2&#39;</span>
+<span class="n">S</span><span class="o">.</span><span class="n">delay</span> <span class="o">=</span> <span class="s1">&#39;j*2*ms&#39;</span>
+
+<span class="n">M</span> <span class="o">=</span> <span class="n">StateMonitor</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="s1">&#39;v&#39;</span><span class="p">,</span> <span class="n">record</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">run</span><span class="p">(</span><span class="mi">50</span><span class="o">*</span><span class="n">ms</span><span class="p">)</span>
+
+<span class="n">plot</span><span class="p">(</span><span class="n">M</span><span class="o">.</span><span class="n">t</span><span class="o">/</span><span class="n">ms</span><span class="p">,</span> <span class="n">M</span><span class="o">.</span><span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Neuron 0&#39;</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">M</span><span class="o">.</span><span class="n">t</span><span class="o">/</span><span class="n">ms</span><span class="p">,</span> <span class="n">M</span><span class="o">.</span><span class="n">v</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Neuron 1&#39;</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">M</span><span class="o">.</span><span class="n">t</span><span class="o">/</span><span class="n">ms</span><span class="p">,</span> <span class="n">M</span><span class="o">.</span><span class="n">v</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Neuron 2&#39;</span><span class="p">)</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (ms)&#39;</span><span class="p">)</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;v&#39;</span><span class="p">)</span>
+<span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1a41c9150&gt;
+</pre></div>
+</div>
+<img alt="../../_images/72c0a55aa9e663f89924fea63059e3320eaeb72c728e8d256ba298744e3e1b4f.png" src="../../_images/72c0a55aa9e663f89924fea63059e3320eaeb72c728e8d256ba298744e3e1b4f.png" />
+</div>
+</div>
+<p>As you can see, that’s as simple as adding a line <code class="docutils literal notranslate"><span class="pre">S.delay</span> <span class="pre">=</span> <span class="pre">'j*2*ms'</span></code> so that the synapse from 0 to 1 has a delay of 2 ms, and from 0 to 2 has a delay of 4 ms.</p>
+</section>
+<section id="bonus-content-more-complex-synapse-models-stdp">
+<h2><span class="section-number">2.6. </span>Bonus content: More complex synapse models: STDP<a class="headerlink" href="#bonus-content-more-complex-synapse-models-stdp" title="Permalink to this heading">#</a></h2>
+<p><em>This section of the notebook is optional, come to back to if you want after completing notebook 3 of this week.</em></p>
+<p>Brian’s synapse framework is very general and can do things like short-term plasticity (STP) or spike-timing dependent plasticity (STDP). Let’s see how that works for STDP.</p>
+<p>STDP is normally defined by an equation something like this:</p>
+<div class="math notranslate nohighlight">
+\[\Delta w = \sum_{t_{pre}} \sum_{t_{post}} W(t_{post}-t_{pre})\]</div>
+<p>That is, the change in synaptic weight w is the sum over all presynaptic spike times <span class="math notranslate nohighlight">\(t_{pre}\)</span> and postsynaptic spike times <span class="math notranslate nohighlight">\(t_{post}\)</span> of some function <span class="math notranslate nohighlight">\(W\)</span> of the difference in these spike times. A commonly used function <span class="math notranslate nohighlight">\(W\)</span> is:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}W(\Delta t) = \begin{cases}
+A_{pre} e^{-\Delta t/\tau_{pre}} &amp; \Delta t&gt;0 \\
+A_{post} e^{\Delta t/\tau_{post}} &amp; \Delta t&lt;0
+\end{cases}\end{split}\]</div>
+<p>This function looks like this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tau_pre</span> <span class="o">=</span> <span class="n">tau_post</span> <span class="o">=</span> <span class="mi">20</span><span class="o">*</span><span class="n">ms</span>
+<span class="n">A_pre</span> <span class="o">=</span> <span class="mf">0.01</span>
+<span class="n">A_post</span> <span class="o">=</span> <span class="o">-</span><span class="n">A_pre</span><span class="o">*</span><span class="mf">1.05</span>
+<span class="n">delta_t</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span><span class="o">*</span><span class="n">ms</span>
+<span class="n">W</span> <span class="o">=</span> <span class="n">where</span><span class="p">(</span><span class="n">delta_t</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">,</span> <span class="n">A_pre</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">delta_t</span><span class="o">/</span><span class="n">tau_pre</span><span class="p">),</span> <span class="n">A_post</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="n">delta_t</span><span class="o">/</span><span class="n">tau_post</span><span class="p">))</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">delta_t</span><span class="o">/</span><span class="n">ms</span><span class="p">,</span> <span class="n">W</span><span class="p">)</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\Delta t$ (ms)&#39;</span><span class="p">)</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;W&#39;</span><span class="p">)</span>
+<span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/9537a1021eb12dc4d259477cd3e3b48a12b12bb63a19683b2fba3f8caf08f94f.png" src="../../_images/9537a1021eb12dc4d259477cd3e3b48a12b12bb63a19683b2fba3f8caf08f94f.png" />
+</div>
+</div>
+<p>Simulating it directly using this equation though would be very inefficient, because we would have to sum over all pairs of spikes. That would also be physiologically unrealistic because the neuron cannot remember all its previous spike times. It turns out there is a more efficient and physiologically more plausible way to get the same effect.</p>
+<p>We define two new variables <span class="math notranslate nohighlight">\(a_{pre}\)</span> and <span class="math notranslate nohighlight">\(a_{post}\)</span> which are “traces” of pre- and post-synaptic activity, governed by the differential equations:
+$<span class="math notranslate nohighlight">\(
+\begin{aligned}
+\tau_{pre}\frac{\mathrm{d}}{\mathrm{d}t} a_{pre} &amp;= -a_{pre}\\
+\tau_{post}\frac{\mathrm{d}}{\mathrm{d}t} a_{post} &amp;= -a_{post}
+\end{aligned}
+\)</span>$</p>
+<p>When a presynaptic spike occurs, the presynaptic trace is updated and the weight is modified according to the rule:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+a_{pre} &amp;\rightarrow a_{pre}+A_{pre}\\
+w &amp;\rightarrow w+a_{post}
+\end{aligned}
+\end{split}\]</div>
+<p>When a postsynaptic spike occurs:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+a_{post} &amp;\rightarrow a_{post}+A_{post}\\
+w &amp;\rightarrow w+a_{pre}
+\end{aligned}
+\end{split}\]</div>
+<p>To see that this formulation is equivalent, you just have to check that the equations sum linearly, and consider two cases: what happens if the presynaptic spike occurs before the postsynaptic spike, and vice versa.</p>
+<p>Now that we have a formulation that relies only on differential equations and spike events, we can turn that into Brian code.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">start_scope</span><span class="p">()</span>
+
+<span class="n">taupre</span> <span class="o">=</span> <span class="n">taupost</span> <span class="o">=</span> <span class="mi">20</span><span class="o">*</span><span class="n">ms</span>
+<span class="n">wmax</span> <span class="o">=</span> <span class="mf">0.01</span>
+<span class="n">Apre</span> <span class="o">=</span> <span class="mf">0.01</span>
+<span class="n">Apost</span> <span class="o">=</span> <span class="o">-</span><span class="n">Apre</span><span class="o">*</span><span class="n">taupre</span><span class="o">/</span><span class="n">taupost</span><span class="o">*</span><span class="mf">1.05</span>
+
+<span class="n">G</span> <span class="o">=</span> <span class="n">NeuronGroup</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;v:1&#39;</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="s1">&#39;v&gt;1&#39;</span><span class="p">,</span> <span class="n">reset</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+
+<span class="n">S</span> <span class="o">=</span> <span class="n">Synapses</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span>
+<span class="w">             </span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">             w : 1</span>
+<span class="sd">             dapre/dt = -apre/taupre : 1 (event-driven)</span>
+<span class="sd">             dapost/dt = -apost/taupost : 1 (event-driven)</span>
+<span class="sd">             &#39;&#39;&#39;</span><span class="p">,</span>
+             <span class="n">on_pre</span><span class="o">=</span><span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">             v_post += w</span>
+<span class="s1">             apre += Apre</span>
+<span class="s1">             w = clip(w+apost, 0, wmax)</span>
+<span class="s1">             &#39;&#39;&#39;</span><span class="p">,</span>
+             <span class="n">on_post</span><span class="o">=</span><span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">             apost += Apost</span>
+<span class="s1">             w = clip(w+apre, 0, wmax)</span>
+<span class="s1">             &#39;&#39;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>There are a few things to see there. Firstly, when defining the synapses we’ve given a more complicated multi-line string defining three synaptic variables (<code class="docutils literal notranslate"><span class="pre">w</span></code>, <code class="docutils literal notranslate"><span class="pre">apre</span></code> and <code class="docutils literal notranslate"><span class="pre">apost</span></code>). We’ve also got a new bit of syntax there, <code class="docutils literal notranslate"><span class="pre">(event-driven)</span></code> after the definitions of <code class="docutils literal notranslate"><span class="pre">apre</span></code> and <code class="docutils literal notranslate"><span class="pre">apost</span></code>. What this means is that although these two variables evolve continuously over time, Brian should only update them at the time of an event (a spike). This is because we don’t need the values of <code class="docutils literal notranslate"><span class="pre">apre</span></code> and <code class="docutils literal notranslate"><span class="pre">apost</span></code> except at spike times, and it is more efficient to only update them when needed.</p>
+<p>Next we have a <code class="docutils literal notranslate"><span class="pre">on_pre=...</span></code> argument. The first line is <code class="docutils literal notranslate"><span class="pre">v_post</span> <span class="pre">+=</span> <span class="pre">w</span></code>: this is the line that actually applies the synaptic weight to the target neuron. The second line is <code class="docutils literal notranslate"><span class="pre">apre</span> <span class="pre">+=</span> <span class="pre">Apre</span></code> which encodes the rule above. In the third line, we’re also encoding the rule above but we’ve added one extra feature: we’ve clamped the synaptic weights between a minimum of 0 and a maximum of <code class="docutils literal notranslate"><span class="pre">wmax</span></code> so that the weights can’t get too large or negative. The function <code class="docutils literal notranslate"><span class="pre">clip(x,</span> <span class="pre">low,</span> <span class="pre">high)</span></code> does this.</p>
+<p>Finally, we have a <code class="docutils literal notranslate"><span class="pre">on_post=...</span></code> argument. This gives the statements to calculate when a post-synaptic neuron fires. Note that we do not modify <code class="docutils literal notranslate"><span class="pre">v</span></code> in this case, only the synaptic variables.</p>
+<p>Now let’s see how all the variables behave when a presynaptic spike arrives some time before a postsynaptic spike.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">start_scope</span><span class="p">()</span>
+
+<span class="n">taupre</span> <span class="o">=</span> <span class="n">taupost</span> <span class="o">=</span> <span class="mi">20</span><span class="o">*</span><span class="n">ms</span>
+<span class="n">wmax</span> <span class="o">=</span> <span class="mf">0.01</span>
+<span class="n">Apre</span> <span class="o">=</span> <span class="mf">0.01</span>
+<span class="n">Apost</span> <span class="o">=</span> <span class="o">-</span><span class="n">Apre</span><span class="o">*</span><span class="n">taupre</span><span class="o">/</span><span class="n">taupost</span><span class="o">*</span><span class="mf">1.05</span>
+
+<span class="n">G</span> <span class="o">=</span> <span class="n">NeuronGroup</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;v:1&#39;</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="s1">&#39;t&gt;(1+i)*10*ms&#39;</span><span class="p">,</span> <span class="n">refractory</span><span class="o">=</span><span class="mi">100</span><span class="o">*</span><span class="n">ms</span><span class="p">)</span>
+
+<span class="n">S</span> <span class="o">=</span> <span class="n">Synapses</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span>
+<span class="w">             </span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">             w : 1</span>
+<span class="sd">             dapre/dt = -apre/taupre : 1 (clock-driven)</span>
+<span class="sd">             dapost/dt = -apost/taupost : 1 (clock-driven)</span>
+<span class="sd">             &#39;&#39;&#39;</span><span class="p">,</span>
+             <span class="n">on_pre</span><span class="o">=</span><span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">             v_post += w</span>
+<span class="s1">             apre += Apre</span>
+<span class="s1">             w = clip(w+apost, 0, wmax)</span>
+<span class="s1">             &#39;&#39;&#39;</span><span class="p">,</span>
+             <span class="n">on_post</span><span class="o">=</span><span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">             apost += Apost</span>
+<span class="s1">             w = clip(w+apre, 0, wmax)</span>
+<span class="s1">             &#39;&#39;&#39;</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span><span class="p">)</span>
+<span class="n">S</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">j</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">M</span> <span class="o">=</span> <span class="n">StateMonitor</span><span class="p">(</span><span class="n">S</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="s1">&#39;apre&#39;</span><span class="p">,</span> <span class="s1">&#39;apost&#39;</span><span class="p">],</span> <span class="n">record</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">run</span><span class="p">(</span><span class="mi">30</span><span class="o">*</span><span class="n">ms</span><span class="p">)</span>
+
+<span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="n">subplot</span><span class="p">(</span><span class="mi">211</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">M</span><span class="o">.</span><span class="n">t</span><span class="o">/</span><span class="n">ms</span><span class="p">,</span> <span class="n">M</span><span class="o">.</span><span class="n">apre</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;apre&#39;</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">M</span><span class="o">.</span><span class="n">t</span><span class="o">/</span><span class="n">ms</span><span class="p">,</span> <span class="n">M</span><span class="o">.</span><span class="n">apost</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;apost&#39;</span><span class="p">)</span>
+<span class="n">legend</span><span class="p">()</span>
+<span class="n">subplot</span><span class="p">(</span><span class="mi">212</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">M</span><span class="o">.</span><span class="n">t</span><span class="o">/</span><span class="n">ms</span><span class="p">,</span> <span class="n">M</span><span class="o">.</span><span class="n">w</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">)</span>
+<span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">)</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (ms)&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/520e27031131a8ea8f14f6672634b8ce2a90fdbdf52f6ce1219f0a1367e02223.png" src="../../_images/520e27031131a8ea8f14f6672634b8ce2a90fdbdf52f6ce1219f0a1367e02223.png" />
+</div>
+</div>
+<p>A couple of things to note here. First of all, we’ve used a trick to make neuron 0 fire a spike at time 10 ms, and neuron 1 at time 20 ms. Can you see how that works?</p>
+<p>Secondly, we’ve replaced the <code class="docutils literal notranslate"><span class="pre">(event-driven)</span></code> by <code class="docutils literal notranslate"><span class="pre">(clock-driven)</span></code> so you can see how <code class="docutils literal notranslate"><span class="pre">apre</span></code> and <code class="docutils literal notranslate"><span class="pre">apost</span></code> evolve over time. Try reverting this change and see what happens.</p>
+<p>Try changing the times of the spikes to see what happens.</p>
+<p>Finally, let’s verify that this formulation is equivalent to the original one.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">start_scope</span><span class="p">()</span>
+
+<span class="n">taupre</span> <span class="o">=</span> <span class="n">taupost</span> <span class="o">=</span> <span class="mi">20</span><span class="o">*</span><span class="n">ms</span>
+<span class="n">Apre</span> <span class="o">=</span> <span class="mf">0.01</span>
+<span class="n">Apost</span> <span class="o">=</span> <span class="o">-</span><span class="n">Apre</span><span class="o">*</span><span class="n">taupre</span><span class="o">/</span><span class="n">taupost</span><span class="o">*</span><span class="mf">1.05</span>
+<span class="n">tmax</span> <span class="o">=</span> <span class="mi">50</span><span class="o">*</span><span class="n">ms</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">100</span>
+
+<span class="c1"># Presynaptic neurons G spike at times from 0 to tmax</span>
+<span class="c1"># Postsynaptic neurons G spike at times from tmax to 0</span>
+<span class="c1"># So difference in spike times will vary from -tmax to +tmax</span>
+<span class="n">G</span> <span class="o">=</span> <span class="n">NeuronGroup</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="s1">&#39;tspike:second&#39;</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="s1">&#39;t&gt;tspike&#39;</span><span class="p">,</span> <span class="n">refractory</span><span class="o">=</span><span class="mi">100</span><span class="o">*</span><span class="n">ms</span><span class="p">)</span>
+<span class="n">H</span> <span class="o">=</span> <span class="n">NeuronGroup</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="s1">&#39;tspike:second&#39;</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="s1">&#39;t&gt;tspike&#39;</span><span class="p">,</span> <span class="n">refractory</span><span class="o">=</span><span class="mi">100</span><span class="o">*</span><span class="n">ms</span><span class="p">)</span>
+<span class="n">G</span><span class="o">.</span><span class="n">tspike</span> <span class="o">=</span> <span class="s1">&#39;i*tmax/(N-1)&#39;</span>
+<span class="n">H</span><span class="o">.</span><span class="n">tspike</span> <span class="o">=</span> <span class="s1">&#39;(N-1-i)*tmax/(N-1)&#39;</span>
+
+<span class="n">S</span> <span class="o">=</span> <span class="n">Synapses</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">H</span><span class="p">,</span>
+<span class="w">             </span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">             w : 1</span>
+<span class="sd">             dapre/dt = -apre/taupre : 1 (event-driven)</span>
+<span class="sd">             dapost/dt = -apost/taupost : 1 (event-driven)</span>
+<span class="sd">             &#39;&#39;&#39;</span><span class="p">,</span>
+             <span class="n">on_pre</span><span class="o">=</span><span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">             apre += Apre</span>
+<span class="s1">             w = w+apost</span>
+<span class="s1">             &#39;&#39;&#39;</span><span class="p">,</span>
+             <span class="n">on_post</span><span class="o">=</span><span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">             apost += Apost</span>
+<span class="s1">             w = w+apre</span>
+<span class="s1">             &#39;&#39;&#39;</span><span class="p">)</span>
+<span class="n">S</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">j</span><span class="o">=</span><span class="s1">&#39;i&#39;</span><span class="p">)</span>
+
+<span class="n">run</span><span class="p">(</span><span class="n">tmax</span><span class="o">+</span><span class="mi">1</span><span class="o">*</span><span class="n">ms</span><span class="p">)</span>
+
+<span class="n">plot</span><span class="p">((</span><span class="n">H</span><span class="o">.</span><span class="n">tspike</span><span class="o">-</span><span class="n">G</span><span class="o">.</span><span class="n">tspike</span><span class="p">)</span><span class="o">/</span><span class="n">ms</span><span class="p">,</span> <span class="n">S</span><span class="o">.</span><span class="n">w</span><span class="p">)</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\Delta t$ (ms)&#39;</span><span class="p">)</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\Delta w$&#39;</span><span class="p">)</span>
+<span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/d58893f8ec24cfb1c9c0852e24329c5cc0604ff2a68f11a757f4d88a65dd98b4.png" src="../../_images/d58893f8ec24cfb1c9c0852e24329c5cc0604ff2a68f11a757f4d88a65dd98b4.png" />
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notebooks/simulation_neuralsystems"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="a.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">1. </span>Introduction to Brian part 1: Neurons</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="c.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>Introduction to Brian part 3: Simulations</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-simplest-synapse">2.1. The simplest Synapse</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-a-weight">2.2. Adding a weight</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">2.2.1. Exercise</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-complex-connectivity">2.3. More complex connectivity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-synapses-via-weight-matrix">2.4. Creating synapses via weight matrix</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">2.4.1. Exercise</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-exercises">2.4.1.1. Bonus exercises</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-exercise-2-simulation-of-a-balance-network">2.4.1.2. Bonus exercise 2: Simulation of a balance network</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-content-introducing-a-delay">2.5. Bonus content: Introducing a delay</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-content-more-complex-synapse-models-stdp">2.6. Bonus content: More complex synapse models: STDP</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Elias Najarro & Rune Berg
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
