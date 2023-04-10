@@ -1,52 +1,61 @@
 
+
 <!DOCTYPE html>
 
-<html lang="en">
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>7. Machine Learning &#8212; Computational Neuroscience</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/custom.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -56,63 +65,95 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/week4/week4b';</script>
     <link rel="canonical" href="https://neurowithpython.com/notebooks/week4/week4b.html" />
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="8. Control Theory" href="../week5/CT.html" />
     <link rel="prev" title="6. Introduction to Data Analysis with Pandas" href="week4a.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
-
-    
-
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../../index.html">
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../../_static/cajal1.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Computational Neuroscience</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="../../_static/cajal1.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/cajal1.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -121,603 +162,327 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Coding tools for researchers
- </span>
-</p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Coding tools for researchers</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../week0/codingtoolsforresearch.html">
-   Coding tools for researchers
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../week0/codingtoolsforresearch.html">Coding tools for researchers</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Week 1. Math review with Python
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 1. Math review with Python</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../week1/week1-IntroColab.html">
-   Google’s Colab
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../week1/week1a-Numpy_Introduction.html">
-   Introduction to NumPy and Matplotlib
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../week1/week1b-Linear_Algebra.html">
-   Linear Algebra basics
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../week1/week1-IntroColab.html">Google’s Colab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week1/week1a-Numpy_Introduction.html">Introduction to NumPy and Matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week1/week1b-Linear_Algebra.html">Linear Algebra basics</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Week 2. Differential equations and neuron models
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 2. Differential equations and neuron models</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../week2/week2a.html">
-   1. Introduction modelling with differential equations
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../week2/week2b-Applications_LT.html">
-   2. Dynamical systems as Linear Transformations
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../week2/week2a.html">1. Introduction modelling with differential equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week2/week2b-Applications_LT.html">2. Dynamical systems as Linear Transformations</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Week 3. Simulation of neural population
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 3. Simulation of neural population</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../week3/week3a.html">
-   3. Introduction to Brian part 1: Neurons
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../week3/week3b.html">
-   4. Introduction to Brian part 2: Synapses
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../week3/week3c.html">
-   5. Introduction to Brian part 3: Simulations
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../week3/week3a.html">3. Introduction to Brian part 1: Neurons</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week3/week3b.html">4. Introduction to Brian part 2: Synapses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week3/week3c.html">5. Introduction to Brian part 3: Simulations</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Week 4. Data analysis and Machine learning
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 4. Data analysis and Machine learning</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="week4a.html">
-   6. Introduction to Data Analysis with Pandas
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   7. Machine Learning
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="week4a.html">6. Introduction to Data Analysis with Pandas</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">7. Machine Learning</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Week 5. Reinforcement Learning and Control Theory
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 5. Reinforcement Learning and Control Theory</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../week5/CT.html">
-   8. Control Theory
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../week5/CT.html">8. Control Theory</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Week 6. Network analysis
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 6. Network analysis</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../week6/week6.html">
-   9. Network science
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../week6/week6.html">9. Network science</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
-          
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
 
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
 <div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
 
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://colab.research.google.com/github/BergLab/CompNeuroBook/blob/master/docs/notebooks/week4/week4b.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Colab"
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/BergLab/CompNeuroBook/blob/master/docs/notebooks/week4/week4b.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   
     <img src="../../_static/images/logo_colab.png">
   </span>
-<span class="headerbtn__text-container">Colab</span>
+<span class="btn__text-container">Colab</span>
 </a>
-
-      </li>
+</li>
       
-    </ul>
-  </div>
+  </ul>
 </div>
 
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/BergLab/CompNeuroBook" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/BergLab/CompNeuroBook/edit/master/docs/notebooks/week4/week4b.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/BergLab/CompNeuroBook/issues/new?title=Issue%20on%20page%20%2Fnotebooks/week4/week4b.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/notebooks/week4/week4b.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/BergLab/CompNeuroBook"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/BergLab/CompNeuroBook/issues/new?title=Issue%20on%20page%20%2Fnotebooks/week4/week4b.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/BergLab/CompNeuroBook/edit/master/docs/notebooks/week4/week4b.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Edit this page"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-pencil-alt"></i>
-  </span>
-<span class="headerbtn__text-container">suggest edit</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../../_sources/notebooks/week4/week4b.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#machine-learning-models">
-   7.1. Machine learning models
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#decision-trees">
-     7.1.1. Decision trees
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#deep-learning">
-     7.1.2. Deep learning
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#mlp">
-       7.1.2.1. MLP
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#convolutional-neural-networks">
-       7.1.2.2. Convolutional neural networks
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#rnn">
-       7.1.2.3. RNN
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#introduction-to-machine-learning-with-scikit-learn">
-   7.2. Introduction to Machine learning with scikit-learn
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#data-description">
-     7.2.1. Data description
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#computing-correlations">
-   7.3. Computing correlations
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise">
-     7.3.1. Exercise
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#non-linear-correlations">
-     7.3.2. Non-linear correlations
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-relation-between-correlation-coefficients-and-predictive-models">
-     7.3.3. The relation between correlation coefficients and predictive models
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#supervised-learning">
-   7.4. Supervised Learning
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#regression">
-     7.4.1. Regression
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id1">
-       7.4.1.1. Exercise
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#real-data">
-     7.4.2. Real data
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id2">
-       7.4.2.1. Exercise
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#classification">
-     7.4.3. Classification
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id3">
-       7.4.3.1. Exercise
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#bonus-clustering">
-   7.5. Bonus: Clustering
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Machine Learning</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#machine-learning-models">
-   7.1. Machine learning models
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#decision-trees">
-     7.1.1. Decision trees
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#deep-learning">
-     7.1.2. Deep learning
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#mlp">
-       7.1.2.1. MLP
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#convolutional-neural-networks">
-       7.1.2.2. Convolutional neural networks
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#rnn">
-       7.1.2.3. RNN
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#introduction-to-machine-learning-with-scikit-learn">
-   7.2. Introduction to Machine learning with scikit-learn
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#data-description">
-     7.2.1. Data description
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#computing-correlations">
-   7.3. Computing correlations
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise">
-     7.3.1. Exercise
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#non-linear-correlations">
-     7.3.2. Non-linear correlations
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-relation-between-correlation-coefficients-and-predictive-models">
-     7.3.3. The relation between correlation coefficients and predictive models
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#supervised-learning">
-   7.4. Supervised Learning
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#regression">
-     7.4.1. Regression
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id1">
-       7.4.1.1. Exercise
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#real-data">
-     7.4.2. Real data
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id2">
-       7.4.2.1. Exercise
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#classification">
-     7.4.3. Classification
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id3">
-       7.4.3.1. Exercise
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#bonus-clustering">
-   7.5. Bonus: Clustering
-  </a>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Machine Learning</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#machine-learning-models">7.1. Machine learning models</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decision-trees">7.1.1. Decision trees</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deep-learning">7.1.2. Deep learning</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mlp">7.1.2.1. MLP</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#convolutional-neural-networks">7.1.2.2. Convolutional neural networks</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#rnn">7.1.2.3. RNN</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-machine-learning-with-scikit-learn">7.2. Introduction to Machine learning with scikit-learn</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-description">7.2.1. Data description</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computing-correlations">7.3. Computing correlations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">7.3.1. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#non-linear-correlations">7.3.2. Non-linear correlations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-relation-between-correlation-coefficients-and-predictive-models">7.3.3. The relation between correlation coefficients and predictive models</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supervised-learning">7.4. Supervised Learning</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regression">7.4.1. Regression</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">7.4.1.1. Exercise</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#real-data">7.4.2. Real data</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">7.4.2.1. Exercise</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classification">7.4.3. Classification</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">7.4.3.1. Exercise</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-clustering">7.5. Bonus: Clustering</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <section class="tex2jax_ignore mathjax_ignore" id="machine-learning">
 <h1><span class="section-number">7. </span>Machine Learning<a class="headerlink" href="#machine-learning" title="Permalink to this heading">#</a></h1>
 <section id="machine-learning-models">
@@ -777,6 +542,19 @@ Deep learning (DL) is a class of machine learning methods that uses multi-layer 
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">pd</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">mode</span><span class="o">.</span><span class="n">chained_assignment</span> <span class="o">=</span> <span class="kc">None</span>  
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
+</pre></div>
+</div>
+</div>
 </div>
 <p>The DataFrame can be created from a csv file using the read_csv method.
 If you are working on Colab, you will need to upload the data.</p>
@@ -787,88 +565,6 @@ If you are working on Colab, you will need to upload the data.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Temperature</th>
-      <th>Luminosity</th>
-      <th>Size</th>
-      <th>A_M</th>
-      <th>Color</th>
-      <th>Spectral_Class</th>
-      <th>Type</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>3068</td>
-      <td>0.002400</td>
-      <td>0.1700</td>
-      <td>16.12</td>
-      <td>Red</td>
-      <td>M</td>
-      <td>Red Dwarf</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>3042</td>
-      <td>0.000500</td>
-      <td>0.1542</td>
-      <td>16.60</td>
-      <td>Red</td>
-      <td>M</td>
-      <td>Red Dwarf</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>2600</td>
-      <td>0.000300</td>
-      <td>0.1020</td>
-      <td>18.70</td>
-      <td>Red</td>
-      <td>M</td>
-      <td>Red Dwarf</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>2800</td>
-      <td>0.000200</td>
-      <td>0.1600</td>
-      <td>16.65</td>
-      <td>Red</td>
-      <td>M</td>
-      <td>Red Dwarf</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>1939</td>
-      <td>0.000138</td>
-      <td>0.1030</td>
-      <td>20.06</td>
-      <td>Red</td>
-      <td>M</td>
-      <td>Red Dwarf</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 </section>
 </section>
@@ -888,16 +584,6 @@ If you are working on Colab, you will need to upload the data.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages/pandas/plotting/_matplotlib/core.py:1070: UserWarning: No data for colormapping provided via &#39;c&#39;. Parameters &#39;cmap&#39; will be ignored
-  scatter = ax.scatter(
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot: xlabel=&#39;Temperature&#39;, ylabel=&#39;Temperature&#39;&gt;
-</pre></div>
-</div>
-<img alt="../../_images/week4b_11_2.png" src="../../_images/week4b_11_2.png" />
-</div>
 </div>
 <p>What value of the pearson correlation coefficient do expect to have? If it’s not obvious to you, think about it before running the next code cell.</p>
 <div class="cell docutils container">
@@ -906,11 +592,6 @@ If you are working on Colab, you will need to upload the data.</p>
 
 <span class="n">r</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">pearsonr</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Temperature&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Temperature&#39;</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The correlation coefficient is </span><span class="si">{</span><span class="n">r</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The correlation coefficient is 1.0
 </pre></div>
 </div>
 </div>
@@ -975,15 +656,6 @@ If you are working on Colab, you will need to upload the data.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Score on training:  0.9993426972249772
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x14958c250&gt;
-</pre></div>
-</div>
-<img alt="../../_images/week4b_21_2.png" src="../../_images/week4b_21_2.png" />
-</div>
 </div>
 <p>It seems to be working, the score should be close to 1.0 —which would be a perfect fit.</p>
 <section id="id1">
@@ -1008,16 +680,6 @@ If you are working on Colab, you will need to upload the data.</p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s1">&#39;Luminosity&#39;</span><span class="p">,</span><span class="s1">&#39;A_M&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">7</span><span class="p">))</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages/pandas/plotting/_matplotlib/core.py:1070: UserWarning: No data for colormapping provided via &#39;c&#39;. Parameters &#39;cmap&#39; will be ignored
-  scatter = ax.scatter(
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot: xlabel=&#39;Luminosity&#39;, ylabel=&#39;A_M&#39;&gt;
-</pre></div>
-</div>
-<img alt="../../_images/week4b_26_2.png" src="../../_images/week4b_26_2.png" />
 </div>
 </div>
 <p>As you already knew, there is indeed a strong correlation between these two variables. You could even try to guess what the analytical formula is given the shape —or google it— but rather let’s see if we can instead build a model to predict the absolute magnitude for each luminosity. We could try a linear model but the relation is not quite linear, is it? Ie. it’s not a straight line. We could also try to fit a polynomial or a logarithmic function.. Instead we will build a neural network model so we don’t need to make any assumption about the relation between the variables.</p>
@@ -1061,22 +723,12 @@ If you are working on Colab, you will need to upload the data.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><style>#sk-container-id-1 {color: black;background-color: white;}#sk-container-id-1 pre{padding: 0;}#sk-container-id-1 div.sk-toggleable {background-color: white;}#sk-container-id-1 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-container-id-1 label.sk-toggleable__label-arrow:before {content: "▸";float: left;margin-right: 0.25em;color: #696969;}#sk-container-id-1 label.sk-toggleable__label-arrow:hover:before {color: black;}#sk-container-id-1 div.sk-estimator:hover label.sk-toggleable__label-arrow:before {color: black;}#sk-container-id-1 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-container-id-1 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-container-id-1 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-container-id-1 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {content: "▾";}#sk-container-id-1 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-container-id-1 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-container-id-1 div.sk-estimator:hover {background-color: #d4ebff;}#sk-container-id-1 div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-container-id-1 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: 0;}#sk-container-id-1 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;position: relative;}#sk-container-id-1 div.sk-item {position: relative;z-index: 1;}#sk-container-id-1 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;position: relative;}#sk-container-id-1 div.sk-item::before, #sk-container-id-1 div.sk-parallel-item::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: -1;}#sk-container-id-1 div.sk-parallel-item {display: flex;flex-direction: column;z-index: 1;position: relative;background-color: white;}#sk-container-id-1 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-container-id-1 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-container-id-1 div.sk-parallel-item:only-child::after {width: 0;}#sk-container-id-1 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;}#sk-container-id-1 div.sk-label label {font-family: monospace;font-weight: bold;display: inline-block;line-height: 1.2em;}#sk-container-id-1 div.sk-label-container {text-align: center;}#sk-container-id-1 div.sk-container {/* jupyter's `normalize.less` sets `[hidden] { display: none; }` but bootstrap.min.css set `[hidden] { display: none !important; }` so we also need the `!important` here to be able to override the default hidden behavior on the sphinx rendered scikit-learn.org. See: https://github.com/scikit-learn/scikit-learn/issues/21755 */display: inline-block !important;position: relative;}#sk-container-id-1 div.sk-text-repr-fallback {display: none;}</style><div id="sk-container-id-1" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>MLPRegressor(activation=&#x27;tanh&#x27;, hidden_layer_sizes=(300, 300, 300),
-             learning_rate=&#x27;adaptive&#x27;, learning_rate_init=5e-05, max_iter=1000)</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-1" type="checkbox" checked><label for="sk-estimator-id-1" class="sk-toggleable__label sk-toggleable__label-arrow">MLPRegressor</label><div class="sk-toggleable__content"><pre>MLPRegressor(activation=&#x27;tanh&#x27;, hidden_layer_sizes=(300, 300, 300),
-             learning_rate=&#x27;adaptive&#x27;, learning_rate_init=5e-05, max_iter=1000)</pre></div></div></div></div></div></div></div>
 </div>
 <p>Let’s print the score:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Score on training set: &#39;</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Score on test set: &#39;</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Score on training set:  0.9074042384440644
-Score on test set:  0.9609682762030545
 </pre></div>
 </div>
 </div>
@@ -1090,16 +742,6 @@ Score on test set:  0.9609682762030545
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">input_x</span><span class="p">,</span><span class="n">pred_y</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Model prediction&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages/pandas/plotting/_matplotlib/core.py:1070: UserWarning: No data for colormapping provided via &#39;c&#39;. Parameters &#39;cmap&#39; will be ignored
-  scatter = ax.scatter(
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x149620ee0&gt;]
-</pre></div>
-</div>
-<img alt="../../_images/week4b_39_2.png" src="../../_images/week4b_39_2.png" />
 </div>
 </div>
 <p>Congratulations, you just trained your first neural network on real data! The red line should hopefully fit the dataset points.</p>
@@ -1129,12 +771,6 @@ Score on test set:  0.9609682762030545
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot: ylabel=&#39;None&#39;&gt;
-</pre></div>
-</div>
-<img alt="../../_images/week4b_44_1.png" src="../../_images/week4b_44_1.png" />
-</div>
 </div>
 <p>It seems the data is balanced with respect to stars types so we can safely move on.
 Let’s now visualise how the different variables relate to each other so we can pick features that would allow us to separate the stars based on their type:</p>
@@ -1146,120 +782,6 @@ Let’s now visualise how the different variables relate to each other so we can
 <span class="n">seaborn</span><span class="o">.</span><span class="n">pairplot</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">features</span><span class="p">],</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;Type&quot;</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s2">&quot;husl&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [16],</span> in <span class="ni">&lt;cell line: 4&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">seaborn</span> <span class="c1"># seaborn is a library similar to matplotlib but with some extra features and nicer default color schemes</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">features</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Size&#39;</span><span class="p">,</span> <span class="s1">&#39;A_M&#39;</span><span class="p">,</span> <span class="s1">&#39;Temperature&#39;</span><span class="p">,</span> <span class="s1">&#39;Type&#39;</span><span class="p">]</span>
-<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">seaborn</span><span class="o">.</span><span class="n">pairplot</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">features</span><span class="p">],</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;Type&quot;</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s2">&quot;husl&quot;</span><span class="p">)</span>
-
-<span class="nn">File ~/.virtualenvs/p39/lib/python3.9/site-packages/seaborn/_decorators.py:46,</span> in <span class="ni">_deprecate_positional_args.&lt;locals&gt;.inner_f</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">36</span>     <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">37</span>         <span class="s2">&quot;Pass the following variable</span><span class="si">{}</span><span class="s2"> as </span><span class="si">{}</span><span class="s2">keyword arg</span><span class="si">{}</span><span class="s2">: </span><span class="si">{}</span><span class="s2">. &quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">38</span>         <span class="s2">&quot;From version 0.12, the only valid positional argument &quot;</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">43</span>         <span class="ne">FutureWarning</span>
-<span class="g g-Whitespace">     </span><span class="mi">44</span>     <span class="p">)</span>
-<span class="nn">     45 kwargs.update({k: arg for k, arg</span> in <span class="ni">zip</span><span class="nt">(sig.parameters, args)})</span>
-<span class="ne">---&gt; </span><span class="mi">46</span> <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File ~/.virtualenvs/p39/lib/python3.9/site-packages/seaborn/axisgrid.py:2130,</span> in <span class="ni">pairplot</span><span class="nt">(data, hue, hue_order, palette, vars, x_vars, y_vars, kind, diag_kind, markers, height, aspect, corner, dropna, plot_kws, diag_kws, grid_kws, size)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2128</span>     <span class="n">diag_kws</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s2">&quot;fill&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2129</span>     <span class="n">diag_kws</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s2">&quot;warn_singular&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">2130</span>     <span class="n">grid</span><span class="o">.</span><span class="n">map_diag</span><span class="p">(</span><span class="n">kdeplot</span><span class="p">,</span> <span class="o">**</span><span class="n">diag_kws</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2132</span> <span class="c1"># Maybe plot on the off-diagonals</span>
-<span class="g g-Whitespace">   </span><span class="mi">2133</span> <span class="k">if</span> <span class="n">diag_kind</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-
-<span class="nn">File ~/.virtualenvs/p39/lib/python3.9/site-packages/seaborn/axisgrid.py:1478,</span> in <span class="ni">PairGrid.map_diag</span><span class="nt">(self, func, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1476</span>     <span class="n">plot_kwargs</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s2">&quot;hue_order&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hue_order</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1477</span>     <span class="n">plot_kwargs</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s2">&quot;palette&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_orig_palette</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1478</span>     <span class="n">func</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">vector</span><span class="p">,</span> <span class="o">**</span><span class="n">plot_kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1479</span>     <span class="n">ax</span><span class="o">.</span><span class="n">legend_</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="g g-Whitespace">   </span><span class="mi">1481</span> <span class="bp">self</span><span class="o">.</span><span class="n">_add_axis_labels</span><span class="p">()</span>
-
-<span class="nn">File ~/.virtualenvs/p39/lib/python3.9/site-packages/seaborn/_decorators.py:46,</span> in <span class="ni">_deprecate_positional_args.&lt;locals&gt;.inner_f</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">36</span>     <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">37</span>         <span class="s2">&quot;Pass the following variable</span><span class="si">{}</span><span class="s2"> as </span><span class="si">{}</span><span class="s2">keyword arg</span><span class="si">{}</span><span class="s2">: </span><span class="si">{}</span><span class="s2">. &quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">38</span>         <span class="s2">&quot;From version 0.12, the only valid positional argument &quot;</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">43</span>         <span class="ne">FutureWarning</span>
-<span class="g g-Whitespace">     </span><span class="mi">44</span>     <span class="p">)</span>
-<span class="nn">     45 kwargs.update({k: arg for k, arg</span> in <span class="ni">zip</span><span class="nt">(sig.parameters, args)})</span>
-<span class="ne">---&gt; </span><span class="mi">46</span> <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File ~/.virtualenvs/p39/lib/python3.9/site-packages/seaborn/distributions.py:1770,</span> in <span class="ni">kdeplot</span><span class="nt">(x, y, shade, vertical, kernel, bw, gridsize, cut, clip, legend, cumulative, shade_lowest, cbar, cbar_ax, cbar_kws, ax, weights, hue, palette, hue_order, hue_norm, multiple, common_norm, common_grid, levels, thresh, bw_method, bw_adjust, log_scale, color, fill, data, data2, warn_singular, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1767</span>     <span class="k">if</span> <span class="n">color</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1768</span>         <span class="n">plot_kws</span><span class="p">[</span><span class="s2">&quot;color&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">color</span>
-<span class="ne">-&gt; </span><span class="mi">1770</span>     <span class="n">p</span><span class="o">.</span><span class="n">plot_univariate_density</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1771</span>         <span class="n">multiple</span><span class="o">=</span><span class="n">multiple</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1772</span>         <span class="n">common_norm</span><span class="o">=</span><span class="n">common_norm</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1773</span>         <span class="n">common_grid</span><span class="o">=</span><span class="n">common_grid</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1774</span>         <span class="n">fill</span><span class="o">=</span><span class="n">fill</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1775</span>         <span class="n">legend</span><span class="o">=</span><span class="n">legend</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1776</span>         <span class="n">warn_singular</span><span class="o">=</span><span class="n">warn_singular</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1777</span>         <span class="n">estimate_kws</span><span class="o">=</span><span class="n">estimate_kws</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1778</span>         <span class="o">**</span><span class="n">plot_kws</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1779</span>     <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1781</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1783</span>     <span class="n">p</span><span class="o">.</span><span class="n">plot_bivariate_density</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1784</span>         <span class="n">common_norm</span><span class="o">=</span><span class="n">common_norm</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1785</span>         <span class="n">fill</span><span class="o">=</span><span class="n">fill</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1795</span>         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1796</span>     <span class="p">)</span>
-
-<span class="nn">File ~/.virtualenvs/p39/lib/python3.9/site-packages/seaborn/distributions.py:1015,</span> in <span class="ni">_DistributionPlotter.plot_univariate_density</span><span class="nt">(self, multiple, common_norm, common_grid, warn_singular, fill, legend, estimate_kws, **plot_kws)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1012</span> <span class="k">if</span> <span class="s2">&quot;x&quot;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">variables</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1014</span>     <span class="k">if</span> <span class="n">fill</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1015</span>         <span class="n">artist</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1016</span>             <span class="n">support</span><span class="p">,</span> <span class="n">fill_from</span><span class="p">,</span> <span class="n">density</span><span class="p">,</span> <span class="o">**</span><span class="n">artist_kws</span>
-<span class="g g-Whitespace">   </span><span class="mi">1017</span>         <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1018</span>     <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1019</span>         <span class="n">artist</span><span class="p">,</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">support</span><span class="p">,</span> <span class="n">density</span><span class="p">,</span> <span class="o">**</span><span class="n">artist_kws</span><span class="p">)</span>
-
-<span class="nn">File ~/.virtualenvs/p39/lib/python3.9/site-packages/matplotlib/__init__.py:1423,</span> in <span class="ni">_preprocess_data.&lt;locals&gt;.inner</span><span class="nt">(ax, data, *args, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1420</span> <span class="nd">@functools</span><span class="o">.</span><span class="n">wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1421</span> <span class="k">def</span> <span class="nf">inner</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">1422</span>     <span class="k">if</span> <span class="n">data</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1423</span>         <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="o">*</span><span class="nb">map</span><span class="p">(</span><span class="n">sanitize_sequence</span><span class="p">,</span> <span class="n">args</span><span class="p">),</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1425</span>     <span class="n">bound</span> <span class="o">=</span> <span class="n">new_sig</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1426</span>     <span class="n">auto_label</span> <span class="o">=</span> <span class="p">(</span><span class="n">bound</span><span class="o">.</span><span class="n">arguments</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">label_namer</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1427</span>                   <span class="ow">or</span> <span class="n">bound</span><span class="o">.</span><span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">label_namer</span><span class="p">))</span>
-
-<span class="nn">File ~/.virtualenvs/p39/lib/python3.9/site-packages/matplotlib/axes/_axes.py:5367,</span> in <span class="ni">Axes.fill_between</span><span class="nt">(self, x, y1, y2, where, interpolate, step, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">5365</span> <span class="k">def</span> <span class="nf">fill_between</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">y2</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">interpolate</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">5366</span>                  <span class="n">step</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-<span class="ne">-&gt; </span><span class="mi">5367</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fill_between_x_or_y</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">5368</span>         <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">5369</span>         <span class="n">where</span><span class="o">=</span><span class="n">where</span><span class="p">,</span> <span class="n">interpolate</span><span class="o">=</span><span class="n">interpolate</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="n">step</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File ~/.virtualenvs/p39/lib/python3.9/site-packages/matplotlib/axes/_axes.py:5272,</span> in <span class="ni">Axes._fill_between_x_or_y</span><span class="nt">(self, ind_dir, ind, dep1, dep2, where, interpolate, step, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">5268</span>         <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;facecolor&quot;</span><span class="p">]</span> <span class="o">=</span> \
-<span class="g g-Whitespace">   </span><span class="mi">5269</span>             <span class="bp">self</span><span class="o">.</span><span class="n">_get_patches_for_fill</span><span class="o">.</span><span class="n">get_next_color</span><span class="p">()</span>
-<span class="g g-Whitespace">   </span><span class="mi">5271</span> <span class="c1"># Handle united data, such as dates</span>
-<span class="ne">-&gt; </span><span class="mi">5272</span> <span class="n">ind</span><span class="p">,</span> <span class="n">dep1</span><span class="p">,</span> <span class="n">dep2</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">5273</span>     <span class="n">ma</span><span class="o">.</span><span class="n">masked_invalid</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_process_unit_info</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">5274</span>         <span class="p">[(</span><span class="n">ind_dir</span><span class="p">,</span> <span class="n">ind</span><span class="p">),</span> <span class="p">(</span><span class="n">dep_dir</span><span class="p">,</span> <span class="n">dep1</span><span class="p">),</span> <span class="p">(</span><span class="n">dep_dir</span><span class="p">,</span> <span class="n">dep2</span><span class="p">)],</span> <span class="n">kwargs</span><span class="p">))</span>
-<span class="g g-Whitespace">   </span><span class="mi">5276</span> <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">array</span> <span class="ow">in</span> <span class="p">[</span>
-<span class="g g-Whitespace">   </span><span class="mi">5277</span>         <span class="p">(</span><span class="n">ind_dir</span><span class="p">,</span> <span class="n">ind</span><span class="p">),</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">dep_dir</span><span class="si">}</span><span class="s2">1&quot;</span><span class="p">,</span> <span class="n">dep1</span><span class="p">),</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">dep_dir</span><span class="si">}</span><span class="s2">2&quot;</span><span class="p">,</span> <span class="n">dep2</span><span class="p">)]:</span>
-<span class="g g-Whitespace">   </span><span class="mi">5278</span>     <span class="k">if</span> <span class="n">array</span><span class="o">.</span><span class="n">ndim</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
-
-<span class="nn">File ~/.virtualenvs/p39/lib/python3.9/site-packages/numpy/ma/core.py:2360,</span> in <span class="ni">masked_invalid</span><span class="nt">(a, copy)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2332</span> <span class="k">def</span> <span class="nf">masked_invalid</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">2333</span>     <span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">2334</span><span class="sd">     Mask an array where invalid values occur (NaNs or infs).</span>
-<span class="g g-Whitespace">   </span><span class="mi">2335</span><span class="sd"> </span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2357</span><span class="sd"> </span>
-<span class="g g-Whitespace">   </span><span class="mi">2358</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="ne">-&gt; </span><span class="mi">2360</span>     <span class="k">return</span> <span class="n">masked_where</span><span class="p">(</span><span class="o">~</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">getdata</span><span class="p">(</span><span class="n">a</span><span class="p">))),</span> <span class="n">a</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="n">copy</span><span class="p">)</span>
-
-<span class="ne">TypeError</span>: ufunc &#39;isfinite&#39; not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule &#39;&#39;safe&#39;&#39;
-</pre></div>
-</div>
-<img alt="../../_images/week4b_46_1.png" src="../../_images/week4b_46_1.png" />
 </div>
 </div>
 <p>We start by selecting the data that we are gonna feed our model —the input— and the data that we want our model to predict —ie. to output—. In our case, we’re gonna try to predict the star type (White Dwarf, Super giants..) based on their temperature and absolute magnitude.</p>
@@ -1408,7 +930,7 @@ Let’s now visualise how the different variables relate to each other so we can
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./notebooks/week4"
         },
         predefinedOutput: true
@@ -1416,53 +938,143 @@ Let’s now visualise how the different variables relate to each other so we can
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="week4a.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">6. </span>Introduction to Data Analysis with Pandas</p>
-        </div>
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="week4a.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">6. </span>Introduction to Data Analysis with Pandas</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="../week5/CT.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="../week5/CT.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title"><span class="section-number">8. </span>Control Theory</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-    By Elias Najarro & Rune Berg<br/>
-  
-      &copy; Copyright 2022.<br/>
-    <div class="extra_footer">
-      <a href="https://neurowithpython.com/">neurowithpython.com</a> <div id="wh-modal"> <button class="wh-venti-button" aria-label="close modal" id="wh-modal-close">✕</button> <img id="wh-modal-img"> </div>
-    </div>
-</p>
-        </footer>
-    </div>
-    
-</div>
-
-
       </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#machine-learning-models">7.1. Machine learning models</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decision-trees">7.1.1. Decision trees</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deep-learning">7.1.2. Deep learning</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mlp">7.1.2.1. MLP</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#convolutional-neural-networks">7.1.2.2. Convolutional neural networks</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#rnn">7.1.2.3. RNN</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-machine-learning-with-scikit-learn">7.2. Introduction to Machine learning with scikit-learn</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-description">7.2.1. Data description</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computing-correlations">7.3. Computing correlations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">7.3.1. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#non-linear-correlations">7.3.2. Non-linear correlations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-relation-between-correlation-coefficients-and-predictive-models">7.3.3. The relation between correlation coefficients and predictive models</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supervised-learning">7.4. Supervised Learning</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regression">7.4.1. Regression</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">7.4.1.1. Exercise</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#real-data">7.4.2. Real data</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">7.4.2.1. Exercise</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classification">7.4.3. Classification</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">7.4.3.1. Exercise</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-clustering">7.5. Bonus: Clustering</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Elias Najarro & Rune Berg
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <a href="https://neurowithpython.com/">neurowithpython.com</a> <div id="wh-modal"> <button class="wh-venti-button" aria-label="close modal" id="wh-modal-close">✕</button> <img id="wh-modal-img"> </div>
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>
