@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>9. Network science &#8212; Computational Neuroscience</title>
+    <title>1. Network science &#8212; Computational Neuroscience</title>
   
   
   
@@ -69,7 +69,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="prev" title="8. Machine Learning" href="../ML/b.html" />
+    <link rel="prev" title="2. Machine Learning" href="../ML/b.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -177,23 +177,23 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 2. Differential equations and neuron models</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../dynamical_systems/dynamical_systems_intro.html">2. Introduction modelling with differential equations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../dynamical_systems/Applications_LT.html">3. Dynamical systems as Linear Transformations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dynamical_systems/dynamical_systems_intro.html">1. Introduction modelling with differential equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dynamical_systems/Applications_LT.html">2. Dynamical systems as Linear Transformations</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 3. Simulation of neural population</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../simulation_neuralsystems/a.html">4. Introduction to Brian part 1: Neurons</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../simulation_neuralsystems/b.html">5. Introduction to Brian part 2: Synapses</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../simulation_neuralsystems/c.html">6. Introduction to Brian part 3: Simulations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simulation_neuralsystems/a.html">1. Introduction to Brian part 1: Neurons</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simulation_neuralsystems/b.html">2. Introduction to Brian part 2: Synapses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simulation_neuralsystems/c.html">3. Introduction to Brian part 3: Simulations</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 4. Data analysis and Machine learning</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../ML/a.html">7. Introduction to Data Analysis with Pandas</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ML/b.html">8. Machine Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ML/a.html">1. Introduction to Data Analysis with Pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ML/b.html">2. Machine Learning</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 5. Network theory</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">9. Network science</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">1. Network science</a></li>
 </ul>
 
     </div>
@@ -248,7 +248,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://colab.research.google.com/github/BergLab/CompNeuroBook/blob/master/docs/notebooks/network_theory/a.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/BergLab/CompNeuroBook/blob/gh-pages/notebooks/network_theory/a.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onColab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -296,7 +296,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/BergLab/CompNeuroBook/edit/master/docs/notebooks/network_theory/a.ipynb" target="_blank"
+      <li><a href="https://github.com/BergLab/CompNeuroBook/edit/gh-pages/notebooks/network_theory/a.ipynb" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -435,46 +435,46 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-networks">9.1. Why networks?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-network-concepts">9.2. Basic network concepts</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nodes-and-edges">9.2.1. Nodes and edges</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#network-connectivity">9.2.2. Network Connectivity</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#connected-network">9.2.3. Connected Network</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#directed-vs-undirected-network">9.2.4. Directed vs undirected network</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graphs-with-features">9.2.5. Graphs with features</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#features-normalisation">9.2.5.1. Features normalisation</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-activation">9.2.5.2. Feature activation</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#extra-linear-transformations">9.2.5.3. Extra Linear transformations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-networks">1.1. Why networks?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-network-concepts">1.2. Basic network concepts</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nodes-and-edges">1.2.1. Nodes and edges</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#network-connectivity">1.2.2. Network Connectivity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#connected-network">1.2.3. Connected Network</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#directed-vs-undirected-network">1.2.4. Directed vs undirected network</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graphs-with-features">1.2.5. Graphs with features</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#features-normalisation">1.2.5.1. Features normalisation</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-activation">1.2.5.2. Feature activation</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#extra-linear-transformations">1.2.5.3. Extra Linear transformations</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-networkx">9.3. Using NetworkX</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">9.3.1. Exercises 🧑‍💻🔨</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-networkx">1.3. Using NetworkX</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">1.3.1. Exercises 🧑‍💻🔨</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#measures-used-to-characterise-networks">9.4. Measures used to characterise networks</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#degree-of-connectivity">9.4.1. Degree of connectivity</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distance-diameter-and-shortest-path">9.4.2. Distance, diameter and shortest path</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#centrality">9.4.3. Centrality</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">9.4.3.1. Exercises 🧑‍💻🔨</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#measures-used-to-characterise-networks">1.4. Measures used to characterise networks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#degree-of-connectivity">1.4.1. Degree of connectivity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distance-diameter-and-shortest-path">1.4.2. Distance, diameter and shortest path</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#centrality">1.4.3. Centrality</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1.4.3.1. Exercises 🧑‍💻🔨</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clustering-coefficient">9.4.4. Clustering coefficient</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cliques">9.4.5. Cliques</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#motifs-and-motifs-analysis">9.4.6. Motifs and motifs analysis</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">9.4.6.1. Exercise 🧑‍💻🔨</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clustering-coefficient">1.4.4. Clustering coefficient</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cliques">1.4.5. Cliques</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#motifs-and-motifs-analysis">1.4.6. Motifs and motifs analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">1.4.6.1. Exercise 🧑‍💻🔨</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scale-free-networks">9.4.7. Scale free networks</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#small-world-networks">9.4.8. Small-world networks</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-evaluating-the-small-worldness-of-a-network-g">9.4.8.1. Bonus: Evaluating the small-worldness of a network G</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">9.4.8.2. Exercise 🧑‍💻🔨</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scale-free-networks">1.4.7. Scale free networks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#small-world-networks">1.4.8. Small-world networks</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-evaluating-the-small-worldness-of-a-network-g">1.4.8.1. Bonus: Evaluating the small-worldness of a network G</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1.4.8.2. Exercise 🧑‍💻🔨</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#propagation-or-replication-in-a-network">9.4.9. Propagation -or replication- in a network</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#diffusion-in-a-network">9.4.10. Diffusion in a network</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spectral-graph-theory">9.4.11. Spectral graph theory</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#propagation-or-replication-in-a-network">1.4.9. Propagation -or replication- in a network</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#diffusion-in-a-network">1.4.10. Diffusion in a network</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spectral-graph-theory">1.4.11. Spectral graph theory</a></li>
 </ul>
 </li>
 </ul>
@@ -489,11 +489,11 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="network-science">
-<h1><span class="section-number">9. </span>Network science<a class="headerlink" href="#network-science" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">1. </span>Network science<a class="headerlink" href="#network-science" title="Permalink to this heading">#</a></h1>
 <p>Network science is a discipline that deals with systems —made of many elements— and studies how the connectivity of the system affects its observed behavior.
 Examples of applications of network science are ecosystems, biological pathways, gene regulatory networks or neural networks.</p>
 <section id="why-networks">
-<h2><span class="section-number">9.1. </span>Why networks?<a class="headerlink" href="#why-networks" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">1.1. </span>Why networks?<a class="headerlink" href="#why-networks" title="Permalink to this heading">#</a></h2>
 <p>One can wonder what’s the point of using network models to describe natural phenomena made of heterogeneous elements connected among them. The reason is that the graph formalism allows us to describe complex phenomena based on its network properties which we can quantified with the quantities we will define below. Here’s some examples of use cases:</p>
 <ul class="simple">
 <li><p>We want to characterise networks in order to change them so we can improve their behaviour (eg. the network of world’s airport: improve the efficiency of traveling between countries).</p></li>
@@ -507,13 +507,13 @@ Examples of applications of network science are ecosystems, biological pathways,
 <p style="text-align:center;"><img src="https://n.neurology.org/content/neurology/96/5/e758/F1.large.jpg" width="600"/>
 </div></section>
 <section id="basic-network-concepts">
-<h2><span class="section-number">9.2. </span>Basic network concepts<a class="headerlink" href="#basic-network-concepts" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">1.2. </span>Basic network concepts<a class="headerlink" href="#basic-network-concepts" title="Permalink to this heading">#</a></h2>
 <section id="nodes-and-edges">
-<h3><span class="section-number">9.2.1. </span>Nodes and edges<a class="headerlink" href="#nodes-and-edges" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.2.1. </span>Nodes and edges<a class="headerlink" href="#nodes-and-edges" title="Permalink to this heading">#</a></h3>
 <p>A network —or graph— is a set of nodes —or vertices— and the connections between them named links —or edges—. A network size is defined as it number of nodes <span class="math notranslate nohighlight">\(N\)</span>. Two nodes are said to be <strong>adjacent</strong> if they are connected by single edge. Mathematically, it’s usually notated as <span class="math notranslate nohighlight">\(G = (V,E)\)</span>, ie. a graph <span class="math notranslate nohighlight">\(G\)</span> is a set of vertices <span class="math notranslate nohighlight">\(V\)</span> and edges <span class="math notranslate nohighlight">\(E\)</span>.</p>
 </section>
 <section id="network-connectivity">
-<h3><span class="section-number">9.2.2. </span>Network Connectivity<a class="headerlink" href="#network-connectivity" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.2.2. </span>Network Connectivity<a class="headerlink" href="#network-connectivity" title="Permalink to this heading">#</a></h3>
 <p>The connectivity of network can be given as</p>
 <ul class="simple">
 <li><p>Adjacency matrix: a square matrix whose values (0 or 1) indicated the presence or not of edge between 2 nodes. It gives the connection configuration of the network. Each row —and each column— represents one node of the network, eg. 1st row encodes the connections of the <em>node 1</em> of the network.</p></li>
@@ -526,12 +526,12 @@ Examples of applications of network science are ecosystems, biological pathways,
 </div>
 </section>
 <section id="connected-network">
-<h3><span class="section-number">9.2.3. </span>Connected Network<a class="headerlink" href="#connected-network" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.2.3. </span>Connected Network<a class="headerlink" href="#connected-network" title="Permalink to this heading">#</a></h3>
 <p>A network is said to be <strong>connected</strong> if there exist a path between any pairs of nodes in the network. Two networks between which there is not path are said to be <strong>disjoint</strong>.</p>
 <p>A network can often be sub-divided in separated clusters, where all nodes within each cluster are directly or indirectly connected, but where no path exist between different clusters. In matrix notation these clusters could be mapped into a matrix A with a <strong>block diagonal matrix</strong> (each block corresponding to a cluster).</p>
 </section>
 <section id="directed-vs-undirected-network">
-<h3><span class="section-number">9.2.4. </span>Directed vs undirected network<a class="headerlink" href="#directed-vs-undirected-network" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.2.4. </span>Directed vs undirected network<a class="headerlink" href="#directed-vs-undirected-network" title="Permalink to this heading">#</a></h3>
 <p>A network is said to be directed if the connections between the node have directionality:</p>
 <div align="center">
 <p style="text-align:center;"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Directed_graph.svg" width="300"/>
@@ -539,30 +539,30 @@ Examples of applications of network science are ecosystems, biological pathways,
 <p>If the network is non-directed the adjacency matrix will be symmetrical.</p>
 </section>
 <section id="graphs-with-features">
-<h3><span class="section-number">9.2.5. </span>Graphs with features<a class="headerlink" href="#graphs-with-features" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.2.5. </span>Graphs with features<a class="headerlink" href="#graphs-with-features" title="Permalink to this heading">#</a></h3>
 <p>Nodes may contain features, such as activations:</p>
 <div align="center">
 <p style="text-align:center;"><img src="https://github.com/BergLab/CompNeuroBook/blob/main/notebooks/network_theory/graphfeatures.png?raw=true" width="500"/>
 </div>
 <p>In this case, we can represent the structure of the graph with the weight / adjacency <span class="math notranslate nohighlight">\(W\)</span> matrix and the features of the nodes with a vector <span class="math notranslate nohighlight">\(F\)</span>. The product <span class="math notranslate nohighlight">\(W F\)</span> represents a new feature vector representing the propagation of the features values across the network, i.e. the feature value of a node will be the sum of the features of its connected nodes weighted by the respective edge values.</p>
 <section id="features-normalisation">
-<h4><span class="section-number">9.2.5.1. </span>Features normalisation<a class="headerlink" href="#features-normalisation" title="Permalink to this heading">#</a></h4>
+<h4><span class="section-number">1.2.5.1. </span>Features normalisation<a class="headerlink" href="#features-normalisation" title="Permalink to this heading">#</a></h4>
 <p>A common practice prevent the explossion of the features of a graph is to normalise by using the <strong>degree matrix</strong> <span class="math notranslate nohighlight">\(D\)</span>: diagonal matrix that contains information about the number of edges attached to each vertex. So we get: <span class="math notranslate nohighlight">\(F_{normalised} = D^{-1} W F\)</span></p>
 </section>
 <section id="feature-activation">
-<h4><span class="section-number">9.2.5.2. </span>Feature activation<a class="headerlink" href="#feature-activation" title="Permalink to this heading">#</a></h4>
+<h4><span class="section-number">1.2.5.2. </span>Feature activation<a class="headerlink" href="#feature-activation" title="Permalink to this heading">#</a></h4>
 <p>Like in machine learning neural networks, we can apply a non-linearity <span class="math notranslate nohighlight">\(\sigma\)</span> to the output of the feature propagation:</p>
 <p><span class="math notranslate nohighlight">\(F^{'} = \sigma(D^{-1} W F )\)</span></p>
 </section>
 <section id="extra-linear-transformations">
-<h4><span class="section-number">9.2.5.3. </span>Extra Linear transformations<a class="headerlink" href="#extra-linear-transformations" title="Permalink to this heading">#</a></h4>
+<h4><span class="section-number">1.2.5.3. </span>Extra Linear transformations<a class="headerlink" href="#extra-linear-transformations" title="Permalink to this heading">#</a></h4>
 <p>Extra linear transformations —equivalent to linear layers in ANN— can be addded by simply adding an extra learnable matrix <span class="math notranslate nohighlight">\(L\)</span>. Remeber linar applications are not commutative.</p>
 <p><span class="math notranslate nohighlight">\(F^{'} = \sigma(L W D^{-1} F )\)</span></p>
 </section>
 </section>
 </section>
 <section id="using-networkx">
-<h2><span class="section-number">9.3. </span>Using NetworkX<a class="headerlink" href="#using-networkx" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">1.3. </span>Using NetworkX<a class="headerlink" href="#using-networkx" title="Permalink to this heading">#</a></h2>
 <p><a class="reference external" href="https://networkx.guide/">NetworkX</a> is a Python library for the creation, manipulation, and study of the structure, dynamics, and functions of complex networks. Check <a class="reference external" href="https://networkx.org/documentation/stable/auto_examples/index.html">the gallery</a> to get a sense of what can be done with it.</p>
 <p>Let’s start by creating and visualizing a simple graph. Notice that we do not need to create the nodes in order to add edges. When adding a edge between two nodes indices, NetworkX will add the corresponding nodes.</p>
 <div class="cell docutils container">
@@ -766,7 +766,7 @@ Examples of applications of network science are ecosystems, biological pathways,
 </div>
 </div>
 <section id="exercises">
-<h3><span class="section-number">9.3.1. </span>Exercises 🧑‍💻🔨<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.3.1. </span>Exercises 🧑‍💻🔨<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Write down the connectivity matrices of the following networks (in paper and as a numpy array):</p></li>
 </ul>
@@ -788,19 +788,19 @@ Examples of applications of network science are ecosystems, biological pathways,
 </section>
 </section>
 <section id="measures-used-to-characterise-networks">
-<h2><span class="section-number">9.4. </span>Measures used to characterise networks<a class="headerlink" href="#measures-used-to-characterise-networks" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">1.4. </span>Measures used to characterise networks<a class="headerlink" href="#measures-used-to-characterise-networks" title="Permalink to this heading">#</a></h2>
 <section id="degree-of-connectivity">
-<h3><span class="section-number">9.4.1. </span>Degree of connectivity<a class="headerlink" href="#degree-of-connectivity" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.4.1. </span>Degree of connectivity<a class="headerlink" href="#degree-of-connectivity" title="Permalink to this heading">#</a></h3>
 <p>The average degree —or connectivity—, <strong>k</strong> is the average number of edges per node. Usually we work with the average <span class="math notranslate nohighlight">\(&lt;k&gt;\)</span> and the degree distribution which is the probability P(k) that a given node have k links to the remaining N − 1 nodes.</p>
 </section>
 <section id="distance-diameter-and-shortest-path">
-<h3><span class="section-number">9.4.2. </span>Distance, diameter and shortest path<a class="headerlink" href="#distance-diameter-and-shortest-path" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.4.2. </span>Distance, diameter and shortest path<a class="headerlink" href="#distance-diameter-and-shortest-path" title="Permalink to this heading">#</a></h3>
 <p>The <strong>distance</strong> between two nodes in a network is defined as the minimal number of links that connect them.</p>
 <p>From the concept of distance, we can define, for a connected network, a <strong>diameter</strong> as the longest of all the calculated shortest paths between any two nodes. An example would be in the networks of the world’s airports, what’s the maximum number of flights you need to take to get to any airport from any airport, similarly, in biological phenomena, there must have been an evolutionary pressure to find optimal pathways for sensory processing.</p>
 <p>The <strong>average shortest-path</strong> between any two nodes of a network is a measure of efficiency of information propagation, since you want to be able to any airport as fast as possible.</p>
 </section>
 <section id="centrality">
-<h3><span class="section-number">9.4.3. </span>Centrality<a class="headerlink" href="#centrality" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.4.3. </span>Centrality<a class="headerlink" href="#centrality" title="Permalink to this heading">#</a></h3>
 <p><strong>Centrality</strong> measures try to rank the importance of the nodes in a network. There exist several ways of defining the centrality of a node, for instance, the <strong>Degree centrality</strong> of a node is its number of links.
 Another quantification of a node centrality is <em>betweenness</em>. <strong>Betweenness centrality</strong> measures the number of times a node lies on the shortest path between other nodes. We can compute it for a single node, or for the whole network as the average of all nodes betweness. This help define some nodes as hubs is the have high betweenness. <strong>Closeness centrality</strong> ranks each node based on their closeness to all other nodes in the network, ie. the node with the shortest paths to all other nodes rank higher. Which specific centrality measure is best to use depends on the aspect of the specific network we are studying.</p>
 <p>Let’s use NetworkX to compute these quantities of some networks. Let’s start by computing the degrees for every node:</p>
@@ -906,7 +906,7 @@ Average shortest path: 1.4736842105263157
 </div>
 </div>
 <section id="id1">
-<h4><span class="section-number">9.4.3.1. </span>Exercises 🧑‍💻🔨<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h4>
+<h4><span class="section-number">1.4.3.1. </span>Exercises 🧑‍💻🔨<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Use NetworkX <code class="docutils literal notranslate"><span class="pre">nx.gnp_random_graph(networkSize,</span> <span class="pre">p)</span></code> to create a random graph with different probability p and sizes and compute its degree distribution. Can you figure out the relation between the probability p and the shape of the degree distribution histogram?</p></li>
 <li><p>Make a figure where you plot the average shortest path as a function of the network size for undirected networks of sizes from 10 to 200. #Hint: create a loop generating a random network at iteration by generating random adjacency matrix with <code class="docutils literal notranslate"><span class="pre">np.random.randint(low=0,</span> <span class="pre">high=2,</span> <span class="pre">size=(networkSize,</span> <span class="pre">networkSize))</span></code>, compute its average shortest path. Is the result surprising?</p></li>
@@ -915,7 +915,7 @@ Average shortest path: 1.4736842105263157
 </section>
 </section>
 <section id="clustering-coefficient">
-<h3><span class="section-number">9.4.4. </span>Clustering coefficient<a class="headerlink" href="#clustering-coefficient" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.4.4. </span>Clustering coefficient<a class="headerlink" href="#clustering-coefficient" title="Permalink to this heading">#</a></h3>
 <p>The clustering coefficient (CC) —or cliquishness— of node represents the fraction of interconnections between neighbors of node i. It’s a measure of how much nodes in the network tend to cluster together. Eg. In a social graph it measures the proportion of your friends that are also friends with each other. The global CC of network is simply the average of the CC of all the nodes.</p>
 <div align="center">
 <p style="text-align:center;"><img src="https://github.com/BergLab/CompNeuroBook/blob/main/notebooks/network_theory/cc.png?raw=true" width="500"/>
@@ -923,7 +923,7 @@ Average shortest path: 1.4736842105263157
 <p>A large clustering coefficient (CC) indicates large locality in the sense that neighbors of a given node tend to be directly connected while if a node has low CC it means that its neighbors aren’t connected to each other, eg. high CC is a society where nearly everybody has common friends while low CC: people have friends but these friends don’t tend to know each other.</p>
 </section>
 <section id="cliques">
-<h3><span class="section-number">9.4.5. </span>Cliques<a class="headerlink" href="#cliques" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.4.5. </span>Cliques<a class="headerlink" href="#cliques" title="Permalink to this heading">#</a></h3>
 <p>A clique is set of nodes which are are all adjacent, that is, there is a direct connection between all pairs of them. You can think of a clique in a social network as a cohesive group of people that are tightly connected to each other. We can define 3-cliques, 4-cliques, etc. You can think of cliques as sub-networks of networks, eg. group of friend who they all know each others, while connections to other cliques represent people who have friends in several groups.</p>
 <p>The graph below has:</p>
 <ul class="simple">
@@ -938,7 +938,7 @@ Average shortest path: 1.4736842105263157
 <p>The 11 light blue triangles form maximal cliques. The two dark blue 4-cliques are both maximum and maximal, and the clique number of the graph is 4.</p>
 </section>
 <section id="motifs-and-motifs-analysis">
-<h3><span class="section-number">9.4.6. </span>Motifs and motifs analysis<a class="headerlink" href="#motifs-and-motifs-analysis" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.4.6. </span>Motifs and motifs analysis<a class="headerlink" href="#motifs-and-motifs-analysis" title="Permalink to this heading">#</a></h3>
 <p>Motifs are sub-graphs present in a network that are responsible for the functions of a network. Some motifs —like positive and negative feedback— are found across networks describing many phenomena. However, much more complex motifs exist. When networks are small we can try to understand the motifs present, however, when network are too big to be understood directly, we can do a <strong>motif network analysis</strong>: we create a set of random networks and compare the distribution of motifs present  in the real network vs the random ones.</p>
 <div align="center">
 <p style="text-align:center;"><img src="https://github.com/BergLab/CompNeuroBook/blob/main/notebooks/network_theory/motifs.png?raw=true" width="500"/>
@@ -994,21 +994,21 @@ Average shortest path: 1.4736842105263157
 </div>
 </div>
 <section id="exercise">
-<h4><span class="section-number">9.4.6.1. </span>Exercise 🧑‍💻🔨<a class="headerlink" href="#exercise" title="Permalink to this heading">#</a></h4>
+<h4><span class="section-number">1.4.6.1. </span>Exercise 🧑‍💻🔨<a class="headerlink" href="#exercise" title="Permalink to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Why do you think we found the value we found for the global clustering coefficient? How would you produce a network with a different global CC? Test empirically your conjectured solution by generating a network and computing its global CC.</p></li>
 </ul>
 </section>
 </section>
 <section id="scale-free-networks">
-<h3><span class="section-number">9.4.7. </span>Scale free networks<a class="headerlink" href="#scale-free-networks" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.4.7. </span>Scale free networks<a class="headerlink" href="#scale-free-networks" title="Permalink to this heading">#</a></h3>
 <p>Intuitively, a network is said to be scale-free if we zoom it to a subpart of the network it will look the same as if we zoom out. We can formalize this intuition by noting that the degree distribution <span class="math notranslate nohighlight">\(P(k)\)</span> of a scale-free network follows a power law: <span class="math notranslate nohighlight">\(P(k) \propto k^{-\gamma}\)</span>, where typically <span class="math notranslate nohighlight">\(\gamma \in [2,3]\)</span> . That is, we compute the dree of each node, create an histogram and look at the resulting distribution it will be thick-tailed (ie. decays slower than exponential).</p>
 <div align="center">
 <p style="text-align:center;"><img src="https://github.com/BergLab/CompNeuroBook/blob/main/notebooks/week5/scale-free.png?raw=true" width="500"/>
 </div>
 </section>
 <section id="small-world-networks">
-<h3><span class="section-number">9.4.8. </span>Small-world networks<a class="headerlink" href="#small-world-networks" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.4.8. </span>Small-world networks<a class="headerlink" href="#small-world-networks" title="Permalink to this heading">#</a></h3>
 <p>A network is defined as having <a class="reference external" href="https://www.nature.com/articles/30918">small world property</a>, when it is having a relatively large clustering coefficient, while still having a small diameter, mathematically this means that the mean shortest path <span class="math notranslate nohighlight">\(\mathcal{l}\)</span> between two nodes grows logarithmically with the size <span class="math notranslate nohighlight">\(N\)</span> of the network: <span class="math notranslate nohighlight">\(\mathcal{l} \propto log(N)\)</span>.  Many real world networks are found to have this combination of global accessibility (because of small diameter) and a strong localness (because of high clustering coefficient).</p>
 <br>
 <br>
@@ -1017,7 +1017,7 @@ Average shortest path: 1.4736842105263157
 </div>
 <p>Both Scale-free and small-world networks are of interest to neuroscience because they are conjectured to carry similarities to networks found in the the brain.</p>
 <section id="bonus-evaluating-the-small-worldness-of-a-network-g">
-<h4><span class="section-number">9.4.8.1. </span>Bonus: Evaluating the small-worldness of a network G<a class="headerlink" href="#bonus-evaluating-the-small-worldness-of-a-network-g" title="Permalink to this heading">#</a></h4>
+<h4><span class="section-number">1.4.8.1. </span>Bonus: Evaluating the small-worldness of a network G<a class="headerlink" href="#bonus-evaluating-the-small-worldness-of-a-network-g" title="Permalink to this heading">#</a></h4>
 <p>Two quantities are used to characterize small-world netowrks: <span class="math notranslate nohighlight">\(\sigma\)</span> and <span class="math notranslate nohighlight">\(\omega\)</span>. <span class="math notranslate nohighlight">\(\sigma\)</span> is the small-worldness coefficient.
 <span class="math notranslate nohighlight">\(\sigma = \frac{C/C_{r}}{L/L_{r}}\)</span> where <span class="math notranslate nohighlight">\(C\)</span> and <span class="math notranslate nohighlight">\(L\)</span> are respectively the average clustering coefficient and average shortest path length of the network. <span class="math notranslate nohighlight">\(C_{r}\)</span> and <span class="math notranslate nohighlight">\(L_{r}\)</span> are respectively the average clustering coefficient and average shortest path length of an equivalent random graph. A graph is commonly classified as small-world if <span class="math notranslate nohighlight">\(\sigma&gt;1\)</span>.</p>
 <p>The other way of quantifying small-worldness is to compare how much the graph topology rassambles a random network, that can be quantify with <span class="math notranslate nohighlight">\(\omega = \frac{L_{r}}{L} - \frac{C}{C_{l}}\)</span> where C and L are respectively the average clustering coefficient and average shortest path length of G. <span class="math notranslate nohighlight">\(L_{r}\)</span> is the average shortest path length of an equivalent random graph and <span class="math notranslate nohighlight">\(C_{l}\)</span> is the average clustering coefficient of an equivalent lattice graph. Negative values of <span class="math notranslate nohighlight">\(\omega\)</span> mean G is similar to a lattice whereas positive values mean G is a random graph. Values close to 0 mean that G has small-world characteristics.</p>
@@ -1122,7 +1122,7 @@ Average shortest path: 1.4736842105263157
 </div>
 </section>
 <section id="id2">
-<h4><span class="section-number">9.4.8.2. </span>Exercise 🧑‍💻🔨<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h4>
+<h4><span class="section-number">1.4.8.2. </span>Exercise 🧑‍💻🔨<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Compute the diameter, the average shortest path and the global CC for a small-worlds network and a scale free one (of the same size) and compare them. Discuss the difference and make you understand what why these quantities are different for those two network topologies.</p></li>
 </ul>
@@ -1136,7 +1136,7 @@ Average shortest path: 1.4736842105263157
 </section>
 </section>
 <section id="propagation-or-replication-in-a-network">
-<h3><span class="section-number">9.4.9. </span>Propagation -or replication- in a network<a class="headerlink" href="#propagation-or-replication-in-a-network" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.4.9. </span>Propagation -or replication- in a network<a class="headerlink" href="#propagation-or-replication-in-a-network" title="Permalink to this heading">#</a></h3>
 <p>Similarly to how we implemented the SIR Model for Spread of Disease in week 1 by using a matrix to describe the evolution of a viral infection, the adjacency matrix can be used to model <strong>propagation -or replication-</strong> in the network -like a viral infection or information propagation- where we model the state of infection of the people by a state vector <span class="math notranslate nohighlight">\(s\)</span> —a vector made of the state of each node: 0 if healthy, 1 if infected— and each propagation step of the virus can be seen as applying the adjacency matrix <span class="math notranslate nohighlight">\(M\)</span> to <span class="math notranslate nohighlight">\(s\)</span>: <span class="math notranslate nohighlight">\(s(t+1) = M s(t)\)</span>.</p>
 <p>If the diagonal is zero, it means that whichever thing is transmitted is not preserved by the node, eg. money transmission. For virus transmission for example, diagonal would be one because the virus stays in the person (at least for some time).</p>
 <p>An useful quantity to describe a propagation phenomena in a network —virus, money, information,..— is the <strong>amplification factor</strong> <span class="math notranslate nohighlight">\(A\)</span>. If a virus in a node spread to all the adjacent nodes of that node, then the amplification —Assuming transmission between all nodes is bidirectional (undirected network)— is: <span class="math notranslate nohighlight">\(A = \frac{&lt;k^{2}&gt;}{&lt;k&gt;} -1\)</span> where <k> is the average degree of connectivity.</p>
@@ -1147,12 +1147,12 @@ Average shortest path: 1.4736842105263157
 <p>A can also be used to estimate the <strong>robustness</strong> of the overall connectedness of the network against removal of a fraction f of its nodes, and hence evaluate the robustness of the network (defined as the resistance against the removal of a fraction of its nodes while preserving the propagation process it does, eg. viral propagation). This is useful therefore to know for example how many people we need to vaccinate to stop an epidemic or to build robust transportation or communication networks.</p>
 </section>
 <section id="diffusion-in-a-network">
-<h3><span class="section-number">9.4.10. </span>Diffusion in a network<a class="headerlink" href="#diffusion-in-a-network" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.4.10. </span>Diffusion in a network<a class="headerlink" href="#diffusion-in-a-network" title="Permalink to this heading">#</a></h3>
 <p>If we take the adjacency matrix and replace its non-zero values by a weight representing the strength of the connection we obtain the <strong>transfer matrix</strong> <span class="math notranslate nohighlight">\(T\)</span> (provided that the sum of weights for each node is equal to 1). The transfer matrix describe a diffusion process in a network. In a diffusion process we observed a continuous propagation of a given quantity —as opposed to the binary propagation in replication.</p>
 <p>The eigenvalues of the transfer matrix gives information about how fast the diffusion process expand/contract.</p>
 </section>
 <section id="spectral-graph-theory">
-<h3><span class="section-number">9.4.11. </span>Spectral graph theory<a class="headerlink" href="#spectral-graph-theory" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.4.11. </span>Spectral graph theory<a class="headerlink" href="#spectral-graph-theory" title="Permalink to this heading">#</a></h3>
 <p>As it is always the case when working with matrices, we can derive certain network properties from the connectivity matrix eigenspectrum, this is referred as <a class="reference external" href="https://en.wikipedia.org/wiki/Spectral_graph_theory">Spectral graph theory</a>. We won’t elaborate more on this but let us show that it is straightforward to compute the eigenvalues of a graph using NetworkX and numpy:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1216,7 +1216,7 @@ Average shortest path: 1.4736842105263157
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">8. </span>Machine Learning</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>Machine Learning</p>
       </div>
     </a>
 </div></div>
@@ -1237,46 +1237,46 @@ Average shortest path: 1.4736842105263157
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-networks">9.1. Why networks?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-network-concepts">9.2. Basic network concepts</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nodes-and-edges">9.2.1. Nodes and edges</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#network-connectivity">9.2.2. Network Connectivity</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#connected-network">9.2.3. Connected Network</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#directed-vs-undirected-network">9.2.4. Directed vs undirected network</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graphs-with-features">9.2.5. Graphs with features</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#features-normalisation">9.2.5.1. Features normalisation</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-activation">9.2.5.2. Feature activation</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#extra-linear-transformations">9.2.5.3. Extra Linear transformations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-networks">1.1. Why networks?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-network-concepts">1.2. Basic network concepts</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nodes-and-edges">1.2.1. Nodes and edges</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#network-connectivity">1.2.2. Network Connectivity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#connected-network">1.2.3. Connected Network</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#directed-vs-undirected-network">1.2.4. Directed vs undirected network</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graphs-with-features">1.2.5. Graphs with features</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#features-normalisation">1.2.5.1. Features normalisation</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-activation">1.2.5.2. Feature activation</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#extra-linear-transformations">1.2.5.3. Extra Linear transformations</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-networkx">9.3. Using NetworkX</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">9.3.1. Exercises 🧑‍💻🔨</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-networkx">1.3. Using NetworkX</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">1.3.1. Exercises 🧑‍💻🔨</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#measures-used-to-characterise-networks">9.4. Measures used to characterise networks</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#degree-of-connectivity">9.4.1. Degree of connectivity</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distance-diameter-and-shortest-path">9.4.2. Distance, diameter and shortest path</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#centrality">9.4.3. Centrality</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">9.4.3.1. Exercises 🧑‍💻🔨</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#measures-used-to-characterise-networks">1.4. Measures used to characterise networks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#degree-of-connectivity">1.4.1. Degree of connectivity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distance-diameter-and-shortest-path">1.4.2. Distance, diameter and shortest path</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#centrality">1.4.3. Centrality</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1.4.3.1. Exercises 🧑‍💻🔨</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clustering-coefficient">9.4.4. Clustering coefficient</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cliques">9.4.5. Cliques</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#motifs-and-motifs-analysis">9.4.6. Motifs and motifs analysis</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">9.4.6.1. Exercise 🧑‍💻🔨</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clustering-coefficient">1.4.4. Clustering coefficient</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cliques">1.4.5. Cliques</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#motifs-and-motifs-analysis">1.4.6. Motifs and motifs analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">1.4.6.1. Exercise 🧑‍💻🔨</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scale-free-networks">9.4.7. Scale free networks</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#small-world-networks">9.4.8. Small-world networks</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-evaluating-the-small-worldness-of-a-network-g">9.4.8.1. Bonus: Evaluating the small-worldness of a network G</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">9.4.8.2. Exercise 🧑‍💻🔨</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scale-free-networks">1.4.7. Scale free networks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#small-world-networks">1.4.8. Small-world networks</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-evaluating-the-small-worldness-of-a-network-g">1.4.8.1. Bonus: Evaluating the small-worldness of a network G</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1.4.8.2. Exercise 🧑‍💻🔨</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#propagation-or-replication-in-a-network">9.4.9. Propagation -or replication- in a network</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#diffusion-in-a-network">9.4.10. Diffusion in a network</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spectral-graph-theory">9.4.11. Spectral graph theory</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#propagation-or-replication-in-a-network">1.4.9. Propagation -or replication- in a network</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#diffusion-in-a-network">1.4.10. Diffusion in a network</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spectral-graph-theory">1.4.11. Spectral graph theory</a></li>
 </ul>
 </li>
 </ul>
