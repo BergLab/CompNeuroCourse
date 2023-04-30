@@ -6,7 +6,7 @@ The course will consists of three types of classes: **Lectures** where you learn
 
   * The **lectures** will follow a hybrid flipped classroom structure: we ask you to go through the supporting materials that we link on each chapter —typically videos— before coming to class. These materials are meant for you to refresh some notions of build an intuitions about the concepts, the corresponding lecture will build on them.
 
-  * The **coding workshops**: here you will have the chance of putting the concepts introduced in the lecture into practice by building models, analysis data and running simulations. The workshop classes will follow a flipped classroom structure: we will work together to solve the week's problems (we will give you some time to solve an exercise and then go through it together). Note that the exam assignments will be variations of the problems solved during the workshops.
+  * The **coding workshops**: here you will have the chance of putting the concepts introduced in the lecture into practice by building models, analysis data and running simulations. The workshop classes will follow a flipped classroom structure: we will work together to solve the week's problems (we will give you some time to solve an exercise and then go through it together). <!-- * Note that the exam assignments will be variations of the problems solved during the workshops. -->
 
   * The **invited talks**: these are meant for you to get a sense of current research being done in the field. Simply relax and enjoy.  
 
@@ -20,7 +20,7 @@ If you have never coded or used python before (or it's been a while), we strongl
 
 It's made of 7 lessons covering all you need to know about python to complete our course. Each lesson consist of a **tutorial** and some simple **exercises**. The exercises are hosted online as notebooks so you can do them without installing anything on your computer. 
 
-Before the course starts, you will need to open a [GitHub account](https://github.com/) and install [VSCode](https://code.visualstudio.com/download) as we will use to for live coding collaboration during the workshops.
+<!-- Before the course starts, you will need to open a [GitHub account](https://github.com/) and install [VSCode](https://code.visualstudio.com/download) as we will use to for live coding collaboration during the workshops. -->
 
 ### Set-up for coding
 
