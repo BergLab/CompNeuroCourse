@@ -5,10 +5,10 @@
 format: jb-book
 root: intro
 parts:
-- caption: Coding tools for researchers 
-  numbered: false
-  chapters:
-  - file: notebooks/coding_intro/codingtoolsforresearch
+# - caption: Coding tools for researchers 
+#   numbered: false
+#   chapters:
+#   - file: notebooks/coding_intro/codingtoolsforresearch
 - caption: Math review with Python
   numbered: false
   chapters:
