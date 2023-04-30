@@ -18,7 +18,7 @@ parts:
 - caption: Chapter 1. Introduction to modeling in neuroscience
   numbered: true
   chapters:
-  - file: notebooks/modelling_intro/a
+  - file: notebooks/modelling_intro/week0-Intro-RWB
 - caption: Chapter 2. Differential equations and neuron models
   numbered: true
   chapters:
