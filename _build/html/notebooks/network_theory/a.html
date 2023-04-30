@@ -181,6 +181,21 @@ const thebe_selector_output = ".output, .cell_output"
    1. Simulating neural populations
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../simulation_neuralsystems/a.html">
+   2. Introduction to Brian part 1: Neurons
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../simulation_neuralsystems/b.html">
+   3. Introduction to Brian part 2: Synapses
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../simulation_neuralsystems/c.html">
+   4. Introduction to Brian part 3: Simulations
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -933,16 +948,16 @@ Examples of applications of network science are ecosystems, biological pathways,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0. 1. 1. 1. 0. 1. 0. 1. 0. 0.]
- [1. 0. 0. 1. 1. 0. 0. 0. 0. 0.]
- [1. 0. 0. 1. 0. 0. 0. 0. 0. 0.]
- [1. 1. 1. 0. 1. 1. 0. 0. 1. 0.]
- [0. 1. 0. 1. 0. 0. 0. 0. 1. 0.]
- [1. 0. 0. 1. 0. 0. 1. 0. 0. 0.]
- [0. 0. 0. 0. 0. 1. 0. 1. 1. 0.]
- [1. 0. 0. 0. 0. 0. 1. 0. 0. 0.]
- [0. 0. 0. 1. 1. 0. 1. 0. 0. 1.]
- [0. 0. 0. 0. 0. 0. 0. 0. 1. 0.]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1. 1. 0. 0. 1. 1. 0. 0. 1. 0.]
+ [1. 0. 0. 0. 0. 0. 1. 0. 1. 0.]
+ [0. 0. 0. 1. 1. 1. 0. 0. 0. 1.]
+ [0. 0. 1. 0. 1. 0. 0. 0. 1. 1.]
+ [1. 0. 1. 1. 0. 1. 0. 0. 0. 0.]
+ [1. 0. 1. 0. 1. 1. 0. 0. 0. 0.]
+ [0. 1. 0. 0. 0. 0. 0. 1. 1. 0.]
+ [0. 0. 0. 0. 0. 0. 1. 0. 0. 0.]
+ [1. 1. 0. 1. 0. 0. 1. 0. 0. 0.]
+ [0. 0. 1. 1. 0. 0. 0. 0. 0. 0.]]
 </pre></div>
 </div>
 </div>
@@ -970,13 +985,13 @@ Examples of applications of network science are ecosystems, biological pathways,
 <img alt="../../_images/a_13_0.png" src="../../_images/a_13_0.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Adjacency matrix:
 
-[[0 0 0 0 0 0 0]
- [0 0 0 1 0 1 0]
- [0 0 0 1 0 1 1]
- [1 1 0 0 1 1 0]
- [1 0 0 0 0 0 0]
- [1 1 0 1 1 1 1]
- [1 0 0 0 0 0 0]]
+[[1 0 1 0 0 0 0]
+ [0 0 0 1 0 0 1]
+ [0 0 1 1 0 1 1]
+ [1 1 0 1 1 1 0]
+ [0 0 0 1 0 0 0]
+ [1 0 1 0 1 1 1]
+ [1 0 0 1 0 0 0]]
 </pre></div>
 </div>
 </div>
@@ -1001,7 +1016,7 @@ Examples of applications of network science are ecosystems, biological pathways,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Graph with 10 nodes and 16 edges
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Graph with 10 nodes and 18 edges
 </pre></div>
 </div>
 </div>
@@ -1031,7 +1046,7 @@ Examples of applications of network science are ecosystems, biological pathways,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/jw/bb3wy2wj6bv8jf69svd8cqdc0000gn/T/ipykernel_7818/2232413052.py:15: MatplotlibDeprecationWarning: Unable to determine Axes to steal space for Colorbar. Using gca(), but will raise in the future. Either provide the *cax* argument to use as the Axes for the Colorbar, provide the *ax* argument to steal space from it, or add *mappable* to an Axes.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/jw/bb3wy2wj6bv8jf69svd8cqdc0000gn/T/ipykernel_8458/2232413052.py:15: MatplotlibDeprecationWarning: Unable to determine Axes to steal space for Colorbar. Using gca(), but will raise in the future. Either provide the *cax* argument to use as the Axes for the Colorbar, provide the *ax* argument to steal space from it, or add *mappable* to an Axes.
   plt.colorbar(plt.cm.ScalarMappable(cmap=plt.cm.viridis, norm=plt.Normalize(vmin = edge_colors.min(), vmax=edge_colors.max())));
 </pre></div>
 </div>
@@ -1093,27 +1108,27 @@ Another quantification of a node centrality is <em>betweenness</em>. <strong>Bet
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(0, 8), (1, 9), (2, 8), (3, 11), (4, 13), (5, 9), (6, 5), (7, 7), (8, 10), (9, 10), (10, 9), (11, 7), (12, 7), (13, 6), (14, 6), (15, 12), (16, 14), (17, 10), (18, 9), (19, 12)]
-Node 0 has degree 8
-Node 1 has degree 9
-Node 2 has degree 8
-Node 3 has degree 11
-Node 4 has degree 13
-Node 5 has degree 9
-Node 6 has degree 5
-Node 7 has degree 7
-Node 8 has degree 10
-Node 9 has degree 10
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(0, 7), (1, 12), (2, 4), (3, 9), (4, 8), (5, 7), (6, 12), (7, 9), (8, 9), (9, 14), (10, 9), (11, 5), (12, 10), (13, 7), (14, 7), (15, 12), (16, 9), (17, 7), (18, 12), (19, 11)]
+Node 0 has degree 7
+Node 1 has degree 12
+Node 2 has degree 4
+Node 3 has degree 9
+Node 4 has degree 8
+Node 5 has degree 7
+Node 6 has degree 12
+Node 7 has degree 9
+Node 8 has degree 9
+Node 9 has degree 14
 Node 10 has degree 9
-Node 11 has degree 7
-Node 12 has degree 7
-Node 13 has degree 6
-Node 14 has degree 6
+Node 11 has degree 5
+Node 12 has degree 10
+Node 13 has degree 7
+Node 14 has degree 7
 Node 15 has degree 12
-Node 16 has degree 14
-Node 17 has degree 10
-Node 18 has degree 9
-Node 19 has degree 12
+Node 16 has degree 9
+Node 17 has degree 7
+Node 18 has degree 12
+Node 19 has degree 11
 </pre></div>
 </div>
 </div>
@@ -1166,11 +1181,11 @@ Node 19 has degree 12
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Graph with 20 nodes and 91 edges
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Graph with 20 nodes and 90 edges
 Number of nodes: 20
-Number of edges: 91
+Number of edges: 90
 Network diameter: 3
-Average shortest path: 1.5315789473684212
+Average shortest path: 1.5421052631578946
 </pre></div>
 </div>
 </div>
@@ -1225,26 +1240,26 @@ Average shortest path: 1.5315789473684212
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{0: 0.5,
- 1: 0.47619047619047616,
- 2: 0.4,
- 3: 0.4,
- 4: 0.5,
- 5: 0.5833333333333334,
- 6: 0.48717948717948717,
- 7: 0.45454545454545453,
- 8: 0.5454545454545454,
- 9: 0.5555555555555556,
- 10: 0.5,
- 11: 0.6666666666666666,
- 12: 0.4696969696969697,
- 13: 0.5454545454545454,
- 14: 0.47619047619047616,
- 15: 0.6444444444444445,
- 16: 0.5,
- 17: 0.6428571428571429,
- 18: 0.4722222222222222,
- 19: 0.5555555555555556}
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{0: 0.5277777777777778,
+ 1: 0.5555555555555556,
+ 2: 0.4166666666666667,
+ 3: 0.5333333333333333,
+ 4: 0.5555555555555556,
+ 5: 0.5,
+ 6: 0.5277777777777778,
+ 7: 0.5555555555555556,
+ 8: 0.4909090909090909,
+ 9: 0.36363636363636365,
+ 10: 0.4888888888888889,
+ 11: 0.5,
+ 12: 0.4642857142857143,
+ 13: 0.6,
+ 14: 0.6388888888888888,
+ 15: 0.5,
+ 16: 0.5714285714285714,
+ 17: 0.44871794871794873,
+ 18: 0.45454545454545453,
+ 19: 0.5333333333333333}
 </pre></div>
 </div>
 </div>
@@ -1258,7 +1273,7 @@ Average shortest path: 1.5315789473684212
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The global CC of the network is 0.5187673437673437
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The global CC of the network is 0.5113428238428239
 </pre></div>
 </div>
 </div>
@@ -1352,7 +1367,7 @@ Average shortest path: 1.5315789473684212
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Omega of the network is -0.2634031198686372 and it took 15.336195945739746 seconds to compute it
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Omega of the network is -0.16194727186104085 and it took 15.501545906066895 seconds to compute it
 </pre></div>
 </div>
 </div>
@@ -1410,49 +1425,25 @@ Average shortest path: 1.5315789473684212
 <span class="g g-Whitespace">    </span><span class="mi">109</span>     <span class="n">G</span><span class="o">.</span><span class="n">remove_edge</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">110</span>     <span class="n">G</span><span class="o">.</span><span class="n">remove_edge</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
 
-<span class="nn">File ~/.virtualenvs/p39/lib/python3.9/site-packages/networkx/algorithms/connectivity/connectivity.py:645,</span> in <span class="ni">local_edge_connectivity</span><span class="nt">(G, s, t, flow_func, auxiliary, residual, cutoff)</span>
-<span class="g g-Whitespace">    </span><span class="mi">642</span> <span class="k">elif</span> <span class="n">flow_func</span> <span class="ow">is</span> <span class="n">boykov_kolmogorov</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">643</span>     <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;cutoff&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">cutoff</span>
-<span class="ne">--&gt; </span><span class="mi">645</span> <span class="k">return</span> <span class="n">nx</span><span class="o">.</span><span class="n">maximum_flow_value</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="nn">File ~/.virtualenvs/p39/lib/python3.9/site-packages/networkx/algorithms/connectivity/connectivity.py:630,</span> in <span class="ni">local_edge_connectivity</span><span class="nt">(G, s, t, flow_func, auxiliary, residual, cutoff)</span>
+<span class="g g-Whitespace">    </span><span class="mi">627</span>     <span class="n">flow_func</span> <span class="o">=</span> <span class="n">default_flow_func</span>
+<span class="g g-Whitespace">    </span><span class="mi">629</span> <span class="k">if</span> <span class="n">auxiliary</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">630</span>     <span class="n">H</span> <span class="o">=</span> <span class="n">build_auxiliary_edge_connectivity</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">631</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">632</span>     <span class="n">H</span> <span class="o">=</span> <span class="n">auxiliary</span>
 
-<span class="nn">File ~/.virtualenvs/p39/lib/python3.9/site-packages/networkx/algorithms/flow/maxflow.py:299,</span> in <span class="ni">maximum_flow_value</span><span class="nt">(flowG, _s, _t, capacity, flow_func, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">296</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">callable</span><span class="p">(</span><span class="n">flow_func</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">297</span>     <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">NetworkXError</span><span class="p">(</span><span class="s2">&quot;flow_func has to be callable.&quot;</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">299</span> <span class="n">R</span> <span class="o">=</span> <span class="n">flow_func</span><span class="p">(</span><span class="n">flowG</span><span class="p">,</span> <span class="n">_s</span><span class="p">,</span> <span class="n">_t</span><span class="p">,</span> <span class="n">capacity</span><span class="o">=</span><span class="n">capacity</span><span class="p">,</span> <span class="n">value_only</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">301</span> <span class="k">return</span> <span class="n">R</span><span class="o">.</span><span class="n">graph</span><span class="p">[</span><span class="s2">&quot;flow_value&quot;</span><span class="p">]</span>
+<span class="nn">File ~/.virtualenvs/p39/lib/python3.9/site-packages/networkx/algorithms/connectivity/utils.py:84,</span> in <span class="ni">build_auxiliary_edge_connectivity</span><span class="nt">(G)</span>
+<span class="g g-Whitespace">     </span><span class="mi">82</span> <span class="n">H</span><span class="o">.</span><span class="n">add_nodes_from</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">())</span>
+<span class="g g-Whitespace">     </span><span class="mi">83</span> <span class="k">for</span> <span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">():</span>
+<span class="ne">---&gt; </span><span class="mi">84</span>     <span class="n">H</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">([(</span><span class="n">source</span><span class="p">,</span> <span class="n">target</span><span class="p">),</span> <span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="n">source</span><span class="p">)],</span> <span class="n">capacity</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">85</span> <span class="k">return</span> <span class="n">H</span>
 
-<span class="nn">File ~/.virtualenvs/p39/lib/python3.9/site-packages/networkx/algorithms/flow/edmondskarp.py:237,</span> in <span class="ni">edmonds_karp</span><span class="nt">(G, s, t, capacity, residual, value_only, cutoff)</span>
-<span class="g g-Whitespace">    </span><span class="mi">120</span> <span class="k">def</span> <span class="nf">edmonds_karp</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">121</span>     <span class="n">G</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">capacity</span><span class="o">=</span><span class="s2">&quot;capacity&quot;</span><span class="p">,</span> <span class="n">residual</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">value_only</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">cutoff</span><span class="o">=</span><span class="kc">None</span>
-<span class="g g-Whitespace">    </span><span class="mi">122</span> <span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">123</span>     <span class="sd">&quot;&quot;&quot;Find a maximum single-commodity flow using the Edmonds-Karp algorithm.</span>
-<span class="g g-Whitespace">    </span><span class="mi">124</span><span class="sd"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">125</span><span class="sd">     This function returns the residual network resulting after computing</span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">    </span><span class="mi">235</span><span class="sd"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">236</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">237</span>     <span class="n">R</span> <span class="o">=</span> <span class="n">edmonds_karp_impl</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">capacity</span><span class="p">,</span> <span class="n">residual</span><span class="p">,</span> <span class="n">cutoff</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">238</span>     <span class="n">R</span><span class="o">.</span><span class="n">graph</span><span class="p">[</span><span class="s2">&quot;algorithm&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;edmonds_karp&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">239</span>     <span class="k">return</span> <span class="n">R</span>
-
-<span class="nn">File ~/.virtualenvs/p39/lib/python3.9/site-packages/networkx/algorithms/flow/edmondskarp.py:110,</span> in <span class="ni">edmonds_karp_impl</span><span class="nt">(G, s, t, capacity, residual, cutoff)</span>
-<span class="g g-Whitespace">    </span><span class="mi">108</span> <span class="c1"># Initialize/reset the residual network.</span>
-<span class="g g-Whitespace">    </span><span class="mi">109</span> <span class="k">for</span> <span class="n">u</span> <span class="ow">in</span> <span class="n">R</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">110</span>     <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">R</span><span class="p">[</span><span class="n">u</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
-<span class="g g-Whitespace">    </span><span class="mi">111</span>         <span class="n">e</span><span class="p">[</span><span class="s2">&quot;flow&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="g g-Whitespace">    </span><span class="mi">113</span> <span class="k">if</span> <span class="n">cutoff</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-
-<span class="nn">File /usr/local/Cellar/python@3.9/3.9.16/Frameworks/Python.framework/Versions/3.9/lib/python3.9/_collections_abc.py:870,</span> in <span class="ni">ValuesView.__iter__</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">868</span> <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">869</span>     <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mapping</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">870</span>         <span class="k">yield</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mapping</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
-
-<span class="nn">File ~/.virtualenvs/p39/lib/python3.9/site-packages/networkx/classes/coreviews.py:52,</span> in <span class="ni">AtlasView.__getitem__</span><span class="nt">(self, key)</span>
-<span class="g g-Whitespace">     </span><span class="mi">49</span> <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="g g-Whitespace">     </span><span class="mi">50</span>     <span class="k">return</span> <span class="nb">iter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_atlas</span><span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">52</span> <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
-<span class="g g-Whitespace">     </span><span class="mi">53</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_atlas</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
-<span class="g g-Whitespace">     </span><span class="mi">55</span> <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="nn">File ~/.virtualenvs/p39/lib/python3.9/site-packages/networkx/classes/digraph.py:789,</span> in <span class="ni">DiGraph.add_edges_from</span><span class="nt">(self, ebunch_to_add, **attr)</span>
+<span class="g g-Whitespace">    </span><span class="mi">787</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_pred</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">adjlist_inner_dict_factory</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">788</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_node</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">node_attr_dict_factory</span><span class="p">()</span>
+<span class="ne">--&gt; </span><span class="mi">789</span> <span class="n">datadict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_adj</span><span class="p">[</span><span class="n">u</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">edge_attr_dict_factory</span><span class="p">())</span>
+<span class="g g-Whitespace">    </span><span class="mi">790</span> <span class="n">datadict</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">attr</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">791</span> <span class="n">datadict</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">dd</span><span class="p">)</span>
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>

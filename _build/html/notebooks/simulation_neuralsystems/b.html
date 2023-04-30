@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>2. Introduction to Brian part 2: Synapses &#8212; Computational Neuroscience</title>
+    <title>3. Introduction to Brian part 2: Synapses &#8212; Computational Neuroscience</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -59,8 +59,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="3. Introduction to Brian part 3: Simulations" href="c.html" />
-    <link rel="prev" title="1. Introduction to Brian part 1: Neurons" href="a.html" />
+    <link rel="next" title="4. Introduction to Brian part 3: Simulations" href="c.html" />
+    <link rel="prev" title="2. Introduction to Brian part 1: Neurons" href="a.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -122,18 +122,6 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Coding tools for researchers
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../coding_intro/codingtoolsforresearch.html">
-   First things first
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
   Math review with Python
  </span>
 </p>
@@ -161,7 +149,7 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../modelling_intro/a.html">
+  <a class="reference internal" href="../modelling_intro/week0-Intro-RWB.html">
    1. What is computational neuroscience?
   </a>
  </li>
@@ -185,23 +173,28 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Chapter 3. Simulation of neural population
+  Chapter 3. Simulating neural population
  </span>
 </p>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
+  <a class="reference internal" href="neuralsimulation_intro.html">
+   1. Simulating neural populations
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="a.html">
-   1. Introduction to Brian part 1: Neurons
+   2. Introduction to Brian part 1: Neurons
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   2. Introduction to Brian part 2: Synapses
+   3. Introduction to Brian part 2: Synapses
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="c.html">
-   3. Introduction to Brian part 3: Simulations
+   4. Introduction to Brian part 3: Simulations
   </a>
  </li>
 </ul>
@@ -458,44 +451,44 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#the-simplest-synapse">
-   2.1. The simplest Synapse
+   3.1. The simplest Synapse
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#adding-a-weight">
-   2.2. Adding a weight
+   3.2. Adding a weight
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exercise">
-     2.2.1. Exercise
+     3.2.1. Exercise
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#more-complex-connectivity">
-   2.3. More complex connectivity
+   3.3. More complex connectivity
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#creating-synapses-via-weight-matrix">
-   2.4. Creating synapses via weight matrix
+   3.4. Creating synapses via weight matrix
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id1">
-     2.4.1. Exercise
+     3.4.1. Exercise
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#bonus-exercises">
-       2.4.1.1. Bonus exercises
+       3.4.1.1. Bonus exercises
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#bonus-exercise-2-simulation-of-a-balance-network">
-       2.4.1.2. Bonus exercise 2: Simulation of a balance network
+       3.4.1.2. Bonus exercise 2: Simulation of a balance network
       </a>
      </li>
     </ul>
@@ -504,12 +497,12 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#bonus-content-introducing-a-delay">
-   2.5. Bonus content: Introducing a delay
+   3.5. Bonus content: Introducing a delay
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#bonus-content-more-complex-synapse-models-stdp">
-   2.6. Bonus content: More complex synapse models: STDP
+   3.6. Bonus content: More complex synapse models: STDP
   </a>
  </li>
 </ul>
@@ -533,44 +526,44 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#the-simplest-synapse">
-   2.1. The simplest Synapse
+   3.1. The simplest Synapse
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#adding-a-weight">
-   2.2. Adding a weight
+   3.2. Adding a weight
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exercise">
-     2.2.1. Exercise
+     3.2.1. Exercise
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#more-complex-connectivity">
-   2.3. More complex connectivity
+   3.3. More complex connectivity
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#creating-synapses-via-weight-matrix">
-   2.4. Creating synapses via weight matrix
+   3.4. Creating synapses via weight matrix
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id1">
-     2.4.1. Exercise
+     3.4.1. Exercise
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#bonus-exercises">
-       2.4.1.1. Bonus exercises
+       3.4.1.1. Bonus exercises
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#bonus-exercise-2-simulation-of-a-balance-network">
-       2.4.1.2. Bonus exercise 2: Simulation of a balance network
+       3.4.1.2. Bonus exercise 2: Simulation of a balance network
       </a>
      </li>
     </ul>
@@ -579,12 +572,12 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#bonus-content-introducing-a-delay">
-   2.5. Bonus content: Introducing a delay
+   3.5. Bonus content: Introducing a delay
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#bonus-content-more-complex-synapse-models-stdp">
-   2.6. Bonus content: More complex synapse models: STDP
+   3.6. Bonus content: More complex synapse models: STDP
   </a>
  </li>
 </ul>
@@ -598,7 +591,7 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-brian-part-2-synapses">
-<h1><span class="section-number">2. </span>Introduction to Brian part 2: Synapses<a class="headerlink" href="#introduction-to-brian-part-2-synapses" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">3. </span>Introduction to Brian part 2: Synapses<a class="headerlink" href="#introduction-to-brian-part-2-synapses" title="Permalink to this heading">#</a></h1>
 <p><em>Credit: The first three notebooks from week3 are part of the <span class="xref myst">Brian2 documentation</span></em> with minor changes.</p>
 <p>If you haven’t yet read part 1: Neurons, go read that now.</p>
 <p>As before we start by importing the Brian package and setting up matplotlib for IPython:</p>
@@ -612,16 +605,16 @@ title="Print to PDF"
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: brian2 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (2.5.1)
 Requirement already satisfied: numpy&gt;=1.17 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from brian2) (1.23.5)
-Requirement already satisfied: jinja2&gt;=2.7 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from brian2) (3.1.2)
-Requirement already satisfied: pyparsing in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from brian2) (3.0.7)
+Requirement already satisfied: sympy&gt;=1.2 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from brian2) (1.10.1)
 Requirement already satisfied: cython&gt;=0.29 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from brian2) (0.29.30)
 Requirement already satisfied: setuptools&gt;=24.2 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from brian2) (60.10.0)
-Requirement already satisfied: sympy&gt;=1.2 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from brian2) (1.10.1)
+Requirement already satisfied: pyparsing in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from brian2) (3.0.7)
+Requirement already satisfied: jinja2&gt;=2.7 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from brian2) (3.1.2)
 Requirement already satisfied: MarkupSafe&gt;=2.0 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from jinja2&gt;=2.7-&gt;brian2) (2.1.1)
 Requirement already satisfied: mpmath&gt;=0.19 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from sympy&gt;=1.2-&gt;brian2) (1.2.1)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">WARNING: You are using pip version 22.0.4; however, version 23.0.1 is available.</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">WARNING: You are using pip version 22.0.4; however, version 23.1.2 is available.</span>
 <span class=" -Color -Color-Yellow">You should consider upgrading via the &#39;/Users/enaj/.virtualenvs/p39/bin/python3.9 -m pip install --upgrade pip&#39; command.</span>
 
 </pre></div>
@@ -629,7 +622,7 @@ Requirement already satisfied: mpmath&gt;=0.19 in /Users/enaj/.virtualenvs/p39/l
 </div>
 </div>
 <section id="the-simplest-synapse">
-<h2><span class="section-number">2.1. </span>The simplest Synapse<a class="headerlink" href="#the-simplest-synapse" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">3.1. </span>The simplest Synapse<a class="headerlink" href="#the-simplest-synapse" title="Permalink to this heading">#</a></h2>
 <p>Once you have some neurons, the next step is to connect them up via synapses. We’ll start out with doing the simplest possible type of synapse that causes an instantaneous change in a variable after a spike.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -668,7 +661,7 @@ Requirement already satisfied: mpmath&gt;=0.19 in /Users/enaj/.virtualenvs/p39/l
 <p>However, at this point we have only defined the synapse model, we haven’t actually created any synapses. The next line <code class="docutils literal notranslate"><span class="pre">S.connect(i=0,</span> <span class="pre">j=1)</span></code> creates a synapse from neuron 0 to neuron 1.</p>
 </section>
 <section id="adding-a-weight">
-<h2><span class="section-number">2.2. </span>Adding a weight<a class="headerlink" href="#adding-a-weight" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">3.2. </span>Adding a weight<a class="headerlink" href="#adding-a-weight" title="Permalink to this heading">#</a></h2>
 <p>In the previous section, we hard coded the weight of the synapse to be the value 0.2 by indicating <code class="docutils literal notranslate"><span class="pre">on_pre='v_post</span> <span class="pre">+=</span> <span class="pre">0.2'</span></code>, but often we would to allow this to be different for different synapses. We do that by introducing synapse equations, we use tha argument <code class="docutils literal notranslate"> <span class="pre">on_pre='v_post</span> <span class="pre">+=</span> <span class="pre">w'</span></code> in the synapses model and then specify the synaptic values values <span class="math notranslate nohighlight">\(w\)</span>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -706,14 +699,14 @@ Requirement already satisfied: mpmath&gt;=0.19 in /Users/enaj/.virtualenvs/p39/l
 </div>
 <p>This example behaves very similarly to the previous example, but now there’s a synaptic weight variable <code class="docutils literal notranslate"><span class="pre">w</span></code>. The string <code class="docutils literal notranslate"><span class="pre">'w</span> <span class="pre">:</span> <span class="pre">1'</span></code> is an equation string, precisely the same as for neurons, that defines a single dimensionless parameter <code class="docutils literal notranslate"><span class="pre">w</span></code>. We changed the behaviour on a spike to <code class="docutils literal notranslate"><span class="pre">on_pre='v_post</span> <span class="pre">+=</span> <span class="pre">w'</span></code> now, so that each synapse can behave differently depending on the value of <code class="docutils literal notranslate"><span class="pre">w</span></code>. To illustrate this, we’ve made a third neuron which behaves precisely the same as the second neuron, and connected neuron 0 to both neurons 1 and 2. We’ve also set the weights via <code class="docutils literal notranslate"><span class="pre">S.w</span> <span class="pre">=</span> <span class="pre">'j*0.2'</span></code>. When <code class="docutils literal notranslate"><span class="pre">i</span></code> and <code class="docutils literal notranslate"><span class="pre">j</span></code> occur in the context of synapses, <code class="docutils literal notranslate"><span class="pre">i</span></code> refers to the source neuron index, and <code class="docutils literal notranslate"><span class="pre">j</span></code> to the target neuron index. So this will give a synaptic connection from 0 to 1 with weight <code class="docutils literal notranslate"><span class="pre">0.2=0.2*1</span></code> and from 0 to 2 with weight <code class="docutils literal notranslate"><span class="pre">0.4=0.2*2</span></code>.</p>
 <section id="exercise">
-<h3><span class="section-number">2.2.1. </span>Exercise<a class="headerlink" href="#exercise" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">3.2.1. </span>Exercise<a class="headerlink" href="#exercise" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Comment out the lines defined the synapses and re-run the simulation. How does this affect the resulting activity of the population?</p></li>
 </ul>
 </section>
 </section>
 <section id="more-complex-connectivity">
-<h2><span class="section-number">2.3. </span>More complex connectivity<a class="headerlink" href="#more-complex-connectivity" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">3.3. </span>More complex connectivity<a class="headerlink" href="#more-complex-connectivity" title="Permalink to this heading">#</a></h2>
 <p>So far, we specified the synaptic connectivity explicitly, but for larger networks this isn’t usually possible. For that, we usually want to specify some condition.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -755,7 +748,7 @@ Requirement already satisfied: mpmath&gt;=0.19 in /Users/enaj/.virtualenvs/p39/l
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/b_14_0.png" src="../../_images/b_14_0.png" />
+<img alt="../../_images/b_14_01.png" src="../../_images/b_14_01.png" />
 </div>
 </div>
 <p>There are two plots here. On the left hand side, you see a vertical line of circles indicating source neurons on the left, and a vertical line indicating target neurons on the right, and a line between two neurons that have a synapse. On the right hand side is another way of visualising the same thing. Here each black dot is a synapse, with x value the source neuron index, and y value the target neuron index.</p>
@@ -801,7 +794,7 @@ Requirement already satisfied: mpmath&gt;=0.19 in /Users/enaj/.virtualenvs/p39/l
 </div>
 </section>
 <section id="creating-synapses-via-weight-matrix">
-<h2><span class="section-number">2.4. </span>Creating synapses via weight matrix<a class="headerlink" href="#creating-synapses-via-weight-matrix" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">3.4. </span>Creating synapses via weight matrix<a class="headerlink" href="#creating-synapses-via-weight-matrix" title="Permalink to this heading">#</a></h2>
 <p>Another option to define the synapses of a network is explicitly providing a weight matrix.</p>
 <p>We start by sampling a random connectivity matrix:</p>
 <div class="cell docutils container">
@@ -812,36 +805,36 @@ Requirement already satisfied: mpmath&gt;=0.19 in /Users/enaj/.virtualenvs/p39/l
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[-7.40528076e-04  5.90697006e-03 -6.48276158e-03  8.46134038e-03
-  -1.69695570e-03  8.67935619e-03 -4.66550388e-03  3.36320809e-03
-   7.57921261e-03 -3.22962780e-05]
- [-3.84939250e-03  2.91867135e-03  1.60339626e-03  4.40399219e-03
-  -8.88948546e-03 -2.26259339e-03  4.37715850e-03 -8.50429410e-03
-  -1.36023366e-03 -6.95185125e-03]
- [ 8.34759896e-03 -8.75299325e-03  7.79980240e-03 -3.65689661e-03
-  -8.45169086e-03 -8.84154920e-03  1.45194939e-04  8.72351919e-03
-  -4.28096233e-03  4.88355903e-03]
- [ 3.89370853e-03 -4.72470521e-03 -9.14620730e-03 -6.42405100e-03
-  -3.97234425e-03  2.40633786e-03 -1.38228969e-03  3.17249987e-03
-  -7.18369119e-03  6.41153492e-03]
- [-9.94521201e-03 -7.30919783e-03  9.14232373e-03  6.08738853e-03
-  -5.04702910e-03  2.34875182e-03 -3.58432498e-03  7.55012266e-03
-  -8.69692700e-03  7.84371656e-03]
- [ 1.44646858e-03  5.29119923e-04 -3.87290031e-03  4.80978265e-03
-  -1.41545646e-03  8.46889780e-03  3.98876642e-04 -6.78915910e-03
-  -5.05758640e-03 -3.64774175e-03]
- [ 1.48651308e-03  7.74935913e-03  4.06070345e-03 -6.22776632e-03
-  -9.34869315e-03 -6.89828556e-03 -3.97326726e-03 -8.03112206e-03
-   1.57090882e-03  4.41684012e-03]
- [-2.13098850e-03 -3.01359712e-03 -4.21585929e-03 -4.43493008e-03
-   8.50172636e-03  5.44583444e-04  1.21236937e-03 -6.99211800e-03
-  -9.56097739e-03  4.39119127e-03]
- [ 4.86809205e-03 -9.40928940e-03  1.78615159e-03 -5.63506584e-03
-  -3.81298714e-03  5.16813388e-03  4.59173750e-03 -5.12665706e-03
-   7.28069106e-03  2.31783338e-03]
- [ 8.10702008e-03  1.04223492e-05 -3.99573472e-03  5.40099117e-03
-  -6.34333545e-03 -7.66836885e-03  4.13058082e-03 -6.03020878e-03
-  -6.93289483e-03 -2.55288093e-03]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[-6.76186059e-03  1.04886031e-03 -6.90225008e-03  5.79968001e-04
+   6.56900822e-03  8.35667787e-03 -8.71108218e-03  1.51804869e-03
+   7.95923863e-03  5.25341010e-03]
+ [ 6.71649380e-04  2.26290623e-03 -2.76233895e-03  1.30566166e-03
+  -5.47316593e-04  1.44320364e-03 -9.97237842e-03  5.24525035e-03
+  -6.36208112e-03 -6.49542830e-03]
+ [-9.32204260e-03 -3.85184173e-03  4.08156064e-03 -5.42584331e-03
+   5.42345979e-03  8.39144582e-03 -9.93069220e-03  7.30414282e-03
+  -4.82296277e-03 -9.28415664e-03]
+ [ 7.41821962e-03  7.44267851e-03 -5.12370449e-03 -7.52629517e-03
+  -6.19357410e-03 -2.74819763e-03 -6.02388699e-03  5.96225109e-04
+  -6.46015858e-03  7.82514522e-03]
+ [-1.82822252e-03 -6.55810790e-03  7.53533359e-04  5.09697857e-03
+   8.25704255e-03  7.55314039e-03 -5.74619939e-03 -6.16191843e-03
+   2.00285057e-03  8.13430787e-03]
+ [ 6.40791900e-03 -3.62459571e-04 -5.38729948e-03  5.28831852e-04
+  -6.59191361e-03  1.44674135e-03  6.14566234e-03  6.36488449e-03
+  -5.63064613e-03 -7.93841359e-05]
+ [-1.81193952e-03  1.05545115e-04 -5.09860368e-03  2.19149604e-04
+   4.78164693e-03 -9.28933337e-03  4.97651517e-03 -7.81217109e-03
+   7.61491367e-03 -6.26504839e-03]
+ [ 9.32957707e-04 -5.25431089e-03  9.39045443e-03  7.68823889e-04
+   4.85653675e-03  1.64852169e-03  7.00683011e-03 -2.76641816e-03
+  -4.96155460e-03 -4.07218906e-03]
+ [-1.12703956e-03  4.04937067e-03 -5.17871727e-03 -7.47564282e-03
+  -5.16723293e-03 -7.90758811e-03  1.36422423e-03 -1.58520938e-03
+  -6.90222336e-03 -8.94935451e-04]
+ [ 8.65084010e-03 -1.48413309e-03 -9.33735720e-03  9.46029065e-03
+  -1.66794073e-03  1.60529679e-03 -6.49115440e-03  2.94158134e-03
+  -2.11764417e-03  8.12552505e-03]]
 </pre></div>
 </div>
 </div>
@@ -867,7 +860,7 @@ Requirement already satisfied: mpmath&gt;=0.19 in /Users/enaj/.virtualenvs/p39/l
 <li><p>We had to add the units, in this case <code class="docutils literal notranslate"><span class="pre">mV</span></code>.</p></li>
 </ul>
 <section id="id1">
-<h3><span class="section-number">2.4.1. </span>Exercise<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">3.4.1. </span>Exercise<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Add SpikeMonitor to track the spiking activity of one of the previously simulated populations and create a raster plot.</p></li>
 </ul>
@@ -879,7 +872,7 @@ Requirement already satisfied: mpmath&gt;=0.19 in /Users/enaj/.virtualenvs/p39/l
 </div>
 </div>
 <section id="bonus-exercises">
-<h4><span class="section-number">2.4.1.1. </span>Bonus exercises<a class="headerlink" href="#bonus-exercises" title="Permalink to this heading">#</a></h4>
+<h4><span class="section-number">3.4.1.1. </span>Bonus exercises<a class="headerlink" href="#bonus-exercises" title="Permalink to this heading">#</a></h4>
 <p>Create a population of 100 neurons with the following properties:</p>
 <ul class="simple">
 <li><p>A weight matrix sampled from a Normal distribution <span class="math notranslate nohighlight">\(N(0,1)mV\)</span></p></li>
@@ -897,7 +890,7 @@ Requirement already satisfied: mpmath&gt;=0.19 in /Users/enaj/.virtualenvs/p39/l
 </div>
 </section>
 <section id="bonus-exercise-2-simulation-of-a-balance-network">
-<h4><span class="section-number">2.4.1.2. </span>Bonus exercise 2: Simulation of a balance network<a class="headerlink" href="#bonus-exercise-2-simulation-of-a-balance-network" title="Permalink to this heading">#</a></h4>
+<h4><span class="section-number">3.4.1.2. </span>Bonus exercise 2: Simulation of a balance network<a class="headerlink" href="#bonus-exercise-2-simulation-of-a-balance-network" title="Permalink to this heading">#</a></h4>
 <p>In the previous exercises we have been creating neuron populations and connecting them to themselves. Now, we will create two different populations —one of excitatory neurons and one inhibitory— and connect them to each other.</p>
 <p>Create two two populations of neurons <span class="math notranslate nohighlight">\(G_{exct}\)</span> and <span class="math notranslate nohighlight">\(G_{inhb}\)</span> using the same parameters indicated in the previous exercise, except:</p>
 <ul class="simple">
@@ -915,7 +908,7 @@ Requirement already satisfied: mpmath&gt;=0.19 in /Users/enaj/.virtualenvs/p39/l
 </section>
 </section>
 <section id="bonus-content-introducing-a-delay">
-<h2><span class="section-number">2.5. </span>Bonus content: Introducing a delay<a class="headerlink" href="#bonus-content-introducing-a-delay" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">3.5. </span>Bonus content: Introducing a delay<a class="headerlink" href="#bonus-content-introducing-a-delay" title="Permalink to this heading">#</a></h2>
 <p>So far, the synapses have been instantaneous, but we can also make them act with a certain delay.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -949,7 +942,7 @@ Requirement already satisfied: mpmath&gt;=0.19 in /Users/enaj/.virtualenvs/p39/l
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x120851820&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x103790ca0&gt;
 </pre></div>
 </div>
 <img alt="../../_images/b_31_1.png" src="../../_images/b_31_1.png" />
@@ -958,7 +951,7 @@ Requirement already satisfied: mpmath&gt;=0.19 in /Users/enaj/.virtualenvs/p39/l
 <p>As you can see, that’s as simple as adding a line <code class="docutils literal notranslate"><span class="pre">S.delay</span> <span class="pre">=</span> <span class="pre">'j*2*ms'</span></code> so that the synapse from 0 to 1 has a delay of 2 ms, and from 0 to 2 has a delay of 4 ms.</p>
 </section>
 <section id="bonus-content-more-complex-synapse-models-stdp">
-<h2><span class="section-number">2.6. </span>Bonus content: More complex synapse models: STDP<a class="headerlink" href="#bonus-content-more-complex-synapse-models-stdp" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">3.6. </span>Bonus content: More complex synapse models: STDP<a class="headerlink" href="#bonus-content-more-complex-synapse-models-stdp" title="Permalink to this heading">#</a></h2>
 <p><em>This section of the notebook is optional, come to back to if you want after completing notebook 3 of this week.</em></p>
 <p>Brian’s synapse framework is very general and can do things like short-term plasticity (STP) or spike-timing dependent plasticity (STDP). Let’s see how that works for STDP.</p>
 <p>STDP is normally defined by an equation something like this:</p>
@@ -1181,13 +1174,13 @@ w &amp;\rightarrow w+a_{pre}
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">1. </span>Introduction to Brian part 1: Neurons</p>
+            <p class="prev-next-title"><span class="section-number">2. </span>Introduction to Brian part 1: Neurons</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="c.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">3. </span>Introduction to Brian part 3: Simulations</p>
+        <p class="prev-next-title"><span class="section-number">4. </span>Introduction to Brian part 3: Simulations</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>3. Introduction to Brian part 3: Simulations &#8212; Computational Neuroscience</title>
+    <title>4. Introduction to Brian part 3: Simulations &#8212; Computational Neuroscience</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -58,7 +58,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="1. Introduction to Data Analysis with Pandas" href="../ML/a.html" />
-    <link rel="prev" title="2. Introduction to Brian part 2: Synapses" href="b.html" />
+    <link rel="prev" title="3. Introduction to Brian part 2: Synapses" href="b.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -120,18 +120,6 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Coding tools for researchers
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../coding_intro/codingtoolsforresearch.html">
-   First things first
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
   Math review with Python
  </span>
 </p>
@@ -159,7 +147,7 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../modelling_intro/a.html">
+  <a class="reference internal" href="../modelling_intro/week0-Intro-RWB.html">
    1. What is computational neuroscience?
   </a>
  </li>
@@ -183,23 +171,28 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Chapter 3. Simulation of neural population
+  Chapter 3. Simulating neural population
  </span>
 </p>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
+  <a class="reference internal" href="neuralsimulation_intro.html">
+   1. Simulating neural populations
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="a.html">
-   1. Introduction to Brian part 1: Neurons
+   2. Introduction to Brian part 1: Neurons
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="b.html">
-   2. Introduction to Brian part 2: Synapses
+   3. Introduction to Brian part 2: Synapses
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   3. Introduction to Brian part 3: Simulations
+   4. Introduction to Brian part 3: Simulations
   </a>
  </li>
 </ul>
@@ -456,17 +449,17 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#multiple-runs">
-   3.1. Multiple runs
+   4.1. Multiple runs
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#changing-things-during-a-run">
-   3.2. Changing things during a run
+   4.2. Changing things during a run
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#adding-input">
-   3.3. Adding input
+   4.3. Adding input
   </a>
  </li>
 </ul>
@@ -490,17 +483,17 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#multiple-runs">
-   3.1. Multiple runs
+   4.1. Multiple runs
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#changing-things-during-a-run">
-   3.2. Changing things during a run
+   4.2. Changing things during a run
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#adding-input">
-   3.3. Adding input
+   4.3. Adding input
   </a>
  </li>
 </ul>
@@ -514,7 +507,7 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-brian-part-3-simulations">
-<h1><span class="section-number">3. </span>Introduction to Brian part 3: Simulations<a class="headerlink" href="#introduction-to-brian-part-3-simulations" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">4. </span>Introduction to Brian part 3: Simulations<a class="headerlink" href="#introduction-to-brian-part-3-simulations" title="Permalink to this heading">#</a></h1>
 <p>*Credit: The first three notebooks from week3 are part of the <span class="xref myst">Brian2 documentation</span>.</p>
 <p>If you haven’t yet read parts 1 and 2 on Neurons and Synapses, go read them first.</p>
 <p>This tutorial is about managing the slightly more complicated tasks that crop up in research problems, rather than the toy examples we’ve been looking at so far. So we cover things like inputting sensory data, modelling experimental conditions, etc.</p>
@@ -528,19 +521,17 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: brian2 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (2.5.1)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: cython&gt;=0.29 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from brian2) (0.29.30)
-Requirement already satisfied: sympy&gt;=1.2 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from brian2) (1.10.1)
+Requirement already satisfied: pyparsing in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from brian2) (3.0.7)
 Requirement already satisfied: setuptools&gt;=24.2 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from brian2) (60.10.0)
+Requirement already satisfied: sympy&gt;=1.2 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from brian2) (1.10.1)
+Requirement already satisfied: cython&gt;=0.29 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from brian2) (0.29.30)
 Requirement already satisfied: numpy&gt;=1.17 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from brian2) (1.23.5)
 Requirement already satisfied: jinja2&gt;=2.7 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from brian2) (3.1.2)
-Requirement already satisfied: pyparsing in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from brian2) (3.0.7)
 Requirement already satisfied: MarkupSafe&gt;=2.0 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from jinja2&gt;=2.7-&gt;brian2) (2.1.1)
 Requirement already satisfied: mpmath&gt;=0.19 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from sympy&gt;=1.2-&gt;brian2) (1.2.1)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">WARNING: You are using pip version 22.0.4; however, version 23.0.1 is available.</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">WARNING: You are using pip version 22.0.4; however, version 23.1.2 is available.</span>
 <span class=" -Color -Color-Yellow">You should consider upgrading via the &#39;/Users/enaj/.virtualenvs/p39/bin/python3.9 -m pip install --upgrade pip&#39; command.</span>
 
 </pre></div>
@@ -548,7 +539,7 @@ Requirement already satisfied: mpmath&gt;=0.19 in /Users/enaj/.virtualenvs/p39/l
 </div>
 </div>
 <section id="multiple-runs">
-<h2><span class="section-number">3.1. </span>Multiple runs<a class="headerlink" href="#multiple-runs" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">4.1. </span>Multiple runs<a class="headerlink" href="#multiple-runs" title="Permalink to this heading">#</a></h2>
 <p>Let’s start by looking at a very common task: doing multiple runs of a simulation with some parameter that changes. Let’s start off with something very simple, how does the firing rate of a leaky integrate-and-fire neuron driven by Poisson spiking neurons change depending on its membrane time constant? Let’s set that up.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -580,6 +571,86 @@ Requirement already satisfied: mpmath&gt;=0.19 in /Users/enaj/.virtualenvs/p39/l
 <span class="n">plot</span><span class="p">(</span><span class="n">tau_range</span><span class="o">/</span><span class="n">ms</span><span class="p">,</span> <span class="n">output_rates</span><span class="p">)</span>
 <span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\tau$ (ms)&#39;</span><span class="p">)</span>
 <span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Firing rate (sp/s)&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="nn">Input In [2],</span> in <span class="ni">&lt;cell line: 12&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">21</span>     <span class="n">M</span> <span class="o">=</span> <span class="n">SpikeMonitor</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">22</span>     <span class="c1"># Run it and store the output firing rate in the list</span>
+<span class="ne">---&gt; </span><span class="mi">23</span>     <span class="n">run</span><span class="p">(</span><span class="mi">1</span><span class="o">*</span><span class="n">second</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">24</span>     <span class="n">output_rates</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">M</span><span class="o">.</span><span class="n">num_spikes</span><span class="o">/</span><span class="n">second</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">25</span> <span class="c1"># And plot it</span>
+
+<span class="nn">File ~/.virtualenvs/p39/lib/python3.9/site-packages/brian2/units/fundamentalunits.py:2462,</span> in <span class="ni">check_units.&lt;locals&gt;.do_check_units.&lt;locals&gt;.new_f</span><span class="nt">(*args, **kwds)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2455</span>             <span class="n">error_message</span> <span class="o">=</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Function &#39;</span><span class="si">{</span><span class="n">f</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">&#39; &quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">2456</span>                              <span class="sa">f</span><span class="s2">&quot;expected a quantitity with unit &quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">2457</span>                              <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">unit</span><span class="si">}</span><span class="s2"> for argument &#39;</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2">&#39; but got &quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">2458</span>                              <span class="sa">f</span><span class="s2">&quot;&#39;</span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2459</span>             <span class="k">raise</span> <span class="n">DimensionMismatchError</span><span class="p">(</span><span class="n">error_message</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">2460</span>                                          <span class="n">get_dimensions</span><span class="p">(</span><span class="n">newkeyset</span><span class="p">[</span><span class="n">k</span><span class="p">]))</span>
+<span class="ne">-&gt; </span><span class="mi">2462</span> <span class="n">result</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2463</span> <span class="k">if</span> <span class="s1">&#39;result&#39;</span> <span class="ow">in</span> <span class="n">au</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">2464</span>     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">au</span><span class="p">[</span><span class="s1">&#39;result&#39;</span><span class="p">],</span> <span class="n">Callable</span><span class="p">)</span> <span class="ow">and</span> <span class="n">au</span><span class="p">[</span><span class="s1">&#39;result&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="nb">bool</span><span class="p">:</span>
+
+<span class="nn">File ~/.virtualenvs/p39/lib/python3.9/site-packages/brian2/core/magic.py:377,</span> in <span class="ni">run</span><span class="nt">(duration, report, report_period, namespace, profile, level)</span>
+<span class="g g-Whitespace">    </span><span class="mi">310</span> <span class="nd">@check_units</span><span class="p">(</span><span class="n">duration</span><span class="o">=</span><span class="n">second</span><span class="p">,</span> <span class="n">report_period</span><span class="o">=</span><span class="n">second</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">311</span> <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="n">duration</span><span class="p">,</span> <span class="n">report</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">report_period</span><span class="o">=</span><span class="mi">10</span><span class="o">*</span><span class="n">second</span><span class="p">,</span> <span class="n">namespace</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">312</span>         <span class="n">profile</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">313</span>     <span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">314</span><span class="sd">     run(duration, report=None, report_period=10*second, namespace=None, level=0)</span>
+<span class="g g-Whitespace">    </span><span class="mi">315</span><span class="sd">     </span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">    </span><span class="mi">375</span><span class="sd">         intended use. See `MagicNetwork` for more details.</span>
+<span class="g g-Whitespace">    </span><span class="mi">376</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">377</span>     <span class="k">return</span> <span class="n">magic_network</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">duration</span><span class="p">,</span> <span class="n">report</span><span class="o">=</span><span class="n">report</span><span class="p">,</span> <span class="n">report_period</span><span class="o">=</span><span class="n">report_period</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">378</span>                              <span class="n">namespace</span><span class="o">=</span><span class="n">namespace</span><span class="p">,</span> <span class="n">profile</span><span class="o">=</span><span class="n">profile</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="mi">2</span><span class="o">+</span><span class="n">level</span><span class="p">)</span>
+
+<span class="nn">File ~/.virtualenvs/p39/lib/python3.9/site-packages/brian2/core/magic.py:230,</span> in <span class="ni">MagicNetwork.run</span><span class="nt">(self, duration, report, report_period, namespace, profile, level)</span>
+<span class="g g-Whitespace">    </span><span class="mi">227</span> <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">duration</span><span class="p">,</span> <span class="n">report</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">report_period</span><span class="o">=</span><span class="mi">10</span><span class="o">*</span><span class="n">second</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">228</span>         <span class="n">namespace</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">profile</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">229</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_update_magic_objects</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="n">level</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">230</span>     <span class="n">Network</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">duration</span><span class="p">,</span> <span class="n">report</span><span class="o">=</span><span class="n">report</span><span class="p">,</span> <span class="n">report_period</span><span class="o">=</span><span class="n">report_period</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">231</span>                 <span class="n">namespace</span><span class="o">=</span><span class="n">namespace</span><span class="p">,</span> <span class="n">profile</span><span class="o">=</span><span class="n">profile</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">level</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="nn">File ~/.virtualenvs/p39/lib/python3.9/site-packages/brian2/core/base.py:293,</span> in <span class="ni">device_override.&lt;locals&gt;.device_override_decorator.&lt;locals&gt;.device_override_decorated_function</span><span class="nt">(*args, **kwds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">291</span>     <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">curdev</span><span class="p">,</span> <span class="n">name</span><span class="p">)(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">292</span> <span class="k">else</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">293</span>     <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+
+<span class="nn">File ~/.virtualenvs/p39/lib/python3.9/site-packages/brian2/units/fundamentalunits.py:2462,</span> in <span class="ni">check_units.&lt;locals&gt;.do_check_units.&lt;locals&gt;.new_f</span><span class="nt">(*args, **kwds)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2455</span>             <span class="n">error_message</span> <span class="o">=</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Function &#39;</span><span class="si">{</span><span class="n">f</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">&#39; &quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">2456</span>                              <span class="sa">f</span><span class="s2">&quot;expected a quantitity with unit &quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">2457</span>                              <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">unit</span><span class="si">}</span><span class="s2"> for argument &#39;</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2">&#39; but got &quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">2458</span>                              <span class="sa">f</span><span class="s2">&quot;&#39;</span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2459</span>             <span class="k">raise</span> <span class="n">DimensionMismatchError</span><span class="p">(</span><span class="n">error_message</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">2460</span>                                          <span class="n">get_dimensions</span><span class="p">(</span><span class="n">newkeyset</span><span class="p">[</span><span class="n">k</span><span class="p">]))</span>
+<span class="ne">-&gt; </span><span class="mi">2462</span> <span class="n">result</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2463</span> <span class="k">if</span> <span class="s1">&#39;result&#39;</span> <span class="ow">in</span> <span class="n">au</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">2464</span>     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">au</span><span class="p">[</span><span class="s1">&#39;result&#39;</span><span class="p">],</span> <span class="n">Callable</span><span class="p">)</span> <span class="ow">and</span> <span class="n">au</span><span class="p">[</span><span class="s1">&#39;result&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="nb">bool</span><span class="p">:</span>
+
+<span class="nn">File ~/.virtualenvs/p39/lib/python3.9/site-packages/brian2/core/network.py:1072,</span> in <span class="ni">Network.run</span><span class="nt">(self, duration, report, report_period, namespace, profile, level)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1070</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1071</span>     <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">active_objects</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1072</span>         <span class="n">obj</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1074</span> <span class="n">timestep</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="g g-Whitespace">   </span><span class="mi">1075</span> <span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">timestep</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">dt</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="nn">File ~/.virtualenvs/p39/lib/python3.9/site-packages/brian2/core/base.py:198,</span> in <span class="ni">BrianObject.run</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">196</span> <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">197</span>     <span class="k">for</span> <span class="n">codeobj</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_code_objects</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">198</span>         <span class="n">codeobj</span><span class="p">()</span>
+
+<span class="nn">File ~/.virtualenvs/p39/lib/python3.9/site-packages/brian2/codegen/codeobject.py:102,</span> in <span class="ni">CodeObject.__call__</span><span class="nt">(self, **kwds)</span>
+<span class="g g-Whitespace">     </span><span class="mi">99</span>     <span class="k">for</span> <span class="n">block</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;before_run&#39;</span><span class="p">,</span> <span class="s1">&#39;run&#39;</span><span class="p">,</span> <span class="s1">&#39;after_run&#39;</span><span class="p">]:</span>
+<span class="g g-Whitespace">    </span><span class="mi">100</span>         <span class="bp">self</span><span class="o">.</span><span class="n">compiled_code</span><span class="p">[</span><span class="n">block</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">compile_block</span><span class="p">(</span><span class="n">block</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">102</span> <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">103</span>     <span class="bp">self</span><span class="o">.</span><span class="n">update_namespace</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">104</span>     <span class="bp">self</span><span class="o">.</span><span class="n">namespace</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
 </div>
 </div>
@@ -718,7 +789,7 @@ Requirement already satisfied: mpmath&gt;=0.19 in /Users/enaj/.virtualenvs/p39/l
 <p>Notice that we used the <code class="docutils literal notranslate"><span class="pre">spike_trains()</span></code> method of <code class="docutils literal notranslate"><span class="pre">SpikeMonitor</span></code>. This is a dictionary with keys being the indices of the neurons and values being the array of spike times for that neuron.</p>
 </section>
 <section id="changing-things-during-a-run">
-<h2><span class="section-number">3.2. </span>Changing things during a run<a class="headerlink" href="#changing-things-during-a-run" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">4.2. </span>Changing things during a run<a class="headerlink" href="#changing-things-during-a-run" title="Permalink to this heading">#</a></h2>
 <p>Imagine an experiment where you inject current into a neuron, and change the amplitude randomly every 10 ms. Let’s see if we can model that using a Hodgkin-Huxley type neuron.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -907,7 +978,7 @@ Requirement already satisfied: mpmath&gt;=0.19 in /Users/enaj/.virtualenvs/p39/l
 <p>Ahh, that’s more like it!</p>
 </section>
 <section id="adding-input">
-<h2><span class="section-number">3.3. </span>Adding input<a class="headerlink" href="#adding-input" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">4.3. </span>Adding input<a class="headerlink" href="#adding-input" title="Permalink to this heading">#</a></h2>
 <p>Now let’s think about a neuron being driven by a sinusoidal input. Let’s go back to a leaky integrate-and-fire to simplify the equations a bit.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1048,7 +1119,7 @@ Requirement already satisfied: mpmath&gt;=0.19 in /Users/enaj/.virtualenvs/p39/l
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">2. </span>Introduction to Brian part 2: Synapses</p>
+            <p class="prev-next-title"><span class="section-number">3. </span>Introduction to Brian part 2: Synapses</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="../ML/a.html" title="next page">
