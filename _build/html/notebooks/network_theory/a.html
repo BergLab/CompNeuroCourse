@@ -121,18 +121,6 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Coding tools for researchers
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../coding_intro/codingtoolsforresearch.html">
-   First things first
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
   Math review with Python
  </span>
 </p>
@@ -945,15 +933,16 @@ Examples of applications of network science are ecosystems, biological pathways,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0. 1. 1. 0. 0. 1. 0. 1. 0.]
- [1. 0. 0. 0. 1. 1. 0. 0. 0.]
- [1. 0. 0. 1. 0. 0. 0. 1. 1.]
- [0. 0. 1. 0. 1. 1. 0. 0. 0.]
- [0. 1. 0. 1. 0. 1. 0. 1. 0.]
- [1. 1. 0. 1. 1. 0. 1. 0. 0.]
- [0. 0. 0. 0. 0. 1. 0. 1. 0.]
- [1. 0. 1. 0. 1. 0. 1. 0. 0.]
- [0. 0. 1. 0. 0. 0. 0. 0. 0.]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0. 1. 1. 1. 0. 1. 0. 1. 0. 0.]
+ [1. 0. 0. 1. 1. 0. 0. 0. 0. 0.]
+ [1. 0. 0. 1. 0. 0. 0. 0. 0. 0.]
+ [1. 1. 1. 0. 1. 1. 0. 0. 1. 0.]
+ [0. 1. 0. 1. 0. 0. 0. 0. 1. 0.]
+ [1. 0. 0. 1. 0. 0. 1. 0. 0. 0.]
+ [0. 0. 0. 0. 0. 1. 0. 1. 1. 0.]
+ [1. 0. 0. 0. 0. 0. 1. 0. 0. 0.]
+ [0. 0. 0. 1. 1. 0. 1. 0. 0. 1.]
+ [0. 0. 0. 0. 0. 0. 0. 0. 1. 0.]]
 </pre></div>
 </div>
 </div>
@@ -981,13 +970,13 @@ Examples of applications of network science are ecosystems, biological pathways,
 <img alt="../../_images/a_13_0.png" src="../../_images/a_13_0.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Adjacency matrix:
 
-[[0 0 1 1 1 1 0]
- [0 1 1 1 0 1 0]
- [1 1 0 1 0 0 0]
- [0 1 0 0 1 0 1]
- [0 1 1 1 1 1 0]
- [1 0 0 0 0 1 0]
- [1 0 0 0 0 1 1]]
+[[0 0 0 0 0 0 0]
+ [0 0 0 1 0 1 0]
+ [0 0 0 1 0 1 1]
+ [1 1 0 0 1 1 0]
+ [1 0 0 0 0 0 0]
+ [1 1 0 1 1 1 1]
+ [1 0 0 0 0 0 0]]
 </pre></div>
 </div>
 </div>
@@ -1042,7 +1031,7 @@ Examples of applications of network science are ecosystems, biological pathways,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/jw/bb3wy2wj6bv8jf69svd8cqdc0000gn/T/ipykernel_6990/2232413052.py:15: MatplotlibDeprecationWarning: Unable to determine Axes to steal space for Colorbar. Using gca(), but will raise in the future. Either provide the *cax* argument to use as the Axes for the Colorbar, provide the *ax* argument to steal space from it, or add *mappable* to an Axes.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/jw/bb3wy2wj6bv8jf69svd8cqdc0000gn/T/ipykernel_7818/2232413052.py:15: MatplotlibDeprecationWarning: Unable to determine Axes to steal space for Colorbar. Using gca(), but will raise in the future. Either provide the *cax* argument to use as the Axes for the Colorbar, provide the *ax* argument to steal space from it, or add *mappable* to an Axes.
   plt.colorbar(plt.cm.ScalarMappable(cmap=plt.cm.viridis, norm=plt.Normalize(vmin = edge_colors.min(), vmax=edge_colors.max())));
 </pre></div>
 </div>
@@ -1104,27 +1093,27 @@ Another quantification of a node centrality is <em>betweenness</em>. <strong>Bet
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(0, 7), (1, 9), (2, 8), (3, 7), (4, 12), (5, 10), (6, 12), (7, 13), (8, 10), (9, 7), (10, 12), (11, 6), (12, 12), (13, 12), (14, 14), (15, 7), (16, 11), (17, 10), (18, 9), (19, 10)]
-Node 0 has degree 7
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(0, 8), (1, 9), (2, 8), (3, 11), (4, 13), (5, 9), (6, 5), (7, 7), (8, 10), (9, 10), (10, 9), (11, 7), (12, 7), (13, 6), (14, 6), (15, 12), (16, 14), (17, 10), (18, 9), (19, 12)]
+Node 0 has degree 8
 Node 1 has degree 9
 Node 2 has degree 8
-Node 3 has degree 7
-Node 4 has degree 12
-Node 5 has degree 10
-Node 6 has degree 12
-Node 7 has degree 13
+Node 3 has degree 11
+Node 4 has degree 13
+Node 5 has degree 9
+Node 6 has degree 5
+Node 7 has degree 7
 Node 8 has degree 10
-Node 9 has degree 7
-Node 10 has degree 12
-Node 11 has degree 6
-Node 12 has degree 12
-Node 13 has degree 12
-Node 14 has degree 14
-Node 15 has degree 7
-Node 16 has degree 11
+Node 9 has degree 10
+Node 10 has degree 9
+Node 11 has degree 7
+Node 12 has degree 7
+Node 13 has degree 6
+Node 14 has degree 6
+Node 15 has degree 12
+Node 16 has degree 14
 Node 17 has degree 10
 Node 18 has degree 9
-Node 19 has degree 10
+Node 19 has degree 12
 </pre></div>
 </div>
 </div>
@@ -1177,11 +1166,11 @@ Node 19 has degree 10
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Graph with 20 nodes and 99 edges
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Graph with 20 nodes and 91 edges
 Number of nodes: 20
-Number of edges: 99
-Network diameter: 2
-Average shortest path: 1.4789473684210526
+Number of edges: 91
+Network diameter: 3
+Average shortest path: 1.5315789473684212
 </pre></div>
 </div>
 </div>
@@ -1236,26 +1225,26 @@ Average shortest path: 1.4789473684210526
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{0: 0.5333333333333333,
- 1: 0.4642857142857143,
- 2: 0.5,
- 3: 0.509090909090909,
- 4: 0.3,
- 5: 0.4888888888888889,
- 6: 0.4722222222222222,
- 7: 0.35714285714285715,
- 8: 0.4888888888888889,
- 9: 0.2,
- 10: 0.41818181818181815,
- 11: 0.43636363636363634,
- 12: 0.3333333333333333,
- 13: 0.509090909090909,
- 14: 0.4666666666666667,
- 15: 0.4444444444444444,
- 16: 0.35714285714285715,
- 17: 0.43636363636363634,
- 18: 0.45454545454545453,
- 19: 0.4444444444444444}
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{0: 0.5,
+ 1: 0.47619047619047616,
+ 2: 0.4,
+ 3: 0.4,
+ 4: 0.5,
+ 5: 0.5833333333333334,
+ 6: 0.48717948717948717,
+ 7: 0.45454545454545453,
+ 8: 0.5454545454545454,
+ 9: 0.5555555555555556,
+ 10: 0.5,
+ 11: 0.6666666666666666,
+ 12: 0.4696969696969697,
+ 13: 0.5454545454545454,
+ 14: 0.47619047619047616,
+ 15: 0.6444444444444445,
+ 16: 0.5,
+ 17: 0.6428571428571429,
+ 18: 0.4722222222222222,
+ 19: 0.5555555555555556}
 </pre></div>
 </div>
 </div>
@@ -1269,7 +1258,7 @@ Average shortest path: 1.4789473684210526
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The global CC of the network is 0.4307215007215007
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The global CC of the network is 0.5187673437673437
 </pre></div>
 </div>
 </div>
@@ -1363,7 +1352,7 @@ Average shortest path: 1.4789473684210526
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Omega of the network is -0.24259767687433997 and it took 15.790205240249634 seconds to compute it
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Omega of the network is -0.2634031198686372 and it took 15.336195945739746 seconds to compute it
 </pre></div>
 </div>
 </div>
@@ -1446,26 +1435,24 @@ Average shortest path: 1.4789473684210526
 <span class="g g-Whitespace">    </span><span class="mi">238</span>     <span class="n">R</span><span class="o">.</span><span class="n">graph</span><span class="p">[</span><span class="s2">&quot;algorithm&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;edmonds_karp&quot;</span>
 <span class="g g-Whitespace">    </span><span class="mi">239</span>     <span class="k">return</span> <span class="n">R</span>
 
-<span class="nn">File ~/.virtualenvs/p39/lib/python3.9/site-packages/networkx/algorithms/flow/edmondskarp.py:104,</span> in <span class="ni">edmonds_karp_impl</span><span class="nt">(G, s, t, capacity, residual, cutoff)</span>
-<span class="g g-Whitespace">    </span><span class="mi">101</span>     <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">NetworkXError</span><span class="p">(</span><span class="s2">&quot;source and sink are the same node&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">103</span> <span class="k">if</span> <span class="n">residual</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">104</span>     <span class="n">R</span> <span class="o">=</span> <span class="n">build_residual_network</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">capacity</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">105</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">106</span>     <span class="n">R</span> <span class="o">=</span> <span class="n">residual</span>
+<span class="nn">File ~/.virtualenvs/p39/lib/python3.9/site-packages/networkx/algorithms/flow/edmondskarp.py:110,</span> in <span class="ni">edmonds_karp_impl</span><span class="nt">(G, s, t, capacity, residual, cutoff)</span>
+<span class="g g-Whitespace">    </span><span class="mi">108</span> <span class="c1"># Initialize/reset the residual network.</span>
+<span class="g g-Whitespace">    </span><span class="mi">109</span> <span class="k">for</span> <span class="n">u</span> <span class="ow">in</span> <span class="n">R</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">110</span>     <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">R</span><span class="p">[</span><span class="n">u</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+<span class="g g-Whitespace">    </span><span class="mi">111</span>         <span class="n">e</span><span class="p">[</span><span class="s2">&quot;flow&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="g g-Whitespace">    </span><span class="mi">113</span> <span class="k">if</span> <span class="n">cutoff</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
 
-<span class="nn">File ~/.virtualenvs/p39/lib/python3.9/site-packages/networkx/algorithms/flow/utils.py:133,</span> in <span class="ni">build_residual_network</span><span class="nt">(G, capacity)</span>
-<span class="g g-Whitespace">    </span><span class="mi">123</span> <span class="n">inf</span> <span class="o">=</span> <span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">124</span>     <span class="mi">3</span>
-<span class="g g-Whitespace">    </span><span class="mi">125</span>     <span class="o">*</span> <span class="nb">sum</span><span class="p">(</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">130</span>     <span class="ow">or</span> <span class="mi">1</span>
-<span class="g g-Whitespace">    </span><span class="mi">131</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">132</span> <span class="k">if</span> <span class="n">G</span><span class="o">.</span><span class="n">is_directed</span><span class="p">():</span>
-<span class="ne">--&gt; </span><span class="mi">133</span>     <span class="k">for</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">attr</span> <span class="ow">in</span> <span class="n">edge_list</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">134</span>         <span class="n">r</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">attr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">capacity</span><span class="p">,</span> <span class="n">inf</span><span class="p">),</span> <span class="n">inf</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">135</span>         <span class="k">if</span> <span class="ow">not</span> <span class="n">R</span><span class="o">.</span><span class="n">has_edge</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">136</span>             <span class="c1"># Both (u, v) and (v, u) must be present in the residual</span>
-<span class="g g-Whitespace">    </span><span class="mi">137</span>             <span class="c1"># network.</span>
+<span class="nn">File /usr/local/Cellar/python@3.9/3.9.16/Frameworks/Python.framework/Versions/3.9/lib/python3.9/_collections_abc.py:870,</span> in <span class="ni">ValuesView.__iter__</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">868</span> <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">869</span>     <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mapping</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">870</span>         <span class="k">yield</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mapping</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+
+<span class="nn">File ~/.virtualenvs/p39/lib/python3.9/site-packages/networkx/classes/coreviews.py:52,</span> in <span class="ni">AtlasView.__getitem__</span><span class="nt">(self, key)</span>
+<span class="g g-Whitespace">     </span><span class="mi">49</span> <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">50</span>     <span class="k">return</span> <span class="nb">iter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_atlas</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">52</span> <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">53</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_atlas</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+<span class="g g-Whitespace">     </span><span class="mi">55</span> <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
