@@ -53,8 +53,8 @@ nbsphinx_timeout : -1
 
 # https://myst-parser.readthedocs.io/en/latest/syntax/optional.html
 
-parse:
-  myst_enable_extensions:
-    # including those that are enabled by default! See here: https://jupyterbook.org/en/stable/customize/config.html
-    # https://github.com/executablebooks/jupyter-book/blob/master/docs/_config.yml
-    - html_image
+# parse:
+#   myst_enable_extensions:
+#     # including those that are enabled by default! See here: https://jupyterbook.org/en/stable/customize/config.html
+#     # https://github.com/executablebooks/jupyter-book/blob/master/docs/_config.yml
+#     - html_image

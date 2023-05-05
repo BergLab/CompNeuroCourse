@@ -54,6 +54,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -602,12 +604,12 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: brian2 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (2.5.1)
-Requirement already satisfied: jinja2&gt;=2.7 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from brian2) (3.1.2)
-Requirement already satisfied: cython&gt;=0.29 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from brian2) (0.29.30)
-Requirement already satisfied: numpy&gt;=1.17 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from brian2) (1.23.5)
-Requirement already satisfied: pyparsing in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from brian2) (3.0.7)
 Requirement already satisfied: setuptools&gt;=24.2 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from brian2) (60.10.0)
 Requirement already satisfied: sympy&gt;=1.2 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from brian2) (1.10.1)
+Requirement already satisfied: numpy&gt;=1.17 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from brian2) (1.23.5)
+Requirement already satisfied: pyparsing in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from brian2) (3.0.7)
+Requirement already satisfied: cython&gt;=0.29 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from brian2) (0.29.30)
+Requirement already satisfied: jinja2&gt;=2.7 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from brian2) (3.1.2)
 Requirement already satisfied: MarkupSafe&gt;=2.0 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from jinja2&gt;=2.7-&gt;brian2) (2.1.1)
 Requirement already satisfied: mpmath&gt;=0.19 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from sympy&gt;=1.2-&gt;brian2) (1.2.1)
 </pre></div>
@@ -660,7 +662,7 @@ Requirement already satisfied: mpmath&gt;=0.19 in /Users/enaj/.virtualenvs/p39/l
 </section>
 <section id="adding-a-weight">
 <h2><span class="section-number">3.2. </span>Adding a weight<a class="headerlink" href="#adding-a-weight" title="Permalink to this heading">#</a></h2>
-<p>In the previous section, we hard coded the weight of the synapse to be the value 0.2 by indicating <code class="docutils literal notranslate"><span class="pre">on_pre='v_post</span> <span class="pre">+=</span> <span class="pre">0.2'</span></code>, but often we would to allow this to be different for different synapses. We do that by introducing synapse equations, we use tha argument <code class="docutils literal notranslate"> <span class="pre">on_pre='v_post</span> <span class="pre">+=</span> <span class="pre">w'</span></code> in the synapses model and then specify the synaptic values values $w$:</p>
+<p>In the previous section, we hard coded the weight of the synapse to be the value 0.2 by indicating <code class="docutils literal notranslate"><span class="pre">on_pre='v_post</span> <span class="pre">+=</span> <span class="pre">0.2'</span></code>, but often we would to allow this to be different for different synapses. We do that by introducing synapse equations, we use tha argument <code class="docutils literal notranslate"> <span class="pre">on_pre='v_post</span> <span class="pre">+=</span> <span class="pre">w'</span></code> in the synapses model and then specify the synaptic values values <span class="math notranslate nohighlight">\(w\)</span>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">start_scope</span><span class="p">()</span>
@@ -803,36 +805,26 @@ Requirement already satisfied: mpmath&gt;=0.19 in /Users/enaj/.virtualenvs/p39/l
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 9.37636034e-03  2.71018221e-04 -1.28835110e-03 -1.42202834e-03
-  -7.43725513e-03 -5.04725595e-03  5.71996760e-03  1.97035899e-04
-   9.19097635e-03 -2.80216981e-03]
- [-7.07871427e-03  7.68081742e-03 -4.48434743e-03 -6.93422694e-03
-  -9.02813117e-03  5.62941008e-03 -3.48957832e-03  4.50589092e-03
-  -3.36532913e-03 -1.75956851e-03]
- [ 1.12721189e-03 -8.80703465e-03 -3.50273961e-03 -2.84330977e-03
-  -5.50576003e-03  2.38827574e-03 -4.10763136e-03 -5.02827676e-03
-  -8.87622983e-04  9.84137721e-03]
- [ 6.43468090e-03 -2.34793867e-03 -9.71506907e-03 -1.25011888e-03
-   4.97881412e-03 -7.06920239e-03 -9.36197634e-03 -4.67295571e-03
-  -3.92772002e-03 -9.65295559e-03]
- [-6.91981534e-03  1.01571598e-03 -6.94680732e-03  9.58131157e-03
-  -5.07200517e-04 -2.57820388e-03 -4.56431144e-03  6.25695134e-03
-  -7.86386003e-03  9.27253935e-03]
- [-6.77393839e-03  1.18511381e-03  7.66604530e-03 -3.71972708e-03
-  -2.89020213e-03 -1.15272602e-03  8.56018798e-03 -8.75980798e-03
-   9.56452391e-04  1.63618322e-03]
- [-3.65506974e-03 -4.06429687e-03  9.54988054e-03  4.35805922e-03
-  -4.11056419e-06 -1.86749892e-03 -7.88832082e-03  1.66875509e-03
-   1.14017912e-03 -6.16438823e-03]
- [-1.64118006e-03 -2.87406906e-03 -5.86587679e-03  1.16200251e-04
-   9.16722261e-03  2.13637882e-03 -4.30387634e-03 -7.74387195e-03
-  -6.40332489e-03  7.12211207e-03]
- [ 3.88338557e-03  3.36469972e-03 -6.34227183e-03 -2.18684350e-03
-   8.76714575e-03  8.17235418e-03 -5.66893725e-03 -5.29752241e-03
-  -4.81437533e-03 -6.71389465e-03]
- [-3.02955371e-03  2.25611099e-03 -4.63390889e-03  7.23728190e-03
-  -3.05380665e-03 -3.17366359e-03  6.87035425e-03 -6.53955654e-03
-   6.79775590e-03 -6.05317280e-04]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 0.00249642 -0.00767554  0.00767662 -0.00955567 -0.0024668   0.00186789
+   0.00196187 -0.00717945 -0.00840733 -0.00796743]
+ [-0.00882459 -0.00801101  0.00802902 -0.00924941 -0.00116627  0.00400211
+   0.00023122 -0.00869521 -0.00429731 -0.00891439]
+ [-0.00755275  0.00742156 -0.00067319  0.00080168 -0.00740482  0.00032026
+   0.00349411  0.00944855 -0.00566812 -0.00775433]
+ [-0.00797881 -0.00211673  0.0075754  -0.0045241   0.00038346  0.00649518
+  -0.00543149 -0.00017221  0.00827139  0.00263692]
+ [-0.0024797   0.00936068 -0.00792912 -0.00926822 -0.00435358 -0.00790573
+   0.00753863 -0.00982311 -0.00316061  0.00178771]
+ [ 0.00425009 -0.0025031   0.00283606  0.00462538 -0.00767047  0.00422471
+   0.00418712 -0.00302537 -0.00858212  0.00522897]
+ [-0.00197486  0.00099542 -0.00193829 -0.00221286 -0.00836532 -0.0014879
+   0.00689092 -0.00988383 -0.00878974 -0.00606778]
+ [-0.00236796 -0.0005643  -0.00439578 -0.00049856  0.00036077  0.00654274
+  -0.00955824  0.00655915  0.00339355  0.00101987]
+ [ 0.00494842  0.00890448 -0.00478215  0.00507304  0.00572152  0.00179931
+   0.00866246  0.00719482  0.00156589 -0.00215595]
+ [-0.00250182 -0.00553773 -0.00958699  0.00211436  0.00124608 -0.00192268
+   0.00603958 -0.00683687  0.00714492 -0.00933315]]
 </pre></div>
 </div>
 </div>
@@ -873,10 +865,10 @@ Requirement already satisfied: mpmath&gt;=0.19 in /Users/enaj/.virtualenvs/p39/l
 <h4><span class="section-number">3.4.1.1. </span>Bonus exercises<a class="headerlink" href="#bonus-exercises" title="Permalink to this heading">#</a></h4>
 <p>Create a population of 100 neurons with the following properties:</p>
 <ul class="simple">
-<li><p>A weight matrix sampled from a Normal distribution $N(0,1)mV$</p></li>
-<li><p>Initialize the neuron membranes potentials with random values from an uniform distribution $U(0,20)mV$</p></li>
-<li><p>All the neuron have a constant input current of $25mV$</p></li>
-<li><p>Refractory period of $2ms$, reset voltage of $0mV$, a firing threshold of $20mV$ and a membrane time scale of $20mS$.</p></li>
+<li><p>A weight matrix sampled from a Normal distribution <span class="math notranslate nohighlight">\(N(0,1)mV\)</span></p></li>
+<li><p>Initialize the neuron membranes potentials with random values from an uniform distribution <span class="math notranslate nohighlight">\(U(0,20)mV\)</span></p></li>
+<li><p>All the neuron have a constant input current of <span class="math notranslate nohighlight">\(25mV\)</span></p></li>
+<li><p>Refractory period of <span class="math notranslate nohighlight">\(2ms\)</span>, reset voltage of <span class="math notranslate nohighlight">\(0mV\)</span>, a firing threshold of <span class="math notranslate nohighlight">\(20mV\)</span> and a membrane time scale of <span class="math notranslate nohighlight">\(20mS\)</span>.</p></li>
 </ul>
 <p>Run the simulation for 0.5s and create a raster plot.</p>
 <div class="cell docutils container">
@@ -890,9 +882,9 @@ Requirement already satisfied: mpmath&gt;=0.19 in /Users/enaj/.virtualenvs/p39/l
 <section id="bonus-exercise-2-simulation-of-a-balance-network">
 <h4><span class="section-number">3.4.1.2. </span>Bonus exercise 2: Simulation of a balance network<a class="headerlink" href="#bonus-exercise-2-simulation-of-a-balance-network" title="Permalink to this heading">#</a></h4>
 <p>In the previous exercises we have been creating neuron populations and connecting them to themselves. Now, we will create two different populations —one of excitatory neurons and one inhibitory— and connect them to each other.</p>
-<p>Create two two populations of neurons $G_{exct}$ and $G_{inhb}$ using the same parameters indicated in the previous exercise, except:</p>
+<p>Create two two populations of neurons <span class="math notranslate nohighlight">\(G_{exct}\)</span> and <span class="math notranslate nohighlight">\(G_{inhb}\)</span> using the same parameters indicated in the previous exercise, except:</p>
 <ul class="simple">
-<li><p>The connectivity of $G_{exct}$ should be sampled from on a positive range, eg. from $U(0,20)mV$ while the inhibitory population $G_{exct}$ should have a connectivity with negative weights, eg. $U(-20,0)mV$</p></li>
+<li><p>The connectivity of <span class="math notranslate nohighlight">\(G_{exct}\)</span> should be sampled from on a positive range, eg. from <span class="math notranslate nohighlight">\(U(0,20)mV\)</span> while the inhibitory population <span class="math notranslate nohighlight">\(G_{exct}\)</span> should have a connectivity with negative weights, eg. <span class="math notranslate nohighlight">\(U(-20,0)mV\)</span></p></li>
 <li><p>Simulate the resulting network and make the raster plot for each of the populations.</p></li>
 </ul>
 <div class="cell docutils container">
@@ -940,7 +932,7 @@ Requirement already satisfied: mpmath&gt;=0.19 in /Users/enaj/.virtualenvs/p39/l
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1091712b0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x12e636a60&gt;
 </pre></div>
 </div>
 <img alt="../../_images/b_31_1.png" src="../../_images/b_31_1.png" />
@@ -953,12 +945,14 @@ Requirement already satisfied: mpmath&gt;=0.19 in /Users/enaj/.virtualenvs/p39/l
 <p><em>This section of the notebook is optional, come to back to if you want after completing notebook 3 of this week.</em></p>
 <p>Brian’s synapse framework is very general and can do things like short-term plasticity (STP) or spike-timing dependent plasticity (STDP). Let’s see how that works for STDP.</p>
 <p>STDP is normally defined by an equation something like this:</p>
-<p>$$\Delta w = \sum_{t_{pre}} \sum_{t_{post}} W(t_{post}-t_{pre})$$</p>
-<p>That is, the change in synaptic weight w is the sum over all presynaptic spike times $t_{pre}$ and postsynaptic spike times $t_{post}$ of some function $W$ of the difference in these spike times. A commonly used function $W$ is:</p>
-<p>$$W(\Delta t) = \begin{cases}
-A_{pre} e^{-\Delta t/\tau_{pre}} &amp; \Delta t&gt;0 \
+<div class="math notranslate nohighlight">
+\[\Delta w = \sum_{t_{pre}} \sum_{t_{post}} W(t_{post}-t_{pre})\]</div>
+<p>That is, the change in synaptic weight w is the sum over all presynaptic spike times <span class="math notranslate nohighlight">\(t_{pre}\)</span> and postsynaptic spike times <span class="math notranslate nohighlight">\(t_{post}\)</span> of some function <span class="math notranslate nohighlight">\(W\)</span> of the difference in these spike times. A commonly used function <span class="math notranslate nohighlight">\(W\)</span> is:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}W(\Delta t) = \begin{cases}
+A_{pre} e^{-\Delta t/\tau_{pre}} &amp; \Delta t&gt;0 \\
 A_{post} e^{\Delta t/\tau_{post}} &amp; \Delta t&lt;0
-\end{cases}$$</p>
+\end{cases}\end{split}\]</div>
 <p>This function looks like this:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -979,27 +973,29 @@ A_{post} e^{\Delta t/\tau_{post}} &amp; \Delta t&lt;0
 </div>
 </div>
 <p>Simulating it directly using this equation though would be very inefficient, because we would have to sum over all pairs of spikes. That would also be physiologically unrealistic because the neuron cannot remember all its previous spike times. It turns out there is a more efficient and physiologically more plausible way to get the same effect.</p>
-<p>We define two new variables $a_{pre}$ and $a_{post}$ which are “traces” of pre- and post-synaptic activity, governed by the differential equations:
-$$
+<p>We define two new variables <span class="math notranslate nohighlight">\(a_{pre}\)</span> and <span class="math notranslate nohighlight">\(a_{post}\)</span> which are “traces” of pre- and post-synaptic activity, governed by the differential equations:
+$<span class="math notranslate nohighlight">\(
 \begin{aligned}
-\tau_{pre}\frac{\mathrm{d}}{\mathrm{d}t} a_{pre} &amp;= -a_{pre}\
+\tau_{pre}\frac{\mathrm{d}}{\mathrm{d}t} a_{pre} &amp;= -a_{pre}\\
 \tau_{post}\frac{\mathrm{d}}{\mathrm{d}t} a_{post} &amp;= -a_{post}
 \end{aligned}
-$$</p>
+\)</span>$</p>
 <p>When a presynaptic spike occurs, the presynaptic trace is updated and the weight is modified according to the rule:</p>
-<p>$$
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \begin{aligned}
-a_{pre} &amp;\rightarrow a_{pre}+A_{pre}\
+a_{pre} &amp;\rightarrow a_{pre}+A_{pre}\\
 w &amp;\rightarrow w+a_{post}
 \end{aligned}
-$$</p>
+\end{split}\]</div>
 <p>When a postsynaptic spike occurs:</p>
-<p>$$
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \begin{aligned}
-a_{post} &amp;\rightarrow a_{post}+A_{post}\
+a_{post} &amp;\rightarrow a_{post}+A_{post}\\
 w &amp;\rightarrow w+a_{pre}
 \end{aligned}
-$$</p>
+\end{split}\]</div>
 <p>To see that this formulation is equivalent, you just have to check that the equations sum linearly, and consider two cases: what happens if the presynaptic spike occurs before the postsynaptic spike, and vice versa.</p>
 <p>Now that we have a formulation that relies only on differential equations and spike events, we can turn that into Brian code.</p>
 <div class="cell docutils container">

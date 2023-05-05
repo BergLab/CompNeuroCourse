@@ -54,6 +54,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -956,11 +958,11 @@ If you are working on Colab, you will need to upload the data.</p>
 </section>
 <section id="computing-correlations">
 <h2><span class="section-number">2.6. </span>Computing correlations<a class="headerlink" href="#computing-correlations" title="Permalink to this heading">#</a></h2>
-<p>Let’s explore the linear correlations of the data. <strong>Pearson correlation coefficient</strong> $\rho$ is a measure of how linearly correlated two variables are: it’s 1 if there is a positive correlation, -1 if negative and zero if none.</p>
+<p>Let’s explore the linear correlations of the data. <strong>Pearson correlation coefficient</strong> <span class="math notranslate nohighlight">\(\rho\)</span> is a measure of how linearly correlated two variables are: it’s 1 if there is a positive correlation, -1 if negative and zero if none.</p>
 <div align="center">
 <p style="text-align:center;"><img src="https://upload.wikimedia.org/wikipedia/commons/3/34/Correlation_coefficient.png" width="500"/>
 </div>
-<p>A correlation coefficient tell us how much one variable is related to another or, in other words, how much one variable informs us about the other one. For instance, your height in meters should be perfectly correlated to your height measured in feet $\rho=1$, but your height should not be correlated to how much chocolate you eat when you’re feeling sad $\rho=0$.</p>
+<p>A correlation coefficient tell us how much one variable is related to another or, in other words, how much one variable informs us about the other one. For instance, your height in meters should be perfectly correlated to your height measured in feet <span class="math notranslate nohighlight">\(\rho=1\)</span>, but your height should not be correlated to how much chocolate you eat when you’re feeling sad <span class="math notranslate nohighlight">\(\rho=0\)</span>.</p>
 <p>A correlation is said to be linear if you can convert from variable to other one by using linear transformations only —ie. addition and multiplication but not applying powers or square roots, etc.</p>
 <p>Let’s use Scipy to compute the correlations of our data. One of the nice aspects of the Python ecosystem is that data is often interoperable between libraries, here we’re gonna load our star data with Pandas and use Scipy to compute the correlations.</p>
 <p>Let’s start by doing a sanity check, a variable should be VERY correlated to itself, right? Let’s plot the temperature against the temperature using a scatter plot:</p>
@@ -1051,7 +1053,7 @@ If you are working on Colab, you will need to upload the data.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Score on training:  0.9994540168548307
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Score on training:  0.998766422294543
 </pre></div>
 </div>
 <img alt="../../_images/b_24_1.png" src="../../_images/b_24_1.png" />
@@ -1140,8 +1142,8 @@ If you are working on Colab, you will need to upload the data.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Score on training set:  0.9227288205696462
-Score on test set:  0.8212995709663518
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Score on training set:  0.903696472294227
+Score on test set:  0.8789464661970707
 </pre></div>
 </div>
 </div>

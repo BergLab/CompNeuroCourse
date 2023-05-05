@@ -54,6 +54,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -564,39 +566,42 @@ title="Print to PDF"
 <p>In week 1 we learnt the basics of algebra, now we are going to see how these concepts we learn such vector, matrix or eigenvalues can be useful to study dynamical systems. Giving us a complentary view to that of differential equations.</p>
 <p>It is often useful to describe a structure that has multiple components with a single vector.  If that structure is changing in time due to some process, it is typical to refer to the vector as a <strong>state vector</strong> since it describes the <em>state</em> of the structure at some particular time. To be less abstract, an example would be if you want to quantify the concentration of different neurotransmitters in a synaptic cleft: you could represent the concentration of each of them as a value in a vector. Equivalently, if you are studying the movement of an animal, you could represent the position of each of animal joint as value in the vector so you can track its movement during an experiment.</p>
 <p>It is quite common to model such dynamic processes at discrete times and use linear transformations to model the evolution of the state vector from one time to the next.</p>
-<p>Let’s suppose that we aim to describe sequence of vectors at times $t=0, 1, 2, 3,$… with state vectors $X_0$, $X_1$, $X_2$, $X_3$…. at those times.  We propose to calculate the state vector $X_t$ based only on the previous state vector $X_{t-1}$.  If we model the transition from $X_{t-1}$ to $X_t$ with a linear transformation, then there is a matrix such that $X_t = AX_{t-1}$.  This sort of model is known as a <strong>discrete dynamical system</strong> and is used in many areas from economics to biology.
+<p>Let’s suppose that we aim to describe sequence of vectors at times <span class="math notranslate nohighlight">\(t=0, 1, 2, 3,\)</span>… with state vectors <span class="math notranslate nohighlight">\(X_0\)</span>, <span class="math notranslate nohighlight">\(X_1\)</span>, <span class="math notranslate nohighlight">\(X_2\)</span>, <span class="math notranslate nohighlight">\(X_3\)</span>…. at those times.  We propose to calculate the state vector <span class="math notranslate nohighlight">\(X_t\)</span> based only on the previous state vector <span class="math notranslate nohighlight">\(X_{t-1}\)</span>.  If we model the transition from <span class="math notranslate nohighlight">\(X_{t-1}\)</span> to <span class="math notranslate nohighlight">\(X_t\)</span> with a linear transformation, then there is a matrix such that <span class="math notranslate nohighlight">\(X_t = AX_{t-1}\)</span>.  This sort of model is known as a <strong>discrete dynamical system</strong> and is used in many areas from economics to biology.
 Although the underlying phenomena —eg. the movement of the animal articulations or chemical concentrations— may change continuously, any experimental measures will always be discrete and hence we need discrete models.</p>
 <section id="infectious-disease-model">
 <h3><span class="section-number">2.1.1. </span>Infectious Disease Model<a class="headerlink" href="#infectious-disease-model" title="Permalink to this heading">#</a></h3>
-<p>In this example we consider a basic model of an infectious disease that is spreading within a population.  A well known family of models for this scenario is known as the $SIR$ models.  The acronym comes from a basic modeling assumption that the population is divided into three categories: Susceptible, Infectious, and Recovered.  As the disease, spreads a portion of the Susceptible individuals become Infectious, and a portion of Infectious individuals become Recovered.  We will consider a small variation in the model which assumes that a portion of Recovered individuals return to the Susceptible category.  This variation, known as an $SIRS$ model, would be a more accurate description of a disease which can be contracted multiple times.</p>
+<p>In this example we consider a basic model of an infectious disease that is spreading within a population.  A well known family of models for this scenario is known as the <span class="math notranslate nohighlight">\(SIR\)</span> models.  The acronym comes from a basic modeling assumption that the population is divided into three categories: Susceptible, Infectious, and Recovered.  As the disease, spreads a portion of the Susceptible individuals become Infectious, and a portion of Infectious individuals become Recovered.  We will consider a small variation in the model which assumes that a portion of Recovered individuals return to the Susceptible category.  This variation, known as an <span class="math notranslate nohighlight">\(SIRS\)</span> model, would be a more accurate description of a disease which can be contracted multiple times.</p>
 <p>We suppose that the population is completely homogeneous in all regards, so that all individuals in a given category have the same probabilities to move to the next category.</p>
 <p>To model real-world epidemics, it is necessary to estimate some parameters that specify how quickly individuals move among the categories.  These parameters will be important in making any predictions with the model.  For our demonstration, we will create an example.  Let us suppose that our state vectors describe the population at time intervals of 1 week, and that every week, 5% of the Susceptible population becomes Infectious, and 20% of the Infectious population becomes Recovered.  We also suppose that 15% of the Recovered population again becomes Susceptible every week.</p>
-<p>If we let $s_t$, $i_t$, and $r_t$ represent the percentage of the three categories of the population at time $t$, we can write equations based on the modeling assumptions that allows us to calculate the values based on $s_{t-1}$, $i_{t-1}$, and $r_{t-1}$</p>
-<p>$$
+<p>If we let <span class="math notranslate nohighlight">\(s_t\)</span>, <span class="math notranslate nohighlight">\(i_t\)</span>, and <span class="math notranslate nohighlight">\(r_t\)</span> represent the percentage of the three categories of the population at time <span class="math notranslate nohighlight">\(t\)</span>, we can write equations based on the modeling assumptions that allows us to calculate the values based on <span class="math notranslate nohighlight">\(s_{t-1}\)</span>, <span class="math notranslate nohighlight">\(i_{t-1}\)</span>, and <span class="math notranslate nohighlight">\(r_{t-1}\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \begin{eqnarray}
-s_t &amp; = &amp; 0.95s_{t-1} \hspace{2cm} + 0.15r_{t-1} \
-i_t &amp; = &amp; 0.05s_{t-1}  + 0.80i_{t-1} \
-r_t &amp; = &amp; \hspace{2cm} 0.20i_{t-1} + 0.85r_{t-1}
+s_t &amp; = &amp; 0.95s_{t-1} \hspace{2cm} + 0.15r_{t-1} \\
+i_t &amp; = &amp; 0.05s_{t-1}  + 0.80i_{t-1} \\
+r_t &amp; = &amp; \hspace{2cm} 0.20i_{t-1} + 0.85r_{t-1} 
 \end{eqnarray}
-$$</p>
+\end{split}\]</div>
 <p>Notice that since the numbers represent percentage, each column must add up to 1.</p>
-<p>Now we can define $X_t$ as the vector with components $s_t$, $i_t$, and $r_t$, so that the equations can be written using matrix multiplication.</p>
-<p>$$
+<p>Now we can define <span class="math notranslate nohighlight">\(X_t\)</span> as the vector with components <span class="math notranslate nohighlight">\(s_t\)</span>, <span class="math notranslate nohighlight">\(i_t\)</span>, and <span class="math notranslate nohighlight">\(r_t\)</span>, so that the equations can be written using matrix multiplication.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \begin{equation}
-X_t = \left[ \begin{array}{r} s_t \ i_t \ r_t  \end{array}\right] =
-\left[ \begin{array}{rrr} 0.95 &amp; 0 &amp; 0.15 \ 0.05 &amp; 0.80 &amp; 0 \ 0 &amp; 0.20 &amp; 0.85 \end{array}\right]
-\left[ \begin{array}{r} s_{t-1} \ i_{t-1} \ r_{t-1}  \end{array}\right]=
+X_t = \left[ \begin{array}{r} s_t \\ i_t \\ r_t  \end{array}\right] =
+\left[ \begin{array}{rrr} 0.95 &amp; 0 &amp; 0.15 \\ 0.05 &amp; 0.80 &amp; 0 \\ 0 &amp; 0.20 &amp; 0.85 \end{array}\right]
+\left[ \begin{array}{r} s_{t-1} \\ i_{t-1} \\ r_{t-1}  \end{array}\right]=
 AX_{t-1}
 \end{equation}
-$$</p>
-<p>The linear transformation $L:\mathbb{R}^3 \to \mathbb{R}^3$ defined by this matrix multiplication maps the state of the
-population at time $t-1$, to the state of the population at time $t$.  For an example let’s label the initial state vector $X_0$, and consider what happens if initially 5% of the population is infective, and the other 95% of the population is susceptible.</p>
-<p>$$
+\end{split}\]</div>
+<p>The linear transformation <span class="math notranslate nohighlight">\(L:\mathbb{R}^3 \to \mathbb{R}^3\)</span> defined by this matrix multiplication maps the state of the
+population at time <span class="math notranslate nohighlight">\(t-1\)</span>, to the state of the population at time <span class="math notranslate nohighlight">\(t\)</span>.  For an example let’s label the initial state vector <span class="math notranslate nohighlight">\(X_0\)</span>, and consider what happens if initially 5% of the population is infective, and the other 95% of the population is susceptible.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \begin{equation}
-X_0 = \left[ \begin{array}{r} 0.95 \ 0.05 \ 0  \end{array}\right]
+X_0 = \left[ \begin{array}{r} 0.95 \\ 0.05 \\ 0  \end{array}\right] 
 \end{equation}
-$$</p>
-<p>We compute $X_1 = AX_0$.</p>
+\end{split}\]</div>
+<p>We compute <span class="math notranslate nohighlight">\(X_1 = AX_0\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -620,7 +625,7 @@ $$</p>
 </div>
 </div>
 </div>
-<p>Applying the transformation again gives $X_2 = AX_1 = A^2X_0$, the state of the population at time $t=2$.  The unit of time in this case is a week, since this is how we have defined the units in the values of the $A$ matrix. In general, $n$ repeated applications of the transformation yield $X_n = A^nX_0$, the state of the population $n$ weeks into the future.  Let’s compute $X_{50}$ as an example.</p>
+<p>Applying the transformation again gives <span class="math notranslate nohighlight">\(X_2 = AX_1 = A^2X_0\)</span>, the state of the population at time <span class="math notranslate nohighlight">\(t=2\)</span>.  The unit of time in this case is a week, since this is how we have defined the units in the values of the <span class="math notranslate nohighlight">\(A\)</span> matrix. In general, <span class="math notranslate nohighlight">\(n\)</span> repeated applications of the transformation yield <span class="math notranslate nohighlight">\(X_n = A^nX_0\)</span>, the state of the population <span class="math notranslate nohighlight">\(n\)</span> weeks into the future.  Let’s compute <span class="math notranslate nohighlight">\(X_{50}\)</span> as an example.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## X at time 0</span>
@@ -647,7 +652,7 @@ $$</p>
 <section id="exercises">
 <h2><span class="section-number">2.2. </span><strong>Exercises</strong><a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Make a plot the evolution over time of the susceptible-infected-recovered population. Hint: you will have to create a list variable to store the values of each group over time and then apply the matrix $A$ to the initial state vector $X_{0}$ like we did in the previous code cell.</p></li>
+<li><p>Make a plot the evolution over time of the susceptible-infected-recovered population. Hint: you will have to create a list variable to store the values of each group over time and then apply the matrix <span class="math notranslate nohighlight">\(A\)</span> to the initial state vector <span class="math notranslate nohighlight">\(X_{0}\)</span> like we did in the previous code cell.</p></li>
 <li><p>Label the axes of the plot and add a legend.</p></li>
 </ul>
 <div class="cell docutils container">
@@ -664,17 +669,18 @@ $$</p>
 <section id="infectious-disease-model-continuation">
 <h2><span class="section-number">2.3. </span>Infectious disease model - Continuation<a class="headerlink" href="#infectious-disease-model-continuation" title="Permalink to this heading">#</a></h2>
 <p>The notions of eigenvalues and eigenvectors that we have talked about in the previous notebook can be very useful to study the dynamical systems like the spread of a virus in the SIR model:</p>
-<p>For the $SIRS$ model of infectious disease, we had the following discrete dynamical system.</p>
-<p>$$
+<p>For the <span class="math notranslate nohighlight">\(SIRS\)</span> model of infectious disease, we had the following discrete dynamical system.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \begin{equation}
-X_t = \left[ \begin{array}{r} s_t \ i_t \ r_t  \end{array}\right] =
-\left[ \begin{array}{rrr} 0.95 &amp; 0 &amp; 0.15 \ 0.05 &amp; 0.80 &amp; 0 \ 0 &amp; 0.20 &amp; 0.85 \end{array}\right]
-\left[ \begin{array}{r} s_{t-1} \ i_{t-1} \ r_{t-1}  \end{array}\right]=
+X_t = \left[ \begin{array}{r} s_t \\ i_t \\ r_t  \end{array}\right] =
+\left[ \begin{array}{rrr} 0.95 &amp; 0 &amp; 0.15 \\ 0.05 &amp; 0.80 &amp; 0 \\ 0 &amp; 0.20 &amp; 0.85 \end{array}\right]
+\left[ \begin{array}{r} s_{t-1} \\ i_{t-1} \\ r_{t-1}  \end{array}\right]=
 AX_{t-1}
 \end{equation}
-$$</p>
-<p>Given an initial condition $X_0$, we know that $X_n = A^nX_0$.  We are interested in determining the behavior of the system for large $n$ where represent the number of timesteps, in our case weeks. What is the connection with eigenvectors? The sequence of vectors produced should tend toward the eigenvector corresponding to the largest eigenvalue. If you think about it, this is an amazing result. It means that by simply computing the largest eigenvector from the matrix $A$ that we use to define our dynamical system, we can predict what the final state of the system will be! 🤯</p>
-<p>In this case the components of the vector have individual meaning, so let’s calculate the first 30 iterations and plot $s_t$, $i_t$, and $r_t$ to get a sense of how they are changing over 30 weeks.  For this calculation we store each vector $X_t$ as a column in an array named $\texttt{results}$.</p>
+\end{split}\]</div>
+<p>Given an initial condition <span class="math notranslate nohighlight">\(X_0\)</span>, we know that <span class="math notranslate nohighlight">\(X_n = A^nX_0\)</span>.  We are interested in determining the behavior of the system for large <span class="math notranslate nohighlight">\(n\)</span> where represent the number of timesteps, in our case weeks. What is the connection with eigenvectors? The sequence of vectors produced should tend toward the eigenvector corresponding to the largest eigenvalue. If you think about it, this is an amazing result. It means that by simply computing the largest eigenvector from the matrix <span class="math notranslate nohighlight">\(A\)</span> that we use to define our dynamical system, we can predict what the final state of the system will be! 🤯</p>
+<p>In this case the components of the vector have individual meaning, so let’s calculate the first 30 iterations and plot <span class="math notranslate nohighlight">\(s_t\)</span>, <span class="math notranslate nohighlight">\(i_t\)</span>, and <span class="math notranslate nohighlight">\(r_t\)</span> to get a sense of how they are changing over 30 weeks.  For this calculation we store each vector <span class="math notranslate nohighlight">\(X_t\)</span> as a column in an array named <span class="math notranslate nohighlight">\(\texttt{results}\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -719,9 +725,9 @@ $$</p>
 <img alt="../../_images/Applications_LT_13_0.png" src="../../_images/Applications_LT_13_0.png" />
 </div>
 </div>
-<p>Based on the calculation it appears that the state of the population has reached an <em>equilibrium</em> after 20 weeks.  In the equilibrium state, each category of the population, $S$, $I$, and $R$, have as many individuals entering the category as leaving it.  In terms of the matrix equation, if $X$ is the vector that contains the equilibrium values of $s_t$, $i_t$, and $r_t$, then $X$ must be a solution to the equation $AX=X$, since $X_{t-1}=X_t$ when the components not changing.  The equation $AX=X$ implies that $X$ is an eigenvector of $A$ corresponding to an eigenvalue of one. If you remember the geometrical interpretation of a matrix as a linear transformation in <a class="reference external" href="https://www.youtube.com/watch?v=PFDu9oVAE-g">3Blue1Brown eigenvectors and eigenvalues video</a>, the eigenvectors are the vectors who experience scaling by a factor of its eigenvalue but do not experience any change of direction. In other words, if we have a vector $X$ that verifies $AX=X$, that vector $X$ is an eigenvector of $A$ with a corresponding eigenvalue $1$. That means that applying the matrix $A$ —which we can see as a geometrical transformation— does not affect the vector at all. This is why if we find an vector $X$ that verifies $AX=X$, we know the values of $X$ are an equilibrium point of the system!</p>
-<p>The equation $AX=X$ represents a linear system, even though it is not written in the typical form.  We can rearrange it to look more familiar by using the tools of matrix algebra.  The key is to recognize that $X$ can be written as $IX$, where $I$ is the identity matrix.  This gives $AX=IX$, which can be rewritten as $(A-I)X = 0$.  This matrix equation is the type with which we have been working throughout the previous chapters.</p>
-<p>Before attempting to solve the system $(A-I)X = 0$, we first recognize it as a Homogeneous Systems and apply some reasoning based on our knowledge of linear systems.  We know that the solution set of a homogeneous system certainly contains the trivial solution $X=0$.  Therefore if there is also a nonzero solution to $(A-I)X=0$, the system must have an infinite number of solutions since linear systems always have zero, exactly one, or an infinite number of solutions.  If the system $(A-I)X=0$ does not have a unique solution there must be a free variable.</p>
+<p>Based on the calculation it appears that the state of the population has reached an <em>equilibrium</em> after 20 weeks.  In the equilibrium state, each category of the population, <span class="math notranslate nohighlight">\(S\)</span>, <span class="math notranslate nohighlight">\(I\)</span>, and <span class="math notranslate nohighlight">\(R\)</span>, have as many individuals entering the category as leaving it.  In terms of the matrix equation, if <span class="math notranslate nohighlight">\(X\)</span> is the vector that contains the equilibrium values of <span class="math notranslate nohighlight">\(s_t\)</span>, <span class="math notranslate nohighlight">\(i_t\)</span>, and <span class="math notranslate nohighlight">\(r_t\)</span>, then <span class="math notranslate nohighlight">\(X\)</span> must be a solution to the equation <span class="math notranslate nohighlight">\(AX=X\)</span>, since <span class="math notranslate nohighlight">\(X_{t-1}=X_t\)</span> when the components not changing.  The equation <span class="math notranslate nohighlight">\(AX=X\)</span> implies that <span class="math notranslate nohighlight">\(X\)</span> is an eigenvector of <span class="math notranslate nohighlight">\(A\)</span> corresponding to an eigenvalue of one. If you remember the geometrical interpretation of a matrix as a linear transformation in <a class="reference external" href="https://www.youtube.com/watch?v=PFDu9oVAE-g">3Blue1Brown eigenvectors and eigenvalues video</a>, the eigenvectors are the vectors who experience scaling by a factor of its eigenvalue but do not experience any change of direction. In other words, if we have a vector <span class="math notranslate nohighlight">\(X\)</span> that verifies <span class="math notranslate nohighlight">\(AX=X\)</span>, that vector <span class="math notranslate nohighlight">\(X\)</span> is an eigenvector of <span class="math notranslate nohighlight">\(A\)</span> with a corresponding eigenvalue <span class="math notranslate nohighlight">\(1\)</span>. That means that applying the matrix <span class="math notranslate nohighlight">\(A\)</span> —which we can see as a geometrical transformation— does not affect the vector at all. This is why if we find an vector <span class="math notranslate nohighlight">\(X\)</span> that verifies <span class="math notranslate nohighlight">\(AX=X\)</span>, we know the values of <span class="math notranslate nohighlight">\(X\)</span> are an equilibrium point of the system!</p>
+<p>The equation <span class="math notranslate nohighlight">\(AX=X\)</span> represents a linear system, even though it is not written in the typical form.  We can rearrange it to look more familiar by using the tools of matrix algebra.  The key is to recognize that <span class="math notranslate nohighlight">\(X\)</span> can be written as <span class="math notranslate nohighlight">\(IX\)</span>, where <span class="math notranslate nohighlight">\(I\)</span> is the identity matrix.  This gives <span class="math notranslate nohighlight">\(AX=IX\)</span>, which can be rewritten as <span class="math notranslate nohighlight">\((A-I)X = 0\)</span>.  This matrix equation is the type with which we have been working throughout the previous chapters.</p>
+<p>Before attempting to solve the system <span class="math notranslate nohighlight">\((A-I)X = 0\)</span>, we first recognize it as a Homogeneous Systems and apply some reasoning based on our knowledge of linear systems.  We know that the solution set of a homogeneous system certainly contains the trivial solution <span class="math notranslate nohighlight">\(X=0\)</span>.  Therefore if there is also a nonzero solution to <span class="math notranslate nohighlight">\((A-I)X=0\)</span>, the system must have an infinite number of solutions since linear systems always have zero, exactly one, or an infinite number of solutions.  If the system <span class="math notranslate nohighlight">\((A-I)X=0\)</span> does not have a unique solution there must be a free variable.</p>
 <p>Notice that in our case the matrix is singular, meaning that its determinant is zero and hence it doesn’t have an inverse:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -757,12 +763,12 @@ $$</p>
 </div>
 </div>
 <p>Again, notices that the number 1e15 is 10000000000000000</p>
-<p>This means that the system doesn’t have an unique solution, therefore it can either have none or infinite. Since we know there is at least the trivial solution $x={0,0,0}$, there must be an infinite amount of solution. If we want to find the equilibrium point of the system we will have to add additional constraints. We know for instance that the sum of the susceptible + infected + recovered must be equal to 1.</p>
+<p>This means that the system doesn’t have an unique solution, therefore it can either have none or infinite. Since we know there is at least the trivial solution <span class="math notranslate nohighlight">\(x={0,0,0}\)</span>, there must be an infinite amount of solution. If we want to find the equilibrium point of the system we will have to add additional constraints. We know for instance that the sum of the susceptible + infected + recovered must be equal to 1.</p>
 </section>
 <section id="id1">
 <h2><span class="section-number">2.4. </span><strong>Exercises</strong><a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Use <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.eig.html">Scipy linalg.eig() function</a> to compute the eigenvalues and eigenvectors of the matrix $A$:</p></li>
+<li><p>Use <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.eig.html">Scipy linalg.eig() function</a> to compute the eigenvalues and eigenvectors of the matrix <span class="math notranslate nohighlight">\(A\)</span>:</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -818,7 +824,7 @@ $$</p>
 </div>
 </div>
 <ul class="simple">
-<li><p>Finally! We now have a vector that verifies $AX=X$, that is, a state of the system which is not changing anymore. Compare the values you just obtained with those you found by simulating the system for a finite number of steps. How do they relate?</p></li>
+<li><p>Finally! We now have a vector that verifies <span class="math notranslate nohighlight">\(AX=X\)</span>, that is, a state of the system which is not changing anymore. Compare the values you just obtained with those you found by simulating the system for a finite number of steps. How do they relate?</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -830,7 +836,7 @@ $$</p>
 <section id="simulation-approach-to-finding-equilibrium-points">
 <h3><span class="section-number">2.4.1. </span>Simulation approach to finding equilibrium points<a class="headerlink" href="#simulation-approach-to-finding-equilibrium-points" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
-<li><p>Look at the equilibrium values that you obtained on your simulated SIRS model, write them as a state vector $X$ using a numpy array and verify that this state vector is indeed a eigenvector of the system by verifying that $A&#64;X = X$</p></li>
+<li><p>Look at the equilibrium values that you obtained on your simulated SIRS model, write them as a state vector <span class="math notranslate nohighlight">\(X\)</span> using a numpy array and verify that this state vector is indeed a eigenvector of the system by verifying that <span class="math notranslate nohighlight">\(A&#64;X = X\)</span></p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -850,16 +856,17 @@ $$</p>
 </div>
 </div>
 <ul class="simple">
-<li><p>Perform an analysis similar to the that in the example for the following infectious disease model.  In this model the rate at which individuals move from the Recovered category to the Susceptible category is less than that in the example.  Make a plot similar to that in the example and compute the theoretical equilibrium values for $s$, $i$, and $r$. Compare the results obtained with both approaches.</p></li>
+<li><p>Perform an analysis similar to the that in the example for the following infectious disease model.  In this model the rate at which individuals move from the Recovered category to the Susceptible category is less than that in the example.  Make a plot similar to that in the example and compute the theoretical equilibrium values for <span class="math notranslate nohighlight">\(s\)</span>, <span class="math notranslate nohighlight">\(i\)</span>, and <span class="math notranslate nohighlight">\(r\)</span>. Compare the results obtained with both approaches.</p></li>
 </ul>
-<p>$$
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \begin{equation}
-X_t = \left[ \begin{array}{r} s_t \ i_t \ r_t  \end{array}\right] =
-\left[ \begin{array}{rrr} 0.95 &amp; 0 &amp; 0.05 \ 0.05 &amp; 0.80 &amp; 0 \ 0 &amp; 0.20 &amp; 0.95 \end{array}\right]
-\left[ \begin{array}{r} s_{t-1} \ i_{t-1} \ r_{t-1}  \end{array}\right]=
+X_t = \left[ \begin{array}{r} s_t \\ i_t \\ r_t  \end{array}\right] =
+\left[ \begin{array}{rrr} 0.95 &amp; 0 &amp; 0.05 \\ 0.05 &amp; 0.80 &amp; 0 \\ 0 &amp; 0.20 &amp; 0.95 \end{array}\right]
+\left[ \begin{array}{r} s_{t-1} \\ i_{t-1} \\ r_{t-1}  \end{array}\right]=
 AX_{t-1}
 \end{equation}
-$$</p>
+\end{split}\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Code solution here</span>

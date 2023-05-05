@@ -54,6 +54,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -805,7 +807,7 @@ Examples of applications of network science are ecosystems, biological pathways,
 <h2><span class="section-number">1.2. </span>Basic network concepts<a class="headerlink" href="#basic-network-concepts" title="Permalink to this heading">#</a></h2>
 <section id="nodes-and-edges">
 <h3><span class="section-number">1.2.1. </span>Nodes and edges<a class="headerlink" href="#nodes-and-edges" title="Permalink to this heading">#</a></h3>
-<p>A network —or graph— is a set of nodes —or vertices— and the connections between them named links —or edges—. A network size is defined as it number of nodes $N$. Two nodes are said to be <strong>adjacent</strong> if they are connected by single edge. Mathematically, it’s usually notated as $G = (V,E)$, ie. a graph $G$ is a set of vertices $V$ and edges $E$.</p>
+<p>A network —or graph— is a set of nodes —or vertices— and the connections between them named links —or edges—. A network size is defined as it number of nodes <span class="math notranslate nohighlight">\(N\)</span>. Two nodes are said to be <strong>adjacent</strong> if they are connected by single edge. Mathematically, it’s usually notated as <span class="math notranslate nohighlight">\(G = (V,E)\)</span>, ie. a graph <span class="math notranslate nohighlight">\(G\)</span> is a set of vertices <span class="math notranslate nohighlight">\(V\)</span> and edges <span class="math notranslate nohighlight">\(E\)</span>.</p>
 </section>
 <section id="network-connectivity">
 <h3><span class="section-number">1.2.2. </span>Network Connectivity<a class="headerlink" href="#network-connectivity" title="Permalink to this heading">#</a></h3>
@@ -839,20 +841,20 @@ Examples of applications of network science are ecosystems, biological pathways,
 <div align="center">
 <p style="text-align:center;"><img src="../network_theory/media/graphfeatures.png" width="500"/>
 </div>
-<p>In this case, we can represent the structure of the graph with the weight / adjacency $W$ matrix and the features of the nodes with a vector $F$. The product $W F$ represents a new feature vector representing the propagation of the features values across the network, i.e. the feature value of a node will be the sum of the features of its connected nodes weighted by the respective edge values.</p>
+<p>In this case, we can represent the structure of the graph with the weight / adjacency <span class="math notranslate nohighlight">\(W\)</span> matrix and the features of the nodes with a vector <span class="math notranslate nohighlight">\(F\)</span>. The product <span class="math notranslate nohighlight">\(W F\)</span> represents a new feature vector representing the propagation of the features values across the network, i.e. the feature value of a node will be the sum of the features of its connected nodes weighted by the respective edge values.</p>
 <section id="features-normalisation">
 <h4><span class="section-number">1.2.5.1. </span>Features normalisation<a class="headerlink" href="#features-normalisation" title="Permalink to this heading">#</a></h4>
-<p>A common practice prevent the explossion of the features of a graph is to normalise by using the <strong>degree matrix</strong> $D$: diagonal matrix that contains information about the number of edges attached to each vertex. So we get: $F_{normalised} = D^{-1} W F$</p>
+<p>A common practice prevent the explossion of the features of a graph is to normalise by using the <strong>degree matrix</strong> <span class="math notranslate nohighlight">\(D\)</span>: diagonal matrix that contains information about the number of edges attached to each vertex. So we get: <span class="math notranslate nohighlight">\(F_{normalised} = D^{-1} W F\)</span></p>
 </section>
 <section id="feature-activation">
 <h4><span class="section-number">1.2.5.2. </span>Feature activation<a class="headerlink" href="#feature-activation" title="Permalink to this heading">#</a></h4>
-<p>Like in machine learning neural networks, we can apply a non-linearity $\sigma$ to the output of the feature propagation:</p>
-<p>$F^{’} = \sigma(D^{-1} W F )$</p>
+<p>Like in machine learning neural networks, we can apply a non-linearity <span class="math notranslate nohighlight">\(\sigma\)</span> to the output of the feature propagation:</p>
+<p><span class="math notranslate nohighlight">\(F^{'} = \sigma(D^{-1} W F )\)</span></p>
 </section>
 <section id="extra-linear-transformations">
 <h4><span class="section-number">1.2.5.3. </span>Extra Linear transformations<a class="headerlink" href="#extra-linear-transformations" title="Permalink to this heading">#</a></h4>
-<p>Extra linear transformations —equivalent to linear layers in ANN— can be addded by simply adding an extra learnable matrix $L$. Remeber linar applications are not commutative.</p>
-<p>$F^{’} = \sigma(L W D^{-1} F )$</p>
+<p>Extra linear transformations —equivalent to linear layers in ANN— can be addded by simply adding an extra learnable matrix <span class="math notranslate nohighlight">\(L\)</span>. Remeber linar applications are not commutative.</p>
+<p><span class="math notranslate nohighlight">\(F^{'} = \sigma(L W D^{-1} F )\)</span></p>
 </section>
 </section>
 </section>
@@ -946,16 +948,16 @@ Examples of applications of network science are ecosystems, biological pathways,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0. 1. 1. 1. 0. 0. 1. 1. 0. 1.]
- [1. 0. 0. 1. 1. 0. 1. 0. 0. 1.]
- [1. 0. 0. 0. 0. 0. 1. 0. 0. 0.]
- [1. 1. 0. 0. 0. 0. 0. 0. 0. 0.]
- [0. 1. 0. 0. 0. 1. 1. 0. 1. 0.]
- [0. 0. 0. 0. 1. 0. 1. 0. 0. 0.]
- [1. 1. 1. 0. 1. 1. 0. 0. 0. 0.]
- [1. 0. 0. 0. 0. 0. 0. 0. 1. 0.]
- [0. 0. 0. 0. 1. 0. 0. 1. 0. 0.]
- [1. 1. 0. 0. 0. 0. 0. 0. 0. 0.]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0. 1. 1. 1. 1. 0. 0. 0. 0. 1.]
+ [1. 1. 0. 0. 0. 0. 1. 0. 0. 0.]
+ [1. 0. 0. 1. 0. 1. 1. 0. 0. 0.]
+ [1. 0. 1. 0. 0. 0. 0. 0. 1. 0.]
+ [1. 0. 0. 0. 0. 1. 1. 1. 0. 0.]
+ [0. 0. 1. 0. 1. 0. 0. 0. 0. 0.]
+ [0. 1. 1. 0. 1. 0. 0. 0. 0. 1.]
+ [0. 0. 0. 0. 1. 0. 0. 0. 1. 0.]
+ [0. 0. 0. 1. 0. 0. 0. 1. 0. 0.]
+ [1. 0. 0. 0. 0. 0. 1. 0. 0. 0.]]
 </pre></div>
 </div>
 </div>
@@ -983,13 +985,13 @@ Examples of applications of network science are ecosystems, biological pathways,
 <img alt="../../_images/a_13_0.png" src="../../_images/a_13_0.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Adjacency matrix:
 
-[[0 0 0 1 1 1 0]
- [1 1 1 0 1 0 0]
- [1 0 1 1 1 0 0]
- [0 0 0 1 1 1 1]
- [1 1 0 0 0 1 0]
- [0 1 0 1 0 0 0]
- [1 1 0 0 0 0 1]]
+[[0 1 0 0 1 1 1]
+ [1 1 1 1 0 1 0]
+ [0 1 0 1 0 0 1]
+ [0 0 0 1 0 0 0]
+ [1 0 0 1 0 0 1]
+ [0 0 1 1 1 1 1]
+ [0 0 0 0 0 0 1]]
 </pre></div>
 </div>
 </div>
@@ -1014,7 +1016,7 @@ Examples of applications of network science are ecosystems, biological pathways,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Graph with 10 nodes and 18 edges
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Graph with 10 nodes and 20 edges
 </pre></div>
 </div>
 </div>
@@ -1044,11 +1046,11 @@ Examples of applications of network science are ecosystems, biological pathways,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/jw/bb3wy2wj6bv8jf69svd8cqdc0000gn/T/ipykernel_16485/2232413052.py:15: MatplotlibDeprecationWarning: Unable to determine Axes to steal space for Colorbar. Using gca(), but will raise in the future. Either provide the *cax* argument to use as the Axes for the Colorbar, provide the *ax* argument to steal space from it, or add *mappable* to an Axes.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/jw/bb3wy2wj6bv8jf69svd8cqdc0000gn/T/ipykernel_16760/2232413052.py:15: MatplotlibDeprecationWarning: Unable to determine Axes to steal space for Colorbar. Using gca(), but will raise in the future. Either provide the *cax* argument to use as the Axes for the Colorbar, provide the *ax* argument to steal space from it, or add *mappable* to an Axes.
   plt.colorbar(plt.cm.ScalarMappable(cmap=plt.cm.viridis, norm=plt.Normalize(vmin = edge_colors.min(), vmax=edge_colors.max())));
 </pre></div>
 </div>
-<img alt="../../_images/a_18_1.png" src="../../_images/a_18_1.png" />
+<img alt="../../_images/a_18_11.png" src="../../_images/a_18_11.png" />
 </div>
 </div>
 <section id="exercises">
@@ -1077,7 +1079,7 @@ Examples of applications of network science are ecosystems, biological pathways,
 <h2><span class="section-number">1.4. </span>Measures used to characterise networks<a class="headerlink" href="#measures-used-to-characterise-networks" title="Permalink to this heading">#</a></h2>
 <section id="degree-of-connectivity">
 <h3><span class="section-number">1.4.1. </span>Degree of connectivity<a class="headerlink" href="#degree-of-connectivity" title="Permalink to this heading">#</a></h3>
-<p>The average degree —or connectivity—, <strong>k</strong> is the average number of edges per node. Usually we work with the average $<k>$ and the degree distribution which is the probability P(k) that a given node have k links to the remaining N − 1 nodes.</p>
+<p>The average degree —or connectivity—, <strong>k</strong> is the average number of edges per node. Usually we work with the average <span class="math notranslate nohighlight">\(&lt;k&gt;\)</span> and the degree distribution which is the probability P(k) that a given node have k links to the remaining N − 1 nodes.</p>
 </section>
 <section id="distance-diameter-and-shortest-path">
 <h3><span class="section-number">1.4.2. </span>Distance, diameter and shortest path<a class="headerlink" href="#distance-diameter-and-shortest-path" title="Permalink to this heading">#</a></h3>
@@ -1106,27 +1108,27 @@ Another quantification of a node centrality is <em>betweenness</em>. <strong>Bet
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(0, 8), (1, 7), (2, 11), (3, 10), (4, 9), (5, 11), (6, 12), (7, 10), (8, 7), (9, 12), (10, 7), (11, 13), (12, 10), (13, 12), (14, 12), (15, 12), (16, 8), (17, 7), (18, 8), (19, 6)]
-Node 0 has degree 8
-Node 1 has degree 7
-Node 2 has degree 11
-Node 3 has degree 10
-Node 4 has degree 9
-Node 5 has degree 11
-Node 6 has degree 12
-Node 7 has degree 10
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(0, 9), (1, 9), (2, 10), (3, 13), (4, 7), (5, 9), (6, 8), (7, 11), (8, 7), (9, 10), (10, 9), (11, 9), (12, 9), (13, 8), (14, 11), (15, 10), (16, 8), (17, 10), (18, 11), (19, 10)]
+Node 0 has degree 9
+Node 1 has degree 9
+Node 2 has degree 10
+Node 3 has degree 13
+Node 4 has degree 7
+Node 5 has degree 9
+Node 6 has degree 8
+Node 7 has degree 11
 Node 8 has degree 7
-Node 9 has degree 12
-Node 10 has degree 7
-Node 11 has degree 13
-Node 12 has degree 10
-Node 13 has degree 12
-Node 14 has degree 12
-Node 15 has degree 12
+Node 9 has degree 10
+Node 10 has degree 9
+Node 11 has degree 9
+Node 12 has degree 9
+Node 13 has degree 8
+Node 14 has degree 11
+Node 15 has degree 10
 Node 16 has degree 8
-Node 17 has degree 7
-Node 18 has degree 8
-Node 19 has degree 6
+Node 17 has degree 10
+Node 18 has degree 11
+Node 19 has degree 10
 </pre></div>
 </div>
 </div>
@@ -1179,11 +1181,11 @@ Node 19 has degree 6
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Graph with 20 nodes and 96 edges
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Graph with 20 nodes and 94 edges
 Number of nodes: 20
-Number of edges: 96
-Network diameter: 3
-Average shortest path: 1.5
+Number of edges: 94
+Network diameter: 2
+Average shortest path: 1.5052631578947369
 </pre></div>
 </div>
 </div>
@@ -1238,26 +1240,26 @@ Average shortest path: 1.5
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{0: 0.5111111111111111,
- 1: 0.6,
- 2: 0.39285714285714285,
- 3: 0.3333333333333333,
- 4: 0.5714285714285714,
- 5: 0.47619047619047616,
- 6: 0.41818181818181815,
- 7: 0.4642857142857143,
- 8: 0.4666666666666667,
- 9: 0.4358974358974359,
- 10: 0.4696969696969697,
- 11: 0.5555555555555556,
- 12: 0.5357142857142857,
- 13: 0.42857142857142855,
- 14: 0.4166666666666667,
- 15: 0.41818181818181815,
- 16: 0.5714285714285714,
- 17: 0.36363636363636365,
- 18: 0.3333333333333333,
- 19: 0.5357142857142857}
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{0: 0.5277777777777778,
+ 1: 0.4444444444444444,
+ 2: 0.4642857142857143,
+ 3: 0.42857142857142855,
+ 4: 0.4722222222222222,
+ 5: 0.3888888888888889,
+ 6: 0.42857142857142855,
+ 7: 0.5357142857142857,
+ 8: 0.5714285714285714,
+ 9: 0.3055555555555556,
+ 10: 0.2909090909090909,
+ 11: 0,
+ 12: 0.3090909090909091,
+ 13: 0.4888888888888889,
+ 14: 0.3611111111111111,
+ 15: 0.4722222222222222,
+ 16: 0.3611111111111111,
+ 17: 0.4727272727272727,
+ 18: 0.42857142857142855,
+ 19: 0.3333333333333333}
 </pre></div>
 </div>
 </div>
@@ -1271,7 +1273,7 @@ Average shortest path: 1.5
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The global CC of the network is 0.4649225774225775
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The global CC of the network is 0.4042712842712842
 </pre></div>
 </div>
 </div>
@@ -1285,13 +1287,13 @@ Average shortest path: 1.5
 </section>
 <section id="scale-free-networks">
 <h3><span class="section-number">1.4.7. </span>Scale free networks<a class="headerlink" href="#scale-free-networks" title="Permalink to this heading">#</a></h3>
-<p>Intuitively, a network is said to be scale-free if we zoom it to a subpart of the network it will look the same as if we zoom out. We can formalize this intuition by noting that the degree distribution $P(k)$ of a scale-free network follows a power law: $P(k) \propto k^{-\gamma}$, where typically $\gamma \in [2,3]$ . That is, we compute the dree of each node, create an histogram and look at the resulting distribution it will be thick-tailed (ie. decays slower than exponential).</p>
+<p>Intuitively, a network is said to be scale-free if we zoom it to a subpart of the network it will look the same as if we zoom out. We can formalize this intuition by noting that the degree distribution <span class="math notranslate nohighlight">\(P(k)\)</span> of a scale-free network follows a power law: <span class="math notranslate nohighlight">\(P(k) \propto k^{-\gamma}\)</span>, where typically <span class="math notranslate nohighlight">\(\gamma \in [2,3]\)</span> . That is, we compute the dree of each node, create an histogram and look at the resulting distribution it will be thick-tailed (ie. decays slower than exponential).</p>
 <div align="center">
 <p style="text-align:center;"><img src="../network_theory/media/scale-free.png" width="500"/>
 </div></section>
 <section id="small-world-networks">
 <h3><span class="section-number">1.4.8. </span>Small-world networks<a class="headerlink" href="#small-world-networks" title="Permalink to this heading">#</a></h3>
-<p>A network is defined as having <a class="reference external" href="https://www.nature.com/articles/30918">small world property</a>, when it is having a relatively large clustering coefficient, while still having a small diameter, mathematically this means that the mean shortest path $\mathcal{l}$ between two nodes grows logarithmically with the size $N$ of the network: $\mathcal{l} \propto log(N)$.  Many real world networks are found to have this combination of global accessibility (because of small diameter) and a strong localness (because of high clustering coefficient).</p>
+<p>A network is defined as having <a class="reference external" href="https://www.nature.com/articles/30918">small world property</a>, when it is having a relatively large clustering coefficient, while still having a small diameter, mathematically this means that the mean shortest path <span class="math notranslate nohighlight">\(\mathcal{l}\)</span> between two nodes grows logarithmically with the size <span class="math notranslate nohighlight">\(N\)</span> of the network: <span class="math notranslate nohighlight">\(\mathcal{l} \propto log(N)\)</span>.  Many real world networks are found to have this combination of global accessibility (because of small diameter) and a strong localness (because of high clustering coefficient).</p>
 <br>
 <br>
 <div align="center">
@@ -1300,9 +1302,9 @@ Average shortest path: 1.5
 <p>Both Scale-free and small-world networks are of interest to neuroscience because they are conjectured to carry similarities to networks found in the the brain.</p>
 <section id="bonus-evaluating-the-small-worldness-of-a-network-g">
 <h4><span class="section-number">1.4.8.1. </span>Bonus: Evaluating the small-worldness of a network G<a class="headerlink" href="#bonus-evaluating-the-small-worldness-of-a-network-g" title="Permalink to this heading">#</a></h4>
-<p>Two quantities are used to characterize small-world netowrks: $\sigma$ and $\omega$. $\sigma$ is the small-worldness coefficient.
-$\sigma = \frac{C/C_{r}}{L/L_{r}}$ where $C$ and $L$ are respectively the average clustering coefficient and average shortest path length of the network. $C_{r}$ and $L_{r}$ are respectively the average clustering coefficient and average shortest path length of an equivalent random graph. A graph is commonly classified as small-world if $\sigma&gt;1$.</p>
-<p>The other way of quantifying small-worldness is to compare how much the graph topology rassambles a random network, that can be quantify with $\omega = \frac{L_{r}}{L} - \frac{C}{C_{l}}$ where C and L are respectively the average clustering coefficient and average shortest path length of G. $L_{r}$ is the average shortest path length of an equivalent random graph and $C_{l}$ is the average clustering coefficient of an equivalent lattice graph. Negative values of $\omega$ mean G is similar to a lattice whereas positive values mean G is a random graph. Values close to 0 mean that G has small-world characteristics.</p>
+<p>Two quantities are used to characterize small-world netowrks: <span class="math notranslate nohighlight">\(\sigma\)</span> and <span class="math notranslate nohighlight">\(\omega\)</span>. <span class="math notranslate nohighlight">\(\sigma\)</span> is the small-worldness coefficient.
+<span class="math notranslate nohighlight">\(\sigma = \frac{C/C_{r}}{L/L_{r}}\)</span> where <span class="math notranslate nohighlight">\(C\)</span> and <span class="math notranslate nohighlight">\(L\)</span> are respectively the average clustering coefficient and average shortest path length of the network. <span class="math notranslate nohighlight">\(C_{r}\)</span> and <span class="math notranslate nohighlight">\(L_{r}\)</span> are respectively the average clustering coefficient and average shortest path length of an equivalent random graph. A graph is commonly classified as small-world if <span class="math notranslate nohighlight">\(\sigma&gt;1\)</span>.</p>
+<p>The other way of quantifying small-worldness is to compare how much the graph topology rassambles a random network, that can be quantify with <span class="math notranslate nohighlight">\(\omega = \frac{L_{r}}{L} - \frac{C}{C_{l}}\)</span> where C and L are respectively the average clustering coefficient and average shortest path length of G. <span class="math notranslate nohighlight">\(L_{r}\)</span> is the average shortest path length of an equivalent random graph and <span class="math notranslate nohighlight">\(C_{l}\)</span> is the average clustering coefficient of an equivalent lattice graph. Negative values of <span class="math notranslate nohighlight">\(\omega\)</span> mean G is similar to a lattice whereas positive values mean G is a random graph. Values close to 0 mean that G has small-world characteristics.</p>
 <p>Let’s create a scale free network using NetworkX <code class="docutils literal notranslate"><span class="pre">nx.scale_free_graph()</span></code> and compute it’s degree distribution histogram to verify that if follows a power law distribution.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1351,7 +1353,7 @@ $\sigma = \frac{C/C_{r}}{L/L_{r}}$ where $C$ and $L$ are respectively the averag
 <img alt="../../_images/a_43_0.png" src="../../_images/a_43_0.png" />
 </div>
 </div>
-<p>Bonus: $\sigma$ and $\omega$ are two quantities used to charectise small world networks. Let’s compare their values for a random and small world network.</p>
+<p>Bonus: <span class="math notranslate nohighlight">\(\sigma\)</span> and <span class="math notranslate nohighlight">\(\omega\)</span> are two quantities used to charectise small world networks. Let’s compare their values for a random and small world network.</p>
 <p>⚠️ The cell below will take some time to run for big networks ⚠️</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1364,7 +1366,7 @@ $\sigma = \frac{C/C_{r}}{L/L_{r}}$ where $C$ and $L$ are respectively the averag
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Omega of the network is -0.19720068783756006 and it took 9.887303113937378 seconds to compute it
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Omega of the network is -0.20380881181588817 and it took 10.67425012588501 seconds to compute it
 </pre></div>
 </div>
 </div>
@@ -1454,21 +1456,28 @@ $\sigma = \frac{C/C_{r}}{L/L_{r}}$ where $C$ and $L$ are respectively the averag
 <span class="g g-Whitespace">    </span><span class="mi">105</span> <span class="k">else</span><span class="p">:</span>
 <span class="g g-Whitespace">    </span><span class="mi">106</span>     <span class="n">R</span> <span class="o">=</span> <span class="n">residual</span>
 
-<span class="nn">File ~/.virtualenvs/p39/lib/python3.9/site-packages/networkx/algorithms/flow/utils.py:138,</span> in <span class="ni">build_residual_network</span><span class="nt">(G, capacity)</span>
-<span class="g g-Whitespace">    </span><span class="mi">134</span> <span class="n">r</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">attr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">capacity</span><span class="p">,</span> <span class="n">inf</span><span class="p">),</span> <span class="n">inf</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">135</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">R</span><span class="o">.</span><span class="n">has_edge</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">136</span>     <span class="c1"># Both (u, v) and (v, u) must be present in the residual</span>
-<span class="g g-Whitespace">    </span><span class="mi">137</span>     <span class="c1"># network.</span>
-<span class="ne">--&gt; </span><span class="mi">138</span>     <span class="n">R</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">capacity</span><span class="o">=</span><span class="n">r</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">139</span>     <span class="n">R</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">capacity</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">140</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">141</span>     <span class="c1"># The edge (u, v) was added when (v, u) was visited.</span>
+<span class="nn">File ~/.virtualenvs/p39/lib/python3.9/site-packages/networkx/algorithms/flow/utils.py:142,</span> in <span class="ni">build_residual_network</span><span class="nt">(G, capacity)</span>
+<span class="g g-Whitespace">    </span><span class="mi">139</span>             <span class="n">R</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">capacity</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">140</span>         <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">141</span>             <span class="c1"># The edge (u, v) was added when (v, u) was visited.</span>
+<span class="ne">--&gt; </span><span class="mi">142</span>             <span class="n">R</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">v</span><span class="p">][</span><span class="s2">&quot;capacity&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">r</span>
+<span class="g g-Whitespace">    </span><span class="mi">143</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">144</span>     <span class="k">for</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">attr</span> <span class="ow">in</span> <span class="n">edge_list</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">145</span>         <span class="c1"># Add a pair of edges with equal residual capacities.</span>
 
-<span class="nn">File ~/.virtualenvs/p39/lib/python3.9/site-packages/networkx/classes/digraph.py:710,</span> in <span class="ni">DiGraph.add_edge</span><span class="nt">(self, u_of_edge, v_of_edge, **attr)</span>
-<span class="g g-Whitespace">    </span><span class="mi">708</span> <span class="n">datadict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_adj</span><span class="p">[</span><span class="n">u</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">edge_attr_dict_factory</span><span class="p">())</span>
-<span class="g g-Whitespace">    </span><span class="mi">709</span> <span class="n">datadict</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">attr</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">710</span> <span class="bp">self</span><span class="o">.</span><span class="n">_succ</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="n">datadict</span>
-<span class="g g-Whitespace">    </span><span class="mi">711</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pred</span><span class="p">[</span><span class="n">v</span><span class="p">][</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="n">datadict</span>
+<span class="nn">File ~/.virtualenvs/p39/lib/python3.9/site-packages/networkx/classes/graph.py:513,</span> in <span class="ni">Graph.__getitem__</span><span class="nt">(self, n)</span>
+<span class="g g-Whitespace">    </span><span class="mi">489</span> <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">490</span>     <span class="sd">&quot;&quot;&quot;Returns a dict of neighbors of node n.  Use: &#39;G[n]&#39;.</span>
+<span class="g g-Whitespace">    </span><span class="mi">491</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">492</span><span class="sd">     Parameters</span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">    </span><span class="mi">511</span><span class="sd">     AtlasView({1: {}})</span>
+<span class="g g-Whitespace">    </span><span class="mi">512</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">513</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">adj</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
+
+<span class="nn">File ~/.virtualenvs/p39/lib/python3.9/site-packages/networkx/classes/coreviews.py:81,</span> in <span class="ni">AdjacencyView.__getitem__</span><span class="nt">(self, name)</span>
+<span class="g g-Whitespace">     </span><span class="mi">80</span> <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+<span class="ne">---&gt; </span><span class="mi">81</span>     <span class="k">return</span> <span class="n">AtlasView</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_atlas</span><span class="p">[</span><span class="n">name</span><span class="p">])</span>
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
@@ -1506,9 +1515,9 @@ $\sigma = \frac{C/C_{r}}{L/L_{r}}$ where $C$ and $L$ are respectively the averag
 </section>
 <section id="propagation-or-replication-in-a-network">
 <h3><span class="section-number">1.4.9. </span>Propagation -or replication- in a network<a class="headerlink" href="#propagation-or-replication-in-a-network" title="Permalink to this heading">#</a></h3>
-<p>Similarly to how we implemented the SIR Model for Spread of Disease in week 1 by using a matrix to describe the evolution of a viral infection, the adjacency matrix can be used to model <strong>propagation -or replication-</strong> in the network -like a viral infection or information propagation- where we model the state of infection of the people by a state vector $s$ —a vector made of the state of each node: 0 if healthy, 1 if infected— and each propagation step of the virus can be seen as applying the adjacency matrix $M$ to $s$: $s(t+1) = M s(t)$.</p>
+<p>Similarly to how we implemented the SIR Model for Spread of Disease in week 1 by using a matrix to describe the evolution of a viral infection, the adjacency matrix can be used to model <strong>propagation -or replication-</strong> in the network -like a viral infection or information propagation- where we model the state of infection of the people by a state vector <span class="math notranslate nohighlight">\(s\)</span> —a vector made of the state of each node: 0 if healthy, 1 if infected— and each propagation step of the virus can be seen as applying the adjacency matrix <span class="math notranslate nohighlight">\(M\)</span> to <span class="math notranslate nohighlight">\(s\)</span>: <span class="math notranslate nohighlight">\(s(t+1) = M s(t)\)</span>.</p>
 <p>If the diagonal is zero, it means that whichever thing is transmitted is not preserved by the node, eg. money transmission. For virus transmission for example, diagonal would be one because the virus stays in the person (at least for some time).</p>
-<p>An useful quantity to describe a propagation phenomena in a network —virus, money, information,..— is the <strong>amplification factor</strong> $A$. If a virus in a node spread to all the adjacent nodes of that node, then the amplification —Assuming transmission between all nodes is bidirectional (undirected network)— is: $A = \frac{&lt;k^{2}&gt;}{<k>} -1$ where <k> is the average degree of connectivity.</p>
+<p>An useful quantity to describe a propagation phenomena in a network —virus, money, information,..— is the <strong>amplification factor</strong> <span class="math notranslate nohighlight">\(A\)</span>. If a virus in a node spread to all the adjacent nodes of that node, then the amplification —Assuming transmission between all nodes is bidirectional (undirected network)— is: <span class="math notranslate nohighlight">\(A = \frac{&lt;k^{2}&gt;}{&lt;k&gt;} -1\)</span> where <k> is the average degree of connectivity.</p>
 <ul class="simple">
 <li><p>When A &gt; 1 then “disease like” signals tends to be exponentially amplified, and therefore will spread across the entire network, this of course reflects a high connectivity of the network.</p></li>
 <li><p>For A = 1, on the other hand, perturbations will be marginal spreading, where some will spread and others will “die-out”. In this case we need to have an average of 1 output per 1 input. This case will lead to a power law distribution of clusters size.</p></li>
@@ -1517,7 +1526,7 @@ $\sigma = \frac{C/C_{r}}{L/L_{r}}$ where $C$ and $L$ are respectively the averag
 </section>
 <section id="diffusion-in-a-network">
 <h3><span class="section-number">1.4.10. </span>Diffusion in a network<a class="headerlink" href="#diffusion-in-a-network" title="Permalink to this heading">#</a></h3>
-<p>If we take the adjacency matrix and replace its non-zero values by a weight representing the strength of the connection we obtain the <strong>transfer matrix</strong> $T$ (provided that the sum of weights for each node is equal to 1). The transfer matrix describe a diffusion process in a network. In a diffusion process we observed a continuous propagation of a given quantity —as opposed to the binary propagation in replication.</p>
+<p>If we take the adjacency matrix and replace its non-zero values by a weight representing the strength of the connection we obtain the <strong>transfer matrix</strong> <span class="math notranslate nohighlight">\(T\)</span> (provided that the sum of weights for each node is equal to 1). The transfer matrix describe a diffusion process in a network. In a diffusion process we observed a continuous propagation of a given quantity —as opposed to the binary propagation in replication.</p>
 <p>The eigenvalues of the transfer matrix gives information about how fast the diffusion process expand/contract.</p>
 </section>
 <section id="spectral-graph-theory">
