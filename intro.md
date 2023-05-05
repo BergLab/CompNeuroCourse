@@ -22,12 +22,12 @@ If you have never coded or used python before (or it's been a while), we strongl
 
 ### Set-up for coding
 
-Similarly to the aforementioned python course, the coding workshops will take the form of "notebooks": notebooks are a document format that allows you to run code, write text and generate plots in the same document. They are made of *cells*, which can be *code cells* or *text cells*. In most notebooks, you can execute a cell by pressing *Shift + Enter*.
+Similarly to the aforementioned python course, the coding workshops will take the form of "notebooks": notebooks are a document format that allows you to run code, write text and generate plots in the same document. Python notebooks have a *.ipynb* extension. They are made of *cells*, which can be *code cells* or *text cells*. In most notebooks, you can execute a cell by pressing *Shift + Enter*.
 
 You have two options for doing the exercises: 
   * the simplest one is to use [Google Colab](colab.research.google.com). *Google's Colab* is a simple way of running notebooks without having to install anything locally on your computer. To open a chapter in Colab simply click on rocket symbol 🚀 on the top of the page and then click on Colab. Watch [Introduction to Colab](https://www.youtube.com/watch?v=inN8seMm7UI) for a quick introduction on how to use. If you have taken the preparatory [python introduction course](https://www.kaggle.com/learn/python), you will see that Colab is very similar to the Kaggle notebooks.
 
-  * The second option is to install an editor (the app where you type code) and Python in your computer. This option has the advantage of letting you work more easily with your own data and have some nice extra features. If you pick this option, we recommend you get either [VSCode](https://code.visualstudio.com/download) or Spyder. A simple way of installing both Spyder editor and Python is to [install Anaconda](https://www.anaconda.com/products/distribution). Then you can simply download the notebooks from the course website and open them in your computer.
+  * The second option is to install an editor (the app where you type code) and Python in your computer. This option has the advantage of letting you work more easily with your own data and have some nice extra features. If you pick this option, we recommend you get either [VSCode](https://code.visualstudio.com/download) or Spyder. A simple way of installing both Spyder editor and Python is to [install Anaconda](https://www.anaconda.com/products/distribution). Then you can simply download the notebooks from the course website by clicking on the download button on the top write corner and clicking on *.ipynb*.
 
 If you're already comfortable using other editor, you're more than welcome to keep it using. 
 
