@@ -96,7 +96,7 @@
 
 # An example of the mixture of scales, which is required in mapping connections can be found in a recent study using rhesus monkey ([Xu et al 2021]( https://doi.org/10.1038/s41587-021-00986-5 )).  
 # <video width="320" height="240" controls>
-#   <source src="Scalesnervoussystem.mp4" type=video/mp4>
+#   <source src="../modelling_intro/media/Scalesnervoussystem.mp4" type=video/mp4>
 # </video>
 # 
 # 
