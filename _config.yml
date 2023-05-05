@@ -9,7 +9,7 @@ logo: _static/media/cajal1.png
 # See https://jupyterbook.org/content/execute.html
 execute:
   execute_notebooks: force
-  timeout: 100
+  timeout: -1
 
 # Define the name of the latex output file for PDF builds
 latex:
