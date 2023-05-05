@@ -27,10 +27,6 @@
 # We can have hypothesis without a theory, but not vice versa. These ideas are based on the science philosopher Karl Popper, who proposed that the scientific method should consist of empirical falsification of hypotheses, i.e. rejection of hypotheses, rather than proving theories. 
 # 
 
-# <div align="center">
-# <p style="text-align:center;"><img src="modelling_intro/media/theory_chairs.png" width="600"/>
-# </div>
-
 # ### Theory and models
 # #### A model is an implementation of a theory. If can also be a realization of an aspect of the theory.
 # 
@@ -100,11 +96,10 @@
 
 # An example of the mixture of scales, which is required in mapping connections can be found in a recent study using rhesus monkey ([Xu et al 2021]( https://doi.org/10.1038/s41587-021-00986-5 )).  
 # 
-# <p style="text-align:center;"><
+# <p style="text-align:center;">
 #  <video width="640" height="480" controls>
 #   <source src="../modelling_intro/media/Scalesnervoussystem.mp4" type=video/mp4>
 # </video> 
-# />
 # 
 # 
 
