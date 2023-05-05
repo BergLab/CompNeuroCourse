@@ -54,8 +54,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -173,7 +171,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Chapter 3. Simulating neural population
+  Chapter 3. Simulating neural populations
  </span>
 </p>
 <ul class="nav bd-sidenav">
@@ -1418,8 +1416,8 @@ Name: Temperature, Length: 240, dtype: bool
 <section id="id4">
 <h3><span class="section-number">1.8.1. </span>Exercise<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
-<li><p>Add a new feature vector to the new data frame with the volume of each star. # Hint: Notice the column ‘Size’ is the radius <span class="math notranslate nohighlight">\(R\)</span> of each star and that the volume of a sphere is <span class="math notranslate nohighlight">\(\frac{4}{3} \pi R^{3}\)</span></p></li>
-<li><p>(Bonus Exercise) Add a new feature vector to the new data frame with the mass of each star. # Hint: The mass <span class="math notranslate nohighlight">\(m\)</span> of an object is equal to the product of the volume <span class="math notranslate nohighlight">\(V\)</span> by its density <span class="math notranslate nohighlight">\(\rho\)</span>, that is,  <span class="math notranslate nohighlight">\(m = \rho V \)</span>. Notice that different types of stars have different densities so you’ll have to use the filtering as we did above: <span class="math notranslate nohighlight">\(\rho_{Dwarfs} = 10^{5} g/cc\)</span>,  <span class="math notranslate nohighlight">\(\rho_{Giants} = 10^{-8} g/cc\)</span>,  <span class="math notranslate nohighlight">\(\rho_{Main\ sequence} = 1 g/cc\)</span>. <em>You are welcome to ignore the units, the goal is that you practice how to apply operations to a subset of data frame.</em></p></li>
+<li><p>Add a new feature vector to the new data frame with the volume of each star. # Hint: Notice the column ‘Size’ is the radius $R$ of each star and that the volume of a sphere is $\frac{4}{3} \pi R^{3}$</p></li>
+<li><p>(Bonus Exercise) Add a new feature vector to the new data frame with the mass of each star. # Hint: The mass $m$ of an object is equal to the product of the volume $V$ by its density $\rho$, that is,  $m = \rho V $. Notice that different types of stars have different densities so you’ll have to use the filtering as we did above: $\rho_{Dwarfs} = 10^{5} g/cc$,  $\rho_{Giants} = 10^{-8} g/cc$,  $\rho_{Main\ sequence} = 1 g/cc$. <em>You are welcome to ignore the units, the goal is that you practice how to apply operations to a subset of data frame.</em></p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1489,7 +1487,7 @@ Name: Temperature, Length: 240, dtype: bool
 <img alt="../../_images/a_70_2.png" src="../../_images/a_70_2.png" />
 </div>
 </div>
-<p>We can see in the plot of <span class="math notranslate nohighlight">\(A_M\)</span> versus Temperature, that there is a cluster of points (<span class="math notranslate nohighlight">\(A_M&gt;9\)</span>,Temperature <span class="math notranslate nohighlight">\(&gt;5000\)</span>) where the variables appear to have a strong correlation.  We might want to isolate and study that particular subset of the data by extracting it to a different DataFrame.</p>
+<p>We can see in the plot of $A_M$ versus Temperature, that there is a cluster of points ($A_M&gt;9$,Temperature $&gt;5000$) where the variables appear to have a strong correlation.  We might want to isolate and study that particular subset of the data by extracting it to a different DataFrame.</p>
 <p>Let’s isolate it into the variable <code class="docutils literal notranslate"><span class="pre">df_TAM</span></code> and plot it in a different color:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1535,7 +1533,7 @@ max    25000.000000    0.056000   0.015000  14.870000        12500.000000
 <h2><span class="section-number">1.11. </span>Linear Regression<a class="headerlink" href="#linear-regression" title="Permalink to this heading">#</a></h2>
 <p>Let’s finish this notebook by doing a liner regression on the data.</p>
 <p>A linear regression consist in a linear model than relates one variable to another variable. For instance, the temperature of a star to it luminosity. Linear models have the advantage of being easily interpreted —you can look at the model and figure out what’s going on. On the other hand, they can not model non-linear relations, and God had the poor taste of making natural phenomena <em>very</em> non-linear. On the Machine learning notebooks, we’ll learn how to train models that can deal with non-linear dependencies.</p>
-<p>Since the data in the high absolute magnitude <span class="math notranslate nohighlight">\(A_M\)</span>, high-Temperature subset seem to be strongly correlated, we might fit linear model. To do this we will import the <span class="math notranslate nohighlight">\(\texttt{linregress}\)</span> function from the <span class="math notranslate nohighlight">\(\texttt{stats}\)</span> module in SciPy.</p>
+<p>Since the data in the high absolute magnitude $A_M$, high-Temperature subset seem to be strongly correlated, we might fit linear model. To do this we will import the $\texttt{linregress}$ function from the $\texttt{stats}$ module in SciPy.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">linregress</span>
@@ -1563,13 +1561,13 @@ max    25000.000000    0.056000   0.015000  14.870000        12500.000000
   scatter = ax.scatter(
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1428462e0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1426d6a60&gt;]
 </pre></div>
 </div>
 <img alt="../../_images/a_79_2.png" src="../../_images/a_79_2.png" />
 </div>
 </div>
-<p>The model object that was produced by <span class="math notranslate nohighlight">\(\texttt{linregress}\)</span> also contains the correlation coefficient, pvalue, and standard error.</p>
+<p>The model object that was produced by $\texttt{linregress}$ also contains the correlation coefficient, pvalue, and standard error.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Correlation coefficient:&quot;</span><span class="p">,</span><span class="n">linear_model</span><span class="o">.</span><span class="n">rvalue</span><span class="p">)</span>
