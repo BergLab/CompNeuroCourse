@@ -850,6 +850,8 @@ Examples of applications of network science are ecosystems, biological pathways,
 <h4><span class="section-number">1.2.5.2. </span>Feature activation<a class="headerlink" href="#feature-activation" title="Permalink to this heading">#</a></h4>
 <p>Like in machine learning neural networks, we can apply a non-linearity <span class="math notranslate nohighlight">\(\sigma\)</span> to the output of the feature propagation:</p>
 <p><span class="math notranslate nohighlight">\(F^{'} = \sigma(D^{-1} W F )\)</span></p>
+<div class="math notranslate nohighlight">
+\[F^{'} = \sigma(D^{-1} W F )\]</div>
 </section>
 <section id="extra-linear-transformations">
 <h4><span class="section-number">1.2.5.3. </span>Extra Linear transformations<a class="headerlink" href="#extra-linear-transformations" title="Permalink to this heading">#</a></h4>
@@ -948,16 +950,16 @@ Examples of applications of network science are ecosystems, biological pathways,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0. 1. 1. 1. 1. 0. 0. 0. 0. 1.]
- [1. 1. 0. 0. 0. 0. 1. 0. 0. 0.]
- [1. 0. 0. 1. 0. 1. 1. 0. 0. 0.]
- [1. 0. 1. 0. 0. 0. 0. 0. 1. 0.]
- [1. 0. 0. 0. 0. 1. 1. 1. 0. 0.]
- [0. 0. 1. 0. 1. 0. 0. 0. 0. 0.]
- [0. 1. 1. 0. 1. 0. 0. 0. 0. 1.]
- [0. 0. 0. 0. 1. 0. 0. 0. 1. 0.]
- [0. 0. 0. 1. 0. 0. 0. 1. 0. 0.]
- [1. 0. 0. 0. 0. 0. 1. 0. 0. 0.]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0. 1. 1. 1. 0. 0. 0. 0. 0. 0.]
+ [1. 0. 1. 1. 1. 0. 0. 1. 0. 0.]
+ [1. 1. 0. 0. 0. 0. 1. 0. 1. 0.]
+ [1. 1. 0. 0. 0. 0. 0. 0. 0. 0.]
+ [0. 1. 0. 0. 0. 0. 0. 1. 0. 0.]
+ [0. 0. 0. 0. 0. 1. 1. 0. 0. 0.]
+ [0. 0. 1. 0. 0. 1. 0. 1. 1. 0.]
+ [0. 1. 0. 0. 1. 0. 1. 0. 0. 0.]
+ [0. 0. 1. 0. 0. 0. 1. 0. 0. 0.]
+ [0. 0. 0. 0. 0. 0. 0. 0. 0. 1.]]
 </pre></div>
 </div>
 </div>
@@ -985,13 +987,13 @@ Examples of applications of network science are ecosystems, biological pathways,
 <img alt="../../_images/a_13_0.png" src="../../_images/a_13_0.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Adjacency matrix:
 
-[[0 1 0 0 1 1 1]
- [1 1 1 1 0 1 0]
- [0 1 0 1 0 0 1]
- [0 0 0 1 0 0 0]
- [1 0 0 1 0 0 1]
- [0 0 1 1 1 1 1]
- [0 0 0 0 0 0 1]]
+[[0 0 0 0 1 0 1]
+ [1 1 1 0 0 1 1]
+ [0 0 0 1 0 1 1]
+ [1 1 1 0 0 1 1]
+ [1 0 1 0 1 0 0]
+ [0 1 0 0 1 0 1]
+ [1 1 0 0 0 1 0]]
 </pre></div>
 </div>
 </div>
@@ -1016,7 +1018,7 @@ Examples of applications of network science are ecosystems, biological pathways,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Graph with 10 nodes and 20 edges
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Graph with 10 nodes and 17 edges
 </pre></div>
 </div>
 </div>
@@ -1046,11 +1048,11 @@ Examples of applications of network science are ecosystems, biological pathways,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/jw/bb3wy2wj6bv8jf69svd8cqdc0000gn/T/ipykernel_16760/2232413052.py:15: MatplotlibDeprecationWarning: Unable to determine Axes to steal space for Colorbar. Using gca(), but will raise in the future. Either provide the *cax* argument to use as the Axes for the Colorbar, provide the *ax* argument to steal space from it, or add *mappable* to an Axes.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/jw/bb3wy2wj6bv8jf69svd8cqdc0000gn/T/ipykernel_17140/2232413052.py:15: MatplotlibDeprecationWarning: Unable to determine Axes to steal space for Colorbar. Using gca(), but will raise in the future. Either provide the *cax* argument to use as the Axes for the Colorbar, provide the *ax* argument to steal space from it, or add *mappable* to an Axes.
   plt.colorbar(plt.cm.ScalarMappable(cmap=plt.cm.viridis, norm=plt.Normalize(vmin = edge_colors.min(), vmax=edge_colors.max())));
 </pre></div>
 </div>
-<img alt="../../_images/a_18_11.png" src="../../_images/a_18_11.png" />
+<img alt="../../_images/a_18_1.png" src="../../_images/a_18_1.png" />
 </div>
 </div>
 <section id="exercises">
@@ -1108,27 +1110,27 @@ Another quantification of a node centrality is <em>betweenness</em>. <strong>Bet
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(0, 9), (1, 9), (2, 10), (3, 13), (4, 7), (5, 9), (6, 8), (7, 11), (8, 7), (9, 10), (10, 9), (11, 9), (12, 9), (13, 8), (14, 11), (15, 10), (16, 8), (17, 10), (18, 11), (19, 10)]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(0, 9), (1, 14), (2, 8), (3, 11), (4, 12), (5, 12), (6, 9), (7, 9), (8, 10), (9, 11), (10, 8), (11, 10), (12, 13), (13, 10), (14, 10), (15, 7), (16, 9), (17, 13), (18, 12), (19, 15)]
 Node 0 has degree 9
-Node 1 has degree 9
-Node 2 has degree 10
-Node 3 has degree 13
-Node 4 has degree 7
-Node 5 has degree 9
-Node 6 has degree 8
-Node 7 has degree 11
-Node 8 has degree 7
-Node 9 has degree 10
-Node 10 has degree 9
-Node 11 has degree 9
-Node 12 has degree 9
-Node 13 has degree 8
-Node 14 has degree 11
-Node 15 has degree 10
-Node 16 has degree 8
-Node 17 has degree 10
-Node 18 has degree 11
-Node 19 has degree 10
+Node 1 has degree 14
+Node 2 has degree 8
+Node 3 has degree 11
+Node 4 has degree 12
+Node 5 has degree 12
+Node 6 has degree 9
+Node 7 has degree 9
+Node 8 has degree 10
+Node 9 has degree 11
+Node 10 has degree 8
+Node 11 has degree 10
+Node 12 has degree 13
+Node 13 has degree 10
+Node 14 has degree 10
+Node 15 has degree 7
+Node 16 has degree 9
+Node 17 has degree 13
+Node 18 has degree 12
+Node 19 has degree 15
 </pre></div>
 </div>
 </div>
@@ -1181,11 +1183,11 @@ Node 19 has degree 10
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Graph with 20 nodes and 94 edges
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Graph with 20 nodes and 106 edges
 Number of nodes: 20
-Number of edges: 94
+Number of edges: 106
 Network diameter: 2
-Average shortest path: 1.5052631578947369
+Average shortest path: 1.4421052631578948
 </pre></div>
 </div>
 </div>
@@ -1240,26 +1242,26 @@ Average shortest path: 1.5052631578947369
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{0: 0.5277777777777778,
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{0: 0.38181818181818183,
  1: 0.4444444444444444,
- 2: 0.4642857142857143,
- 3: 0.42857142857142855,
- 4: 0.4722222222222222,
- 5: 0.3888888888888889,
- 6: 0.42857142857142855,
- 7: 0.5357142857142857,
- 8: 0.5714285714285714,
- 9: 0.3055555555555556,
- 10: 0.2909090909090909,
- 11: 0,
- 12: 0.3090909090909091,
- 13: 0.4888888888888889,
- 14: 0.3611111111111111,
- 15: 0.4722222222222222,
- 16: 0.3611111111111111,
- 17: 0.4727272727272727,
- 18: 0.42857142857142855,
- 19: 0.3333333333333333}
+ 2: 0.4444444444444444,
+ 3: 0.4945054945054945,
+ 4: 0.5,
+ 5: 0.5,
+ 6: 0.509090909090909,
+ 7: 0.4,
+ 8: 0.4222222222222222,
+ 9: 0.43636363636363634,
+ 10: 0.42857142857142855,
+ 11: 0.5,
+ 12: 0.4727272727272727,
+ 13: 0.5357142857142857,
+ 14: 0.5,
+ 15: 0.42857142857142855,
+ 16: 0.5111111111111111,
+ 17: 0.4722222222222222,
+ 18: 0.5555555555555556,
+ 19: 0.4}
 </pre></div>
 </div>
 </div>
@@ -1273,7 +1275,7 @@ Average shortest path: 1.5052631578947369
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The global CC of the network is 0.4042712842712842
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The global CC of the network is 0.4668681318681318
 </pre></div>
 </div>
 </div>
@@ -1366,7 +1368,7 @@ Average shortest path: 1.5052631578947369
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Omega of the network is -0.20380881181588817 and it took 10.67425012588501 seconds to compute it
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Omega of the network is -0.22297527607042633 and it took 9.739299058914185 seconds to compute it
 </pre></div>
 </div>
 </div>
@@ -1456,28 +1458,20 @@ Average shortest path: 1.5052631578947369
 <span class="g g-Whitespace">    </span><span class="mi">105</span> <span class="k">else</span><span class="p">:</span>
 <span class="g g-Whitespace">    </span><span class="mi">106</span>     <span class="n">R</span> <span class="o">=</span> <span class="n">residual</span>
 
-<span class="nn">File ~/.virtualenvs/p39/lib/python3.9/site-packages/networkx/algorithms/flow/utils.py:142,</span> in <span class="ni">build_residual_network</span><span class="nt">(G, capacity)</span>
-<span class="g g-Whitespace">    </span><span class="mi">139</span>             <span class="n">R</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">capacity</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">140</span>         <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">141</span>             <span class="c1"># The edge (u, v) was added when (v, u) was visited.</span>
-<span class="ne">--&gt; </span><span class="mi">142</span>             <span class="n">R</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">v</span><span class="p">][</span><span class="s2">&quot;capacity&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">r</span>
-<span class="g g-Whitespace">    </span><span class="mi">143</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">144</span>     <span class="k">for</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">attr</span> <span class="ow">in</span> <span class="n">edge_list</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">145</span>         <span class="c1"># Add a pair of edges with equal residual capacities.</span>
+<span class="nn">File ~/.virtualenvs/p39/lib/python3.9/site-packages/networkx/algorithms/flow/utils.py:138,</span> in <span class="ni">build_residual_network</span><span class="nt">(G, capacity)</span>
+<span class="g g-Whitespace">    </span><span class="mi">134</span> <span class="n">r</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">attr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">capacity</span><span class="p">,</span> <span class="n">inf</span><span class="p">),</span> <span class="n">inf</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">135</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">R</span><span class="o">.</span><span class="n">has_edge</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">136</span>     <span class="c1"># Both (u, v) and (v, u) must be present in the residual</span>
+<span class="g g-Whitespace">    </span><span class="mi">137</span>     <span class="c1"># network.</span>
+<span class="ne">--&gt; </span><span class="mi">138</span>     <span class="n">R</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">capacity</span><span class="o">=</span><span class="n">r</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">139</span>     <span class="n">R</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">capacity</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">140</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">141</span>     <span class="c1"># The edge (u, v) was added when (v, u) was visited.</span>
 
-<span class="nn">File ~/.virtualenvs/p39/lib/python3.9/site-packages/networkx/classes/graph.py:513,</span> in <span class="ni">Graph.__getitem__</span><span class="nt">(self, n)</span>
-<span class="g g-Whitespace">    </span><span class="mi">489</span> <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">490</span>     <span class="sd">&quot;&quot;&quot;Returns a dict of neighbors of node n.  Use: &#39;G[n]&#39;.</span>
-<span class="g g-Whitespace">    </span><span class="mi">491</span><span class="sd"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">492</span><span class="sd">     Parameters</span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">    </span><span class="mi">511</span><span class="sd">     AtlasView({1: {}})</span>
-<span class="g g-Whitespace">    </span><span class="mi">512</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">513</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">adj</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
-
-<span class="nn">File ~/.virtualenvs/p39/lib/python3.9/site-packages/networkx/classes/coreviews.py:81,</span> in <span class="ni">AdjacencyView.__getitem__</span><span class="nt">(self, name)</span>
-<span class="g g-Whitespace">     </span><span class="mi">80</span> <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-<span class="ne">---&gt; </span><span class="mi">81</span>     <span class="k">return</span> <span class="n">AtlasView</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_atlas</span><span class="p">[</span><span class="n">name</span><span class="p">])</span>
+<span class="nn">File ~/.virtualenvs/p39/lib/python3.9/site-packages/networkx/classes/digraph.py:711,</span> in <span class="ni">DiGraph.add_edge</span><span class="nt">(self, u_of_edge, v_of_edge, **attr)</span>
+<span class="g g-Whitespace">    </span><span class="mi">709</span> <span class="n">datadict</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">attr</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">710</span> <span class="bp">self</span><span class="o">.</span><span class="n">_succ</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="n">datadict</span>
+<span class="ne">--&gt; </span><span class="mi">711</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pred</span><span class="p">[</span><span class="n">v</span><span class="p">][</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="n">datadict</span>
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>

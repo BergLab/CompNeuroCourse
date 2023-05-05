@@ -83,6 +83,8 @@
 # 
 # $F^{'} = \sigma(D^{-1} W F )$  
 # 
+# $$F^{'} = \sigma(D^{-1} W F )$$
+# 
 # #### Extra Linear transformations
 # 
 # Extra linear transformations —equivalent to linear layers in ANN— can be addded by simply adding an extra learnable matrix $L$. Remeber linar applications are not commutative.
