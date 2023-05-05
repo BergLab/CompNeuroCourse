@@ -604,14 +604,12 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: brian2 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (2.5.1)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: sympy&gt;=1.2 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from brian2) (1.10.1)
 Requirement already satisfied: numpy&gt;=1.17 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from brian2) (1.23.5)
-Requirement already satisfied: pyparsing in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from brian2) (3.0.7)
-Requirement already satisfied: setuptools&gt;=24.2 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from brian2) (60.10.0)
 Requirement already satisfied: cython&gt;=0.29 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from brian2) (0.29.30)
+Requirement already satisfied: setuptools&gt;=24.2 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from brian2) (60.10.0)
+Requirement already satisfied: sympy&gt;=1.2 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from brian2) (1.10.1)
 Requirement already satisfied: jinja2&gt;=2.7 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from brian2) (3.1.2)
+Requirement already satisfied: pyparsing in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from brian2) (3.0.7)
 Requirement already satisfied: MarkupSafe&gt;=2.0 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from jinja2&gt;=2.7-&gt;brian2) (2.1.1)
 Requirement already satisfied: mpmath&gt;=0.19 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from sympy&gt;=1.2-&gt;brian2) (1.2.1)
 </pre></div>
@@ -807,26 +805,36 @@ Requirement already satisfied: mpmath&gt;=0.19 in /Users/enaj/.virtualenvs/p39/l
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[-0.0083976   0.00509768 -0.00690424  0.00393848 -0.00329584 -0.00208982
-  -0.00031759 -0.00398256  0.00976243  0.00730793]
- [-0.00733131  0.00566356  0.00149402  0.00683941 -0.00175349  0.00244329
-   0.00056667  0.00538978 -0.0055071  -0.00661883]
- [ 0.00517665  0.0016271  -0.00980545  0.00517624  0.00074851  0.00784426
-   0.00408213  0.0043724  -0.00908108  0.00511988]
- [-0.00014511 -0.00074657 -0.00224727  0.009869    0.00065698 -0.00208009
-   0.00489559  0.00656514  0.00173312  0.00746287]
- [ 0.00083016  0.00393709 -0.00418523  0.00802493  0.00023938  0.00657787
-  -0.00084524  0.00326604  0.00639106 -0.00182758]
- [ 0.00824278 -0.00149039  0.00053743  0.00266358  0.0057743  -0.00545436
-   0.00587634 -0.00079746  0.00191601 -0.00813081]
- [-0.00316022  0.00365218 -0.0069863  -0.00171732 -0.00788243  0.00708048
-  -0.00557128 -0.00351705 -0.00383567 -0.00476148]
- [-0.00211826  0.00039247  0.0049142   0.00152275 -0.00940716  0.0022704
-   0.00256657  0.00048232  0.00908333 -0.00480555]
- [-0.00466174 -0.00985952  0.0095456   0.00495128  0.00342852  0.00260035
-   0.00520588 -0.00178231  0.00734934  0.00161356]
- [ 0.00368145  0.0064399   0.00101548  0.00469743 -0.00626376 -0.00167441
-   0.00664042  0.00166234 -0.00036494 -0.00627569]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[-9.33474064e-03 -7.88401906e-03  3.14466348e-03  4.53763988e-03
+  -1.22920478e-03  4.35437479e-03 -1.69326814e-03  5.34022684e-03
+  -4.03469230e-03  9.59486177e-03]
+ [-4.48300894e-03 -5.14990240e-03  6.73225435e-03  6.16971074e-03
+  -9.46768025e-03  6.33715712e-03  5.08271229e-03 -6.84752371e-03
+  -1.97824570e-03 -7.77896840e-04]
+ [-3.03766320e-03 -1.90712416e-03 -9.27504649e-04  3.63002862e-03
+   6.33719604e-04  6.68261349e-03 -9.07815193e-03 -7.49377528e-03
+  -3.76097153e-04  2.17177417e-03]
+ [ 6.94394867e-03 -1.33887632e-03 -6.44955191e-03  9.28408062e-03
+  -3.48447523e-03 -2.66544532e-03  4.58328990e-04  5.58456927e-03
+   1.12053528e-03 -1.72905504e-03]
+ [ 9.53180853e-03 -9.12889061e-03 -4.73187536e-04  9.36154217e-03
+  -5.61479540e-03  8.45132608e-03 -3.30309779e-03  3.46391623e-03
+  -6.72345796e-03 -7.20530575e-03]
+ [ 1.24298451e-03 -4.80906527e-03  1.09026953e-03  7.63206677e-03
+   5.24032405e-03  2.30175579e-03 -1.39018261e-03 -8.70667144e-03
+   7.41572859e-03 -8.98693724e-03]
+ [ 9.39745234e-03 -8.57575350e-04 -4.33057034e-03 -1.85758372e-03
+   5.82531536e-03  1.69327910e-03  2.25960489e-03 -5.23836621e-03
+  -5.51836682e-04  8.21969396e-03]
+ [-9.94563707e-03 -9.21345599e-03  6.56504992e-03  4.45488161e-03
+   4.58184084e-03 -9.68807437e-03 -6.60010878e-03 -4.41718531e-05
+  -8.67820058e-03 -3.38591338e-03]
+ [-1.32334166e-03  4.29100668e-04 -7.00223135e-03 -9.51527632e-03
+   1.47460657e-03  3.49102607e-03  3.30494255e-03  2.41009901e-03
+  -6.31583583e-04  1.56241624e-03]
+ [-1.28618408e-03  4.61028700e-03 -6.74873131e-03 -5.46567118e-03
+  -1.10136047e-03 -6.13223343e-03  5.94308289e-03  6.91661447e-03
+  -6.28220243e-03 -8.87864983e-03]]
 </pre></div>
 </div>
 </div>
@@ -934,7 +942,7 @@ Requirement already satisfied: mpmath&gt;=0.19 in /Users/enaj/.virtualenvs/p39/l
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x10b2901f0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x129021520&gt;
 </pre></div>
 </div>
 <img alt="../../_images/b_31_1.png" src="../../_images/b_31_1.png" />

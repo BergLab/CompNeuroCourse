@@ -253,8 +253,9 @@ plt.show();
 #   - Write down the connectivity matrices of the following networks (in paper and as a numpy array):
 # 
 # <div align="center">
-# <p style="text-align:center;"><img src="https://github.com/BergLab/CompNeuroBook/blob/main/notebooks/week5/graphs.png?raw=true" width="500"/>
+# <p style="text-align:center;"><img src="../network_theory/media/graphs.png" width="500"/>
 # </div>
+# 
 # 
 #   - Using the connectivity matrices you just wrote, create a graph with NetworkX for each of them and draw them using `draw_networkx()` function.
 # 
@@ -540,7 +541,7 @@ print(f'Omega: {omega}, Sigma: {sigma}')
 #   - Compute the diameter, the average shortest path and the global CC for a small-worlds network and a scale free one (of the same size) and compare them. Discuss the difference and make you understand what why these quantities are different for those two network topologies.
 # 
 
-# In[ ]:
+# In[21]:
 
 
 ## Your code here
@@ -573,7 +574,7 @@ print(f'Omega: {omega}, Sigma: {sigma}')
 # 
 # As it is always the case when working with matrices, we can derive certain network properties from the connectivity matrix eigenspectrum, this is referred as [Spectral graph theory](https://en.wikipedia.org/wiki/Spectral_graph_theory). We won't elaborate more on this but let us show that it is straightforward to compute the eigenvalues of a graph using NetworkX and numpy:
 
-# In[ ]:
+# In[22]:
 
 
 import numpy.linalg
