@@ -24,7 +24,7 @@ parts:
   chapters:
   - file: notebooks/dynamical_systems/dynamical_systems_intro
   - file: notebooks/dynamical_systems/Applications_LT
-- caption: Chapter 3. Simulating neural population
+- caption: Chapter 3. Simulating neural populations
   numbered: true
   chapters:
   - file: notebooks/simulation_neuralsystems/neuralsimulation_intro
