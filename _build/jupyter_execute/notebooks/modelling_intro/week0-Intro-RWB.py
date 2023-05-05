@@ -27,6 +27,10 @@
 # We can have hypothesis without a theory, but not vice versa. These ideas are based on the science philosopher Karl Popper, who proposed that the scientific method should consist of empirical falsification of hypotheses, i.e. rejection of hypotheses, rather than proving theories. 
 # 
 
+# <div align="center">
+# <p style="text-align:center;"><img src="modelling_intro/media/theory_chairs.png" width="600"/>
+# </div>
+
 # ### Theory and models
 # #### A model is an implementation of a theory. If can also be a realization of an aspect of the theory.
 # 
@@ -95,9 +99,12 @@
 # 
 
 # An example of the mixture of scales, which is required in mapping connections can be found in a recent study using rhesus monkey ([Xu et al 2021]( https://doi.org/10.1038/s41587-021-00986-5 )).  
-# <video width="320" height="240" controls>
+# 
+# <p style="text-align:center;"><
+#  <video width="640" height="480" controls>
 #   <source src="../modelling_intro/media/Scalesnervoussystem.mp4" type=video/mp4>
-# </video>
+# </video> 
+# />
 # 
 # 
 
@@ -105,9 +112,9 @@
 # There is a prevalent, but simplistic belief in neuroscience that behavior of the organism can be explained or ascribed to a certain cell type. "Cell type x is responsible for behavior y". Behavior could even be ascribed to a certain ion channel protein or gene, which has been investigated by instance come from genetic knock-out. This of course a strong simplification, since it would require explaining a phenomenon (behavior) which is the outcome at the highest scale in the system (nervous system). It is rare that a single constituent on the lowest scale (molecules) can be directly linked to the highest scale (behaviour). To read more about these caveat see [Krakauer](https://doi.org/10.1016/j.neuron.2016.12.041).
 # 
 # 
-# <p style="text-align:left;"><img src="../modelling_intro/media/Reductionism.png" width="300"/> 
+# <p style="text-align:center;"><img src="../modelling_intro/media/Reductionism.png" width="300"/> 
 # 
-# <p style="text-align:left;"><img src="../modelling_intro/media/Scales3.png" width="200"/>
+# <p style="text-align:center;"><img src="../modelling_intro/media/Scales3.png" width="200"/>
 # 
 
 # ## Level of details when building a model
@@ -158,20 +165,20 @@
 # ## Krakauer's Warning of reductionism
 # krakauer argues that there are more tools available now than ever, and therefore there is an epistemological bias towards Marr's third level of analysis, which is the experimental manipulation aspect ([Krakauer et al 2017](https://doi.org/10.1016/j.neuron.2016.12.041)).  The example that is used (originally proposed by Marr), is the action of flying by a bird. The feathers have something to do with flying, but in order to understand this task we cannot only look at the feathers. Other animals can fly without feather, for instance, bats. The epistomologic bias comes from a view that technology can provide or induce the understanding. Krakauer and colleagues argues against this view   ([Krakauer et al 2017](https://doi.org/10.1016/j.neuron.2016.12.041), [Barack and Krakauer 2021](https://www.nature.com/articles/s41583-021-00448-6) ) 
 # 
-# <p style="text-align:left;"><img src="../modelling_intro/media/Krakauer Figure.png" width="800"/>
+# <p style="text-align:center;"><img src="../modelling_intro/media/Krakauer Figure.png" width="800"/>
 # 
 
 # ## Some instructive models: Population dynamics
 # Maltheus 1798 proposed a model of dynamics of the popoulation where the change in the population is proportional with the population at that time. This can be written as a first order ordinary differential equation. Solving this equation leads to exponential growth.
 # 
-# <p style="text-align:left;"><img src="../modelling_intro/media/Maltheus.png" width="800"/>
+# <p style="text-align:center;"><img src="../modelling_intro/media/Maltheus.png" width="800"/>
 # 
 # Half a century later, Verhulst (1845) proposed an addition to the equation, that represented the reduction in resources to the individual as the population growth. This term would be proportional with the population and detract from the growth of the population. THis impedes the growth so it is no longer "exponential". Hence, this type of growth is known as "logistic" growth.  
-# <p style="text-align:left;"><img src="../modelling_intro/media/Verhulst.png" width="800"/>
+# <p style="text-align:center;"><img src="../modelling_intro/media/Verhulst.png" width="800"/>
 # 
 # Some time later a new model was proposed, that involved the population dynamics of two species, that interact with each other, one being a predictor and one being the prey. It was deveoped almost simultaneously albeit independently, by Lotka and Volterra (1925-1926) and it is known as the Lotka-Volterra preditor-prey model (LV-model).
 # 
-# <p style="text-align:left;"><img src="../modelling_intro/media/Lotka-Volterra.png" width="800"/>
+# <p style="text-align:center;"><img src="../modelling_intro/media/Lotka-Volterra.png" width="800"/>
 # 
 # 
 # 
@@ -182,14 +189,14 @@
 
 # Now, where did the rhythm in the LV model come from, and why was it different than the other population models? The essential element for generating rhythms is the combination of positive and negative feedback. This is actually a fundamental mechinism is biology. If we look closely, all biological systems have these two elements. This is especially the case in neuroscience. Networks, for instance often has a combination of feedback excitation and inhibition. If we look at the neocortex, it has both excitatory and inhibitory feedback. This has been schematically suggested in the literature ([reference]())
 # 
-# <p style="text-align:left;"><img src="../modelling_intro/media/Goodlove.png" width="800"/>
+# <p style="text-align:center;"><img src="../modelling_intro/media/Goodlove.png" width="800"/>
 # 
 # The idea of considering the inhibitory and excitatory as two uniform populations that act as a unit was the foundation for understanding basic brain rhythms and EEG dynamics. Such rhythmic activity arises out of the a cortical network model proposed by Hugh R. Wilson and Jack Cowan in the 1970'ies, which was published in a seminal paper ([Wilson and Cowan, 1972](https://www.sciencedirect.com/science/article/pii/S0006349572860685?via%3Dihub)). Now this is known as the (Wilson-Cowan model)[https://en.wikipedia.org/wiki/Wilson%E2%80%93Cowan_model].
 # 
 # The Wilson-Cowan model have the same positive and negative feedback as the preditor-prey model has. It also has dynamics whis is similar under some circumstances. Below is shown the excittory and inhibitory population activity plotted against each other and the exctitatory population as a function of time. This is from their paper ([Wilson and Cowan, 1972](https://www.sciencedirect.com/science/article/pii/S0006349572860685?via%3Dihub)).
 # 
 # 
-# <p style="text-align:left;"><img src="../modelling_intro/media/WilsonCowan.png" width="800"/>
+# <p style="text-align:center;"><img src="../modelling_intro/media/WilsonCowan.png" width="800"/>
 # 
 
 # ## Linear system analysis
