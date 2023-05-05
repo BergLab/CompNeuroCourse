@@ -433,8 +433,6 @@ print(f'The global CC of the network is {global_CC}')
 # <div align="center">
 # <p style="text-align:center;"><img src="../network_theory/media/scale-free.png" width="500"/>
 # </div>
-# 
-# 
 
 # ### Small-world networks
 # 
