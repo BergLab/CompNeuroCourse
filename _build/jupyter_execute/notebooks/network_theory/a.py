@@ -67,7 +67,7 @@
 # ### Graphs with features
 # Nodes may contain features, such as activations:
 # 
-# <div align="center">
+# <div align="right">
 # <p style="text-align:center;"><img src="../network_theory/media/graphfeatures.png" width="500"/>
 # </div>
 # 
@@ -82,8 +82,6 @@
 # Like in machine learning neural networks, we can apply a non-linearity $\sigma$ to the output of the feature propagation:
 # 
 # $F^{'} = \sigma(D^{-1} W F )$  
-# 
-# $$F^{'} = \sigma(D^{-1} W F )$$
 # 
 # #### Extra Linear transformations
 # 
