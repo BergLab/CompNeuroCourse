@@ -837,7 +837,7 @@ Examples of applications of network science are ecosystems, biological pathways,
 <h3><span class="section-number">1.2.5. </span>Graphs with features<a class="headerlink" href="#graphs-with-features" title="Permalink to this heading">#</a></h3>
 <p>Nodes may contain features, such as activations:</p>
 <div align="center">
-<p style="text-align:center;"><img src="https://github.com/BergLab/CompNeuroBook/blob/main/notebooks/network_theory/graphfeatures.png?raw=true" width="500"/>
+<p style="text-align:center;"><img src="../network_theory/media/graphfeatures.png" width="500"/>
 </div>
 <p>In this case, we can represent the structure of the graph with the weight / adjacency $W$ matrix and the features of the nodes with a vector $F$. The product $W F$ represents a new feature vector representing the propagation of the features values across the network, i.e. the feature value of a node will be the sum of the features of its connected nodes weighted by the respective edge values.</p>
 <section id="features-normalisation">
@@ -946,16 +946,16 @@ Examples of applications of network science are ecosystems, biological pathways,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1. 1. 1. 0. 0. 1. 0. 0. 0. 0.]
- [1. 0. 0. 0. 1. 0. 0. 1. 0. 0.]
- [1. 0. 0. 1. 0. 0. 0. 1. 0. 0.]
- [0. 0. 1. 0. 0. 0. 0. 0. 0. 0.]
- [0. 1. 0. 0. 0. 1. 1. 0. 0. 0.]
- [1. 0. 0. 0. 1. 0. 0. 1. 1. 0.]
- [0. 0. 0. 0. 1. 0. 0. 0. 0. 0.]
- [0. 1. 1. 0. 0. 1. 0. 0. 1. 0.]
- [0. 0. 0. 0. 0. 1. 0. 1. 0. 1.]
- [0. 0. 0. 0. 0. 0. 0. 0. 1. 0.]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0. 1. 0. 0. 1. 0. 0. 0. 0. 0.]
+ [1. 0. 1. 0. 0. 0. 1. 1. 0. 0.]
+ [0. 1. 0. 0. 0. 1. 0. 1. 0. 0.]
+ [0. 0. 0. 0. 1. 0. 1. 0. 0. 1.]
+ [1. 0. 0. 1. 0. 1. 1. 0. 1. 0.]
+ [0. 0. 1. 0. 1. 1. 1. 0. 0. 0.]
+ [0. 1. 0. 1. 1. 1. 0. 1. 1. 0.]
+ [0. 1. 1. 0. 0. 0. 1. 0. 0. 0.]
+ [0. 0. 0. 0. 1. 0. 1. 0. 0. 0.]
+ [0. 0. 0. 1. 0. 0. 0. 0. 0. 0.]]
 </pre></div>
 </div>
 </div>
@@ -983,13 +983,13 @@ Examples of applications of network science are ecosystems, biological pathways,
 <img alt="../../_images/a_13_0.png" src="../../_images/a_13_0.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Adjacency matrix:
 
-[[1 0 0 1 1 0 1]
- [0 0 0 1 1 1 1]
- [0 0 0 1 1 0 1]
- [0 0 0 1 1 1 0]
- [1 0 0 1 1 0 1]
- [1 1 1 1 0 1 0]
- [0 1 1 1 1 1 1]]
+[[0 0 1 0 1 1 0]
+ [1 1 1 1 0 0 1]
+ [1 1 1 1 1 1 1]
+ [1 1 0 0 0 1 0]
+ [0 1 1 0 0 0 1]
+ [1 1 0 0 0 1 0]
+ [0 0 1 0 0 1 1]]
 </pre></div>
 </div>
 </div>
@@ -1014,7 +1014,7 @@ Examples of applications of network science are ecosystems, biological pathways,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Graph with 10 nodes and 17 edges
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Graph with 10 nodes and 20 edges
 </pre></div>
 </div>
 </div>
@@ -1044,11 +1044,11 @@ Examples of applications of network science are ecosystems, biological pathways,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/jw/bb3wy2wj6bv8jf69svd8cqdc0000gn/T/ipykernel_12779/2232413052.py:15: MatplotlibDeprecationWarning: Unable to determine Axes to steal space for Colorbar. Using gca(), but will raise in the future. Either provide the *cax* argument to use as the Axes for the Colorbar, provide the *ax* argument to steal space from it, or add *mappable* to an Axes.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/jw/bb3wy2wj6bv8jf69svd8cqdc0000gn/T/ipykernel_15772/2232413052.py:15: MatplotlibDeprecationWarning: Unable to determine Axes to steal space for Colorbar. Using gca(), but will raise in the future. Either provide the *cax* argument to use as the Axes for the Colorbar, provide the *ax* argument to steal space from it, or add *mappable* to an Axes.
   plt.colorbar(plt.cm.ScalarMappable(cmap=plt.cm.viridis, norm=plt.Normalize(vmin = edge_colors.min(), vmax=edge_colors.max())));
 </pre></div>
 </div>
-<img alt="../../_images/a_18_11.png" src="../../_images/a_18_11.png" />
+<img alt="../../_images/a_18_1.png" src="../../_images/a_18_1.png" />
 </div>
 </div>
 <section id="exercises">
@@ -1106,27 +1106,27 @@ Another quantification of a node centrality is <em>betweenness</em>. <strong>Bet
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(0, 12), (1, 15), (2, 10), (3, 13), (4, 10), (5, 9), (6, 11), (7, 14), (8, 11), (9, 11), (10, 10), (11, 9), (12, 7), (13, 12), (14, 12), (15, 13), (16, 7), (17, 8), (18, 10), (19, 10)]
-Node 0 has degree 12
-Node 1 has degree 15
-Node 2 has degree 10
-Node 3 has degree 13
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(0, 10), (1, 6), (2, 8), (3, 7), (4, 10), (5, 8), (6, 4), (7, 10), (8, 7), (9, 7), (10, 9), (11, 10), (12, 11), (13, 8), (14, 11), (15, 13), (16, 9), (17, 6), (18, 9), (19, 9)]
+Node 0 has degree 10
+Node 1 has degree 6
+Node 2 has degree 8
+Node 3 has degree 7
 Node 4 has degree 10
-Node 5 has degree 9
-Node 6 has degree 11
-Node 7 has degree 14
-Node 8 has degree 11
-Node 9 has degree 11
-Node 10 has degree 10
-Node 11 has degree 9
-Node 12 has degree 7
-Node 13 has degree 12
-Node 14 has degree 12
+Node 5 has degree 8
+Node 6 has degree 4
+Node 7 has degree 10
+Node 8 has degree 7
+Node 9 has degree 7
+Node 10 has degree 9
+Node 11 has degree 10
+Node 12 has degree 11
+Node 13 has degree 8
+Node 14 has degree 11
 Node 15 has degree 13
-Node 16 has degree 7
-Node 17 has degree 8
-Node 18 has degree 10
-Node 19 has degree 10
+Node 16 has degree 9
+Node 17 has degree 6
+Node 18 has degree 9
+Node 19 has degree 9
 </pre></div>
 </div>
 </div>
@@ -1179,11 +1179,11 @@ Node 19 has degree 10
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Graph with 20 nodes and 107 edges
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Graph with 20 nodes and 86 edges
 Number of nodes: 20
-Number of edges: 107
-Network diameter: 2
-Average shortest path: 1.436842105263158
+Number of edges: 86
+Network diameter: 3
+Average shortest path: 1.5578947368421052
 </pre></div>
 </div>
 </div>
@@ -1201,7 +1201,7 @@ Average shortest path: 1.436842105263158
 <h3><span class="section-number">1.4.4. </span>Clustering coefficient<a class="headerlink" href="#clustering-coefficient" title="Permalink to this heading">#</a></h3>
 <p>The clustering coefficient (CC) —or cliquishness— of node represents the fraction of interconnections between neighbors of node i. It’s a measure of how much nodes in the network tend to cluster together. Eg. In a social graph it measures the proportion of your friends that are also friends with each other. The global CC of network is simply the average of the CC of all the nodes.</p>
 <div align="center">
-<p style="text-align:center;"><img src="https://github.com/BergLab/CompNeuroBook/blob/main/notebooks/network_theory/cc.png?raw=true" width="500"/>
+<p style="text-align:center;"><img src="../network_theory/media/cc.png" width="500"/>
 </div>
 <p>A large clustering coefficient (CC) indicates large locality in the sense that neighbors of a given node tend to be directly connected while if a node has low CC it means that its neighbors aren’t connected to each other, eg. high CC is a society where nearly everybody has common friends while low CC: people have friends but these friends don’t tend to know each other.</p>
 </section>
@@ -1224,7 +1224,7 @@ Average shortest path: 1.436842105263158
 <h3><span class="section-number">1.4.6. </span>Motifs and motifs analysis<a class="headerlink" href="#motifs-and-motifs-analysis" title="Permalink to this heading">#</a></h3>
 <p>Motifs are sub-graphs present in a network that are responsible for the functions of a network. Some motifs —like positive and negative feedback— are found across networks describing many phenomena. However, much more complex motifs exist. When networks are small we can try to understand the motifs present, however, when network are too big to be understood directly, we can do a <strong>motif network analysis</strong>: we create a set of random networks and compare the distribution of motifs present  in the real network vs the random ones.</p>
 <div align="center">
-<p style="text-align:center;"><img src="https://github.com/BergLab/CompNeuroBook/blob/main/notebooks/network_theory/motifs.png?raw=true" width="500"/>
+<p style="text-align:center;"><img src="../network_theory/media/motifs.png" width="500"/>
 </div><p>We can easily compute the clustering coefficient of a graph with NetworkX:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1238,26 +1238,26 @@ Average shortest path: 1.436842105263158
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{0: 0.4727272727272727,
- 1: 0.5277777777777778,
- 2: 0.4444444444444444,
- 3: 0.4642857142857143,
- 4: 0.5606060606060606,
- 5: 0.4444444444444444,
- 6: 0.5128205128205128,
- 7: 0.4696969696969697,
- 8: 0.5897435897435898,
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{0: 0.4722222222222222,
+ 1: 0.6,
+ 2: 0.2857142857142857,
+ 3: 0.6,
+ 4: 0.4642857142857143,
+ 5: 0.4166666666666667,
+ 6: 0.5357142857142857,
+ 7: 0.6666666666666666,
+ 8: 0.39285714285714285,
  9: 0.39285714285714285,
- 10: 0.6388888888888888,
- 11: 0.6212121212121212,
- 12: 0.6444444444444445,
- 13: 0.3333333333333333,
- 14: 0.5714285714285714,
- 15: 0.46153846153846156,
+ 10: 0.4722222222222222,
+ 11: 0.5714285714285714,
+ 12: 0.5714285714285714,
+ 13: 0.3787878787878788,
+ 14: 0.38461538461538464,
+ 15: 0.4666666666666667,
  16: 0.4444444444444444,
- 17: 0.5333333333333333,
- 18: 0.42857142857142855,
- 19: 0.5272727272727272}
+ 17: 0.43636363636363634,
+ 18: 0.5111111111111111,
+ 19: 0.42857142857142855}
 </pre></div>
 </div>
 </div>
@@ -1271,7 +1271,7 @@ Average shortest path: 1.436842105263158
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The global CC of the network is 0.5041935841935842
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The global CC of the network is 0.47463120213120213
 </pre></div>
 </div>
 </div>
@@ -1287,7 +1287,7 @@ Average shortest path: 1.436842105263158
 <h3><span class="section-number">1.4.7. </span>Scale free networks<a class="headerlink" href="#scale-free-networks" title="Permalink to this heading">#</a></h3>
 <p>Intuitively, a network is said to be scale-free if we zoom it to a subpart of the network it will look the same as if we zoom out. We can formalize this intuition by noting that the degree distribution $P(k)$ of a scale-free network follows a power law: $P(k) \propto k^{-\gamma}$, where typically $\gamma \in [2,3]$ . That is, we compute the dree of each node, create an histogram and look at the resulting distribution it will be thick-tailed (ie. decays slower than exponential).</p>
 <div align="center">
-<p style="text-align:center;"><img src="https://github.com/BergLab/CompNeuroBook/blob/main/notebooks/week5/scale-free.png?raw=true" width="500"/>
+<p style="text-align:center;"><img src="../network_theory/media/scale-free.png" width="500"/>
 </div>
 </section>
 <section id="small-world-networks">
@@ -1365,7 +1365,7 @@ $\sigma = \frac{C/C_{r}}{L/L_{r}}$ where $C$ and $L$ are respectively the averag
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Omega of the network is -0.09551100608353902 and it took 9.330392122268677 seconds to compute it
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Omega of the network is -0.1578106661225097 and it took 9.277566194534302 seconds to compute it
 </pre></div>
 </div>
 </div>
@@ -1455,53 +1455,22 @@ $\sigma = \frac{C/C_{r}}{L/L_{r}}$ where $C$ and $L$ are respectively the averag
 <span class="g g-Whitespace">    </span><span class="mi">105</span> <span class="k">else</span><span class="p">:</span>
 <span class="g g-Whitespace">    </span><span class="mi">106</span>     <span class="n">R</span> <span class="o">=</span> <span class="n">residual</span>
 
-<span class="nn">File ~/.virtualenvs/p39/lib/python3.9/site-packages/networkx/algorithms/flow/utils.py:125,</span> in <span class="ni">build_residual_network</span><span class="nt">(G, capacity)</span>
-<span class="g g-Whitespace">    </span><span class="mi">108</span> <span class="n">edge_list</span> <span class="o">=</span> <span class="p">[</span>
-<span class="g g-Whitespace">    </span><span class="mi">109</span>     <span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">attr</span><span class="p">)</span>
-<span class="nn">    110     for u, v, attr</span> in <span class="ni">G.edges</span><span class="nt">(data=True)</span>
-<span class="g g-Whitespace">    </span><span class="mi">111</span>     <span class="k">if</span> <span class="n">u</span> <span class="o">!=</span> <span class="n">v</span> <span class="ow">and</span> <span class="n">attr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">capacity</span><span class="p">,</span> <span class="n">inf</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span>
-<span class="g g-Whitespace">    </span><span class="mi">112</span> <span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">113</span> <span class="c1"># Simulate infinity with three times the sum of the finite edge capacities</span>
-<span class="g g-Whitespace">    </span><span class="mi">114</span> <span class="c1"># or any positive value if the sum is zero. This allows the</span>
-<span class="g g-Whitespace">    </span><span class="mi">115</span> <span class="c1"># infinite-capacity edges to be distinguished for unboundedness detection</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">121</span> <span class="c1"># than 1/3 of inf units of flow to t, there must be an infinite-capacity</span>
-<span class="g g-Whitespace">    </span><span class="mi">122</span> <span class="c1"># s-t path in G.</span>
-<span class="g g-Whitespace">    </span><span class="mi">123</span> <span class="n">inf</span> <span class="o">=</span> <span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">124</span>     <span class="mi">3</span>
-<span class="ne">--&gt; </span><span class="mi">125</span>     <span class="o">*</span> <span class="nb">sum</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">126</span>         <span class="n">attr</span><span class="p">[</span><span class="n">capacity</span><span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">127</span>         <span class="k">for</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">attr</span> <span class="ow">in</span> <span class="n">edge_list</span>
-<span class="g g-Whitespace">    </span><span class="mi">128</span>         <span class="k">if</span> <span class="n">capacity</span> <span class="ow">in</span> <span class="n">attr</span> <span class="ow">and</span> <span class="n">attr</span><span class="p">[</span><span class="n">capacity</span><span class="p">]</span> <span class="o">!=</span> <span class="n">inf</span>
-<span class="g g-Whitespace">    </span><span class="mi">129</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">130</span>     <span class="ow">or</span> <span class="mi">1</span>
-<span class="g g-Whitespace">    </span><span class="mi">131</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">132</span> <span class="k">if</span> <span class="n">G</span><span class="o">.</span><span class="n">is_directed</span><span class="p">():</span>
-<span class="g g-Whitespace">    </span><span class="mi">133</span>     <span class="k">for</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">attr</span> <span class="ow">in</span> <span class="n">edge_list</span><span class="p">:</span>
+<span class="nn">File ~/.virtualenvs/p39/lib/python3.9/site-packages/networkx/algorithms/flow/utils.py:139,</span> in <span class="ni">build_residual_network</span><span class="nt">(G, capacity)</span>
+<span class="g g-Whitespace">    </span><span class="mi">135</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">R</span><span class="o">.</span><span class="n">has_edge</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">136</span>     <span class="c1"># Both (u, v) and (v, u) must be present in the residual</span>
+<span class="g g-Whitespace">    </span><span class="mi">137</span>     <span class="c1"># network.</span>
+<span class="g g-Whitespace">    </span><span class="mi">138</span>     <span class="n">R</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">capacity</span><span class="o">=</span><span class="n">r</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">139</span>     <span class="n">R</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">capacity</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">140</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">141</span>     <span class="c1"># The edge (u, v) was added when (v, u) was visited.</span>
+<span class="g g-Whitespace">    </span><span class="mi">142</span>     <span class="n">R</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">v</span><span class="p">][</span><span class="s2">&quot;capacity&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">r</span>
 
-<span class="nn">File ~/.virtualenvs/p39/lib/python3.9/site-packages/networkx/algorithms/flow/utils.py:126,</span> in <span class="ni">&lt;genexpr&gt;</span><span class="nt">(.0)</span>
-<span class="g g-Whitespace">    </span><span class="mi">108</span> <span class="n">edge_list</span> <span class="o">=</span> <span class="p">[</span>
-<span class="g g-Whitespace">    </span><span class="mi">109</span>     <span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">attr</span><span class="p">)</span>
-<span class="nn">    110     for u, v, attr</span> in <span class="ni">G.edges</span><span class="nt">(data=True)</span>
-<span class="g g-Whitespace">    </span><span class="mi">111</span>     <span class="k">if</span> <span class="n">u</span> <span class="o">!=</span> <span class="n">v</span> <span class="ow">and</span> <span class="n">attr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">capacity</span><span class="p">,</span> <span class="n">inf</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span>
-<span class="g g-Whitespace">    </span><span class="mi">112</span> <span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">113</span> <span class="c1"># Simulate infinity with three times the sum of the finite edge capacities</span>
-<span class="g g-Whitespace">    </span><span class="mi">114</span> <span class="c1"># or any positive value if the sum is zero. This allows the</span>
-<span class="g g-Whitespace">    </span><span class="mi">115</span> <span class="c1"># infinite-capacity edges to be distinguished for unboundedness detection</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">121</span> <span class="c1"># than 1/3 of inf units of flow to t, there must be an infinite-capacity</span>
-<span class="g g-Whitespace">    </span><span class="mi">122</span> <span class="c1"># s-t path in G.</span>
-<span class="g g-Whitespace">    </span><span class="mi">123</span> <span class="n">inf</span> <span class="o">=</span> <span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">124</span>     <span class="mi">3</span>
-<span class="g g-Whitespace">    </span><span class="mi">125</span>     <span class="o">*</span> <span class="nb">sum</span><span class="p">(</span>
-<span class="ne">--&gt; </span><span class="mi">126</span>         <span class="n">attr</span><span class="p">[</span><span class="n">capacity</span><span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">127</span>         <span class="k">for</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">attr</span> <span class="ow">in</span> <span class="n">edge_list</span>
-<span class="g g-Whitespace">    </span><span class="mi">128</span>         <span class="k">if</span> <span class="n">capacity</span> <span class="ow">in</span> <span class="n">attr</span> <span class="ow">and</span> <span class="n">attr</span><span class="p">[</span><span class="n">capacity</span><span class="p">]</span> <span class="o">!=</span> <span class="n">inf</span>
-<span class="g g-Whitespace">    </span><span class="mi">129</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">130</span>     <span class="ow">or</span> <span class="mi">1</span>
-<span class="g g-Whitespace">    </span><span class="mi">131</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">132</span> <span class="k">if</span> <span class="n">G</span><span class="o">.</span><span class="n">is_directed</span><span class="p">():</span>
-<span class="g g-Whitespace">    </span><span class="mi">133</span>     <span class="k">for</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">attr</span> <span class="ow">in</span> <span class="n">edge_list</span><span class="p">:</span>
+<span class="nn">File ~/.virtualenvs/p39/lib/python3.9/site-packages/networkx/classes/digraph.py:708,</span> in <span class="ni">DiGraph.add_edge</span><span class="nt">(self, u_of_edge, v_of_edge, **attr)</span>
+<span class="g g-Whitespace">    </span><span class="mi">706</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_node</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">node_attr_dict_factory</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">707</span> <span class="c1"># add the edge</span>
+<span class="ne">--&gt; </span><span class="mi">708</span> <span class="n">datadict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_adj</span><span class="p">[</span><span class="n">u</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">edge_attr_dict_factory</span><span class="p">())</span>
+<span class="g g-Whitespace">    </span><span class="mi">709</span> <span class="n">datadict</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">attr</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">710</span> <span class="bp">self</span><span class="o">.</span><span class="n">_succ</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="n">datadict</span>
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
