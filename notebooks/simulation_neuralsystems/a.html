@@ -572,12 +572,14 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: brian2 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (2.5.1)
-Requirement already satisfied: numpy&gt;=1.17 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from brian2) (1.23.5)
-Requirement already satisfied: cython&gt;=0.29 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from brian2) (0.29.30)
-Requirement already satisfied: pyparsing in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from brian2) (3.0.7)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: sympy&gt;=1.2 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from brian2) (1.10.1)
 Requirement already satisfied: jinja2&gt;=2.7 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from brian2) (3.1.2)
-Requirement already satisfied: sympy&gt;=1.2 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from brian2) (1.10.1)
+Requirement already satisfied: cython&gt;=0.29 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from brian2) (0.29.30)
 Requirement already satisfied: setuptools&gt;=24.2 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from brian2) (60.10.0)
+Requirement already satisfied: numpy&gt;=1.17 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from brian2) (1.23.5)
+Requirement already satisfied: pyparsing in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from brian2) (3.0.7)
 Requirement already satisfied: MarkupSafe&gt;=2.0 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from jinja2&gt;=2.7-&gt;brian2) (2.1.1)
 Requirement already satisfied: mpmath&gt;=0.19 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from sympy&gt;=1.2-&gt;brian2) (1.2.1)
 </pre></div>
@@ -710,7 +712,7 @@ Requirement already satisfied: mpmath&gt;=0.19 in /Users/enaj/.virtualenvs/p39/l
 </div>
 </div>
 <p>In Python, the notation <code class="docutils literal notranslate"><span class="pre">'''</span></code> is used to begin and end a multi-line string. So the equations are just a string with one line per equation. The equations are formatted with standard mathematical notation, with one addition. At the end of a line you write <code class="docutils literal notranslate"><span class="pre">:</span> <span class="pre">unit</span></code> where <code class="docutils literal notranslate"><span class="pre">unit</span></code> is the SI unit of that variable.
-Note that this is not the unit of the two sides of the equation (which would be <code class="docutils literal notranslate"><span class="pre">1/second</span></code>), but the unit of the <em>variable</em> defined by the equation, i.e. in this case $v$.</p>
+Note that this is not the unit of the two sides of the equation (which would be <code class="docutils literal notranslate"><span class="pre">1/second</span></code>), but the unit of the <em>variable</em> defined by the equation, i.e. in this case <span class="math notranslate nohighlight">\(v\)</span>.</p>
 <p>Now let’s use this definition to create a neuron.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1112,7 +1114,7 @@ Note that we also changed the <code class="docutils literal notranslate"><span c
 <ul class="simple">
 <li><p>Add a <code class="docutils literal notranslate"><span class="pre">StateMonitor</span></code> to record the values of the variables for one of the neurons, and plot the membrane potential of 2 neurons over time.</p></li>
 </ul>
-<p><em>Hint: as you can see in the previous code, the <code class="docutils literal notranslate"><span class="pre">StateMonitor</span></code> function takes as argument the Neuron group —eg. $G$— that we are simulating, the name of the variable that we want to monitor (the variable name comes from the neuron differential equation that we have written as a string, eg. $v$): eg. <code class="docutils literal notranslate"><span class="pre">monitor</span> <span class="pre">=</span> <span class="pre">StateMonitor(G,</span> <span class="pre">'v',</span> <span class="pre">record=True)</span></code></em> . You will have to add the <code class="docutils literal notranslate"><span class="pre">StateMonitor</span></code> before the line where you run the simulation.</p>
+<p><em>Hint: as you can see in the previous code, the <code class="docutils literal notranslate"><span class="pre">StateMonitor</span></code> function takes as argument the Neuron group —eg. <span class="math notranslate nohighlight">\(G\)</span>— that we are simulating, the name of the variable that we want to monitor (the variable name comes from the neuron differential equation that we have written as a string, eg. <span class="math notranslate nohighlight">\(v\)</span>): eg. <code class="docutils literal notranslate"><span class="pre">monitor</span> <span class="pre">=</span> <span class="pre">StateMonitor(G,</span> <span class="pre">'v',</span> <span class="pre">record=True)</span></code></em> . You will have to add the <code class="docutils literal notranslate"><span class="pre">StateMonitor</span></code> before the line where you run the simulation.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Your code here </span>

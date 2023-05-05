@@ -54,6 +54,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -707,7 +709,7 @@ guide</span>.</p>
 <p>You can also add math to text cells using <a class="reference external" href="http://www.latex-project.org/">LaTeX</a>
 to be rendered by <a class="reference external" href="https://www.mathjax.org">MathJax</a>. Just place the statement
 within a pair of <strong>$</strong> signs. For example <code class="docutils literal notranslate"><span class="pre">$\sqrt{3x-1}+(1+x)^2$</span></code> becomes
-$\sqrt{3x-1}+(1+x)^2.$</p>
+<span class="math notranslate nohighlight">\(\sqrt{3x-1}+(1+x)^2.\)</span></p>
 </section>
 <section id="adding-and-moving-cells">
 <h3>Adding and moving cells<a class="headerlink" href="#adding-and-moving-cells" title="Permalink to this heading">#</a></h3>
@@ -733,51 +735,13 @@ $\sqrt{3x-1}+(1+x)^2.$</p>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sleeping
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Done Sleeping
-</pre></div>
-</div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="nn">Input In [4],</span> in <span class="ni">&lt;cell line: 4&gt;</span><span class="nt">()</span>
+<span class="nn">Input In [4],</span> in <span class="ni">&lt;cell line: 3&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">time</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sleeping&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span> <span class="c1"># sleep for a while; interrupt me!</span>
-<span class="ne">----&gt; </span><span class="mi">4</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Done Sleeping&quot;</span><span class="p">)</span>
-
-<span class="nn">File ~/.virtualenvs/p39/lib/python3.9/site-packages/ipykernel/iostream.py:562,</span> in <span class="ni">OutStream.write</span><span class="nt">(self, string)</span>
-<span class="g g-Whitespace">    </span><span class="mi">560</span>         <span class="bp">self</span><span class="o">.</span><span class="n">pub_thread</span><span class="o">.</span><span class="n">schedule</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_flush</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">561</span>     <span class="k">else</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">562</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_schedule_flush</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">564</span> <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
-
-<span class="nn">File ~/.virtualenvs/p39/lib/python3.9/site-packages/ipykernel/iostream.py:468,</span> in <span class="ni">OutStream._schedule_flush</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">465</span> <span class="k">def</span> <span class="nf">_schedule_in_thread</span><span class="p">():</span>
-<span class="g g-Whitespace">    </span><span class="mi">466</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_io_loop</span><span class="o">.</span><span class="n">call_later</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">flush_interval</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_flush</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">468</span> <span class="bp">self</span><span class="o">.</span><span class="n">pub_thread</span><span class="o">.</span><span class="n">schedule</span><span class="p">(</span><span class="n">_schedule_in_thread</span><span class="p">)</span>
-
-<span class="nn">File ~/.virtualenvs/p39/lib/python3.9/site-packages/ipykernel/iostream.py:217,</span> in <span class="ni">IOPubThread.schedule</span><span class="nt">(self, f)</span>
-<span class="g g-Whitespace">    </span><span class="mi">215</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_events</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">216</span>     <span class="c1"># wake event thread (message content is ignored)</span>
-<span class="ne">--&gt; </span><span class="mi">217</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_event_pipe</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="sa">b</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">218</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">219</span>     <span class="n">f</span><span class="p">()</span>
-
-<span class="nn">File ~/.virtualenvs/p39/lib/python3.9/site-packages/zmq/sugar/socket.py:547,</span> in <span class="ni">Socket.send</span><span class="nt">(self, data, flags, copy, track, routing_id, group)</span>
-<span class="g g-Whitespace">    </span><span class="mi">540</span>         <span class="n">data</span> <span class="o">=</span> <span class="n">zmq</span><span class="o">.</span><span class="n">Frame</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">541</span>             <span class="n">data</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">542</span>             <span class="n">track</span><span class="o">=</span><span class="n">track</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">543</span>             <span class="n">copy</span><span class="o">=</span><span class="n">copy</span> <span class="ow">or</span> <span class="kc">None</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">544</span>             <span class="n">copy_threshold</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">copy_threshold</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">545</span>         <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">546</span>     <span class="n">data</span><span class="o">.</span><span class="n">group</span> <span class="o">=</span> <span class="n">group</span>
-<span class="ne">--&gt; </span><span class="mi">547</span> <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">Socket</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="n">flags</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="n">copy</span><span class="p">,</span> <span class="n">track</span><span class="o">=</span><span class="n">track</span><span class="p">)</span>
-
-<span class="nn">File zmq/backend/cython/socket.pyx:718,</span> in <span class="ni">zmq.backend.cython.socket.Socket.send</span><span class="nt">()</span>
-
-<span class="nn">File zmq/backend/cython/socket.pyx:765,</span> in <span class="ni">zmq.backend.cython.socket.Socket.send</span><span class="nt">()</span>
-
-<span class="nn">File zmq/backend/cython/socket.pyx:235,</span> in <span class="ni">zmq.backend.cython.socket._send_copy</span><span class="nt">()</span>
-
-<span class="nn">File ~/.virtualenvs/p39/lib/python3.9/site-packages/zmq/backend/cython/checkrc.pxd:13,</span> in <span class="ni">zmq.backend.cython.checkrc._check_rc</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span> <span class="c1"># sleep for a while; interrupt me!</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Done Sleeping&quot;</span><span class="p">)</span>
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
