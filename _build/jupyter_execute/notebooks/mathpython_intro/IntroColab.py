@@ -102,7 +102,7 @@ print("Done Sleeping")
 # 
 # 
 
-# In[ ]:
+# In[5]:
 
 
 get_ipython().system('cd sample_data && ls')
@@ -116,7 +116,7 @@ get_ipython().system('cd sample_data && ls')
 
 # 
 
-# In[ ]:
+# In[6]:
 
 
 import brian2
@@ -124,7 +124,7 @@ import brian2
 
 # We get an error saying that there isn't any module named *brian2*. To use it, we first need to install it. If we want to use other libraries we can install them using `pip`. we can simply install it with the command `!pip install brian2`:
 
-# In[ ]:
+# In[7]:
 
 
 get_ipython().system('pip install brian2')
@@ -132,7 +132,7 @@ get_ipython().system('pip install brian2')
 
 # Now let's try to import brian2 again:
 
-# In[ ]:
+# In[8]:
 
 
 import brian2
@@ -142,7 +142,7 @@ import brian2
 # 
 # Colab provides automatic completions to explore attributes of Python objects, as well as to quickly view documentation strings. As an example, first run the following cell to import the  [`numpy`](http://www.numpy.org) module.
 
-# In[ ]:
+# In[9]:
 
 
 import numpy as np
@@ -150,7 +150,7 @@ import numpy as np
 
 # If you now insert your cursor after `np` and press **Period**(`.`), you will see the list of available completions within the `np` module. Completions can be opened again by using **Ctrl+Space**.
 
-# In[ ]:
+# In[10]:
 
 
 np
@@ -158,7 +158,7 @@ np
 
 # If you type an open parenthesis after any function or class in the module, you will see a pop-up of its documentation string:
 
-# In[ ]:
+# In[11]:
 
 
 np.ndarray
@@ -172,7 +172,7 @@ np.ndarray
 
 # Exceptions are formatted nicely in Colab outputs:
 
-# In[ ]:
+# In[12]:
 
 
 x = 1

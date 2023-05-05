@@ -521,7 +521,7 @@ toc = time.time()
 print(f'Sigma of the network is {omega} and it took {toc-tic} seconds to compute it')
 
 
-# In[21]:
+# In[20]:
 
 
 omega = nx.omega(smallWorldNet)

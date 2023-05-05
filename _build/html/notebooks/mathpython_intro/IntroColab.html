@@ -735,15 +735,7 @@ within a pair of <strong>$</strong> signs. For example <code class="docutils lit
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sleeping
 </pre></div>
 </div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="nn">Input In [4],</span> in <span class="ni">&lt;cell line: 3&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">time</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sleeping&quot;</span><span class="p">)</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span> <span class="c1"># sleep for a while; interrupt me!</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Done Sleeping&quot;</span><span class="p">)</span>
-
-<span class="ne">KeyboardInterrupt</span>: 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Done Sleeping
 </pre></div>
 </div>
 </div>
@@ -756,6 +748,11 @@ within a pair of <strong>$</strong> signs. For example <code class="docutils lit
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="nb">cd</span> sample_data <span class="o">&amp;&amp;</span> ls
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>zsh:cd:1: no such file or directory: sample_data
 </pre></div>
 </div>
 </div>
@@ -776,6 +773,26 @@ within a pair of <strong>$</strong> signs. For example <code class="docutils lit
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip install brian2
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: brian2 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (2.5.1)
+Requirement already satisfied: pyparsing in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from brian2) (3.0.7)
+Requirement already satisfied: cython&gt;=0.29 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from brian2) (0.29.30)
+Requirement already satisfied: setuptools&gt;=24.2 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from brian2) (60.10.0)
+Requirement already satisfied: sympy&gt;=1.2 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from brian2) (1.10.1)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: jinja2&gt;=2.7 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from brian2) (3.1.2)
+Requirement already satisfied: numpy&gt;=1.17 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from brian2) (1.23.5)
+Requirement already satisfied: MarkupSafe&gt;=2.0 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from jinja2&gt;=2.7-&gt;brian2) (2.1.1)
+Requirement already satisfied: mpmath&gt;=0.19 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from sympy&gt;=1.2-&gt;brian2) (1.2.1)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">WARNING: You are using pip version 22.0.4; however, version 23.1.2 is available.</span>
+<span class=" -Color -Color-Yellow">You should consider upgrading via the &#39;/Users/enaj/.virtualenvs/p39/bin/python3.9 -m pip install --upgrade pip&#39; command.</span>
+
 </pre></div>
 </div>
 </div>
@@ -806,11 +823,21 @@ within a pair of <strong>$</strong> signs. For example <code class="docutils lit
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;module &#39;numpy&#39; from &#39;/Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages/numpy/__init__.py&#39;&gt;
+</pre></div>
+</div>
+</div>
 </div>
 <p>If you type an open parenthesis after any function or class in the module, you will see a pop-up of its documentation string:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>numpy.ndarray
 </pre></div>
 </div>
 </div>
@@ -826,6 +853,18 @@ within a pair of <strong>$</strong> signs. For example <code class="docutils lit
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">y</span> <span class="o">=</span> <span class="mi">4</span>
 <span class="n">z</span> <span class="o">=</span> <span class="n">y</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ZeroDivisionError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="nn">Input In [12],</span> in <span class="ni">&lt;cell line: 3&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">z</span> <span class="o">=</span> <span class="n">y</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">x</span><span class="p">)</span>
+
+<span class="ne">ZeroDivisionError</span>: division by zero
 </pre></div>
 </div>
 </div>

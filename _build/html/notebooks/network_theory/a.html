@@ -948,16 +948,16 @@ Examples of applications of network science are ecosystems, biological pathways,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0. 1. 1. 1. 0. 0. 1. 0. 1. 0.]
- [1. 0. 1. 1. 0. 0. 0. 1. 0. 0.]
- [1. 1. 0. 1. 1. 0. 1. 0. 0. 0.]
- [1. 1. 1. 0. 1. 0. 1. 1. 0. 0.]
- [0. 0. 1. 1. 0. 1. 1. 0. 0. 0.]
- [0. 0. 0. 0. 1. 0. 1. 0. 1. 0.]
- [1. 0. 1. 1. 1. 1. 0. 1. 0. 0.]
- [0. 1. 0. 1. 0. 0. 1. 0. 0. 0.]
- [1. 0. 0. 0. 0. 1. 0. 0. 0. 1.]
- [0. 0. 0. 0. 0. 0. 0. 0. 1. 0.]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0. 1. 0. 0. 0. 0. 0. 1. 0. 0.]
+ [1. 0. 1. 0. 0. 0. 0. 1. 0. 0.]
+ [0. 1. 0. 1. 0. 1. 0. 0. 1. 1.]
+ [0. 0. 1. 0. 1. 0. 0. 0. 0. 0.]
+ [0. 0. 0. 1. 0. 0. 0. 0. 1. 1.]
+ [0. 0. 1. 0. 0. 0. 1. 0. 1. 1.]
+ [0. 0. 0. 0. 0. 1. 0. 0. 0. 0.]
+ [1. 1. 0. 0. 0. 0. 0. 0. 0. 0.]
+ [0. 0. 1. 0. 1. 1. 0. 0. 0. 0.]
+ [0. 0. 1. 0. 1. 1. 0. 0. 0. 0.]]
 </pre></div>
 </div>
 </div>
@@ -985,13 +985,13 @@ Examples of applications of network science are ecosystems, biological pathways,
 <img alt="../../_images/a_13_0.png" src="../../_images/a_13_0.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Adjacency matrix:
 
-[[0 1 0 0 0 1 0]
- [1 0 1 0 0 0 1]
+[[1 0 1 0 1 0 1]
+ [1 0 0 0 1 0 0]
+ [0 1 1 0 1 1 1]
+ [1 0 1 0 1 1 1]
  [0 1 1 0 0 0 1]
- [0 0 0 1 0 0 0]
- [1 0 1 0 0 1 1]
- [0 1 1 1 1 1 1]
- [0 1 1 1 1 1 0]]
+ [0 1 0 1 1 0 0]
+ [0 0 0 1 0 0 0]]
 </pre></div>
 </div>
 </div>
@@ -1016,7 +1016,7 @@ Examples of applications of network science are ecosystems, biological pathways,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Graph with 10 nodes and 17 edges
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Graph with 10 nodes and 18 edges
 </pre></div>
 </div>
 </div>
@@ -1046,11 +1046,11 @@ Examples of applications of network science are ecosystems, biological pathways,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/jw/bb3wy2wj6bv8jf69svd8cqdc0000gn/T/ipykernel_17697/2232413052.py:15: MatplotlibDeprecationWarning: Unable to determine Axes to steal space for Colorbar. Using gca(), but will raise in the future. Either provide the *cax* argument to use as the Axes for the Colorbar, provide the *ax* argument to steal space from it, or add *mappable* to an Axes.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/jw/bb3wy2wj6bv8jf69svd8cqdc0000gn/T/ipykernel_19460/2232413052.py:15: MatplotlibDeprecationWarning: Unable to determine Axes to steal space for Colorbar. Using gca(), but will raise in the future. Either provide the *cax* argument to use as the Axes for the Colorbar, provide the *ax* argument to steal space from it, or add *mappable* to an Axes.
   plt.colorbar(plt.cm.ScalarMappable(cmap=plt.cm.viridis, norm=plt.Normalize(vmin = edge_colors.min(), vmax=edge_colors.max())));
 </pre></div>
 </div>
-<img alt="../../_images/a_18_1.png" src="../../_images/a_18_1.png" />
+<img alt="../../_images/a_18_11.png" src="../../_images/a_18_11.png" />
 </div>
 </div>
 <section id="exercises">
@@ -1108,27 +1108,27 @@ Another quantification of a node centrality is <em>betweenness</em>. <strong>Bet
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(0, 10), (1, 11), (2, 8), (3, 8), (4, 8), (5, 9), (6, 6), (7, 5), (8, 6), (9, 7), (10, 7), (11, 14), (12, 11), (13, 11), (14, 12), (15, 13), (16, 9), (17, 10), (18, 10), (19, 9)]
-Node 0 has degree 10
-Node 1 has degree 11
-Node 2 has degree 8
-Node 3 has degree 8
-Node 4 has degree 8
-Node 5 has degree 9
-Node 6 has degree 6
-Node 7 has degree 5
-Node 8 has degree 6
-Node 9 has degree 7
-Node 10 has degree 7
-Node 11 has degree 14
-Node 12 has degree 11
-Node 13 has degree 11
-Node 14 has degree 12
-Node 15 has degree 13
-Node 16 has degree 9
-Node 17 has degree 10
-Node 18 has degree 10
-Node 19 has degree 9
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(0, 9), (1, 8), (2, 13), (3, 14), (4, 10), (5, 11), (6, 11), (7, 10), (8, 9), (9, 8), (10, 10), (11, 11), (12, 13), (13, 9), (14, 10), (15, 7), (16, 13), (17, 9), (18, 7), (19, 8)]
+Node 0 has degree 9
+Node 1 has degree 8
+Node 2 has degree 13
+Node 3 has degree 14
+Node 4 has degree 10
+Node 5 has degree 11
+Node 6 has degree 11
+Node 7 has degree 10
+Node 8 has degree 9
+Node 9 has degree 8
+Node 10 has degree 10
+Node 11 has degree 11
+Node 12 has degree 13
+Node 13 has degree 9
+Node 14 has degree 10
+Node 15 has degree 7
+Node 16 has degree 13
+Node 17 has degree 9
+Node 18 has degree 7
+Node 19 has degree 8
 </pre></div>
 </div>
 </div>
@@ -1181,11 +1181,11 @@ Node 19 has degree 9
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Graph with 20 nodes and 92 edges
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Graph with 20 nodes and 100 edges
 Number of nodes: 20
-Number of edges: 92
-Network diameter: 3
-Average shortest path: 1.5210526315789474
+Number of edges: 100
+Network diameter: 2
+Average shortest path: 1.4736842105263157
 </pre></div>
 </div>
 </div>
@@ -1240,26 +1240,26 @@ Average shortest path: 1.5210526315789474
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{0: 0.4222222222222222,
- 1: 0.5,
- 2: 0.4666666666666667,
- 3: 0.2,
- 4: 0.5238095238095238,
- 5: 0.5777777777777777,
- 6: 0.4444444444444444,
- 7: 0.5333333333333333,
- 8: 0.25,
- 9: 0.5714285714285714,
- 10: 0.5277777777777778,
- 11: 0.5111111111111111,
- 12: 0.2857142857142857,
- 13: 0.48484848484848486,
- 14: 0.4909090909090909,
- 15: 0.38095238095238093,
- 16: 0.4166666666666667,
- 17: 0.26666666666666666,
- 18: 0.5277777777777778,
- 19: 0.41818181818181815}
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{0: 0.4722222222222222,
+ 1: 0.509090909090909,
+ 2: 0.4166666666666667,
+ 3: 0.4444444444444444,
+ 4: 0.5151515151515151,
+ 5: 0.4,
+ 6: 0.5151515151515151,
+ 7: 0.4166666666666667,
+ 8: 0.4727272727272727,
+ 9: 0.5277777777777778,
+ 10: 0.509090909090909,
+ 11: 0.4166666666666667,
+ 12: 0.4722222222222222,
+ 13: 0.4166666666666667,
+ 14: 0.42857142857142855,
+ 15: 0.3611111111111111,
+ 16: 0.509090909090909,
+ 17: 0.5555555555555556,
+ 18: 0.6111111111111112,
+ 19: 0.2857142857142857}
 </pre></div>
 </div>
 </div>
@@ -1273,7 +1273,7 @@ Average shortest path: 1.5210526315789474
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The global CC of the network is 0.4400144300144301
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The global CC of the network is 0.4627849927849928
 </pre></div>
 </div>
 </div>
@@ -1366,7 +1366,7 @@ Average shortest path: 1.5210526315789474
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Omega of the network is -0.20919339815092775 and it took 9.115984201431274 seconds to compute it
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Omega of the network is -0.25867185077403776 and it took 9.203414916992188 seconds to compute it
 </pre></div>
 </div>
 </div>
@@ -1382,18 +1382,26 @@ Average shortest path: 1.5210526315789474
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sigma of the network is 6.352112054261233 and it took 91.17497396469116 seconds to compute it
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">omega</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">omega</span><span class="p">(</span><span class="n">smallWorldNet</span><span class="p">)</span>
+<span class="n">sigma</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">sigma</span><span class="p">(</span><span class="n">smallWorldNet</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Omega: </span><span class="si">{</span><span class="n">omega</span><span class="si">}</span><span class="s1">, Sigma: </span><span class="si">{</span><span class="n">sigma</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="nn">Input In [19],</span> in <span class="ni">&lt;cell line: 3&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">time</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">tic</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">omega</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">sigma</span><span class="p">(</span><span class="n">smallWorldNet</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">toc</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Sigma of the network is </span><span class="si">{</span><span class="n">omega</span><span class="si">}</span><span class="s1"> and it took </span><span class="si">{</span><span class="n">toc</span><span class="o">-</span><span class="n">tic</span><span class="si">}</span><span class="s1"> seconds to compute it&#39;</span><span class="p">)</span>
-
-<span class="nn">File ~/.virtualenvs/p39/lib/python3.9/site-packages/networkx/utils/decorators.py:766,</span> in <span class="ni">argmap.__call__.&lt;locals&gt;.func</span><span class="nt">(_argmap__wrapper, *args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">765</span> <span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">__wrapper</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">766</span>     <span class="k">return</span> <span class="n">argmap</span><span class="o">.</span><span class="n">_lazy_compile</span><span class="p">(</span><span class="n">__wrapper</span><span class="p">)(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="nn">Input In [20],</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">omega</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">omega</span><span class="p">(</span><span class="n">smallWorldNet</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">sigma</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">sigma</span><span class="p">(</span><span class="n">smallWorldNet</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Omega: </span><span class="si">{</span><span class="n">omega</span><span class="si">}</span><span class="s1">, Sigma: </span><span class="si">{</span><span class="n">sigma</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 
 <span class="nn">File &lt;class &#39;networkx.utils.decorators.argmap&#39;&gt; compilation 60:6,</span> in <span class="ni">argmap_sigma_55</span><span class="nt">(G, niter, nrand, seed)</span>
 <span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">inspect</span>
@@ -1449,76 +1457,23 @@ Average shortest path: 1.5210526315789474
 <span class="g g-Whitespace">    </span><span class="mi">238</span>     <span class="n">R</span><span class="o">.</span><span class="n">graph</span><span class="p">[</span><span class="s2">&quot;algorithm&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;edmonds_karp&quot;</span>
 <span class="g g-Whitespace">    </span><span class="mi">239</span>     <span class="k">return</span> <span class="n">R</span>
 
-<span class="nn">File ~/.virtualenvs/p39/lib/python3.9/site-packages/networkx/algorithms/flow/edmondskarp.py:104,</span> in <span class="ni">edmonds_karp_impl</span><span class="nt">(G, s, t, capacity, residual, cutoff)</span>
-<span class="g g-Whitespace">    </span><span class="mi">101</span>     <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">NetworkXError</span><span class="p">(</span><span class="s2">&quot;source and sink are the same node&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">103</span> <span class="k">if</span> <span class="n">residual</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">104</span>     <span class="n">R</span> <span class="o">=</span> <span class="n">build_residual_network</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">capacity</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">105</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">106</span>     <span class="n">R</span> <span class="o">=</span> <span class="n">residual</span>
+<span class="nn">File ~/.virtualenvs/p39/lib/python3.9/site-packages/networkx/algorithms/flow/edmondskarp.py:110,</span> in <span class="ni">edmonds_karp_impl</span><span class="nt">(G, s, t, capacity, residual, cutoff)</span>
+<span class="g g-Whitespace">    </span><span class="mi">108</span> <span class="c1"># Initialize/reset the residual network.</span>
+<span class="g g-Whitespace">    </span><span class="mi">109</span> <span class="k">for</span> <span class="n">u</span> <span class="ow">in</span> <span class="n">R</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">110</span>     <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">R</span><span class="p">[</span><span class="n">u</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+<span class="g g-Whitespace">    </span><span class="mi">111</span>         <span class="n">e</span><span class="p">[</span><span class="s2">&quot;flow&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="g g-Whitespace">    </span><span class="mi">113</span> <span class="k">if</span> <span class="n">cutoff</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
 
-<span class="nn">File ~/.virtualenvs/p39/lib/python3.9/site-packages/networkx/algorithms/flow/utils.py:125,</span> in <span class="ni">build_residual_network</span><span class="nt">(G, capacity)</span>
-<span class="g g-Whitespace">    </span><span class="mi">108</span> <span class="n">edge_list</span> <span class="o">=</span> <span class="p">[</span>
-<span class="g g-Whitespace">    </span><span class="mi">109</span>     <span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">attr</span><span class="p">)</span>
-<span class="nn">    110     for u, v, attr</span> in <span class="ni">G.edges</span><span class="nt">(data=True)</span>
-<span class="g g-Whitespace">    </span><span class="mi">111</span>     <span class="k">if</span> <span class="n">u</span> <span class="o">!=</span> <span class="n">v</span> <span class="ow">and</span> <span class="n">attr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">capacity</span><span class="p">,</span> <span class="n">inf</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span>
-<span class="g g-Whitespace">    </span><span class="mi">112</span> <span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">113</span> <span class="c1"># Simulate infinity with three times the sum of the finite edge capacities</span>
-<span class="g g-Whitespace">    </span><span class="mi">114</span> <span class="c1"># or any positive value if the sum is zero. This allows the</span>
-<span class="g g-Whitespace">    </span><span class="mi">115</span> <span class="c1"># infinite-capacity edges to be distinguished for unboundedness detection</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">121</span> <span class="c1"># than 1/3 of inf units of flow to t, there must be an infinite-capacity</span>
-<span class="g g-Whitespace">    </span><span class="mi">122</span> <span class="c1"># s-t path in G.</span>
-<span class="g g-Whitespace">    </span><span class="mi">123</span> <span class="n">inf</span> <span class="o">=</span> <span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">124</span>     <span class="mi">3</span>
-<span class="ne">--&gt; </span><span class="mi">125</span>     <span class="o">*</span> <span class="nb">sum</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">126</span>         <span class="n">attr</span><span class="p">[</span><span class="n">capacity</span><span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">127</span>         <span class="k">for</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">attr</span> <span class="ow">in</span> <span class="n">edge_list</span>
-<span class="g g-Whitespace">    </span><span class="mi">128</span>         <span class="k">if</span> <span class="n">capacity</span> <span class="ow">in</span> <span class="n">attr</span> <span class="ow">and</span> <span class="n">attr</span><span class="p">[</span><span class="n">capacity</span><span class="p">]</span> <span class="o">!=</span> <span class="n">inf</span>
-<span class="g g-Whitespace">    </span><span class="mi">129</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">130</span>     <span class="ow">or</span> <span class="mi">1</span>
-<span class="g g-Whitespace">    </span><span class="mi">131</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">132</span> <span class="k">if</span> <span class="n">G</span><span class="o">.</span><span class="n">is_directed</span><span class="p">():</span>
-<span class="g g-Whitespace">    </span><span class="mi">133</span>     <span class="k">for</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">attr</span> <span class="ow">in</span> <span class="n">edge_list</span><span class="p">:</span>
+<span class="nn">File /usr/local/Cellar/python@3.9/3.9.16/Frameworks/Python.framework/Versions/3.9/lib/python3.9/_collections_abc.py:785,</span> in <span class="ni">Mapping.values</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">783</span> <span class="k">def</span> <span class="nf">values</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">784</span>     <span class="s2">&quot;D.values() -&gt; an object providing a view on D&#39;s values&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">785</span>     <span class="k">return</span> <span class="n">ValuesView</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
 
-<span class="nn">File ~/.virtualenvs/p39/lib/python3.9/site-packages/networkx/algorithms/flow/utils.py:125,</span> in <span class="ni">&lt;genexpr&gt;</span><span class="nt">(.0)</span>
-<span class="g g-Whitespace">    </span><span class="mi">108</span> <span class="n">edge_list</span> <span class="o">=</span> <span class="p">[</span>
-<span class="g g-Whitespace">    </span><span class="mi">109</span>     <span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">attr</span><span class="p">)</span>
-<span class="nn">    110     for u, v, attr</span> in <span class="ni">G.edges</span><span class="nt">(data=True)</span>
-<span class="g g-Whitespace">    </span><span class="mi">111</span>     <span class="k">if</span> <span class="n">u</span> <span class="o">!=</span> <span class="n">v</span> <span class="ow">and</span> <span class="n">attr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">capacity</span><span class="p">,</span> <span class="n">inf</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span>
-<span class="g g-Whitespace">    </span><span class="mi">112</span> <span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">113</span> <span class="c1"># Simulate infinity with three times the sum of the finite edge capacities</span>
-<span class="g g-Whitespace">    </span><span class="mi">114</span> <span class="c1"># or any positive value if the sum is zero. This allows the</span>
-<span class="g g-Whitespace">    </span><span class="mi">115</span> <span class="c1"># infinite-capacity edges to be distinguished for unboundedness detection</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">121</span> <span class="c1"># than 1/3 of inf units of flow to t, there must be an infinite-capacity</span>
-<span class="g g-Whitespace">    </span><span class="mi">122</span> <span class="c1"># s-t path in G.</span>
-<span class="g g-Whitespace">    </span><span class="mi">123</span> <span class="n">inf</span> <span class="o">=</span> <span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">124</span>     <span class="mi">3</span>
-<span class="ne">--&gt; </span><span class="mi">125</span>     <span class="o">*</span> <span class="nb">sum</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">126</span>         <span class="n">attr</span><span class="p">[</span><span class="n">capacity</span><span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">127</span>         <span class="k">for</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">attr</span> <span class="ow">in</span> <span class="n">edge_list</span>
-<span class="g g-Whitespace">    </span><span class="mi">128</span>         <span class="k">if</span> <span class="n">capacity</span> <span class="ow">in</span> <span class="n">attr</span> <span class="ow">and</span> <span class="n">attr</span><span class="p">[</span><span class="n">capacity</span><span class="p">]</span> <span class="o">!=</span> <span class="n">inf</span>
-<span class="g g-Whitespace">    </span><span class="mi">129</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">130</span>     <span class="ow">or</span> <span class="mi">1</span>
-<span class="g g-Whitespace">    </span><span class="mi">131</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">132</span> <span class="k">if</span> <span class="n">G</span><span class="o">.</span><span class="n">is_directed</span><span class="p">():</span>
-<span class="g g-Whitespace">    </span><span class="mi">133</span>     <span class="k">for</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">attr</span> <span class="ow">in</span> <span class="n">edge_list</span><span class="p">:</span>
+<span class="nn">File /usr/local/Cellar/python@3.9/3.9.16/Frameworks/Python.framework/Versions/3.9/lib/python3.9/_collections_abc.py:803,</span> in <span class="ni">MappingView.__init__</span><span class="nt">(self, mapping)</span>
+<span class="g g-Whitespace">    </span><span class="mi">802</span> <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mapping</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">803</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_mapping</span> <span class="o">=</span> <span class="n">mapping</span>
 
 <span class="ne">KeyboardInterrupt</span>: 
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">omega</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">omega</span><span class="p">(</span><span class="n">smallWorldNet</span><span class="p">)</span>
-<span class="n">sigma</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">sigma</span><span class="p">(</span><span class="n">smallWorldNet</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Omega: </span><span class="si">{</span><span class="n">omega</span><span class="si">}</span><span class="s1">, Sigma: </span><span class="si">{</span><span class="n">sigma</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Omega: -0.3297312828814243, Sigma: 4.511823899371069
 </pre></div>
 </div>
 </div>
