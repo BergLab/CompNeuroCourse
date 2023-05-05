@@ -1,52 +1,61 @@
 
+
 <!DOCTYPE html>
 
-<html lang="en">
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>2. Introduction to Brian part 1: Neurons &#8212; Computational Neuroscience</title>
-    
+    <title>3. Introduction to Brian part 1: Neurons &#8212; Computational Neuroscience</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/custom.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -56,62 +65,95 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/week3/week3a';</script>
+    <link rel="canonical" href="https://neurowithpython.com/notebooks/week3/week3a.html" />
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="3. Introduction to Brian part 2: Synapses" href="b.html" />
-    <link rel="prev" title="1. Simulating neural populations" href="neuralsimulation_intro.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en">
-    
-
-    <!-- Google Analytics -->
-    
+    <link rel="next" title="4. Introduction to Brian part 2: Synapses" href="week3b.html" />
+    <link rel="prev" title="2. Dynamical systems as Linear Transformations" href="../week2/week2b-Applications_LT.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
-
-    
-
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../../index.html">
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../../_static/cajal1.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Computational Neuroscience</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="../../_static/cajal1.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/cajal1.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -120,477 +162,469 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Math review with Python
- </span>
-</p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Coding tools for researchers</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../mathpython_intro/IntroColab.html">
-   Google’s Colab
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../mathpython_intro/Numpy_Introduction.html">
-   Introduction to NumPy and Matplotlib
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../mathpython_intro/Linear_Algebra.html">
-   Linear Algebra basics
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../week0/codingtoolsforresearch.html">Coding tools for researchers</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Chapter 1. Introduction to modeling in neuroscience
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 1. Math review with Python</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../modelling_intro/week0-Intro-RWB.html">
-   1. What is computational neuroscience?
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../week1/week1-IntroColab.html">Google’s Colab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week1/week1a-Numpy_Introduction.html">Introduction to NumPy and Matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week1/week1b-Linear_Algebra.html">Linear Algebra basics</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Chapter 2. Differential equations and neuron models
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 2. Differential equations and neuron models</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../dynamical_systems/dynamical_systems_intro.html">
-   1. Introduction modelling with differential equations
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../dynamical_systems/Applications_LT.html">
-   2. Dynamical systems as Linear Transformations
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../week2/week2a.html">1. Introduction modelling with differential equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week2/week2b-Applications_LT.html">2. Dynamical systems as Linear Transformations</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Chapter 3. Simulating neural populations
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 3. Simulation of neural population</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="neuralsimulation_intro.html">
-   1. Simulating neural populations
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   2. Introduction to Brian part 1: Neurons
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="b.html">
-   3. Introduction to Brian part 2: Synapses
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="c.html">
-   4. Introduction to Brian part 3: Simulations
-  </a>
- </li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">3. Introduction to Brian part 1: Neurons</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week3b.html">4. Introduction to Brian part 2: Synapses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week3c.html">5. Introduction to Brian part 3: Simulations</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Chapter 4. Data analysis and Machine learning
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 4. Data analysis and Machine learning</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../ML/a.html">
-   1. Introduction to Data Analysis with Pandas
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../ML/b.html">
-   2. Machine Learning
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../week4/week4a.html">6. Introduction to Data Analysis with Pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week4/week4b.html">7. Machine Learning</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Chapter 5. Network theory
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 5. Reinforcement Learning and Control Theory</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../network_theory/a.html">
-   1. Network science
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../week5/CT.html">8. Control Theory</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 6. Network analysis</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../week6/week6.html">9. Network science</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
-          
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
 
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
 <div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
 
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://colab.research.google.com/github/BergLab/CompNeuroBook/blob/main/notebooks/simulation_neuralsystems/a.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Colab"
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/BergLab/CompNeuroBook/blob/master/docs/notebooks/week3/week3a.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   
     <img src="../../_static/images/logo_colab.png">
   </span>
-<span class="headerbtn__text-container">Colab</span>
+<span class="btn__text-container">Colab</span>
 </a>
-
-      </li>
+</li>
       
-    </ul>
-  </div>
+  </ul>
 </div>
 
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/BergLab/CompNeuroBook" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/BergLab/CompNeuroBook/edit/master/docs/notebooks/week3/week3a.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/BergLab/CompNeuroBook/issues/new?title=Issue%20on%20page%20%2Fnotebooks/week3/week3a.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/notebooks/week3/week3a.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/BergLab/CompNeuroBook"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/BergLab/CompNeuroBook/issues/new?title=Issue%20on%20page%20%2Fnotebooks/simulation_neuralsystems/a.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/BergLab/CompNeuroBook/edit/main/notebooks/simulation_neuralsystems/a.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Edit this page"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-pencil-alt"></i>
-  </span>
-<span class="headerbtn__text-container">suggest edit</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../../_sources/notebooks/simulation_neuralsystems/a.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#units-system">
-   2.1. Units system
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-simple-model">
-   2.2. A simple model
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#adding-spikes">
-   2.3. Adding spikes
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#refractoriness">
-   2.4. Refractoriness
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#multiple-neurons">
-   2.5. Multiple neurons
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#parameters">
-   2.6. Parameters
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#stochastic-neurons">
-   2.7. Stochastic neurons
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercises">
-   2.8. Exercises
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Introduction to Brian part 1: Neurons</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#units-system">
-   2.1. Units system
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-simple-model">
-   2.2. A simple model
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#adding-spikes">
-   2.3. Adding spikes
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#refractoriness">
-   2.4. Refractoriness
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#multiple-neurons">
-   2.5. Multiple neurons
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#parameters">
-   2.6. Parameters
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#stochastic-neurons">
-   2.7. Stochastic neurons
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercises">
-   2.8. Exercises
-  </a>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Introduction to Brian part 1: Neurons</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#units-system">3.1. Units system</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-simple-model">3.2. A simple model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-spikes">3.3. Adding spikes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#refractoriness">3.4. Refractoriness</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-neurons">3.5. Multiple neurons</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parameters">3.6. Parameters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stochastic-neurons">3.7. Stochastic neurons</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">3.8. Exercises</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-brian-part-1-neurons">
-<h1><span class="section-number">2. </span>Introduction to Brian part 1: Neurons<a class="headerlink" href="#introduction-to-brian-part-1-neurons" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">3. </span>Introduction to Brian part 1: Neurons<a class="headerlink" href="#introduction-to-brian-part-1-neurons" title="Permalink to this heading">#</a></h1>
 <p><em>Credit: The first three notebooks from week3 are part of the <span class="xref myst">Brian2 documentation</span></em> with minor changes.</p>
 <p>All Brian scripts start with the following. If you’re trying this notebook out in the Jupyter notebook, you should start by running this cell.</p>
 <div class="cell tag_hide-output docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip3 install brian2
+<div class="cell_input above-output-prompt docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip3<span class="w"> </span>install<span class="w"> </span>brian2
 <span class="kn">from</span> <span class="nn">brian2</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="o">%</span><span class="k">matplotlib</span> inline
 </pre></div>
 </div>
 </div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: brian2 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (2.5.1)
-Requirement already satisfied: sympy&gt;=1.2 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from brian2) (1.10.1)
-Requirement already satisfied: pyparsing in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from brian2) (3.0.7)
-Requirement already satisfied: cython&gt;=0.29 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from brian2) (0.29.30)
-Requirement already satisfied: numpy&gt;=1.17 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from brian2) (1.23.5)
-Requirement already satisfied: setuptools&gt;=24.2 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from brian2) (60.10.0)
-Requirement already satisfied: jinja2&gt;=2.7 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from brian2) (3.1.2)
-Requirement already satisfied: MarkupSafe&gt;=2.0 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from jinja2&gt;=2.7-&gt;brian2) (2.1.1)
-Requirement already satisfied: mpmath&gt;=0.19 in /Users/enaj/.virtualenvs/p39/lib/python3.9/site-packages (from sympy&gt;=1.2-&gt;brian2) (1.2.1)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">WARNING: You are using pip version 22.0.4; however, version 23.1.2 is available.</span>
-<span class=" -Color -Color-Yellow">You should consider upgrading via the &#39;/Users/enaj/.virtualenvs/p39/bin/python3.9 -m pip install --upgrade pip&#39; command.</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">WARNING: Skipping /usr/local/lib/python3.11/site-packages/six-1.16.0-py3.11.egg-info due to invalid metadata entry &#39;name&#39;</span>
 
 </pre></div>
 </div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">WARNING: Skipping /usr/local/lib/python3.11/site-packages/six-1.16.0-py3.11.egg-info due to invalid metadata entry &#39;name&#39;</span>
+
+</pre></div>
 </div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting brian2
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading Brian2-2.5.1.tar.gz (1.2 MB)
+?25l     <span class=" -Color -Color-C237">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">0.0/1.2 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+     ━━<span class=" -Color -Color-C237">╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">0.1/1.2 MB</span> <span class=" -Color -Color-Red">1.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━╸<span class=" -Color -Color-C237">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">0.2/1.2 MB</span> <span class=" -Color -Color-Red">2.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━╸<span class=" -Color -Color-C237">━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">0.4/1.2 MB</span> <span class=" -Color -Color-Red">3.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━<span class=" -Color -Color-C237">╺━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">0.7/1.2 MB</span> <span class=" -Color -Color-Red">4.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<span class=" -Color -Color-C237">╺━━━━━━━━━</span> <span class=" -Color -Color-Green">0.9/1.2 MB</span> <span class=" -Color -Color-Red">4.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸<span class=" -Color -Color-C237">━━━━━</span> <span class=" -Color -Color-Green">1.0/1.2 MB</span> <span class=" -Color -Color-Red">5.0 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸<span class=" -Color -Color-C237">━━━━━</span> <span class=" -Color -Color-Green">1.0/1.2 MB</span> <span class=" -Color -Color-Red">5.0 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸<span class=" -Color -Color-C237">━━━━━</span> <span class=" -Color -Color-Green">1.0/1.2 MB</span> <span class=" -Color -Color-Red">5.0 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸<span class=" -Color -Color-C237">━</span> <span class=" -Color -Color-Green">1.2/1.2 MB</span> <span class=" -Color -Color-Red">3.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">1.2/1.2 MB</span> <span class=" -Color -Color-Red">3.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     <span class=" -Color -Color-Red">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">1.2/1.2 MB</span> <span class=" -Color -Color-Red">3.1 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25h
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Preparing metadata (setup.py) ... ?25l-
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> done
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>?25hRequirement already satisfied: numpy&gt;=1.17 in /usr/local/lib/python3.11/site-packages (from brian2) (1.24.2)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting cython&gt;=0.29
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading Cython-0.29.34-py2.py3-none-any.whl (988 kB)
+?25l     <span class=" -Color -Color-C237">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">0.0/988.1 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+     ━━━━━━━━━━━━━<span class=" -Color -Color-C237">╺━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">337.9/988.1 kB</span> <span class=" -Color -Color-Red">9.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━<span class=" -Color -Color-C237">╺━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">665.6/988.1 kB</span> <span class=" -Color -Color-Red">9.3 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸<span class=" -Color -Color-C237">━</span> <span class=" -Color -Color-Green">962.6/988.1 kB</span> <span class=" -Color -Color-Red">9.3 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     <span class=" -Color -Color-Red">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">988.1/988.1 kB</span> <span class=" -Color -Color-Red">6.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hCollecting sympy&gt;=1.2
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Using cached sympy-1.11.1-py3-none-any.whl (6.5 MB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pyparsing in /usr/local/Cellar/graph-tool/2.46/libexec/lib/python3.11/site-packages (from brian2) (3.0.9)
+Requirement already satisfied: jinja2&gt;=2.7 in /usr/local/lib/python3.11/site-packages (from brian2) (3.1.2)
+Requirement already satisfied: setuptools&gt;=24.2 in /usr/local/lib/python3.11/site-packages (from brian2) (65.6.3)
+Requirement already satisfied: MarkupSafe&gt;=2.0 in /usr/local/lib/python3.11/site-packages (from jinja2&gt;=2.7-&gt;brian2) (2.1.2)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting mpmath&gt;=0.19
+  Using cached mpmath-1.3.0-py3-none-any.whl (536 kB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Building wheels for collected packages: brian2
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Building wheel for brian2 (setup.py) ... ?25l-
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> |
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> /
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> -
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> |
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> /
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> -
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> done
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>?25h  Created wheel for brian2: filename=Brian2-2.5.1-cp311-cp311-macosx_13_0_x86_64.whl size=966618 sha256=e2df4b8ca3e63c921c2ff998dde62ec7712627722934cb93d2a5250910382bed
+  Stored in directory: /Users/enaj/Library/Caches/pip/wheels/3e/b1/eb/2a580ea4289711368309f96f88252baee20b784fbc9e1d7de9
+Successfully built brian2
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">WARNING: Skipping /usr/local/lib/python3.11/site-packages/six-1.16.0-py3.11.egg-info due to invalid metadata entry &#39;name&#39;</span>
+
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: mpmath, sympy, cython, brian2
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">WARNING: Skipping /usr/local/lib/python3.11/site-packages/six-1.16.0-py3.11.egg-info due to invalid metadata entry &#39;name&#39;</span>
+
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">WARNING: Skipping /usr/local/lib/python3.11/site-packages/six-1.16.0-py3.11.egg-info due to invalid metadata entry &#39;name&#39;</span>
+<span class=" -Color -Color-Yellow">WARNING: Skipping /usr/local/lib/python3.11/site-packages/six-1.16.0-py3.11.egg-info due to invalid metadata entry &#39;name&#39;</span>
+Successfully installed brian2-2.5.1 cython-0.29.34 mpmath-1.3.0 sympy-1.11.1
+<span class=" -Color -Color-Yellow">WARNING: Skipping /usr/local/lib/python3.11/site-packages/six-1.16.0-py3.11.egg-info due to invalid metadata entry &#39;name&#39;</span>
+
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">WARNING: Skipping /usr/local/lib/python3.11/site-packages/six-1.16.0-py3.11.egg-info due to invalid metadata entry &#39;name&#39;</span>
+
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">WARNING: Skipping /usr/local/lib/python3.11/site-packages/six-1.16.0-py3.11.egg-info due to invalid metadata entry &#39;name&#39;</span>
+
+<span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> A new release of pip available: <span class=" -Color -Color-Red">22.3.1</span> -&gt; <span class=" -Color -Color-Green">23.0.1</span>
+<span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> To update, run: <span class=" -Color -Color-Green">python3.11 -m pip install --upgrade pip</span>
+</pre></div>
+</div>
+</div>
+</details>
 </div>
 <section id="units-system">
-<h2><span class="section-number">2.1. </span>Units system<a class="headerlink" href="#units-system" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">3.1. </span>Units system<a class="headerlink" href="#units-system" title="Permalink to this heading">#</a></h2>
 <p>Brian has a system for using quantities with physical dimensions:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -599,8 +633,90 @@ Requirement already satisfied: mpmath&gt;=0.19 in /Users/enaj/.virtualenvs/p39/l
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[20.0\,\mathrm{V}\]</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>---------------------------------------------------------------------------
+AttributeError                            Traceback (most recent call last)
+File /usr/local/lib/python3.11/site-packages/IPython/core/formatters.py:344, in BaseFormatter.__call__(self, obj)
+    342     method = get_real_method(obj, self.print_method)
+    343     if method is not None:
+--&gt; 344         return method()
+    345     return None
+    346 else:
+
+File /usr/local/lib/python3.11/site-packages/brian2/units/fundamentalunits.py:1629, in Quantity._repr_latex_(self)
+   1628 def _repr_latex_(self):
+-&gt; 1629     return f&quot;${latex(self)}$&quot;
+
+File /usr/local/lib/python3.11/site-packages/sympy/printing/printer.py:372, in _PrintFunction.__call__(self, *args, **kwargs)
+    371 def __call__(self, *args, **kwargs):
+--&gt; 372     return self.__wrapped__(*args, **kwargs)
+
+File /usr/local/lib/python3.11/site-packages/sympy/printing/latex.py:3140, in latex(expr, **settings)
+   2928 @print_function(LatexPrinter)
+   2929 def latex(expr, **settings):
+   2930     r&quot;&quot;&quot;Convert the given expression to LaTeX string representation.
+   2931 
+   2932     Parameters
+   (...)
+   3138 
+   3139     &quot;&quot;&quot;
+-&gt; 3140     return LatexPrinter(settings).doprint(expr)
+
+File /usr/local/lib/python3.11/site-packages/sympy/printing/latex.py:264, in LatexPrinter.doprint(self, expr)
+    263 def doprint(self, expr) -&gt; str:
+--&gt; 264     tex = Printer.doprint(self, expr)
+    266     if self._settings[&#39;mode&#39;] == &#39;plain&#39;:
+    267         return tex
+
+File /usr/local/lib/python3.11/site-packages/sympy/printing/printer.py:292, in Printer.doprint(self, expr)
+    290 def doprint(self, expr):
+    291     &quot;&quot;&quot;Returns printer&#39;s representation for expr (as a string)&quot;&quot;&quot;
+--&gt; 292     return self._str(self._print(expr))
+
+File /usr/local/lib/python3.11/site-packages/sympy/printing/printer.py:309, in Printer._print(self, expr, **kwargs)
+    303 try:
+    304     # If the printer defines a name for a printing method
+    305     # (Printer.printmethod) and the object knows for itself how it
+    306     # should be printed, use that method.
+    307     if (self.printmethod and hasattr(expr, self.printmethod)
+    308             and not isinstance(expr, BasicMeta)):
+--&gt; 309         return getattr(expr, self.printmethod)(self, **kwargs)
+    311     # See if the class of expr is known, or if one of its super
+    312     # classes is known, and use that print function
+    313     # Exception: ignore the subclasses of Undefined, so that, e.g.,
+    314     # Function(&#39;gamma&#39;) does not get dispatched to _print_gamma
+    315     classes = type(expr).__mro__
+
+File /usr/local/lib/python3.11/site-packages/brian2/units/fundamentalunits.py:1600, in Quantity._latex(self, expr)
+   1598 threshold = np.get_printoptions()[&#39;threshold&#39;] // 100
+   1599 if unitless.ndim == 0:
+-&gt; 1600     sympy_quantity = np.float(unitless)
+   1601 elif unitless.ndim == 1:
+   1602     array_str = np.array2string(unitless, separator=&quot; &amp; &quot;, threshold=threshold,
+   1603                                 max_line_width=sys.maxsize)
+
+File /usr/local/lib/python3.11/site-packages/numpy/__init__.py:305, in __getattr__(attr)
+    300     warnings.warn(
+    301         f&quot;In the future `np.{attr}` will be defined as the &quot;
+    302         &quot;corresponding NumPy scalar.&quot;, FutureWarning, stacklevel=2)
+    304 if attr in __former_attrs__:
+--&gt; 305     raise AttributeError(__former_attrs__[attr])
+    307 # Importing Tester requires importing all of UnitTest which is not a
+    308 # cheap import Since it is mainly used in test suits, we lazy import it
+    309 # here to save on the order of 10 ms of import time for most users
+    310 #
+    311 # The previous way Tester was imported also had a side effect of adding
+    312 # the full `numpy.testing` namespace
+    313 if attr == &#39;testing&#39;:
+
+AttributeError: module &#39;numpy&#39; has no attribute &#39;float&#39;.
+`np.float` was a deprecated alias for the builtin `float`. To avoid this error in existing code, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
+The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+    https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20. * volt
+</pre></div>
+</div>
 </div>
 </div>
 <p>All of the basic SI units can be used (volt, amp, etc.) along with all the standard prefixes (m=milli, p=pico, etc.), as well as a few special abbreviations like <code class="docutils literal notranslate"><span class="pre">mV</span></code> for millivolt, <code class="docutils literal notranslate"><span class="pre">pF</span></code> for picofarad, etc.</p>
@@ -611,8 +727,90 @@ Requirement already satisfied: mpmath&gt;=0.19 in /Users/enaj/.virtualenvs/p39/l
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[1.0\,\mathrm{k}\mathrm{A}\]</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>---------------------------------------------------------------------------
+AttributeError                            Traceback (most recent call last)
+File /usr/local/lib/python3.11/site-packages/IPython/core/formatters.py:344, in BaseFormatter.__call__(self, obj)
+    342     method = get_real_method(obj, self.print_method)
+    343     if method is not None:
+--&gt; 344         return method()
+    345     return None
+    346 else:
+
+File /usr/local/lib/python3.11/site-packages/brian2/units/fundamentalunits.py:1629, in Quantity._repr_latex_(self)
+   1628 def _repr_latex_(self):
+-&gt; 1629     return f&quot;${latex(self)}$&quot;
+
+File /usr/local/lib/python3.11/site-packages/sympy/printing/printer.py:372, in _PrintFunction.__call__(self, *args, **kwargs)
+    371 def __call__(self, *args, **kwargs):
+--&gt; 372     return self.__wrapped__(*args, **kwargs)
+
+File /usr/local/lib/python3.11/site-packages/sympy/printing/latex.py:3140, in latex(expr, **settings)
+   2928 @print_function(LatexPrinter)
+   2929 def latex(expr, **settings):
+   2930     r&quot;&quot;&quot;Convert the given expression to LaTeX string representation.
+   2931 
+   2932     Parameters
+   (...)
+   3138 
+   3139     &quot;&quot;&quot;
+-&gt; 3140     return LatexPrinter(settings).doprint(expr)
+
+File /usr/local/lib/python3.11/site-packages/sympy/printing/latex.py:264, in LatexPrinter.doprint(self, expr)
+    263 def doprint(self, expr) -&gt; str:
+--&gt; 264     tex = Printer.doprint(self, expr)
+    266     if self._settings[&#39;mode&#39;] == &#39;plain&#39;:
+    267         return tex
+
+File /usr/local/lib/python3.11/site-packages/sympy/printing/printer.py:292, in Printer.doprint(self, expr)
+    290 def doprint(self, expr):
+    291     &quot;&quot;&quot;Returns printer&#39;s representation for expr (as a string)&quot;&quot;&quot;
+--&gt; 292     return self._str(self._print(expr))
+
+File /usr/local/lib/python3.11/site-packages/sympy/printing/printer.py:309, in Printer._print(self, expr, **kwargs)
+    303 try:
+    304     # If the printer defines a name for a printing method
+    305     # (Printer.printmethod) and the object knows for itself how it
+    306     # should be printed, use that method.
+    307     if (self.printmethod and hasattr(expr, self.printmethod)
+    308             and not isinstance(expr, BasicMeta)):
+--&gt; 309         return getattr(expr, self.printmethod)(self, **kwargs)
+    311     # See if the class of expr is known, or if one of its super
+    312     # classes is known, and use that print function
+    313     # Exception: ignore the subclasses of Undefined, so that, e.g.,
+    314     # Function(&#39;gamma&#39;) does not get dispatched to _print_gamma
+    315     classes = type(expr).__mro__
+
+File /usr/local/lib/python3.11/site-packages/brian2/units/fundamentalunits.py:1600, in Quantity._latex(self, expr)
+   1598 threshold = np.get_printoptions()[&#39;threshold&#39;] // 100
+   1599 if unitless.ndim == 0:
+-&gt; 1600     sympy_quantity = np.float(unitless)
+   1601 elif unitless.ndim == 1:
+   1602     array_str = np.array2string(unitless, separator=&quot; &amp; &quot;, threshold=threshold,
+   1603                                 max_line_width=sys.maxsize)
+
+File /usr/local/lib/python3.11/site-packages/numpy/__init__.py:305, in __getattr__(attr)
+    300     warnings.warn(
+    301         f&quot;In the future `np.{attr}` will be defined as the &quot;
+    302         &quot;corresponding NumPy scalar.&quot;, FutureWarning, stacklevel=2)
+    304 if attr in __former_attrs__:
+--&gt; 305     raise AttributeError(__former_attrs__[attr])
+    307 # Importing Tester requires importing all of UnitTest which is not a
+    308 # cheap import Since it is mainly used in test suits, we lazy import it
+    309 # here to save on the order of 10 ms of import time for most users
+    310 #
+    311 # The previous way Tester was imported also had a side effect of adding
+    312 # the full `numpy.testing` namespace
+    313 if attr == &#39;testing&#39;:
+
+AttributeError: module &#39;numpy&#39; has no attribute &#39;float&#39;.
+`np.float` was a deprecated alias for the builtin `float`. To avoid this error in existing code, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
+The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+    https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1. * kamp
+</pre></div>
+</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -622,8 +820,90 @@ Requirement already satisfied: mpmath&gt;=0.19 in /Users/enaj/.virtualenvs/p39/l
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[1.0\,\mathrm{M}\mathrm{V}\]</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>---------------------------------------------------------------------------
+AttributeError                            Traceback (most recent call last)
+File /usr/local/lib/python3.11/site-packages/IPython/core/formatters.py:344, in BaseFormatter.__call__(self, obj)
+    342     method = get_real_method(obj, self.print_method)
+    343     if method is not None:
+--&gt; 344         return method()
+    345     return None
+    346 else:
+
+File /usr/local/lib/python3.11/site-packages/brian2/units/fundamentalunits.py:1629, in Quantity._repr_latex_(self)
+   1628 def _repr_latex_(self):
+-&gt; 1629     return f&quot;${latex(self)}$&quot;
+
+File /usr/local/lib/python3.11/site-packages/sympy/printing/printer.py:372, in _PrintFunction.__call__(self, *args, **kwargs)
+    371 def __call__(self, *args, **kwargs):
+--&gt; 372     return self.__wrapped__(*args, **kwargs)
+
+File /usr/local/lib/python3.11/site-packages/sympy/printing/latex.py:3140, in latex(expr, **settings)
+   2928 @print_function(LatexPrinter)
+   2929 def latex(expr, **settings):
+   2930     r&quot;&quot;&quot;Convert the given expression to LaTeX string representation.
+   2931 
+   2932     Parameters
+   (...)
+   3138 
+   3139     &quot;&quot;&quot;
+-&gt; 3140     return LatexPrinter(settings).doprint(expr)
+
+File /usr/local/lib/python3.11/site-packages/sympy/printing/latex.py:264, in LatexPrinter.doprint(self, expr)
+    263 def doprint(self, expr) -&gt; str:
+--&gt; 264     tex = Printer.doprint(self, expr)
+    266     if self._settings[&#39;mode&#39;] == &#39;plain&#39;:
+    267         return tex
+
+File /usr/local/lib/python3.11/site-packages/sympy/printing/printer.py:292, in Printer.doprint(self, expr)
+    290 def doprint(self, expr):
+    291     &quot;&quot;&quot;Returns printer&#39;s representation for expr (as a string)&quot;&quot;&quot;
+--&gt; 292     return self._str(self._print(expr))
+
+File /usr/local/lib/python3.11/site-packages/sympy/printing/printer.py:309, in Printer._print(self, expr, **kwargs)
+    303 try:
+    304     # If the printer defines a name for a printing method
+    305     # (Printer.printmethod) and the object knows for itself how it
+    306     # should be printed, use that method.
+    307     if (self.printmethod and hasattr(expr, self.printmethod)
+    308             and not isinstance(expr, BasicMeta)):
+--&gt; 309         return getattr(expr, self.printmethod)(self, **kwargs)
+    311     # See if the class of expr is known, or if one of its super
+    312     # classes is known, and use that print function
+    313     # Exception: ignore the subclasses of Undefined, so that, e.g.,
+    314     # Function(&#39;gamma&#39;) does not get dispatched to _print_gamma
+    315     classes = type(expr).__mro__
+
+File /usr/local/lib/python3.11/site-packages/brian2/units/fundamentalunits.py:1600, in Quantity._latex(self, expr)
+   1598 threshold = np.get_printoptions()[&#39;threshold&#39;] // 100
+   1599 if unitless.ndim == 0:
+-&gt; 1600     sympy_quantity = np.float(unitless)
+   1601 elif unitless.ndim == 1:
+   1602     array_str = np.array2string(unitless, separator=&quot; &amp; &quot;, threshold=threshold,
+   1603                                 max_line_width=sys.maxsize)
+
+File /usr/local/lib/python3.11/site-packages/numpy/__init__.py:305, in __getattr__(attr)
+    300     warnings.warn(
+    301         f&quot;In the future `np.{attr}` will be defined as the &quot;
+    302         &quot;corresponding NumPy scalar.&quot;, FutureWarning, stacklevel=2)
+    304 if attr in __former_attrs__:
+--&gt; 305     raise AttributeError(__former_attrs__[attr])
+    307 # Importing Tester requires importing all of UnitTest which is not a
+    308 # cheap import Since it is mainly used in test suits, we lazy import it
+    309 # here to save on the order of 10 ms of import time for most users
+    310 #
+    311 # The previous way Tester was imported also had a side effect of adding
+    312 # the full `numpy.testing` namespace
+    313 if attr == &#39;testing&#39;:
+
+AttributeError: module &#39;numpy&#39; has no attribute &#39;float&#39;.
+`np.float` was a deprecated alias for the builtin `float`. To avoid this error in existing code, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
+The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+    https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1. * Mvolt
+</pre></div>
+</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -633,8 +913,90 @@ Requirement already satisfied: mpmath&gt;=0.19 in /Users/enaj/.virtualenvs/p39/l
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[1.0000000000000002\,\mathrm{\mu}\mathrm{A}\]</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>---------------------------------------------------------------------------
+AttributeError                            Traceback (most recent call last)
+File /usr/local/lib/python3.11/site-packages/IPython/core/formatters.py:344, in BaseFormatter.__call__(self, obj)
+    342     method = get_real_method(obj, self.print_method)
+    343     if method is not None:
+--&gt; 344         return method()
+    345     return None
+    346 else:
+
+File /usr/local/lib/python3.11/site-packages/brian2/units/fundamentalunits.py:1629, in Quantity._repr_latex_(self)
+   1628 def _repr_latex_(self):
+-&gt; 1629     return f&quot;${latex(self)}$&quot;
+
+File /usr/local/lib/python3.11/site-packages/sympy/printing/printer.py:372, in _PrintFunction.__call__(self, *args, **kwargs)
+    371 def __call__(self, *args, **kwargs):
+--&gt; 372     return self.__wrapped__(*args, **kwargs)
+
+File /usr/local/lib/python3.11/site-packages/sympy/printing/latex.py:3140, in latex(expr, **settings)
+   2928 @print_function(LatexPrinter)
+   2929 def latex(expr, **settings):
+   2930     r&quot;&quot;&quot;Convert the given expression to LaTeX string representation.
+   2931 
+   2932     Parameters
+   (...)
+   3138 
+   3139     &quot;&quot;&quot;
+-&gt; 3140     return LatexPrinter(settings).doprint(expr)
+
+File /usr/local/lib/python3.11/site-packages/sympy/printing/latex.py:264, in LatexPrinter.doprint(self, expr)
+    263 def doprint(self, expr) -&gt; str:
+--&gt; 264     tex = Printer.doprint(self, expr)
+    266     if self._settings[&#39;mode&#39;] == &#39;plain&#39;:
+    267         return tex
+
+File /usr/local/lib/python3.11/site-packages/sympy/printing/printer.py:292, in Printer.doprint(self, expr)
+    290 def doprint(self, expr):
+    291     &quot;&quot;&quot;Returns printer&#39;s representation for expr (as a string)&quot;&quot;&quot;
+--&gt; 292     return self._str(self._print(expr))
+
+File /usr/local/lib/python3.11/site-packages/sympy/printing/printer.py:309, in Printer._print(self, expr, **kwargs)
+    303 try:
+    304     # If the printer defines a name for a printing method
+    305     # (Printer.printmethod) and the object knows for itself how it
+    306     # should be printed, use that method.
+    307     if (self.printmethod and hasattr(expr, self.printmethod)
+    308             and not isinstance(expr, BasicMeta)):
+--&gt; 309         return getattr(expr, self.printmethod)(self, **kwargs)
+    311     # See if the class of expr is known, or if one of its super
+    312     # classes is known, and use that print function
+    313     # Exception: ignore the subclasses of Undefined, so that, e.g.,
+    314     # Function(&#39;gamma&#39;) does not get dispatched to _print_gamma
+    315     classes = type(expr).__mro__
+
+File /usr/local/lib/python3.11/site-packages/brian2/units/fundamentalunits.py:1600, in Quantity._latex(self, expr)
+   1598 threshold = np.get_printoptions()[&#39;threshold&#39;] // 100
+   1599 if unitless.ndim == 0:
+-&gt; 1600     sympy_quantity = np.float(unitless)
+   1601 elif unitless.ndim == 1:
+   1602     array_str = np.array2string(unitless, separator=&quot; &amp; &quot;, threshold=threshold,
+   1603                                 max_line_width=sys.maxsize)
+
+File /usr/local/lib/python3.11/site-packages/numpy/__init__.py:305, in __getattr__(attr)
+    300     warnings.warn(
+    301         f&quot;In the future `np.{attr}` will be defined as the &quot;
+    302         &quot;corresponding NumPy scalar.&quot;, FutureWarning, stacklevel=2)
+    304 if attr in __former_attrs__:
+--&gt; 305     raise AttributeError(__former_attrs__[attr])
+    307 # Importing Tester requires importing all of UnitTest which is not a
+    308 # cheap import Since it is mainly used in test suits, we lazy import it
+    309 # here to save on the order of 10 ms of import time for most users
+    310 #
+    311 # The previous way Tester was imported also had a side effect of adding
+    312 # the full `numpy.testing` namespace
+    313 if attr == &#39;testing&#39;:
+
+AttributeError: module &#39;numpy&#39; has no attribute &#39;float&#39;.
+`np.float` was a deprecated alias for the builtin `float`. To avoid this error in existing code, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
+The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+    https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1. * uamp
+</pre></div>
+</div>
 </div>
 </div>
 <p>Also note that combinations of units with work as expected:</p>
@@ -645,8 +1007,90 @@ Requirement already satisfied: mpmath&gt;=0.19 in /Users/enaj/.virtualenvs/p39/l
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[49.99999999999999\,\mathrm{m}\mathrm{V}\]</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>---------------------------------------------------------------------------
+AttributeError                            Traceback (most recent call last)
+File /usr/local/lib/python3.11/site-packages/IPython/core/formatters.py:344, in BaseFormatter.__call__(self, obj)
+    342     method = get_real_method(obj, self.print_method)
+    343     if method is not None:
+--&gt; 344         return method()
+    345     return None
+    346 else:
+
+File /usr/local/lib/python3.11/site-packages/brian2/units/fundamentalunits.py:1629, in Quantity._repr_latex_(self)
+   1628 def _repr_latex_(self):
+-&gt; 1629     return f&quot;${latex(self)}$&quot;
+
+File /usr/local/lib/python3.11/site-packages/sympy/printing/printer.py:372, in _PrintFunction.__call__(self, *args, **kwargs)
+    371 def __call__(self, *args, **kwargs):
+--&gt; 372     return self.__wrapped__(*args, **kwargs)
+
+File /usr/local/lib/python3.11/site-packages/sympy/printing/latex.py:3140, in latex(expr, **settings)
+   2928 @print_function(LatexPrinter)
+   2929 def latex(expr, **settings):
+   2930     r&quot;&quot;&quot;Convert the given expression to LaTeX string representation.
+   2931 
+   2932     Parameters
+   (...)
+   3138 
+   3139     &quot;&quot;&quot;
+-&gt; 3140     return LatexPrinter(settings).doprint(expr)
+
+File /usr/local/lib/python3.11/site-packages/sympy/printing/latex.py:264, in LatexPrinter.doprint(self, expr)
+    263 def doprint(self, expr) -&gt; str:
+--&gt; 264     tex = Printer.doprint(self, expr)
+    266     if self._settings[&#39;mode&#39;] == &#39;plain&#39;:
+    267         return tex
+
+File /usr/local/lib/python3.11/site-packages/sympy/printing/printer.py:292, in Printer.doprint(self, expr)
+    290 def doprint(self, expr):
+    291     &quot;&quot;&quot;Returns printer&#39;s representation for expr (as a string)&quot;&quot;&quot;
+--&gt; 292     return self._str(self._print(expr))
+
+File /usr/local/lib/python3.11/site-packages/sympy/printing/printer.py:309, in Printer._print(self, expr, **kwargs)
+    303 try:
+    304     # If the printer defines a name for a printing method
+    305     # (Printer.printmethod) and the object knows for itself how it
+    306     # should be printed, use that method.
+    307     if (self.printmethod and hasattr(expr, self.printmethod)
+    308             and not isinstance(expr, BasicMeta)):
+--&gt; 309         return getattr(expr, self.printmethod)(self, **kwargs)
+    311     # See if the class of expr is known, or if one of its super
+    312     # classes is known, and use that print function
+    313     # Exception: ignore the subclasses of Undefined, so that, e.g.,
+    314     # Function(&#39;gamma&#39;) does not get dispatched to _print_gamma
+    315     classes = type(expr).__mro__
+
+File /usr/local/lib/python3.11/site-packages/brian2/units/fundamentalunits.py:1600, in Quantity._latex(self, expr)
+   1598 threshold = np.get_printoptions()[&#39;threshold&#39;] // 100
+   1599 if unitless.ndim == 0:
+-&gt; 1600     sympy_quantity = np.float(unitless)
+   1601 elif unitless.ndim == 1:
+   1602     array_str = np.array2string(unitless, separator=&quot; &amp; &quot;, threshold=threshold,
+   1603                                 max_line_width=sys.maxsize)
+
+File /usr/local/lib/python3.11/site-packages/numpy/__init__.py:305, in __getattr__(attr)
+    300     warnings.warn(
+    301         f&quot;In the future `np.{attr}` will be defined as the &quot;
+    302         &quot;corresponding NumPy scalar.&quot;, FutureWarning, stacklevel=2)
+    304 if attr in __former_attrs__:
+--&gt; 305     raise AttributeError(__former_attrs__[attr])
+    307 # Importing Tester requires importing all of UnitTest which is not a
+    308 # cheap import Since it is mainly used in test suits, we lazy import it
+    309 # here to save on the order of 10 ms of import time for most users
+    310 #
+    311 # The previous way Tester was imported also had a side effect of adding
+    312 # the full `numpy.testing` namespace
+    313 if attr == &#39;testing&#39;:
+
+AttributeError: module &#39;numpy&#39; has no attribute &#39;float&#39;.
+`np.float` was a deprecated alias for the builtin `float`. To avoid this error in existing code, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
+The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+    https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>50. * mvolt
+</pre></div>
+</div>
 </div>
 </div>
 <p>And if you try to do something wrong like adding amps and volts, what happens?</p>
@@ -659,16 +1103,16 @@ Requirement already satisfied: mpmath&gt;=0.19 in /Users/enaj/.virtualenvs/p39/l
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">DimensionMismatchError</span><span class="g g-Whitespace">                    </span>Traceback (most recent call last)
-<span class="nn">Input In [7],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="mi">5</span><span class="o">*</span><span class="n">amp</span><span class="o">+</span><span class="mi">10</span><span class="o">*</span><span class="n">volt</span>
 
-<span class="nn">File ~/.virtualenvs/p39/lib/python3.9/site-packages/brian2/units/fundamentalunits.py:1422,</span> in <span class="ni">Quantity.__add__</span><span class="nt">(self, other)</span>
+<span class="nn">File /usr/local/lib/python3.11/site-packages/brian2/units/fundamentalunits.py:1422,</span> in <span class="ni">Quantity.__add__</span><span class="nt">(self, other)</span>
 <span class="g g-Whitespace">   </span><span class="mi">1421</span> <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
 <span class="ne">-&gt; </span><span class="mi">1422</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_binary_operation</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">operator</span><span class="o">.</span><span class="n">add</span><span class="p">,</span>
 <span class="g g-Whitespace">   </span><span class="mi">1423</span>                                   <span class="n">fail_for_mismatch</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
 <span class="g g-Whitespace">   </span><span class="mi">1424</span>                                   <span class="n">operator_str</span><span class="o">=</span><span class="s1">&#39;+&#39;</span><span class="p">)</span>
 
-<span class="nn">File ~/.virtualenvs/p39/lib/python3.9/site-packages/brian2/units/fundamentalunits.py:1362,</span> in <span class="ni">Quantity._binary_operation</span><span class="nt">(self, other, operation, dim_operation, fail_for_mismatch, operator_str, inplace)</span>
+<span class="nn">File /usr/local/lib/python3.11/site-packages/brian2/units/fundamentalunits.py:1362,</span> in <span class="ni">Quantity._binary_operation</span><span class="nt">(self, other, operation, dim_operation, fail_for_mismatch, operator_str, inplace)</span>
 <span class="g g-Whitespace">   </span><span class="mi">1359</span>     <span class="k">else</span><span class="p">:</span>
 <span class="g g-Whitespace">   </span><span class="mi">1360</span>         <span class="n">message</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;Cannot calculate </span><span class="si">{value1}</span><span class="s1"> </span><span class="si">%s</span><span class="s1"> </span><span class="si">{value2}</span><span class="s1">, units do not &#39;</span>
 <span class="g g-Whitespace">   </span><span class="mi">1361</span>                    <span class="s1">&#39;match&#39;</span><span class="p">)</span> <span class="o">%</span> <span class="n">operator_str</span>
@@ -678,7 +1122,7 @@ Requirement already satisfied: mpmath&gt;=0.19 in /Users/enaj/.virtualenvs/p39/l
 <span class="g g-Whitespace">   </span><span class="mi">1366</span> <span class="k">if</span> <span class="n">other_dim</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
 <span class="g g-Whitespace">   </span><span class="mi">1367</span>     <span class="n">other_dim</span> <span class="o">=</span> <span class="n">get_dimensions</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
 
-<span class="nn">File ~/.virtualenvs/p39/lib/python3.9/site-packages/brian2/units/fundamentalunits.py:188,</span> in <span class="ni">fail_for_dimension_mismatch</span><span class="nt">(obj1, obj2, error_message, **error_quantities)</span>
+<span class="nn">File /usr/local/lib/python3.11/site-packages/brian2/units/fundamentalunits.py:188,</span> in <span class="ni">fail_for_dimension_mismatch</span><span class="nt">(obj1, obj2, error_message, **error_quantities)</span>
 <span class="g g-Whitespace">    </span><span class="mi">186</span>         <span class="k">raise</span> <span class="n">DimensionMismatchError</span><span class="p">(</span><span class="n">error_message</span><span class="p">,</span> <span class="n">dim1</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">187</span>     <span class="k">else</span><span class="p">:</span>
 <span class="ne">--&gt; </span><span class="mi">188</span>         <span class="k">raise</span> <span class="n">DimensionMismatchError</span><span class="p">(</span><span class="n">error_message</span><span class="p">,</span> <span class="n">dim1</span><span class="p">,</span> <span class="n">dim2</span><span class="p">)</span>
@@ -697,7 +1141,7 @@ Requirement already satisfied: mpmath&gt;=0.19 in /Users/enaj/.virtualenvs/p39/l
 <p>If you see a traceback, what you want to do is start at the bottom and scan up the sections until you find your own file because that’s most likely where the problem is. (Of course, your code might be correct and Brian may have a bug in which case, please let us know on the email support list.)</p>
 </section>
 <section id="a-simple-model">
-<h2><span class="section-number">2.2. </span>A simple model<a class="headerlink" href="#a-simple-model" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">3.2. </span>A simple model<a class="headerlink" href="#a-simple-model" title="Permalink to this heading">#</a></h2>
 <p>Let’s start by defining a simple neuron model. In Brian, all models are defined by systems of differential equations. Here’s a simple example of what that looks like:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -819,7 +1263,7 @@ Note that this is not the unit of the two sides of the equation (which would be 
 </div>
 </section>
 <section id="adding-spikes">
-<h2><span class="section-number">2.3. </span>Adding spikes<a class="headerlink" href="#adding-spikes" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">3.3. </span>Adding spikes<a class="headerlink" href="#adding-spikes" title="Permalink to this heading">#</a></h2>
 <p>So far we haven’t done anything neuronal, just played around with differential equations. Now let’s start adding spiking behaviour.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -883,7 +1327,7 @@ Note that this is not the unit of the two sides of the equation (which would be 
 <p>Now try changing the strings for <code class="docutils literal notranslate"><span class="pre">threshold</span></code> and <code class="docutils literal notranslate"><span class="pre">reset</span></code> in the cell above to see what happens.</p>
 </section>
 <section id="refractoriness">
-<h2><span class="section-number">2.4. </span>Refractoriness<a class="headerlink" href="#refractoriness" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">3.4. </span>Refractoriness<a class="headerlink" href="#refractoriness" title="Permalink to this heading">#</a></h2>
 <p>A common feature of neuron models is refractoriness. This means that after the neuron fires a spike it becomes refractory for a certain duration and cannot fire another spike until this period is over. Here’s how we do that in Brian.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -943,7 +1387,7 @@ Note that this is not the unit of the two sides of the equation (which would be 
 <p>Note that you can do more complicated and interesting things with refractoriness. See the full documentation for more details about how it works.</p>
 </section>
 <section id="multiple-neurons">
-<h2><span class="section-number">2.5. </span>Multiple neurons<a class="headerlink" href="#multiple-neurons" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">3.5. </span>Multiple neurons<a class="headerlink" href="#multiple-neurons" title="Permalink to this heading">#</a></h2>
 <p>So far we’ve only been working with a single neuron. Let’s do something interesting with multiple neurons.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -974,7 +1418,7 @@ Note that this is not the unit of the two sides of the equation (which would be 
 <p>As well as the variable <code class="docutils literal notranslate"><span class="pre">spikemon.t</span></code> with the times of all the spikes, we’ve also used the variable <code class="docutils literal notranslate"><span class="pre">spikemon.i</span></code> which gives the corresponding neuron index for each spike, and plotted a single black dot with time on the x-axis and neuron index on the y-value. This is the standard “raster plot” used in neuroscience.</p>
 </section>
 <section id="parameters">
-<h2><span class="section-number">2.6. </span>Parameters<a class="headerlink" href="#parameters" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">3.6. </span>Parameters<a class="headerlink" href="#parameters" title="Permalink to this heading">#</a></h2>
 <p>To make these multiple neurons do something more interesting, let’s introduce per-neuron parameters that don’t have a differential equation attached to them.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1016,7 +1460,7 @@ Note that this is not the unit of the two sides of the equation (which would be 
 <p>Note that in the plot we’ve used the <code class="docutils literal notranslate"><span class="pre">count</span></code> variable of the <code class="docutils literal notranslate"><span class="pre">SpikeMonitor</span></code>: this is an array of the number of spikes each neuron in the group fired. Dividing this by the duration of the run gives the firing rate.</p>
 </section>
 <section id="stochastic-neurons">
-<h2><span class="section-number">2.7. </span>Stochastic neurons<a class="headerlink" href="#stochastic-neurons" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">3.7. </span>Stochastic neurons<a class="headerlink" href="#stochastic-neurons" title="Permalink to this heading">#</a></h2>
 <p>Often when making models of neurons, we include a random element to model the effect of various forms of neural noise. In Brian, we can do this by using the symbol <code class="docutils literal notranslate"><span class="pre">xi</span></code> in differential equations. Strictly speaking, this symbol is a “stochastic differential” but you can sort of thinking of it as just a Gaussian random variable with mean 0 and standard deviation 1. We do have to take into account the way stochastic differentials scale with time, which is why we multiply it by <code class="docutils literal notranslate"><span class="pre">tau**-0.5</span></code> in the equations below (see a textbook on stochastic differential equations for more details).
 Note that we also changed the <code class="docutils literal notranslate"><span class="pre">method</span></code> keyword argument to use <code class="docutils literal notranslate"><span class="pre">'euler'</span></code> (which stands for the <a class="reference external" href="https://en.wikipedia.org/wiki/Euler%E2%80%93Maruyama_method">Euler-Maruyama method</a>); the <code class="docutils literal notranslate"><span class="pre">'exact'</span></code> method that we used earlier is not applicable to stochastic differential equations.</p>
 <div class="cell docutils container">
@@ -1057,7 +1501,7 @@ Note that we also changed the <code class="docutils literal notranslate"><span c
 <p>That’s the same figure as in the previous section but with some noise added. Note how the curve has changed shape: instead of a sharp jump from firing at rate 0 to firing at a positive rate, it now increases in a sigmoidal fashion. This is because no matter how small the driving force the randomness may cause it to fire a spike.</p>
 </section>
 <section id="exercises">
-<h2><span class="section-number">2.8. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">3.8. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h2>
 <p>The cell below has a new simulation example.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1135,58 +1579,123 @@ Note that we also changed the <code class="docutils literal notranslate"><span c
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
-            path: "./notebooks/simulation_neuralsystems"
+            name: "python3",
+            path: "./notebooks/week3"
         },
         predefinedOutput: true
     }
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="neuralsimulation_intro.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">1. </span>Simulating neural populations</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="b.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">3. </span>Introduction to Brian part 2: Synapses</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-    By Elias Najarro & Rune Berg<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
-    
-</div>
 
-
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../week2/week2b-Applications_LT.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>Dynamical systems as Linear Transformations</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="week3b.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">4. </span>Introduction to Brian part 2: Synapses</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#units-system">3.1. Units system</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-simple-model">3.2. A simple model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-spikes">3.3. Adding spikes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#refractoriness">3.4. Refractoriness</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-neurons">3.5. Multiple neurons</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parameters">3.6. Parameters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stochastic-neurons">3.7. Stochastic neurons</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">3.8. Exercises</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Elias Najarro & Rune Berg
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <a href="https://neurowithpython.com/">neurowithpython.com</a> <div id="wh-modal"> <button class="wh-venti-button" aria-label="close modal" id="wh-modal-close">✕</button> <img id="wh-modal-img"> </div>
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>
