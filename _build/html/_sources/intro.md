@@ -2,7 +2,7 @@
 
 *Please, read carefully all the information here before the course starts*
 
-The course will consists of three types of classes: **Lectures** where you learn some concepts relevant in computational neuroscience, **Coding exercises** where you get to practice what you learn during lecture and **Invited talks** researches will come talk about their current research.
+The course will consists of three types of classes: **Lectures** where you learn some concepts relevant in computational neuroscience, **Coding exercises** where you get to practice what you learn during lecture, and **Invited talks** researches will come talk about their current research.
 
   * The **lectures** will follow a hybrid flipped classroom structure: we ask you to go through the supporting materials that we link on each chapter —typically videos— before coming to class. These materials are meant for you to refresh some notions of build an intuitions about the concepts, the corresponding lecture will build on them.
 
@@ -16,7 +16,7 @@ The course will consists of three types of classes: **Lectures** where you learn
 
 ### Preparation
 
-If you have never coded or used python before (or it's been a while), we strongly recommend that you take this introduction course to python. It covers all the coding requirements you need for the course: https://www.kaggle.com/learn/python
+If you have never coded or used python before (or it's been a while), we strongly recommend that you take this introduction course to python. It covers all the coding requirements you need for the course: [Kaggle's introduction course to Python](https://www.kaggle.com/learn/python)
 
 It's made of 7 lessons covering all you need to know about python to complete our course. Each lesson consist of a **tutorial** and some simple **exercises**. The exercises are hosted online as notebooks so you can do them without installing anything on your computer. 
 
