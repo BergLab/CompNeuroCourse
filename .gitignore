@@ -4,4 +4,3 @@
 *.o
 .vscode
 _build/*
-_static/*
