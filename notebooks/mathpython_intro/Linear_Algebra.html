@@ -1,117 +1,186 @@
 
 <!DOCTYPE html>
 
-<html lang="en">
+
+<html lang="en" data-content_root="../../" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Linear Algebra basics &#8212; Computational Neuroscience</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=9f7f7efb" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/sphinx_highlight.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js"></script>
-    <script src="../../_static/custom.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/design-tabs.js"></script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=afe5de03"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/mathpython_intro/Linear_Algebra';</script>
+    <script src="../../_static/custom.js?v=1fd2e2ea"></script>
+    <link rel="icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="1. What is computational neuroscience?" href="../modelling_intro/week0-Intro-RWB.html" />
     <link rel="prev" title="Introduction to NumPy and Matplotlib" href="Numpy_Introduction.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
 
-    
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
 
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../../index.html">
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../../_static/cajal1.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Computational Neuroscience</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="../../_static/cajal1.png" class="logo__image only-light" alt="Computational Neuroscience - Home"/>
+    <script>document.write(`<img src="../../_static/cajal1.png" class="logo__image only-dark" alt="Computational Neuroscience - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -120,759 +189,358 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Math review with Python
- </span>
-</p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Math review with Python</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="IntroColab.html">
-   Google’s Colab
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Numpy_Introduction.html">
-   Introduction to NumPy and Matplotlib
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Linear Algebra basics
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="IntroColab.html">Google’s Colab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Numpy_Introduction.html">Introduction to NumPy and Matplotlib</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Linear Algebra basics</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Chapter 1. Introduction to modeling in neuroscience
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 1. Introduction to modeling in neuroscience</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../modelling_intro/week0-Intro-RWB.html">
-   1. What is computational neuroscience?
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../modelling_intro/week0-Intro-RWB.html">1. What is computational neuroscience?</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Chapter 2. Differential equations and neuron models
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 2. Differential equations and neuron models</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../dynamical_systems/dynamical_systems_intro.html">
-   1. Introduction modelling with differential equations
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../dynamical_systems/Applications_LT.html">
-   2. Dynamical systems as Linear Transformations
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../dynamical_systems/dynamical_systems_intro.html">1. Introduction modelling with differential equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dynamical_systems/Applications_LT.html">2. Dynamical systems as Linear Transformations</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Chapter 3. Simulating neural populations
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 3. Simulating neural populations</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../simulation_neuralsystems/neuralsimulation_intro.html">
-   1. Simulating neural populations
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../simulation_neuralsystems/a.html">
-   2. Introduction to Brian part 1: Neurons
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../simulation_neuralsystems/b.html">
-   3. Introduction to Brian part 2: Synapses
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../simulation_neuralsystems/c.html">
-   4. Introduction to Brian part 3: Simulations
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../simulation_neuralsystems/neuralsimulation_intro.html">1. Simulating neural populations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simulation_neuralsystems/a.html">2. Introduction to Brian part 1: Neurons</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simulation_neuralsystems/b.html">3. Introduction to Brian part 2: Synapses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simulation_neuralsystems/c.html">4. Introduction to Brian part 3: Simulations</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Chapter 4. Data analysis and Machine learning
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 4. Data analysis and Machine learning</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../ML/a.html">
-   1. Introduction to Data Analysis with Pandas
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../ML/b.html">
-   2. Machine Learning
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../ML/a.html">1. Introduction to Data Analysis with Pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ML/b.html">2. Machine Learning</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Chapter 5. Network theory
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 5. Network theory</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../network_theory/a.html">
-   1. Network science
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../network_theory/a.html">1. Network science</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
-          
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
 
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
 <div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
 
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://colab.research.google.com/github/BergLab/CompNeuroBook/blob/main/notebooks/mathpython_intro/Linear_Algebra.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Colab"
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/BergLab/CompNeuroBook/blob/main/notebooks/mathpython_intro/Linear_Algebra.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   
     <img src="../../_static/images/logo_colab.png">
   </span>
-<span class="headerbtn__text-container">Colab</span>
+<span class="btn__text-container">Colab</span>
 </a>
-
-      </li>
+</li>
       
-    </ul>
-  </div>
+  </ul>
 </div>
 
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/BergLab/CompNeuroBook" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/BergLab/CompNeuroBook/edit/main/notebooks/mathpython_intro/Linear_Algebra.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/BergLab/CompNeuroBook/issues/new?title=Issue%20on%20page%20%2Fnotebooks/mathpython_intro/Linear_Algebra.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/notebooks/mathpython_intro/Linear_Algebra.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/BergLab/CompNeuroBook"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
 
-      </li>
-      
-      <li>
-        <a href="https://github.com/BergLab/CompNeuroBook/issues/new?title=Issue%20on%20page%20%2Fnotebooks/mathpython_intro/Linear_Algebra.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/BergLab/CompNeuroBook/edit/main/notebooks/mathpython_intro/Linear_Algebra.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Edit this page"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-pencil-alt"></i>
-  </span>
-<span class="headerbtn__text-container">suggest edit</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../../_sources/notebooks/mathpython_intro/Linear_Algebra.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#supporting-material">
-   Supporting material
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#concepts-and-notation">
-   Concepts and Notation
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#vector-spaces">
-   Vector Spaces
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#linear-systems">
-   Linear Systems
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#example-1-system-with-a-unique-solution">
-     Example 1:  System with a unique solution
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercises">
-     <strong>
-      Exercises
-     </strong>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#example-2-system-with-no-solutions">
-     Example 2:  System with no solutions
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#example-3-system-with-an-infinite-number-of-solutions">
-     Example 3:  System with an infinite number of solutions
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#inverse-matrices">
-   Inverse Matrices
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#construction-of-an-inverse-matrix">
-     Construction of an inverse matrix
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
-     Exercises
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#inverse-matrices-with-scipy">
-     Inverse matrices with SciPy
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id2">
-     <strong>
-      Exercises
-     </strong>
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#linear-combinations">
-   Linear Combinations
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id3">
-     Exercises
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#linear-independence">
-   Linear Independence
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#example-1-vectors-in-mathbb-r-2">
-     Example 1:  Vectors in
-     <span class="math notranslate nohighlight">
-      \(\mathbb{R}^2\)
-     </span>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id4">
-     <strong>
-      Exercises
-     </strong>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#homogeneous-systems">
-     Homogeneous systems
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#rank-and-number-of-solutions-of-a-system">
-     Rank and Number of solutions of a system
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id5">
-     <strong>
-      Exercises
-     </strong>
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#null-space">
-   Null space
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-connection-between-the-null-space-and-the-rank">
-     The connection between the null-space and the rank
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id6">
-     <strong>
-      Exercises
-     </strong>
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#orthogonalization">
-   Orthogonalization
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#projecting-vectors-onto-vectors">
-     Projecting vectors onto vectors
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id7">
-     <strong>
-      Exercises
-     </strong>
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#eigenvectors-and-eigenvalues">
-   Eigenvectors and eigenvalues
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#example-1-matrix-representing-horizontal-shear">
-     Example 1:  Matrix representing horizontal shear
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#example-2-projection-matrix">
-     Example 2:  Projection matrix
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id8">
-     <strong>
-      Exercises
-     </strong>
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Linear Algebra basics</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#supporting-material">
-   Supporting material
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#concepts-and-notation">
-   Concepts and Notation
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#vector-spaces">
-   Vector Spaces
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#linear-systems">
-   Linear Systems
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#example-1-system-with-a-unique-solution">
-     Example 1:  System with a unique solution
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercises">
-     <strong>
-      Exercises
-     </strong>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#example-2-system-with-no-solutions">
-     Example 2:  System with no solutions
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#example-3-system-with-an-infinite-number-of-solutions">
-     Example 3:  System with an infinite number of solutions
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#inverse-matrices">
-   Inverse Matrices
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#construction-of-an-inverse-matrix">
-     Construction of an inverse matrix
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
-     Exercises
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#inverse-matrices-with-scipy">
-     Inverse matrices with SciPy
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id2">
-     <strong>
-      Exercises
-     </strong>
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#linear-combinations">
-   Linear Combinations
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id3">
-     Exercises
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#linear-independence">
-   Linear Independence
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#example-1-vectors-in-mathbb-r-2">
-     Example 1:  Vectors in
-     <span class="math notranslate nohighlight">
-      \(\mathbb{R}^2\)
-     </span>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id4">
-     <strong>
-      Exercises
-     </strong>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#homogeneous-systems">
-     Homogeneous systems
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#rank-and-number-of-solutions-of-a-system">
-     Rank and Number of solutions of a system
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id5">
-     <strong>
-      Exercises
-     </strong>
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#null-space">
-   Null space
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-connection-between-the-null-space-and-the-rank">
-     The connection between the null-space and the rank
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id6">
-     <strong>
-      Exercises
-     </strong>
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#orthogonalization">
-   Orthogonalization
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#projecting-vectors-onto-vectors">
-     Projecting vectors onto vectors
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id7">
-     <strong>
-      Exercises
-     </strong>
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#eigenvectors-and-eigenvalues">
-   Eigenvectors and eigenvalues
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#example-1-matrix-representing-horizontal-shear">
-     Example 1:  Matrix representing horizontal shear
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#example-2-projection-matrix">
-     Example 2:  Projection matrix
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id8">
-     <strong>
-      Exercises
-     </strong>
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Linear Algebra basics</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supporting-material">Supporting material</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concepts-and-notation">Concepts and Notation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-spaces">Vector Spaces</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-systems">Linear Systems</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1-system-with-a-unique-solution">Example 1:  System with a unique solution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises"><strong>Exercises</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2-system-with-no-solutions">Example 2:  System with no solutions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-3-system-with-an-infinite-number-of-solutions">Example 3:  System with an infinite number of solutions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inverse-matrices">Inverse Matrices</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#construction-of-an-inverse-matrix">Construction of an inverse matrix</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercises</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inverse-matrices-with-scipy">Inverse matrices with SciPy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"><strong>Exercises</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-combinations">Linear Combinations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Exercises</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-independence">Linear Independence</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1-vectors-in-mathbb-r-2">Example 1:  Vectors in <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4"><strong>Exercises</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#homogeneous-systems">Homogeneous systems</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rank-and-number-of-solutions-of-a-system">Rank and Number of solutions of a system</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5"><strong>Exercises</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#null-space">Null space</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-connection-between-the-null-space-and-the-rank">The connection between the null-space and the rank</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6"><strong>Exercises</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#orthogonalization">Orthogonalization</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#projecting-vectors-onto-vectors">Projecting vectors onto vectors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7"><strong>Exercises</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eigenvectors-and-eigenvalues">Eigenvectors and eigenvalues</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1-matrix-representing-horizontal-shear">Example 1:  Matrix representing horizontal shear</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2-projection-matrix">Example 2:  Projection matrix</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8"><strong>Exercises</strong></a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
   <section class="tex2jax_ignore mathjax_ignore" id="linear-algebra-basics">
-<h1>Linear Algebra basics<a class="headerlink" href="#linear-algebra-basics" title="Permalink to this heading">#</a></h1>
+<h1>Linear Algebra basics<a class="headerlink" href="#linear-algebra-basics" title="Link to this heading">#</a></h1>
 <p><em><strong>Credit</strong>: <a class="reference external" href="https://bvanderlei.github.io/jupyter-guide-to-linear-algebra/">Ben Vanderlei’s Jupyter Guide to Linear Algebra</a> and <a class="reference external" href="http://damir.cavar.me/">Damir Cavar notebooks</a> under CC BY 4.0 with minor adaptations.</em></p>
 <section id="supporting-material">
-<h2>Supporting material<a class="headerlink" href="#supporting-material" title="Permalink to this heading">#</a></h2>
+<h2>Supporting material<a class="headerlink" href="#supporting-material" title="Link to this heading">#</a></h2>
 <p>This chapter’s supporting material is <a class="reference external" href="https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab">3blue1brown Essence to Linear Algebra</a>.
 You are encouraged to watch the whole playlist (it’s really good!) but specially relevant to this course are chapters 1 to 6 and chapters 14 to 16.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html">
-<iframe
-    width="600"
-    height="400"
-    src="https://www.youtube.com/embed/fNk_zzaMoSs"
-    frameborder="0"
-    allowfullscreen
-
-></iframe>
-</div></div>
+        <iframe
+            width="600"
+            height="400"
+            src="https://www.youtube.com/embed/fNk_zzaMoSs"
+            frameborder="0"
+            allowfullscreen
+            
+        ></iframe>
+        </div></div>
 </div>
 </section>
 <section id="concepts-and-notation">
-<h2>Concepts and Notation<a class="headerlink" href="#concepts-and-notation" title="Permalink to this heading">#</a></h2>
+<h2>Concepts and Notation<a class="headerlink" href="#concepts-and-notation" title="Link to this heading">#</a></h2>
 <p>A <strong>scalar</strong> is an element in a vector, containing a real number <strong>value</strong>. In a vector space model or a vector mapping of (symbolic, qualitative, or quantitative) properties the scalar holds the concrete value or property of a variable.</p>
 <p>A <strong>vector</strong> is an array, tuple, or ordered list of scalars (or elements) of size <span class="math notranslate nohighlight">\(n\)</span>, with <span class="math notranslate nohighlight">\(n\)</span> a positive integer. The <strong>length</strong> of the vector, that is the number of scalars in the vector, is also called the <strong>order</strong> of the vector.</p>
 <p>A <strong>matrix</strong> is a list of vectors that all are of the same length. <span class="math notranslate nohighlight">\(A\)</span> is a matrix with <span class="math notranslate nohighlight">\(m\)</span> rows and <span class="math notranslate nohighlight">\(n\)</span> columns, entries of <span class="math notranslate nohighlight">\(A\)</span> are real numbers:</p>
@@ -894,10 +562,10 @@ C = \left[ \begin{array}{rrrr} a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1n} \\ 
      \end{bmatrix}\)</span></p>
 </section>
 <section id="vector-spaces">
-<h2>Vector Spaces<a class="headerlink" href="#vector-spaces" title="Permalink to this heading">#</a></h2>
+<h2>Vector Spaces<a class="headerlink" href="#vector-spaces" title="Link to this heading">#</a></h2>
 <p>A <strong>vector space</strong> is a collection of objects, called vectors, together with definitions that allow for the addition of two vectors and the multiplication of a vector by a scalar.  These operations produce other vectors in the collection and they satisfy a list of algebraic requirements such as associativity and commutativity.  Although we will not consider the implications of each requirement here, we provide the list for reference.</p>
 <p>For any vectors <span class="math notranslate nohighlight">\(U\)</span>, <span class="math notranslate nohighlight">\(V\)</span>, and <span class="math notranslate nohighlight">\(W\)</span>, and scalars <span class="math notranslate nohighlight">\(p\)</span> and <span class="math notranslate nohighlight">\(q\)</span>, the definitions of vector addition and scalar multiplication for a vector space have the following properties:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p><span class="math notranslate nohighlight">\(U+V = V+U\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\((U+V)+W = U+(V+W)\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(U + 0 = U\)</span></p></li>
@@ -907,7 +575,7 @@ C = \left[ \begin{array}{rrrr} a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1n} \\ 
 <li><p><span class="math notranslate nohighlight">\(p(U+V) = pU + pV\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(1U = U\)</span></p></li>
 </ol>
-<p>The most familar example of vector spaces are the collections of single column arrays that we have been referring to as “vectors” throughout the previous chapter.  The name given to the collection of all <span class="math notranslate nohighlight">\(n\times 1\)</span> arrays is known as Euclidean <span class="math notranslate nohighlight">\(n\)</span>-space, and is given the symbol <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span>.  The required definitions of addition and scalar multiplication in <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span> are those described for matrices in <span class="xref myst">Matrix Algebra</span>.  We will leave it to the reader to verify that these operations satisfy the list of requirements listed above.</p>
+<p>The most familar example of vector spaces are the collections of single column arrays that we have been referring to as “vectors” throughout the previous chapter.  The name given to the collection of all <span class="math notranslate nohighlight">\(n\times 1\)</span> arrays is known as Euclidean <span class="math notranslate nohighlight">\(n\)</span>-space, and is given the symbol <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span>.  The required definitions of addition and scalar multiplication in <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span> are those described for matrices in <a class="reference internal" href="#Matrix_Algebra.ipynb"><span class="xref myst">Matrix Algebra</span></a>.  We will leave it to the reader to verify that these operations satisfy the list of requirements listed above.</p>
 <p>The algebra of vectors by be visualized by interpreting the vectors as arrows.  This is easiest to see with an example in <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span>.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -947,7 +615,7 @@ U_2 = \left[ \begin{array}{r} 2 \\  -1   \end{array}\right]
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Linear_Algebra_7_0.png" src="../../_images/Linear_Algebra_7_0.png" />
+<img alt="../../_images/fd49dff6ac8f9c3ac7dc001c20dea20df3b354eddc0aebeb0211dd39607c857f.png" src="../../_images/fd49dff6ac8f9c3ac7dc001c20dea20df3b354eddc0aebeb0211dd39607c857f.png" />
 </div>
 </div>
 <p>It is important to understand that it is the <em>length and direction</em> of this arrow that defines <span class="math notranslate nohighlight">\(U_1\)</span>, not the actual position.  We could draw the arrow in any number of locations, and it would still represent <span class="math notranslate nohighlight">\(U_1\)</span>.</p>
@@ -968,7 +636,7 @@ U_2 = \left[ \begin{array}{r} 2 \\  -1   \end{array}\right]
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Linear_Algebra_9_0.png" src="../../_images/Linear_Algebra_9_0.png" />
+<img alt="../../_images/683e3c36f2f40cecb3be97157058b2e74ef8b7405bc85ec22503e0bf2e3557c3.png" src="../../_images/683e3c36f2f40cecb3be97157058b2e74ef8b7405bc85ec22503e0bf2e3557c3.png" />
 </div>
 </div>
 <p>When we perform a scalar multiplication, such as <span class="math notranslate nohighlight">\(2U_1\)</span>, we interpret it as multiplying the <em>length of the arrow</em> by the scalar.</p>
@@ -993,7 +661,7 @@ U_2 = \left[ \begin{array}{r} 2 \\  -1   \end{array}\right]
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Linear_Algebra_11_0.png" src="../../_images/Linear_Algebra_11_0.png" />
+<img alt="../../_images/03c94bb3a89efc0bc21c2f8aaaf83dcaf3969ee55d3f2cf9c31df192fd1de56b.png" src="../../_images/03c94bb3a89efc0bc21c2f8aaaf83dcaf3969ee55d3f2cf9c31df192fd1de56b.png" />
 </div>
 </div>
 <p>If the scalar is negative, we interpret the scalar multiplication as <em>reversing the direction</em> of the arrow, as well as changing the length.</p>
@@ -1018,7 +686,7 @@ U_2 = \left[ \begin{array}{r} 2 \\  -1   \end{array}\right]
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Linear_Algebra_13_0.png" src="../../_images/Linear_Algebra_13_0.png" />
+<img alt="../../_images/c125a51477f83a37f2e7f2d3e80a38d0ca88c7db97d2097c16ca874870884f70.png" src="../../_images/c125a51477f83a37f2e7f2d3e80a38d0ca88c7db97d2097c16ca874870884f70.png" />
 </div>
 </div>
 <p>We can interpret the sum of two vectors as the result of aligning the two arrows tip to tail.</p>
@@ -1045,7 +713,7 @@ U_2 = \left[ \begin{array}{r} 2 \\  -1   \end{array}\right]
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Linear_Algebra_15_0.png" src="../../_images/Linear_Algebra_15_0.png" />
+<img alt="../../_images/4ce111678b49c81f56df068e2c55311cd25c5370af84d42280415f4c2c5bf316.png" src="../../_images/4ce111678b49c81f56df068e2c55311cd25c5370af84d42280415f4c2c5bf316.png" />
 </div>
 </div>
 <div class="math notranslate nohighlight">
@@ -1059,7 +727,7 @@ U_2 = \left[ \begin{array}{r} 2 \\  -1   \end{array}\right]
 <p>There are many other examples of vector spaces, but we will wait to provide these until after we have discussed more of the fundamental vector space concepts using <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span> as the setting.</p>
 </section>
 <section id="linear-systems">
-<h2>Linear Systems<a class="headerlink" href="#linear-systems" title="Permalink to this heading">#</a></h2>
+<h2>Linear Systems<a class="headerlink" href="#linear-systems" title="Link to this heading">#</a></h2>
 <p>In this first chapter, we examine linear systems of equations and seek a method for their solution.  We also introduce the machinery of matrix algebra which will be necessary in later chapters, and close with some applications.</p>
 <p>A <strong>linear system</strong> of <span class="math notranslate nohighlight">\(m\)</span> equations with <span class="math notranslate nohighlight">\(n\)</span> unknowns <span class="math notranslate nohighlight">\(x_1\)</span>, <span class="math notranslate nohighlight">\(x_2\)</span>, <span class="math notranslate nohighlight">\(x_3\)</span>, … <span class="math notranslate nohighlight">\(x_n\)</span>, is a collection of equations that can be written in the following form.</p>
 <div class="math notranslate nohighlight">
@@ -1074,7 +742,7 @@ a_{m1}x_1 + a_{m2}x_2 + \hspace{0.5cm} ... \hspace{0.5cm} +  a_{mn}x_n &amp; = &
 <p>Solutions to the linear system are collections of values for the unknowns that satisfy all all of the equations simultaneously.  The set of all possible solutions for the system is known as its <strong>solution set</strong>.</p>
 <p>Linear systems with two equations and two unknowns are a great starting point since we easily graph the sets of points that satisfy each equation in the <span class="math notranslate nohighlight">\(x_1x_2\)</span> coordinate plane.  The set of points that satisfy a single linear equation in two variables forms a line in the plane.  Three examples will be sufficient to show the possible solution sets for linear systems in this setting.</p>
 <section id="example-1-system-with-a-unique-solution">
-<h3>Example 1:  System with a unique solution<a class="headerlink" href="#example-1-system-with-a-unique-solution" title="Permalink to this heading">#</a></h3>
+<h3>Example 1:  System with a unique solution<a class="headerlink" href="#example-1-system-with-a-unique-solution" title="Link to this heading">#</a></h3>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{eqnarray*}
@@ -1111,7 +779,7 @@ x_1 - 2x_2 &amp; = &amp; -5 \\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Linear_Algebra_21_0.png" src="../../_images/Linear_Algebra_21_0.png" />
+<img alt="../../_images/a5b2bbfa116d5f80050fec4dd7b978e846d0cc373bf39beadc7f92d77055b264.png" src="../../_images/a5b2bbfa116d5f80050fec4dd7b978e846d0cc373bf39beadc7f92d77055b264.png" />
 </div>
 </div>
 <p>We are looking for a unique solution for the two variables <span class="math notranslate nohighlight">\(x_1\)</span> and <span class="math notranslate nohighlight">\(x_2\)</span>.  The system can be described as <span class="math notranslate nohighlight">\(Ax = b\)</span> with the matrices :</p>
@@ -1122,7 +790,7 @@ b = \left[ \begin{array}{rr} 5 \\ -5 \end{array}\right]
 \end{split}\]</div>
 </section>
 <section id="exercises">
-<h3><strong>Exercises</strong><a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h3>
+<h3><strong>Exercises</strong><a class="headerlink" href="#exercises" title="Link to this heading">#</a></h3>
 <p>-Are the solution to the above system of equations scalars or vectors?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1133,7 +801,7 @@ b = \left[ \begin{array}{rr} 5 \\ -5 \end{array}\right]
 </div>
 </section>
 <section id="example-2-system-with-no-solutions">
-<h3>Example 2:  System with no solutions<a class="headerlink" href="#example-2-system-with-no-solutions" title="Permalink to this heading">#</a></h3>
+<h3>Example 2:  System with no solutions<a class="headerlink" href="#example-2-system-with-no-solutions" title="Link to this heading">#</a></h3>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{eqnarray*}
@@ -1164,12 +832,12 @@ x_1 + 3x_2 &amp; = &amp; 0 \\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Linear_Algebra_26_0.png" src="../../_images/Linear_Algebra_26_0.png" />
+<img alt="../../_images/20782bf5f3a2fdeb3548a70255f5769ca7d8f1d8d281235318220b745a2433d9.png" src="../../_images/20782bf5f3a2fdeb3548a70255f5769ca7d8f1d8d281235318220b745a2433d9.png" />
 </div>
 </div>
 </section>
 <section id="example-3-system-with-an-infinite-number-of-solutions">
-<h3>Example 3:  System with an infinite number of solutions<a class="headerlink" href="#example-3-system-with-an-infinite-number-of-solutions" title="Permalink to this heading">#</a></h3>
+<h3>Example 3:  System with an infinite number of solutions<a class="headerlink" href="#example-3-system-with-an-infinite-number-of-solutions" title="Link to this heading">#</a></h3>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{eqnarray*}
@@ -1199,14 +867,14 @@ x_1 + 3x_2 &amp; = &amp; 5 \\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Linear_Algebra_28_0.png" src="../../_images/Linear_Algebra_28_0.png" />
+<img alt="../../_images/750423849f73cd645c1eca3ca9868c501871dd6d76cd86cf24020facd9920035.png" src="../../_images/750423849f73cd645c1eca3ca9868c501871dd6d76cd86cf24020facd9920035.png" />
 </div>
 </div>
 <p>These examples illustrate all of the possibile types of solution sets that might arise in a system of two equations with two unknowns.  Either there will be exactly one solution, no solutions, or an infinite collection of solutions.  A fundamental fact about linear systems is that their solution sets are <em>always</em> one of these three cases.</p>
 </section>
 </section>
 <section id="inverse-matrices">
-<h2>Inverse Matrices<a class="headerlink" href="#inverse-matrices" title="Permalink to this heading">#</a></h2>
+<h2>Inverse Matrices<a class="headerlink" href="#inverse-matrices" title="Link to this heading">#</a></h2>
 <p>In this section we consider the idea of inverse matrices and describe a common method for their construction.</p>
 <p>As a motivation for the idea, let’s again consider the system of linear equations written in the matrix form.</p>
 <div class="math notranslate nohighlight">
@@ -1222,7 +890,7 @@ AX = B
 A^{-1}A = I \hspace{3cm}AA^{-1} = I
 \]</div>
 <p>Notes about inverse matrices:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>The matrix must be square in order for this definition to make sense.  If <span class="math notranslate nohighlight">\(A\)</span> is not square, it is impossible for both
 <span class="math notranslate nohighlight">\(A^{-1}A\)</span> and <span class="math notranslate nohighlight">\(AA^{-1}\)</span> to be defined.</p></li>
 <li><p>Not all matrices have inverses.  Matrices that do have inverses are called <strong>invertible</strong> matrices.  Matrices that do not have inverses are called <strong>non-invertible</strong>, or <strong>singular</strong>, matrices.</p></li>
@@ -1235,7 +903,7 @@ A^{-1}AX = A^{-1}B
 \]</div>
 <p>Then <span class="math notranslate nohighlight">\(A^{-1}AX = IX = X\)</span>, so the solution to the system is <span class="math notranslate nohighlight">\(X=A^{-1}B\)</span>.  Unfortunately, it is typically not easy to find <span class="math notranslate nohighlight">\(A^{-1}\)</span>.</p>
 <section id="construction-of-an-inverse-matrix">
-<h3>Construction of an inverse matrix<a class="headerlink" href="#construction-of-an-inverse-matrix" title="Permalink to this heading">#</a></h3>
+<h3>Construction of an inverse matrix<a class="headerlink" href="#construction-of-an-inverse-matrix" title="Link to this heading">#</a></h3>
 <p>We take <span class="math notranslate nohighlight">\(C\)</span> as an example matrix, and consider how we might build the inverse.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -1259,7 +927,7 @@ I
 \end{split}\]</div>
 </section>
 <section id="id1">
-<h3>Exercises<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<h3>Exercises<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Write down the matrix <span class="math notranslate nohighlight">\(C\)</span> using a numpy array</p></li>
 </ul>
@@ -1273,7 +941,7 @@ I
 </div>
 </section>
 <section id="inverse-matrices-with-scipy">
-<h3>Inverse matrices with SciPy<a class="headerlink" href="#inverse-matrices-with-scipy" title="Permalink to this heading">#</a></h3>
+<h3>Inverse matrices with SciPy<a class="headerlink" href="#inverse-matrices-with-scipy" title="Link to this heading">#</a></h3>
 <p>The <span class="math notranslate nohighlight">\(\texttt{inv}\)</span> function is used to compute inverse matrices in the SciPy <span class="math notranslate nohighlight">\(\texttt{linalg}\)</span> module.  Once the module is imported, the usage of <span class="math notranslate nohighlight">\(\texttt{inv}\)</span> is exactly the same as the function we just created.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1289,10 +957,11 @@ I
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [12],</span> in <span class="ni">&lt;cell line: 3&gt;</span><span class="nt">()</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">12</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">linalg</span>
 <span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">C_inverse</span> <span class="o">=</span> <span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">C</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="nb">print</span><span class="p">(</span><span class="n">C_inverse</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="c1">## Your solution here</span>
 
 <span class="ne">NameError</span>: name &#39;C&#39; is not defined
 </pre></div>
@@ -1310,7 +979,7 @@ I
 <p>Providing a non-invertible matrix to <span class="math notranslate nohighlight">\(\texttt{inv}\)</span> will result in an error being raised by the Python interpreter.</p>
 </section>
 <section id="id2">
-<h3><strong>Exercises</strong><a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<h3><strong>Exercises</strong><a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Let <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> be two random <span class="math notranslate nohighlight">\(4\times 4\)</span> matrices.  Demonstrate using Python that <span class="math notranslate nohighlight">\((AB)^{-1}=B^{-1}A^{-1}\)</span> for the matrices.</p></li>
 </ul>
@@ -1327,7 +996,7 @@ I
 </section>
 </section>
 <section id="linear-combinations">
-<h2>Linear Combinations<a class="headerlink" href="#linear-combinations" title="Permalink to this heading">#</a></h2>
+<h2>Linear Combinations<a class="headerlink" href="#linear-combinations" title="Link to this heading">#</a></h2>
 <p>At the core of many ideas in linear algebra is the concept of a <strong>linear combination</strong> of vectors.  To build a linear combination from a set of vectors <span class="math notranslate nohighlight">\(\{V_1, V_2, V_3, ... V_n\}\)</span> we use the two algebraic operations of addition and scalar multiplication.  If we use the symbols <span class="math notranslate nohighlight">\(a_1, a_2, ..., a_n\)</span> to represent the scalars, the linear combination looks like the following.</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1383,7 +1052,7 @@ x_2\left[ \begin{array}{r} 2 \\ -1  \end{array}\right] =
 \end{split}\]</div>
 <p>The connection to linear combinations now becomes clear if we consider the columns of the coefficient matrix as vectors.  Finding the solution to the linear system of equations is equivalent to finding the <em>linear combination</em> of these column vectors that matches the vector on the right hand side of the equation.</p>
 <section id="id3">
-<h3>Exercises<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<h3>Exercises<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Use scipy function linalg.solve() to solve the above sytem, that is, to find the values <span class="math notranslate nohighlight">\(x_{1}\)</span> and <span class="math notranslate nohighlight">\(x_{2}\)</span> that makes the above equation true. Hint: You can check how to use scipy function in <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.solve.html">the scipy documentation</a>.</p></li>
 </ul>
@@ -1406,7 +1075,7 @@ x_2\left[ \begin{array}{r} 2 \\ -1  \end{array}\right] =
 </section>
 </section>
 <section id="linear-independence">
-<h2>Linear Independence<a class="headerlink" href="#linear-independence" title="Permalink to this heading">#</a></h2>
+<h2>Linear Independence<a class="headerlink" href="#linear-independence" title="Link to this heading">#</a></h2>
 <p>A set of vectors <span class="math notranslate nohighlight">\(\{V_1, V_2, V_3, ... V_n\}\)</span> is said to be <strong>linearly independent</strong> if no linear combination of the vectors is equal to zero, except the combination with all weights equal to zero.  Thus if the set is linearly independent and</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1416,7 +1085,7 @@ c_1V_1 + c_2V_2 + c_3V_3 + .... + c_nV_n = 0
 \]</div>
 <p>it must be that <span class="math notranslate nohighlight">\(c_1 = c_2 = c_3 = .... = c_n = 0\)</span>.  Equivalently we could say that the set of vectors is linearly independent if there is <em>no vector in the set</em> that is equal to a linear combination of the others.  If a set of vectors is not linearly independent, then we say that it is <strong>linearly dependent</strong>.</p>
 <section id="example-1-vectors-in-mathbb-r-2">
-<h3>Example 1:  Vectors in <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span><a class="headerlink" href="#example-1-vectors-in-mathbb-r-2" title="Permalink to this heading">#</a></h3>
+<h3>Example 1:  Vectors in <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span><a class="headerlink" href="#example-1-vectors-in-mathbb-r-2" title="Link to this heading">#</a></h3>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{equation}
@@ -1434,7 +1103,7 @@ c_2\left[ \begin{array}{r} 1 \\ -6  \end{array}\right] =
 \end{split}\]</div>
 </section>
 <section id="id4">
-<h3><strong>Exercises</strong><a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<h3><strong>Exercises</strong><a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Use scipy function linalg.solve() to solve the above sytem, that is, to find the values <span class="math notranslate nohighlight">\(c_{1}\)</span> and <span class="math notranslate nohighlight">\(c_{2}\)</span> that makes the above equation true. Hint: You can check how to use scipy function in <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.solve.html">the scipy documentation</a>.</p></li>
 </ul>
@@ -1449,7 +1118,7 @@ c_2\left[ \begin{array}{r} 1 \\ -6  \end{array}\right] =
 </div>
 </section>
 <section id="homogeneous-systems">
-<h3>Homogeneous systems<a class="headerlink" href="#homogeneous-systems" title="Permalink to this heading">#</a></h3>
+<h3>Homogeneous systems<a class="headerlink" href="#homogeneous-systems" title="Link to this heading">#</a></h3>
 <p>A linear system is said to be <strong>homogeneous</strong> if it can be described with the matrix equation <span class="math notranslate nohighlight">\(AX = 0\)</span>.  The solution to such a system has a connection to the solution of the system <span class="math notranslate nohighlight">\(AX=B\)</span>.  The homogeneous system also has a connection to the concept of linear independence.  If we link all of these ideas together we will be able to gain information about the solution of the system <span class="math notranslate nohighlight">\(AX=B\)</span>, based on some information about linear independence.</p>
 <p>In the previous examples we were solving the vector equation <span class="math notranslate nohighlight">\(c_1V_1 + c_2V_2 + c_3V_3 + .... + c_nV_n = 0\)</span> in order
 to determine if the set of vectors <span class="math notranslate nohighlight">\(\{V_1, V_2, V_3 .... V_n\}\)</span> were linearly independent.  This vector equation represents a homogeneous linear system that could also be described as <span class="math notranslate nohighlight">\(AX=0\)</span>, where <span class="math notranslate nohighlight">\(V_1\)</span>, <span class="math notranslate nohighlight">\(V_2\)</span>, … <span class="math notranslate nohighlight">\(V_n\)</span> are the columns of the matrix <span class="math notranslate nohighlight">\(A\)</span>, and <span class="math notranslate nohighlight">\(X\)</span> is the vector of unknown coefficients.  The set of vectors is linearly dependent if and only if the associated homogeneous system has a solution other than the vector with all entries equal to zero.  The vector of all zeros is called the <strong>trivial solution</strong>.  This zero vector is called a trivial solution because it is a solution to <em>every homogeneous system</em> <span class="math notranslate nohighlight">\(AX=0\)</span>, regardless of the entries of <span class="math notranslate nohighlight">\(A\)</span>.  For this reason, we are interested only in the existence of <em>nontrivial solutions</em> to <span class="math notranslate nohighlight">\(AX=0\)</span>.</p>
@@ -1474,7 +1143,7 @@ AX = \left[ \begin{array}{rrr} -3 &amp; 2 &amp; 1 \\ -2 &amp; 1 &amp; -1 \\ 4 &a
 \end{split}\]</div>
 </section>
 <section id="rank-and-number-of-solutions-of-a-system">
-<h3>Rank and Number of solutions of a system<a class="headerlink" href="#rank-and-number-of-solutions-of-a-system" title="Permalink to this heading">#</a></h3>
+<h3>Rank and Number of solutions of a system<a class="headerlink" href="#rank-and-number-of-solutions-of-a-system" title="Link to this heading">#</a></h3>
 <p>The <strong>rank</strong> of a system of linear equations is the maximal number of linearly independent vectors. If the rank is smaller than the number of vectores, then some vectors are linearly dependent: ie. they can be written as a linear combination of two other vectors.</p>
 <p>If <span class="math notranslate nohighlight">\(rank(A) = rank([A|b])\)</span> then the system Ax = b has a solution.<br />
 If <span class="math notranslate nohighlight">\(rank(A) = rank([A|b]) = n\)</span> then the system Ax = b has a unique solution.<br />
@@ -1482,7 +1151,7 @@ If <span class="math notranslate nohighlight">\(rank(A) = rank([A|b]) &lt; n\)</
 If <span class="math notranslate nohighlight">\(rank(A) &lt; rank([A|b])\)</span> then the system Ax = b is inconsistent; i.e., b is not in C(A).</p>
 </section>
 <section id="id5">
-<h3><strong>Exercises</strong><a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
+<h3><strong>Exercises</strong><a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Use the same scipy function as above to solve the homogenous and the non-homogenous systems above. Do they have the same set of solutions? Did you expect that?</p></li>
 </ul>
@@ -1496,7 +1165,7 @@ If <span class="math notranslate nohighlight">\(rank(A) &lt; rank([A|b])\)</span
 </section>
 </section>
 <section id="null-space">
-<h2>Null space<a class="headerlink" href="#null-space" title="Permalink to this heading">#</a></h2>
+<h2>Null space<a class="headerlink" href="#null-space" title="Link to this heading">#</a></h2>
 <p>With the concept of homogeneous systems in place, we are ready to define the second fundamental subspace.  If <span class="math notranslate nohighlight">\(A\)</span> is an <span class="math notranslate nohighlight">\(m\times n\)</span> matrix, the <strong>null space</strong> or <strong>nullity</strong> of <span class="math notranslate nohighlight">\(A\)</span> is the set of vectors <span class="math notranslate nohighlight">\(X\)</span>, such that <span class="math notranslate nohighlight">\(AX=0\)</span>.  In other words, the null space of <span class="math notranslate nohighlight">\(A\)</span> is the set of all solutions to the homogeneous system <span class="math notranslate nohighlight">\(AX=0\)</span>.  The null space of <span class="math notranslate nohighlight">\(A\)</span> is a subspace of <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span>, and is written with the notation <span class="math notranslate nohighlight">\(\mathcal{N}(A)\)</span>.  We can now reformulate earlier statements in terms of the null space.</p>
 <ul class="simple">
 <li><p>The columns of a matrix <span class="math notranslate nohighlight">\(A\)</span> are linearly independent if and only if <span class="math notranslate nohighlight">\(\mathcal{N}(A)\)</span> contains only the zero vector.</p></li>
@@ -1504,7 +1173,7 @@ If <span class="math notranslate nohighlight">\(rank(A) &lt; rank([A|b])\)</span
 </ul>
 <p>Making connections between the fundamental subspaces of <span class="math notranslate nohighlight">\(A\)</span> and the solution sets of the system <span class="math notranslate nohighlight">\(AX=B\)</span> allows us to make general conclusions that further our understanding of linear systems, and the methods by which we might solve them.</p>
 <section id="the-connection-between-the-null-space-and-the-rank">
-<h3>The connection between the null-space and the rank<a class="headerlink" href="#the-connection-between-the-null-space-and-the-rank" title="Permalink to this heading">#</a></h3>
+<h3>The connection between the null-space and the rank<a class="headerlink" href="#the-connection-between-the-null-space-and-the-rank" title="Link to this heading">#</a></h3>
 <p>The Rank–nullity theorem tells us that there is the following relation between the rank and the nullity of a linar map <span class="math notranslate nohighlight">\(L:V\rightarrow W\)</span></p>
 <div class="math notranslate nohighlight">
 \[
@@ -1524,7 +1193,7 @@ dim(image(L)) + dim(kernel(L)) = dim(domain(L))
 <p>where the red area <span class="math notranslate nohighlight">\(X\)</span> is the <strong>domain</strong> of <span class="math notranslate nohighlight">\(f\)</span>, the blue area <span class="math notranslate nohighlight">\(Y\)</span> is the <strong>codomain</strong> and the yellow area <span class="math notranslate nohighlight">\(f(x)\)</span> is the <strong>image</strong>.</p>
 </section>
 <section id="id6">
-<h3><strong>Exercises</strong><a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
+<h3><strong>Exercises</strong><a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Determine if the following set of vectors is linearly independent.</p></li>
 </ul>
@@ -1561,7 +1230,7 @@ U_3 = \left[ \begin{array}{r} 3 \\ 2 \\ 2  \end{array}\right]
 </section>
 </section>
 <section id="orthogonalization">
-<h2>Orthogonalization<a class="headerlink" href="#orthogonalization" title="Permalink to this heading">#</a></h2>
+<h2>Orthogonalization<a class="headerlink" href="#orthogonalization" title="Link to this heading">#</a></h2>
 <p>Some of the most important applications of inner products involve finding and using sets of vectors that are mutually orthogonal.  A set of nonzero vectors <span class="math notranslate nohighlight">\(\{U_1, U_2, U_3 ... U_n\}\)</span> is <strong>mutually orthogonal</strong> if <span class="math notranslate nohighlight">\(U_i\cdot U_j = 0\)</span> whenever <span class="math notranslate nohighlight">\(i \neq j\)</span>.  This simply means that every vector in the set is orthogonal to every other vector in the set.  If a set of vectors is mutually orthogonal <em>and</em> every vector in the set is a <em>unit vector</em>, we say the set is <strong>orthonormal</strong>.  In other words, every vector in an orthonormal set has magnitude one, and is orthogonal to every other vector in the set.</p>
 <p>Orthonormal sets must be linearly independent, so it makes sense to think of them as a basis for some vector subspace.  Any collection of vectors from the standard bases of <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span> are orthonormal sets.  For example, the set of vectors <span class="math notranslate nohighlight">\(\{E_1, E_4, E_5\}\)</span> from the standard basis of <span class="math notranslate nohighlight">\(\mathbb{R}^5\)</span> forms a orthonormal basis for a subspace of <span class="math notranslate nohighlight">\(\mathbb{R}^5\)</span>.</p>
 <div class="math notranslate nohighlight">
@@ -1585,7 +1254,7 @@ X\cdot U_k &amp; = &amp; (b_1U_1 + b_2U_2 + ... b_nU_n)\cdot U_k \\
 \end{split}\]</div>
 <p>All of the products <span class="math notranslate nohighlight">\(U_i\cdot U_k\)</span> are zero except for <span class="math notranslate nohighlight">\(U_k\cdot U_k\)</span>, which is one.  This means that instead of solving a system to find the coordinates, we can compute each <span class="math notranslate nohighlight">\(b_k\)</span> directly, as the dot product <span class="math notranslate nohighlight">\(X\cdot U_k\)</span>.</p>
 <section id="projecting-vectors-onto-vectors">
-<h3>Projecting vectors onto vectors<a class="headerlink" href="#projecting-vectors-onto-vectors" title="Permalink to this heading">#</a></h3>
+<h3>Projecting vectors onto vectors<a class="headerlink" href="#projecting-vectors-onto-vectors" title="Link to this heading">#</a></h3>
 <p>An important step in orthogonalization involves decomposing a vector <span class="math notranslate nohighlight">\(B\)</span> into orthogonal components based on the direction of another vector <span class="math notranslate nohighlight">\(V\)</span>.  Specifically, we want to determine two vectors, <span class="math notranslate nohighlight">\(\hat{B}\)</span> and <span class="math notranslate nohighlight">\(E\)</span>, such that <span class="math notranslate nohighlight">\(\hat{B}\)</span> is in the same direction as <span class="math notranslate nohighlight">\(V\)</span>, <span class="math notranslate nohighlight">\(E\)</span> is orthogonal to <span class="math notranslate nohighlight">\(V\)</span>, and <span class="math notranslate nohighlight">\(B = \hat{B} + E\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1649,7 +1318,7 @@ X\cdot U_k &amp; = &amp; (b_1U_1 + b_2U_2 + ... b_nU_n)\cdot U_k \\
 \]</div>
 </section>
 <section id="id7">
-<h3><strong>Exercises</strong><a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
+<h3><strong>Exercises</strong><a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
 <ul>
 <li><p>Use numpy.dot() function to compute the vector <span class="math notranslate nohighlight">\(\hat{B}\)</span>.</p></li>
 <li><p>Use the same function to compute the angle between <span class="math notranslate nohighlight">\(B\)</span> and <span class="math notranslate nohighlight">\(\hat{B}\)</span></p>
@@ -1672,7 +1341,7 @@ X\cdot U_k &amp; = &amp; (b_1U_1 + b_2U_2 + ... b_nU_n)\cdot U_k \\
 </section>
 </section>
 <section id="eigenvectors-and-eigenvalues">
-<h2>Eigenvectors and eigenvalues<a class="headerlink" href="#eigenvectors-and-eigenvalues" title="Permalink to this heading">#</a></h2>
+<h2>Eigenvectors and eigenvalues<a class="headerlink" href="#eigenvectors-and-eigenvalues" title="Link to this heading">#</a></h2>
 <blockquote>
 <div><p>“Eigenvalues are just the TLDR for a matrix”, &#64;KyleMorgenstein</p>
 </div></blockquote>
@@ -1680,7 +1349,7 @@ X\cdot U_k &amp; = &amp; (b_1U_1 + b_2U_2 + ... b_nU_n)\cdot U_k \\
 <p>Given a square <span class="math notranslate nohighlight">\(n\times n\)</span> matrix <span class="math notranslate nohighlight">\(A\)</span>, a scalar <span class="math notranslate nohighlight">\(\lambda\)</span> is called an <strong>eigenvalue</strong> of <span class="math notranslate nohighlight">\(A\)</span> if there exists some nonzero vector <span class="math notranslate nohighlight">\(V\)</span> in <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span> such that <span class="math notranslate nohighlight">\(AV=\lambda V\)</span>.  The vector <span class="math notranslate nohighlight">\(V\)</span> is the <strong>eigenvector</strong> associated with <span class="math notranslate nohighlight">\(\lambda\)</span>.  The equation states that when an eigenvector of <span class="math notranslate nohighlight">\(A\)</span> is multiplied by <span class="math notranslate nohighlight">\(A\)</span>, the result is simply a multiple of the eigenvector.  In general, there may be multiple eigenvalues associated with a given matrix, and we will label them as <span class="math notranslate nohighlight">\(\lambda_1\)</span>, <span class="math notranslate nohighlight">\(\lambda_2\)</span>, etc., to keep an orderly notation.  We will lable eigenvectors in a similar way in order to track which eigenvectors are associated with which eigenvalues.</p>
 <p>We will visualize examples in <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span>.</p>
 <section id="example-1-matrix-representing-horizontal-shear">
-<h3>Example 1:  Matrix representing horizontal shear<a class="headerlink" href="#example-1-matrix-representing-horizontal-shear" title="Permalink to this heading">#</a></h3>
+<h3>Example 1:  Matrix representing horizontal shear<a class="headerlink" href="#example-1-matrix-representing-horizontal-shear" title="Link to this heading">#</a></h3>
 <p>Let’s consider first the following matrix.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -1746,7 +1415,7 @@ V_2 = \left[ \begin{array}{c} 0  \\ 1 \end{array}\right] \hspace{1cm}
 <p>Since <span class="math notranslate nohighlight">\(AV_2 = V_2\)</span>, it must be that the associated eigenvalue is <span class="math notranslate nohighlight">\(\lambda_2 = 1.\)</span>  Again we note that there is a whole collection eigenvectors associated with <span class="math notranslate nohighlight">\(\lambda_2\)</span>, since any multiple of <span class="math notranslate nohighlight">\(V_2\)</span> is also unchanged by the transformation.</p>
 </section>
 <section id="example-2-projection-matrix">
-<h3>Example 2:  Projection matrix<a class="headerlink" href="#example-2-projection-matrix" title="Permalink to this heading">#</a></h3>
+<h3>Example 2:  Projection matrix<a class="headerlink" href="#example-2-projection-matrix" title="Link to this heading">#</a></h3>
 <p>For the next example, let’s consider a matrix which projects vectors orthogonally onto its one-dimensional column space.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -1814,7 +1483,7 @@ V_2 = \left[ \begin{array}{r} 2  \\ 1 \end{array}\right] \hspace{1cm}
 <p>The eigenvalue corresponding to <span class="math notranslate nohighlight">\(V_2\)</span> is <span class="math notranslate nohighlight">\(\lambda_2 = 0\)</span>.</p>
 </section>
 <section id="id8">
-<h3><strong>Exercises</strong><a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
+<h3><strong>Exercises</strong><a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Determine the eigenvalues and corresponding eigenvectors of the following matrix by considering the transformation that it represents.  Check your answers by computing them with python</p></li>
 </ul>
@@ -1848,7 +1517,7 @@ D = \left[ \begin{array}{cc} -0.6 &amp; -0.8 \\ -0.8 &amp; 0.6 \end{array}\right
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./notebooks/mathpython_intro"
         },
         predefinedOutput: true
@@ -1856,50 +1525,147 @@ D = \left[ \begin{array}{cc} -0.6 &amp; -0.8 \\ -0.8 &amp; 0.6 \end{array}\right
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="Numpy_Introduction.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Introduction to NumPy and Matplotlib</p>
-        </div>
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Numpy_Introduction.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Introduction to NumPy and Matplotlib</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="../modelling_intro/week0-Intro-RWB.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="../modelling_intro/week0-Intro-RWB.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title"><span class="section-number">1. </span>What is computational neuroscience?</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supporting-material">Supporting material</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concepts-and-notation">Concepts and Notation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-spaces">Vector Spaces</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-systems">Linear Systems</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1-system-with-a-unique-solution">Example 1:  System with a unique solution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises"><strong>Exercises</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2-system-with-no-solutions">Example 2:  System with no solutions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-3-system-with-an-infinite-number-of-solutions">Example 3:  System with an infinite number of solutions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inverse-matrices">Inverse Matrices</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#construction-of-an-inverse-matrix">Construction of an inverse matrix</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercises</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inverse-matrices-with-scipy">Inverse matrices with SciPy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"><strong>Exercises</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-combinations">Linear Combinations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Exercises</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-independence">Linear Independence</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1-vectors-in-mathbb-r-2">Example 1:  Vectors in <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4"><strong>Exercises</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#homogeneous-systems">Homogeneous systems</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rank-and-number-of-solutions-of-a-system">Rank and Number of solutions of a system</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5"><strong>Exercises</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#null-space">Null space</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-connection-between-the-null-space-and-the-rank">The connection between the null-space and the rank</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6"><strong>Exercises</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#orthogonalization">Orthogonalization</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#projecting-vectors-onto-vectors">Projecting vectors onto vectors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7"><strong>Exercises</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eigenvectors-and-eigenvalues">Eigenvectors and eigenvalues</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1-matrix-representing-horizontal-shear">Example 1:  Matrix representing horizontal shear</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2-projection-matrix">Example 2:  Projection matrix</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8"><strong>Exercises</strong></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
-    By Elias Najarro & Rune Berg<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
+  <div class="footer-item">
     
+<p class="component-author">
+By Elias Najarro & Rune Berg
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
 </div>
+          </footer>
+        
 
-
-      </div>
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>
