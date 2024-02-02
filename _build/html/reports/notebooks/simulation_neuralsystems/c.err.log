@@ -1,23 +1,15 @@
 Traceback (most recent call last):
-  File "/usr/local/lib/python3.11/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
-    executenb(
-  File "/usr/local/lib/python3.11/site-packages/nbclient/client.py", line 1204, in execute
-    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.11/site-packages/nbclient/util.py", line 84, in wrapped
-    return just_run(coro(*args, **kwargs))
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.11/site-packages/nbclient/util.py", line 62, in just_run
-    return loop.run_until_complete(coro)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/Cellar/python@3.11/3.11.2_1/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncio/base_events.py", line 653, in run_until_complete
+  File "/Users/enaj/.virtualenvs/compneurocourse/lib/python3.11/site-packages/myst_nb/core/execute/inline.py", line 120, in code_cell_outputs
+    self._client.execute_cell(
+  File "/Users/enaj/.virtualenvs/compneurocourse/lib/python3.11/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/enaj/miniconda3/lib/python3.11/asyncio/base_events.py", line 653, in run_until_complete
     return future.result()
            ^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.11/site-packages/nbclient/client.py", line 663, in async_execute
-    await self.async_execute_cell(
-  File "/usr/local/lib/python3.11/site-packages/nbclient/client.py", line 965, in async_execute_cell
+  File "/Users/enaj/.virtualenvs/compneurocourse/lib/python3.11/site-packages/nbclient/client.py", line 1062, in async_execute_cell
     await self._check_raise_for_error(cell, cell_index, exec_reply)
-  File "/usr/local/lib/python3.11/site-packages/nbclient/client.py", line 862, in _check_raise_for_error
+  File "/Users/enaj/.virtualenvs/compneurocourse/lib/python3.11/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
@@ -41,6 +33,7 @@ xlabel('Time (ms)')
 ylabel('Neuron index');
 ------------------
 
+
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mFileNotFoundError[0m                         Traceback (most recent call last)
 Cell [0;32mIn[16], line 3[0m
@@ -50,27 +43,26 @@ Cell [0;32mIn[16], line 3[0m
 [1;32m      4[0m num_samples, N [38;5;241m=[39m img[38;5;241m.[39mshape
 [1;32m      5[0m ta [38;5;241m=[39m TimedArray(img, dt[38;5;241m=[39m[38;5;241m1[39m[38;5;241m*[39mms) [38;5;66;03m# 228[39;00m
 
-File [0;32m/usr/local/Cellar/graph-tool/2.46/libexec/lib/python3.11/site-packages/matplotlib/image.py:1541[0m, in [0;36mimread[0;34m(fname, format)[0m
-[1;32m   1534[0m [38;5;28;01mif[39;00m [38;5;28misinstance[39m(fname, [38;5;28mstr[39m) [38;5;129;01mand[39;00m [38;5;28mlen[39m(parse[38;5;241m.[39murlparse(fname)[38;5;241m.[39mscheme) [38;5;241m>[39m [38;5;241m1[39m:
-[1;32m   1535[0m     [38;5;66;03m# Pillow doesn't handle URLs directly.[39;00m
-[1;32m   1536[0m     [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m(
-[1;32m   1537[0m         [38;5;124m"[39m[38;5;124mPlease open the URL for reading and pass the [39m[38;5;124m"[39m
-[1;32m   1538[0m         [38;5;124m"[39m[38;5;124mresult to Pillow, e.g. with [39m[38;5;124m"[39m
-[1;32m   1539[0m         [38;5;124m"[39m[38;5;124m``np.array(PIL.Image.open(urllib.request.urlopen(url)))``.[39m[38;5;124m"[39m
-[1;32m   1540[0m         )
-[0;32m-> 1541[0m [38;5;28;01mwith[39;00m [43mimg_open[49m[43m([49m[43mfname[49m[43m)[49m [38;5;28;01mas[39;00m image:
-[1;32m   1542[0m     [38;5;28;01mreturn[39;00m (_pil_png_to_float_array(image)
-[1;32m   1543[0m             [38;5;28;01mif[39;00m [38;5;28misinstance[39m(image, PIL[38;5;241m.[39mPngImagePlugin[38;5;241m.[39mPngImageFile) [38;5;28;01melse[39;00m
-[1;32m   1544[0m             pil_to_array(image))
+File [0;32m~/.virtualenvs/compneurocourse/lib/python3.11/site-packages/matplotlib/image.py:1525[0m, in [0;36mimread[0;34m(fname, format)[0m
+[1;32m   1518[0m [38;5;28;01mif[39;00m [38;5;28misinstance[39m(fname, [38;5;28mstr[39m) [38;5;129;01mand[39;00m [38;5;28mlen[39m(parse[38;5;241m.[39murlparse(fname)[38;5;241m.[39mscheme) [38;5;241m>[39m [38;5;241m1[39m:
+[1;32m   1519[0m     [38;5;66;03m# Pillow doesn't handle URLs directly.[39;00m
+[1;32m   1520[0m     [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m(
+[1;32m   1521[0m         [38;5;124m"[39m[38;5;124mPlease open the URL for reading and pass the [39m[38;5;124m"[39m
+[1;32m   1522[0m         [38;5;124m"[39m[38;5;124mresult to Pillow, e.g. with [39m[38;5;124m"[39m
+[1;32m   1523[0m         [38;5;124m"[39m[38;5;124m``np.array(PIL.Image.open(urllib.request.urlopen(url)))``.[39m[38;5;124m"[39m
+[1;32m   1524[0m         )
+[0;32m-> 1525[0m [38;5;28;01mwith[39;00m [43mimg_open[49m[43m([49m[43mfname[49m[43m)[49m [38;5;28;01mas[39;00m image:
+[1;32m   1526[0m     [38;5;28;01mreturn[39;00m (_pil_png_to_float_array(image)
+[1;32m   1527[0m             [38;5;28;01mif[39;00m [38;5;28misinstance[39m(image, PIL[38;5;241m.[39mPngImagePlugin[38;5;241m.[39mPngImageFile) [38;5;28;01melse[39;00m
+[1;32m   1528[0m             pil_to_array(image))
 
-File [0;32m/usr/local/lib/python3.11/site-packages/PIL/ImageFile.py:105[0m, in [0;36mImageFile.__init__[0;34m(self, fp, filename)[0m
-[1;32m    101[0m [38;5;28mself[39m[38;5;241m.[39mdecodermaxblock [38;5;241m=[39m MAXBLOCK
-[1;32m    103[0m [38;5;28;01mif[39;00m is_path(fp):
-[1;32m    104[0m     [38;5;66;03m# filename[39;00m
-[0;32m--> 105[0m     [38;5;28mself[39m[38;5;241m.[39mfp [38;5;241m=[39m [38;5;28;43mopen[39;49m[43m([49m[43mfp[49m[43m,[49m[43m [49m[38;5;124;43m"[39;49m[38;5;124;43mrb[39;49m[38;5;124;43m"[39;49m[43m)[49m
-[1;32m    106[0m     [38;5;28mself[39m[38;5;241m.[39mfilename [38;5;241m=[39m fp
-[1;32m    107[0m     [38;5;28mself[39m[38;5;241m.[39m_exclusive_fp [38;5;241m=[39m [38;5;28;01mTrue[39;00m
+File [0;32m~/.virtualenvs/compneurocourse/lib/python3.11/site-packages/PIL/ImageFile.py:125[0m, in [0;36mImageFile.__init__[0;34m(self, fp, filename)[0m
+[1;32m    121[0m [38;5;28mself[39m[38;5;241m.[39mdecodermaxblock [38;5;241m=[39m MAXBLOCK
+[1;32m    123[0m [38;5;28;01mif[39;00m is_path(fp):
+[1;32m    124[0m     [38;5;66;03m# filename[39;00m
+[0;32m--> 125[0m     [38;5;28mself[39m[38;5;241m.[39mfp [38;5;241m=[39m [38;5;28;43mopen[39;49m[43m([49m[43mfp[49m[43m,[49m[43m [49m[38;5;124;43m"[39;49m[38;5;124;43mrb[39;49m[38;5;124;43m"[39;49m[43m)[49m
+[1;32m    126[0m     [38;5;28mself[39m[38;5;241m.[39mfilename [38;5;241m=[39m fp
+[1;32m    127[0m     [38;5;28mself[39m[38;5;241m.[39m_exclusive_fp [38;5;241m=[39m [38;5;28;01mTrue[39;00m
 
 [0;31mFileNotFoundError[0m: [Errno 2] No such file or directory: 'brian.png'
-FileNotFoundError: [Errno 2] No such file or directory: 'brian.png'
 
