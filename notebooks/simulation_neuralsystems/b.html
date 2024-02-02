@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=9f7f7efb" />
@@ -505,15 +505,15 @@ document.write(`
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: brian2 in /Users/enaj/.virtualenvs/compneurocourse/lib/python3.11/site-packages (2.5.4)
 Requirement already satisfied: numpy&gt;=1.21 in /Users/enaj/.virtualenvs/compneurocourse/lib/python3.11/site-packages (from brian2) (1.26.3)
 Requirement already satisfied: cython&gt;=0.29 in /Users/enaj/.virtualenvs/compneurocourse/lib/python3.11/site-packages (from brian2) (3.0.8)
-Requirement already satisfied: sympy&gt;=1.2 in /Users/enaj/.virtualenvs/compneurocourse/lib/python3.11/site-packages (from brian2) (1.12)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: sympy&gt;=1.2 in /Users/enaj/.virtualenvs/compneurocourse/lib/python3.11/site-packages (from brian2) (1.12)
 Requirement already satisfied: pyparsing in /Users/enaj/.virtualenvs/compneurocourse/lib/python3.11/site-packages (from brian2) (3.1.1)
 Requirement already satisfied: jinja2&gt;=2.7 in /Users/enaj/.virtualenvs/compneurocourse/lib/python3.11/site-packages (from brian2) (3.1.3)
 Requirement already satisfied: setuptools&gt;=61 in /Users/enaj/.virtualenvs/compneurocourse/lib/python3.11/site-packages (from brian2) (65.5.0)
 Requirement already satisfied: packaging in /Users/enaj/.virtualenvs/compneurocourse/lib/python3.11/site-packages (from brian2) (23.2)
 Requirement already satisfied: MarkupSafe&gt;=2.0 in /Users/enaj/.virtualenvs/compneurocourse/lib/python3.11/site-packages (from jinja2&gt;=2.7-&gt;brian2) (2.1.5)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: mpmath&gt;=0.19 in /Users/enaj/.virtualenvs/compneurocourse/lib/python3.11/site-packages (from sympy&gt;=1.2-&gt;brian2) (1.3.0)
+Requirement already satisfied: mpmath&gt;=0.19 in /Users/enaj/.virtualenvs/compneurocourse/lib/python3.11/site-packages (from sympy&gt;=1.2-&gt;brian2) (1.3.0)
 </pre></div>
 </div>
 </div>
@@ -666,8 +666,8 @@ Requirement already satisfied: MarkupSafe&gt;=2.0 in /Users/enaj/.virtualenvs/co
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/92f97de02ea7614d3a48d41bde5b70415033e31b6bbcc8134065c53342264b76.png" src="../../_images/92f97de02ea7614d3a48d41bde5b70415033e31b6bbcc8134065c53342264b76.png" />
-<img alt="../../_images/65bc335c794bb1e35568b62161ae0a0d27d52fb01c5b93e6eb079f12641fe68c.png" src="../../_images/65bc335c794bb1e35568b62161ae0a0d27d52fb01c5b93e6eb079f12641fe68c.png" />
+<img alt="../../_images/6afa9b55fdf13f487ef9aee416b3baa1e33fee9350d58c3465fe76069cddf22f.png" src="../../_images/6afa9b55fdf13f487ef9aee416b3baa1e33fee9350d58c3465fe76069cddf22f.png" />
+<img alt="../../_images/91ec3893da2e9ea0a506b99d21adfec9b332939609c92241be55010ade6345c8.png" src="../../_images/91ec3893da2e9ea0a506b99d21adfec9b332939609c92241be55010ade6345c8.png" />
 <img alt="../../_images/fa0550521de0c53e48b298fe4005543bd013a70adf303afea9a83d25d4ae1bad.png" src="../../_images/fa0550521de0c53e48b298fe4005543bd013a70adf303afea9a83d25d4ae1bad.png" />
 </div>
 </div>
@@ -702,36 +702,36 @@ Requirement already satisfied: MarkupSafe&gt;=2.0 in /Users/enaj/.virtualenvs/co
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[-5.02216324e-04  1.71158706e-03  3.00965077e-03  4.93468955e-03
-   7.89685061e-03 -1.33054896e-03 -2.15755585e-03  7.68955697e-05
-   8.75053780e-03  2.65268787e-03]
- [ 6.29680578e-04  5.56475852e-03 -5.86811431e-03 -7.06124491e-03
-  -9.25426024e-03  7.49731386e-03 -9.70922733e-03 -9.42348279e-03
-   9.02496202e-03  5.39087856e-03]
- [-4.28271696e-03  1.80561454e-03  6.34077399e-03  4.93460525e-03
-   4.54412252e-03 -2.89120550e-03  3.85092673e-03  4.20729073e-03
-  -9.18450566e-03  6.80899156e-03]
- [ 6.66490769e-03 -2.25212396e-03  7.19852182e-03  1.59634333e-03
-   3.57194908e-03 -5.59733559e-03 -3.65491399e-03  4.27681157e-03
-   7.46466027e-03 -4.39951782e-03]
- [-9.59875968e-03 -7.03438962e-03 -5.18716585e-03 -7.28941467e-03
-  -4.25478761e-03  4.15162621e-04  5.78634889e-03 -4.20634650e-03
-   6.85069738e-04  8.24179039e-03]
- [ 1.63745133e-03  3.98077461e-03 -6.89927196e-03  8.72637901e-03
-   7.26750007e-03  8.49796124e-03  7.06073101e-03 -5.65496788e-03
-   6.06655516e-03  4.07085639e-03]
- [ 4.89727112e-03  7.83538268e-03 -8.56505156e-03 -2.64441372e-03
-  -9.76608134e-03 -5.37845717e-03 -7.83346863e-03 -4.49391590e-03
-  -3.23394755e-03  2.43774447e-03]
- [-8.30221648e-03  7.00946284e-03 -8.69518314e-03  9.36256265e-03
-  -4.21479470e-03 -7.63245126e-03  2.95823031e-03 -6.46601394e-03
-   3.34242839e-03  9.86722695e-03]
- [-8.75614086e-03 -9.53933817e-03 -9.81466609e-03  4.71502415e-03
-   3.75781314e-03 -5.84696916e-03 -2.49918570e-03  2.56141433e-03
-  -5.55935913e-03 -7.64320934e-03]
- [-4.77847130e-03 -3.76169957e-03 -2.82489106e-03 -6.25926771e-03
-  -9.52210193e-03  4.27206156e-03 -9.21528651e-03  5.11204654e-03
-   6.23775879e-03  2.06767411e-03]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[-9.16800127e-03  7.68476074e-03 -8.05389815e-03 -6.41151118e-03
+   1.92740846e-03 -9.20630062e-03  2.69635782e-03 -9.68477428e-03
+  -2.14250945e-03  9.42215436e-03]
+ [-3.27538116e-03  1.52567514e-03  2.41523906e-03 -9.83599748e-03
+   8.61266065e-03  9.24743162e-03  9.93145811e-03  5.18606348e-03
+   8.32647527e-04  6.09450187e-04]
+ [-3.48871786e-03 -8.57339751e-03  9.48922608e-03  3.17806014e-03
+   8.70815368e-04 -5.45612419e-03 -2.78865005e-03 -8.06991024e-03
+   4.46964601e-03  5.34828093e-03]
+ [-6.60281414e-03 -9.10665857e-03 -3.24413104e-03  2.09551672e-03
+  -6.33551825e-03  1.57186823e-03 -5.49237045e-03 -7.57026091e-03
+  -2.74555877e-04 -3.83993124e-03]
+ [-8.84547951e-03 -8.83339202e-03 -8.40335597e-03  8.70827630e-03
+  -7.80222764e-03  1.07640824e-03  2.28529430e-05 -6.18167657e-03
+   1.69223060e-03  4.29594742e-03]
+ [ 5.24868072e-03  1.64784618e-03 -7.85359403e-03 -6.03475764e-03
+   4.37667893e-03  8.98820258e-03  5.90959855e-03  9.11259856e-03
+   2.53705598e-03 -5.78663115e-03]
+ [-4.69997236e-03 -6.77661594e-03 -7.40210499e-03  6.07579063e-03
+   4.28591110e-03 -2.69836798e-03  1.87619846e-03  3.14323966e-03
+   9.06217339e-03 -6.84099843e-04]
+ [-4.41252763e-03 -8.90985289e-03 -9.34902827e-05  3.58275385e-03
+  -3.93356429e-04  1.27281574e-03 -4.08306118e-03 -8.76197979e-03
+   6.83529861e-03 -6.47776772e-03]
+ [ 5.60623304e-03 -9.79643329e-03  3.19706466e-03 -1.04279765e-03
+   3.12090087e-03  6.00695309e-03  3.20114866e-03 -2.51139852e-03
+  -3.58448082e-03  6.61312393e-03]
+ [-8.56159627e-03  5.37557133e-03 -9.69854354e-03 -9.48936417e-03
+   1.05440007e-03  6.03765792e-03  4.44482082e-04 -3.68450233e-03
+  -4.12540298e-03  6.96256332e-03]]
 </pre></div>
 </div>
 </div>
@@ -839,7 +839,7 @@ Requirement already satisfied: MarkupSafe&gt;=2.0 in /Users/enaj/.virtualenvs/co
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x13da3f450&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1401e9990&gt;
 </pre></div>
 </div>
 <img alt="../../_images/71537dfa2e8600a42b7467fed73d4f2ace0dfdbf4e535671a19580d440c72846.png" src="../../_images/71537dfa2e8600a42b7467fed73d4f2ace0dfdbf4e535671a19580d440c72846.png" />

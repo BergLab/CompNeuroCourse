@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=9f7f7efb" />
@@ -508,7 +508,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-data-analysis-with-pandas">
 <h1><span class="section-number">1. </span>Introduction to Data Analysis with Pandas<a class="headerlink" href="#introduction-to-data-analysis-with-pandas" title="Link to this heading">#</a></h1>
-<p><a class="reference external" href="https://pandas.pydata.org/">Pandas</a> is a library for data analysis, manipulation, and visualization. The basic object of the defined by this module is the <a class="reference external" href="https://pandas.pydata.org/docs/reference/frame.html">DataFrame</a>.  This is a dataset used in this notebook can be obtained from Kaggle on the <a class="reference external" href="https://www.kaggle.com/brsdincer/star-type-classification">classification of stars</a>.  We load the data from a CSV file into a Pandas DataFrame and demonstrate some basic functionality of the module.</p>
+<p><a class="reference external" href="https://pandas.pydata.org/">Pandas</a> is <em>the</em> library for data analysis, manipulation, and visualization. The basic object of the defined by this module is the <a class="reference external" href="https://pandas.pydata.org/docs/reference/frame.html">DataFrame</a>.  This is a dataset used in this notebook can be obtained from Kaggle on the <a class="reference external" href="https://www.kaggle.com/brsdincer/star-type-classification">classification of stars</a>.  We load the data from a CSV file into a Pandas DataFrame and demonstrate some basic functionality of the module.</p>
 <p>You can think of <strong>data frames</strong> as tables basically, where each row is an data entry and each of the columns is a property of that entry. In our case, each entry is gonna be a star and the columns some of its properties. We could also use each row to store the properties of some system at different time-points, eg. the concentration of different proteins over time in a cell, in this case each row would be a time-point and each column would be the different proteins.</p>
 <p>As opposed to numpy arrays, Pandas data frames allow to work with the data by using labels —eg. ‘temperature’— rather than having to remember the index numbers associated to the temperature data.</p>
 <p>Another great aspect of Pandas data frames is that we can mix types of data, eg. numerical variables like the mass of object —eg. 21.2 mg— and categorical data like a cell type —eg. ‘cortical neuron’—.</p>
@@ -540,7 +540,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/5r/37slq4k14kb2dywqvcdlbwdc0000gn/T/ipykernel_68744/2359310441.py:4: DeprecationWarning: 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/5r/37slq4k14kb2dywqvcdlbwdc0000gn/T/ipykernel_70298/2359310441.py:4: DeprecationWarning: 
 Pyarrow will become a required dependency of pandas in the next major release of pandas (pandas 3.0),
 (to allow more performant data types, such as the Arrow string type, and better interoperability with other libraries)
 but was not found to be installed on your system.
@@ -1371,7 +1371,7 @@ max    25000.000000    0.056000   0.015000  14.870000        12500.000000
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x16c997710&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x17fd58050&gt;]
 </pre></div>
 </div>
 <img alt="../../_images/786cb8a341f9725830038c87808609172eb3ec753d8364b6a40064921544ebb5.png" src="../../_images/786cb8a341f9725830038c87808609172eb3ec753d8364b6a40064921544ebb5.png" />
