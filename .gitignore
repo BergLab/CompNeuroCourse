@@ -3,5 +3,5 @@
 *solved*
 *.o
 .vscode
-_build
-_static
+_build/*
+_static/*
