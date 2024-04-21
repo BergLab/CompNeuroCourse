@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=9f7f7efb" />
@@ -491,7 +491,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-brian-part-2-synapses">
 <h1><span class="section-number">3. </span>Introduction to Brian part 2: Synapses<a class="headerlink" href="#introduction-to-brian-part-2-synapses" title="Link to this heading">#</a></h1>
-<p><em>Credit: The first three notebooks from week3 are part of the <a class="reference internal" href="#brian2.readthedocs.io"><span class="xref myst">Brian2 documentation</span></a></em> with minor changes.</p>
+<p><em>Credit: The first three notebooks from week3 are part of the <a class="reference internal" href="#%5Bbrian2.readthedocs.io%5D(https://brian2.readthedocs.io/en/stable/)"><span class="xref myst">Brian2 documentation</span></a></em> with minor changes.</p>
 <p>If you haven’t yet read part 1: Neurons, go read that now.</p>
 <p>As before we start by importing the Brian package and setting up matplotlib for IPython:</p>
 <div class="cell docutils container">
@@ -514,6 +514,10 @@ Requirement already satisfied: setuptools&gt;=61 in /Users/enaj/.virtualenvs/com
 Requirement already satisfied: packaging in /Users/enaj/.virtualenvs/compneurocourse/lib/python3.11/site-packages (from brian2) (23.2)
 Requirement already satisfied: MarkupSafe&gt;=2.0 in /Users/enaj/.virtualenvs/compneurocourse/lib/python3.11/site-packages (from jinja2&gt;=2.7-&gt;brian2) (2.1.5)
 Requirement already satisfied: mpmath&gt;=0.19 in /Users/enaj/.virtualenvs/compneurocourse/lib/python3.11/site-packages (from sympy&gt;=1.2-&gt;brian2) (1.3.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> A new release of pip is available: <span class=" -Color -Color-Red">23.3.2</span> -&gt; <span class=" -Color -Color-Green">24.0</span>
+<span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> To update, run: <span class=" -Color -Color-Green">pip install --upgrade pip</span>
 </pre></div>
 </div>
 </div>
@@ -666,8 +670,8 @@ Requirement already satisfied: mpmath&gt;=0.19 in /Users/enaj/.virtualenvs/compn
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/a941d991045059e96fc91c306a764b89d6ee63b90fecb70dcb6e0880bcb3d828.png" src="../../_images/a941d991045059e96fc91c306a764b89d6ee63b90fecb70dcb6e0880bcb3d828.png" />
-<img alt="../../_images/6eb3b9a0618d78f3f5be410d47d5bf14c1c3321cc761395d9c1315fdd6ca5136.png" src="../../_images/6eb3b9a0618d78f3f5be410d47d5bf14c1c3321cc761395d9c1315fdd6ca5136.png" />
+<img alt="../../_images/f4041781d47bf83fcbd0ec96a26bb1695205b08c43e885f905208bba6b456b7d.png" src="../../_images/f4041781d47bf83fcbd0ec96a26bb1695205b08c43e885f905208bba6b456b7d.png" />
+<img alt="../../_images/688fa656be02c26fbd154a2fb9c28fa05eb6c13365dd5bb7d209eeb5f8d0f060.png" src="../../_images/688fa656be02c26fbd154a2fb9c28fa05eb6c13365dd5bb7d209eeb5f8d0f060.png" />
 <img alt="../../_images/fa0550521de0c53e48b298fe4005543bd013a70adf303afea9a83d25d4ae1bad.png" src="../../_images/fa0550521de0c53e48b298fe4005543bd013a70adf303afea9a83d25d4ae1bad.png" />
 </div>
 </div>
@@ -702,36 +706,26 @@ Requirement already satisfied: mpmath&gt;=0.19 in /Users/enaj/.virtualenvs/compn
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[-4.99797103e-03 -6.19684510e-03  9.42760863e-03  1.59528589e-03
-  -2.63144772e-03  8.93943127e-03  2.14509165e-04  7.52887816e-04
-  -7.65499818e-04 -1.98843447e-03]
- [-3.76800895e-03  1.69257409e-03 -8.38035244e-03 -2.83521760e-03
-  -1.26478039e-03  4.97366858e-03  9.27530068e-03  6.69162266e-03
-  -6.54189022e-03  9.39875313e-03]
- [-8.46387204e-03  2.86149424e-03  6.06633789e-03 -9.02520022e-03
-   9.08641437e-03 -2.98600727e-03 -6.97302468e-05 -5.35967739e-03
-  -8.21245762e-04 -4.14249759e-03]
- [-4.11563476e-03 -2.40515616e-03 -8.61405962e-03  7.21656330e-03
-   1.80270052e-03 -3.99836453e-03 -6.25070686e-03  7.00939986e-03
-  -5.98431031e-03  4.24955760e-03]
- [-9.57108891e-03 -9.51395173e-03  8.12194704e-03  5.16179851e-03
-  -2.75901683e-03  2.17791769e-03  7.73091680e-03  1.31378123e-03
-  -2.53394474e-03 -5.06961353e-03]
- [ 3.51565858e-03  5.80597069e-04 -7.92279785e-03 -7.41348711e-04
-   8.73082145e-03 -2.12368586e-03 -2.24747297e-03 -6.13928505e-03
-  -7.77092968e-03  1.60620241e-03]
- [ 7.93824050e-03  3.60916578e-03  9.01070965e-03  9.69636903e-03
-   3.55000818e-03 -2.67080233e-03 -4.19885565e-04 -5.35630037e-03
-  -8.76764524e-03 -6.74707235e-03]
- [ 3.03223121e-03 -5.52521314e-03 -5.51746520e-03 -6.25771021e-04
-  -3.02494823e-03  9.96290446e-03 -4.45236466e-03 -4.73867420e-04
-   4.80555270e-03 -3.23221772e-03]
- [-3.02401020e-03 -3.83457535e-04 -1.98030723e-03  7.08605690e-03
-  -1.46749193e-03 -3.27159188e-03 -7.15759885e-03  9.94358169e-03
-  -3.37802547e-03  9.74585504e-03]
- [-3.64225569e-03 -7.41589860e-03 -8.10501704e-03  4.58809221e-03
-  -1.83390461e-03 -6.88669027e-03 -7.31111061e-03  8.05062788e-03
-   4.08943861e-03  2.34880499e-03]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 0.00666143  0.00227974  0.00374637  0.00790524 -0.00043662 -0.00798074
+  -0.00210359 -0.00900615  0.0073464   0.00111534]
+ [-0.00853461  0.00355475  0.00350006  0.00493482 -0.00126914  0.00534906
+  -0.00353249  0.00813555 -0.00258332 -0.00197856]
+ [ 0.00836443 -0.00234141 -0.00042564  0.00073515 -0.00185644 -0.00467854
+   0.00858876 -0.00848412  0.00746742 -0.00179013]
+ [-0.00333203 -0.00102876  0.00553536  0.00411646  0.0098891   0.00458224
+  -0.00954902  0.00154012  0.00466959 -0.00602271]
+ [ 0.00673736  0.00333025  0.00373369  0.00813186 -0.00529512  0.00616587
+  -0.00874936 -0.00759066  0.00528721  0.00694736]
+ [ 0.00448863 -0.00574641  0.00929655 -0.00324405  0.00434596  0.00362344
+  -0.00160723  0.00946897  0.00454968 -0.00714288]
+ [ 0.00488349  0.00877076  0.0026947   0.0005604  -0.00821141  0.00398218
+  -0.00832646 -0.00997551  0.00361162  0.00554332]
+ [-0.00054905 -0.00561546 -0.00719634 -0.00701741 -0.00353284  0.00840198
+  -0.0079002  -0.00495596 -0.00983487 -0.00180673]
+ [ 0.00055979  0.00821693 -0.00378062 -0.00303843 -0.00791025 -0.00538409
+   0.00082015 -0.00172157 -0.00919781  0.00762421]
+ [ 0.00544094  0.00903792 -0.00083416 -0.00624138 -0.0041562   0.00522289
+   0.00214654  0.00302057 -0.0096307  -0.00532288]]
 </pre></div>
 </div>
 </div>
@@ -839,7 +833,7 @@ Requirement already satisfied: mpmath&gt;=0.19 in /Users/enaj/.virtualenvs/compn
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x13e1b9a10&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1076d2b90&gt;
 </pre></div>
 </div>
 <img alt="../../_images/71537dfa2e8600a42b7467fed73d4f2ace0dfdbf4e535671a19580d440c72846.png" src="../../_images/71537dfa2e8600a42b7467fed73d4f2ace0dfdbf4e535671a19580d440c72846.png" />
