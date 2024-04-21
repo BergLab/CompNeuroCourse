@@ -530,7 +530,7 @@ Examples of applications of network science are ecosystems, biological pathways,
 <br>
 <br>
 <div align="center">
-<p style="text-align:center;"><img src="https://n.neurology.org/content/neurology/96/5/e758/F1.large.jpg" width="600"/>
+<p style="text-align:center;"><img src="https://www.neurology.org/cms/10.1212/WNL.0000000000011315/asset/fb3b4085-04d1-42df-a219-fe20d185d268/assets/graphic/14ff1.jpeg" width="600"/>
 </div></section>
 <section id="basic-network-concepts">
 <h2><span class="section-number">1.2. </span>Basic network concepts<a class="headerlink" href="#basic-network-concepts" title="Link to this heading">#</a></h2>
@@ -568,10 +568,8 @@ Examples of applications of network science are ecosystems, biological pathways,
 <h3><span class="section-number">1.2.5. </span>Graphs with features<a class="headerlink" href="#graphs-with-features" title="Link to this heading">#</a></h3>
 <p>Nodes may contain features, such as activations:</p>
 <div align="right">
-<p style="text-align:center;"><img src="../network_theory/media/graphfeatures.png" width="500"/>
-<p style="text-align:center;"><img src="../media/graphfeatures.png" width="500"/>
-<p style="text-align:center;"><img src="notebooks/network_theory/media/graphfeatures.png" width="500"/>
-<p style="text-align:center;"><img src="../notebooks/network_theory/media/graphfeatures.png" width="500"/>
+<!-- <p style="text-align:center;"><img src="../network_theory/media/graphfeatures.png" width="500"/> -->
+<p style="text-align:center;"><img src="https://github.com/BergLab/CompNeuroCourse/blob/main/notebooks/network_theory/media/graphfeatures.png" width="500"/>
 </div>
 <p>In this case, we can represent the structure of the graph with the weight / adjacency <span class="math notranslate nohighlight">\(W\)</span> matrix and the features of the nodes with a vector <span class="math notranslate nohighlight">\(F\)</span>. The product <span class="math notranslate nohighlight">\(W F\)</span> represents a new feature vector representing the propagation of the features values across the network, i.e. the feature value of a node will be the sum of the features of its connected nodes weighted by the respective edge values.</p>
 <section id="features-normalisation">
@@ -639,7 +637,7 @@ Examples of applications of network science are ecosystems, biological pathways,
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/ad6404a4f19b6424055674adde5083eae1926cd3856109be6e3c3b7d7a692e43.png" src="../../_images/ad6404a4f19b6424055674adde5083eae1926cd3856109be6e3c3b7d7a692e43.png" />
+<img alt="../../_images/3658b4cf69a25e116855bfb6c9c84b7a121b5870bc6e52ddae0b4705c88ac9fe.png" src="../../_images/3658b4cf69a25e116855bfb6c9c84b7a121b5870bc6e52ddae0b4705c88ac9fe.png" />
 </div>
 </div>
 <p>Instead of adding the nodes and edges one by one we can use a loop. Let’s create a random graph. Notice that since we’re randomly sampling the edges we may get a disjoint graph.</p>
@@ -666,7 +664,7 @@ Examples of applications of network science are ecosystems, biological pathways,
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/69d335baee39fa7c3ac4434b07003d0c2c8fec024da5e60f207c9dd5efbde222.png" src="../../_images/69d335baee39fa7c3ac4434b07003d0c2c8fec024da5e60f207c9dd5efbde222.png" />
+<img alt="../../_images/121cfeec236a0cffb754166614fedb628ba5d2ebdb2dea5bfe083b340d3d6bf7.png" src="../../_images/121cfeec236a0cffb754166614fedb628ba5d2ebdb2dea5bfe083b340d3d6bf7.png" />
 </div>
 </div>
 <p>We can easily obtain the adjacency matrix representation of the graph:</p>
@@ -678,16 +676,16 @@ Examples of applications of network science are ecosystems, biological pathways,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0. 1. 0. 0. 0. 0. 1. 1. 0. 1.]
- [1. 0. 1. 0. 1. 1. 1. 0. 1. 0.]
- [0. 1. 0. 1. 0. 0. 0. 0. 0. 1.]
- [0. 0. 1. 1. 0. 1. 0. 0. 0. 0.]
- [0. 1. 0. 0. 0. 1. 0. 0. 1. 0.]
- [0. 1. 0. 1. 1. 0. 0. 0. 0. 0.]
- [1. 1. 0. 0. 0. 0. 0. 1. 0. 0.]
- [1. 0. 0. 0. 0. 0. 1. 0. 0. 0.]
- [0. 1. 0. 0. 1. 0. 0. 0. 0. 0.]
- [1. 0. 1. 0. 0. 0. 0. 0. 0. 1.]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0. 1. 0. 0. 0. 1. 0. 0. 1. 0.]
+ [1. 1. 0. 0. 1. 0. 0. 0. 1. 0.]
+ [0. 0. 0. 1. 0. 1. 0. 1. 0. 0.]
+ [0. 0. 1. 0. 0. 1. 1. 0. 0. 1.]
+ [0. 1. 0. 0. 1. 0. 0. 1. 0. 1.]
+ [1. 0. 1. 1. 0. 0. 0. 0. 0. 0.]
+ [0. 0. 0. 1. 0. 0. 0. 1. 0. 0.]
+ [0. 0. 1. 0. 1. 0. 1. 0. 0. 0.]
+ [1. 1. 0. 0. 0. 0. 0. 0. 0. 0.]
+ [0. 0. 0. 1. 1. 0. 0. 0. 0. 0.]]
 </pre></div>
 </div>
 </div>
@@ -712,16 +710,16 @@ Examples of applications of network science are ecosystems, biological pathways,
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/c77e1a95078925939c88d6d43de76a246c156b05ec7a14f49ce3dd95240177a0.png" src="../../_images/c77e1a95078925939c88d6d43de76a246c156b05ec7a14f49ce3dd95240177a0.png" />
+<img alt="../../_images/e87d75b4c395137412e9efafd1cedb0638a87e9b516c119de4c481bd28265e7c.png" src="../../_images/e87d75b4c395137412e9efafd1cedb0638a87e9b516c119de4c481bd28265e7c.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Adjacency matrix:
 
-[[1 1 0 1 0 0 0]
- [1 0 0 0 0 0 1]
- [0 0 0 1 0 1 0]
- [0 0 1 0 0 1 1]
+[[1 1 0 0 1 1 1]
+ [1 1 0 1 1 1 0]
+ [1 1 0 0 1 1 1]
+ [0 0 0 1 0 0 0]
  [1 1 0 1 0 0 1]
- [0 1 1 0 0 1 1]
- [0 1 1 1 0 0 1]]
+ [0 1 0 1 0 1 1]
+ [1 1 1 0 0 0 1]]
 </pre></div>
 </div>
 </div>
@@ -746,7 +744,7 @@ Examples of applications of network science are ecosystems, biological pathways,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Graph with 10 nodes and 20 edges
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Graph with 10 nodes and 18 edges
 </pre></div>
 </div>
 </div>
@@ -755,63 +753,40 @@ Examples of applications of network science are ecosystems, biological pathways,
 <p>Let’s created a <strong>weighted directed graph</strong> and draw it with the edge colours indicating the weight value:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create random weighted directed network</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set parameters</span>
 <span class="n">networkSize</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="n">minWeight</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
 <span class="n">maxWeight</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">adj_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">low</span><span class="o">=</span><span class="n">minWeight</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="n">maxWeight</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">networkSize</span><span class="p">,</span> <span class="n">networkSize</span><span class="p">))</span> <span class="c1"># create a square random matrix with 0s and 1s of of size networkSize</span>
+
+<span class="c1"># Create a random weighted adjacency matrix</span>
+<span class="n">adj_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">low</span><span class="o">=</span><span class="n">minWeight</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="n">maxWeight</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">networkSize</span><span class="p">,</span> <span class="n">networkSize</span><span class="p">))</span>
+
+<span class="c1"># Create a directed graph from the adjacency matrix</span>
 <span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">from_numpy_array</span><span class="p">(</span><span class="n">adj_matrix</span><span class="p">,</span> <span class="n">create_using</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">)</span>
 
+<span class="c1"># Create a plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">12</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>  <span class="c1"># Get current axes</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">12</span><span class="p">));</span>
-<span class="n">nodes_size</span> <span class="o">=</span> <span class="mi">100</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">degree</span><span class="p">())</span><span class="o">.</span><span class="n">values</span><span class="p">()))</span>
+<span class="c1"># Draw the network</span>
+<span class="n">nodes_size</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">degree</span><span class="p">())</span><span class="o">.</span><span class="n">values</span><span class="p">()))</span>
 <span class="n">edge_colors</span> <span class="o">=</span> <span class="n">adj_matrix</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
-<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">edgecolors</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">node_size</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">edge_color</span> <span class="o">=</span> <span class="n">edge_colors</span><span class="p">,</span> <span class="n">connectionstyle</span><span class="o">=</span><span class="s1">&#39;arc3, rad = 0.1&#39;</span><span class="p">);</span>
+<span class="n">pos</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">spring_layout</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>  <span class="c1"># positions for all nodes</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">edgecolors</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">node_size</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">edge_color</span><span class="o">=</span><span class="n">edge_colors</span><span class="p">,</span> <span class="n">connectionstyle</span><span class="o">=</span><span class="s1">&#39;arc3, rad = 0.1&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
 
+<span class="c1"># Create a colorbar</span>
+<span class="n">sm</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">ScalarMappable</span><span class="p">(</span><span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">viridis</span><span class="p">,</span> <span class="n">norm</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">Normalize</span><span class="p">(</span><span class="n">vmin</span><span class="o">=</span><span class="n">edge_colors</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">vmax</span><span class="o">=</span><span class="n">edge_colors</span><span class="o">.</span><span class="n">max</span><span class="p">()))</span>
+<span class="n">sm</span><span class="o">.</span><span class="n">set_array</span><span class="p">([])</span>
+<span class="n">cbar</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">sm</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+<span class="n">cbar</span><span class="o">.</span><span class="n">set_label</span><span class="p">(</span><span class="s1">&#39;Edge Weight&#39;</span><span class="p">)</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">ScalarMappable</span><span class="p">(</span><span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">viridis</span><span class="p">,</span> <span class="n">norm</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">Normalize</span><span class="p">(</span><span class="n">vmin</span> <span class="o">=</span> <span class="n">edge_colors</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">vmax</span><span class="o">=</span><span class="n">edge_colors</span><span class="o">.</span><span class="n">max</span><span class="p">())));</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">);</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">();</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">15</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="n">edge_colors</span> <span class="o">=</span> <span class="n">adj_matrix</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">edgecolors</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">node_size</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">edge_color</span> <span class="o">=</span> <span class="n">edge_colors</span><span class="p">,</span> <span class="n">connectionstyle</span><span class="o">=</span><span class="s1">&#39;arc3, rad = 0.1&#39;</span><span class="p">);</span>
-<span class="ne">---&gt; </span><span class="mi">15</span> <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">ScalarMappable</span><span class="p">(</span><span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">viridis</span><span class="p">,</span> <span class="n">norm</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">Normalize</span><span class="p">(</span><span class="n">vmin</span> <span class="o">=</span> <span class="n">edge_colors</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">vmax</span><span class="o">=</span><span class="n">edge_colors</span><span class="o">.</span><span class="n">max</span><span class="p">())));</span>
-<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">);</span>
-<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">();</span>
-
-<span class="nn">File ~/.virtualenvs/compneurocourse/lib/python3.11/site-packages/matplotlib/pyplot.py:2326,</span> in <span class="ni">colorbar</span><span class="nt">(mappable, cax, ax, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2321</span>     <span class="k">if</span> <span class="n">mappable</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">2322</span>         <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s1">&#39;No mappable was found to use for colorbar &#39;</span>
-<span class="g g-Whitespace">   </span><span class="mi">2323</span>                            <span class="s1">&#39;creation. First define a mappable such as &#39;</span>
-<span class="g g-Whitespace">   </span><span class="mi">2324</span>                            <span class="s1">&#39;an image (with imshow) or a contour set (&#39;</span>
-<span class="g g-Whitespace">   </span><span class="mi">2325</span>                            <span class="s1">&#39;with contourf).&#39;</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">2326</span> <span class="n">ret</span> <span class="o">=</span> <span class="n">gcf</span><span class="p">()</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">mappable</span><span class="p">,</span> <span class="n">cax</span><span class="o">=</span><span class="n">cax</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2327</span> <span class="k">return</span> <span class="n">ret</span>
-
-<span class="nn">File ~/.virtualenvs/compneurocourse/lib/python3.11/site-packages/matplotlib/figure.py:1285,</span> in <span class="ni">FigureBase.colorbar</span><span class="nt">(self, mappable, cax, ax, use_gridspec, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1283</span> <span class="k">if</span> <span class="n">cax</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1284</span>     <span class="k">if</span> <span class="n">ax</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1285</span>         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1286</span>             <span class="s1">&#39;Unable to determine Axes to steal space for Colorbar. &#39;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1287</span>             <span class="s1">&#39;Either provide the *cax* argument to use as the Axes for &#39;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1288</span>             <span class="s1">&#39;the Colorbar, provide the *ax* argument to steal space &#39;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1289</span>             <span class="s1">&#39;from it, or add *mappable* to an Axes.&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1290</span>     <span class="n">fig</span> <span class="o">=</span> <span class="p">(</span>  <span class="c1"># Figure of first axes; logic copied from make_axes.</span>
-<span class="g g-Whitespace">   </span><span class="mi">1291</span>         <span class="p">[</span><span class="o">*</span><span class="n">ax</span><span class="o">.</span><span class="n">flat</span><span class="p">]</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1292</span>         <span class="k">else</span> <span class="p">[</span><span class="o">*</span><span class="n">ax</span><span class="p">]</span> <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">iterable</span><span class="p">(</span><span class="n">ax</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1293</span>         <span class="k">else</span> <span class="p">[</span><span class="n">ax</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">figure</span>
-<span class="g g-Whitespace">   </span><span class="mi">1294</span>     <span class="n">current_ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
-
-<span class="ne">ValueError</span>: Unable to determine Axes to steal space for Colorbar. Either provide the *cax* argument to use as the Axes for the Colorbar, provide the *ax* argument to steal space from it, or add *mappable* to an Axes.
-</pre></div>
-</div>
-<img alt="../../_images/6a71ae7c7307308678fe880b90f6e892b8c7cd184dd9acc23c6e9ca0a36e4cd6.png" src="../../_images/6a71ae7c7307308678fe880b90f6e892b8c7cd184dd9acc23c6e9ca0a36e4cd6.png" />
+<img alt="../../_images/a59f0327f6789d3520b6d1b78bd8692eb2f255f02c377bb969004eb40b05b884.png" src="../../_images/a59f0327f6789d3520b6d1b78bd8692eb2f255f02c377bb969004eb40b05b884.png" />
 </div>
 </div>
 <section id="exercises">
@@ -820,7 +795,7 @@ Examples of applications of network science are ecosystems, biological pathways,
 <li><p>Write down the connectivity matrices of the following networks (in paper and as a numpy array):</p></li>
 </ul>
 <div align="center">
-<p style="text-align:center;"><img src="../network_theory/media/graphs.png" width="500"/>
+<p style="text-align:center;"><img src="https://github.com/BergLab/CompNeuroCourse/blob/main/notebooks/network_theory/media/graphs.png" width="500"/>
 </div>
 <ul class="simple">
 <li><p>Using the connectivity matrices you just wrote, create a graph with NetworkX for each of them and draw them using <code class="docutils literal notranslate"><span class="pre">draw_networkx()</span></code> function.</p></li>
@@ -869,27 +844,27 @@ Another quantification of a node centrality is <em>betweenness</em>. <strong>Bet
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(0, 8), (1, 8), (2, 7), (3, 9), (4, 11), (5, 8), (6, 12), (7, 11), (8, 10), (9, 12), (10, 11), (11, 12), (12, 14), (13, 10), (14, 11), (15, 12), (16, 7), (17, 7), (18, 11), (19, 9)]
-Node 0 has degree 8
-Node 1 has degree 8
-Node 2 has degree 7
-Node 3 has degree 9
-Node 4 has degree 11
-Node 5 has degree 8
-Node 6 has degree 12
-Node 7 has degree 11
-Node 8 has degree 10
-Node 9 has degree 12
-Node 10 has degree 11
-Node 11 has degree 12
-Node 12 has degree 14
-Node 13 has degree 10
-Node 14 has degree 11
-Node 15 has degree 12
-Node 16 has degree 7
-Node 17 has degree 7
-Node 18 has degree 11
-Node 19 has degree 9
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(0, 14), (1, 9), (2, 10), (3, 13), (4, 9), (5, 6), (6, 11), (7, 8), (8, 9), (9, 13), (10, 7), (11, 9), (12, 11), (13, 8), (14, 9), (15, 9), (16, 12), (17, 10), (18, 9), (19, 8)]
+Node 0 has degree 14
+Node 1 has degree 9
+Node 2 has degree 10
+Node 3 has degree 13
+Node 4 has degree 9
+Node 5 has degree 6
+Node 6 has degree 11
+Node 7 has degree 8
+Node 8 has degree 9
+Node 9 has degree 13
+Node 10 has degree 7
+Node 11 has degree 9
+Node 12 has degree 11
+Node 13 has degree 8
+Node 14 has degree 9
+Node 15 has degree 9
+Node 16 has degree 12
+Node 17 has degree 10
+Node 18 has degree 9
+Node 19 has degree 8
 </pre></div>
 </div>
 </div>
@@ -908,7 +883,7 @@ Node 19 has degree 9
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/dcc500f5b3a001b1f83432c6bed3f4f9e4f3d7b586f685133c8032b186397ce1.png" src="../../_images/dcc500f5b3a001b1f83432c6bed3f4f9e4f3d7b586f685133c8032b186397ce1.png" />
+<img alt="../../_images/5850b8586d246417e49953043f58e976f231ad22fe7d62918e3617a8fde6abe5.png" src="../../_images/5850b8586d246417e49953043f58e976f231ad22fe7d62918e3617a8fde6abe5.png" />
 </div>
 </div>
 <p>Now that we know the degree of each node we can compute the <strong>degree distribution</strong>:</p>
@@ -927,10 +902,7 @@ Node 19 has degree 9
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;P(k)&#39;)
-</pre></div>
-</div>
-<img alt="../../_images/96a67925890f558e524612822974a644fc57a4d3186b67ff65b7767d915bd050.png" src="../../_images/96a67925890f558e524612822974a644fc57a4d3186b67ff65b7767d915bd050.png" />
+<img alt="../../_images/360c5acf9cc52a2b8007bbe3c571d12464da7f3bad7653439bef736aef7a3841.png" src="../../_images/360c5acf9cc52a2b8007bbe3c571d12464da7f3bad7653439bef736aef7a3841.png" />
 </div>
 </div>
 <p>Let’s also compute the other quantities we have introduced:</p>
@@ -945,11 +917,11 @@ Node 19 has degree 9
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Graph with 20 nodes and 100 edges
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Graph with 20 nodes and 97 edges
 Number of nodes: 20
-Number of edges: 100
+Number of edges: 97
 Network diameter: 2
-Average shortest path: 1.4736842105263157
+Average shortest path: 1.4894736842105263
 </pre></div>
 </div>
 </div>
@@ -1004,26 +976,26 @@ Average shortest path: 1.4736842105263157
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{0: 0.4166666666666667,
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{0: 0.4666666666666667,
  1: 0.42857142857142855,
- 2: 0.47619047619047616,
- 3: 0.4722222222222222,
- 4: 0.4666666666666667,
- 5: 0.3611111111111111,
- 6: 0.4642857142857143,
- 7: 0.4642857142857143,
- 8: 0.3888888888888889,
- 9: 0.4222222222222222,
- 10: 0.4666666666666667,
- 11: 0.37777777777777777,
- 12: 0.42857142857142855,
- 13: 0.35555555555555557,
- 14: 0.35555555555555557,
- 15: 0.5,
- 16: 0.4444444444444444,
- 17: 0.3611111111111111,
- 18: 0.4166666666666667,
- 19: 0.4444444444444444}
+ 2: 0.5714285714285714,
+ 3: 0.35714285714285715,
+ 4: 0.4642857142857143,
+ 5: 0.28888888888888886,
+ 6: 0.4,
+ 7: 0.39285714285714285,
+ 8: 0.6666666666666666,
+ 9: 0.37777777777777777,
+ 10: 0.5,
+ 11: 0.4,
+ 12: 1.0,
+ 13: 0.4444444444444444,
+ 14: 0.4166666666666667,
+ 15: 0.35714285714285715,
+ 16: 0.3939393939393939,
+ 17: 0.4666666666666667,
+ 18: 0.4,
+ 19: 0.2727272727272727}
 </pre></div>
 </div>
 </div>
@@ -1037,7 +1009,7 @@ Average shortest path: 1.4736842105263157
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The global CC of the network is 0.425595238095238
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The global CC of the network is 0.4532936507936508
 </pre></div>
 </div>
 </div>
@@ -1095,11 +1067,8 @@ Average shortest path: 1.4736842105263157
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/f32fcc90a8dac4555911ff07d264e56699f56acd8ed9256a3fecaa735c5929f0.png" src="../../_images/f32fcc90a8dac4555911ff07d264e56699f56acd8ed9256a3fecaa735c5929f0.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;P(k)&#39;)
-</pre></div>
-</div>
-<img alt="../../_images/e4ebafcabbfa5704428bf96c366aecfa1845abfca96920292c4813997c085405.png" src="../../_images/e4ebafcabbfa5704428bf96c366aecfa1845abfca96920292c4813997c085405.png" />
+<img alt="../../_images/929dd90fa5ffea57e5af057159fe90db9a62b9c4eab867c241d298acaf06a544.png" src="../../_images/929dd90fa5ffea57e5af057159fe90db9a62b9c4eab867c241d298acaf06a544.png" />
+<img alt="../../_images/4b7d6f8d979468e434922dc3e5ab53d5f546c27fa9e0919ae3ed96bedb6cb159.png" src="../../_images/4b7d6f8d979468e434922dc3e5ab53d5f546c27fa9e0919ae3ed96bedb6cb159.png" />
 </div>
 </div>
 <p>NetowrkX also allows us to generate small-world networks:</p>
@@ -1117,7 +1086,7 @@ Average shortest path: 1.4736842105263157
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/f3d9539260b13a6eb533f25d3f29b510260154531b989be15958d6363d9839b5.png" src="../../_images/f3d9539260b13a6eb533f25d3f29b510260154531b989be15958d6363d9839b5.png" />
+<img alt="../../_images/1882498e2d54b9430ada70bdabfc060f28be010b45e1b88a8bb77ef28cf6fdc2.png" src="../../_images/1882498e2d54b9430ada70bdabfc060f28be010b45e1b88a8bb77ef28cf6fdc2.png" />
 </div>
 </div>
 <p>Bonus: <span class="math notranslate nohighlight">\(\sigma\)</span> and <span class="math notranslate nohighlight">\(\omega\)</span> are two quantities used to charectise small world networks. Let’s compare their values for a random and small world network.</p>
@@ -1133,7 +1102,7 @@ Average shortest path: 1.4736842105263157
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Omega of the network is -0.3647973856209149 and it took 11.039140939712524 seconds to compute it
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Omega of the network is -0.1936999966995101 and it took 4.351734161376953 seconds to compute it
 </pre></div>
 </div>
 </div>
@@ -1149,7 +1118,7 @@ Average shortest path: 1.4736842105263157
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sigma of the network is 5.088936170212765 and it took 101.430340051651 seconds to compute it
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sigma of the network is 5.524977101388008 and it took 41.26098585128784 seconds to compute it
 </pre></div>
 </div>
 </div>
@@ -1163,7 +1132,7 @@ Average shortest path: 1.4736842105263157
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Omega: -0.3297312828814243, Sigma: 4.511823899371069
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Omega: -0.2407947579792855, Sigma: 5.489560581507316
 </pre></div>
 </div>
 </div>
@@ -1221,6 +1190,17 @@ Average shortest path: 1.4736842105263157
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/5r/37slq4k14kb2dywqvcdlbwdc0000gn/T/ipykernel_9374/2709458609.py:8: VisibleDeprecationWarning: `.A` is deprecated and will be removed in v1.14.0. Use `.toarray()` instead.
+  e = numpy.linalg.eigvals(L.A)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Largest eigenvalue: 1.4273819321116852
+Smallest eigenvalue: 1.1489681660078582e-16
+</pre></div>
+</div>
+<img alt="../../_images/ce85ae7e0c5108c316b33c040caecb6521318d43361d66a46801ea1b171d4004.png" src="../../_images/ce85ae7e0c5108c316b33c040caecb6521318d43361d66a46801ea1b171d4004.png" />
 </div>
 </div>
 </section>
