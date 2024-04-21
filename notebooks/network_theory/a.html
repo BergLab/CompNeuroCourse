@@ -205,7 +205,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 3. Simulating neural populations</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../simulation_neuralsystems/neuralsimulation_intro.html">1. Simulating neural populations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simulation_neuralsystems/neuralsimulation_intro.html">1. Simulating neural populations with Brian</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../simulation_neuralsystems/a.html">2. Introduction to Brian part 1: Neurons</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../simulation_neuralsystems/b.html">3. Introduction to Brian part 2: Synapses</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../simulation_neuralsystems/c.html">4. Introduction to Brian part 3: Simulations</a></li>
@@ -569,6 +569,9 @@ Examples of applications of network science are ecosystems, biological pathways,
 <p>Nodes may contain features, such as activations:</p>
 <div align="right">
 <p style="text-align:center;"><img src="../network_theory/media/graphfeatures.png" width="500"/>
+<p style="text-align:center;"><img src="../media/graphfeatures.png" width="500"/>
+<p style="text-align:center;"><img src="notebooks/network_theory/media/graphfeatures.png" width="500"/>
+<p style="text-align:center;"><img src="../notebooks/network_theory/media/graphfeatures.png" width="500"/>
 </div>
 <p>In this case, we can represent the structure of the graph with the weight / adjacency <span class="math notranslate nohighlight">\(W\)</span> matrix and the features of the nodes with a vector <span class="math notranslate nohighlight">\(F\)</span>. The product <span class="math notranslate nohighlight">\(W F\)</span> represents a new feature vector representing the propagation of the features values across the network, i.e. the feature value of a node will be the sum of the features of its connected nodes weighted by the respective edge values.</p>
 <section id="features-normalisation">
@@ -636,7 +639,7 @@ Examples of applications of network science are ecosystems, biological pathways,
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/69af94d5fc34a9c31891acbc1647efac952e2934e3149f43d702076d034b0f32.png" src="../../_images/69af94d5fc34a9c31891acbc1647efac952e2934e3149f43d702076d034b0f32.png" />
+<img alt="../../_images/ad6404a4f19b6424055674adde5083eae1926cd3856109be6e3c3b7d7a692e43.png" src="../../_images/ad6404a4f19b6424055674adde5083eae1926cd3856109be6e3c3b7d7a692e43.png" />
 </div>
 </div>
 <p>Instead of adding the nodes and edges one by one we can use a loop. Let’s create a random graph. Notice that since we’re randomly sampling the edges we may get a disjoint graph.</p>
@@ -663,7 +666,7 @@ Examples of applications of network science are ecosystems, biological pathways,
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/4f95d7b9a6725d1676cfc9b7c4a36cf33e0250a6e5982faf49a0e1e05ddcb33b.png" src="../../_images/4f95d7b9a6725d1676cfc9b7c4a36cf33e0250a6e5982faf49a0e1e05ddcb33b.png" />
+<img alt="../../_images/69d335baee39fa7c3ac4434b07003d0c2c8fec024da5e60f207c9dd5efbde222.png" src="../../_images/69d335baee39fa7c3ac4434b07003d0c2c8fec024da5e60f207c9dd5efbde222.png" />
 </div>
 </div>
 <p>We can easily obtain the adjacency matrix representation of the graph:</p>
@@ -675,16 +678,16 @@ Examples of applications of network science are ecosystems, biological pathways,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1. 0. 0. 0. 1. 0. 1. 0. 1. 0.]
- [0. 0. 1. 0. 0. 0. 0. 0. 0. 0.]
- [0. 1. 0. 1. 1. 1. 0. 1. 1. 0.]
- [0. 0. 1. 1. 1. 0. 1. 1. 0. 1.]
- [1. 0. 1. 1. 0. 0. 1. 0. 0. 0.]
- [0. 0. 1. 0. 0. 1. 0. 0. 1. 0.]
- [1. 0. 0. 1. 1. 0. 0. 0. 0. 0.]
- [0. 0. 1. 1. 0. 0. 0. 0. 0. 0.]
- [1. 0. 1. 0. 0. 1. 0. 0. 0. 0.]
- [0. 0. 0. 1. 0. 0. 0. 0. 0. 0.]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0. 1. 0. 0. 0. 0. 1. 1. 0. 1.]
+ [1. 0. 1. 0. 1. 1. 1. 0. 1. 0.]
+ [0. 1. 0. 1. 0. 0. 0. 0. 0. 1.]
+ [0. 0. 1. 1. 0. 1. 0. 0. 0. 0.]
+ [0. 1. 0. 0. 0. 1. 0. 0. 1. 0.]
+ [0. 1. 0. 1. 1. 0. 0. 0. 0. 0.]
+ [1. 1. 0. 0. 0. 0. 0. 1. 0. 0.]
+ [1. 0. 0. 0. 0. 0. 1. 0. 0. 0.]
+ [0. 1. 0. 0. 1. 0. 0. 0. 0. 0.]
+ [1. 0. 1. 0. 0. 0. 0. 0. 0. 1.]]
 </pre></div>
 </div>
 </div>
@@ -709,16 +712,16 @@ Examples of applications of network science are ecosystems, biological pathways,
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/e1e929dd12daaf70db634bd484516276ebcb38ebe010cdbbbbe72d39f008eea6.png" src="../../_images/e1e929dd12daaf70db634bd484516276ebcb38ebe010cdbbbbe72d39f008eea6.png" />
+<img alt="../../_images/c77e1a95078925939c88d6d43de76a246c156b05ec7a14f49ce3dd95240177a0.png" src="../../_images/c77e1a95078925939c88d6d43de76a246c156b05ec7a14f49ce3dd95240177a0.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Adjacency matrix:
 
-[[0 0 0 0 1 1 0]
- [1 1 0 1 0 1 0]
- [1 1 1 0 0 0 1]
- [1 0 0 1 1 1 0]
- [1 1 0 1 1 0 0]
- [1 0 1 1 1 0 0]
- [0 0 1 1 0 1 0]]
+[[1 1 0 1 0 0 0]
+ [1 0 0 0 0 0 1]
+ [0 0 0 1 0 1 0]
+ [0 0 1 0 0 1 1]
+ [1 1 0 1 0 0 1]
+ [0 1 1 0 0 1 1]
+ [0 1 1 1 0 0 1]]
 </pre></div>
 </div>
 </div>
@@ -808,7 +811,7 @@ Examples of applications of network science are ecosystems, biological pathways,
 <span class="ne">ValueError</span>: Unable to determine Axes to steal space for Colorbar. Either provide the *cax* argument to use as the Axes for the Colorbar, provide the *ax* argument to steal space from it, or add *mappable* to an Axes.
 </pre></div>
 </div>
-<img alt="../../_images/bc7b528c06148073e382a62259abc8b2550111412a1e8e569c30e55761771354.png" src="../../_images/bc7b528c06148073e382a62259abc8b2550111412a1e8e569c30e55761771354.png" />
+<img alt="../../_images/6a71ae7c7307308678fe880b90f6e892b8c7cd184dd9acc23c6e9ca0a36e4cd6.png" src="../../_images/6a71ae7c7307308678fe880b90f6e892b8c7cd184dd9acc23c6e9ca0a36e4cd6.png" />
 </div>
 </div>
 <section id="exercises">
