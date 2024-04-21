@@ -534,6 +534,13 @@ document.write(`
         ></iframe>
         </div></div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
+</pre></div>
+</div>
+</div>
+</div>
 <p>Expanded explanation <a class="reference external" href="https://www.youtube.com/watch?v=wvODQqb3D_8"> on types of machine learning tasks</a>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -555,7 +562,7 @@ document.write(`
         </div></div>
 </div>
 <p>An introduction to neural networks—including a bit of the history of the model <a class="reference external" href="https://youtu.be/_56bfCu02ZE">Neural Network Primer</a>:</p>
-<div class="cell docutils container">
+<div class="cell tag_&quot;hide-input&quot; docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
 <span class="n">YouTubeVideo</span><span class="p">(</span><span class="s2">&quot;_56bfCu02ZE&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
@@ -575,13 +582,19 @@ document.write(`
         </div></div>
 </div>
 <p>To develop a stronger intuitio of how neural networks work: <a class="reference external" href="https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi">3blue1brown  Neural networks playlist</a>:</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
 <span class="n">YouTubeVideo</span><span class="p">(</span><span class="s2">&quot;aircAruvnKk&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <div class="output text_html">
         <iframe
@@ -861,10 +874,10 @@ If you are working on Colab, you will need to upload the data.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Score on training:  0.9997200911970696
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Score on training:  0.9992399033023226
 </pre></div>
 </div>
-<img alt="../../_images/ff27c0c6db0440cad0180c8f21c541584b444630668928655fa0f548d76376d6.png" src="../../_images/ff27c0c6db0440cad0180c8f21c541584b444630668928655fa0f548d76376d6.png" />
+<img alt="../../_images/1db5ea0153d07b5a585ae6328dd4c9860e3807d50cf8eec46b13c423e925beb7.png" src="../../_images/1db5ea0153d07b5a585ae6328dd4c9860e3807d50cf8eec46b13c423e925beb7.png" />
 </div>
 </div>
 <p>It seems to be working, the score should be close to 1.0 —which would be a perfect fit.</p>
@@ -1354,8 +1367,8 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Score on training set:  0.9015632506480391
-Score on test set:  0.9393310045776369
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Score on training set:  0.9159155276780562
+Score on test set:  0.8995400203656195
 </pre></div>
 </div>
 </div>
@@ -1372,7 +1385,7 @@ Score on test set:  0.9393310045776369
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/7cc1fd929befd7ae61ab81d8381d8b0187e4780a1062e62b05a4cd1721e4ca8c.png" src="../../_images/7cc1fd929befd7ae61ab81d8381d8b0187e4780a1062e62b05a4cd1721e4ca8c.png" />
+<img alt="../../_images/81de480ade0af2e4f1c923484044d897a56c834dd2e6bc838467ed5682f5ce93.png" src="../../_images/81de480ade0af2e4f1c923484044d897a56c834dd2e6bc838467ed5682f5ce93.png" />
 </div>
 </div>
 <p>Congratulations, you just trained your first neural network on real data! The red line should hopefully fit the dataset points.</p>
