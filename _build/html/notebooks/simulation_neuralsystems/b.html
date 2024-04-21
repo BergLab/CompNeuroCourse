@@ -491,7 +491,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-brian-part-2-synapses">
 <h1><span class="section-number">3. </span>Introduction to Brian part 2: Synapses<a class="headerlink" href="#introduction-to-brian-part-2-synapses" title="Link to this heading">#</a></h1>
-<p><em>Credit: The first three notebooks from week3 are part of the <a class="reference internal" href="#brian2.readthedocs.io"><span class="xref myst">Brian2 documentation</span></a></em> with minor changes.</p>
+<p><em>Credit: The first three notebooks from week3 are part of the <a class="reference internal" href="#%5Bbrian2.readthedocs.io%5D(https://brian2.readthedocs.io/en/stable/)"><span class="xref myst">Brian2 documentation</span></a></em> with minor changes.</p>
 <p>If you haven’t yet read part 1: Neurons, go read that now.</p>
 <p>As before we start by importing the Brian package and setting up matplotlib for IPython:</p>
 <div class="cell docutils container">
@@ -503,7 +503,9 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: brian2 in /Users/enaj/.virtualenvs/compneurocourse/lib/python3.11/site-packages (2.5.4)
-Requirement already satisfied: numpy&gt;=1.21 in /Users/enaj/.virtualenvs/compneurocourse/lib/python3.11/site-packages (from brian2) (1.26.3)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: numpy&gt;=1.21 in /Users/enaj/.virtualenvs/compneurocourse/lib/python3.11/site-packages (from brian2) (1.26.3)
 Requirement already satisfied: cython&gt;=0.29 in /Users/enaj/.virtualenvs/compneurocourse/lib/python3.11/site-packages (from brian2) (3.0.8)
 Requirement already satisfied: sympy&gt;=1.2 in /Users/enaj/.virtualenvs/compneurocourse/lib/python3.11/site-packages (from brian2) (1.12)
 Requirement already satisfied: pyparsing in /Users/enaj/.virtualenvs/compneurocourse/lib/python3.11/site-packages (from brian2) (3.1.1)
@@ -511,9 +513,11 @@ Requirement already satisfied: jinja2&gt;=2.7 in /Users/enaj/.virtualenvs/compne
 Requirement already satisfied: setuptools&gt;=61 in /Users/enaj/.virtualenvs/compneurocourse/lib/python3.11/site-packages (from brian2) (65.5.0)
 Requirement already satisfied: packaging in /Users/enaj/.virtualenvs/compneurocourse/lib/python3.11/site-packages (from brian2) (23.2)
 Requirement already satisfied: MarkupSafe&gt;=2.0 in /Users/enaj/.virtualenvs/compneurocourse/lib/python3.11/site-packages (from jinja2&gt;=2.7-&gt;brian2) (2.1.5)
+Requirement already satisfied: mpmath&gt;=0.19 in /Users/enaj/.virtualenvs/compneurocourse/lib/python3.11/site-packages (from sympy&gt;=1.2-&gt;brian2) (1.3.0)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: mpmath&gt;=0.19 in /Users/enaj/.virtualenvs/compneurocourse/lib/python3.11/site-packages (from sympy&gt;=1.2-&gt;brian2) (1.3.0)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> A new release of pip is available: <span class=" -Color -Color-Red">23.3.2</span> -&gt; <span class=" -Color -Color-Green">24.0</span>
+<span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> To update, run: <span class=" -Color -Color-Green">pip install --upgrade pip</span>
 </pre></div>
 </div>
 </div>
@@ -666,8 +670,8 @@ Requirement already satisfied: MarkupSafe&gt;=2.0 in /Users/enaj/.virtualenvs/co
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/92f97de02ea7614d3a48d41bde5b70415033e31b6bbcc8134065c53342264b76.png" src="../../_images/92f97de02ea7614d3a48d41bde5b70415033e31b6bbcc8134065c53342264b76.png" />
-<img alt="../../_images/65bc335c794bb1e35568b62161ae0a0d27d52fb01c5b93e6eb079f12641fe68c.png" src="../../_images/65bc335c794bb1e35568b62161ae0a0d27d52fb01c5b93e6eb079f12641fe68c.png" />
+<img alt="../../_images/f4041781d47bf83fcbd0ec96a26bb1695205b08c43e885f905208bba6b456b7d.png" src="../../_images/f4041781d47bf83fcbd0ec96a26bb1695205b08c43e885f905208bba6b456b7d.png" />
+<img alt="../../_images/688fa656be02c26fbd154a2fb9c28fa05eb6c13365dd5bb7d209eeb5f8d0f060.png" src="../../_images/688fa656be02c26fbd154a2fb9c28fa05eb6c13365dd5bb7d209eeb5f8d0f060.png" />
 <img alt="../../_images/fa0550521de0c53e48b298fe4005543bd013a70adf303afea9a83d25d4ae1bad.png" src="../../_images/fa0550521de0c53e48b298fe4005543bd013a70adf303afea9a83d25d4ae1bad.png" />
 </div>
 </div>
@@ -702,36 +706,26 @@ Requirement already satisfied: MarkupSafe&gt;=2.0 in /Users/enaj/.virtualenvs/co
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[-5.02216324e-04  1.71158706e-03  3.00965077e-03  4.93468955e-03
-   7.89685061e-03 -1.33054896e-03 -2.15755585e-03  7.68955697e-05
-   8.75053780e-03  2.65268787e-03]
- [ 6.29680578e-04  5.56475852e-03 -5.86811431e-03 -7.06124491e-03
-  -9.25426024e-03  7.49731386e-03 -9.70922733e-03 -9.42348279e-03
-   9.02496202e-03  5.39087856e-03]
- [-4.28271696e-03  1.80561454e-03  6.34077399e-03  4.93460525e-03
-   4.54412252e-03 -2.89120550e-03  3.85092673e-03  4.20729073e-03
-  -9.18450566e-03  6.80899156e-03]
- [ 6.66490769e-03 -2.25212396e-03  7.19852182e-03  1.59634333e-03
-   3.57194908e-03 -5.59733559e-03 -3.65491399e-03  4.27681157e-03
-   7.46466027e-03 -4.39951782e-03]
- [-9.59875968e-03 -7.03438962e-03 -5.18716585e-03 -7.28941467e-03
-  -4.25478761e-03  4.15162621e-04  5.78634889e-03 -4.20634650e-03
-   6.85069738e-04  8.24179039e-03]
- [ 1.63745133e-03  3.98077461e-03 -6.89927196e-03  8.72637901e-03
-   7.26750007e-03  8.49796124e-03  7.06073101e-03 -5.65496788e-03
-   6.06655516e-03  4.07085639e-03]
- [ 4.89727112e-03  7.83538268e-03 -8.56505156e-03 -2.64441372e-03
-  -9.76608134e-03 -5.37845717e-03 -7.83346863e-03 -4.49391590e-03
-  -3.23394755e-03  2.43774447e-03]
- [-8.30221648e-03  7.00946284e-03 -8.69518314e-03  9.36256265e-03
-  -4.21479470e-03 -7.63245126e-03  2.95823031e-03 -6.46601394e-03
-   3.34242839e-03  9.86722695e-03]
- [-8.75614086e-03 -9.53933817e-03 -9.81466609e-03  4.71502415e-03
-   3.75781314e-03 -5.84696916e-03 -2.49918570e-03  2.56141433e-03
-  -5.55935913e-03 -7.64320934e-03]
- [-4.77847130e-03 -3.76169957e-03 -2.82489106e-03 -6.25926771e-03
-  -9.52210193e-03  4.27206156e-03 -9.21528651e-03  5.11204654e-03
-   6.23775879e-03  2.06767411e-03]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 0.00666143  0.00227974  0.00374637  0.00790524 -0.00043662 -0.00798074
+  -0.00210359 -0.00900615  0.0073464   0.00111534]
+ [-0.00853461  0.00355475  0.00350006  0.00493482 -0.00126914  0.00534906
+  -0.00353249  0.00813555 -0.00258332 -0.00197856]
+ [ 0.00836443 -0.00234141 -0.00042564  0.00073515 -0.00185644 -0.00467854
+   0.00858876 -0.00848412  0.00746742 -0.00179013]
+ [-0.00333203 -0.00102876  0.00553536  0.00411646  0.0098891   0.00458224
+  -0.00954902  0.00154012  0.00466959 -0.00602271]
+ [ 0.00673736  0.00333025  0.00373369  0.00813186 -0.00529512  0.00616587
+  -0.00874936 -0.00759066  0.00528721  0.00694736]
+ [ 0.00448863 -0.00574641  0.00929655 -0.00324405  0.00434596  0.00362344
+  -0.00160723  0.00946897  0.00454968 -0.00714288]
+ [ 0.00488349  0.00877076  0.0026947   0.0005604  -0.00821141  0.00398218
+  -0.00832646 -0.00997551  0.00361162  0.00554332]
+ [-0.00054905 -0.00561546 -0.00719634 -0.00701741 -0.00353284  0.00840198
+  -0.0079002  -0.00495596 -0.00983487 -0.00180673]
+ [ 0.00055979  0.00821693 -0.00378062 -0.00303843 -0.00791025 -0.00538409
+   0.00082015 -0.00172157 -0.00919781  0.00762421]
+ [ 0.00544094  0.00903792 -0.00083416 -0.00624138 -0.0041562   0.00522289
+   0.00214654  0.00302057 -0.0096307  -0.00532288]]
 </pre></div>
 </div>
 </div>
@@ -839,7 +833,7 @@ Requirement already satisfied: MarkupSafe&gt;=2.0 in /Users/enaj/.virtualenvs/co
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x13da3f450&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1076d2b90&gt;
 </pre></div>
 </div>
 <img alt="../../_images/71537dfa2e8600a42b7467fed73d4f2ace0dfdbf4e535671a19580d440c72846.png" src="../../_images/71537dfa2e8600a42b7467fed73d4f2ace0dfdbf4e535671a19580d440c72846.png" />
