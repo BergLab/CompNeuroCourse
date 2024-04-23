@@ -206,7 +206,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 3. Simulating neural populations</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../simulation_neuralsystems/neuralsimulation_intro.html">1. Simulating neural populations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simulation_neuralsystems/neuralsimulation_intro.html">1. Simulating neural populations with Brian</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../simulation_neuralsystems/a.html">2. Introduction to Brian part 1: Neurons</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../simulation_neuralsystems/b.html">3. Introduction to Brian part 2: Synapses</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../simulation_neuralsystems/c.html">4. Introduction to Brian part 3: Simulations</a></li>
@@ -490,9 +490,15 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-plot-figures">1.10. Multi-plot figures</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-regression">1.11. Linear Regression</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-hertzsprung-russell-diagram">1.12. The Hertzsprung-Russell Diagram</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">1.12.1. Exercise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computing-correlations">1.11. Computing correlations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">1.11.1. Exercise</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#non-linear-correlations">1.12. Non-linear correlations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-relation-between-correlation-coefficients-and-predictive-models">1.13. The relation between correlation coefficients and predictive models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-regression">1.14. Linear Regression</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-hertzsprung-russell-diagram">1.15. The Hertzsprung-Russell Diagram</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">1.15.1. Exercise</a></li>
 </ul>
 </li>
 </ul>
@@ -540,7 +546,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/5r/37slq4k14kb2dywqvcdlbwdc0000gn/T/ipykernel_7547/2359310441.py:4: DeprecationWarning: 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/5r/37slq4k14kb2dywqvcdlbwdc0000gn/T/ipykernel_46293/2359310441.py:4: DeprecationWarning: 
 Pyarrow will become a required dependency of pandas in the next major release of pandas (pandas 3.0),
 (to allow more performant data types, such as the Arrow string type, and better interoperability with other libraries)
 but was not found to be installed on your system.
@@ -1343,8 +1349,67 @@ max    25000.000000    0.056000   0.015000  14.870000        12500.000000
 </div>
 </div>
 </section>
+<section id="computing-correlations">
+<h2><span class="section-number">1.11. </span>Computing correlations<a class="headerlink" href="#computing-correlations" title="Link to this heading">#</a></h2>
+<p>Let’s explore the linear correlations of the data. <strong>Pearson correlation coefficient</strong> <span class="math notranslate nohighlight">\(\rho\)</span> is a measure of how linearly correlated two variables are: it’s 1 if there is a positive correlation, -1 if negative and zero if none.</p>
+<div align="center">
+<p style="text-align:center;"><img src="https://upload.wikimedia.org/wikipedia/commons/3/34/Correlation_coefficient.png" width="500"/>
+</div>
+<p>A correlation coefficient tell us how much one variable is related to another or, in other words, how much one variable informs us about the other one. For instance, your height in meters should be perfectly correlated to your height measured in feet <span class="math notranslate nohighlight">\(\rho=1\)</span>, but your height should not be correlated to how much chocolate you eat when you’re feeling sad <span class="math notranslate nohighlight">\(\rho=0\)</span>.</p>
+<p>A correlation is said to be linear if you can convert from variable to other one by using linear transformations only —ie. addition and multiplication but not applying powers or square roots, etc.</p>
+<p>Let’s use Scipy to compute the correlations of our data. One of the nice aspects of the Python ecosystem is that data is often interoperable between libraries, here we’re gonna load our star data with Pandas and use Scipy to compute the correlations.</p>
+<p>Let’s start by doing a sanity check, a variable should be VERY correlated to itself, right? Let’s plot the temperature against the temperature using a scatter plot:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s1">&#39;Temperature&#39;</span><span class="p">,</span><span class="s1">&#39;Temperature&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span><span class="mi">10</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/e80ab7bf9efecf712e81c9bae82ea68b7cc85175281db2b6d467b117aebf6dbc.png" src="../../_images/e80ab7bf9efecf712e81c9bae82ea68b7cc85175281db2b6d467b117aebf6dbc.png" />
+</div>
+</div>
+<p>What value of the pearson correlation coefficient do expect to have? If it’s not obvious to you, think about it before running the next code cell.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
+
+<span class="n">r</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">pearsonr</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Temperature&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Temperature&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The correlation coefficient is </span><span class="si">{</span><span class="n">r</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The correlation coefficient is 0.9999999999999998
+</pre></div>
+</div>
+</div>
+</div>
+<p>A variable always has correlation coefficient of one with itself. Let’s now explore the rest of the data.</p>
+<section id="id6">
+<h3><span class="section-number">1.11.1. </span>Exercise<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Find the two pairs of variables with the highest absolute correlation # Hint: You can use Scipy’s stats.pearsonr function, otherwise Pandas data frames have a method <code class="docutils literal notranslate"><span class="pre">corr()</span></code> that outputs Pearson correlation between the different variables. # Hint 2 : If you wanna plot you can use <code class="docutils literal notranslate"><span class="pre">dataframe_name.corr().style.background_gradient(cmap='coolwarm')</span></code></p></li>
+<li><p>Once you find the two variables, make their scatter plot again but this apply the logarithmic function <code class="docutils literal notranslate"><span class="pre">np.log(df['whichever</span> <span class="pre">variable'])</span></code> before computing the Pearson correlation coefficient again. How does the Pearson correlation coefficient  changes after applying the logarithmic transformation?</p></li>
+</ul>
+</section>
+</section>
+<section id="non-linear-correlations">
+<h2><span class="section-number">1.12. </span>Non-linear correlations<a class="headerlink" href="#non-linear-correlations" title="Link to this heading">#</a></h2>
+<p>Look at the following figure, the number above each dataset is their Pearson coefficient:</p>
+<div align="center">
+<p style="text-align:center;"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Correlation_examples2.svg/2880px-Correlation_examples2.svg.png" width="500"/>
+</div>
+<p>Notice how the data points on the bottom clearly have some correlations, however Pearson tells us it’s zero.. That’s because they are <strong>non linear</strong> correlations.</p>
+<p>There exist <em>many</em> types of correlations coefficients we can compute, some of the like Spearman, can even capture non linear correlations. We won’t go explore them further here, but be aware that they exist if you ever are suspicious your data may be trying to hide non-linear correlations.</p>
+</section>
+<section id="the-relation-between-correlation-coefficients-and-predictive-models">
+<h2><span class="section-number">1.13. </span>The relation between correlation coefficients and predictive models<a class="headerlink" href="#the-relation-between-correlation-coefficients-and-predictive-models" title="Link to this heading">#</a></h2>
+<p>Machine learning models (as any other model) are typically used to connect one variable to another. What happens if these two variables are not correlated? Well then it’s simply not possible to build a model predicting one variable as a function of the other. If two variables X and Y are independent —ie. not correlated— that means that knowing X does not provide us any information about Y. The opposite is true, if two quantities are correlated, we should —in principle— be able to build a model linking them.</p>
+<p>Now, in most natural phenomena, quantities are high-dimensional and non-linearly correlated so we can’t simply predict if we would be able to build a model based on some correlation coefficient. In these cases, training and evaluating the model is the only way of looking for correlations.</p>
+</section>
 <section id="linear-regression">
-<h2><span class="section-number">1.11. </span>Linear Regression<a class="headerlink" href="#linear-regression" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">1.14. </span>Linear Regression<a class="headerlink" href="#linear-regression" title="Link to this heading">#</a></h2>
 <p>Let’s finish this notebook by doing a liner regression on the data.</p>
 <p>A linear regression consist in a linear model than relates one variable to another variable. For instance, the temperature of a star to it luminosity. Linear models have the advantage of being easily interpreted —you can look at the model and figure out what’s going on. On the other hand, they can not model non-linear relations, and God had the poor taste of making natural phenomena <em>very</em> non-linear. On the Machine learning notebooks, we’ll learn how to train models that can deal with non-linear dependencies.</p>
 <p>Since the data in the high absolute magnitude <span class="math notranslate nohighlight">\(A_M\)</span>, high-Temperature subset seem to be strongly correlated, we might fit linear model. To do this we will import the <span class="math notranslate nohighlight">\(\texttt{linregress}\)</span> function from the <span class="math notranslate nohighlight">\(\texttt{stats}\)</span> module in SciPy.</p>
@@ -1371,7 +1436,7 @@ max    25000.000000    0.056000   0.015000  14.870000        12500.000000
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x160f72990&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x176dcf3d0&gt;]
 </pre></div>
 </div>
 <img alt="../../_images/786cb8a341f9725830038c87808609172eb3ec753d8364b6a40064921544ebb5.png" src="../../_images/786cb8a341f9725830038c87808609172eb3ec753d8364b6a40064921544ebb5.png" />
@@ -1396,11 +1461,11 @@ Standard error of the esimated gradient: 2.3930706947460813e-05
 </div>
 </section>
 <section id="the-hertzsprung-russell-diagram">
-<h2><span class="section-number">1.12. </span>The Hertzsprung-Russell Diagram<a class="headerlink" href="#the-hertzsprung-russell-diagram" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">1.15. </span>The Hertzsprung-Russell Diagram<a class="headerlink" href="#the-hertzsprung-russell-diagram" title="Link to this heading">#</a></h2>
 <p>The Hertzsprung-Russell Diagram is a scatter plot of stars showing the relationship between the stars’ absolute magnitudes or luminosities versus their temperatures.</p>
 <p style="text-align:center;"><img src="https://upload.wikimedia.org/wikipedia/commons/7/78/H-R_diagram_-edited-3.gif" width="500"/><p>Let’s see if we can obtain something similar from our data:</p>
-<section id="id6">
-<h3><span class="section-number">1.12.1. </span>Exercise<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<section id="id7">
+<h3><span class="section-number">1.15.1. </span>Exercise<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Make a scatter plot from our star data. Plot each star type ‘Super Giants’, ‘Main sequence’ and ‘White Dwarf’ in different colours.</p></li>
 <li><p>Can you observe similar star clusters? # Hint: You might need to use logarithmic scales for the axis and reverse the direction of the temperature axis.</p></li>
@@ -1508,9 +1573,15 @@ Standard error of the esimated gradient: 2.3930706947460813e-05
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-plot-figures">1.10. Multi-plot figures</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-regression">1.11. Linear Regression</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-hertzsprung-russell-diagram">1.12. The Hertzsprung-Russell Diagram</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">1.12.1. Exercise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computing-correlations">1.11. Computing correlations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">1.11.1. Exercise</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#non-linear-correlations">1.12. Non-linear correlations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-relation-between-correlation-coefficients-and-predictive-models">1.13. The relation between correlation coefficients and predictive models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-regression">1.14. Linear Regression</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-hertzsprung-russell-diagram">1.15. The Hertzsprung-Russell Diagram</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">1.15.1. Exercise</a></li>
 </ul>
 </li>
 </ul>
