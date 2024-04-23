@@ -66,8 +66,6 @@ const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/ML/b';</script>
     <script src="../../_static/custom.js?v=1fd2e2ea"></script>
     <link rel="icon" href="../../_static/favicon.png"/>
@@ -483,28 +481,22 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-description">2.5.1. Data description</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computing-correlations">2.6. Computing correlations</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">2.6.1. Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#non-linear-correlations">2.6.2. Non-linear correlations</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-relation-between-correlation-coefficients-and-predictive-models">2.6.3. The relation between correlation coefficients and predictive models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supervised-learning">2.6. Supervised Learning</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regression">2.6.1. Regression</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">2.6.1.1. Exercise</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supervised-learning">2.7. Supervised Learning</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regression">2.7.1. Regression</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">2.7.1.1. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#real-data">2.6.2. Real data</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">2.6.2.1. Exercise</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#real-data">2.7.2. Real data</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2.7.2.1. Exercise</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classification">2.7.3. Classification</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">2.7.3.1. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classification">2.6.3. Classification</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2.6.3.1. Exercise</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-clustering">2.8. Bonus: Clustering</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-clustering">2.7. Bonus: Clustering</a></li>
 </ul>
             </nav>
         </div>
@@ -520,7 +512,7 @@ document.write(`
 <h1><span class="section-number">2. </span>Machine Learning<a class="headerlink" href="#machine-learning" title="Link to this heading">#</a></h1>
 <section id="supporting-material">
 <h2><span class="section-number">2.1. </span>Supporting material<a class="headerlink" href="#supporting-material" title="Link to this heading">#</a></h2>
-<p>This chapter’s supporting material is Steve Brunton’s<a class="reference external" href="https://youtu.be/Vx2DpMgplEM">machine learning Primer</a>:</p>
+<p>This chapter’s supporting material is Steve Brunton’s <a class="reference external" href="https://youtu.be/Vx2DpMgplEM">machine learning Primer</a>:</p>
 <div class="cell tag_hide-input tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html">
@@ -562,7 +554,7 @@ document.write(`
         ></iframe>
         </div></div>
 </div>
-<p>To develop a stronger intuitio of how neural networks work: <a class="reference external" href="https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi">3blue1brown  Neural networks playlist</a>:</p>
+<p>To develop a stronger intuition of how neural networks work: <a class="reference external" href="https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi">3blue1brown  Neural networks playlist</a>:</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html">
@@ -744,29 +736,6 @@ If you are working on Colab, you will need to upload the data.</p>
 </table>
 </div></div></div>
 </div>
-</section>
-</section>
-<section id="computing-correlations">
-<h2><span class="section-number">2.6. </span>Computing correlations<a class="headerlink" href="#computing-correlations" title="Link to this heading">#</a></h2>
-<p>Let’s explore the linear correlations of the data. <strong>Pearson correlation coefficient</strong> <span class="math notranslate nohighlight">\(\rho\)</span> is a measure of how linearly correlated two variables are: it’s 1 if there is a positive correlation, -1 if negative and zero if none.</p>
-<div align="center">
-<p style="text-align:center;"><img src="https://upload.wikimedia.org/wikipedia/commons/3/34/Correlation_coefficient.png" width="500"/>
-</div>
-<p>A correlation coefficient tell us how much one variable is related to another or, in other words, how much one variable informs us about the other one. For instance, your height in meters should be perfectly correlated to your height measured in feet <span class="math notranslate nohighlight">\(\rho=1\)</span>, but your height should not be correlated to how much chocolate you eat when you’re feeling sad <span class="math notranslate nohighlight">\(\rho=0\)</span>.</p>
-<p>A correlation is said to be linear if you can convert from variable to other one by using linear transformations only —ie. addition and multiplication but not applying powers or square roots, etc.</p>
-<p>Let’s use Scipy to compute the correlations of our data. One of the nice aspects of the Python ecosystem is that data is often interoperable between libraries, here we’re gonna load our star data with Pandas and use Scipy to compute the correlations.</p>
-<p>Let’s start by doing a sanity check, a variable should be VERY correlated to itself, right? Let’s plot the temperature against the temperature using a scatter plot:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s1">&#39;Temperature&#39;</span><span class="p">,</span><span class="s1">&#39;Temperature&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span><span class="mi">10</span><span class="p">));</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/e80ab7bf9efecf712e81c9bae82ea68b7cc85175281db2b6d467b117aebf6dbc.png" src="../../_images/e80ab7bf9efecf712e81c9bae82ea68b7cc85175281db2b6d467b117aebf6dbc.png" />
-</div>
-</div>
-<p>What value of the pearson correlation coefficient do expect to have? If it’s not obvious to you, think about it before running the next code cell.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
@@ -782,34 +751,13 @@ If you are working on Colab, you will need to upload the data.</p>
 </div>
 </div>
 </div>
-<p>A variable always has correlation coefficient of one with itself. Let’s now explore the rest of the data.</p>
-<section id="exercise">
-<h3><span class="section-number">2.6.1. </span>Exercise<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Find the two pairs of variables with the highest absolute correlation # Hint: You can use Scipy’s stats.pearsonr function, otherwise Pandas data frames have a method <code class="docutils literal notranslate"><span class="pre">corr()</span></code> that outputs Pearson correlation between the different variables. # Hint 2 : If you wanna plot you can use <code class="docutils literal notranslate"><span class="pre">dataframe_name.corr().style.background_gradient(cmap='coolwarm')</span></code></p></li>
-<li><p>Once you find the two variables, make their scatter plot again but this apply the logarithmic function <code class="docutils literal notranslate"><span class="pre">np.log(df['whichever</span> <span class="pre">variable'])</span></code> before computing the Pearson correlation coefficient again. How does the Pearson correlation coefficient  changes after applying the logarithmic transformation?</p></li>
-</ul>
-</section>
-<section id="non-linear-correlations">
-<h3><span class="section-number">2.6.2. </span>Non-linear correlations<a class="headerlink" href="#non-linear-correlations" title="Link to this heading">#</a></h3>
-<p>Look at the following figure, the number above each dataset is their Pearson coefficient:</p>
-<div align="center">
-<p style="text-align:center;"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Correlation_examples2.svg/2880px-Correlation_examples2.svg.png" width="500"/>
-</div>
-<p>Notice how the data points on the bottom clearly have some correlations, however Pearson tells us it’s zero.. That’s because they are <strong>non linear</strong> correlations.</p>
-<p>There exist <em>many</em> types of correlations coefficients we can compute, some of the like Spearman, can even capture non linear correlations. We won’t go explore them further here, but be aware that they exist if you ever are suspicious your data may be trying to hide non-linear correlations.</p>
-</section>
-<section id="the-relation-between-correlation-coefficients-and-predictive-models">
-<h3><span class="section-number">2.6.3. </span>The relation between correlation coefficients and predictive models<a class="headerlink" href="#the-relation-between-correlation-coefficients-and-predictive-models" title="Link to this heading">#</a></h3>
-<p>Machine learning models (as any other model) are typically used to connect one variable to another. What happens if these two variables are not correlated? Well then it’s simply not possible to build a model predicting one variable as a function of the other. If two variables X and Y are independent —ie. not correlated— that means that knowing X does not provide us any information about Y. The opposite is true, if two quantities are correlated, we should —in principle— be able to build a model linking them.</p>
-<p>Now, in most natural phenomena, quantities are high-dimensional and non-linearly correlated so we can’t simply predict if we would be able to build a model based on some correlation coefficient. In these cases, training and evaluating the model is the only way of looking for correlations.</p>
 </section>
 </section>
 <section id="supervised-learning">
-<h2><span class="section-number">2.7. </span>Supervised Learning<a class="headerlink" href="#supervised-learning" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">2.6. </span>Supervised Learning<a class="headerlink" href="#supervised-learning" title="Link to this heading">#</a></h2>
 <p>Supervised learning (SL) is the most common type of task in machine learning. It consist in finding a function that maps on space onto another, eg. the size of star to its luminosity. It can sub-divide into two types of task: regression and classification.</p>
 <section id="regression">
-<h3><span class="section-number">2.7.1. </span>Regression<a class="headerlink" href="#regression" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">2.6.1. </span>Regression<a class="headerlink" href="#regression" title="Link to this heading">#</a></h3>
 <p>Let’s start by performing a regression (mapping one continual variable onto another one) on fake data so we make sure our set-up allows us to train models properly. We will generate the values from a sine function and train a neural network on them. Read the code line by line and make sure you understand what’s going on.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -843,15 +791,15 @@ If you are working on Colab, you will need to upload the data.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Score on training:  0.9990192355249721
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Score on training:  0.9986594020302156
 </pre></div>
 </div>
-<img alt="../../_images/3b9debc0198e1041ea94eb29bc6a83b2d7dbdbd577917710bb5ff3ed362d3e36.png" src="../../_images/3b9debc0198e1041ea94eb29bc6a83b2d7dbdbd577917710bb5ff3ed362d3e36.png" />
+<img alt="../../_images/e08c5ee9624cbdf7b38ddc39cb4280382f2ccd96658c7097eae03015e8dd6762.png" src="../../_images/e08c5ee9624cbdf7b38ddc39cb4280382f2ccd96658c7097eae03015e8dd6762.png" />
 </div>
 </div>
 <p>It seems to be working, the score should be close to 1.0 —which would be a perfect fit.</p>
-<section id="id1">
-<h4><span class="section-number">2.7.1.1. </span>Exercise<a class="headerlink" href="#id1" title="Link to this heading">#</a></h4>
+<section id="exercise">
+<h4><span class="section-number">2.6.1.1. </span>Exercise<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Extend the plot of the model we just trained so it predicts values outside of the range of those we used to train it. Does it still perform well on that range?</p></li>
 </ul>
@@ -865,7 +813,7 @@ If you are working on Colab, you will need to upload the data.</p>
 </section>
 </section>
 <section id="real-data">
-<h3><span class="section-number">2.7.2. </span>Real data<a class="headerlink" href="#real-data" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">2.6.2. </span>Real data<a class="headerlink" href="#real-data" title="Link to this heading">#</a></h3>
 <p>Moving on onto real data. Both the <em>Luminosity</em> and <em>Absolute Magnitude</em> relate to how bright a star is. Let’s try to figure out what the exact relation between them is. Let’s plot them.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1336,8 +1284,8 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Score on training set:  0.904864339662567
-Score on test set:  0.907769632875965
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Score on training set:  0.903480333630773
+Score on test set:  0.8976998377333231
 </pre></div>
 </div>
 </div>
@@ -1354,12 +1302,12 @@ Score on test set:  0.907769632875965
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/0e75adff4afbae7cdd1744f1dcd038dc369e75262afc074188c3a4cd6d04fead.png" src="../../_images/0e75adff4afbae7cdd1744f1dcd038dc369e75262afc074188c3a4cd6d04fead.png" />
+<img alt="../../_images/c0cc502ea221159a39260e23785139355318bce5cf76c504e048f767b7926474.png" src="../../_images/c0cc502ea221159a39260e23785139355318bce5cf76c504e048f767b7926474.png" />
 </div>
 </div>
 <p>Congratulations, you just trained your first neural network on real data! The red line should hopefully fit the dataset points.</p>
-<section id="id2">
-<h4><span class="section-number">2.7.2.1. </span>Exercise<a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
+<section id="id1">
+<h4><span class="section-number">2.6.2.1. </span>Exercise<a class="headerlink" href="#id1" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Train a neural network model to predict the absolute magnitude of the stars based on their temperature and size. Leave out 20% of the data as test set and evaluate the accuracy of the trained model on both the training set and the test set.</p></li>
 <li><p>Change the ratio of training vs test set. How does this affect the accuracy of the model?</p></li>
@@ -1374,7 +1322,7 @@ Score on test set:  0.907769632875965
 </section>
 </section>
 <section id="classification">
-<h3><span class="section-number">2.7.3. </span>Classification<a class="headerlink" href="#classification" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">2.6.3. </span>Classification<a class="headerlink" href="#classification" title="Link to this heading">#</a></h3>
 <p>Our dataset contains a categorical variable “Spectral Class”. This variable represents the color of the star. Let’s see if we could predict the spectral class of the stars based on the other features of the dataset.</p>
 <p>Let’s visualise how many stars of each type there are in the data. If the amount of stars of one category was very small and another one too big, it would make the training quite difficult since the model would just learn to predict those over-represented in the data:</p>
 <div class="cell docutils container">
@@ -1491,8 +1439,8 @@ Accuracy on test:  0.8541666666666666
 <img alt="../../_images/17e6d890d95e5ef0f4c14b66a4e67e7f718bb7f396b60dba5b785acc3c6f42db.png" src="../../_images/17e6d890d95e5ef0f4c14b66a4e67e7f718bb7f396b60dba5b785acc3c6f42db.png" />
 </div>
 </div>
-<section id="id3">
-<h4><span class="section-number">2.7.3.1. </span>Exercise<a class="headerlink" href="#id3" title="Link to this heading">#</a></h4>
+<section id="id2">
+<h4><span class="section-number">2.6.3.1. </span>Exercise<a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Use the <code class="docutils literal notranslate"><span class="pre">predict()</span></code> method of the model we just trained to predict the category of the stars with the following temperatures and absolute magnitude. Check that the predictions are compatible with those found in the Hertzsprung-Russell Diagram below. # Hint: you’ll need to add extra pair of brackets <code class="docutils literal notranslate"><span class="pre">[[temperature</span> <span class="pre">value,</span> <span class="pre">absolute</span> <span class="pre">magnitude]]</span></code> when calling the predict method of the model.</p></li>
 </ul>
@@ -1537,7 +1485,7 @@ Accuracy on test:  0.8541666666666666
 </section>
 </section>
 <section id="bonus-clustering">
-<h2><span class="section-number">2.8. </span>Bonus: Clustering<a class="headerlink" href="#bonus-clustering" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">2.7. </span>Bonus: Clustering<a class="headerlink" href="#bonus-clustering" title="Link to this heading">#</a></h2>
 <p>Cluster analysis or clustering consist in grouping objects such that the distance between similar objects is small while the distance between different objects is big. When objects are represented by high-dimensional data —think for instance of cell types represented by their proteomics or stars represented by their physical properties—, then the task of clustering becomes challenging.</p>
 <p>Humans are great, but they have not evolved to easily understand and visualise high-dimensional data. To compensate this shortcoming, a first step when looking to cluster data is to <em>reduce its dimensionality</em>, meaning that we find some representation of the data in 2 or 3 dimension such that we obtain meaningful clusters.</p>
 <p>The downside of performing dimensionality reduction is that there exist different low-dimensional representations of the same data. Therefore, finding which features of the data are relevant and how to project them to a low dimensional space is critical.</p>
@@ -1630,28 +1578,22 @@ Accuracy on test:  0.8541666666666666
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-description">2.5.1. Data description</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computing-correlations">2.6. Computing correlations</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">2.6.1. Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#non-linear-correlations">2.6.2. Non-linear correlations</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-relation-between-correlation-coefficients-and-predictive-models">2.6.3. The relation between correlation coefficients and predictive models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supervised-learning">2.6. Supervised Learning</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regression">2.6.1. Regression</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">2.6.1.1. Exercise</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supervised-learning">2.7. Supervised Learning</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regression">2.7.1. Regression</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">2.7.1.1. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#real-data">2.6.2. Real data</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">2.6.2.1. Exercise</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#real-data">2.7.2. Real data</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2.7.2.1. Exercise</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classification">2.7.3. Classification</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">2.7.3.1. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classification">2.6.3. Classification</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2.6.3.1. Exercise</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-clustering">2.8. Bonus: Clustering</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-clustering">2.7. Bonus: Clustering</a></li>
 </ul>
   </nav></div>
 
