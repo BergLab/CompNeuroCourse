@@ -1,15 +1,15 @@
 Traceback (most recent call last):
-  File "/Users/enaj/.virtualenvs/compneurocourse/lib/python3.11/site-packages/myst_nb/core/execute/inline.py", line 120, in code_cell_outputs
+  File "/opt/anaconda3/lib/python3.11/site-packages/myst_nb/core/execute/inline.py", line 128, in code_cell_outputs
     self._client.execute_cell(
-  File "/Users/enaj/.virtualenvs/compneurocourse/lib/python3.11/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+  File "/opt/anaconda3/lib/python3.11/site-packages/jupyter_core/utils/__init__.py", line 173, in wrapped
     return loop.run_until_complete(inner)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/enaj/miniconda3/lib/python3.11/asyncio/base_events.py", line 653, in run_until_complete
+  File "/opt/anaconda3/lib/python3.11/asyncio/base_events.py", line 653, in run_until_complete
     return future.result()
            ^^^^^^^^^^^^^^^
-  File "/Users/enaj/.virtualenvs/compneurocourse/lib/python3.11/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+  File "/opt/anaconda3/lib/python3.11/site-packages/nbclient/client.py", line 1058, in async_execute_cell
     await self._check_raise_for_error(cell, cell_index, exec_reply)
-  File "/Users/enaj/.virtualenvs/compneurocourse/lib/python3.11/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+  File "/opt/anaconda3/lib/python3.11/site-packages/nbclient/client.py", line 914, in _check_raise_for_error
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
@@ -26,9 +26,8 @@ print(C_inverse)
 [0;31mNameError[0m                                 Traceback (most recent call last)
 Cell [0;32mIn[12], line 3[0m
 [1;32m      1[0m [38;5;28;01mfrom[39;00m [38;5;21;01mscipy[39;00m [38;5;28;01mimport[39;00m linalg
-[0;32m----> 3[0m C_inverse [38;5;241m=[39m linalg[38;5;241m.[39minv([43mC[49m)
+[0;32m----> 3[0m C_inverse [38;5;241m=[39m linalg[38;5;241m.[39minv(C)
 [1;32m      4[0m [38;5;28mprint[39m(C_inverse)
-[1;32m      6[0m [38;5;66;03m## Your solution here[39;00m
 
 [0;31mNameError[0m: name 'C' is not defined
 

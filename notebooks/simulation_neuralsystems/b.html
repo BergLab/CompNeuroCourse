@@ -28,13 +28,13 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=87e54e7c" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=9f7f7efb" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -43,7 +43,7 @@
   <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
     <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../_static/copybutton.js?v=f281be69"></script>
@@ -54,18 +54,10 @@
     <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js?v=36754332"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../../_static/sphinx-thebe.js?v=afe5de03"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/simulation_neuralsystems/b';</script>
@@ -204,9 +196,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../dynamical_systems/dynamical_systems_intro.html">1. Introduction modelling with differential equations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../dynamical_systems/Applications_LT.html">2. Dynamical systems as Linear Transformations</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 3. Simulating neural populations</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 3. Simulating neural populations with Brian</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="neuralsimulation_intro.html">1. Simulating neural populations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="neuralsimulation_intro.html">1. Simulating neural populations with Brian</a></li>
 <li class="toctree-l1"><a class="reference internal" href="a.html">2. Introduction to Brian part 1: Neurons</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">3. Introduction to Brian part 2: Synapses</a></li>
 <li class="toctree-l1"><a class="reference internal" href="c.html">4. Introduction to Brian part 3: Simulations</a></li>
@@ -502,22 +494,18 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: brian2 in /Users/enaj/.virtualenvs/compneurocourse/lib/python3.11/site-packages (2.5.4)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: brian2 in /opt/anaconda3/lib/python3.11/site-packages (2.6.0)
+Requirement already satisfied: numpy&gt;=1.21 in /opt/anaconda3/lib/python3.11/site-packages (from brian2) (1.26.4)
+Requirement already satisfied: cython&gt;=0.29.21 in /opt/anaconda3/lib/python3.11/site-packages (from brian2) (3.0.10)
+Requirement already satisfied: sympy&gt;=1.2 in /opt/anaconda3/lib/python3.11/site-packages (from brian2) (1.12)
+Requirement already satisfied: pyparsing in /opt/anaconda3/lib/python3.11/site-packages (from brian2) (3.0.9)
+Requirement already satisfied: jinja2&gt;=2.7 in /opt/anaconda3/lib/python3.11/site-packages (from brian2) (3.1.3)
+Requirement already satisfied: setuptools&gt;=61 in /opt/anaconda3/lib/python3.11/site-packages (from brian2) (68.2.2)
+Requirement already satisfied: packaging in /opt/anaconda3/lib/python3.11/site-packages (from brian2) (23.1)
+Requirement already satisfied: MarkupSafe&gt;=2.0 in /opt/anaconda3/lib/python3.11/site-packages (from jinja2&gt;=2.7-&gt;brian2) (2.1.3)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: numpy&gt;=1.21 in /Users/enaj/.virtualenvs/compneurocourse/lib/python3.11/site-packages (from brian2) (1.26.3)
-Requirement already satisfied: cython&gt;=0.29 in /Users/enaj/.virtualenvs/compneurocourse/lib/python3.11/site-packages (from brian2) (3.0.8)
-Requirement already satisfied: sympy&gt;=1.2 in /Users/enaj/.virtualenvs/compneurocourse/lib/python3.11/site-packages (from brian2) (1.12)
-Requirement already satisfied: pyparsing in /Users/enaj/.virtualenvs/compneurocourse/lib/python3.11/site-packages (from brian2) (3.1.1)
-Requirement already satisfied: jinja2&gt;=2.7 in /Users/enaj/.virtualenvs/compneurocourse/lib/python3.11/site-packages (from brian2) (3.1.3)
-Requirement already satisfied: setuptools&gt;=61 in /Users/enaj/.virtualenvs/compneurocourse/lib/python3.11/site-packages (from brian2) (65.5.0)
-Requirement already satisfied: packaging in /Users/enaj/.virtualenvs/compneurocourse/lib/python3.11/site-packages (from brian2) (23.2)
-Requirement already satisfied: MarkupSafe&gt;=2.0 in /Users/enaj/.virtualenvs/compneurocourse/lib/python3.11/site-packages (from jinja2&gt;=2.7-&gt;brian2) (2.1.5)
-Requirement already satisfied: mpmath&gt;=0.19 in /Users/enaj/.virtualenvs/compneurocourse/lib/python3.11/site-packages (from sympy&gt;=1.2-&gt;brian2) (1.3.0)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> A new release of pip is available: <span class=" -Color -Color-Red">23.3.2</span> -&gt; <span class=" -Color -Color-Green">24.0</span>
-<span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> To update, run: <span class=" -Color -Color-Green">pip install --upgrade pip</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: mpmath&gt;=0.19 in /opt/anaconda3/lib/python3.11/site-packages (from sympy&gt;=1.2-&gt;brian2) (1.3.0)
 </pre></div>
 </div>
 </div>
@@ -554,7 +542,7 @@ Requirement already satisfied: mpmath&gt;=0.19 in /Users/enaj/.virtualenvs/compn
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/3b8d4f0dc4fbd8dd2849edbeda865063934211300153f4264df7d29dc189f4aa.png" src="../../_images/3b8d4f0dc4fbd8dd2849edbeda865063934211300153f4264df7d29dc189f4aa.png" />
+<img alt="../../_images/1374cf9473cdda4f07a1f0cc9747ab7537c9d352e03779501d7a9161f7954f8e.png" src="../../_images/1374cf9473cdda4f07a1f0cc9747ab7537c9d352e03779501d7a9161f7954f8e.png" />
 </div>
 </div>
 <p>There are a few things going on here. First of all, let’s recap what is going on with the <code class="docutils literal notranslate"><span class="pre">NeuronGroup</span></code>. We’ve created two neurons, each of which has the same differential equation but different values for parameters I and tau. Neuron 0 has <code class="docutils literal notranslate"><span class="pre">I=2</span></code> and <code class="docutils literal notranslate"><span class="pre">tau=10*ms</span></code> which means that is driven to repeatedly spike at a fairly high rate. Neuron 1 has <code class="docutils literal notranslate"><span class="pre">I=0</span></code> and <code class="docutils literal notranslate"><span class="pre">tau=100*ms</span></code> which means that on its own - without the synapses - it won’t spike at all (the driving current I is 0). You can prove this to yourself by commenting out the two lines that define the synapse.</p>
@@ -595,7 +583,7 @@ Requirement already satisfied: mpmath&gt;=0.19 in /Users/enaj/.virtualenvs/compn
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/839351c4809d78f59aec3c3c7406801c921d90ce55ecaf15657044653b6caae0.png" src="../../_images/839351c4809d78f59aec3c3c7406801c921d90ce55ecaf15657044653b6caae0.png" />
+<img alt="../../_images/194dc1a7ea45439169817e06bafdf0e7707d5c2431110ff142df3c4269ae81da.png" src="../../_images/194dc1a7ea45439169817e06bafdf0e7707d5c2431110ff142df3c4269ae81da.png" />
 </div>
 </div>
 <p>This example behaves very similarly to the previous example, but now there’s a synaptic weight variable <code class="docutils literal notranslate"><span class="pre">w</span></code>. The string <code class="docutils literal notranslate"><span class="pre">'w</span> <span class="pre">:</span> <span class="pre">1'</span></code> is an equation string, precisely the same as for neurons, that defines a single dimensionless parameter <code class="docutils literal notranslate"><span class="pre">w</span></code>. We changed the behaviour on a spike to <code class="docutils literal notranslate"><span class="pre">on_pre='v_post</span> <span class="pre">+=</span> <span class="pre">w'</span></code> now, so that each synapse can behave differently depending on the value of <code class="docutils literal notranslate"><span class="pre">w</span></code>. To illustrate this, we’ve made a third neuron which behaves precisely the same as the second neuron, and connected neuron 0 to both neurons 1 and 2. We’ve also set the weights via <code class="docutils literal notranslate"><span class="pre">S.w</span> <span class="pre">=</span> <span class="pre">'j*0.2'</span></code>. When <code class="docutils literal notranslate"><span class="pre">i</span></code> and <code class="docutils literal notranslate"><span class="pre">j</span></code> occur in the context of synapses, <code class="docutils literal notranslate"><span class="pre">i</span></code> refers to the source neuron index, and <code class="docutils literal notranslate"><span class="pre">j</span></code> to the target neuron index. So this will give a synaptic connection from 0 to 1 with weight <code class="docutils literal notranslate"><span class="pre">0.2=0.2*1</span></code> and from 0 to 2 with weight <code class="docutils literal notranslate"><span class="pre">0.4=0.2*2</span></code>.</p>
@@ -649,7 +637,7 @@ Requirement already satisfied: mpmath&gt;=0.19 in /Users/enaj/.virtualenvs/compn
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/c7b0d2515b618917de2ffa63f8cbcda0129db16a90b7e1ea8c7d337186e9436d.png" src="../../_images/c7b0d2515b618917de2ffa63f8cbcda0129db16a90b7e1ea8c7d337186e9436d.png" />
+<img alt="../../_images/c49d0356c447ef2b9ddbad0bc53381a9474729f6ddb1434269a4615462cef13b.png" src="../../_images/c49d0356c447ef2b9ddbad0bc53381a9474729f6ddb1434269a4615462cef13b.png" />
 </div>
 </div>
 <p>There are two plots here. On the left hand side, you see a vertical line of circles indicating source neurons on the left, and a vertical line indicating target neurons on the right, and a line between two neurons that have a synapse. On the right hand side is another way of visualising the same thing. Here each black dot is a synapse, with x value the source neuron index, and y value the target neuron index.</p>
@@ -670,9 +658,9 @@ Requirement already satisfied: mpmath&gt;=0.19 in /Users/enaj/.virtualenvs/compn
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/f4041781d47bf83fcbd0ec96a26bb1695205b08c43e885f905208bba6b456b7d.png" src="../../_images/f4041781d47bf83fcbd0ec96a26bb1695205b08c43e885f905208bba6b456b7d.png" />
-<img alt="../../_images/688fa656be02c26fbd154a2fb9c28fa05eb6c13365dd5bb7d209eeb5f8d0f060.png" src="../../_images/688fa656be02c26fbd154a2fb9c28fa05eb6c13365dd5bb7d209eeb5f8d0f060.png" />
-<img alt="../../_images/fa0550521de0c53e48b298fe4005543bd013a70adf303afea9a83d25d4ae1bad.png" src="../../_images/fa0550521de0c53e48b298fe4005543bd013a70adf303afea9a83d25d4ae1bad.png" />
+<img alt="../../_images/f1a789b201e23d328b6e16a0e3f7bcd734589adbb69e29188e646dc4d29e6fa4.png" src="../../_images/f1a789b201e23d328b6e16a0e3f7bcd734589adbb69e29188e646dc4d29e6fa4.png" />
+<img alt="../../_images/e0c90a1649a62e143f4233fbfe4a1e58a6c837ddbfb44271dcf972b9a29b8e38.png" src="../../_images/e0c90a1649a62e143f4233fbfe4a1e58a6c837ddbfb44271dcf972b9a29b8e38.png" />
+<img alt="../../_images/09502854dec1151d7ecf6d05ff07532b07f1d4e5e4b1f9e3179bf771bde67652.png" src="../../_images/09502854dec1151d7ecf6d05ff07532b07f1d4e5e4b1f9e3179bf771bde67652.png" />
 </div>
 </div>
 <p>And let’s see what another connectivity condition looks like. This one will only connect neighbouring neurons.</p>
@@ -690,7 +678,7 @@ Requirement already satisfied: mpmath&gt;=0.19 in /Users/enaj/.virtualenvs/compn
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/fd137658a8e92fc08990a33311f3a1a9bb99802365b31a7fbef41411733ccb64.png" src="../../_images/fd137658a8e92fc08990a33311f3a1a9bb99802365b31a7fbef41411733ccb64.png" />
+<img alt="../../_images/413476c7e93402196affdb136ce244d72bdfaf6cfef7f6b7f3651f31f66366c2.png" src="../../_images/413476c7e93402196affdb136ce244d72bdfaf6cfef7f6b7f3651f31f66366c2.png" />
 </div>
 </div>
 </section>
@@ -706,26 +694,26 @@ Requirement already satisfied: mpmath&gt;=0.19 in /Users/enaj/.virtualenvs/compn
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 0.00666143  0.00227974  0.00374637  0.00790524 -0.00043662 -0.00798074
-  -0.00210359 -0.00900615  0.0073464   0.00111534]
- [-0.00853461  0.00355475  0.00350006  0.00493482 -0.00126914  0.00534906
-  -0.00353249  0.00813555 -0.00258332 -0.00197856]
- [ 0.00836443 -0.00234141 -0.00042564  0.00073515 -0.00185644 -0.00467854
-   0.00858876 -0.00848412  0.00746742 -0.00179013]
- [-0.00333203 -0.00102876  0.00553536  0.00411646  0.0098891   0.00458224
-  -0.00954902  0.00154012  0.00466959 -0.00602271]
- [ 0.00673736  0.00333025  0.00373369  0.00813186 -0.00529512  0.00616587
-  -0.00874936 -0.00759066  0.00528721  0.00694736]
- [ 0.00448863 -0.00574641  0.00929655 -0.00324405  0.00434596  0.00362344
-  -0.00160723  0.00946897  0.00454968 -0.00714288]
- [ 0.00488349  0.00877076  0.0026947   0.0005604  -0.00821141  0.00398218
-  -0.00832646 -0.00997551  0.00361162  0.00554332]
- [-0.00054905 -0.00561546 -0.00719634 -0.00701741 -0.00353284  0.00840198
-  -0.0079002  -0.00495596 -0.00983487 -0.00180673]
- [ 0.00055979  0.00821693 -0.00378062 -0.00303843 -0.00791025 -0.00538409
-   0.00082015 -0.00172157 -0.00919781  0.00762421]
- [ 0.00544094  0.00903792 -0.00083416 -0.00624138 -0.0041562   0.00522289
-   0.00214654  0.00302057 -0.0096307  -0.00532288]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 0.00967251 -0.0096798   0.00963866  0.00865082 -0.00094565 -0.00733412
+  -0.00532251  0.00269325 -0.00078043 -0.00253552]
+ [-0.00478931 -0.00810643  0.00413878  0.00612287  0.00519416  0.00069286
+   0.00830943  0.00254588 -0.00738251 -0.00501683]
+ [-0.00367826  0.00545919 -0.0091341  -0.00017486 -0.00574095  0.00535161
+   0.00769492  0.00467285 -0.00062488  0.00693493]
+ [ 0.00647796 -0.00805247  0.00506813 -0.00195552  0.00817469 -0.00849153
+  -0.00225852  0.00949054  0.00045579  0.00720359]
+ [-0.00933864  0.00833694 -0.00696618  0.00170173  0.00162359 -0.00646832
+  -0.00613359  0.00253323  0.00030965  0.00538025]
+ [-0.00728133 -0.00938056 -0.0082031  -0.00076089  0.00578586 -0.00283199
+   0.00149787  0.0038642  -0.00187602 -0.00956914]
+ [ 0.00139584  0.0087511   0.00263523  0.00568244 -0.0018172   0.00462757
+  -0.00072384  0.00693961 -0.00133944  0.00619316]
+ [ 0.00233208  0.00758195 -0.00177566 -0.00333665 -0.00115642  0.0065816
+  -0.00111817 -0.00927423  0.00773917 -0.00929219]
+ [-0.00924677 -0.00178052  0.00461224 -0.00789771  0.0004988   0.00047897
+   0.00473607  0.00337497 -0.00739211  0.00487018]
+ [ 0.00499529 -0.00063213 -0.00184479 -0.00941463  0.0096285   0.00273702
+  -0.00496418 -0.00384298 -0.00839719  0.00715646]]
 </pre></div>
 </div>
 </div>
@@ -833,10 +821,10 @@ Requirement already satisfied: mpmath&gt;=0.19 in /Users/enaj/.virtualenvs/compn
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1076d2b90&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x14aa24850&gt;
 </pre></div>
 </div>
-<img alt="../../_images/71537dfa2e8600a42b7467fed73d4f2ace0dfdbf4e535671a19580d440c72846.png" src="../../_images/71537dfa2e8600a42b7467fed73d4f2ace0dfdbf4e535671a19580d440c72846.png" />
+<img alt="../../_images/480d12cd8226e25007223b73f4549a3347a1e0f7cc707da077812735b03b4327.png" src="../../_images/480d12cd8226e25007223b73f4549a3347a1e0f7cc707da077812735b03b4327.png" />
 </div>
 </div>
 <p>As you can see, that’s as simple as adding a line <code class="docutils literal notranslate"><span class="pre">S.delay</span> <span class="pre">=</span> <span class="pre">'j*2*ms'</span></code> so that the synapse from 0 to 1 has a delay of 2 ms, and from 0 to 2 has a delay of 4 ms.</p>
@@ -870,7 +858,7 @@ A_{post} e^{\Delta t/\tau_{post}} &amp; \Delta t&lt;0
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/7ab87677875fe7bf1b1e90a0dbea028c6c5054d0907cb51b36cefcd8d3a2a97e.png" src="../../_images/7ab87677875fe7bf1b1e90a0dbea028c6c5054d0907cb51b36cefcd8d3a2a97e.png" />
+<img alt="../../_images/5e1705f087cbd53248a67846d90979de4026e9934bbf44c288ae0b12b6e674ed.png" src="../../_images/5e1705f087cbd53248a67846d90979de4026e9934bbf44c288ae0b12b6e674ed.png" />
 </div>
 </div>
 <p>Simulating it directly using this equation though would be very inefficient, because we would have to sum over all pairs of spikes. That would also be physiologically unrealistic because the neuron cannot remember all its previous spike times. It turns out there is a more efficient and physiologically more plausible way to get the same effect.</p>
@@ -977,7 +965,7 @@ w &amp;\rightarrow w+a_{pre}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/a7ad295310dd7e85b9950ecccdd00db2d6ad341689bc6b82ecbf990c2f0f54ee.png" src="../../_images/a7ad295310dd7e85b9950ecccdd00db2d6ad341689bc6b82ecbf990c2f0f54ee.png" />
+<img alt="../../_images/add73c185a8561c5f93a12fb30b054b9174192a4ffc3f559fceae42f2e401f44.png" src="../../_images/add73c185a8561c5f93a12fb30b054b9174192a4ffc3f559fceae42f2e401f44.png" />
 </div>
 </div>
 <p>A couple of things to note here. First of all, we’ve used a trick to make neuron 0 fire a spike at time 10 ms, and neuron 1 at time 20 ms. Can you see how that works?</p>
@@ -1028,7 +1016,7 @@ w &amp;\rightarrow w+a_{pre}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/8410b6a459be9290e3456d1f5685cd973b07e912ca512fe97358888509f1e638.png" src="../../_images/8410b6a459be9290e3456d1f5685cd973b07e912ca512fe97358888509f1e638.png" />
+<img alt="../../_images/adea413271ebe5591f8e93b865b0bb61c1b2c3e8f22340d6a89486d89c1b876d.png" src="../../_images/adea413271ebe5591f8e93b865b0bb61c1b2c3e8f22340d6a89486d89c1b876d.png" />
 </div>
 </div>
 </section>

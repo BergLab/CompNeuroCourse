@@ -28,13 +28,13 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=87e54e7c" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=9f7f7efb" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -43,7 +43,7 @@
   <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
     <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../_static/copybutton.js?v=f281be69"></script>
@@ -54,18 +54,10 @@
     <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js?v=36754332"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../../_static/sphinx-thebe.js?v=afe5de03"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/ML/a';</script>
@@ -204,7 +196,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../dynamical_systems/dynamical_systems_intro.html">1. Introduction modelling with differential equations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../dynamical_systems/Applications_LT.html">2. Dynamical systems as Linear Transformations</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 3. Simulating neural populations</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 3. Simulating neural populations with Brian</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../simulation_neuralsystems/neuralsimulation_intro.html">1. Simulating neural populations with Brian</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../simulation_neuralsystems/a.html">2. Introduction to Brian part 1: Neurons</a></li>
@@ -545,18 +537,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/5r/37slq4k14kb2dywqvcdlbwdc0000gn/T/ipykernel_46293/2359310441.py:4: DeprecationWarning: 
-Pyarrow will become a required dependency of pandas in the next major release of pandas (pandas 3.0),
-(to allow more performant data types, such as the Arrow string type, and better interoperability with other libraries)
-but was not found to be installed on your system.
-If this would cause problems for you,
-please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
-        
-  import pandas as pd
-</pre></div>
-</div>
-</div>
 </div>
 <p>The DataFrame can be created from a csv file using the read_csv method.
 If you are working on Colab, you will need to upload the data.</p>
@@ -749,7 +729,7 @@ Max Temperature is: 40000
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: &gt;
 </pre></div>
 </div>
-<img alt="../../_images/9d07a2b4185b82cca77deeeeca88bd1d201e96854fce3070405b44bec22b4d1b.png" src="../../_images/9d07a2b4185b82cca77deeeeca88bd1d201e96854fce3070405b44bec22b4d1b.png" />
+<img alt="../../_images/484b1cba160e392923dcad744fa8ccb3a850562edd238c06f89741094ac20d40.png" src="../../_images/484b1cba160e392923dcad744fa8ccb3a850562edd238c06f89741094ac20d40.png" />
 </div>
 </div>
 <p>Pandas is interoperable with matplotlib and numpy, so for instance if we want to add labels to the figure above we simply add the following lines from matplotlib:</p>
@@ -765,7 +745,7 @@ Max Temperature is: 40000
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Star Temperature&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/3c9dc3a08d6adf7caf6583b4f4b4e22d5d86c749d189acf02b0e021b5ff8064b.png" src="../../_images/3c9dc3a08d6adf7caf6583b4f4b4e22d5d86c749d189acf02b0e021b5ff8064b.png" />
+<img alt="../../_images/ccb537275ba3427d9b1b96adba64f0d85ace93162feccd90d9415c9341597247.png" src="../../_images/ccb537275ba3427d9b1b96adba64f0d85ace93162feccd90d9415c9341597247.png" />
 </div>
 </div>
 <p>The above is equivalent to:</p>
@@ -779,7 +759,7 @@ Max Temperature is: 40000
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;Star index&#39;, ylabel=&#39;Temperature&#39;&gt;
 </pre></div>
 </div>
-<img alt="../../_images/a66fd713eeea59e5cd2902bab2ed40119cbb8260d6fae3387a913561380807a1.png" src="../../_images/a66fd713eeea59e5cd2902bab2ed40119cbb8260d6fae3387a913561380807a1.png" />
+<img alt="../../_images/1b84dad71086b9178b52a9a2eeb6fe65cee0da2e467b57fea220065416465c63.png" src="../../_images/1b84dad71086b9178b52a9a2eeb6fe65cee0da2e467b57fea220065416465c63.png" />
 </div>
 </div>
 <section id="exercise">
@@ -810,7 +790,7 @@ Max Temperature is: 40000
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;Temperature&#39;, ylabel=&#39;Luminosity&#39;&gt;
 </pre></div>
 </div>
-<img alt="../../_images/442a7689b86025f4b5199d5d27850ccbd4ffb3e3c09eb26c6ae1993ed38a10c9.png" src="../../_images/442a7689b86025f4b5199d5d27850ccbd4ffb3e3c09eb26c6ae1993ed38a10c9.png" />
+<img alt="../../_images/0ba1476acca1a1908cbc8df74aac431e38739b1dccf907e63a41b7f2515fdf6c.png" src="../../_images/0ba1476acca1a1908cbc8df74aac431e38739b1dccf907e63a41b7f2515fdf6c.png" />
 </div>
 </div>
 <p>We notice that the values of the Luminosity go from very small to very big values:</p>
@@ -837,7 +817,7 @@ Max Temperature is: 40000
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/c7a535b67d1e04c0bc71b7b2fa58d08ba6d4738b16eb74159e575c69e7a2eb43.png" src="../../_images/c7a535b67d1e04c0bc71b7b2fa58d08ba6d4738b16eb74159e575c69e7a2eb43.png" />
+<img alt="../../_images/5af8a4ac719be26d36ae0383957e7703b67fafb47932c017756832719eff13c8.png" src="../../_images/5af8a4ac719be26d36ae0383957e7703b67fafb47932c017756832719eff13c8.png" />
 </div>
 </div>
 <section id="id1">
@@ -1266,7 +1246,7 @@ Name: Temperature, Length: 240, dtype: bool
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: title={&#39;center&#39;: &#39;Temperature&#39;}, xlabel=&#39;[Type]&#39;&gt;
 </pre></div>
 </div>
-<img alt="../../_images/ff9f5f41cd181566a38c772072ff3bbfe333f699fb264c86d5a25bccd802be99.png" src="../../_images/ff9f5f41cd181566a38c772072ff3bbfe333f699fb264c86d5a25bccd802be99.png" />
+<img alt="../../_images/9c787d8d3eb2904f7b0113cde33d0505e975d28babc7aae65d64ad1cd1c04ef8.png" src="../../_images/9c787d8d3eb2904f7b0113cde33d0505e975d28babc7aae65d64ad1cd1c04ef8.png" />
 </div>
 </div>
 <section id="id5">
@@ -1304,7 +1284,7 @@ Name: Temperature, Length: 240, dtype: bool
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;Luminosity&#39;, ylabel=&#39;Size&#39;&gt;
 </pre></div>
 </div>
-<img alt="../../_images/cba9d348f4d053e60194cc4b2c0e7333e5f686c39d537934b32bcee9dfd777ca.png" src="../../_images/cba9d348f4d053e60194cc4b2c0e7333e5f686c39d537934b32bcee9dfd777ca.png" />
+<img alt="../../_images/f6a6257d87990b5ac3d7c1a4a72affb830b610a63d2248b6fd6cca0d664f22a7.png" src="../../_images/f6a6257d87990b5ac3d7c1a4a72affb830b610a63d2248b6fd6cca0d664f22a7.png" />
 </div>
 </div>
 <p>We can see in the plot of <span class="math notranslate nohighlight">\(A_M\)</span> versus Temperature, that there is a cluster of points (<span class="math notranslate nohighlight">\(A_M&gt;9\)</span>,Temperature <span class="math notranslate nohighlight">\(&gt;5000\)</span>) where the variables appear to have a strong correlation.  We might want to isolate and study that particular subset of the data by extracting it to a different DataFrame.</p>
@@ -1324,7 +1304,7 @@ Name: Temperature, Length: 240, dtype: bool
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;Temperature&#39;, ylabel=&#39;A_M&#39;&gt;
 </pre></div>
 </div>
-<img alt="../../_images/15bd1c929c50772bff16bbd7cebd30e5e358351bf200fc5d9b7e2776dd602b7b.png" src="../../_images/15bd1c929c50772bff16bbd7cebd30e5e358351bf200fc5d9b7e2776dd602b7b.png" />
+<img alt="../../_images/9cab266ea0852734a11705aa66bf6aa007990437612023d73ec44d55b9a0317a.png" src="../../_images/9cab266ea0852734a11705aa66bf6aa007990437612023d73ec44d55b9a0317a.png" />
 </div>
 </div>
 <p>Let’s print the statistics of this subset of data</p>
@@ -1366,7 +1346,7 @@ max    25000.000000    0.056000   0.015000  14.870000        12500.000000
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/e80ab7bf9efecf712e81c9bae82ea68b7cc85175281db2b6d467b117aebf6dbc.png" src="../../_images/e80ab7bf9efecf712e81c9bae82ea68b7cc85175281db2b6d467b117aebf6dbc.png" />
+<img alt="../../_images/6505730fec9759c5ef4325e57b807f554ce007481d156a8cec3ec43d69d1d7eb.png" src="../../_images/6505730fec9759c5ef4325e57b807f554ce007481d156a8cec3ec43d69d1d7eb.png" />
 </div>
 </div>
 <p>What value of the pearson correlation coefficient do expect to have? If it’s not obvious to you, think about it before running the next code cell.</p>
@@ -1436,10 +1416,10 @@ max    25000.000000    0.056000   0.015000  14.870000        12500.000000
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x176dcf3d0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x13d13a590&gt;]
 </pre></div>
 </div>
-<img alt="../../_images/786cb8a341f9725830038c87808609172eb3ec753d8364b6a40064921544ebb5.png" src="../../_images/786cb8a341f9725830038c87808609172eb3ec753d8364b6a40064921544ebb5.png" />
+<img alt="../../_images/51a356922f704ea10934b297815d2123953d91d263899a7b7500ac2570c8d3e1.png" src="../../_images/51a356922f704ea10934b297815d2123953d91d263899a7b7500ac2570c8d3e1.png" />
 </div>
 </div>
 <p>The model object that was produced by <span class="math notranslate nohighlight">\(\texttt{linregress}\)</span> also contains the correlation coefficient, pvalue, and standard error.</p>

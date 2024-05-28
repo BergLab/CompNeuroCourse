@@ -28,13 +28,13 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=87e54e7c" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=9f7f7efb" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -43,7 +43,7 @@
   <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
     <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../_static/copybutton.js?v=f281be69"></script>
@@ -54,18 +54,10 @@
     <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js?v=36754332"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../../_static/sphinx-thebe.js?v=afe5de03"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/mathpython_intro/Numpy_Introduction';</script>
@@ -204,9 +196,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../dynamical_systems/dynamical_systems_intro.html">1. Introduction modelling with differential equations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../dynamical_systems/Applications_LT.html">2. Dynamical systems as Linear Transformations</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 3. Simulating neural populations</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 3. Simulating neural populations with Brian</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../simulation_neuralsystems/neuralsimulation_intro.html">1. Simulating neural populations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simulation_neuralsystems/neuralsimulation_intro.html">1. Simulating neural populations with Brian</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../simulation_neuralsystems/a.html">2. Introduction to Brian part 1: Neurons</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../simulation_neuralsystems/b.html">3. Introduction to Brian part 2: Synapses</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../simulation_neuralsystems/c.html">4. Introduction to Brian part 3: Simulations</a></li>
@@ -618,7 +610,7 @@ This is C, which is the entries of B formed into a new shape.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.04162880689952364
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.9384583865234561
 </pre></div>
 </div>
 </div>
@@ -633,9 +625,9 @@ This is C, which is the entries of B formed into a new shape.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.0906792  0.87304587]
- [0.65566373 0.43875984]
- [0.7784154  0.3872884 ]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.1929732  0.30216005]
+ [0.25581912 0.41490336]
+ [0.36717642 0.42450884]]
 </pre></div>
 </div>
 </div>
@@ -648,7 +640,7 @@ This is C, which is the entries of B formed into a new shape.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>14
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12
 </pre></div>
 </div>
 </div>
@@ -662,9 +654,9 @@ This is C, which is the entries of B formed into a new shape.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[3 3 8 2 4 1]
- [4 5 3 7 1 3]
- [1 6 2 1 4 6]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[3 7 8 1 4 9]
+ [7 4 8 3 8 3]
+ [1 4 5 8 8 1]]
 </pre></div>
 </div>
 </div>
@@ -677,8 +669,8 @@ This is C, which is the entries of B formed into a new shape.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[4 1 9]
- [6 1 5]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[7 8 2]
+ [2 1 4]]
 </pre></div>
 </div>
 </div>
@@ -728,7 +720,7 @@ This is C, which is the entries of B formed into a new shape.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/d73046ef50692e38ea1bbbfad8e5983c86db4c8af610fce12c4da0969dfac05a.png" src="../../_images/d73046ef50692e38ea1bbbfad8e5983c86db4c8af610fce12c4da0969dfac05a.png" />
+<img alt="../../_images/158356860d032a693238d6ea6cfe0efd469ed6bbdbc77e4b53808dff44055e70.png" src="../../_images/158356860d032a693238d6ea6cfe0efd469ed6bbdbc77e4b53808dff44055e70.png" />
 </div>
 </div>
 <p>The <span class="math notranslate nohighlight">\(\texttt{subplots}\)</span> method creates two Matplotlib objects, the <em>Figure</em>, and the <em>Axes</em>.  The <em>Figure</em> is the fundamental object in Matplotlib.  The <em>Axes</em> object is contained within the <em>Figure</em>, and is the object we will interact with the most.  The <span class="math notranslate nohighlight">\(\texttt{plot}\)</span> method of the <em>Axes</em> object is the function that actually plots our set of coordinates on the <em>Axes</em>.  Note that we do not need a <span class="math notranslate nohighlight">\(\texttt{print}\)</span> command to view the results.  Instead, the first line of code, <span class="math notranslate nohighlight">\(\texttt{% matplotlib inline}\)</span>, directs all graphical output to this notebook.</p>
@@ -741,7 +733,7 @@ This is C, which is the entries of B formed into a new shape.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/558a6f70aba57fa1ab46d444f8f812b9476014f1b38b93a25e654e4928950a65.png" src="../../_images/558a6f70aba57fa1ab46d444f8f812b9476014f1b38b93a25e654e4928950a65.png" />
+<img alt="../../_images/3dc3f83988b97ae06b9d1ff2c6194d1336126d468c31f16069c203975b1b61e2.png" src="../../_images/3dc3f83988b97ae06b9d1ff2c6194d1336126d468c31f16069c203975b1b61e2.png" />
 </div>
 </div>
 <p>Another alternative when we interested in plotting data points is the <span class="math notranslate nohighlight">\(\texttt{scatter}\)</span> method, for which we can use the same syntax.</p>
@@ -753,7 +745,7 @@ This is C, which is the entries of B formed into a new shape.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/2b55fabec3b4bbf78ca51a6fcec06dd719bd46848eddb126e6329183df237953.png" src="../../_images/2b55fabec3b4bbf78ca51a6fcec06dd719bd46848eddb126e6329183df237953.png" />
+<img alt="../../_images/638552d10e8d901dc95b21884ce0016987d61c34184a3fc39ef2c217228d2158.png" src="../../_images/638552d10e8d901dc95b21884ce0016987d61c34184a3fc39ef2c217228d2158.png" />
 </div>
 </div>
 <p>Next, we show how to configure some of the many options available in such a plot.  Remember that the plot is actually being constructed in an <em>Axes</em> object, so all the options that affect elements of the plot are methods of that object.</p>
@@ -776,7 +768,7 @@ This is C, which is the entries of B formed into a new shape.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/beac4c4c5682cff083e3da3c233dcf0ee13dd7a9177d54b19f9378b1b248791a.png" src="../../_images/beac4c4c5682cff083e3da3c233dcf0ee13dd7a9177d54b19f9378b1b248791a.png" />
+<img alt="../../_images/bc7871eeaa2e64cfc260306d4ed66c176bf71fc6646220e62514eb3173086493.png" src="../../_images/bc7871eeaa2e64cfc260306d4ed66c176bf71fc6646220e62514eb3173086493.png" />
 </div>
 </div>
 </section>
@@ -827,7 +819,7 @@ This is C, which is the entries of B formed into a new shape.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/f40a93a77e47fbd08b40af2fb01639c143e8ff7aeadd20bedff9e21355e5fc57.png" src="../../_images/f40a93a77e47fbd08b40af2fb01639c143e8ff7aeadd20bedff9e21355e5fc57.png" />
+<img alt="../../_images/2c9fd73519c89b46bddbf89620143634bd9e54906c6fd199cdd9c00b95ddd543.png" src="../../_images/2c9fd73519c89b46bddbf89620143634bd9e54906c6fd199cdd9c00b95ddd543.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -855,7 +847,7 @@ This is C, which is the entries of B formed into a new shape.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/68016f8d847383e80662dae98c064bdbe0d9da217a6242c34dbfb65741137aa9.png" src="../../_images/68016f8d847383e80662dae98c064bdbe0d9da217a6242c34dbfb65741137aa9.png" />
+<img alt="../../_images/c9e80d2d323ddd9df7b704b8b098c00784553ca1e40b1c2f43ac0541e267931e.png" src="../../_images/c9e80d2d323ddd9df7b704b8b098c00784553ca1e40b1c2f43ac0541e267931e.png" />
 </div>
 </div>
 </section>
