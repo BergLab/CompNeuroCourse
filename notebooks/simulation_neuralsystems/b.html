@@ -203,10 +203,13 @@
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">3. Introduction to Brian part 2: Synapses</a></li>
 <li class="toctree-l1"><a class="reference internal" href="c.html">4. Introduction to Brian part 3: Simulations</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 4. Data analysis and Machine learning</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 4. Data Analysis and Machine learning TEST</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../ML/a.html">1. Introduction to Data Analysis with Pandas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ML/b.html">2. Machine Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ML/CompNeuro_Basic_ML_Exercises.html">3. Basic Machine Learning Exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ML/CompNeuro_Introducing_Scikit_Learn.html">4. Introducing Scikit-Learn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ML/CompNeuro_MLP_MNIST_Classification.html">5. Multilayer Perceptron for MNIST Classification</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 5. Network theory</span></p>
 <ul class="nav bd-sidenav">
@@ -497,15 +500,13 @@ document.write(`
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: brian2 in /opt/anaconda3/lib/python3.11/site-packages (2.6.0)
 Requirement already satisfied: numpy&gt;=1.21 in /opt/anaconda3/lib/python3.11/site-packages (from brian2) (1.26.4)
 Requirement already satisfied: cython&gt;=0.29.21 in /opt/anaconda3/lib/python3.11/site-packages (from brian2) (3.0.10)
-Requirement already satisfied: sympy&gt;=1.2 in /opt/anaconda3/lib/python3.11/site-packages (from brian2) (1.12)
+Requirement already satisfied: sympy&gt;=1.2 in /opt/anaconda3/lib/python3.11/site-packages (from brian2) (1.14.0)
 Requirement already satisfied: pyparsing in /opt/anaconda3/lib/python3.11/site-packages (from brian2) (3.0.9)
 Requirement already satisfied: jinja2&gt;=2.7 in /opt/anaconda3/lib/python3.11/site-packages (from brian2) (3.1.3)
 Requirement already satisfied: setuptools&gt;=61 in /opt/anaconda3/lib/python3.11/site-packages (from brian2) (68.2.2)
 Requirement already satisfied: packaging in /opt/anaconda3/lib/python3.11/site-packages (from brian2) (23.1)
 Requirement already satisfied: MarkupSafe&gt;=2.0 in /opt/anaconda3/lib/python3.11/site-packages (from jinja2&gt;=2.7-&gt;brian2) (2.1.3)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: mpmath&gt;=0.19 in /opt/anaconda3/lib/python3.11/site-packages (from sympy&gt;=1.2-&gt;brian2) (1.3.0)
+Requirement already satisfied: mpmath&lt;1.4,&gt;=1.1.0 in /opt/anaconda3/lib/python3.11/site-packages (from sympy&gt;=1.2-&gt;brian2) (1.3.0)
 </pre></div>
 </div>
 </div>
@@ -658,8 +659,8 @@ Requirement already satisfied: MarkupSafe&gt;=2.0 in /opt/anaconda3/lib/python3.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/f1a789b201e23d328b6e16a0e3f7bcd734589adbb69e29188e646dc4d29e6fa4.png" src="../../_images/f1a789b201e23d328b6e16a0e3f7bcd734589adbb69e29188e646dc4d29e6fa4.png" />
-<img alt="../../_images/e0c90a1649a62e143f4233fbfe4a1e58a6c837ddbfb44271dcf972b9a29b8e38.png" src="../../_images/e0c90a1649a62e143f4233fbfe4a1e58a6c837ddbfb44271dcf972b9a29b8e38.png" />
+<img alt="../../_images/f563b94d2efe58222f02b4c70a0653334787599ba681fc16b9b587b0ea1301f2.png" src="../../_images/f563b94d2efe58222f02b4c70a0653334787599ba681fc16b9b587b0ea1301f2.png" />
+<img alt="../../_images/0339c8bae339b50353b959b2a3f1d6be651d29b4e088bcad23b031842c7b31a5.png" src="../../_images/0339c8bae339b50353b959b2a3f1d6be651d29b4e088bcad23b031842c7b31a5.png" />
 <img alt="../../_images/09502854dec1151d7ecf6d05ff07532b07f1d4e5e4b1f9e3179bf771bde67652.png" src="../../_images/09502854dec1151d7ecf6d05ff07532b07f1d4e5e4b1f9e3179bf771bde67652.png" />
 </div>
 </div>
@@ -694,26 +695,26 @@ Requirement already satisfied: MarkupSafe&gt;=2.0 in /opt/anaconda3/lib/python3.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 0.00967251 -0.0096798   0.00963866  0.00865082 -0.00094565 -0.00733412
-  -0.00532251  0.00269325 -0.00078043 -0.00253552]
- [-0.00478931 -0.00810643  0.00413878  0.00612287  0.00519416  0.00069286
-   0.00830943  0.00254588 -0.00738251 -0.00501683]
- [-0.00367826  0.00545919 -0.0091341  -0.00017486 -0.00574095  0.00535161
-   0.00769492  0.00467285 -0.00062488  0.00693493]
- [ 0.00647796 -0.00805247  0.00506813 -0.00195552  0.00817469 -0.00849153
-  -0.00225852  0.00949054  0.00045579  0.00720359]
- [-0.00933864  0.00833694 -0.00696618  0.00170173  0.00162359 -0.00646832
-  -0.00613359  0.00253323  0.00030965  0.00538025]
- [-0.00728133 -0.00938056 -0.0082031  -0.00076089  0.00578586 -0.00283199
-   0.00149787  0.0038642  -0.00187602 -0.00956914]
- [ 0.00139584  0.0087511   0.00263523  0.00568244 -0.0018172   0.00462757
-  -0.00072384  0.00693961 -0.00133944  0.00619316]
- [ 0.00233208  0.00758195 -0.00177566 -0.00333665 -0.00115642  0.0065816
-  -0.00111817 -0.00927423  0.00773917 -0.00929219]
- [-0.00924677 -0.00178052  0.00461224 -0.00789771  0.0004988   0.00047897
-   0.00473607  0.00337497 -0.00739211  0.00487018]
- [ 0.00499529 -0.00063213 -0.00184479 -0.00941463  0.0096285   0.00273702
-  -0.00496418 -0.00384298 -0.00839719  0.00715646]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[-0.00946803  0.00596469 -0.00044817 -0.00507662  0.00353964 -0.00292761
+  -0.00688611  0.00786593 -0.00526886 -0.00720709]
+ [ 0.00995754 -0.00981834 -0.00327436  0.00307421 -0.00409151  0.00109988
+  -0.00886739  0.00431782 -0.00705957 -0.00557398]
+ [ 0.00935289 -0.00324657  0.00364332 -0.00408721  0.00221999  0.00565986
+  -0.00086525 -0.00109496  0.00935511 -0.00570588]
+ [-0.001905   -0.00238573  0.00987039 -0.00171961 -0.00875097  0.00203567
+  -0.00960584  0.00490494 -0.00962453  0.00810816]
+ [-0.00220365  0.00514497  0.0090508   0.00482687  0.00942909  0.00500665
+  -0.00794932  0.00817787 -0.00192541  0.00879722]
+ [-0.00317331  0.00643079 -0.00189173  0.00290389  0.00536877 -0.00279782
+  -0.00376291 -0.00631085  0.0039095   0.00011414]
+ [ 0.00023078  0.00705764 -0.00146536  0.00710034 -0.00048782  0.00245132
+   0.005033   -0.00442127  0.00153595  0.00987071]
+ [ 0.00862855 -0.00457831  0.00411444 -0.00157362 -0.00503148  0.00604538
+  -0.00721631  0.00857663  0.00408597  0.00339509]
+ [ 0.00127018 -0.0062612  -0.00061379 -0.00898217  0.00625227 -0.0005811
+   0.00964871  0.00087486  0.00837881 -0.00289207]
+ [ 0.00300719 -0.00153259  0.00754733 -0.00263184  0.00902033 -0.00053433
+   0.00841098 -0.00094784 -0.00928005 -0.00696308]]
 </pre></div>
 </div>
 </div>
@@ -821,7 +822,7 @@ Requirement already satisfied: MarkupSafe&gt;=2.0 in /opt/anaconda3/lib/python3.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x14aa24850&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1392f1590&gt;
 </pre></div>
 </div>
 <img alt="../../_images/480d12cd8226e25007223b73f4549a3347a1e0f7cc707da077812735b03b4327.png" src="../../_images/480d12cd8226e25007223b73f4549a3347a1e0f7cc707da077812735b03b4327.png" />
