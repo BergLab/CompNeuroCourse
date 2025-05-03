@@ -28,13 +28,13 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=87e54e7c" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=9f7f7efb" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -43,7 +43,7 @@
   <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
     <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../_static/copybutton.js?v=f281be69"></script>
@@ -54,18 +54,10 @@
     <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js?v=36754332"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../../_static/sphinx-thebe.js?v=afe5de03"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/mathpython_intro/Linear_Algebra';</script>
@@ -204,9 +196,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../dynamical_systems/dynamical_systems_intro.html">1. Introduction modelling with differential equations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../dynamical_systems/Applications_LT.html">2. Dynamical systems as Linear Transformations</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 3. Simulating neural populations</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 3. Simulating neural populations with Brian</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../simulation_neuralsystems/neuralsimulation_intro.html">1. Simulating neural populations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simulation_neuralsystems/neuralsimulation_intro.html">1. Simulating neural populations with Brian</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../simulation_neuralsystems/a.html">2. Introduction to Brian part 1: Neurons</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../simulation_neuralsystems/b.html">3. Introduction to Brian part 2: Synapses</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../simulation_neuralsystems/c.html">4. Introduction to Brian part 3: Simulations</a></li>
@@ -615,7 +607,7 @@ U_2 = \left[ \begin{array}{r} 2 \\  -1   \end{array}\right]
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/fd49dff6ac8f9c3ac7dc001c20dea20df3b354eddc0aebeb0211dd39607c857f.png" src="../../_images/fd49dff6ac8f9c3ac7dc001c20dea20df3b354eddc0aebeb0211dd39607c857f.png" />
+<img alt="../../_images/8838e799c54b4bcafe28308df9072d8b5374441ac5ed0ac15ad0da6be2fea4d0.png" src="../../_images/8838e799c54b4bcafe28308df9072d8b5374441ac5ed0ac15ad0da6be2fea4d0.png" />
 </div>
 </div>
 <p>It is important to understand that it is the <em>length and direction</em> of this arrow that defines <span class="math notranslate nohighlight">\(U_1\)</span>, not the actual position.  We could draw the arrow in any number of locations, and it would still represent <span class="math notranslate nohighlight">\(U_1\)</span>.</p>
@@ -636,7 +628,7 @@ U_2 = \left[ \begin{array}{r} 2 \\  -1   \end{array}\right]
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/683e3c36f2f40cecb3be97157058b2e74ef8b7405bc85ec22503e0bf2e3557c3.png" src="../../_images/683e3c36f2f40cecb3be97157058b2e74ef8b7405bc85ec22503e0bf2e3557c3.png" />
+<img alt="../../_images/19ae3232becfa4c4ace0d69b6baa593d63f297fe78ee964dc96e115c81d96dde.png" src="../../_images/19ae3232becfa4c4ace0d69b6baa593d63f297fe78ee964dc96e115c81d96dde.png" />
 </div>
 </div>
 <p>When we perform a scalar multiplication, such as <span class="math notranslate nohighlight">\(2U_1\)</span>, we interpret it as multiplying the <em>length of the arrow</em> by the scalar.</p>
@@ -661,7 +653,7 @@ U_2 = \left[ \begin{array}{r} 2 \\  -1   \end{array}\right]
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/03c94bb3a89efc0bc21c2f8aaaf83dcaf3969ee55d3f2cf9c31df192fd1de56b.png" src="../../_images/03c94bb3a89efc0bc21c2f8aaaf83dcaf3969ee55d3f2cf9c31df192fd1de56b.png" />
+<img alt="../../_images/193d21bfa845db322e9a19c180be61d71c7f6fa7ae49c8e1817fce51211202ad.png" src="../../_images/193d21bfa845db322e9a19c180be61d71c7f6fa7ae49c8e1817fce51211202ad.png" />
 </div>
 </div>
 <p>If the scalar is negative, we interpret the scalar multiplication as <em>reversing the direction</em> of the arrow, as well as changing the length.</p>
@@ -686,7 +678,7 @@ U_2 = \left[ \begin{array}{r} 2 \\  -1   \end{array}\right]
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/c125a51477f83a37f2e7f2d3e80a38d0ca88c7db97d2097c16ca874870884f70.png" src="../../_images/c125a51477f83a37f2e7f2d3e80a38d0ca88c7db97d2097c16ca874870884f70.png" />
+<img alt="../../_images/b876cb0bd3acba68775d10d67ea3f01059a1ead64d48cce84d8adb965fdd45fb.png" src="../../_images/b876cb0bd3acba68775d10d67ea3f01059a1ead64d48cce84d8adb965fdd45fb.png" />
 </div>
 </div>
 <p>We can interpret the sum of two vectors as the result of aligning the two arrows tip to tail.</p>
@@ -713,7 +705,7 @@ U_2 = \left[ \begin{array}{r} 2 \\  -1   \end{array}\right]
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/4ce111678b49c81f56df068e2c55311cd25c5370af84d42280415f4c2c5bf316.png" src="../../_images/4ce111678b49c81f56df068e2c55311cd25c5370af84d42280415f4c2c5bf316.png" />
+<img alt="../../_images/c76a4043b634fc2c69629733a85b150e904b84964d717b443188b7371df5c254.png" src="../../_images/c76a4043b634fc2c69629733a85b150e904b84964d717b443188b7371df5c254.png" />
 </div>
 </div>
 <div class="math notranslate nohighlight">
@@ -779,7 +771,7 @@ x_1 - 2x_2 &amp; = &amp; -5 \\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/a5b2bbfa116d5f80050fec4dd7b978e846d0cc373bf39beadc7f92d77055b264.png" src="../../_images/a5b2bbfa116d5f80050fec4dd7b978e846d0cc373bf39beadc7f92d77055b264.png" />
+<img alt="../../_images/8e7ce717874ac494b8b9b7b40bca791f8c6f49e65c39b9bf59a47031c49498a3.png" src="../../_images/8e7ce717874ac494b8b9b7b40bca791f8c6f49e65c39b9bf59a47031c49498a3.png" />
 </div>
 </div>
 <p>We are looking for a unique solution for the two variables <span class="math notranslate nohighlight">\(x_1\)</span> and <span class="math notranslate nohighlight">\(x_2\)</span>.  The system can be described as <span class="math notranslate nohighlight">\(Ax = b\)</span> with the matrices :</p>
@@ -832,7 +824,7 @@ x_1 + 3x_2 &amp; = &amp; 0 \\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/20782bf5f3a2fdeb3548a70255f5769ca7d8f1d8d281235318220b745a2433d9.png" src="../../_images/20782bf5f3a2fdeb3548a70255f5769ca7d8f1d8d281235318220b745a2433d9.png" />
+<img alt="../../_images/9a9903f60917784e4a2f2f7ee70b96101494059f5e21eed267bd555fcf1542d8.png" src="../../_images/9a9903f60917784e4a2f2f7ee70b96101494059f5e21eed267bd555fcf1542d8.png" />
 </div>
 </div>
 </section>
@@ -867,7 +859,7 @@ x_1 + 3x_2 &amp; = &amp; 5 \\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/750423849f73cd645c1eca3ca9868c501871dd6d76cd86cf24020facd9920035.png" src="../../_images/750423849f73cd645c1eca3ca9868c501871dd6d76cd86cf24020facd9920035.png" />
+<img alt="../../_images/ef866b0d005ac71e20a517662acec2bbe4dd1d41fac910ef7bc064cd62e720d1.png" src="../../_images/ef866b0d005ac71e20a517662acec2bbe4dd1d41fac910ef7bc064cd62e720d1.png" />
 </div>
 </div>
 <p>These examples illustrate all of the possibile types of solution sets that might arise in a system of two equations with two unknowns.  Either there will be exactly one solution, no solutions, or an infinite collection of solutions.  A fundamental fact about linear systems is that their solution sets are <em>always</em> one of these three cases.</p>
@@ -961,7 +953,6 @@ I
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">linalg</span>
 <span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">C_inverse</span> <span class="o">=</span> <span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">C</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="nb">print</span><span class="p">(</span><span class="n">C_inverse</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="c1">## Your solution here</span>
 
 <span class="ne">NameError</span>: name &#39;C&#39; is not defined
 </pre></div>

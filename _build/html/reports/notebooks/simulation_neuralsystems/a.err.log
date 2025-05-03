@@ -1,15 +1,15 @@
 Traceback (most recent call last):
-  File "/Users/enaj/.virtualenvs/compneurocourse/lib/python3.11/site-packages/myst_nb/core/execute/inline.py", line 120, in code_cell_outputs
+  File "/opt/anaconda3/lib/python3.11/site-packages/myst_nb/core/execute/inline.py", line 128, in code_cell_outputs
     self._client.execute_cell(
-  File "/Users/enaj/.virtualenvs/compneurocourse/lib/python3.11/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+  File "/opt/anaconda3/lib/python3.11/site-packages/jupyter_core/utils/__init__.py", line 173, in wrapped
     return loop.run_until_complete(inner)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/enaj/miniconda3/lib/python3.11/asyncio/base_events.py", line 653, in run_until_complete
+  File "/opt/anaconda3/lib/python3.11/asyncio/base_events.py", line 653, in run_until_complete
     return future.result()
            ^^^^^^^^^^^^^^^
-  File "/Users/enaj/.virtualenvs/compneurocourse/lib/python3.11/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+  File "/opt/anaconda3/lib/python3.11/site-packages/nbclient/client.py", line 1058, in async_execute_cell
     await self._check_raise_for_error(cell, cell_index, exec_reply)
-  File "/Users/enaj/.virtualenvs/compneurocourse/lib/python3.11/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+  File "/opt/anaconda3/lib/python3.11/site-packages/nbclient/client.py", line 914, in _check_raise_for_error
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
@@ -20,32 +20,31 @@ nbclient.exceptions.CellExecutionError: An error occurred while executing the fo
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mDimensionMismatchError[0m                    Traceback (most recent call last)
 Cell [0;32mIn[7], line 1[0m
-[0;32m----> 1[0m [38;5;241;43m5[39;49m[38;5;241;43m*[39;49m[43mamp[49m[38;5;241;43m+[39;49m[38;5;241;43m10[39;49m[38;5;241;43m*[39;49m[43mvolt[49m
+[0;32m----> 1[0m [38;5;241m5[39m[38;5;241m*[39mamp[38;5;241m+[39m[38;5;241m10[39m[38;5;241m*[39mvolt
 
-File [0;32m~/.virtualenvs/compneurocourse/lib/python3.11/site-packages/brian2/units/fundamentalunits.py:1605[0m, in [0;36mQuantity.__add__[0;34m(self, other)[0m
-[1;32m   1604[0m [38;5;28;01mdef[39;00m [38;5;21m__add__[39m([38;5;28mself[39m, other):
-[0;32m-> 1605[0m     [38;5;28;01mreturn[39;00m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_binary_operation[49m[43m([49m
-[1;32m   1606[0m [43m        [49m[43mother[49m[43m,[49m[43m [49m[43moperator[49m[38;5;241;43m.[39;49m[43madd[49m[43m,[49m[43m [49m[43mfail_for_mismatch[49m[38;5;241;43m=[39;49m[38;5;28;43;01mTrue[39;49;00m[43m,[49m[43m [49m[43moperator_str[49m[38;5;241;43m=[39;49m[38;5;124;43m"[39;49m[38;5;124;43m+[39;49m[38;5;124;43m"[39;49m
-[1;32m   1607[0m [43m    [49m[43m)[49m
+File [0;32m/opt/anaconda3/lib/python3.11/site-packages/brian2/units/fundamentalunits.py:1193[0m, in [0;36mQuantity.__array_ufunc__[0;34m(self, uf, method, *inputs, **kwargs)[0m
+[1;32m   1190[0m [38;5;28;01melif[39;00m uf[38;5;241m.[39m[38;5;18m__name__[39m [38;5;129;01min[39;00m UFUNCS_MATCHING_DIMENSIONS [38;5;241m+[39m UFUNCS_COMPARISONS:
+[1;32m   1191[0m     [38;5;66;03m# Ok if dimension of arguments match (for reductions, they always do)[39;00m
+[1;32m   1192[0m     [38;5;28;01mif[39;00m method [38;5;241m==[39m [38;5;124m"[39m[38;5;124m__call__[39m[38;5;124m"[39m:
+[0;32m-> 1193[0m         fail_for_dimension_mismatch(
+[1;32m   1194[0m             inputs[[38;5;241m0[39m],
+[1;32m   1195[0m             inputs[[38;5;241m1[39m],
+[1;32m   1196[0m             error_message[38;5;241m=[39m(
+[1;32m   1197[0m                 [38;5;124m"[39m[38;5;124mCannot calculate [39m[38;5;132;01m{val1}[39;00m[38;5;124m [39m[38;5;132;01m%s[39;00m[38;5;124m [39m[38;5;132;01m{val2}[39;00m[38;5;124m, the units do not match[39m[38;5;124m"[39m
+[1;32m   1198[0m             )
+[1;32m   1199[0m             [38;5;241m%[39m uf[38;5;241m.[39m[38;5;18m__name__[39m,
+[1;32m   1200[0m             val1[38;5;241m=[39minputs[[38;5;241m0[39m],
+[1;32m   1201[0m             val2[38;5;241m=[39minputs[[38;5;241m1[39m],
+[1;32m   1202[0m         )
+[1;32m   1203[0m     [38;5;28;01mif[39;00m uf[38;5;241m.[39m[38;5;18m__name__[39m [38;5;129;01min[39;00m UFUNCS_COMPARISONS:
+[1;32m   1204[0m         [38;5;28;01mreturn[39;00m uf_method([38;5;241m*[39m[np[38;5;241m.[39masarray(i) [38;5;28;01mfor[39;00m i [38;5;129;01min[39;00m inputs], [38;5;241m*[39m[38;5;241m*[39mkwargs)
 
-File [0;32m~/.virtualenvs/compneurocourse/lib/python3.11/site-packages/brian2/units/fundamentalunits.py:1542[0m, in [0;36mQuantity._binary_operation[0;34m(self, other, operation, dim_operation, fail_for_mismatch, operator_str, inplace)[0m
-[1;32m   1537[0m     [38;5;28;01melse[39;00m:
-[1;32m   1538[0m         message [38;5;241m=[39m (
-[1;32m   1539[0m             [38;5;124m"[39m[38;5;124mCannot calculate [39m[38;5;132;01m{value1}[39;00m[38;5;124m [39m[38;5;132;01m%s[39;00m[38;5;124m [39m[38;5;132;01m{value2}[39;00m[38;5;124m, units do not match[39m[38;5;124m"[39m
-[1;32m   1540[0m             [38;5;241m%[39m operator_str
-[1;32m   1541[0m         )
-[0;32m-> 1542[0m         _, other_dim [38;5;241m=[39m [43mfail_for_dimension_mismatch[49m[43m([49m
-[1;32m   1543[0m [43m            [49m[38;5;28;43mself[39;49m[43m,[49m[43m [49m[43mother[49m[43m,[49m[43m [49m[43mmessage[49m[43m,[49m[43m [49m[43mvalue1[49m[38;5;241;43m=[39;49m[38;5;28;43mself[39;49m[43m,[49m[43m [49m[43mvalue2[49m[38;5;241;43m=[39;49m[43mother[49m
-[1;32m   1544[0m [43m        [49m[43m)[49m
-[1;32m   1546[0m [38;5;28;01mif[39;00m other_dim [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m:
-[1;32m   1547[0m     other_dim [38;5;241m=[39m get_dimensions(other)
+File [0;32m/opt/anaconda3/lib/python3.11/site-packages/brian2/units/fundamentalunits.py:266[0m, in [0;36mfail_for_dimension_mismatch[0;34m(obj1, obj2, error_message, **error_quantities)[0m
+[1;32m    264[0m         [38;5;28;01mraise[39;00m DimensionMismatchError(error_message, dim1)
+[1;32m    265[0m     [38;5;28;01melse[39;00m:
+[0;32m--> 266[0m         [38;5;28;01mraise[39;00m DimensionMismatchError(error_message, dim1, dim2)
+[1;32m    267[0m [38;5;28;01melse[39;00m:
+[1;32m    268[0m     [38;5;28;01mreturn[39;00m dim1, dim2
 
-File [0;32m~/.virtualenvs/compneurocourse/lib/python3.11/site-packages/brian2/units/fundamentalunits.py:260[0m, in [0;36mfail_for_dimension_mismatch[0;34m(obj1, obj2, error_message, **error_quantities)[0m
-[1;32m    258[0m         [38;5;28;01mraise[39;00m DimensionMismatchError(error_message, dim1)
-[1;32m    259[0m     [38;5;28;01melse[39;00m:
-[0;32m--> 260[0m         [38;5;28;01mraise[39;00m DimensionMismatchError(error_message, dim1, dim2)
-[1;32m    261[0m [38;5;28;01melse[39;00m:
-[1;32m    262[0m     [38;5;28;01mreturn[39;00m dim1, dim2
-
-[0;31mDimensionMismatchError[0m: Cannot calculate 5. A + 10. V, units do not match (units are A and V).
+[0;31mDimensionMismatchError[0m: Cannot calculate 5. A add 10. V, the units do not match (units are A and V).
 

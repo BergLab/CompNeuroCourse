@@ -31,11 +31,15 @@ parts:
   - file: notebooks/simulation_neuralsystems/a
   - file: notebooks/simulation_neuralsystems/b
   - file: notebooks/simulation_neuralsystems/c
-- caption: Chapter 4. Data analysis and Machine learning
+- caption: Chapter 4. Data Analysis and Machine learning TEST
   numbered: true
   chapters:
   - file: notebooks/ML/a
   - file: notebooks/ML/b
+  - file: notebooks/ML/CompNeuro_Basic_ML_Exercises.ipynb
+  - file: notebooks/ML/CompNeuro_Introducing_Scikit_Learn.ipynb
+  - file: notebooks/ML/CompNeuro_MLP_MNIST_Classification.ipynb
+    
 # - caption: Chapter 5. Reinforcement Learning and Control Theory
 #   numbered: true
 #   chapters:

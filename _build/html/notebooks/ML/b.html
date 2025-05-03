@@ -28,13 +28,13 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=87e54e7c" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=9f7f7efb" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -43,7 +43,7 @@
   <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
     <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../_static/copybutton.js?v=f281be69"></script>
@@ -54,20 +54,10 @@
     <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js?v=36754332"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../../_static/sphinx-thebe.js?v=afe5de03"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/ML/b';</script>
     <script src="../../_static/custom.js?v=1fd2e2ea"></script>
     <link rel="icon" href="../../_static/favicon.png"/>
@@ -204,7 +194,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../dynamical_systems/dynamical_systems_intro.html">1. Introduction modelling with differential equations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../dynamical_systems/Applications_LT.html">2. Dynamical systems as Linear Transformations</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 3. Simulating neural populations</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 3. Simulating neural populations with Brian</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../simulation_neuralsystems/neuralsimulation_intro.html">1. Simulating neural populations with Brian</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../simulation_neuralsystems/a.html">2. Introduction to Brian part 1: Neurons</a></li>
@@ -483,28 +473,22 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-description">2.5.1. Data description</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computing-correlations">2.6. Computing correlations</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">2.6.1. Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#non-linear-correlations">2.6.2. Non-linear correlations</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-relation-between-correlation-coefficients-and-predictive-models">2.6.3. The relation between correlation coefficients and predictive models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supervised-learning">2.6. Supervised Learning</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regression">2.6.1. Regression</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">2.6.1.1. Exercise</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supervised-learning">2.7. Supervised Learning</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regression">2.7.1. Regression</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">2.7.1.1. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#real-data">2.6.2. Real data</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">2.6.2.1. Exercise</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#real-data">2.7.2. Real data</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2.7.2.1. Exercise</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classification">2.7.3. Classification</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">2.7.3.1. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classification">2.6.3. Classification</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2.6.3.1. Exercise</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-clustering">2.8. Bonus: Clustering</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-clustering">2.7. Bonus: Clustering</a></li>
 </ul>
             </nav>
         </div>
@@ -520,7 +504,7 @@ document.write(`
 <h1><span class="section-number">2. </span>Machine Learning<a class="headerlink" href="#machine-learning" title="Link to this heading">#</a></h1>
 <section id="supporting-material">
 <h2><span class="section-number">2.1. </span>Supporting material<a class="headerlink" href="#supporting-material" title="Link to this heading">#</a></h2>
-<p>This chapter’s supporting material is Steve Brunton’s<a class="reference external" href="https://youtu.be/Vx2DpMgplEM">machine learning Primer</a>:</p>
+<p>This chapter’s supporting material is Steve Brunton’s <a class="reference external" href="https://youtu.be/Vx2DpMgplEM">machine learning Primer</a>:</p>
 <div class="cell tag_hide-input tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html">
@@ -562,7 +546,7 @@ document.write(`
         ></iframe>
         </div></div>
 </div>
-<p>To develop a stronger intuitio of how neural networks work: <a class="reference external" href="https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi">3blue1brown  Neural networks playlist</a>:</p>
+<p>To develop a stronger intuition of how neural networks work: <a class="reference external" href="https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi">3blue1brown  Neural networks playlist</a>:</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html">
@@ -744,29 +728,6 @@ If you are working on Colab, you will need to upload the data.</p>
 </table>
 </div></div></div>
 </div>
-</section>
-</section>
-<section id="computing-correlations">
-<h2><span class="section-number">2.6. </span>Computing correlations<a class="headerlink" href="#computing-correlations" title="Link to this heading">#</a></h2>
-<p>Let’s explore the linear correlations of the data. <strong>Pearson correlation coefficient</strong> <span class="math notranslate nohighlight">\(\rho\)</span> is a measure of how linearly correlated two variables are: it’s 1 if there is a positive correlation, -1 if negative and zero if none.</p>
-<div align="center">
-<p style="text-align:center;"><img src="https://upload.wikimedia.org/wikipedia/commons/3/34/Correlation_coefficient.png" width="500"/>
-</div>
-<p>A correlation coefficient tell us how much one variable is related to another or, in other words, how much one variable informs us about the other one. For instance, your height in meters should be perfectly correlated to your height measured in feet <span class="math notranslate nohighlight">\(\rho=1\)</span>, but your height should not be correlated to how much chocolate you eat when you’re feeling sad <span class="math notranslate nohighlight">\(\rho=0\)</span>.</p>
-<p>A correlation is said to be linear if you can convert from variable to other one by using linear transformations only —ie. addition and multiplication but not applying powers or square roots, etc.</p>
-<p>Let’s use Scipy to compute the correlations of our data. One of the nice aspects of the Python ecosystem is that data is often interoperable between libraries, here we’re gonna load our star data with Pandas and use Scipy to compute the correlations.</p>
-<p>Let’s start by doing a sanity check, a variable should be VERY correlated to itself, right? Let’s plot the temperature against the temperature using a scatter plot:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s1">&#39;Temperature&#39;</span><span class="p">,</span><span class="s1">&#39;Temperature&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span><span class="mi">10</span><span class="p">));</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/e80ab7bf9efecf712e81c9bae82ea68b7cc85175281db2b6d467b117aebf6dbc.png" src="../../_images/e80ab7bf9efecf712e81c9bae82ea68b7cc85175281db2b6d467b117aebf6dbc.png" />
-</div>
-</div>
-<p>What value of the pearson correlation coefficient do expect to have? If it’s not obvious to you, think about it before running the next code cell.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
@@ -782,34 +743,13 @@ If you are working on Colab, you will need to upload the data.</p>
 </div>
 </div>
 </div>
-<p>A variable always has correlation coefficient of one with itself. Let’s now explore the rest of the data.</p>
-<section id="exercise">
-<h3><span class="section-number">2.6.1. </span>Exercise<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Find the two pairs of variables with the highest absolute correlation # Hint: You can use Scipy’s stats.pearsonr function, otherwise Pandas data frames have a method <code class="docutils literal notranslate"><span class="pre">corr()</span></code> that outputs Pearson correlation between the different variables. # Hint 2 : If you wanna plot you can use <code class="docutils literal notranslate"><span class="pre">dataframe_name.corr().style.background_gradient(cmap='coolwarm')</span></code></p></li>
-<li><p>Once you find the two variables, make their scatter plot again but this apply the logarithmic function <code class="docutils literal notranslate"><span class="pre">np.log(df['whichever</span> <span class="pre">variable'])</span></code> before computing the Pearson correlation coefficient again. How does the Pearson correlation coefficient  changes after applying the logarithmic transformation?</p></li>
-</ul>
-</section>
-<section id="non-linear-correlations">
-<h3><span class="section-number">2.6.2. </span>Non-linear correlations<a class="headerlink" href="#non-linear-correlations" title="Link to this heading">#</a></h3>
-<p>Look at the following figure, the number above each dataset is their Pearson coefficient:</p>
-<div align="center">
-<p style="text-align:center;"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Correlation_examples2.svg/2880px-Correlation_examples2.svg.png" width="500"/>
-</div>
-<p>Notice how the data points on the bottom clearly have some correlations, however Pearson tells us it’s zero.. That’s because they are <strong>non linear</strong> correlations.</p>
-<p>There exist <em>many</em> types of correlations coefficients we can compute, some of the like Spearman, can even capture non linear correlations. We won’t go explore them further here, but be aware that they exist if you ever are suspicious your data may be trying to hide non-linear correlations.</p>
-</section>
-<section id="the-relation-between-correlation-coefficients-and-predictive-models">
-<h3><span class="section-number">2.6.3. </span>The relation between correlation coefficients and predictive models<a class="headerlink" href="#the-relation-between-correlation-coefficients-and-predictive-models" title="Link to this heading">#</a></h3>
-<p>Machine learning models (as any other model) are typically used to connect one variable to another. What happens if these two variables are not correlated? Well then it’s simply not possible to build a model predicting one variable as a function of the other. If two variables X and Y are independent —ie. not correlated— that means that knowing X does not provide us any information about Y. The opposite is true, if two quantities are correlated, we should —in principle— be able to build a model linking them.</p>
-<p>Now, in most natural phenomena, quantities are high-dimensional and non-linearly correlated so we can’t simply predict if we would be able to build a model based on some correlation coefficient. In these cases, training and evaluating the model is the only way of looking for correlations.</p>
 </section>
 </section>
 <section id="supervised-learning">
-<h2><span class="section-number">2.7. </span>Supervised Learning<a class="headerlink" href="#supervised-learning" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">2.6. </span>Supervised Learning<a class="headerlink" href="#supervised-learning" title="Link to this heading">#</a></h2>
 <p>Supervised learning (SL) is the most common type of task in machine learning. It consist in finding a function that maps on space onto another, eg. the size of star to its luminosity. It can sub-divide into two types of task: regression and classification.</p>
 <section id="regression">
-<h3><span class="section-number">2.7.1. </span>Regression<a class="headerlink" href="#regression" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">2.6.1. </span>Regression<a class="headerlink" href="#regression" title="Link to this heading">#</a></h3>
 <p>Let’s start by performing a regression (mapping one continual variable onto another one) on fake data so we make sure our set-up allows us to train models properly. We will generate the values from a sine function and train a neural network on them. Read the code line by line and make sure you understand what’s going on.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -843,15 +783,15 @@ If you are working on Colab, you will need to upload the data.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Score on training:  0.9990192355249721
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Score on training:  0.9987600798134659
 </pre></div>
 </div>
-<img alt="../../_images/3b9debc0198e1041ea94eb29bc6a83b2d7dbdbd577917710bb5ff3ed362d3e36.png" src="../../_images/3b9debc0198e1041ea94eb29bc6a83b2d7dbdbd577917710bb5ff3ed362d3e36.png" />
+<img alt="../../_images/a1ae405acef28eae6b4aa92aa26250a833e278f02043458a039334ff7e7feae7.png" src="../../_images/a1ae405acef28eae6b4aa92aa26250a833e278f02043458a039334ff7e7feae7.png" />
 </div>
 </div>
 <p>It seems to be working, the score should be close to 1.0 —which would be a perfect fit.</p>
-<section id="id1">
-<h4><span class="section-number">2.7.1.1. </span>Exercise<a class="headerlink" href="#id1" title="Link to this heading">#</a></h4>
+<section id="exercise">
+<h4><span class="section-number">2.6.1.1. </span>Exercise<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Extend the plot of the model we just trained so it predicts values outside of the range of those we used to train it. Does it still perform well on that range?</p></li>
 </ul>
@@ -865,7 +805,7 @@ If you are working on Colab, you will need to upload the data.</p>
 </section>
 </section>
 <section id="real-data">
-<h3><span class="section-number">2.7.2. </span>Real data<a class="headerlink" href="#real-data" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">2.6.2. </span>Real data<a class="headerlink" href="#real-data" title="Link to this heading">#</a></h3>
 <p>Moving on onto real data. Both the <em>Luminosity</em> and <em>Absolute Magnitude</em> relate to how bright a star is. Let’s try to figure out what the exact relation between them is. Let’s plot them.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -874,7 +814,7 @@ If you are working on Colab, you will need to upload the data.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/5c9e72c8b469fef0dcde45574a0066c5c62585c5c5edd36064f9e8ec1165b4ca.png" src="../../_images/5c9e72c8b469fef0dcde45574a0066c5c62585c5c5edd36064f9e8ec1165b4ca.png" />
+<img alt="../../_images/9aa93f0a5c3e06f9ec79a05044a9233730ada98f18f2de8cdf58362aed7440f7.png" src="../../_images/9aa93f0a5c3e06f9ec79a05044a9233730ada98f18f2de8cdf58362aed7440f7.png" />
 </div>
 </div>
 <p>As you already knew, there is indeed a strong correlation between these two variables. You could even try to guess what the analytical formula is given the shape —or google it— but rather let’s see if we can instead build a model to predict the absolute magnitude for each luminosity. We could try a linear model but the relation is not quite linear, is it? Ie. it’s not a straight line. We could also try to fit a polynomial or a logarithmic function.. Instead we will build a neural network model so we don’t need to make any assumption about the relation between the variables.</p>
@@ -919,413 +859,9 @@ If you are working on Colab, you will need to upload the data.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><style>#sk-container-id-1 {
-  /* Definition of color scheme common for light and dark mode */
-  --sklearn-color-text: black;
-  --sklearn-color-line: gray;
-  /* Definition of color scheme for unfitted estimators */
-  --sklearn-color-unfitted-level-0: #fff5e6;
-  --sklearn-color-unfitted-level-1: #f6e4d2;
-  --sklearn-color-unfitted-level-2: #ffe0b3;
-  --sklearn-color-unfitted-level-3: chocolate;
-  /* Definition of color scheme for fitted estimators */
-  --sklearn-color-fitted-level-0: #f0f8ff;
-  --sklearn-color-fitted-level-1: #d4ebff;
-  --sklearn-color-fitted-level-2: #b3dbfd;
-  --sklearn-color-fitted-level-3: cornflowerblue;
-
-  /* Specific color for light theme */
-  --sklearn-color-text-on-default-background: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, black)));
-  --sklearn-color-background: var(--sg-background-color, var(--theme-background, var(--jp-layout-color0, white)));
-  --sklearn-color-border-box: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, black)));
-  --sklearn-color-icon: #696969;
-
-  @media (prefers-color-scheme: dark) {
-    /* Redefinition of color scheme for dark theme */
-    --sklearn-color-text-on-default-background: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, white)));
-    --sklearn-color-background: var(--sg-background-color, var(--theme-background, var(--jp-layout-color0, #111)));
-    --sklearn-color-border-box: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, white)));
-    --sklearn-color-icon: #878787;
-  }
-}
-
-#sk-container-id-1 {
-  color: var(--sklearn-color-text);
-}
-
-#sk-container-id-1 pre {
-  padding: 0;
-}
-
-#sk-container-id-1 input.sk-hidden--visually {
-  border: 0;
-  clip: rect(1px 1px 1px 1px);
-  clip: rect(1px, 1px, 1px, 1px);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-}
-
-#sk-container-id-1 div.sk-dashed-wrapped {
-  border: 1px dashed var(--sklearn-color-line);
-  margin: 0 0.4em 0.5em 0.4em;
-  box-sizing: border-box;
-  padding-bottom: 0.4em;
-  background-color: var(--sklearn-color-background);
-}
-
-#sk-container-id-1 div.sk-container {
-  /* jupyter's `normalize.less` sets `[hidden] { display: none; }`
-     but bootstrap.min.css set `[hidden] { display: none !important; }`
-     so we also need the `!important` here to be able to override the
-     default hidden behavior on the sphinx rendered scikit-learn.org.
-     See: https://github.com/scikit-learn/scikit-learn/issues/21755 */
-  display: inline-block !important;
-  position: relative;
-}
-
-#sk-container-id-1 div.sk-text-repr-fallback {
-  display: none;
-}
-
-div.sk-parallel-item,
-div.sk-serial,
-div.sk-item {
-  /* draw centered vertical line to link estimators */
-  background-image: linear-gradient(var(--sklearn-color-text-on-default-background), var(--sklearn-color-text-on-default-background));
-  background-size: 2px 100%;
-  background-repeat: no-repeat;
-  background-position: center center;
-}
-
-/* Parallel-specific style estimator block */
-
-#sk-container-id-1 div.sk-parallel-item::after {
-  content: "";
-  width: 100%;
-  border-bottom: 2px solid var(--sklearn-color-text-on-default-background);
-  flex-grow: 1;
-}
-
-#sk-container-id-1 div.sk-parallel {
-  display: flex;
-  align-items: stretch;
-  justify-content: center;
-  background-color: var(--sklearn-color-background);
-  position: relative;
-}
-
-#sk-container-id-1 div.sk-parallel-item {
-  display: flex;
-  flex-direction: column;
-}
-
-#sk-container-id-1 div.sk-parallel-item:first-child::after {
-  align-self: flex-end;
-  width: 50%;
-}
-
-#sk-container-id-1 div.sk-parallel-item:last-child::after {
-  align-self: flex-start;
-  width: 50%;
-}
-
-#sk-container-id-1 div.sk-parallel-item:only-child::after {
-  width: 0;
-}
-
-/* Serial-specific style estimator block */
-
-#sk-container-id-1 div.sk-serial {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: var(--sklearn-color-background);
-  padding-right: 1em;
-  padding-left: 1em;
-}
-
-
-/* Toggleable style: style used for estimator/Pipeline/ColumnTransformer box that is
-clickable and can be expanded/collapsed.
-- Pipeline and ColumnTransformer use this feature and define the default style
-- Estimators will overwrite some part of the style using the `sk-estimator` class
-*/
-
-/* Pipeline and ColumnTransformer style (default) */
-
-#sk-container-id-1 div.sk-toggleable {
-  /* Default theme specific background. It is overwritten whether we have a
-  specific estimator or a Pipeline/ColumnTransformer */
-  background-color: var(--sklearn-color-background);
-}
-
-/* Toggleable label */
-#sk-container-id-1 label.sk-toggleable__label {
-  cursor: pointer;
-  display: block;
-  width: 100%;
-  margin-bottom: 0;
-  padding: 0.5em;
-  box-sizing: border-box;
-  text-align: center;
-}
-
-#sk-container-id-1 label.sk-toggleable__label-arrow:before {
-  /* Arrow on the left of the label */
-  content: "▸";
-  float: left;
-  margin-right: 0.25em;
-  color: var(--sklearn-color-icon);
-}
-
-#sk-container-id-1 label.sk-toggleable__label-arrow:hover:before {
-  color: var(--sklearn-color-text);
-}
-
-/* Toggleable content - dropdown */
-
-#sk-container-id-1 div.sk-toggleable__content {
-  max-height: 0;
-  max-width: 0;
-  overflow: hidden;
-  text-align: left;
-  /* unfitted */
-  background-color: var(--sklearn-color-unfitted-level-0);
-}
-
-#sk-container-id-1 div.sk-toggleable__content.fitted {
-  /* fitted */
-  background-color: var(--sklearn-color-fitted-level-0);
-}
-
-#sk-container-id-1 div.sk-toggleable__content pre {
-  margin: 0.2em;
-  border-radius: 0.25em;
-  color: var(--sklearn-color-text);
-  /* unfitted */
-  background-color: var(--sklearn-color-unfitted-level-0);
-}
-
-#sk-container-id-1 div.sk-toggleable__content.fitted pre {
-  /* unfitted */
-  background-color: var(--sklearn-color-fitted-level-0);
-}
-
-#sk-container-id-1 input.sk-toggleable__control:checked~div.sk-toggleable__content {
-  /* Expand drop-down */
-  max-height: 200px;
-  max-width: 100%;
-  overflow: auto;
-}
-
-#sk-container-id-1 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {
-  content: "▾";
-}
-
-/* Pipeline/ColumnTransformer-specific style */
-
-#sk-container-id-1 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {
-  color: var(--sklearn-color-text);
-  background-color: var(--sklearn-color-unfitted-level-2);
-}
-
-#sk-container-id-1 div.sk-label.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
-  background-color: var(--sklearn-color-fitted-level-2);
-}
-
-/* Estimator-specific style */
-
-/* Colorize estimator box */
-#sk-container-id-1 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {
-  /* unfitted */
-  background-color: var(--sklearn-color-unfitted-level-2);
-}
-
-#sk-container-id-1 div.sk-estimator.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
-  /* fitted */
-  background-color: var(--sklearn-color-fitted-level-2);
-}
-
-#sk-container-id-1 div.sk-label label.sk-toggleable__label,
-#sk-container-id-1 div.sk-label label {
-  /* The background is the default theme color */
-  color: var(--sklearn-color-text-on-default-background);
-}
-
-/* On hover, darken the color of the background */
-#sk-container-id-1 div.sk-label:hover label.sk-toggleable__label {
-  color: var(--sklearn-color-text);
-  background-color: var(--sklearn-color-unfitted-level-2);
-}
-
-/* Label box, darken color on hover, fitted */
-#sk-container-id-1 div.sk-label.fitted:hover label.sk-toggleable__label.fitted {
-  color: var(--sklearn-color-text);
-  background-color: var(--sklearn-color-fitted-level-2);
-}
-
-/* Estimator label */
-
-#sk-container-id-1 div.sk-label label {
-  font-family: monospace;
-  font-weight: bold;
-  display: inline-block;
-  line-height: 1.2em;
-}
-
-#sk-container-id-1 div.sk-label-container {
-  text-align: center;
-}
-
-/* Estimator-specific */
-#sk-container-id-1 div.sk-estimator {
-  font-family: monospace;
-  border: 1px dotted var(--sklearn-color-border-box);
-  border-radius: 0.25em;
-  box-sizing: border-box;
-  margin-bottom: 0.5em;
-  /* unfitted */
-  background-color: var(--sklearn-color-unfitted-level-0);
-}
-
-#sk-container-id-1 div.sk-estimator.fitted {
-  /* fitted */
-  background-color: var(--sklearn-color-fitted-level-0);
-}
-
-/* on hover */
-#sk-container-id-1 div.sk-estimator:hover {
-  /* unfitted */
-  background-color: var(--sklearn-color-unfitted-level-2);
-}
-
-#sk-container-id-1 div.sk-estimator.fitted:hover {
-  /* fitted */
-  background-color: var(--sklearn-color-fitted-level-2);
-}
-
-/* Specification for estimator info (e.g. "i" and "?") */
-
-/* Common style for "i" and "?" */
-
-.sk-estimator-doc-link,
-a:link.sk-estimator-doc-link,
-a:visited.sk-estimator-doc-link {
-  float: right;
-  font-size: smaller;
-  line-height: 1em;
-  font-family: monospace;
-  background-color: var(--sklearn-color-background);
-  border-radius: 1em;
-  height: 1em;
-  width: 1em;
-  text-decoration: none !important;
-  margin-left: 1ex;
-  /* unfitted */
-  border: var(--sklearn-color-unfitted-level-1) 1pt solid;
-  color: var(--sklearn-color-unfitted-level-1);
-}
-
-.sk-estimator-doc-link.fitted,
-a:link.sk-estimator-doc-link.fitted,
-a:visited.sk-estimator-doc-link.fitted {
-  /* fitted */
-  border: var(--sklearn-color-fitted-level-1) 1pt solid;
-  color: var(--sklearn-color-fitted-level-1);
-}
-
-/* On hover */
-div.sk-estimator:hover .sk-estimator-doc-link:hover,
-.sk-estimator-doc-link:hover,
-div.sk-label-container:hover .sk-estimator-doc-link:hover,
-.sk-estimator-doc-link:hover {
-  /* unfitted */
-  background-color: var(--sklearn-color-unfitted-level-3);
-  color: var(--sklearn-color-background);
-  text-decoration: none;
-}
-
-div.sk-estimator.fitted:hover .sk-estimator-doc-link.fitted:hover,
-.sk-estimator-doc-link.fitted:hover,
-div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
-.sk-estimator-doc-link.fitted:hover {
-  /* fitted */
-  background-color: var(--sklearn-color-fitted-level-3);
-  color: var(--sklearn-color-background);
-  text-decoration: none;
-}
-
-/* Span, style for the box shown on hovering the info icon */
-.sk-estimator-doc-link span {
-  display: none;
-  z-index: 9999;
-  position: relative;
-  font-weight: normal;
-  right: .2ex;
-  padding: .5ex;
-  margin: .5ex;
-  width: min-content;
-  min-width: 20ex;
-  max-width: 50ex;
-  color: var(--sklearn-color-text);
-  box-shadow: 2pt 2pt 4pt #999;
-  /* unfitted */
-  background: var(--sklearn-color-unfitted-level-0);
-  border: .5pt solid var(--sklearn-color-unfitted-level-3);
-}
-
-.sk-estimator-doc-link.fitted span {
-  /* fitted */
-  background: var(--sklearn-color-fitted-level-0);
-  border: var(--sklearn-color-fitted-level-3);
-}
-
-.sk-estimator-doc-link:hover span {
-  display: block;
-}
-
-/* "?"-specific style due to the `<a>` HTML tag */
-
-#sk-container-id-1 a.estimator_doc_link {
-  float: right;
-  font-size: 1rem;
-  line-height: 1em;
-  font-family: monospace;
-  background-color: var(--sklearn-color-background);
-  border-radius: 1rem;
-  height: 1rem;
-  width: 1rem;
-  text-decoration: none;
-  /* unfitted */
-  color: var(--sklearn-color-unfitted-level-1);
-  border: var(--sklearn-color-unfitted-level-1) 1pt solid;
-}
-
-#sk-container-id-1 a.estimator_doc_link.fitted {
-  /* fitted */
-  border: var(--sklearn-color-fitted-level-1) 1pt solid;
-  color: var(--sklearn-color-fitted-level-1);
-}
-
-/* On hover */
-#sk-container-id-1 a.estimator_doc_link:hover {
-  /* unfitted */
-  background-color: var(--sklearn-color-unfitted-level-3);
-  color: var(--sklearn-color-background);
-  text-decoration: none;
-}
-
-#sk-container-id-1 a.estimator_doc_link.fitted:hover {
-  /* fitted */
-  background-color: var(--sklearn-color-fitted-level-3);
-}
-</style><div id="sk-container-id-1" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>MLPRegressor(activation=&#x27;tanh&#x27;, hidden_layer_sizes=(300, 300, 300),
-             learning_rate=&#x27;adaptive&#x27;, learning_rate_init=5e-05, max_iter=1000)</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-1" type="checkbox" checked><label for="sk-estimator-id-1" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">&nbsp;&nbsp;MLPRegressor<a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.4/modules/generated/sklearn.neural_network.MLPRegressor.html">?<span>Documentation for MLPRegressor</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></label><div class="sk-toggleable__content fitted"><pre>MLPRegressor(activation=&#x27;tanh&#x27;, hidden_layer_sizes=(300, 300, 300),
-             learning_rate=&#x27;adaptive&#x27;, learning_rate_init=5e-05, max_iter=1000)</pre></div> </div></div></div></div></div></div>
+<div class="output text_html"><style>#sk-container-id-1 {color: black;background-color: white;}#sk-container-id-1 pre{padding: 0;}#sk-container-id-1 div.sk-toggleable {background-color: white;}#sk-container-id-1 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-container-id-1 label.sk-toggleable__label-arrow:before {content: "▸";float: left;margin-right: 0.25em;color: #696969;}#sk-container-id-1 label.sk-toggleable__label-arrow:hover:before {color: black;}#sk-container-id-1 div.sk-estimator:hover label.sk-toggleable__label-arrow:before {color: black;}#sk-container-id-1 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-container-id-1 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-container-id-1 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-container-id-1 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {content: "▾";}#sk-container-id-1 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-container-id-1 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-container-id-1 div.sk-estimator:hover {background-color: #d4ebff;}#sk-container-id-1 div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-container-id-1 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: 0;}#sk-container-id-1 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;position: relative;}#sk-container-id-1 div.sk-item {position: relative;z-index: 1;}#sk-container-id-1 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;position: relative;}#sk-container-id-1 div.sk-item::before, #sk-container-id-1 div.sk-parallel-item::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: -1;}#sk-container-id-1 div.sk-parallel-item {display: flex;flex-direction: column;z-index: 1;position: relative;background-color: white;}#sk-container-id-1 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-container-id-1 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-container-id-1 div.sk-parallel-item:only-child::after {width: 0;}#sk-container-id-1 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;}#sk-container-id-1 div.sk-label label {font-family: monospace;font-weight: bold;display: inline-block;line-height: 1.2em;}#sk-container-id-1 div.sk-label-container {text-align: center;}#sk-container-id-1 div.sk-container {/* jupyter's `normalize.less` sets `[hidden] { display: none; }` but bootstrap.min.css set `[hidden] { display: none !important; }` so we also need the `!important` here to be able to override the default hidden behavior on the sphinx rendered scikit-learn.org. See: https://github.com/scikit-learn/scikit-learn/issues/21755 */display: inline-block !important;position: relative;}#sk-container-id-1 div.sk-text-repr-fallback {display: none;}</style><div id="sk-container-id-1" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>MLPRegressor(activation=&#x27;tanh&#x27;, hidden_layer_sizes=(300, 300, 300),
+             learning_rate=&#x27;adaptive&#x27;, learning_rate_init=5e-05, max_iter=1000)</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-1" type="checkbox" checked><label for="sk-estimator-id-1" class="sk-toggleable__label sk-toggleable__label-arrow">MLPRegressor</label><div class="sk-toggleable__content"><pre>MLPRegressor(activation=&#x27;tanh&#x27;, hidden_layer_sizes=(300, 300, 300),
+             learning_rate=&#x27;adaptive&#x27;, learning_rate_init=5e-05, max_iter=1000)</pre></div></div></div></div></div></div></div>
 </div>
 <p>Let’s print the score:</p>
 <div class="cell docutils container">
@@ -1336,8 +872,8 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Score on training set:  0.904864339662567
-Score on test set:  0.907769632875965
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Score on training set:  0.9107069502783415
+Score on test set:  0.8566562516399513
 </pre></div>
 </div>
 </div>
@@ -1354,12 +890,12 @@ Score on test set:  0.907769632875965
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/0e75adff4afbae7cdd1744f1dcd038dc369e75262afc074188c3a4cd6d04fead.png" src="../../_images/0e75adff4afbae7cdd1744f1dcd038dc369e75262afc074188c3a4cd6d04fead.png" />
+<img alt="../../_images/e04243c382776563577910a59d77b88a392cbfb149c7d1f40d6cc8053fd26dba.png" src="../../_images/e04243c382776563577910a59d77b88a392cbfb149c7d1f40d6cc8053fd26dba.png" />
 </div>
 </div>
 <p>Congratulations, you just trained your first neural network on real data! The red line should hopefully fit the dataset points.</p>
-<section id="id2">
-<h4><span class="section-number">2.7.2.1. </span>Exercise<a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
+<section id="id1">
+<h4><span class="section-number">2.6.2.1. </span>Exercise<a class="headerlink" href="#id1" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Train a neural network model to predict the absolute magnitude of the stars based on their temperature and size. Leave out 20% of the data as test set and evaluate the accuracy of the trained model on both the training set and the test set.</p></li>
 <li><p>Change the ratio of training vs test set. How does this affect the accuracy of the model?</p></li>
@@ -1374,7 +910,7 @@ Score on test set:  0.907769632875965
 </section>
 </section>
 <section id="classification">
-<h3><span class="section-number">2.7.3. </span>Classification<a class="headerlink" href="#classification" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">2.6.3. </span>Classification<a class="headerlink" href="#classification" title="Link to this heading">#</a></h3>
 <p>Our dataset contains a categorical variable “Spectral Class”. This variable represents the color of the star. Let’s see if we could predict the spectral class of the stars based on the other features of the dataset.</p>
 <p>Let’s visualise how many stars of each type there are in the data. If the amount of stars of one category was very small and another one too big, it would make the training quite difficult since the model would just learn to predict those over-represented in the data:</p>
 <div class="cell docutils container">
@@ -1385,7 +921,7 @@ Score on test set:  0.907769632875965
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/d7d8cb3a70334ddca7eed17c97828c5cfe6639638d76c320a0b2cac5d5e0e195.png" src="../../_images/d7d8cb3a70334ddca7eed17c97828c5cfe6639638d76c320a0b2cac5d5e0e195.png" />
+<img alt="../../_images/b204018fea5c6035e5548b6180bca7c70e10cfb93d8c50766f9aa53da66f5385.png" src="../../_images/b204018fea5c6035e5548b6180bca7c70e10cfb93d8c50766f9aa53da66f5385.png" />
 </div>
 </div>
 <p>It seems the data is balanced with respect to stars types so we can safely move on.
@@ -1401,7 +937,7 @@ Let’s now visualise how the different variables relate to each other so we can
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/238f379450139086dfb6b59ab3f62402bfc14826cc8db29fbd756f1305c646c9.png" src="../../_images/238f379450139086dfb6b59ab3f62402bfc14826cc8db29fbd756f1305c646c9.png" />
+<img alt="../../_images/5dce085e89291d6c7fabd18d16460bbf2f10cb99e43c6a43276cd03fdc805a44.png" src="../../_images/5dce085e89291d6c7fabd18d16460bbf2f10cb99e43c6a43276cd03fdc805a44.png" />
 </div>
 </div>
 <p>We start by selecting the data that we are gonna feed our model —the input— and the data that we want our model to predict —ie. to output—. In our case, we’re gonna try to predict the star type (White Dwarf, Super giants..) based on their temperature and absolute magnitude.</p>
@@ -1488,11 +1024,11 @@ Accuracy on test:  0.8541666666666666
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/17e6d890d95e5ef0f4c14b66a4e67e7f718bb7f396b60dba5b785acc3c6f42db.png" src="../../_images/17e6d890d95e5ef0f4c14b66a4e67e7f718bb7f396b60dba5b785acc3c6f42db.png" />
+<img alt="../../_images/bfb9e91996c1ad8b389598137e7f6b658747cc577628359567bc99da25b44928.png" src="../../_images/bfb9e91996c1ad8b389598137e7f6b658747cc577628359567bc99da25b44928.png" />
 </div>
 </div>
-<section id="id3">
-<h4><span class="section-number">2.7.3.1. </span>Exercise<a class="headerlink" href="#id3" title="Link to this heading">#</a></h4>
+<section id="id2">
+<h4><span class="section-number">2.6.3.1. </span>Exercise<a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Use the <code class="docutils literal notranslate"><span class="pre">predict()</span></code> method of the model we just trained to predict the category of the stars with the following temperatures and absolute magnitude. Check that the predictions are compatible with those found in the Hertzsprung-Russell Diagram below. # Hint: you’ll need to add extra pair of brackets <code class="docutils literal notranslate"><span class="pre">[[temperature</span> <span class="pre">value,</span> <span class="pre">absolute</span> <span class="pre">magnitude]]</span></code> when calling the predict method of the model.</p></li>
 </ul>
@@ -1537,7 +1073,7 @@ Accuracy on test:  0.8541666666666666
 </section>
 </section>
 <section id="bonus-clustering">
-<h2><span class="section-number">2.8. </span>Bonus: Clustering<a class="headerlink" href="#bonus-clustering" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">2.7. </span>Bonus: Clustering<a class="headerlink" href="#bonus-clustering" title="Link to this heading">#</a></h2>
 <p>Cluster analysis or clustering consist in grouping objects such that the distance between similar objects is small while the distance between different objects is big. When objects are represented by high-dimensional data —think for instance of cell types represented by their proteomics or stars represented by their physical properties—, then the task of clustering becomes challenging.</p>
 <p>Humans are great, but they have not evolved to easily understand and visualise high-dimensional data. To compensate this shortcoming, a first step when looking to cluster data is to <em>reduce its dimensionality</em>, meaning that we find some representation of the data in 2 or 3 dimension such that we obtain meaningful clusters.</p>
 <p>The downside of performing dimensionality reduction is that there exist different low-dimensional representations of the same data. Therefore, finding which features of the data are relevant and how to project them to a low dimensional space is critical.</p>
@@ -1630,28 +1166,22 @@ Accuracy on test:  0.8541666666666666
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-description">2.5.1. Data description</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computing-correlations">2.6. Computing correlations</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">2.6.1. Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#non-linear-correlations">2.6.2. Non-linear correlations</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-relation-between-correlation-coefficients-and-predictive-models">2.6.3. The relation between correlation coefficients and predictive models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supervised-learning">2.6. Supervised Learning</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regression">2.6.1. Regression</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">2.6.1.1. Exercise</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supervised-learning">2.7. Supervised Learning</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regression">2.7.1. Regression</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">2.7.1.1. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#real-data">2.6.2. Real data</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">2.6.2.1. Exercise</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#real-data">2.7.2. Real data</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2.7.2.1. Exercise</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classification">2.7.3. Classification</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">2.7.3.1. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classification">2.6.3. Classification</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2.6.3.1. Exercise</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-clustering">2.8. Bonus: Clustering</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-clustering">2.7. Bonus: Clustering</a></li>
 </ul>
   </nav></div>
 
