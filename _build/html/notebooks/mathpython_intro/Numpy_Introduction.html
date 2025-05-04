@@ -190,6 +190,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 1. Introduction to modeling in neuroscience</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../modelling_intro/week0-Intro-RWB.html">1. What is computational neuroscience?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modelling_intro/b.html">2. Example of a dynamical system</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 2. Differential equations and neuron models</span></p>
 <ul class="nav bd-sidenav">
@@ -203,13 +204,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../simulation_neuralsystems/b.html">3. Introduction to Brian part 2: Synapses</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../simulation_neuralsystems/c.html">4. Introduction to Brian part 3: Simulations</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 4. Data Analysis and Machine learning TEST</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Extra. Attractor in neuroscience</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../ML/a.html">1. Introduction to Data Analysis with Pandas</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ML/b.html">2. Machine Learning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ML/CompNeuro_Basic_ML_Exercises.html">3. Basic Machine Learning Exercises</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ML/CompNeuro_Introducing_Scikit_Learn.html">4. Introducing Scikit-Learn</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ML/CompNeuro_MLP_MNIST_Classification.html">5. Multilayer Perceptron for MNIST Classification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Attractors_neural/a.html">1. Intro to attractors</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 5. Network theory</span></p>
 <ul class="nav bd-sidenav">
@@ -613,7 +610,7 @@ This is C, which is the entries of B formed into a new shape.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.39219544677297735
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.4694822439584063
 </pre></div>
 </div>
 </div>
@@ -628,9 +625,9 @@ This is C, which is the entries of B formed into a new shape.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.46954007 0.46663482]
- [0.02022687 0.06391372]
- [0.85227511 0.61434234]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.96106826 0.86554986]
+ [0.99968952 0.32705972]
+ [0.56865885 0.99542297]]
 </pre></div>
 </div>
 </div>
@@ -643,7 +640,7 @@ This is C, which is the entries of B formed into a new shape.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>14
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>16
 </pre></div>
 </div>
 </div>
@@ -657,9 +654,9 @@ This is C, which is the entries of B formed into a new shape.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[9 9 3 6 3 4]
- [2 5 7 2 7 0]
- [8 8 2 9 1 4]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[6 3 8 0 8 0]
+ [1 7 2 0 1 8]
+ [1 6 0 8 7 1]]
 </pre></div>
 </div>
 </div>
@@ -672,8 +669,8 @@ This is C, which is the entries of B formed into a new shape.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[7 5 1]
- [6 7 3]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[9 8 8]
+ [4 7 6]]
 </pre></div>
 </div>
 </div>

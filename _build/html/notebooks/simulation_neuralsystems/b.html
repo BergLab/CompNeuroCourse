@@ -190,6 +190,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 1. Introduction to modeling in neuroscience</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../modelling_intro/week0-Intro-RWB.html">1. What is computational neuroscience?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modelling_intro/b.html">2. Example of a dynamical system</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 2. Differential equations and neuron models</span></p>
 <ul class="nav bd-sidenav">
@@ -203,13 +204,9 @@
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">3. Introduction to Brian part 2: Synapses</a></li>
 <li class="toctree-l1"><a class="reference internal" href="c.html">4. Introduction to Brian part 3: Simulations</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 4. Data Analysis and Machine learning TEST</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Extra. Attractor in neuroscience</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../ML/a.html">1. Introduction to Data Analysis with Pandas</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ML/b.html">2. Machine Learning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ML/CompNeuro_Basic_ML_Exercises.html">3. Basic Machine Learning Exercises</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ML/CompNeuro_Introducing_Scikit_Learn.html">4. Introducing Scikit-Learn</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ML/CompNeuro_MLP_MNIST_Classification.html">5. Multilayer Perceptron for MNIST Classification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Attractors_neural/a.html">1. Intro to attractors</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 5. Network theory</span></p>
 <ul class="nav bd-sidenav">
@@ -659,8 +656,8 @@ Requirement already satisfied: mpmath&lt;1.4,&gt;=1.1.0 in /opt/anaconda3/lib/py
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/d6929252b48512bfc0bd7336589f1b9767d0c9d662c57f27b800a7d34e666995.png" src="../../_images/d6929252b48512bfc0bd7336589f1b9767d0c9d662c57f27b800a7d34e666995.png" />
-<img alt="../../_images/f4c6fd3f50d9de521ca6b38a0c4e6969f2288a72728d518b507db10ad1eae8b7.png" src="../../_images/f4c6fd3f50d9de521ca6b38a0c4e6969f2288a72728d518b507db10ad1eae8b7.png" />
+<img alt="../../_images/df4b1242017ae0cddb87228f219d5428ffb54094cce57246d8bc5b22493c9143.png" src="../../_images/df4b1242017ae0cddb87228f219d5428ffb54094cce57246d8bc5b22493c9143.png" />
+<img alt="../../_images/bd6a7fa859050dc0ee3725f05e6957c85d404ba66d2d4e76af69ff741c48eff1.png" src="../../_images/bd6a7fa859050dc0ee3725f05e6957c85d404ba66d2d4e76af69ff741c48eff1.png" />
 <img alt="../../_images/09502854dec1151d7ecf6d05ff07532b07f1d4e5e4b1f9e3179bf771bde67652.png" src="../../_images/09502854dec1151d7ecf6d05ff07532b07f1d4e5e4b1f9e3179bf771bde67652.png" />
 </div>
 </div>
@@ -695,36 +692,36 @@ Requirement already satisfied: mpmath&lt;1.4,&gt;=1.1.0 in /opt/anaconda3/lib/py
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[-3.94037696e-03 -6.07621255e-03  7.30180118e-03 -1.73127817e-03
-  -2.50044557e-03 -3.22200247e-03 -9.24052946e-03  1.17150584e-03
-   9.45666299e-03 -5.14524862e-03]
- [-5.14703522e-03  3.06370335e-03 -5.19094136e-03  3.75804672e-03
-  -6.88028284e-03 -3.05785715e-03 -7.36901897e-04 -4.76111180e-03
-   4.67409094e-03  9.94353929e-04]
- [ 4.27388400e-03 -1.76432964e-04 -9.58517658e-03  7.56246349e-03
-   6.68508014e-03  9.10513030e-03 -3.93743055e-04  1.02025045e-03
-  -1.18665448e-03  3.09838713e-03]
- [ 2.86206435e-03  2.77720237e-03 -9.87147910e-03 -1.53678483e-03
-   1.91938588e-03  5.88395222e-03  7.06609301e-03 -6.59812984e-03
-   4.78501343e-03 -3.50752673e-03]
- [-1.38242428e-03  3.14227801e-03  5.34516348e-03  2.38645779e-03
-   2.63767931e-03  9.11034612e-03  4.42431742e-03 -5.95681518e-03
-  -5.37018854e-03 -9.40155646e-03]
- [ 3.01067252e-03 -4.24062856e-03 -1.54968959e-03  8.02833482e-03
-   8.82777581e-03 -2.71834671e-03 -6.90601422e-04 -6.19977288e-04
-  -9.75289425e-03  5.97838024e-03]
- [ 7.91800123e-04  4.06166603e-03  2.51936997e-04  4.56112485e-03
-   2.79127182e-03 -4.90347623e-03 -2.34171645e-04  2.40927182e-03
-  -8.58203364e-03 -6.29819563e-03]
- [-1.98971088e-03  1.11231823e-05 -6.60819520e-03  8.61520301e-03
-  -7.53779897e-04  7.08598866e-03 -8.55693284e-03  7.48863018e-03
-  -7.36562209e-04  2.88108363e-03]
- [-7.60768826e-03  7.21432719e-03 -8.51430283e-03  5.80825306e-04
-   8.24188548e-03 -6.96323719e-03 -5.95278057e-03 -9.93029302e-03
-   5.78442848e-03  7.98193441e-03]
- [ 3.43206682e-04 -6.76900387e-03 -9.40992505e-03 -1.42454026e-03
-   7.81929274e-03  9.61474019e-03  1.16895085e-03  2.99127171e-03
-  -4.16524975e-04 -2.31269601e-03]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[-6.26350227e-04  5.53805500e-03 -8.12380521e-03  2.97567813e-03
+   4.64201218e-05 -5.05129967e-03  6.72162334e-03  1.45499156e-03
+   5.94551120e-03  3.41085036e-03]
+ [-9.43750904e-03 -2.93440077e-03  7.02727318e-03  2.80095508e-03
+   9.51608793e-03  8.03094201e-03  1.50378803e-03  9.11213306e-05
+   5.01587525e-03 -3.58985150e-03]
+ [ 9.28835039e-03 -1.29334761e-03 -2.59327256e-03  9.85576533e-03
+  -7.79693143e-03 -5.27539616e-03 -9.01428654e-03  4.72377504e-03
+  -7.45607759e-03  9.62562887e-03]
+ [-8.40391542e-03 -8.97890119e-03 -9.67148440e-04 -2.74543023e-03
+  -1.09426492e-03  1.17962749e-03 -3.08205117e-03  9.01603519e-03
+  -4.89542590e-04  2.86260008e-03]
+ [ 7.80448911e-03  7.45827186e-03  7.15549770e-03 -4.03566291e-03
+   7.34827778e-03 -6.05388636e-03  4.33356548e-03 -6.32409958e-03
+   4.41121580e-03  1.29846541e-03]
+ [-8.57279590e-03 -6.10322919e-03 -6.94310510e-03 -8.39806626e-03
+   5.49299087e-05 -5.41096284e-03  2.22294911e-03  7.95674894e-03
+  -4.14521762e-03  5.90629833e-03]
+ [ 4.06872504e-03 -1.70049479e-03 -9.37038908e-03 -8.26082565e-03
+   6.11067345e-03 -7.53920859e-03  4.97934068e-03 -5.37704623e-03
+   1.08466307e-03  8.03164365e-03]
+ [-6.68210528e-03  1.87232405e-03 -2.59452582e-03 -4.74910979e-03
+   4.65355036e-03 -3.78623857e-03  2.06970710e-03 -5.56828994e-03
+  -3.16899837e-04  5.83913861e-03]
+ [-3.66448897e-03 -2.89932266e-03 -7.39355614e-03 -6.95285849e-03
+  -4.28061927e-03 -7.55715798e-03 -9.62755652e-03 -3.53500026e-03
+   6.50242208e-03 -5.59040682e-03]
+ [-7.34432349e-03  3.26213144e-04 -7.35980627e-03 -6.55587915e-03
+   2.61939630e-03  7.16840392e-03 -9.82928037e-03  6.17423391e-03
+  -7.69567460e-03 -9.46655504e-03]]
 </pre></div>
 </div>
 </div>
@@ -832,7 +829,7 @@ Requirement already satisfied: mpmath&lt;1.4,&gt;=1.1.0 in /opt/anaconda3/lib/py
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x13f0d56d0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x130d75fd0&gt;
 </pre></div>
 </div>
 <img alt="../../_images/480d12cd8226e25007223b73f4549a3347a1e0f7cc707da077812735b03b4327.png" src="../../_images/480d12cd8226e25007223b73f4549a3347a1e0f7cc707da077812735b03b4327.png" />
