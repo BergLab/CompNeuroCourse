@@ -190,6 +190,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 1. Introduction to modeling in neuroscience</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../modelling_intro/week0-Intro-RWB.html">1. What is computational neuroscience?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modelling_intro/b.html">2. Example of a dynamical system</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 2. Differential equations and neuron models</span></p>
 <ul class="nav bd-sidenav">
@@ -203,13 +204,9 @@
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">3. Introduction to Brian part 2: Synapses</a></li>
 <li class="toctree-l1"><a class="reference internal" href="c.html">4. Introduction to Brian part 3: Simulations</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 4. Data Analysis and Machine learning TEST</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Extra. Attractor in neuroscience</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../ML/a.html">1. Introduction to Data Analysis with Pandas</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ML/b.html">2. Machine Learning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ML/CompNeuro_Basic_ML_Exercises.html">3. Basic Machine Learning Exercises</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ML/CompNeuro_Introducing_Scikit_Learn.html">4. Introducing Scikit-Learn</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ML/CompNeuro_MLP_MNIST_Classification.html">5. Multilayer Perceptron for MNIST Classification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Attractors_neural/a.html">1. Intro to attractors</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 5. Network theory</span></p>
 <ul class="nav bd-sidenav">
@@ -499,9 +496,7 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: brian2 in /opt/anaconda3/lib/python3.11/site-packages (2.6.0)
 Requirement already satisfied: numpy&gt;=1.21 in /opt/anaconda3/lib/python3.11/site-packages (from brian2) (1.26.4)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: cython&gt;=0.29.21 in /opt/anaconda3/lib/python3.11/site-packages (from brian2) (3.0.10)
+Requirement already satisfied: cython&gt;=0.29.21 in /opt/anaconda3/lib/python3.11/site-packages (from brian2) (3.0.10)
 Requirement already satisfied: sympy&gt;=1.2 in /opt/anaconda3/lib/python3.11/site-packages (from brian2) (1.14.0)
 Requirement already satisfied: pyparsing in /opt/anaconda3/lib/python3.11/site-packages (from brian2) (3.0.9)
 Requirement already satisfied: jinja2&gt;=2.7 in /opt/anaconda3/lib/python3.11/site-packages (from brian2) (3.1.3)
@@ -661,8 +656,8 @@ Requirement already satisfied: mpmath&lt;1.4,&gt;=1.1.0 in /opt/anaconda3/lib/py
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/c5303e8c880b5d642f6f46145fb447988eabd1394673d5a03125b94d261a0c2d.png" src="../../_images/c5303e8c880b5d642f6f46145fb447988eabd1394673d5a03125b94d261a0c2d.png" />
-<img alt="../../_images/f07352a629bf55e8c37e31449da51735c8014437b81d8ed7dd61824f6ed0e3a4.png" src="../../_images/f07352a629bf55e8c37e31449da51735c8014437b81d8ed7dd61824f6ed0e3a4.png" />
+<img alt="../../_images/df4b1242017ae0cddb87228f219d5428ffb54094cce57246d8bc5b22493c9143.png" src="../../_images/df4b1242017ae0cddb87228f219d5428ffb54094cce57246d8bc5b22493c9143.png" />
+<img alt="../../_images/bd6a7fa859050dc0ee3725f05e6957c85d404ba66d2d4e76af69ff741c48eff1.png" src="../../_images/bd6a7fa859050dc0ee3725f05e6957c85d404ba66d2d4e76af69ff741c48eff1.png" />
 <img alt="../../_images/09502854dec1151d7ecf6d05ff07532b07f1d4e5e4b1f9e3179bf771bde67652.png" src="../../_images/09502854dec1151d7ecf6d05ff07532b07f1d4e5e4b1f9e3179bf771bde67652.png" />
 </div>
 </div>
@@ -697,26 +692,36 @@ Requirement already satisfied: mpmath&lt;1.4,&gt;=1.1.0 in /opt/anaconda3/lib/py
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[-0.00797092 -0.00510613 -0.0074063   0.00122535 -0.00884873 -0.00525498
-  -0.00333972 -0.00913109  0.00874132  0.00349119]
- [-0.00943391 -0.00561562 -0.00370903 -0.00261347 -0.00517202 -0.00242944
-  -0.00617988  0.00056243  0.00330094  0.00124501]
- [-0.00930872  0.00164163  0.00737359  0.00423951  0.00298431  0.00675572
-  -0.00246276 -0.00229162 -0.0079093  -0.00040841]
- [-0.00132625 -0.00073522  0.00688529  0.00340881 -0.00506968  0.00526809
-   0.00947111  0.00858859 -0.00618791  0.00533309]
- [ 0.00600864 -0.00680657 -0.00185788  0.00919202 -0.00284412 -0.00065155
-   0.00319382  0.00228763  0.00162976 -0.00575371]
- [ 0.00436529  0.00102739 -0.0058438   0.0020034   0.00957547 -0.00734156
-  -0.00575839  0.0006098  -0.0096688  -0.00162769]
- [-0.00344891 -0.00300908 -0.00555217  0.00244752  0.0076359   0.00026755
-   0.00873549 -0.00488374 -0.00578711  0.00675073]
- [-0.00169219  0.00875601 -0.0042732  -0.00471073 -0.0082479  -0.00237757
-   0.00226268 -0.00274098 -0.0025592   0.00466308]
- [-0.00075843  0.00672103  0.00122678 -0.00625192  0.00011818  0.00343916
-   0.00744447  0.00654712 -0.00526979 -0.00950261]
- [-0.00148817 -0.00098562  0.00291024  0.00785503  0.00206453 -0.00247938
-  -0.00536035  0.00786575 -0.00910601  0.00893794]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[-6.26350227e-04  5.53805500e-03 -8.12380521e-03  2.97567813e-03
+   4.64201218e-05 -5.05129967e-03  6.72162334e-03  1.45499156e-03
+   5.94551120e-03  3.41085036e-03]
+ [-9.43750904e-03 -2.93440077e-03  7.02727318e-03  2.80095508e-03
+   9.51608793e-03  8.03094201e-03  1.50378803e-03  9.11213306e-05
+   5.01587525e-03 -3.58985150e-03]
+ [ 9.28835039e-03 -1.29334761e-03 -2.59327256e-03  9.85576533e-03
+  -7.79693143e-03 -5.27539616e-03 -9.01428654e-03  4.72377504e-03
+  -7.45607759e-03  9.62562887e-03]
+ [-8.40391542e-03 -8.97890119e-03 -9.67148440e-04 -2.74543023e-03
+  -1.09426492e-03  1.17962749e-03 -3.08205117e-03  9.01603519e-03
+  -4.89542590e-04  2.86260008e-03]
+ [ 7.80448911e-03  7.45827186e-03  7.15549770e-03 -4.03566291e-03
+   7.34827778e-03 -6.05388636e-03  4.33356548e-03 -6.32409958e-03
+   4.41121580e-03  1.29846541e-03]
+ [-8.57279590e-03 -6.10322919e-03 -6.94310510e-03 -8.39806626e-03
+   5.49299087e-05 -5.41096284e-03  2.22294911e-03  7.95674894e-03
+  -4.14521762e-03  5.90629833e-03]
+ [ 4.06872504e-03 -1.70049479e-03 -9.37038908e-03 -8.26082565e-03
+   6.11067345e-03 -7.53920859e-03  4.97934068e-03 -5.37704623e-03
+   1.08466307e-03  8.03164365e-03]
+ [-6.68210528e-03  1.87232405e-03 -2.59452582e-03 -4.74910979e-03
+   4.65355036e-03 -3.78623857e-03  2.06970710e-03 -5.56828994e-03
+  -3.16899837e-04  5.83913861e-03]
+ [-3.66448897e-03 -2.89932266e-03 -7.39355614e-03 -6.95285849e-03
+  -4.28061927e-03 -7.55715798e-03 -9.62755652e-03 -3.53500026e-03
+   6.50242208e-03 -5.59040682e-03]
+ [-7.34432349e-03  3.26213144e-04 -7.35980627e-03 -6.55587915e-03
+   2.61939630e-03  7.16840392e-03 -9.82928037e-03  6.17423391e-03
+  -7.69567460e-03 -9.46655504e-03]]
 </pre></div>
 </div>
 </div>
@@ -824,7 +829,7 @@ Requirement already satisfied: mpmath&lt;1.4,&gt;=1.1.0 in /opt/anaconda3/lib/py
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x146b4b990&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x130d75fd0&gt;
 </pre></div>
 </div>
 <img alt="../../_images/480d12cd8226e25007223b73f4549a3347a1e0f7cc707da077812735b03b4327.png" src="../../_images/480d12cd8226e25007223b73f4549a3347a1e0f7cc707da077812735b03b4327.png" />
