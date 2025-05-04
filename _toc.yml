@@ -19,6 +19,7 @@ parts:
   numbered: true
   chapters:
   - file: notebooks/modelling_intro/week0-Intro-RWB
+  - file: notebooks/modelling_intro/b
 - caption: Chapter 2. Differential equations and neuron models
   numbered: true
   chapters:
@@ -39,6 +40,10 @@ parts:
   - file: notebooks/ML/CompNeuro_Basic_ML_Exercises.ipynb
   - file: notebooks/ML/CompNeuro_Introducing_Scikit_Learn.ipynb
   - file: notebooks/ML/CompNeuro_MLP_MNIST_Classification.ipynb
+  caption: Extra. Attractor in neuroscience
+  numbered: true
+  chapters:
+  - file: notebooks/Attractors_neural/a
     
 # - caption: Chapter 5. Reinforcement Learning and Control Theory
 #   numbered: true
