@@ -1,0 +1,240 @@
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.11/site-packages/myst_nb/core/execute/inline.py", line 128, in code_cell_outputs
+    self._client.execute_cell(
+  File "/opt/anaconda3/lib/python3.11/site-packages/jupyter_core/utils/__init__.py", line 173, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.11/asyncio/base_events.py", line 653, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.11/site-packages/nbclient/client.py", line 1058, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/opt/anaconda3/lib/python3.11/site-packages/nbclient/client.py", line 914, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+# Then plot
+plot_decision_regions(X_plot, y, classifier=ppn)
+plt.xlabel('Spike Width [ms]')
+plt.ylabel('Amplitude [µV]')
+plt.legend(loc='upper left')
+#plt.savefig('images/02_08.png', dpi=300)
+plt.show()
+------------------
+
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mValueError[0m                                Traceback (most recent call last)
+Cell [0;32mIn[6], line 2[0m
+[1;32m      1[0m [38;5;66;03m# Then plot[39;00m
+[0;32m----> 2[0m plot_decision_regions(X_plot, y, classifier[38;5;241m=[39mppn)
+[1;32m      3[0m plt[38;5;241m.[39mxlabel([38;5;124m'[39m[38;5;124mSpike Width [ms][39m[38;5;124m'[39m)
+[1;32m      4[0m plt[38;5;241m.[39mylabel([38;5;124m'[39m[38;5;124mAmplitude [µV][39m[38;5;124m'[39m)
+
+Cell [0;32mIn[5], line 18[0m, in [0;36mplot_decision_regions[0;34m(X, y, classifier, resolution)[0m
+[1;32m     16[0m lab [38;5;241m=[39m lab[38;5;241m.[39mreshape(xx1[38;5;241m.[39mshape)
+[1;32m     17[0m [38;5;66;03m# plt.figure(figsize=(5, 4))[39;00m
+[0;32m---> 18[0m plt[38;5;241m.[39mcontourf(xx1, xx2, lab, alpha[38;5;241m=[39m[38;5;241m0.3[39m, cmap[38;5;241m=[39mcmap)
+[1;32m     19[0m plt[38;5;241m.[39mxlim(xx1[38;5;241m.[39mmin(), xx1[38;5;241m.[39mmax())
+[1;32m     20[0m plt[38;5;241m.[39mylim(xx2[38;5;241m.[39mmin(), xx2[38;5;241m.[39mmax())
+
+File [0;32m/opt/anaconda3/lib/python3.11/site-packages/matplotlib/pyplot.py:2938[0m, in [0;36mcontourf[0;34m(data, *args, **kwargs)[0m
+[1;32m   2936[0m [38;5;129m@_copy_docstring_and_deprecators[39m(Axes[38;5;241m.[39mcontourf)
+[1;32m   2937[0m [38;5;28;01mdef[39;00m [38;5;21mcontourf[39m([38;5;241m*[39margs, data[38;5;241m=[39m[38;5;28;01mNone[39;00m, [38;5;241m*[39m[38;5;241m*[39mkwargs) [38;5;241m-[39m[38;5;241m>[39m QuadContourSet:
+[0;32m-> 2938[0m     __ret [38;5;241m=[39m gca()[38;5;241m.[39mcontourf(
+[1;32m   2939[0m         [38;5;241m*[39margs, [38;5;241m*[39m[38;5;241m*[39m({[38;5;124m"[39m[38;5;124mdata[39m[38;5;124m"[39m: data} [38;5;28;01mif[39;00m data [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m [38;5;28;01melse[39;00m {}), [38;5;241m*[39m[38;5;241m*[39mkwargs
+[1;32m   2940[0m     )
+[1;32m   2941[0m     [38;5;28;01mif[39;00m __ret[38;5;241m.[39m_A [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m:  [38;5;66;03m# type: ignore[attr-defined][39;00m
+[1;32m   2942[0m         sci(__ret)
+
+File [0;32m/opt/anaconda3/lib/python3.11/site-packages/matplotlib/__init__.py:1465[0m, in [0;36m_preprocess_data.<locals>.inner[0;34m(ax, data, *args, **kwargs)[0m
+[1;32m   1462[0m [38;5;129m@functools[39m[38;5;241m.[39mwraps(func)
+[1;32m   1463[0m [38;5;28;01mdef[39;00m [38;5;21minner[39m(ax, [38;5;241m*[39margs, data[38;5;241m=[39m[38;5;28;01mNone[39;00m, [38;5;241m*[39m[38;5;241m*[39mkwargs):
+[1;32m   1464[0m     [38;5;28;01mif[39;00m data [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m:
+[0;32m-> 1465[0m         [38;5;28;01mreturn[39;00m func(ax, [38;5;241m*[39m[38;5;28mmap[39m(sanitize_sequence, args), [38;5;241m*[39m[38;5;241m*[39mkwargs)
+[1;32m   1467[0m     bound [38;5;241m=[39m new_sig[38;5;241m.[39mbind(ax, [38;5;241m*[39margs, [38;5;241m*[39m[38;5;241m*[39mkwargs)
+[1;32m   1468[0m     auto_label [38;5;241m=[39m (bound[38;5;241m.[39marguments[38;5;241m.[39mget(label_namer)
+[1;32m   1469[0m                   [38;5;129;01mor[39;00m bound[38;5;241m.[39mkwargs[38;5;241m.[39mget(label_namer))
+
+File [0;32m/opt/anaconda3/lib/python3.11/site-packages/matplotlib/axes/_axes.py:6528[0m, in [0;36mAxes.contourf[0;34m(self, *args, **kwargs)[0m
+[1;32m   6519[0m [38;5;250m[39m[38;5;124;03m"""[39;00m
+[1;32m   6520[0m [38;5;124;03mPlot filled contours.[39;00m
+[1;32m   6521[0m 
+[0;32m   (...)[0m
+[1;32m   6525[0m [38;5;124;03m%(contour_doc)s[39;00m
+[1;32m   6526[0m [38;5;124;03m"""[39;00m
+[1;32m   6527[0m kwargs[[38;5;124m'[39m[38;5;124mfilled[39m[38;5;124m'[39m] [38;5;241m=[39m [38;5;28;01mTrue[39;00m
+[0;32m-> 6528[0m contours [38;5;241m=[39m mcontour[38;5;241m.[39mQuadContourSet([38;5;28mself[39m, [38;5;241m*[39margs, [38;5;241m*[39m[38;5;241m*[39mkwargs)
+[1;32m   6529[0m [38;5;28mself[39m[38;5;241m.[39m_request_autoscale_view()
+[1;32m   6530[0m [38;5;28;01mreturn[39;00m contours
+
+File [0;32m/opt/anaconda3/lib/python3.11/site-packages/matplotlib/contour.py:887[0m, in [0;36mContourSet.__init__[0;34m(self, ax, levels, filled, linewidths, linestyles, hatches, alpha, origin, extent, cmap, colors, norm, vmin, vmax, extend, antialiased, nchunk, locator, transform, negative_linestyles, clip_path, *args, **kwargs)[0m
+[1;32m    884[0m [38;5;28mself[39m[38;5;241m.[39mlabelTexts [38;5;241m=[39m []
+[1;32m    885[0m [38;5;28mself[39m[38;5;241m.[39mlabelCValues [38;5;241m=[39m []
+[0;32m--> 887[0m [38;5;28mself[39m[38;5;241m.[39mset_cmap(cmap)
+[1;32m    888[0m [38;5;28;01mif[39;00m norm [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m:
+[1;32m    889[0m     [38;5;28mself[39m[38;5;241m.[39mset_norm(norm)
+
+File [0;32m/opt/anaconda3/lib/python3.11/site-packages/matplotlib/cm.py:602[0m, in [0;36mScalarMappable.set_cmap[0;34m(self, cmap)[0m
+[1;32m    600[0m [38;5;28mself[39m[38;5;241m.[39mcmap [38;5;241m=[39m _ensure_cmap(cmap)
+[1;32m    601[0m [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m in_init:
+[0;32m--> 602[0m     [38;5;28mself[39m[38;5;241m.[39mchanged()
+
+File [0;32m/opt/anaconda3/lib/python3.11/site-packages/matplotlib/contour.py:1145[0m, in [0;36mContourSet.changed[0;34m(self)[0m
+[1;32m   1143[0m [38;5;28;01mdef[39;00m [38;5;21mchanged[39m([38;5;28mself[39m):
+[1;32m   1144[0m     [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m [38;5;28mhasattr[39m([38;5;28mself[39m, [38;5;124m"[39m[38;5;124mcvalues[39m[38;5;124m"[39m):
+[0;32m-> 1145[0m         [38;5;28mself[39m[38;5;241m.[39m_process_colors()  [38;5;66;03m# Sets cvalues.[39;00m
+[1;32m   1146[0m     [38;5;66;03m# Force an autoscale immediately because self.to_rgba() calls[39;00m
+[1;32m   1147[0m     [38;5;66;03m# autoscale_None() internally with the data passed to it,[39;00m
+[1;32m   1148[0m     [38;5;66;03m# so if vmin/vmax are not set yet, this would override them with[39;00m
+[1;32m   1149[0m     [38;5;66;03m# content from *cvalues* rather than levels like we want[39;00m
+[1;32m   1150[0m     [38;5;28mself[39m[38;5;241m.[39mnorm[38;5;241m.[39mautoscale_None([38;5;28mself[39m[38;5;241m.[39mlevels)
+
+File [0;32m/opt/anaconda3/lib/python3.11/site-packages/matplotlib/contour.py:1302[0m, in [0;36mContourSet._process_colors[0;34m(self)[0m
+[1;32m   1300[0m [38;5;28;01melse[39;00m:
+[1;32m   1301[0m     [38;5;28mself[39m[38;5;241m.[39mcvalues [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39mlayers
+[0;32m-> 1302[0m [38;5;28mself[39m[38;5;241m.[39mnorm[38;5;241m.[39mautoscale_None([38;5;28mself[39m[38;5;241m.[39mlevels)
+[1;32m   1303[0m [38;5;28mself[39m[38;5;241m.[39mset_array([38;5;28mself[39m[38;5;241m.[39mcvalues)
+[1;32m   1304[0m [38;5;28mself[39m[38;5;241m.[39mupdate_scalarmappable()
+
+File [0;32m/opt/anaconda3/lib/python3.11/site-packages/matplotlib/colors.py:1408[0m, in [0;36mNormalize.autoscale_None[0;34m(self, A)[0m
+[1;32m   1405[0m         A [38;5;241m=[39m A[38;5;241m.[39mdata
+[1;32m   1407[0m [38;5;28;01mif[39;00m [38;5;28mself[39m[38;5;241m.[39mvmin [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m [38;5;129;01mand[39;00m A[38;5;241m.[39msize:
+[0;32m-> 1408[0m     [38;5;28mself[39m[38;5;241m.[39mvmin [38;5;241m=[39m A[38;5;241m.[39mmin()
+[1;32m   1409[0m [38;5;28;01mif[39;00m [38;5;28mself[39m[38;5;241m.[39mvmax [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m [38;5;129;01mand[39;00m A[38;5;241m.[39msize:
+[1;32m   1410[0m     [38;5;28mself[39m[38;5;241m.[39mvmax [38;5;241m=[39m A[38;5;241m.[39mmax()
+
+File [0;32m/opt/anaconda3/lib/python3.11/site-packages/matplotlib/colors.py:1264[0m, in [0;36mNormalize.vmin[0;34m(self, value)[0m
+[1;32m   1262[0m [38;5;28;01mif[39;00m value [38;5;241m!=[39m [38;5;28mself[39m[38;5;241m.[39m_vmin:
+[1;32m   1263[0m     [38;5;28mself[39m[38;5;241m.[39m_vmin [38;5;241m=[39m value
+[0;32m-> 1264[0m     [38;5;28mself[39m[38;5;241m.[39m_changed()
+
+File [0;32m/opt/anaconda3/lib/python3.11/site-packages/matplotlib/colors.py:1292[0m, in [0;36mNormalize._changed[0;34m(self)[0m
+[1;32m   1287[0m [38;5;28;01mdef[39;00m [38;5;21m_changed[39m([38;5;28mself[39m):
+[1;32m   1288[0m [38;5;250m    [39m[38;5;124;03m"""[39;00m
+[1;32m   1289[0m [38;5;124;03m    Call this whenever the norm is changed to notify all the[39;00m
+[1;32m   1290[0m [38;5;124;03m    callback listeners to the 'changed' signal.[39;00m
+[1;32m   1291[0m [38;5;124;03m    """[39;00m
+[0;32m-> 1292[0m     [38;5;28mself[39m[38;5;241m.[39mcallbacks[38;5;241m.[39mprocess([38;5;124m'[39m[38;5;124mchanged[39m[38;5;124m'[39m)
+
+File [0;32m/opt/anaconda3/lib/python3.11/site-packages/matplotlib/cbook.py:303[0m, in [0;36mCallbackRegistry.process[0;34m(self, s, *args, **kwargs)[0m
+[1;32m    301[0m [38;5;28;01mexcept[39;00m [38;5;167;01mException[39;00m [38;5;28;01mas[39;00m exc:
+[1;32m    302[0m     [38;5;28;01mif[39;00m [38;5;28mself[39m[38;5;241m.[39mexception_handler [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m:
+[0;32m--> 303[0m         [38;5;28mself[39m[38;5;241m.[39mexception_handler(exc)
+[1;32m    304[0m     [38;5;28;01melse[39;00m:
+[1;32m    305[0m         [38;5;28;01mraise[39;00m
+
+File [0;32m/opt/anaconda3/lib/python3.11/site-packages/matplotlib/cbook.py:87[0m, in [0;36m_exception_printer[0;34m(exc)[0m
+[1;32m     85[0m [38;5;28;01mdef[39;00m [38;5;21m_exception_printer[39m(exc):
+[1;32m     86[0m     [38;5;28;01mif[39;00m _get_running_interactive_framework() [38;5;129;01min[39;00m [[38;5;124m"[39m[38;5;124mheadless[39m[38;5;124m"[39m, [38;5;28;01mNone[39;00m]:
+[0;32m---> 87[0m         [38;5;28;01mraise[39;00m exc
+[1;32m     88[0m     [38;5;28;01melse[39;00m:
+[1;32m     89[0m         traceback[38;5;241m.[39mprint_exc()
+
+File [0;32m/opt/anaconda3/lib/python3.11/site-packages/matplotlib/cbook.py:298[0m, in [0;36mCallbackRegistry.process[0;34m(self, s, *args, **kwargs)[0m
+[1;32m    296[0m [38;5;28;01mif[39;00m func [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m:
+[1;32m    297[0m     [38;5;28;01mtry[39;00m:
+[0;32m--> 298[0m         func([38;5;241m*[39margs, [38;5;241m*[39m[38;5;241m*[39mkwargs)
+[1;32m    299[0m     [38;5;66;03m# this does not capture KeyboardInterrupt, SystemExit,[39;00m
+[1;32m    300[0m     [38;5;66;03m# and GeneratorExit[39;00m
+[1;32m    301[0m     [38;5;28;01mexcept[39;00m [38;5;167;01mException[39;00m [38;5;28;01mas[39;00m exc:
+
+File [0;32m/opt/anaconda3/lib/python3.11/site-packages/matplotlib/contour.py:1150[0m, in [0;36mContourSet.changed[0;34m(self)[0m
+[1;32m   1145[0m     [38;5;28mself[39m[38;5;241m.[39m_process_colors()  [38;5;66;03m# Sets cvalues.[39;00m
+[1;32m   1146[0m [38;5;66;03m# Force an autoscale immediately because self.to_rgba() calls[39;00m
+[1;32m   1147[0m [38;5;66;03m# autoscale_None() internally with the data passed to it,[39;00m
+[1;32m   1148[0m [38;5;66;03m# so if vmin/vmax are not set yet, this would override them with[39;00m
+[1;32m   1149[0m [38;5;66;03m# content from *cvalues* rather than levels like we want[39;00m
+[0;32m-> 1150[0m [38;5;28mself[39m[38;5;241m.[39mnorm[38;5;241m.[39mautoscale_None([38;5;28mself[39m[38;5;241m.[39mlevels)
+[1;32m   1151[0m [38;5;28mself[39m[38;5;241m.[39mset_array([38;5;28mself[39m[38;5;241m.[39mcvalues)
+[1;32m   1152[0m [38;5;28mself[39m[38;5;241m.[39mupdate_scalarmappable()
+
+File [0;32m/opt/anaconda3/lib/python3.11/site-packages/matplotlib/colors.py:1410[0m, in [0;36mNormalize.autoscale_None[0;34m(self, A)[0m
+[1;32m   1408[0m     [38;5;28mself[39m[38;5;241m.[39mvmin [38;5;241m=[39m A[38;5;241m.[39mmin()
+[1;32m   1409[0m [38;5;28;01mif[39;00m [38;5;28mself[39m[38;5;241m.[39mvmax [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m [38;5;129;01mand[39;00m A[38;5;241m.[39msize:
+[0;32m-> 1410[0m     [38;5;28mself[39m[38;5;241m.[39mvmax [38;5;241m=[39m A[38;5;241m.[39mmax()
+
+File [0;32m/opt/anaconda3/lib/python3.11/site-packages/matplotlib/colors.py:1275[0m, in [0;36mNormalize.vmax[0;34m(self, value)[0m
+[1;32m   1273[0m [38;5;28;01mif[39;00m value [38;5;241m!=[39m [38;5;28mself[39m[38;5;241m.[39m_vmax:
+[1;32m   1274[0m     [38;5;28mself[39m[38;5;241m.[39m_vmax [38;5;241m=[39m value
+[0;32m-> 1275[0m     [38;5;28mself[39m[38;5;241m.[39m_changed()
+
+File [0;32m/opt/anaconda3/lib/python3.11/site-packages/matplotlib/colors.py:1292[0m, in [0;36mNormalize._changed[0;34m(self)[0m
+[1;32m   1287[0m [38;5;28;01mdef[39;00m [38;5;21m_changed[39m([38;5;28mself[39m):
+[1;32m   1288[0m [38;5;250m    [39m[38;5;124;03m"""[39;00m
+[1;32m   1289[0m [38;5;124;03m    Call this whenever the norm is changed to notify all the[39;00m
+[1;32m   1290[0m [38;5;124;03m    callback listeners to the 'changed' signal.[39;00m
+[1;32m   1291[0m [38;5;124;03m    """[39;00m
+[0;32m-> 1292[0m     [38;5;28mself[39m[38;5;241m.[39mcallbacks[38;5;241m.[39mprocess([38;5;124m'[39m[38;5;124mchanged[39m[38;5;124m'[39m)
+
+File [0;32m/opt/anaconda3/lib/python3.11/site-packages/matplotlib/cbook.py:303[0m, in [0;36mCallbackRegistry.process[0;34m(self, s, *args, **kwargs)[0m
+[1;32m    301[0m [38;5;28;01mexcept[39;00m [38;5;167;01mException[39;00m [38;5;28;01mas[39;00m exc:
+[1;32m    302[0m     [38;5;28;01mif[39;00m [38;5;28mself[39m[38;5;241m.[39mexception_handler [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m:
+[0;32m--> 303[0m         [38;5;28mself[39m[38;5;241m.[39mexception_handler(exc)
+[1;32m    304[0m     [38;5;28;01melse[39;00m:
+[1;32m    305[0m         [38;5;28;01mraise[39;00m
+
+File [0;32m/opt/anaconda3/lib/python3.11/site-packages/matplotlib/cbook.py:87[0m, in [0;36m_exception_printer[0;34m(exc)[0m
+[1;32m     85[0m [38;5;28;01mdef[39;00m [38;5;21m_exception_printer[39m(exc):
+[1;32m     86[0m     [38;5;28;01mif[39;00m _get_running_interactive_framework() [38;5;129;01min[39;00m [[38;5;124m"[39m[38;5;124mheadless[39m[38;5;124m"[39m, [38;5;28;01mNone[39;00m]:
+[0;32m---> 87[0m         [38;5;28;01mraise[39;00m exc
+[1;32m     88[0m     [38;5;28;01melse[39;00m:
+[1;32m     89[0m         traceback[38;5;241m.[39mprint_exc()
+
+File [0;32m/opt/anaconda3/lib/python3.11/site-packages/matplotlib/cbook.py:298[0m, in [0;36mCallbackRegistry.process[0;34m(self, s, *args, **kwargs)[0m
+[1;32m    296[0m [38;5;28;01mif[39;00m func [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m:
+[1;32m    297[0m     [38;5;28;01mtry[39;00m:
+[0;32m--> 298[0m         func([38;5;241m*[39margs, [38;5;241m*[39m[38;5;241m*[39mkwargs)
+[1;32m    299[0m     [38;5;66;03m# this does not capture KeyboardInterrupt, SystemExit,[39;00m
+[1;32m    300[0m     [38;5;66;03m# and GeneratorExit[39;00m
+[1;32m    301[0m     [38;5;28;01mexcept[39;00m [38;5;167;01mException[39;00m [38;5;28;01mas[39;00m exc:
+
+File [0;32m/opt/anaconda3/lib/python3.11/site-packages/matplotlib/contour.py:1152[0m, in [0;36mContourSet.changed[0;34m(self)[0m
+[1;32m   1150[0m [38;5;28mself[39m[38;5;241m.[39mnorm[38;5;241m.[39mautoscale_None([38;5;28mself[39m[38;5;241m.[39mlevels)
+[1;32m   1151[0m [38;5;28mself[39m[38;5;241m.[39mset_array([38;5;28mself[39m[38;5;241m.[39mcvalues)
+[0;32m-> 1152[0m [38;5;28mself[39m[38;5;241m.[39mupdate_scalarmappable()
+[1;32m   1153[0m alphas [38;5;241m=[39m np[38;5;241m.[39mbroadcast_to([38;5;28mself[39m[38;5;241m.[39mget_alpha(), [38;5;28mlen[39m([38;5;28mself[39m[38;5;241m.[39mcvalues))
+[1;32m   1154[0m [38;5;28;01mfor[39;00m label, cv, alpha [38;5;129;01min[39;00m [38;5;28mzip[39m([38;5;28mself[39m[38;5;241m.[39mlabelTexts, [38;5;28mself[39m[38;5;241m.[39mlabelCValues, alphas):
+
+File [0;32m/opt/anaconda3/lib/python3.11/site-packages/matplotlib/collections.py:920[0m, in [0;36mCollection.update_scalarmappable[0;34m(self)[0m
+[1;32m    918[0m         [38;5;66;03m# pcolormesh, scatter, maybe others flatten their _A[39;00m
+[1;32m    919[0m         [38;5;28mself[39m[38;5;241m.[39m_alpha [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39m_alpha[38;5;241m.[39mreshape([38;5;28mself[39m[38;5;241m.[39m_A[38;5;241m.[39mshape)
+[0;32m--> 920[0m     [38;5;28mself[39m[38;5;241m.[39m_mapped_colors [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39mto_rgba([38;5;28mself[39m[38;5;241m.[39m_A, [38;5;28mself[39m[38;5;241m.[39m_alpha)
+[1;32m    922[0m [38;5;28;01mif[39;00m [38;5;28mself[39m[38;5;241m.[39m_face_is_mapped:
+[1;32m    923[0m     [38;5;28mself[39m[38;5;241m.[39m_facecolors [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39m_mapped_colors
+
+File [0;32m/opt/anaconda3/lib/python3.11/site-packages/matplotlib/cm.py:509[0m, in [0;36mScalarMappable.to_rgba[0;34m(self, x, alpha, bytes, norm)[0m
+[1;32m    507[0m [38;5;28;01mif[39;00m norm:
+[1;32m    508[0m     x [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39mnorm(x)
+[0;32m--> 509[0m rgba [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39mcmap(x, alpha[38;5;241m=[39malpha, [38;5;28mbytes[39m[38;5;241m=[39m[38;5;28mbytes[39m)
+[1;32m    510[0m [38;5;28;01mreturn[39;00m rgba
+
+File [0;32m/opt/anaconda3/lib/python3.11/site-packages/matplotlib/colors.py:725[0m, in [0;36mColormap.__call__[0;34m(self, X, alpha, bytes)[0m
+[1;32m    702[0m [38;5;250m[39m[38;5;124mr[39m[38;5;124;03m"""[39;00m
+[1;32m    703[0m [38;5;124;03mParameters[39;00m
+[1;32m    704[0m [38;5;124;03m----------[39;00m
+[0;32m   (...)[0m
+[1;32m    722[0m [38;5;124;03mRGBA values with a shape of ``X.shape + (4, )``.[39;00m
+[1;32m    723[0m [38;5;124;03m"""[39;00m
+[1;32m    724[0m [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m [38;5;28mself[39m[38;5;241m.[39m_isinit:
+[0;32m--> 725[0m     [38;5;28mself[39m[38;5;241m.[39m_init()
+[1;32m    727[0m xa [38;5;241m=[39m np[38;5;241m.[39marray(X, copy[38;5;241m=[39m[38;5;28;01mTrue[39;00m)
+[1;32m    728[0m [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m xa[38;5;241m.[39mdtype[38;5;241m.[39misnative:
+[1;32m    729[0m     [38;5;66;03m# Native byteorder is faster.[39;00m
+
+File [0;32m/opt/anaconda3/lib/python3.11/site-packages/matplotlib/colors.py:1175[0m, in [0;36mListedColormap._init[0;34m(self)[0m
+[1;32m   1173[0m [38;5;28;01mdef[39;00m [38;5;21m_init[39m([38;5;28mself[39m):
+[1;32m   1174[0m     [38;5;28mself[39m[38;5;241m.[39m_lut [38;5;241m=[39m np[38;5;241m.[39mzeros(([38;5;28mself[39m[38;5;241m.[39mN [38;5;241m+[39m [38;5;241m3[39m, [38;5;241m4[39m), [38;5;28mfloat[39m)
+[0;32m-> 1175[0m     [38;5;28mself[39m[38;5;241m.[39m_lut[:[38;5;241m-[39m[38;5;241m3[39m] [38;5;241m=[39m to_rgba_array([38;5;28mself[39m[38;5;241m.[39mcolors)
+[1;32m   1176[0m     [38;5;28mself[39m[38;5;241m.[39m_isinit [38;5;241m=[39m [38;5;28;01mTrue[39;00m
+[1;32m   1177[0m     [38;5;28mself[39m[38;5;241m.[39m_set_extremes()
+
+File [0;32m/opt/anaconda3/lib/python3.11/site-packages/matplotlib/colors.py:489[0m, in [0;36mto_rgba_array[0;34m(c, alpha)[0m
+[1;32m    487[0m         [38;5;28;01mraise[39;00m e
+[1;32m    488[0m [38;5;28;01mif[39;00m [38;5;28misinstance[39m(c, [38;5;28mstr[39m):
+[0;32m--> 489[0m     [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m([38;5;124mf[39m[38;5;124m"[39m[38;5;132;01m{[39;00mc[38;5;132;01m!r}[39;00m[38;5;124m is not a valid color value.[39m[38;5;124m"[39m)
+[1;32m    491[0m [38;5;28;01mif[39;00m [38;5;28mlen[39m(c) [38;5;241m==[39m [38;5;241m0[39m:
+[1;32m    492[0m     [38;5;28;01mreturn[39;00m np[38;5;241m.[39mzeros(([38;5;241m0[39m, [38;5;241m4[39m), [38;5;28mfloat[39m)
+
+[0;31mValueError[0m: 'red' is not a valid color value.
+

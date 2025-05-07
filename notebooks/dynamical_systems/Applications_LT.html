@@ -65,7 +65,7 @@
     <link rel="icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="1. Intro to attractors" href="../Attractors_neural/a.html" />
+    <link rel="next" title="1. Introduction to Machine Learning for Neuroscience" href="../ML/ch01_expanded.html" />
     <link rel="prev" title="1. Introduction modelling with differential equations" href="dynamical_systems_intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -190,16 +190,29 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 1. Introduction to modeling in neuroscience</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../modelling_intro/week0-Intro-RWB.html">1. What is computational neuroscience?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modelling_intro/b.html">2. Example of a dynamical system</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modelling_intro/b.html">2. Predator–prey dynamics: Simulation</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 2. Differential equations and neuron models</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="dynamical_systems_intro.html">1. Introduction modelling with differential equations</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">2. Dynamical systems as Linear Transformations</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Extra. Attractor in neuroscience</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 4. Data Analysis and Machine learning TEST</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../Attractors_neural/a.html">1. Intro to attractors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ML/ch01_expanded.html">1. Introduction to Machine Learning for Neuroscience</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ML/ch02_expanded.html">2. Training Simple Machine Learning Algorithms for Classification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ML/ch03_expanded.html">3. A Tour of Machine Learning Classifiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ML/ch03.html">4. Machine Learning with PyTorch and Scikit-Learn</a></li>
+
+
+
+
+
+
+
+
+
+
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 5. Network theory</span></p>
 <ul class="nav bd-sidenav">
@@ -632,7 +645,7 @@ AX_{t-1}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/966999f5f67546e36a40901a7fdd51ad809ce4b7e1c66e1db3aa140dc956fe76.png" src="../../_images/966999f5f67546e36a40901a7fdd51ad809ce4b7e1c66e1db3aa140dc956fe76.png" />
+<a class="reference internal image-reference" href="../../_images/966999f5f67546e36a40901a7fdd51ad809ce4b7e1c66e1db3aa140dc956fe76.png"><img alt="../../_images/966999f5f67546e36a40901a7fdd51ad809ce4b7e1c66e1db3aa140dc956fe76.png" src="../../_images/966999f5f67546e36a40901a7fdd51ad809ce4b7e1c66e1db3aa140dc956fe76.png" style="width: 400px;" /></a>
 </div>
 </div>
 <p>Based on the calculation it appears that the state of the population has reached an <em>equilibrium</em> after 20 weeks.  In the equilibrium state, each category of the population, <span class="math notranslate nohighlight">\(S\)</span>, <span class="math notranslate nohighlight">\(I\)</span>, and <span class="math notranslate nohighlight">\(R\)</span>, have as many individuals entering the category as leaving it.  In terms of the matrix equation, if <span class="math notranslate nohighlight">\(X\)</span> is the vector that contains the equilibrium values of <span class="math notranslate nohighlight">\(s_t\)</span>, <span class="math notranslate nohighlight">\(i_t\)</span>, and <span class="math notranslate nohighlight">\(r_t\)</span>, then <span class="math notranslate nohighlight">\(X\)</span> must be a solution to the equation <span class="math notranslate nohighlight">\(AX=X\)</span>, since <span class="math notranslate nohighlight">\(X_{t-1}=X_t\)</span> when the components not changing.  The equation <span class="math notranslate nohighlight">\(AX=X\)</span> implies that <span class="math notranslate nohighlight">\(X\)</span> is an eigenvector of <span class="math notranslate nohighlight">\(A\)</span> corresponding to an eigenvalue of one. If you remember the geometrical interpretation of a matrix as a linear transformation in <a class="reference external" href="https://www.youtube.com/watch?v=PFDu9oVAE-g">3Blue1Brown eigenvectors and eigenvalues video</a>, the eigenvectors are the vectors who experience scaling by a factor of its eigenvalue but do not experience any change of direction. In other words, if we have a vector <span class="math notranslate nohighlight">\(X\)</span> that verifies <span class="math notranslate nohighlight">\(AX=X\)</span>, that vector <span class="math notranslate nohighlight">\(X\)</span> is an eigenvector of <span class="math notranslate nohighlight">\(A\)</span> with a corresponding eigenvalue <span class="math notranslate nohighlight">\(1\)</span>. That means that applying the matrix <span class="math notranslate nohighlight">\(A\)</span> —which we can see as a geometrical transformation— does not affect the vector at all. This is why if we find an vector <span class="math notranslate nohighlight">\(X\)</span> that verifies <span class="math notranslate nohighlight">\(AX=X\)</span>, we know the values of <span class="math notranslate nohighlight">\(X\)</span> are an equilibrium point of the system!</p>
@@ -828,11 +841,11 @@ AX_{t-1}
       </div>
     </a>
     <a class="right-next"
-       href="../Attractors_neural/a.html"
+       href="../ML/ch01_expanded.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">1. </span>Intro to attractors</p>
+        <p class="prev-next-title"><span class="section-number">1. </span>Introduction to Machine Learning for Neuroscience</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

@@ -190,16 +190,29 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 1. Introduction to modeling in neuroscience</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../modelling_intro/week0-Intro-RWB.html">1. What is computational neuroscience?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modelling_intro/b.html">2. Example of a dynamical system</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modelling_intro/b.html">2. Predator–prey dynamics: Simulation</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 2. Differential equations and neuron models</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../dynamical_systems/dynamical_systems_intro.html">1. Introduction modelling with differential equations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../dynamical_systems/Applications_LT.html">2. Dynamical systems as Linear Transformations</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Extra. Attractor in neuroscience</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 4. Data Analysis and Machine learning TEST</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../Attractors_neural/a.html">1. Intro to attractors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ML/ch01_expanded.html">1. Introduction to Machine Learning for Neuroscience</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ML/ch02_expanded.html">2. Training Simple Machine Learning Algorithms for Classification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ML/ch03_expanded.html">3. A Tour of Machine Learning Classifiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ML/ch03.html">4. Machine Learning with PyTorch and Scikit-Learn</a></li>
+
+
+
+
+
+
+
+
+
+
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 5. Network theory</span></p>
 <ul class="nav bd-sidenav">
@@ -603,7 +616,7 @@ This is C, which is the entries of B formed into a new shape.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.9149043107795616
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.4909477504426957
 </pre></div>
 </div>
 </div>
@@ -618,9 +631,9 @@ This is C, which is the entries of B formed into a new shape.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.79120979 0.78094839]
- [0.69558022 0.18382172]
- [0.86559175 0.97867255]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.25618676 0.03394434]
+ [0.53440334 0.33995203]
+ [0.93915713 0.12998527]]
 </pre></div>
 </div>
 </div>
@@ -633,7 +646,7 @@ This is C, which is the entries of B formed into a new shape.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>15
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
 </pre></div>
 </div>
 </div>
@@ -647,9 +660,9 @@ This is C, which is the entries of B formed into a new shape.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[4 6 3 2 0 5]
- [4 6 5 0 3 5]
- [2 8 4 5 8 9]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[8 2 8 0 8 3]
+ [2 6 8 6 8 3]
+ [6 8 3 3 6 4]]
 </pre></div>
 </div>
 </div>
@@ -662,8 +675,8 @@ This is C, which is the entries of B formed into a new shape.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[7 2 5]
- [4 3 5]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[4 9 1]
+ [3 2 2]]
 </pre></div>
 </div>
 </div>
@@ -713,7 +726,7 @@ This is C, which is the entries of B formed into a new shape.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/158356860d032a693238d6ea6cfe0efd469ed6bbdbc77e4b53808dff44055e70.png" src="../../_images/158356860d032a693238d6ea6cfe0efd469ed6bbdbc77e4b53808dff44055e70.png" />
+<a class="reference internal image-reference" href="../../_images/158356860d032a693238d6ea6cfe0efd469ed6bbdbc77e4b53808dff44055e70.png"><img alt="../../_images/158356860d032a693238d6ea6cfe0efd469ed6bbdbc77e4b53808dff44055e70.png" src="../../_images/158356860d032a693238d6ea6cfe0efd469ed6bbdbc77e4b53808dff44055e70.png" style="width: 400px;" /></a>
 </div>
 </div>
 <p>The <span class="math notranslate nohighlight">\(\texttt{subplots}\)</span> method creates two Matplotlib objects, the <em>Figure</em>, and the <em>Axes</em>.  The <em>Figure</em> is the fundamental object in Matplotlib.  The <em>Axes</em> object is contained within the <em>Figure</em>, and is the object we will interact with the most.  The <span class="math notranslate nohighlight">\(\texttt{plot}\)</span> method of the <em>Axes</em> object is the function that actually plots our set of coordinates on the <em>Axes</em>.  Note that we do not need a <span class="math notranslate nohighlight">\(\texttt{print}\)</span> command to view the results.  Instead, the first line of code, <span class="math notranslate nohighlight">\(\texttt{% matplotlib inline}\)</span>, directs all graphical output to this notebook.</p>
@@ -726,7 +739,7 @@ This is C, which is the entries of B formed into a new shape.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/3dc3f83988b97ae06b9d1ff2c6194d1336126d468c31f16069c203975b1b61e2.png" src="../../_images/3dc3f83988b97ae06b9d1ff2c6194d1336126d468c31f16069c203975b1b61e2.png" />
+<a class="reference internal image-reference" href="../../_images/3dc3f83988b97ae06b9d1ff2c6194d1336126d468c31f16069c203975b1b61e2.png"><img alt="../../_images/3dc3f83988b97ae06b9d1ff2c6194d1336126d468c31f16069c203975b1b61e2.png" src="../../_images/3dc3f83988b97ae06b9d1ff2c6194d1336126d468c31f16069c203975b1b61e2.png" style="width: 400px;" /></a>
 </div>
 </div>
 <p>Another alternative when we interested in plotting data points is the <span class="math notranslate nohighlight">\(\texttt{scatter}\)</span> method, for which we can use the same syntax.</p>
@@ -738,7 +751,7 @@ This is C, which is the entries of B formed into a new shape.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/638552d10e8d901dc95b21884ce0016987d61c34184a3fc39ef2c217228d2158.png" src="../../_images/638552d10e8d901dc95b21884ce0016987d61c34184a3fc39ef2c217228d2158.png" />
+<a class="reference internal image-reference" href="../../_images/638552d10e8d901dc95b21884ce0016987d61c34184a3fc39ef2c217228d2158.png"><img alt="../../_images/638552d10e8d901dc95b21884ce0016987d61c34184a3fc39ef2c217228d2158.png" src="../../_images/638552d10e8d901dc95b21884ce0016987d61c34184a3fc39ef2c217228d2158.png" style="width: 400px;" /></a>
 </div>
 </div>
 <p>Next, we show how to configure some of the many options available in such a plot.  Remember that the plot is actually being constructed in an <em>Axes</em> object, so all the options that affect elements of the plot are methods of that object.</p>
@@ -761,7 +774,7 @@ This is C, which is the entries of B formed into a new shape.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/bc7871eeaa2e64cfc260306d4ed66c176bf71fc6646220e62514eb3173086493.png" src="../../_images/bc7871eeaa2e64cfc260306d4ed66c176bf71fc6646220e62514eb3173086493.png" />
+<a class="reference internal image-reference" href="../../_images/bc7871eeaa2e64cfc260306d4ed66c176bf71fc6646220e62514eb3173086493.png"><img alt="../../_images/bc7871eeaa2e64cfc260306d4ed66c176bf71fc6646220e62514eb3173086493.png" src="../../_images/bc7871eeaa2e64cfc260306d4ed66c176bf71fc6646220e62514eb3173086493.png" style="width: 400px;" /></a>
 </div>
 </div>
 </section>
@@ -812,7 +825,7 @@ This is C, which is the entries of B formed into a new shape.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/2c9fd73519c89b46bddbf89620143634bd9e54906c6fd199cdd9c00b95ddd543.png" src="../../_images/2c9fd73519c89b46bddbf89620143634bd9e54906c6fd199cdd9c00b95ddd543.png" />
+<a class="reference internal image-reference" href="../../_images/2c9fd73519c89b46bddbf89620143634bd9e54906c6fd199cdd9c00b95ddd543.png"><img alt="../../_images/2c9fd73519c89b46bddbf89620143634bd9e54906c6fd199cdd9c00b95ddd543.png" src="../../_images/2c9fd73519c89b46bddbf89620143634bd9e54906c6fd199cdd9c00b95ddd543.png" style="width: 400px;" /></a>
 </div>
 </div>
 <div class="cell docutils container">
@@ -840,7 +853,7 @@ This is C, which is the entries of B formed into a new shape.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/c9e80d2d323ddd9df7b704b8b098c00784553ca1e40b1c2f43ac0541e267931e.png" src="../../_images/c9e80d2d323ddd9df7b704b8b098c00784553ca1e40b1c2f43ac0541e267931e.png" />
+<a class="reference internal image-reference" href="../../_images/c9e80d2d323ddd9df7b704b8b098c00784553ca1e40b1c2f43ac0541e267931e.png"><img alt="../../_images/c9e80d2d323ddd9df7b704b8b098c00784553ca1e40b1c2f43ac0541e267931e.png" src="../../_images/c9e80d2d323ddd9df7b704b8b098c00784553ca1e40b1c2f43ac0541e267931e.png" style="width: 400px;" /></a>
 </div>
 </div>
 </section>

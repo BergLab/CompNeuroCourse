@@ -190,16 +190,29 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 1. Introduction to modeling in neuroscience</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../modelling_intro/week0-Intro-RWB.html">1. What is computational neuroscience?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modelling_intro/b.html">2. Example of a dynamical system</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modelling_intro/b.html">2. Predator–prey dynamics: Simulation</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 2. Differential equations and neuron models</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../dynamical_systems/dynamical_systems_intro.html">1. Introduction modelling with differential equations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../dynamical_systems/Applications_LT.html">2. Dynamical systems as Linear Transformations</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Extra. Attractor in neuroscience</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 4. Data Analysis and Machine learning TEST</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../Attractors_neural/a.html">1. Intro to attractors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ML/ch01_expanded.html">1. Introduction to Machine Learning for Neuroscience</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ML/ch02_expanded.html">2. Training Simple Machine Learning Algorithms for Classification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ML/ch03_expanded.html">3. A Tour of Machine Learning Classifiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ML/ch03.html">4. Machine Learning with PyTorch and Scikit-Learn</a></li>
+
+
+
+
+
+
+
+
+
+
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 5. Network theory</span></p>
 <ul class="nav bd-sidenav">
@@ -600,7 +613,7 @@ U_2 = \left[ \begin{array}{r} 2 \\  -1   \end{array}\right]
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/8838e799c54b4bcafe28308df9072d8b5374441ac5ed0ac15ad0da6be2fea4d0.png" src="../../_images/8838e799c54b4bcafe28308df9072d8b5374441ac5ed0ac15ad0da6be2fea4d0.png" />
+<a class="reference internal image-reference" href="../../_images/8838e799c54b4bcafe28308df9072d8b5374441ac5ed0ac15ad0da6be2fea4d0.png"><img alt="../../_images/8838e799c54b4bcafe28308df9072d8b5374441ac5ed0ac15ad0da6be2fea4d0.png" src="../../_images/8838e799c54b4bcafe28308df9072d8b5374441ac5ed0ac15ad0da6be2fea4d0.png" style="width: 400px;" /></a>
 </div>
 </div>
 <p>It is important to understand that it is the <em>length and direction</em> of this arrow that defines <span class="math notranslate nohighlight">\(U_1\)</span>, not the actual position.  We could draw the arrow in any number of locations, and it would still represent <span class="math notranslate nohighlight">\(U_1\)</span>.</p>
@@ -621,7 +634,7 @@ U_2 = \left[ \begin{array}{r} 2 \\  -1   \end{array}\right]
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/19ae3232becfa4c4ace0d69b6baa593d63f297fe78ee964dc96e115c81d96dde.png" src="../../_images/19ae3232becfa4c4ace0d69b6baa593d63f297fe78ee964dc96e115c81d96dde.png" />
+<a class="reference internal image-reference" href="../../_images/19ae3232becfa4c4ace0d69b6baa593d63f297fe78ee964dc96e115c81d96dde.png"><img alt="../../_images/19ae3232becfa4c4ace0d69b6baa593d63f297fe78ee964dc96e115c81d96dde.png" src="../../_images/19ae3232becfa4c4ace0d69b6baa593d63f297fe78ee964dc96e115c81d96dde.png" style="width: 400px;" /></a>
 </div>
 </div>
 <p>When we perform a scalar multiplication, such as <span class="math notranslate nohighlight">\(2U_1\)</span>, we interpret it as multiplying the <em>length of the arrow</em> by the scalar.</p>
@@ -646,7 +659,7 @@ U_2 = \left[ \begin{array}{r} 2 \\  -1   \end{array}\right]
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/193d21bfa845db322e9a19c180be61d71c7f6fa7ae49c8e1817fce51211202ad.png" src="../../_images/193d21bfa845db322e9a19c180be61d71c7f6fa7ae49c8e1817fce51211202ad.png" />
+<a class="reference internal image-reference" href="../../_images/193d21bfa845db322e9a19c180be61d71c7f6fa7ae49c8e1817fce51211202ad.png"><img alt="../../_images/193d21bfa845db322e9a19c180be61d71c7f6fa7ae49c8e1817fce51211202ad.png" src="../../_images/193d21bfa845db322e9a19c180be61d71c7f6fa7ae49c8e1817fce51211202ad.png" style="width: 400px;" /></a>
 </div>
 </div>
 <p>If the scalar is negative, we interpret the scalar multiplication as <em>reversing the direction</em> of the arrow, as well as changing the length.</p>
@@ -671,7 +684,7 @@ U_2 = \left[ \begin{array}{r} 2 \\  -1   \end{array}\right]
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/b876cb0bd3acba68775d10d67ea3f01059a1ead64d48cce84d8adb965fdd45fb.png" src="../../_images/b876cb0bd3acba68775d10d67ea3f01059a1ead64d48cce84d8adb965fdd45fb.png" />
+<a class="reference internal image-reference" href="../../_images/b876cb0bd3acba68775d10d67ea3f01059a1ead64d48cce84d8adb965fdd45fb.png"><img alt="../../_images/b876cb0bd3acba68775d10d67ea3f01059a1ead64d48cce84d8adb965fdd45fb.png" src="../../_images/b876cb0bd3acba68775d10d67ea3f01059a1ead64d48cce84d8adb965fdd45fb.png" style="width: 400px;" /></a>
 </div>
 </div>
 <p>We can interpret the sum of two vectors as the result of aligning the two arrows tip to tail.</p>
@@ -698,7 +711,7 @@ U_2 = \left[ \begin{array}{r} 2 \\  -1   \end{array}\right]
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/c76a4043b634fc2c69629733a85b150e904b84964d717b443188b7371df5c254.png" src="../../_images/c76a4043b634fc2c69629733a85b150e904b84964d717b443188b7371df5c254.png" />
+<a class="reference internal image-reference" href="../../_images/c76a4043b634fc2c69629733a85b150e904b84964d717b443188b7371df5c254.png"><img alt="../../_images/c76a4043b634fc2c69629733a85b150e904b84964d717b443188b7371df5c254.png" src="../../_images/c76a4043b634fc2c69629733a85b150e904b84964d717b443188b7371df5c254.png" style="width: 400px;" /></a>
 </div>
 </div>
 <div class="math notranslate nohighlight">
@@ -764,7 +777,7 @@ x_1 - 2x_2 &amp; = &amp; -5 \\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/8e7ce717874ac494b8b9b7b40bca791f8c6f49e65c39b9bf59a47031c49498a3.png" src="../../_images/8e7ce717874ac494b8b9b7b40bca791f8c6f49e65c39b9bf59a47031c49498a3.png" />
+<a class="reference internal image-reference" href="../../_images/8e7ce717874ac494b8b9b7b40bca791f8c6f49e65c39b9bf59a47031c49498a3.png"><img alt="../../_images/8e7ce717874ac494b8b9b7b40bca791f8c6f49e65c39b9bf59a47031c49498a3.png" src="../../_images/8e7ce717874ac494b8b9b7b40bca791f8c6f49e65c39b9bf59a47031c49498a3.png" style="width: 400px;" /></a>
 </div>
 </div>
 <p>We are looking for a unique solution for the two variables <span class="math notranslate nohighlight">\(x_1\)</span> and <span class="math notranslate nohighlight">\(x_2\)</span>.  The system can be described as <span class="math notranslate nohighlight">\(Ax = b\)</span> with the matrices :</p>
@@ -817,7 +830,7 @@ x_1 + 3x_2 &amp; = &amp; 0 \\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/9a9903f60917784e4a2f2f7ee70b96101494059f5e21eed267bd555fcf1542d8.png" src="../../_images/9a9903f60917784e4a2f2f7ee70b96101494059f5e21eed267bd555fcf1542d8.png" />
+<a class="reference internal image-reference" href="../../_images/9a9903f60917784e4a2f2f7ee70b96101494059f5e21eed267bd555fcf1542d8.png"><img alt="../../_images/9a9903f60917784e4a2f2f7ee70b96101494059f5e21eed267bd555fcf1542d8.png" src="../../_images/9a9903f60917784e4a2f2f7ee70b96101494059f5e21eed267bd555fcf1542d8.png" style="width: 400px;" /></a>
 </div>
 </div>
 </section>
@@ -852,7 +865,7 @@ x_1 + 3x_2 &amp; = &amp; 5 \\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/ef866b0d005ac71e20a517662acec2bbe4dd1d41fac910ef7bc064cd62e720d1.png" src="../../_images/ef866b0d005ac71e20a517662acec2bbe4dd1d41fac910ef7bc064cd62e720d1.png" />
+<a class="reference internal image-reference" href="../../_images/ef866b0d005ac71e20a517662acec2bbe4dd1d41fac910ef7bc064cd62e720d1.png"><img alt="../../_images/ef866b0d005ac71e20a517662acec2bbe4dd1d41fac910ef7bc064cd62e720d1.png" src="../../_images/ef866b0d005ac71e20a517662acec2bbe4dd1d41fac910ef7bc064cd62e720d1.png" style="width: 400px;" /></a>
 </div>
 </div>
 <p>These examples illustrate all of the possibile types of solution sets that might arise in a system of two equations with two unknowns.  Either there will be exactly one solution, no solutions, or an infinite collection of solutions.  A fundamental fact about linear systems is that their solution sets are <em>always</em> one of these three cases.</p>
