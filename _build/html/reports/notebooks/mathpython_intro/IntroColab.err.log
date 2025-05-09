@@ -1,30 +1,26 @@
 Traceback (most recent call last):
-  File "/opt/anaconda3/lib/python3.11/site-packages/myst_nb/core/execute/inline.py", line 128, in code_cell_outputs
+  File "C:\Users\jhc23\AppData\Local\Programs\Python\Python312\Lib\site-packages\myst_nb\core\execute\inline.py", line 128, in code_cell_outputs
     self._client.execute_cell(
-  File "/opt/anaconda3/lib/python3.11/site-packages/jupyter_core/utils/__init__.py", line 173, in wrapped
+  File "C:\Users\jhc23\AppData\Roaming\Python\Python312\site-packages\jupyter_core\utils\__init__.py", line 165, in wrapped
     return loop.run_until_complete(inner)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/anaconda3/lib/python3.11/asyncio/base_events.py", line 653, in run_until_complete
+  File "C:\Users\jhc23\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py", line 686, in run_until_complete
     return future.result()
            ^^^^^^^^^^^^^^^
-  File "/opt/anaconda3/lib/python3.11/site-packages/nbclient/client.py", line 1058, in async_execute_cell
+  File "C:\Users\jhc23\AppData\Local\Programs\Python\Python312\Lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
     await self._check_raise_for_error(cell, cell_index, exec_reply)
-  File "/opt/anaconda3/lib/python3.11/site-packages/nbclient/client.py", line 914, in _check_raise_for_error
+  File "C:\Users\jhc23\AppData\Local\Programs\Python\Python312\Lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-x = 1
-y = 4
-z = y/(1-x)
+import brian2
 ------------------
 
 
-[0;31m---------------------------------------------------------------------------[0m
-[0;31mZeroDivisionError[0m                         Traceback (most recent call last)
-Cell [0;32mIn[12], line 3[0m
-[1;32m      1[0m x [38;5;241m=[39m [38;5;241m1[39m
-[1;32m      2[0m y [38;5;241m=[39m [38;5;241m4[39m
-[0;32m----> 3[0m z [38;5;241m=[39m y[38;5;241m/[39m([38;5;241m1[39m[38;5;241m-[39mx)
+[1;31m---------------------------------------------------------------------------[0m
+[1;31mModuleNotFoundError[0m                       Traceback (most recent call last)
+Cell [1;32mIn[6], line 1[0m
+[1;32m----> 1[0m [38;5;28;01mimport[39;00m [38;5;21;01mbrian2[39;00m
 
-[0;31mZeroDivisionError[0m: division by zero
+[1;31mModuleNotFoundError[0m: No module named 'brian2'
 

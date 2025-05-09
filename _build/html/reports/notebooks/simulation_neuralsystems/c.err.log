@@ -1,68 +1,45 @@
 Traceback (most recent call last):
-  File "/Users/enaj/.virtualenvs/compneurocourse/lib/python3.11/site-packages/myst_nb/core/execute/inline.py", line 120, in code_cell_outputs
+  File "C:\Users\jhc23\AppData\Local\Programs\Python\Python312\Lib\site-packages\myst_nb\core\execute\inline.py", line 128, in code_cell_outputs
     self._client.execute_cell(
-  File "/Users/enaj/.virtualenvs/compneurocourse/lib/python3.11/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+  File "C:\Users\jhc23\AppData\Roaming\Python\Python312\site-packages\jupyter_core\utils\__init__.py", line 165, in wrapped
     return loop.run_until_complete(inner)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/enaj/miniconda3/lib/python3.11/asyncio/base_events.py", line 653, in run_until_complete
+  File "C:\Users\jhc23\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py", line 686, in run_until_complete
     return future.result()
            ^^^^^^^^^^^^^^^
-  File "/Users/enaj/.virtualenvs/compneurocourse/lib/python3.11/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+  File "C:\Users\jhc23\AppData\Local\Programs\Python\Python312\Lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
     await self._check_raise_for_error(cell, cell_index, exec_reply)
-  File "/Users/enaj/.virtualenvs/compneurocourse/lib/python3.11/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+  File "C:\Users\jhc23\AppData\Local\Programs\Python\Python312\Lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-start_scope()
-from matplotlib.image import imread
-img = (1-imread('brian.png'))[::-1, :, 0].T
-num_samples, N = img.shape
-ta = TimedArray(img, dt=1*ms) # 228
-A = 1.5
-tau = 2*ms
-eqs = '''
-dv/dt = (A*ta(t, i)-v)/tau+0.8*xi*tau**-0.5 : 1
-'''
-G = NeuronGroup(N, eqs, threshold='v>1', reset='v=0', method='euler')
-M = SpikeMonitor(G)
-run(num_samples*ms)
-plot(M.t/ms, M.i, '.k', ms=3)
-xlim(0, num_samples)
-ylim(0, N)
-xlabel('Time (ms)')
-ylabel('Neuron index');
+!pip3 install brian2
+from brian2 import *
 ------------------
 
+----- stdout -----
+Requirement already satisfied: brian2 in c:\users\jhc23\documents\education\phd\code\python\joao_comp_neuro\compneurocourse\.venv\lib\site-packages (2.8.0.4)
+Requirement already satisfied: numpy>=1.23.5 in c:\users\jhc23\documents\education\phd\code\python\joao_comp_neuro\compneurocourse\.venv\lib\site-packages (from brian2) (2.2.5)
+Requirement already satisfied: cython>=0.29.21 in c:\users\jhc23\documents\education\phd\code\python\joao_comp_neuro\compneurocourse\.venv\lib\site-packages (from brian2) (3.1.0)
+Requirement already satisfied: sympy>=1.2 in c:\users\jhc23\documents\education\phd\code\python\joao_comp_neuro\compneurocourse\.venv\lib\site-packages (from brian2) (1.14.0)
+Requirement already satisfied: pyparsing in c:\users\jhc23\documents\education\phd\code\python\joao_comp_neuro\compneurocourse\.venv\lib\site-packages (from brian2) (3.2.3)
+Requirement already satisfied: jinja2>=2.7 in c:\users\jhc23\documents\education\phd\code\python\joao_comp_neuro\compneurocourse\.venv\lib\site-packages (from brian2) (3.1.6)
+Requirement already satisfied: py-cpuinfo in c:\users\jhc23\documents\education\phd\code\python\joao_comp_neuro\compneurocourse\.venv\lib\site-packages (from brian2) (9.0.0)
+Requirement already satisfied: setuptools>=61 in c:\users\jhc23\documents\education\phd\code\python\joao_comp_neuro\compneurocourse\.venv\lib\site-packages (from brian2) (80.3.1)
+Requirement already satisfied: packaging in c:\users\jhc23\documents\education\phd\code\python\joao_comp_neuro\compneurocourse\.venv\lib\site-packages (from brian2) (25.0)
+Requirement already satisfied: MarkupSafe>=2.0 in c:\users\jhc23\documents\education\phd\code\python\joao_comp_neuro\compneurocourse\.venv\lib\site-packages (from jinja2>=2.7->brian2) (3.0.2)
+Requirement already satisfied: mpmath<1.4,>=1.1.0 in c:\users\jhc23\documents\education\phd\code\python\joao_comp_neuro\compneurocourse\.venv\lib\site-packages (from sympy>=1.2->brian2) (1.3.0)
+----- stderr -----
 
-[0;31m---------------------------------------------------------------------------[0m
-[0;31mFileNotFoundError[0m                         Traceback (most recent call last)
-Cell [0;32mIn[16], line 3[0m
-[1;32m      1[0m start_scope()
-[1;32m      2[0m [38;5;28;01mfrom[39;00m [38;5;21;01mmatplotlib[39;00m[38;5;21;01m.[39;00m[38;5;21;01mimage[39;00m [38;5;28;01mimport[39;00m imread
-[0;32m----> 3[0m img [38;5;241m=[39m ([38;5;241m1[39m[38;5;241m-[39m[43mimread[49m[43m([49m[38;5;124;43m'[39;49m[38;5;124;43mbrian.png[39;49m[38;5;124;43m'[39;49m[43m)[49m)[::[38;5;241m-[39m[38;5;241m1[39m, :, [38;5;241m0[39m][38;5;241m.[39mT
-[1;32m      4[0m num_samples, N [38;5;241m=[39m img[38;5;241m.[39mshape
-[1;32m      5[0m ta [38;5;241m=[39m TimedArray(img, dt[38;5;241m=[39m[38;5;241m1[39m[38;5;241m*[39mms) [38;5;66;03m# 228[39;00m
+[notice] A new release of pip is available: 24.3.1 -> 25.1.1
+[notice] To update, run: python.exe -m pip install --upgrade pip
+------------------
 
-File [0;32m~/.virtualenvs/compneurocourse/lib/python3.11/site-packages/matplotlib/image.py:1525[0m, in [0;36mimread[0;34m(fname, format)[0m
-[1;32m   1518[0m [38;5;28;01mif[39;00m [38;5;28misinstance[39m(fname, [38;5;28mstr[39m) [38;5;129;01mand[39;00m [38;5;28mlen[39m(parse[38;5;241m.[39murlparse(fname)[38;5;241m.[39mscheme) [38;5;241m>[39m [38;5;241m1[39m:
-[1;32m   1519[0m     [38;5;66;03m# Pillow doesn't handle URLs directly.[39;00m
-[1;32m   1520[0m     [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m(
-[1;32m   1521[0m         [38;5;124m"[39m[38;5;124mPlease open the URL for reading and pass the [39m[38;5;124m"[39m
-[1;32m   1522[0m         [38;5;124m"[39m[38;5;124mresult to Pillow, e.g. with [39m[38;5;124m"[39m
-[1;32m   1523[0m         [38;5;124m"[39m[38;5;124m``np.array(PIL.Image.open(urllib.request.urlopen(url)))``.[39m[38;5;124m"[39m
-[1;32m   1524[0m         )
-[0;32m-> 1525[0m [38;5;28;01mwith[39;00m [43mimg_open[49m[43m([49m[43mfname[49m[43m)[49m [38;5;28;01mas[39;00m image:
-[1;32m   1526[0m     [38;5;28;01mreturn[39;00m (_pil_png_to_float_array(image)
-[1;32m   1527[0m             [38;5;28;01mif[39;00m [38;5;28misinstance[39m(image, PIL[38;5;241m.[39mPngImagePlugin[38;5;241m.[39mPngImageFile) [38;5;28;01melse[39;00m
-[1;32m   1528[0m             pil_to_array(image))
+[1;31m---------------------------------------------------------------------------[0m
+[1;31mModuleNotFoundError[0m                       Traceback (most recent call last)
+Cell [1;32mIn[1], line 2[0m
+[0;32m      1[0m get_ipython()[38;5;241m.[39msystem([38;5;124m'[39m[38;5;124mpip3 install brian2[39m[38;5;124m'[39m)
+[1;32m----> 2[0m [38;5;28;01mfrom[39;00m [38;5;21;01mbrian2[39;00m [38;5;28;01mimport[39;00m [38;5;241m*[39m
 
-File [0;32m~/.virtualenvs/compneurocourse/lib/python3.11/site-packages/PIL/ImageFile.py:125[0m, in [0;36mImageFile.__init__[0;34m(self, fp, filename)[0m
-[1;32m    121[0m [38;5;28mself[39m[38;5;241m.[39mdecodermaxblock [38;5;241m=[39m MAXBLOCK
-[1;32m    123[0m [38;5;28;01mif[39;00m is_path(fp):
-[1;32m    124[0m     [38;5;66;03m# filename[39;00m
-[0;32m--> 125[0m     [38;5;28mself[39m[38;5;241m.[39mfp [38;5;241m=[39m [38;5;28;43mopen[39;49m[43m([49m[43mfp[49m[43m,[49m[43m [49m[38;5;124;43m"[39;49m[38;5;124;43mrb[39;49m[38;5;124;43m"[39;49m[43m)[49m
-[1;32m    126[0m     [38;5;28mself[39m[38;5;241m.[39mfilename [38;5;241m=[39m fp
-[1;32m    127[0m     [38;5;28mself[39m[38;5;241m.[39m_exclusive_fp [38;5;241m=[39m [38;5;28;01mTrue[39;00m
-
-[0;31mFileNotFoundError[0m: [Errno 2] No such file or directory: 'brian.png'
+[1;31mModuleNotFoundError[0m: No module named 'brian2'
 
