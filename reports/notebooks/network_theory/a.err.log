@@ -1,69 +1,45 @@
 Traceback (most recent call last):
-  File "/Users/enaj/.virtualenvs/compneurocourse/lib/python3.11/site-packages/myst_nb/core/execute/inline.py", line 120, in code_cell_outputs
+  File "C:\Users\jhc23\AppData\Local\Programs\Python\Python312\Lib\site-packages\myst_nb\core\execute\inline.py", line 128, in code_cell_outputs
     self._client.execute_cell(
-  File "/Users/enaj/.virtualenvs/compneurocourse/lib/python3.11/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+  File "C:\Users\jhc23\AppData\Roaming\Python\Python312\site-packages\jupyter_core\utils\__init__.py", line 165, in wrapped
     return loop.run_until_complete(inner)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/enaj/miniconda3/lib/python3.11/asyncio/base_events.py", line 653, in run_until_complete
+  File "C:\Users\jhc23\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py", line 686, in run_until_complete
     return future.result()
            ^^^^^^^^^^^^^^^
-  File "/Users/enaj/.virtualenvs/compneurocourse/lib/python3.11/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+  File "C:\Users\jhc23\AppData\Local\Programs\Python\Python312\Lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
     await self._check_raise_for_error(cell, cell_index, exec_reply)
-  File "/Users/enaj/.virtualenvs/compneurocourse/lib/python3.11/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+  File "C:\Users\jhc23\AppData\Local\Programs\Python\Python312\Lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-# Create random weighted directed network
-networkSize = 10
-minWeight = -1
-maxWeight = 1
-adj_matrix = np.random.uniform(low=minWeight, high=maxWeight, size=(networkSize, networkSize)) # create a square random matrix with 0s and 1s of of size networkSize
-G = nx.from_numpy_array(adj_matrix, create_using=nx.DiGraph)
+import numpy.linalg
 
+networkSize = 1000
+numberOfEdges = 10000
+G = nx.gnm_random_graph(networkSize, numberOfEdges)
 
-plt.figure(figsize=(16,12));
-nodes_size = 100*np.array(list(dict(G.degree()).values()))
-edge_colors = adj_matrix.flatten()
-nx.draw_networkx(G, node_color='white', edgecolors='black', with_labels=True, node_size=500, edge_color = edge_colors, connectionstyle='arc3, rad = 0.1');
+L = nx.normalized_laplacian_matrix(G)
+e = numpy.linalg.eigvals(L.A)
+print("Largest eigenvalue:", max(e))
+print("Smallest eigenvalue:", min(e))
+plt.figure(figsize=(12,9))
+plt.hist(e, bins=100, edgecolor='black', linewidth=0.5, rwidth=0.5) 
+plt.xlabel('Eigenvalue', fontsize=12)
+plt.ylabel('Count', fontsize=12)
+plt.show()
 
-
-plt.colorbar(plt.cm.ScalarMappable(cmap=plt.cm.viridis, norm=plt.Normalize(vmin = edge_colors.min(), vmax=edge_colors.max())));
-plt.axis("off");
-plt.show();
 ------------------
 
 
-[0;31m---------------------------------------------------------------------------[0m
-[0;31mValueError[0m                                Traceback (most recent call last)
-Cell [0;32mIn[8], line 15[0m
-[1;32m     11[0m edge_colors [38;5;241m=[39m adj_matrix[38;5;241m.[39mflatten()
-[1;32m     12[0m nx[38;5;241m.[39mdraw_networkx(G, node_color[38;5;241m=[39m[38;5;124m'[39m[38;5;124mwhite[39m[38;5;124m'[39m, edgecolors[38;5;241m=[39m[38;5;124m'[39m[38;5;124mblack[39m[38;5;124m'[39m, with_labels[38;5;241m=[39m[38;5;28;01mTrue[39;00m, node_size[38;5;241m=[39m[38;5;241m500[39m, edge_color [38;5;241m=[39m edge_colors, connectionstyle[38;5;241m=[39m[38;5;124m'[39m[38;5;124marc3, rad = 0.1[39m[38;5;124m'[39m);
-[0;32m---> 15[0m [43mplt[49m[38;5;241;43m.[39;49m[43mcolorbar[49m[43m([49m[43mplt[49m[38;5;241;43m.[39;49m[43mcm[49m[38;5;241;43m.[39;49m[43mScalarMappable[49m[43m([49m[43mcmap[49m[38;5;241;43m=[39;49m[43mplt[49m[38;5;241;43m.[39;49m[43mcm[49m[38;5;241;43m.[39;49m[43mviridis[49m[43m,[49m[43m [49m[43mnorm[49m[38;5;241;43m=[39;49m[43mplt[49m[38;5;241;43m.[39;49m[43mNormalize[49m[43m([49m[43mvmin[49m[43m [49m[38;5;241;43m=[39;49m[43m [49m[43medge_colors[49m[38;5;241;43m.[39;49m[43mmin[49m[43m([49m[43m)[49m[43m,[49m[43m [49m[43mvmax[49m[38;5;241;43m=[39;49m[43medge_colors[49m[38;5;241;43m.[39;49m[43mmax[49m[43m([49m[43m)[49m[43m)[49m[43m)[49m[43m)[49m;
-[1;32m     16[0m plt[38;5;241m.[39maxis([38;5;124m"[39m[38;5;124moff[39m[38;5;124m"[39m);
-[1;32m     17[0m plt[38;5;241m.[39mshow();
+[1;31m---------------------------------------------------------------------------[0m
+[1;31mAttributeError[0m                            Traceback (most recent call last)
+Cell [1;32mIn[22], line 8[0m
+[0;32m      5[0m G [38;5;241m=[39m nx[38;5;241m.[39mgnm_random_graph(networkSize, numberOfEdges)
+[0;32m      7[0m L [38;5;241m=[39m nx[38;5;241m.[39mnormalized_laplacian_matrix(G)
+[1;32m----> 8[0m e [38;5;241m=[39m numpy[38;5;241m.[39mlinalg[38;5;241m.[39meigvals([43mL[49m[38;5;241;43m.[39;49m[43mA[49m)
+[0;32m      9[0m [38;5;28mprint[39m([38;5;124m"[39m[38;5;124mLargest eigenvalue:[39m[38;5;124m"[39m, [38;5;28mmax[39m(e))
+[0;32m     10[0m [38;5;28mprint[39m([38;5;124m"[39m[38;5;124mSmallest eigenvalue:[39m[38;5;124m"[39m, [38;5;28mmin[39m(e))
 
-File [0;32m~/.virtualenvs/compneurocourse/lib/python3.11/site-packages/matplotlib/pyplot.py:2326[0m, in [0;36mcolorbar[0;34m(mappable, cax, ax, **kwargs)[0m
-[1;32m   2321[0m     [38;5;28;01mif[39;00m mappable [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m:
-[1;32m   2322[0m         [38;5;28;01mraise[39;00m [38;5;167;01mRuntimeError[39;00m([38;5;124m'[39m[38;5;124mNo mappable was found to use for colorbar [39m[38;5;124m'[39m
-[1;32m   2323[0m                            [38;5;124m'[39m[38;5;124mcreation. First define a mappable such as [39m[38;5;124m'[39m
-[1;32m   2324[0m                            [38;5;124m'[39m[38;5;124man image (with imshow) or a contour set ([39m[38;5;124m'[39m
-[1;32m   2325[0m                            [38;5;124m'[39m[38;5;124mwith contourf).[39m[38;5;124m'[39m)
-[0;32m-> 2326[0m ret [38;5;241m=[39m [43mgcf[49m[43m([49m[43m)[49m[38;5;241;43m.[39;49m[43mcolorbar[49m[43m([49m[43mmappable[49m[43m,[49m[43m [49m[43mcax[49m[38;5;241;43m=[39;49m[43mcax[49m[43m,[49m[43m [49m[43max[49m[38;5;241;43m=[39;49m[43max[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m)[49m
-[1;32m   2327[0m [38;5;28;01mreturn[39;00m ret
-
-File [0;32m~/.virtualenvs/compneurocourse/lib/python3.11/site-packages/matplotlib/figure.py:1285[0m, in [0;36mFigureBase.colorbar[0;34m(self, mappable, cax, ax, use_gridspec, **kwargs)[0m
-[1;32m   1283[0m [38;5;28;01mif[39;00m cax [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m:
-[1;32m   1284[0m     [38;5;28;01mif[39;00m ax [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m:
-[0;32m-> 1285[0m         [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m(
-[1;32m   1286[0m             [38;5;124m'[39m[38;5;124mUnable to determine Axes to steal space for Colorbar. [39m[38;5;124m'[39m
-[1;32m   1287[0m             [38;5;124m'[39m[38;5;124mEither provide the *cax* argument to use as the Axes for [39m[38;5;124m'[39m
-[1;32m   1288[0m             [38;5;124m'[39m[38;5;124mthe Colorbar, provide the *ax* argument to steal space [39m[38;5;124m'[39m
-[1;32m   1289[0m             [38;5;124m'[39m[38;5;124mfrom it, or add *mappable* to an Axes.[39m[38;5;124m'[39m)
-[1;32m   1290[0m     fig [38;5;241m=[39m (  [38;5;66;03m# Figure of first axes; logic copied from make_axes.[39;00m
-[1;32m   1291[0m         [[38;5;241m*[39max[38;5;241m.[39mflat] [38;5;28;01mif[39;00m [38;5;28misinstance[39m(ax, np[38;5;241m.[39mndarray)
-[1;32m   1292[0m         [38;5;28;01melse[39;00m [[38;5;241m*[39max] [38;5;28;01mif[39;00m np[38;5;241m.[39miterable(ax)
-[1;32m   1293[0m         [38;5;28;01melse[39;00m [ax])[[38;5;241m0[39m][38;5;241m.[39mfigure
-[1;32m   1294[0m     current_ax [38;5;241m=[39m fig[38;5;241m.[39mgca()
-
-[0;31mValueError[0m: Unable to determine Axes to steal space for Colorbar. Either provide the *cax* argument to use as the Axes for the Colorbar, provide the *ax* argument to steal space from it, or add *mappable* to an Axes.
+[1;31mAttributeError[0m: 'csr_array' object has no attribute 'A'
 
