@@ -32,13 +32,12 @@ parts:
   - file: notebooks/simulation_neuralsystems/a
   - file: notebooks/simulation_neuralsystems/b
   - file: notebooks/simulation_neuralsystems/c
-  caption: Chapter 4. Data Analysis and Machine learning TEST
+- caption: Chapter 4. Data Analysis and Machine Learning
   numbered: true
   chapters:
-  - file: notebooks/ML/ch01_expanded
-  - file: notebooks/ML/ch02_expanded
-  - file: notebooks/ML/ch03_expanded
-  - file: notebooks/ML/ch03
+  - file: notebooks/ML_joao/ch01_expanded
+  - file: notebooks/ML_joao/ch02_expanded
+  - file: notebooks/ML_joao/ch03_expanded
 ##
 #  - file: notebooks/ML/b
 #  - file: notebooks/ML/CompNeuro_Basic_ML_Exercises.ipynb

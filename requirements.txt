@@ -3,4 +3,5 @@ matplotlib
 numpy
 brian2
 pandas
-networkx
+network
+ipywidgets
