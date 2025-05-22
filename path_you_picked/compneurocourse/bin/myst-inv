@@ -1,0 +1,10 @@
+#!/bin/sh
+'''exec' "/Users/rune/Documents/IN-KU/Teaching/Computational Neuroscience/Book/CompNeuroCourse2025/CompNeuroCourse/path_you_picked/compneurocourse/bin/python3.11" "$0" "$@"
+' '''
+# -*- coding: utf-8 -*-
+import re
+import sys
+from myst_parser.inventory import inventory_cli
+if __name__ == '__main__':
+    sys.argv[0] = re.sub(r'(-script\.pyw|\.exe)?$', '', sys.argv[0])
+    sys.exit(inventory_cli())
