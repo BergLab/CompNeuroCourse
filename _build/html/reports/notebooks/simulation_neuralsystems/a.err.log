@@ -1,47 +1,50 @@
 Traceback (most recent call last):
-  File "C:\Users\jhc23\AppData\Local\Programs\Python\Python312\Lib\site-packages\myst_nb\core\execute\inline.py", line 128, in code_cell_outputs
+  File "/Users/rune/Documents/IN-KU/Teaching/Computational Neuroscience/Book/CompNeuroCourse2025/CompNeuroCourse/path_you_picked/compneurocourse/lib/python3.11/site-packages/myst_nb/core/execute/inline.py", line 128, in code_cell_outputs
     self._client.execute_cell(
-  File "C:\Users\jhc23\AppData\Roaming\Python\Python312\site-packages\jupyter_core\utils\__init__.py", line 165, in wrapped
+  File "/Users/rune/Documents/IN-KU/Teaching/Computational Neuroscience/Book/CompNeuroCourse2025/CompNeuroCourse/path_you_picked/compneurocourse/lib/python3.11/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
     return loop.run_until_complete(inner)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\jhc23\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py", line 686, in run_until_complete
+  File "/opt/anaconda3/lib/python3.11/asyncio/base_events.py", line 653, in run_until_complete
     return future.result()
            ^^^^^^^^^^^^^^^
-  File "C:\Users\jhc23\AppData\Local\Programs\Python\Python312\Lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+  File "/Users/rune/Documents/IN-KU/Teaching/Computational Neuroscience/Book/CompNeuroCourse2025/CompNeuroCourse/path_you_picked/compneurocourse/lib/python3.11/site-packages/nbclient/client.py", line 1062, in async_execute_cell
     await self._check_raise_for_error(cell, cell_index, exec_reply)
-  File "C:\Users\jhc23\AppData\Local\Programs\Python\Python312\Lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+  File "/Users/rune/Documents/IN-KU/Teaching/Computational Neuroscience/Book/CompNeuroCourse2025/CompNeuroCourse/path_you_picked/compneurocourse/lib/python3.11/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-!pip3 install brian2
-from brian2 import *
-%matplotlib inline
+5*amp+10*volt
 ------------------
 
------ stdout -----
-Requirement already satisfied: brian2 in c:\users\jhc23\documents\education\phd\code\python\joao_comp_neuro\compneurocourse\.venv\lib\site-packages (2.8.0.4)
-Requirement already satisfied: numpy>=1.23.5 in c:\users\jhc23\documents\education\phd\code\python\joao_comp_neuro\compneurocourse\.venv\lib\site-packages (from brian2) (2.2.5)
-Requirement already satisfied: cython>=0.29.21 in c:\users\jhc23\documents\education\phd\code\python\joao_comp_neuro\compneurocourse\.venv\lib\site-packages (from brian2) (3.1.0)
-Requirement already satisfied: sympy>=1.2 in c:\users\jhc23\documents\education\phd\code\python\joao_comp_neuro\compneurocourse\.venv\lib\site-packages (from brian2) (1.14.0)
-Requirement already satisfied: pyparsing in c:\users\jhc23\documents\education\phd\code\python\joao_comp_neuro\compneurocourse\.venv\lib\site-packages (from brian2) (3.2.3)
-Requirement already satisfied: jinja2>=2.7 in c:\users\jhc23\documents\education\phd\code\python\joao_comp_neuro\compneurocourse\.venv\lib\site-packages (from brian2) (3.1.6)
-Requirement already satisfied: py-cpuinfo in c:\users\jhc23\documents\education\phd\code\python\joao_comp_neuro\compneurocourse\.venv\lib\site-packages (from brian2) (9.0.0)
-Requirement already satisfied: setuptools>=61 in c:\users\jhc23\documents\education\phd\code\python\joao_comp_neuro\compneurocourse\.venv\lib\site-packages (from brian2) (80.3.1)
-Requirement already satisfied: packaging in c:\users\jhc23\documents\education\phd\code\python\joao_comp_neuro\compneurocourse\.venv\lib\site-packages (from brian2) (25.0)
-Requirement already satisfied: MarkupSafe>=2.0 in c:\users\jhc23\documents\education\phd\code\python\joao_comp_neuro\compneurocourse\.venv\lib\site-packages (from jinja2>=2.7->brian2) (3.0.2)
-Requirement already satisfied: mpmath<1.4,>=1.1.0 in c:\users\jhc23\documents\education\phd\code\python\joao_comp_neuro\compneurocourse\.venv\lib\site-packages (from sympy>=1.2->brian2) (1.3.0)
------ stderr -----
 
-[notice] A new release of pip is available: 24.3.1 -> 25.1.1
-[notice] To update, run: python.exe -m pip install --upgrade pip
-------------------
+[31m---------------------------------------------------------------------------[39m
+[31mDimensionMismatchError[39m                    Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[7][39m[32m, line 1[39m
+[32m----> [39m[32m1[39m [32;43m5[39;49m[43m*[49m[43mamp[49m[43m+[49m[32;43m10[39;49m[43m*[49m[43mvolt[49m
 
-[1;31m---------------------------------------------------------------------------[0m
-[1;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-Cell [1;32mIn[1], line 2[0m
-[0;32m      1[0m get_ipython()[38;5;241m.[39msystem([38;5;124m'[39m[38;5;124mpip3 install brian2[39m[38;5;124m'[39m)
-[1;32m----> 2[0m [38;5;28;01mfrom[39;00m [38;5;21;01mbrian2[39;00m [38;5;28;01mimport[39;00m [38;5;241m*[39m
-[0;32m      3[0m get_ipython()[38;5;241m.[39mrun_line_magic([38;5;124m'[39m[38;5;124mmatplotlib[39m[38;5;124m'[39m, [38;5;124m'[39m[38;5;124minline[39m[38;5;124m'[39m)
+[36mFile [39m[32m~/Documents/IN-KU/Teaching/Computational Neuroscience/Book/CompNeuroCourse2025/CompNeuroCourse/path_you_picked/compneurocourse/lib/python3.11/site-packages/brian2/units/fundamentalunits.py:1193[39m, in [36mQuantity.__array_ufunc__[39m[34m(self, uf, method, *inputs, **kwargs)[39m
+[32m   1190[39m [38;5;28;01melif[39;00m uf.[34m__name__[39m [38;5;129;01min[39;00m UFUNCS_MATCHING_DIMENSIONS + UFUNCS_COMPARISONS:
+[32m   1191[39m     [38;5;66;03m# Ok if dimension of arguments match (for reductions, they always do)[39;00m
+[32m   1192[39m     [38;5;28;01mif[39;00m method == [33m"[39m[33m__call__[39m[33m"[39m:
+[32m-> [39m[32m1193[39m         [43mfail_for_dimension_mismatch[49m[43m([49m
+[32m   1194[39m [43m            [49m[43minputs[49m[43m[[49m[32;43m0[39;49m[43m][49m[43m,[49m
+[32m   1195[39m [43m            [49m[43minputs[49m[43m[[49m[32;43m1[39;49m[43m][49m[43m,[49m
+[32m   1196[39m [43m            [49m[43merror_message[49m[43m=[49m[43m([49m
+[32m   1197[39m [43m                [49m[33;43m"[39;49m[33;43mCannot calculate [39;49m[38;5;132;43;01m{val1}[39;49;00m[33;43m [39;49m[38;5;132;43;01m%s[39;49;00m[33;43m [39;49m[38;5;132;43;01m{val2}[39;49;00m[33;43m, the units do not match[39;49m[33;43m"[39;49m
+[32m   1198[39m [43m            [49m[43m)[49m
+[32m   1199[39m [43m            [49m[43m%[49m[43m [49m[43muf[49m[43m.[49m[34;43m__name__[39;49m[43m,[49m
+[32m   1200[39m [43m            [49m[43mval1[49m[43m=[49m[43minputs[49m[43m[[49m[32;43m0[39;49m[43m][49m[43m,[49m
+[32m   1201[39m [43m            [49m[43mval2[49m[43m=[49m[43minputs[49m[43m[[49m[32;43m1[39;49m[43m][49m[43m,[49m
+[32m   1202[39m [43m        [49m[43m)[49m
+[32m   1203[39m     [38;5;28;01mif[39;00m uf.[34m__name__[39m [38;5;129;01min[39;00m UFUNCS_COMPARISONS:
+[32m   1204[39m         [38;5;28;01mreturn[39;00m uf_method(*[np.asarray(i) [38;5;28;01mfor[39;00m i [38;5;129;01min[39;00m inputs], **kwargs)
 
-[1;31mModuleNotFoundError[0m: No module named 'brian2'
+[36mFile [39m[32m~/Documents/IN-KU/Teaching/Computational Neuroscience/Book/CompNeuroCourse2025/CompNeuroCourse/path_you_picked/compneurocourse/lib/python3.11/site-packages/brian2/units/fundamentalunits.py:266[39m, in [36mfail_for_dimension_mismatch[39m[34m(obj1, obj2, error_message, **error_quantities)[39m
+[32m    264[39m         [38;5;28;01mraise[39;00m DimensionMismatchError(error_message, dim1)
+[32m    265[39m     [38;5;28;01melse[39;00m:
+[32m--> [39m[32m266[39m         [38;5;28;01mraise[39;00m DimensionMismatchError(error_message, dim1, dim2)
+[32m    267[39m [38;5;28;01melse[39;00m:
+[32m    268[39m     [38;5;28;01mreturn[39;00m dim1, dim2
+
+[31mDimensionMismatchError[39m: Cannot calculate 5. A add 10. V, the units do not match (units are A and V).
 

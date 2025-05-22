@@ -28,11 +28,11 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=9f7f7efb" />
@@ -66,7 +66,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="2. Dynamical systems as Linear Transformations" href="Applications_LT.html" />
-    <link rel="prev" title="2. Predator–prey dynamics: Simulation" href="../modelling_intro/b.html" />
+    <link rel="prev" title="&lt;no title&gt;" href="numerical_solution.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -586,16 +586,16 @@ I(t) = \frac{\tau_{m}}{R_{m}} \frac{dV(t)}{dt} + \frac{V(t)-V_{rest}}{R_{m}}
 <p>As we did to solve the predator-prey model, in order to solve the differential equation we need to define a function that return the right hand side of the equation in the form <span class="math notranslate nohighlight">\(\frac{dV}{dt}=f(...)\)</span>, where <span class="math notranslate nohighlight">\(V\)</span> is the variable we want to solve for. In our case, we are interested in finding what is the membrane potential <span class="math notranslate nohighlight">\(V\)</span>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
 
 <span class="c1"># Define the IF neuron model</span>
-<span class="k">def</span> <span class="nf">IF</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">input_current</span><span class="p">,</span> <span class="n">membrane_capacitance</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">IF</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">input_current</span><span class="p">,</span> <span class="n">membrane_capacitance</span><span class="p">):</span>
     <span class="n">dvdt</span> <span class="o">=</span> <span class="n">input_current</span><span class="o">/</span><span class="n">membrane_capacitance</span>
     <span class="k">return</span> <span class="n">dvdt</span>
 
 <span class="c1"># We import scipy ordinary differential equations solver</span>
-<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">odeint</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.integrate</span><span class="w"> </span><span class="kn">import</span> <span class="n">odeint</span>
 
 <span class="c1">#Defined the model parameters</span>
 <span class="n">membrane_capacitance</span> <span class="o">=</span> <span class="mf">1.</span>
@@ -624,7 +624,7 @@ I(t) = \frac{\tau_{m}}{R_{m}} \frac{dV(t)}{dt} + \frac{V(t)-V_{rest}}{R_{m}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/31fb1d8de90a63d93d78292cdc312ffcc6f925198d0d93ec5242ae1eb0d20e6d.png" src="../../_images/31fb1d8de90a63d93d78292cdc312ffcc6f925198d0d93ec5242ae1eb0d20e6d.png" />
+<img alt="../../_images/216584661f76a5461dad5bc42a03660874438d648274e7d6fbf49cb752e05e03.png" src="../../_images/216584661f76a5461dad5bc42a03660874438d648274e7d6fbf49cb752e05e03.png" />
 </div>
 </div>
 <p>We see what we get a straight line as a solution for the Integrate-Fire neuron. This makes sense since we are basically solving a single differential equation of the form <span class="math notranslate nohighlight">\(y' = k\)</span>, where <span class="math notranslate nohighlight">\(k\)</span> is a constant. From calculus, you know that that equation has a solution of the form <span class="math notranslate nohighlight">\(ky\)</span> which geometrically represents a straight line.</p>
@@ -647,11 +647,11 @@ I(t) = C_{m} \frac{dV(t)}{dt} + \frac{V(t)}{R_{m}}
 </ul>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
 
 <span class="c1"># Define the LIF neuron model</span>
-<span class="k">def</span> <span class="nf">LIF</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">input_current</span><span class="p">,</span> <span class="n">membrane_capacitance</span><span class="p">,</span> <span class="n">membrane_resistance</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">LIF</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">input_current</span><span class="p">,</span> <span class="n">membrane_capacitance</span><span class="p">,</span> <span class="n">membrane_resistance</span><span class="p">):</span>
     
     <span class="c1">## Your code here</span>
 </pre></div>
@@ -712,7 +712,7 @@ I(t) = C_{m} \frac{dV(t)}{dt} + \frac{V(t)}{R_{m}}
         },
         kernelOptions: {
             name: "python3",
-            path: "./notebooks\dynamical_systems"
+            path: "./notebooks/dynamical_systems"
         },
         predefinedOutput: true
     }
@@ -730,12 +730,12 @@ I(t) = C_{m} \frac{dV(t)}{dt} + \frac{V(t)}{R_{m}}
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../modelling_intro/b.html"
+       href="numerical_solution.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">2. </span>Predator–prey dynamics: Simulation</p>
+        <p class="prev-next-title">&lt;no title&gt;</p>
       </div>
     </a>
     <a class="right-next"

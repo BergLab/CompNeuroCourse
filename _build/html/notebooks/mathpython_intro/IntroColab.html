@@ -28,11 +28,11 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=9f7f7efb" />
@@ -553,8 +553,8 @@ document.write(`
 <p>With Colab you can harness the full power of popular Python libraries to analyze and visualize data. The code cell below uses <strong>numpy</strong> to generate some random data, and uses <strong>matplotlib</strong> to visualize it. To edit the code, just click the cell and start editing.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
 
 <span class="n">ys</span> <span class="o">=</span> <span class="mi">200</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ys</span><span class="p">))]</span>
@@ -568,7 +568,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/dcd96161623e33c9ad52eea8e677b569a4711982dc1bcee2bddc64c294a23deb.png" src="../../_images/dcd96161623e33c9ad52eea8e677b569a4711982dc1bcee2bddc64c294a23deb.png" />
+<img alt="../../_images/78ec039c2f6f80bb7ed2b171aa06affc2a4164e33cb365387872085fb4b81bf5.png" src="../../_images/78ec039c2f6f80bb7ed2b171aa06affc2a4164e33cb365387872085fb4b81bf5.png" />
 </div>
 </div>
 </section>
@@ -595,7 +595,7 @@ within a pair of <strong>$</strong> signs. For example <code class="docutils lit
 <p>Long running python processes can be interrupted. Run the following cell and select <strong>Runtime -&gt; Interrupt execution</strong> (<em>hotkey: Cmd/Ctrl-M I</em>) to stop execution.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sleeping&quot;</span><span class="p">)</span>
 <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span> <span class="c1"># sleep for a while; interrupt me!</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Done Sleeping&quot;</span><span class="p">)</span>
@@ -623,7 +623,7 @@ within a pair of <strong>$</strong> signs. For example <code class="docutils lit
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The system cannot find the path specified.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>zsh:cd:1: no such file or directory: sample_data
 </pre></div>
 </div>
 </div>
@@ -635,17 +635,7 @@ within a pair of <strong>$</strong> signs. For example <code class="docutils lit
 <p>For example, in week 3 we will Brian2 library to simulate spiking neural populations, let’s try to import it:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">brian2</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">brian2</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;brian2&#39;
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">brian2</span>
 </pre></div>
 </div>
 </div>
@@ -657,11 +647,31 @@ within a pair of <strong>$</strong> signs. For example <code class="docutils lit
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: brian2 in /Users/rune/Documents/IN-KU/Teaching/Computational Neuroscience/Book/CompNeuroCourse2025/CompNeuroCourse/path_you_picked/compneurocourse/lib/python3.11/site-packages (2.9.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: numpy&gt;=1.23.5 in /Users/rune/Documents/IN-KU/Teaching/Computational Neuroscience/Book/CompNeuroCourse2025/CompNeuroCourse/path_you_picked/compneurocourse/lib/python3.11/site-packages (from brian2) (2.2.6)
+Requirement already satisfied: cython&gt;=0.29.21 in /Users/rune/Documents/IN-KU/Teaching/Computational Neuroscience/Book/CompNeuroCourse2025/CompNeuroCourse/path_you_picked/compneurocourse/lib/python3.11/site-packages (from brian2) (3.1.1)
+Requirement already satisfied: sympy&gt;=1.2 in /Users/rune/Documents/IN-KU/Teaching/Computational Neuroscience/Book/CompNeuroCourse2025/CompNeuroCourse/path_you_picked/compneurocourse/lib/python3.11/site-packages (from brian2) (1.14.0)
+Requirement already satisfied: pyparsing in /Users/rune/Documents/IN-KU/Teaching/Computational Neuroscience/Book/CompNeuroCourse2025/CompNeuroCourse/path_you_picked/compneurocourse/lib/python3.11/site-packages (from brian2) (3.2.3)
+Requirement already satisfied: jinja2&gt;=2.7 in /Users/rune/Documents/IN-KU/Teaching/Computational Neuroscience/Book/CompNeuroCourse2025/CompNeuroCourse/path_you_picked/compneurocourse/lib/python3.11/site-packages (from brian2) (3.1.6)
+Requirement already satisfied: setuptools&gt;=61 in /Users/rune/Documents/IN-KU/Teaching/Computational Neuroscience/Book/CompNeuroCourse2025/CompNeuroCourse/path_you_picked/compneurocourse/lib/python3.11/site-packages (from brian2) (65.5.0)
+Requirement already satisfied: packaging in /Users/rune/Documents/IN-KU/Teaching/Computational Neuroscience/Book/CompNeuroCourse2025/CompNeuroCourse/path_you_picked/compneurocourse/lib/python3.11/site-packages (from brian2) (25.0)
+Requirement already satisfied: MarkupSafe&gt;=2.0 in /Users/rune/Documents/IN-KU/Teaching/Computational Neuroscience/Book/CompNeuroCourse2025/CompNeuroCourse/path_you_picked/compneurocourse/lib/python3.11/site-packages (from jinja2&gt;=2.7-&gt;brian2) (3.0.2)
+Requirement already satisfied: mpmath&lt;1.4,&gt;=1.1.0 in /Users/rune/Documents/IN-KU/Teaching/Computational Neuroscience/Book/CompNeuroCourse2025/CompNeuroCourse/path_you_picked/compneurocourse/lib/python3.11/site-packages (from sympy&gt;=1.2-&gt;brian2) (1.3.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> A new release of pip is available: <span class=" -Color -Color-Red">23.2.1</span> -&gt; <span class=" -Color -Color-Green">25.1.1</span>
+<span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> To update, run: <span class=" -Color -Color-Green">pip install --upgrade pip</span>
+</pre></div>
+</div>
+</div>
 </div>
 <p>Now let’s try to import brian2 again:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">brian2</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">brian2</span>
 </pre></div>
 </div>
 </div>
@@ -672,7 +682,7 @@ within a pair of <strong>$</strong> signs. For example <code class="docutils lit
 <p>Colab provides automatic completions to explore attributes of Python objects, as well as to quickly view documentation strings. As an example, first run the following cell to import the  <a class="reference external" href="http://www.numpy.org"><code class="docutils literal notranslate"><span class="pre">numpy</span></code></a> module.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 </pre></div>
 </div>
 </div>
@@ -684,11 +694,21 @@ within a pair of <strong>$</strong> signs. For example <code class="docutils lit
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;module &#39;numpy&#39; from &#39;/Users/rune/Documents/IN-KU/Teaching/Computational Neuroscience/Book/CompNeuroCourse2025/CompNeuroCourse/path_you_picked/compneurocourse/lib/python3.11/site-packages/numpy/__init__.py&#39;&gt;
+</pre></div>
+</div>
+</div>
 </div>
 <p>If you type an open parenthesis after any function or class in the module, you will see a pop-up of its documentation string:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>numpy.ndarray
 </pre></div>
 </div>
 </div>
@@ -707,6 +727,18 @@ within a pair of <strong>$</strong> signs. For example <code class="docutils lit
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ZeroDivisionError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">12</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">z</span> <span class="o">=</span> <span class="n">y</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">x</span><span class="p">)</span>
+
+<span class="ne">ZeroDivisionError</span>: division by zero
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="rich-interactive-outputs">
@@ -714,8 +746,8 @@ within a pair of <strong>$</strong> signs. For example <code class="docutils lit
 <p>Until now all of the generated outputs have been text, but they can be more interesting, like the chart below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
 
 <span class="n">ys</span> <span class="o">=</span> <span class="mi">200</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ys</span><span class="p">))]</span>
@@ -778,10 +810,10 @@ Cell magics: these use two percent characters as a marker (%%), and they receive
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
-<span class="k">def</span> <span class="nf">computeEigenVals</span><span class="p">(</span><span class="n">matrix</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">computeEigenVals</span><span class="p">(</span><span class="n">matrix</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eigvals</span><span class="p">(</span><span class="n">matrix</span><span class="p">)</span>
 
 <span class="o">%</span><span class="k">timeit</span> computeEigenVals(np.random.rand(100,100))
@@ -805,7 +837,7 @@ Cell magics: these use two percent characters as a marker (%%), and they receive
         },
         kernelOptions: {
             name: "python3",
-            path: "./notebooks\mathpython_intro"
+            path: "./notebooks/mathpython_intro"
         },
         predefinedOutput: true
     }
