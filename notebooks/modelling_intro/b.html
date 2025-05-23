@@ -28,7 +28,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
@@ -65,7 +65,7 @@
     <link rel="icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="1. Introduction modelling with differential equations" href="../dynamical_systems/dynamical_systems_intro.html" />
+    <link rel="next" title="&lt;no title&gt;" href="../dynamical_systems/numerical_solution.html" />
     <link rel="prev" title="1. What is computational neuroscience?" href="week0-Intro-RWB.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -538,10 +538,10 @@ dy/dt = \delta x y -\gamma y
 <p>To solve this system of two differential equations using python, we first need to type the equations as functions as well as it parameters. The function simply needs to return the right hand side of the equations</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
 <span class="c1"># Define the function that represents the Lotka-Volterra equations</span>
-<span class="k">def</span> <span class="nf">predatorprey</span><span class="p">(</span><span class="n">xy</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="n">delta</span><span class="p">,</span> <span class="n">gamma</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">predatorprey</span><span class="p">(</span><span class="n">xy</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="n">delta</span><span class="p">,</span> <span class="n">gamma</span><span class="p">):</span>
     <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">xy</span>
     <span class="n">dxdt</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="p">(</span><span class="n">alpha</span> <span class="o">-</span> <span class="n">beta</span> <span class="o">*</span> <span class="n">y</span><span class="p">)</span>
     <span class="n">dydt</span> <span class="o">=</span> <span class="o">-</span> <span class="n">y</span> <span class="o">*</span> <span class="p">(</span><span class="n">gamma</span> <span class="o">-</span> <span class="n">delta</span> <span class="o">*</span> <span class="n">x</span><span class="p">)</span>
@@ -554,7 +554,7 @@ dy/dt = \delta x y -\gamma y
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># We import scipy ordinary differential equations solver</span>
-<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">odeint</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.integrate</span><span class="w"> </span><span class="kn">import</span> <span class="n">odeint</span>
 
 <span class="c1">#Defined the model parameters</span>
 <span class="n">alpha</span> <span class="o">=</span> <span class="mf">1.</span>
@@ -584,7 +584,7 @@ dy/dt = \delta x y -\gamma y
 <p>We will now plot the variation of population for each species with time:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
@@ -599,7 +599,7 @@ dy/dt = \delta x y -\gamma y
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/499cbcab3f01ae5263ca5ae14ae8ed9b463beaea8fbd37b21d39c27aaf757dca.png" src="../../_images/499cbcab3f01ae5263ca5ae14ae8ed9b463beaea8fbd37b21d39c27aaf757dca.png" />
+<img alt="../../_images/da5b13bba631ec2e4004c95d2ea76c414a6c20df758500b54597135d4e5f253b.png" src="../../_images/da5b13bba631ec2e4004c95d2ea76c414a6c20df758500b54597135d4e5f253b.png" />
 </div>
 </div>
 <p>A better understanding of the system behaviour can be obtained by a phase plot of the population of predators vs. the population of prey. It will tell us if the system sustains or collapses over time. For the choice of parameters <span class="math notranslate nohighlight">\( \alpha, \beta, \gamma \)</span> and <span class="math notranslate nohighlight">\( \delta \)</span> made above, we see that the maximum population of each species keeps increasing each cycle. You can read more about that in the Wikipedia link mentioned above.</p>
@@ -647,7 +647,7 @@ dy/dt = \delta x y -\gamma y
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/43e450b8d7cb0c2be5b68ad90af0b2a6eb34a2e2fe708577c845774cbc90535f.png" src="../../_images/43e450b8d7cb0c2be5b68ad90af0b2a6eb34a2e2fe708577c845774cbc90535f.png" />
+<img alt="../../_images/60ff30c9c51ed093ff45cb3e7c2e4c68e019fe3647f3e7b6f781bce2dd75e31d.png" src="../../_images/60ff30c9c51ed093ff45cb3e7c2e4c68e019fe3647f3e7b6f781bce2dd75e31d.png" />
 </div>
 </div>
 <ul class="simple">
@@ -670,7 +670,7 @@ dy/dt = \delta x y -\gamma y
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/d0dc308a1bbc608ee9e69493a59c1b803308f8ced55c84f9d349d82d35d4bf22.png" src="../../_images/d0dc308a1bbc608ee9e69493a59c1b803308f8ced55c84f9d349d82d35d4bf22.png" />
+<img alt="../../_images/0fa0ea9bb817045fde64c0c1bfbe13f4f066f6d07eff4d29a2b45aa2872cfa4b.png" src="../../_images/0fa0ea9bb817045fde64c0c1bfbe13f4f066f6d07eff4d29a2b45aa2872cfa4b.png" />
 </div>
 </div>
 <ul class="simple">
@@ -724,8 +724,8 @@ dy/dt = \delta x y -\gamma y
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/029a82fa8ceae849675005e46eda7b0e91481cf786d412ded6f7e6e1b55621e8.png" src="../../_images/029a82fa8ceae849675005e46eda7b0e91481cf786d412ded6f7e6e1b55621e8.png" />
-<img alt="../../_images/31e84aedb3a269486bf613df6a2e015f0a1b23e350a7074dacc84b048bd30f22.png" src="../../_images/31e84aedb3a269486bf613df6a2e015f0a1b23e350a7074dacc84b048bd30f22.png" />
+<img alt="../../_images/5d5d70066e95711b59e1d88d0d14991a1ecee07ba654dbfee8555958deb936ed.png" src="../../_images/5d5d70066e95711b59e1d88d0d14991a1ecee07ba654dbfee8555958deb936ed.png" />
+<img alt="../../_images/7117c60fa6de4b26eb3055f506b8c6605c310b1c3172b398fcf97f274e748a2c.png" src="../../_images/7117c60fa6de4b26eb3055f506b8c6605c310b1c3172b398fcf97f274e748a2c.png" />
 </div>
 </div>
 <p>Phase spaces are a powerful tool that allow us to understand the relations between the variables of a dynamical system. Be it relation between predators and preys, between two neurotransmitters or any other dynamical variables.</p>
@@ -746,7 +746,7 @@ dy/dt = \delta x y -\gamma y
         },
         kernelOptions: {
             name: "python3",
-            path: "./notebooks\modelling_intro"
+            path: "./notebooks/modelling_intro"
         },
         predefinedOutput: true
     }
@@ -773,11 +773,11 @@ dy/dt = \delta x y -\gamma y
       </div>
     </a>
     <a class="right-next"
-       href="../dynamical_systems/dynamical_systems_intro.html"
+       href="../dynamical_systems/numerical_solution.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">1. </span>Introduction modelling with differential equations</p>
+        <p class="prev-next-title">&lt;no title&gt;</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

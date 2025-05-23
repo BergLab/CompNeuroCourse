@@ -28,7 +28,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
@@ -512,7 +512,7 @@ document.write(`
 <p>The easiest way to create the array above is to use the <span class="math notranslate nohighlight">\(\texttt{array}\)</span> function, and provide it a list of all the array entries specific format.  The row entries are separated by commas and enclosed in square brackets [], then all the rows listed together, separated by commas, and enclosed in another set of square brackets.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
 <span class="c1">## The object [[5, -1, 1, 0],[4, 3, 12, -6]], which gets passed into the array function is a Python list.</span>
 <span class="c1">## The object returned by the array function is a NumPy array object.</span>
@@ -631,7 +631,7 @@ This is C, which is the entries of B formed into a new shape.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.9774562301492415
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.3704458464749961
 </pre></div>
 </div>
 </div>
@@ -646,9 +646,9 @@ This is C, which is the entries of B formed into a new shape.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.59197412 0.65444081]
- [0.14836765 0.89700813]
- [0.93426519 0.63669238]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.93161489 0.5922172 ]
+ [0.16948125 0.23445129]
+ [0.08522761 0.7095959 ]]
 </pre></div>
 </div>
 </div>
@@ -661,7 +661,7 @@ This is C, which is the entries of B formed into a new shape.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>19
 </pre></div>
 </div>
 </div>
@@ -675,9 +675,9 @@ This is C, which is the entries of B formed into a new shape.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[2 6 0 9 8 4]
- [2 7 4 3 2 1]
- [2 2 0 5 5 3]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[8 5 9 6 9 3]
+ [2 9 1 4 4 9]
+ [6 6 9 1 2 9]]
 </pre></div>
 </div>
 </div>
@@ -690,8 +690,8 @@ This is C, which is the entries of B formed into a new shape.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[8 6 9]
- [5 5 4]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[5 3 4]
+ [7 5 1]]
 </pre></div>
 </div>
 </div>
@@ -703,7 +703,7 @@ This is C, which is the entries of B formed into a new shape.
 <p>We will wait to demonstrate the functions in the <span class="math notranslate nohighlight">\(\texttt{linalg}\)</span> module until after we have discussed enough linear algebra to understand their purpose.  The module will be imported with the alias <span class="math notranslate nohighlight">\(\texttt{sla}\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">scipy.linalg</span> <span class="k">as</span> <span class="nn">sla</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">scipy.linalg</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sla</span>
 </pre></div>
 </div>
 </div>
@@ -727,7 +727,7 @@ This is C, which is the entries of B formed into a new shape.
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Imports the module and assigns a short alias for convenience</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
 <span class="c1">## Directs the graphical output to this notebook</span>
 <span class="o">%</span><span class="k">matplotlib</span> inline
@@ -741,7 +741,7 @@ This is C, which is the entries of B formed into a new shape.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/73eef91ff9c10a96ab18fa911aa24165c6808911dafd04a18d9927a7636d31a8.png" src="../../_images/73eef91ff9c10a96ab18fa911aa24165c6808911dafd04a18d9927a7636d31a8.png" />
+<img alt="../../_images/e4d7237a7717e697e63cfa46b040638b1a561e38956c562c4da072418f89a900.png" src="../../_images/e4d7237a7717e697e63cfa46b040638b1a561e38956c562c4da072418f89a900.png" />
 </div>
 </div>
 <p>The <span class="math notranslate nohighlight">\(\texttt{subplots}\)</span> method creates two Matplotlib objects, the <em>Figure</em>, and the <em>Axes</em>.  The <em>Figure</em> is the fundamental object in Matplotlib.  The <em>Axes</em> object is contained within the <em>Figure</em>, and is the object we will interact with the most.  The <span class="math notranslate nohighlight">\(\texttt{plot}\)</span> method of the <em>Axes</em> object is the function that actually plots our set of coordinates on the <em>Axes</em>.  Note that we do not need a <span class="math notranslate nohighlight">\(\texttt{print}\)</span> command to view the results.  Instead, the first line of code, <span class="math notranslate nohighlight">\(\texttt{% matplotlib inline}\)</span>, directs all graphical output to this notebook.</p>
@@ -754,7 +754,7 @@ This is C, which is the entries of B formed into a new shape.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/d7262e3aee508c64888dbc37a4b7b8b2bd1da05c4aa83f0990741189296ac254.png" src="../../_images/d7262e3aee508c64888dbc37a4b7b8b2bd1da05c4aa83f0990741189296ac254.png" />
+<img alt="../../_images/e079f791539c554d342ff13f1f56a782d45eb7638b4a6cb061606f819c6fc1c3.png" src="../../_images/e079f791539c554d342ff13f1f56a782d45eb7638b4a6cb061606f819c6fc1c3.png" />
 </div>
 </div>
 <p>Another alternative when we interested in plotting data points is the <span class="math notranslate nohighlight">\(\texttt{scatter}\)</span> method, for which we can use the same syntax.</p>
@@ -766,7 +766,7 @@ This is C, which is the entries of B formed into a new shape.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/f71fa1dba79f4877aba5dfc93565be5485d51f2ee1adb9e864a1a5802c184ea2.png" src="../../_images/f71fa1dba79f4877aba5dfc93565be5485d51f2ee1adb9e864a1a5802c184ea2.png" />
+<img alt="../../_images/49cb9e479d8cefafa1e138102aa94675c2fa01d0d9c6ebc075173d1cfef84b8c.png" src="../../_images/49cb9e479d8cefafa1e138102aa94675c2fa01d0d9c6ebc075173d1cfef84b8c.png" />
 </div>
 </div>
 <p>Next, we show how to configure some of the many options available in such a plot.  Remember that the plot is actually being constructed in an <em>Axes</em> object, so all the options that affect elements of the plot are methods of that object.</p>
@@ -789,7 +789,7 @@ This is C, which is the entries of B formed into a new shape.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/e08a5ceb714b5d37155457a57bb59caadeb338ddb7e74aa55cc4292eb71af025.png" src="../../_images/e08a5ceb714b5d37155457a57bb59caadeb338ddb7e74aa55cc4292eb71af025.png" />
+<img alt="../../_images/cc2259fefd62c760652e821a066d2e3181366f30c0f84aadbd493861b375a3dd.png" src="../../_images/cc2259fefd62c760652e821a066d2e3181366f30c0f84aadbd493861b375a3dd.png" />
 </div>
 </div>
 </section>
@@ -840,7 +840,7 @@ This is C, which is the entries of B formed into a new shape.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/e4d24c8033dd569f963e390b75d8b44a8b39f8578eec432e17bf78d809ecaf2a.png" src="../../_images/e4d24c8033dd569f963e390b75d8b44a8b39f8578eec432e17bf78d809ecaf2a.png" />
+<img alt="../../_images/a87652282d7af68142f07e26a11125eed488bd2c6fba57f72194ff4a023eb8b7.png" src="../../_images/a87652282d7af68142f07e26a11125eed488bd2c6fba57f72194ff4a023eb8b7.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -868,7 +868,7 @@ This is C, which is the entries of B formed into a new shape.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/2cfebf399779572bdbe4f5bf0242649b60b8439124d2520b7da6893e32e905fa.png" src="../../_images/2cfebf399779572bdbe4f5bf0242649b60b8439124d2520b7da6893e32e905fa.png" />
+<img alt="../../_images/7d6dfa316131ead0d49b29cc2a2032f8d2ce19b79eb08904d5a030eb0edd4948.png" src="../../_images/7d6dfa316131ead0d49b29cc2a2032f8d2ce19b79eb08904d5a030eb0edd4948.png" />
 </div>
 </div>
 </section>
@@ -888,7 +888,7 @@ This is C, which is the entries of B formed into a new shape.
         },
         kernelOptions: {
             name: "python3",
-            path: "./notebooks\mathpython_intro"
+            path: "./notebooks/mathpython_intro"
         },
         predefinedOutput: true
     }

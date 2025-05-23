@@ -28,7 +28,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
@@ -510,26 +510,27 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip3<span class="w"> </span>install<span class="w"> </span>brian2
-<span class="kn">from</span> <span class="nn">brian2</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">brian2</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: brian2 in c:\users\jhc23\appdata\local\programs\python\python312\lib\site-packages (2.8.0.4)
-Requirement already satisfied: numpy&gt;=1.23.5 in c:\users\jhc23\appdata\local\programs\python\python312\lib\site-packages (from brian2) (2.0.1)
-Requirement already satisfied: cython&gt;=0.29.21 in c:\users\jhc23\appdata\local\programs\python\python312\lib\site-packages (from brian2) (3.1.0)
-Requirement already satisfied: sympy&gt;=1.2 in c:\users\jhc23\appdata\local\programs\python\python312\lib\site-packages (from brian2) (1.13.1)
-Requirement already satisfied: pyparsing in c:\users\jhc23\appdata\local\programs\python\python312\lib\site-packages (from brian2) (3.2.0)
-Requirement already satisfied: jinja2&gt;=2.7 in c:\users\jhc23\appdata\local\programs\python\python312\lib\site-packages (from brian2) (3.1.3)
-Requirement already satisfied: py-cpuinfo in c:\users\jhc23\appdata\local\programs\python\python312\lib\site-packages (from brian2) (9.0.0)
-Requirement already satisfied: setuptools&gt;=61 in c:\users\jhc23\appdata\local\programs\python\python312\lib\site-packages (from brian2) (75.6.0)
-Requirement already satisfied: packaging in c:\users\jhc23\appdata\roaming\python\python312\site-packages (from brian2) (24.2)
-Requirement already satisfied: MarkupSafe&gt;=2.0 in c:\users\jhc23\appdata\local\programs\python\python312\lib\site-packages (from jinja2&gt;=2.7-&gt;brian2) (2.1.5)
-Requirement already satisfied: mpmath&lt;1.4,&gt;=1.1.0 in c:\users\jhc23\appdata\local\programs\python\python312\lib\site-packages (from sympy&gt;=1.2-&gt;brian2) (1.3.0)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: brian2 in /Users/rune/Documents/IN-KU/Teaching/Computational Neuroscience/Book/CompNeuroCourse2025/CompNeuroCourse/path_you_picked/compneurocourse/lib/python3.11/site-packages (2.9.0)
+Requirement already satisfied: numpy&gt;=1.23.5 in /Users/rune/Documents/IN-KU/Teaching/Computational Neuroscience/Book/CompNeuroCourse2025/CompNeuroCourse/path_you_picked/compneurocourse/lib/python3.11/site-packages (from brian2) (2.2.6)
+Requirement already satisfied: cython&gt;=0.29.21 in /Users/rune/Documents/IN-KU/Teaching/Computational Neuroscience/Book/CompNeuroCourse2025/CompNeuroCourse/path_you_picked/compneurocourse/lib/python3.11/site-packages (from brian2) (3.1.1)
+Requirement already satisfied: sympy&gt;=1.2 in /Users/rune/Documents/IN-KU/Teaching/Computational Neuroscience/Book/CompNeuroCourse2025/CompNeuroCourse/path_you_picked/compneurocourse/lib/python3.11/site-packages (from brian2) (1.14.0)
+Requirement already satisfied: pyparsing in /Users/rune/Documents/IN-KU/Teaching/Computational Neuroscience/Book/CompNeuroCourse2025/CompNeuroCourse/path_you_picked/compneurocourse/lib/python3.11/site-packages (from brian2) (3.2.3)
+Requirement already satisfied: jinja2&gt;=2.7 in /Users/rune/Documents/IN-KU/Teaching/Computational Neuroscience/Book/CompNeuroCourse2025/CompNeuroCourse/path_you_picked/compneurocourse/lib/python3.11/site-packages (from brian2) (3.1.6)
+Requirement already satisfied: setuptools&gt;=61 in /Users/rune/Documents/IN-KU/Teaching/Computational Neuroscience/Book/CompNeuroCourse2025/CompNeuroCourse/path_you_picked/compneurocourse/lib/python3.11/site-packages (from brian2) (65.5.0)
+Requirement already satisfied: packaging in /Users/rune/Documents/IN-KU/Teaching/Computational Neuroscience/Book/CompNeuroCourse2025/CompNeuroCourse/path_you_picked/compneurocourse/lib/python3.11/site-packages (from brian2) (25.0)
+Requirement already satisfied: MarkupSafe&gt;=2.0 in /Users/rune/Documents/IN-KU/Teaching/Computational Neuroscience/Book/CompNeuroCourse2025/CompNeuroCourse/path_you_picked/compneurocourse/lib/python3.11/site-packages (from jinja2&gt;=2.7-&gt;brian2) (3.0.2)
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[notice] A new release of pip is available: 25.0.1 -&gt; 25.1.1
-[notice] To update, run: python.exe -m pip install --upgrade pip
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: mpmath&lt;1.4,&gt;=1.1.0 in /Users/rune/Documents/IN-KU/Teaching/Computational Neuroscience/Book/CompNeuroCourse2025/CompNeuroCourse/path_you_picked/compneurocourse/lib/python3.11/site-packages (from sympy&gt;=1.2-&gt;brian2) (1.3.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> A new release of pip is available: <span class=" -Color -Color-Red">23.2.1</span> -&gt; <span class=" -Color -Color-Green">25.1.1</span>
+<span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> To update, run: <span class=" -Color -Color-Green">pip install --upgrade pip</span>
 </pre></div>
 </div>
 </div>
@@ -566,14 +567,7 @@ Requirement already satisfied: mpmath&lt;1.4,&gt;=1.1.0 in c:\users\jhc23\appdat
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING    Cannot use Cython, a test compilation failed: Microsoft Visual C++ 14.0 or greater is required. Get it with &quot;Microsoft C++ Build Tools&quot;: https://visualstudio.microsoft.com/visual-cpp-build-tools/ (DistutilsPlatformError) [brian2.codegen.runtime.cython_rt.cython_rt.failed_compile_test]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO       Cannot use compiled code, falling back to the numpy code generation target. Note that this will likely be slower than using compiled code. Set the code generation to numpy manually to avoid this message:
-prefs.codegen.target = &quot;numpy&quot; [brian2.devices.device.codegen_fallback]
-</pre></div>
-</div>
-<img alt="../../_images/bf7ee8475aef23d926c0489a529502b1fc8ef0f9aa5d8fb6e86a657a1a6564f3.png" src="../../_images/bf7ee8475aef23d926c0489a529502b1fc8ef0f9aa5d8fb6e86a657a1a6564f3.png" />
+<img alt="../../_images/c8a8f82d5b6bf35b04b5a37580812c7bd665434adfe383714e9dc21e5fee5286.png" src="../../_images/c8a8f82d5b6bf35b04b5a37580812c7bd665434adfe383714e9dc21e5fee5286.png" />
 </div>
 </div>
 <p>There are a few things going on here. First of all, let’s recap what is going on with the <code class="docutils literal notranslate"><span class="pre">NeuronGroup</span></code>. We’ve created two neurons, each of which has the same differential equation but different values for parameters I and tau. Neuron 0 has <code class="docutils literal notranslate"><span class="pre">I=2</span></code> and <code class="docutils literal notranslate"><span class="pre">tau=10*ms</span></code> which means that is driven to repeatedly spike at a fairly high rate. Neuron 1 has <code class="docutils literal notranslate"><span class="pre">I=0</span></code> and <code class="docutils literal notranslate"><span class="pre">tau=100*ms</span></code> which means that on its own - without the synapses - it won’t spike at all (the driving current I is 0). You can prove this to yourself by commenting out the two lines that define the synapse.</p>
@@ -614,7 +608,7 @@ prefs.codegen.target = &quot;numpy&quot; [brian2.devices.device.codegen_fallback
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/a8949e5822c2573c8f2c8c4ed94786b961b37146bd00b1a93e1135061e6aa9a8.png" src="../../_images/a8949e5822c2573c8f2c8c4ed94786b961b37146bd00b1a93e1135061e6aa9a8.png" />
+<img alt="../../_images/49e704e7e2b35593da55b6b685d9b14d80358b60b008e59ed5d9f29cb93da31f.png" src="../../_images/49e704e7e2b35593da55b6b685d9b14d80358b60b008e59ed5d9f29cb93da31f.png" />
 </div>
 </div>
 <p>This example behaves very similarly to the previous example, but now there’s a synaptic weight variable <code class="docutils literal notranslate"><span class="pre">w</span></code>. The string <code class="docutils literal notranslate"><span class="pre">'w</span> <span class="pre">:</span> <span class="pre">1'</span></code> is an equation string, precisely the same as for neurons, that defines a single dimensionless parameter <code class="docutils literal notranslate"><span class="pre">w</span></code>. We changed the behaviour on a spike to <code class="docutils literal notranslate"><span class="pre">on_pre='v_post</span> <span class="pre">+=</span> <span class="pre">w'</span></code> now, so that each synapse can behave differently depending on the value of <code class="docutils literal notranslate"><span class="pre">w</span></code>. To illustrate this, we’ve made a third neuron which behaves precisely the same as the second neuron, and connected neuron 0 to both neurons 1 and 2. We’ve also set the weights via <code class="docutils literal notranslate"><span class="pre">S.w</span> <span class="pre">=</span> <span class="pre">'j*0.2'</span></code>. When <code class="docutils literal notranslate"><span class="pre">i</span></code> and <code class="docutils literal notranslate"><span class="pre">j</span></code> occur in the context of synapses, <code class="docutils literal notranslate"><span class="pre">i</span></code> refers to the source neuron index, and <code class="docutils literal notranslate"><span class="pre">j</span></code> to the target neuron index. So this will give a synaptic connection from 0 to 1 with weight <code class="docutils literal notranslate"><span class="pre">0.2=0.2*1</span></code> and from 0 to 2 with weight <code class="docutils literal notranslate"><span class="pre">0.4=0.2*2</span></code>.</p>
@@ -643,7 +637,7 @@ prefs.codegen.target = &quot;numpy&quot; [brian2.devices.device.codegen_fallback
 <p>Here we’ve created a dummy neuron group of N neurons and a dummy synapses model that doens’t actually do anything just to demonstrate the connectivity. The line <code class="docutils literal notranslate"><span class="pre">S.connect(condition='i!=j',</span> <span class="pre">p=1.0)</span></code> will connect all pairs of neurons <code class="docutils literal notranslate"><span class="pre">i</span></code> and <code class="docutils literal notranslate"><span class="pre">j</span></code> with probability 100% as long as the condition <code class="docutils literal notranslate"><span class="pre">i!=j</span></code> holds. So, how can we see that connectivity? Here’s a little function that will let us visualise it.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">visualise_connectivity</span><span class="p">(</span><span class="n">S</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">visualise_connectivity</span><span class="p">(</span><span class="n">S</span><span class="p">):</span>
     <span class="n">Ns</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">S</span><span class="o">.</span><span class="n">source</span><span class="p">)</span>
     <span class="n">Nt</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">S</span><span class="o">.</span><span class="n">target</span><span class="p">)</span>
     <span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
@@ -668,7 +662,7 @@ prefs.codegen.target = &quot;numpy&quot; [brian2.devices.device.codegen_fallback
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/5f3d5641536f9229dcb5983fce263696831afc318a80a0892099949b1dc591be.png" src="../../_images/5f3d5641536f9229dcb5983fce263696831afc318a80a0892099949b1dc591be.png" />
+<img alt="../../_images/769f1294ec4fb85c44b44ba79636219ef989f01d5900a2a6d3afe51c0fd69480.png" src="../../_images/769f1294ec4fb85c44b44ba79636219ef989f01d5900a2a6d3afe51c0fd69480.png" />
 </div>
 </div>
 <p>There are two plots here. On the left hand side, you see a vertical line of circles indicating source neurons on the left, and a vertical line indicating target neurons on the right, and a line between two neurons that have a synapse. On the right hand side is another way of visualising the same thing. Here each black dot is a synapse, with x value the source neuron index, and y value the target neuron index.</p>
@@ -691,31 +685,31 @@ prefs.codegen.target = &quot;numpy&quot; [brian2.devices.device.codegen_fallback
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING    The object &#39;synapses&#39; is getting deleted, but was never included in a network. This probably means that you did not store the object reference in a variable, or that the variable was not used to construct the network.
 The object was created here (most recent call only):
-  File &#39;C:\Users\jhc23\AppData\Local\Temp\ipykernel_69812\3703857024.py&#39;, line 5, in &lt;module&gt;
+  File &#39;/var/folders/l3/kmpmcyc11s55nh1p5qj8dr8r0000gp/T/ipykernel_33428/3703857024.py&#39;, line 5, in &lt;module&gt;
     S = Synapses(G, G) [brian2.core.base.unused_brian_object]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING    The object &#39;neurongroup&#39; is getting deleted, but was never included in a network. This probably means that you did not store the object reference in a variable, or that the variable was not used to construct the network.
 The object was created here (most recent call only):
-  File &#39;C:\Users\jhc23\AppData\Local\Temp\ipykernel_69812\3703857024.py&#39;, line 4, in &lt;module&gt;
+  File &#39;/var/folders/l3/kmpmcyc11s55nh1p5qj8dr8r0000gp/T/ipykernel_33428/3703857024.py&#39;, line 4, in &lt;module&gt;
     G = NeuronGroup(N, &#39;v:1&#39;) [brian2.core.base.unused_brian_object]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING    The object &#39;synapses_1&#39; is getting deleted, but was never included in a network. This probably means that you did not store the object reference in a variable, or that the variable was not used to construct the network.
 The object was created here (most recent call only):
-  File &#39;C:\Users\jhc23\AppData\Local\Temp\ipykernel_69812\2521570691.py&#39;, line 7, in &lt;module&gt;
+  File &#39;/var/folders/l3/kmpmcyc11s55nh1p5qj8dr8r0000gp/T/ipykernel_33428/2521570691.py&#39;, line 7, in &lt;module&gt;
     S = Synapses(G, G) [brian2.core.base.unused_brian_object]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING    The object &#39;synapses&#39; is getting deleted, but was never included in a network. This probably means that you did not store the object reference in a variable, or that the variable was not used to construct the network.
 The object was created here (most recent call only):
-  File &#39;C:\Users\jhc23\AppData\Local\Temp\ipykernel_69812\2521570691.py&#39;, line 7, in &lt;module&gt;
+  File &#39;/var/folders/l3/kmpmcyc11s55nh1p5qj8dr8r0000gp/T/ipykernel_33428/2521570691.py&#39;, line 7, in &lt;module&gt;
     S = Synapses(G, G) [brian2.core.base.unused_brian_object]
 </pre></div>
 </div>
-<img alt="../../_images/0416fe9cfbc14befec599ecc6b31e1574f2b99a140032634253f9d156879b992.png" src="../../_images/0416fe9cfbc14befec599ecc6b31e1574f2b99a140032634253f9d156879b992.png" />
-<img alt="../../_images/f8d7f2b2dee742142c51ee061fb4909728ad15e4a584313e040ceb073b41a96c.png" src="../../_images/f8d7f2b2dee742142c51ee061fb4909728ad15e4a584313e040ceb073b41a96c.png" />
-<img alt="../../_images/7fedf31c1b07fa3738412fffc18d872077bba347e1597be4d4ce44ebd0bd74cb.png" src="../../_images/7fedf31c1b07fa3738412fffc18d872077bba347e1597be4d4ce44ebd0bd74cb.png" />
+<img alt="../../_images/018db2042b24d976d53896b82516311d3562517a84f382eb81216ead79e5d1ad.png" src="../../_images/018db2042b24d976d53896b82516311d3562517a84f382eb81216ead79e5d1ad.png" />
+<img alt="../../_images/79048fd3cb29505ed1fbcf56a6afad3c138f4892fb96e8d87e2bf0f478ac946f.png" src="../../_images/79048fd3cb29505ed1fbcf56a6afad3c138f4892fb96e8d87e2bf0f478ac946f.png" />
+<img alt="../../_images/3ee119833c1932e5766f3bf15564f6ec100812e5c1c4547f2dab4c7914bb82d5.png" src="../../_images/3ee119833c1932e5766f3bf15564f6ec100812e5c1c4547f2dab4c7914bb82d5.png" />
 </div>
 </div>
 <p>And let’s see what another connectivity condition looks like. This one will only connect neighbouring neurons.</p>
@@ -735,17 +729,17 @@ The object was created here (most recent call only):
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING    The object &#39;synapses_1&#39; is getting deleted, but was never included in a network. This probably means that you did not store the object reference in a variable, or that the variable was not used to construct the network.
 The object was created here (most recent call only):
-  File &#39;C:\Users\jhc23\AppData\Local\Temp\ipykernel_69812\2521570691.py&#39;, line 7, in &lt;module&gt;
+  File &#39;/var/folders/l3/kmpmcyc11s55nh1p5qj8dr8r0000gp/T/ipykernel_33428/2521570691.py&#39;, line 7, in &lt;module&gt;
     S = Synapses(G, G) [brian2.core.base.unused_brian_object]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING    The object &#39;neurongroup_2&#39; is getting deleted, but was never included in a network. This probably means that you did not store the object reference in a variable, or that the variable was not used to construct the network.
 The object was created here (most recent call only):
-  File &#39;C:\Users\jhc23\AppData\Local\Temp\ipykernel_69812\2521570691.py&#39;, line 4, in &lt;module&gt;
+  File &#39;/var/folders/l3/kmpmcyc11s55nh1p5qj8dr8r0000gp/T/ipykernel_33428/2521570691.py&#39;, line 4, in &lt;module&gt;
     G = NeuronGroup(N, &#39;v:1&#39;) [brian2.core.base.unused_brian_object]
 </pre></div>
 </div>
-<img alt="../../_images/efde4ecdd1c51fa73f7b4ddbc593f3b68151f1840a933d3cc8b19021c35defb3.png" src="../../_images/efde4ecdd1c51fa73f7b4ddbc593f3b68151f1840a933d3cc8b19021c35defb3.png" />
+<img alt="../../_images/13a5763a3056acca80afdd950991ef42bb9a98cf8766a87b041ebc652dff892d.png" src="../../_images/13a5763a3056acca80afdd950991ef42bb9a98cf8766a87b041ebc652dff892d.png" />
 </div>
 </div>
 </section>
@@ -761,26 +755,36 @@ The object was created here (most recent call only):
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 0.00933874  0.00869979 -0.00925325  0.00884061 -0.00603669  0.00996511
-   0.00438917 -0.00646579 -0.00637401  0.0010036 ]
- [-0.00908546 -0.00276463  0.00187861 -0.00789563  0.00569261 -0.00231405
-   0.00404817 -0.00878205 -0.00552479  0.00901858]
- [-0.00050563  0.00464197  0.00782767 -0.00530216  0.00557152 -0.00902773
-  -0.00911773  0.00238359  0.00973536 -0.00461909]
- [ 0.00316486 -0.00260649  0.00592386 -0.0077749   0.00957282  0.00690245
-  -0.00683666  0.00046194  0.00070425 -0.00978219]
- [-0.00823474  0.00861076  0.00640169  0.00190253 -0.00569084 -0.00482859
-   0.00683888 -0.00395332 -0.00609741 -0.00558169]
- [ 0.00516536 -0.00132611  0.00791953 -0.00426174 -0.00582438 -0.00185028
-   0.00561611 -0.00530782 -0.00600398  0.00277475]
- [-0.00398048  0.00945393 -0.00509904 -0.00397888  0.00576241 -0.00821724
-  -0.00379551  0.00222676 -0.00389359  0.00620172]
- [-0.001519   -0.00197082 -0.00905179 -0.00776004 -0.00542948  0.00825012
-  -0.00189537 -0.00899539  0.00994867 -0.00350992]
- [-0.00212377  0.00910443  0.00634148 -0.00224118  0.00888092 -0.00156
-   0.00937158  0.00172905 -0.00080594 -0.00948311]
- [-0.00297551 -0.00410664  0.00308295  0.00424238  0.00578697  0.0082307
-  -0.00268246 -0.00631762  0.00533587 -0.00287333]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[-1.42719184e-03  2.50740449e-03 -4.66472101e-03  6.90049313e-03
+  -3.77741336e-03  3.15218249e-03  3.66823914e-03 -8.57921533e-03
+   7.10354905e-03 -5.43408674e-03]
+ [-4.76509145e-03  4.00453454e-04  7.29927228e-03 -5.84942229e-04
+   5.90492905e-03  2.54671939e-03  8.25911336e-03 -2.07537588e-03
+  -4.18694521e-04 -2.19715799e-03]
+ [-3.89215846e-03  2.62342661e-03 -8.46534926e-03  4.44274833e-04
+   1.22723426e-03 -7.69525417e-03  9.59011279e-03 -4.46123825e-08
+  -3.76129653e-03  1.56615900e-03]
+ [-9.27777183e-03  1.18047720e-03  4.44689893e-05  7.41107638e-03
+  -8.68388380e-03  1.72609572e-03  5.37744605e-04 -6.87138389e-03
+  -8.62682734e-03 -2.24467321e-03]
+ [-2.63200125e-03 -8.89006228e-03  2.49438365e-03 -4.93506452e-03
+  -2.88577443e-03 -4.54573931e-03 -6.91754060e-03  1.62773398e-03
+  -9.70636860e-04 -8.54907088e-03]
+ [ 9.06269119e-03  5.72513877e-03  4.42776558e-04  2.85652344e-03
+  -8.30673437e-03 -3.90445882e-03  4.37815286e-03 -8.58018689e-04
+  -5.67927397e-03  5.22718028e-03]
+ [-8.38547484e-03  4.13884593e-03  2.00963650e-03 -7.96685840e-03
+   9.51594900e-03 -4.96954013e-03  2.75962448e-03 -5.40460167e-03
+   1.79256919e-03  1.59037739e-03]
+ [ 9.01459486e-03 -4.89725377e-03 -1.57774256e-03 -2.02162207e-03
+   9.43746229e-03 -4.27258440e-04 -7.04279491e-03  3.57305239e-03
+   7.40125509e-03  7.83850199e-03]
+ [ 1.45916813e-03 -8.35492247e-03 -1.55131452e-03  4.64345614e-03
+  -8.99588369e-04 -4.10410708e-03  8.83575989e-03  2.44547821e-04
+   7.38730583e-03 -9.02333199e-03]
+ [-6.73633572e-04  2.45207626e-03  5.64915910e-03  9.31947960e-03
+   6.83403451e-03  7.90924467e-03  7.66634758e-03 -4.67925867e-03
+  -7.04303200e-03  6.38233023e-03]]
 </pre></div>
 </div>
 </div>
@@ -801,13 +805,13 @@ The object was created here (most recent call only):
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING    The object &#39;synapses&#39; is getting deleted, but was never included in a network. This probably means that you did not store the object reference in a variable, or that the variable was not used to construct the network.
 The object was created here (most recent call only):
-  File &#39;C:\Users\jhc23\AppData\Local\Temp\ipykernel_69812\2320515699.py&#39;, line 6, in &lt;module&gt;
+  File &#39;/var/folders/l3/kmpmcyc11s55nh1p5qj8dr8r0000gp/T/ipykernel_33428/2320515699.py&#39;, line 6, in &lt;module&gt;
     S = Synapses(G, G) [brian2.core.base.unused_brian_object]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING    The object &#39;neurongroup&#39; is getting deleted, but was never included in a network. This probably means that you did not store the object reference in a variable, or that the variable was not used to construct the network.
 The object was created here (most recent call only):
-  File &#39;C:\Users\jhc23\AppData\Local\Temp\ipykernel_69812\2320515699.py&#39;, line 4, in &lt;module&gt;
+  File &#39;/var/folders/l3/kmpmcyc11s55nh1p5qj8dr8r0000gp/T/ipykernel_33428/2320515699.py&#39;, line 4, in &lt;module&gt;
     G = NeuronGroup(N, &#39;v:1&#39;) [brian2.core.base.unused_brian_object]
 </pre></div>
 </div>
@@ -904,20 +908,20 @@ The object was created here (most recent call only):
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING    The object &#39;synapses_1&#39; is getting deleted, but was never included in a network. This probably means that you did not store the object reference in a variable, or that the variable was not used to construct the network.
 The object was created here (most recent call only):
-  File &#39;C:\Users\jhc23\AppData\Local\Temp\ipykernel_69812\1705174122.py&#39;, line 5, in &lt;module&gt;
+  File &#39;/var/folders/l3/kmpmcyc11s55nh1p5qj8dr8r0000gp/T/ipykernel_33428/1705174122.py&#39;, line 5, in &lt;module&gt;
     S = Synapses(G, G, model=&#39;w : 1&#39;) [brian2.core.base.unused_brian_object]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING    The object &#39;neurongroup_2&#39; is getting deleted, but was never included in a network. This probably means that you did not store the object reference in a variable, or that the variable was not used to construct the network.
 The object was created here (most recent call only):
-  File &#39;C:\Users\jhc23\AppData\Local\Temp\ipykernel_69812\1705174122.py&#39;, line 4, in &lt;module&gt;
+  File &#39;/var/folders/l3/kmpmcyc11s55nh1p5qj8dr8r0000gp/T/ipykernel_33428/1705174122.py&#39;, line 4, in &lt;module&gt;
     G = NeuronGroup(N, &#39;v:1&#39;) [brian2.core.base.unused_brian_object]
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x224179a6300&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x11d5d20d0&gt;
 </pre></div>
 </div>
-<img alt="../../_images/3df8c35726ecf18da32717adbcb5a09fd955ccc998fcbaebfea5f8299503e203.png" src="../../_images/3df8c35726ecf18da32717adbcb5a09fd955ccc998fcbaebfea5f8299503e203.png" />
+<img alt="../../_images/c7a8d619ffee1f7842186977c4178ab21f4eebc38961f65c9da57ac85c1ac1c5.png" src="../../_images/c7a8d619ffee1f7842186977c4178ab21f4eebc38961f65c9da57ac85c1ac1c5.png" />
 </div>
 </div>
 <p>As you can see, that’s as simple as adding a line <code class="docutils literal notranslate"><span class="pre">S.delay</span> <span class="pre">=</span> <span class="pre">'j*2*ms'</span></code> so that the synapse from 0 to 1 has a delay of 2 ms, and from 0 to 2 has a delay of 4 ms.</p>
@@ -951,7 +955,7 @@ A_{post} e^{\Delta t/\tau_{post}} &amp; \Delta t&lt;0
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/e35dbec92d69d1ab82c9105cc7d99bf0c76caf7959de3b89e24d2de055f4fd42.png" src="../../_images/e35dbec92d69d1ab82c9105cc7d99bf0c76caf7959de3b89e24d2de055f4fd42.png" />
+<img alt="../../_images/827822d1302f4f123808e7cd84fec978ef87318a4e4dccfc360ea469062ef844.png" src="../../_images/827822d1302f4f123808e7cd84fec978ef87318a4e4dccfc360ea469062ef844.png" />
 </div>
 </div>
 <p>Simulating it directly using this equation though would be very inefficient, because we would have to sum over all pairs of spikes. That would also be physiologically unrealistic because the neuron cannot remember all its previous spike times. It turns out there is a more efficient and physiologically more plausible way to get the same effect.</p>
@@ -1060,17 +1064,17 @@ w &amp;\rightarrow w+a_{pre}
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING    The object &#39;neurongroup_1&#39; is getting deleted, but was never included in a network. This probably means that you did not store the object reference in a variable, or that the variable was not used to construct the network.
 The object was created here (most recent call only):
-  File &#39;C:\Users\jhc23\AppData\Local\Temp\ipykernel_69812\2371042259.py&#39;, line 8, in &lt;module&gt;
+  File &#39;/var/folders/l3/kmpmcyc11s55nh1p5qj8dr8r0000gp/T/ipykernel_33428/2371042259.py&#39;, line 8, in &lt;module&gt;
     G = NeuronGroup(1, &#39;v:1&#39;, threshold=&#39;v&gt;1&#39;, reset=&#39;&#39;) [brian2.core.base.unused_brian_object]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING    The object &#39;synapses_1&#39; is getting deleted, but was never included in a network. This probably means that you did not store the object reference in a variable, or that the variable was not used to construct the network.
 The object was created here (most recent call only):
-  File &#39;C:\Users\jhc23\AppData\Local\Temp\ipykernel_69812\2371042259.py&#39;, line 10, in &lt;module&gt;
+  File &#39;/var/folders/l3/kmpmcyc11s55nh1p5qj8dr8r0000gp/T/ipykernel_33428/2371042259.py&#39;, line 10, in &lt;module&gt;
     S = Synapses(G, G, [brian2.core.base.unused_brian_object]
 </pre></div>
 </div>
-<img alt="../../_images/5d0075103d2cc722e49c2e708ec903343612e0a3627c402dfe42e819b41d712c.png" src="../../_images/5d0075103d2cc722e49c2e708ec903343612e0a3627c402dfe42e819b41d712c.png" />
+<img alt="../../_images/94ce86e63fcb6bb035e878f2dacec08eb57d547b5c15472127387d58765d5469.png" src="../../_images/94ce86e63fcb6bb035e878f2dacec08eb57d547b5c15472127387d58765d5469.png" />
 </div>
 </div>
 <p>A couple of things to note here. First of all, we’ve used a trick to make neuron 0 fire a spike at time 10 ms, and neuron 1 at time 20 ms. Can you see how that works?</p>
@@ -1121,7 +1125,7 @@ The object was created here (most recent call only):
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/1599c545fe1d0ddd42d5e88cd4936a4a123eadf172e25b6eb247fc8aae4ee06d.png" src="../../_images/1599c545fe1d0ddd42d5e88cd4936a4a123eadf172e25b6eb247fc8aae4ee06d.png" />
+<img alt="../../_images/ca7028cd07aba76b27dadd6706be02744baf9c1c75bec6be02d727cd8f2535ca.png" src="../../_images/ca7028cd07aba76b27dadd6706be02744baf9c1c75bec6be02d727cd8f2535ca.png" />
 </div>
 </div>
 </section>
@@ -1140,7 +1144,7 @@ The object was created here (most recent call only):
         },
         kernelOptions: {
             name: "python3",
-            path: "./notebooks\simulation_neuralsystems"
+            path: "./notebooks/simulation_neuralsystems"
         },
         predefinedOutput: true
     }

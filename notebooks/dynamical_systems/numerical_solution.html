@@ -1,0 +1,936 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>2. Solving differential equations: Numerical solution &#8212; Computational Neuroscience</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=9f7f7efb" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/dynamical_systems/numerical_solution';</script>
+    <script src="../../_static/custom.js?v=1fd2e2ea"></script>
+    <link rel="icon" href="../../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="3. Dynamical systems as Linear Transformations" href="Applications_LT.html" />
+    <link rel="prev" title="1. Introduction modelling with differential equations" href="dynamical_systems_intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/cajal1.png" class="logo__image only-light" alt="Computational Neuroscience - Home"/>
+    <script>document.write(`<img src="../../_static/cajal1.png" class="logo__image only-dark" alt="Computational Neuroscience - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Course overview
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Math review with Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../mathpython_intro/IntroColab.html">Google’s Colab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mathpython_intro/Numpy_Introduction.html">Introduction to NumPy and Matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mathpython_intro/Linear_Algebra.html">Linear Algebra basics</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 1. Introduction to modeling in neuroscience</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../modelling_intro/week0-Intro-RWB.html">1. What is computational neuroscience?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modelling_intro/b.html">2. Predator–prey dynamics: Simulation</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 2. Differential equations and neuron models</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="dynamical_systems_intro.html">1. Introduction modelling with differential equations</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">2. Solving differential equations: Numerical solution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Applications_LT.html">3. Dynamical systems as Linear Transformations</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 3. Simulating neural populations with Brian</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../simulation_neuralsystems/neuralsimulation_intro.html">1. Simulating neural populations with Brian</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simulation_neuralsystems/a.html">2. Introduction to Brian part 1: Neurons</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simulation_neuralsystems/b.html">3. Introduction to Brian part 2: Synapses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simulation_neuralsystems/c.html">4. Introduction to Brian part 3: Simulations</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 4. Data Analysis and Machine Learning</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../ML_joao/ch01_expanded.html">1. Introduction to Machine Learning for Neuroscience</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../ML_joao/ch02_expanded.html">6. Training Simple Machine Learning Algorithms for Classification</a></li>
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../ML_joao/ch03_expanded.html">15. A Tour of Machine Learning Classifiers and Dimensionality Reduction</a></li>
+
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 5. Network theory</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../network_theory/a.html">1. Network science</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/BergLab/CompNeuroBook/blob/main/notebooks/dynamical_systems/numerical_solution.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/BergLab/CompNeuroBook" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/BergLab/CompNeuroBook/edit/main/notebooks/dynamical_systems/numerical_solution.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/BergLab/CompNeuroBook/issues/new?title=Issue%20on%20page%20%2Fnotebooks/dynamical_systems/numerical_solution.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/notebooks/dynamical_systems/numerical_solution.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Solving differential equations: Numerical solution</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-forward-euler-s-method-the-simple-but-imprecise-method">2.1. The forward Euler’s method: The simple but imprecise method.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-for-loop-to-solve-numerically">2.2. Using for-loop to solve numerically</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-integrate-the-membrane-equation-using-the-forward-euler-s-method">2.3. Exercise: Integrate the membrane  equation using the forward Euler’s method</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#euler-s-method-formula">2.4. Euler’s method formula:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-better-method-4th-order-runge-kutta">2.5. A better method: 4th order Runge-Kutta</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lorenz-system-example-of-a-3-dimenstional-system">2.6. Lorenz system: example of a 3-dimenstional system</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="solving-differential-equations-numerical-solution">
+<h1><span class="section-number">2. </span>Solving differential equations: Numerical solution<a class="headerlink" href="#solving-differential-equations-numerical-solution" title="Link to this heading">#</a></h1>
+<p>Differential equations can often be solved using a mathematical approach, which is called “analytical solution”. This requires good skills in math, as a minimum. Some differential equations are not even possible to solve analytically. Therefore it is very useful to be able to solve differential equations using an approximation and a computer. That is called a “numerical solution” or solving the equation numerically.</p>
+<section id="the-forward-euler-s-method-the-simple-but-imprecise-method">
+<h2><span class="section-number">2.1. </span>The forward Euler’s method: The simple but imprecise method.<a class="headerlink" href="#the-forward-euler-s-method-the-simple-but-imprecise-method" title="Link to this heading">#</a></h2>
+<p>Let us consider a one-dimensional differential equation written in a general form:</p>
+<div class="math notranslate nohighlight">
+\[\frac{dx}{dt} = f(x,t)\]</div>
+<p>where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(x\)</span> is some variable, e.g. the firing rate of a neuron,</p></li>
+<li><p><span class="math notranslate nohighlight">\(t\)</span> is time</p></li>
+<li><p><span class="math notranslate nohighlight">\(dx/dt\)</span>, is the rate of change of <span class="math notranslate nohighlight">\(x\)</span> and is equal to  <span class="math notranslate nohighlight">\(f()\)</span> is some function of both <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(t\)</span>.</p></li>
+</ul>
+<p>To solve a differential equation, there must be an <em>Initial Value</em> that is used to calculate the change. This introduces an interesting property of differential equations: The values of the variables (in this case it is <span class="math notranslate nohighlight">\(x\)</span>) are different depending on the initial value, but the equation that governs the values is the same. Let us call the initial value of <span class="math notranslate nohighlight">\(x\)</span>, i.e. the value at <span class="math notranslate nohighlight">\(t=0\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+x_o = x(t=0) 
+\]</div>
+<p>Although time and <span class="math notranslate nohighlight">\(x\)</span> are continuous variables, we will approximate their values at descrete times, <span class="math notranslate nohighlight">\(t_n = n\Delta t\)</span>, where <span class="math notranslate nohighlight">\(n\)</span> indicates the <span class="math notranslate nohighlight">\(n\)</span>th point and <span class="math notranslate nohighlight">\(n\Delta t\)</span> is the associated time point.</p>
+<div class="math notranslate nohighlight">
+\[
+x_n = x(t_n=n\Delta t)
+\]</div>
+<p>Now we approximate the differential equation above as the rate of change in the time window of consideration, <span class="math notranslate nohighlight">\(\Delta t\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{x_{n+1}-x_n}{\Delta t} = f(x_n,t_n)
+\]</div>
+<p>Hence, we can calculate the approximated updated value of <span class="math notranslate nohighlight">\(x\)</span> as</p>
+<div class="math notranslate nohighlight">
+\[
+x_{n+1} = x_{n}+f(x_n,t_n)\Delta t
+\]</div>
+<p>We can rewrite as</p>
+<div class="math notranslate nohighlight">
+\[
+x_{n+1} = x_{n}+\Delta t \frac{dx}{dt}
+\]</div>
+<p>where the slope <span class="math notranslate nohighlight">\(\frac{dx}{dt}\)</span> is corresponding to the time point <span class="math notranslate nohighlight">\(t_n\)</span>. These iterative equationas are approximation, which is more correct if <span class="math notranslate nohighlight">\(f(x_n,t_n)\)</span> is more linear. Also, choosing a smaller <span class="math notranslate nohighlight">\(\Delta t\)</span> increase the accuracy of the update, but this requires more updates for the same amount of time. The accuracy can be estimated to an <em>order</em> of:</p>
+<div class="math notranslate nohighlight">
+\[
+Accuracy \sim \frac{\Delta t}{T}
+\]</div>
+<p>Where <span class="math notranslate nohighlight">\(T\)</span> is the timescale of change of <span class="math notranslate nohighlight">\(f\)</span>. So ideally <span class="math notranslate nohighlight">\(\Delta t\)</span> is small compared with the rate of change of <span class="math notranslate nohighlight">\(T\)</span>. If not, then the approximation quickly breaks down. As we will discuss below, there is a much better estimation method called 4th order Runge-Kutta, which has an accuracy of <span class="math notranslate nohighlight">\((\frac{\Delta t}{T})^4\)</span>, i.e. 10 000 time better than the forward Euler method.</p>
+</section>
+<section id="using-for-loop-to-solve-numerically">
+<h2><span class="section-number">2.2. </span>Using for-loop to solve numerically<a class="headerlink" href="#using-for-loop-to-solve-numerically" title="Link to this heading">#</a></h2>
+<p>Since the forward Euler method is an iterative process, i.e. calculating the updates in <span class="math notranslate nohighlight">\(x\)</span> as <span class="math notranslate nohighlight">\(x_{n+1} = x_{n}+f(x_n,t_n)\Delta t\)</span>, it makes sense to use a <em>for loop</em>. A for loop in Python is a control structure used to iterate over a sequence (like a list, tuple, string, or range) and repeat a block of code for each item in that sequence. The basic syntax of a for loop is the following:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">sequence</span><span class="p">:</span>
+    <span class="c1"># Do something with item</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+    <span class="c1"># Do something with item</span>
+                            <span class="o">^</span>
+<span class="ne">SyntaxError</span>: incomplete input
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here is an example of a for loop using a list, where the script is going through a loop printing each element in the list:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fruits</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;apple&quot;</span><span class="p">,</span> <span class="s2">&quot;banana&quot;</span><span class="p">,</span> <span class="s2">&quot;cherry&quot;</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">fruit</span> <span class="ow">in</span> <span class="n">fruits</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">fruit</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here it is using <em>range()</em> to repeat an action:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Key Points:</p>
+<ul class="simple">
+<li><p>The for loop automatically gets each item from the sequence.</p></li>
+<li><p>It runs the indented block once for each item.</p></li>
+<li><p>No need to manage index counters manually like in some other languages (though you can if needed).</p></li>
+</ul>
+</section>
+<section id="exercise-integrate-the-membrane-equation-using-the-forward-euler-s-method">
+<h2><span class="section-number">2.3. </span>Exercise: Integrate the membrane  equation using the forward Euler’s method<a class="headerlink" href="#exercise-integrate-the-membrane-equation-using-the-forward-euler-s-method" title="Link to this heading">#</a></h2>
+<div class="math notranslate nohighlight">
+\[
+\frac{dV}{dt} = -\frac{1}{\tau} (V-V_{rest})
+\]</div>
+<p>This is a classic leaky integrator model from neuroscience. Let’s solve it with:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(V_{rest}=−65 mV\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\tau = 10\)</span> ms</p></li>
+<li><p>Initial condition: <span class="math notranslate nohighlight">\(V(0)=-55\)</span> mV</p></li>
+<li><p>Time step: <span class="math notranslate nohighlight">\(\Delta t = 1\)</span> ms</p></li>
+<li><p>Simulate for 100 ms</p></li>
+</ul>
+</section>
+<section id="euler-s-method-formula">
+<h2><span class="section-number">2.4. </span>Euler’s method formula:<a class="headerlink" href="#euler-s-method-formula" title="Link to this heading">#</a></h2>
+<div class="math notranslate nohighlight">
+\[
+V_{n+1} =V_{n} + \Delta t \frac{dV}{dt}
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="c1"># Parameters</span>
+<span class="n">V_rest</span> <span class="o">=</span> <span class="o">-</span><span class="mi">65</span>      <span class="c1"># Resting potential (mV)</span>
+<span class="n">tau</span> <span class="o">=</span> <span class="mi">10</span>          <span class="c1"># Time constant (ms)</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="mi">1</span>            <span class="c1"># Time step (ms)</span>
+<span class="n">T</span> <span class="o">=</span> <span class="mi">100</span>           <span class="c1"># Total simulation time (ms)</span>
+
+<span class="c1"># Time array</span>
+<span class="n">time</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">T</span> <span class="o">+</span> <span class="n">dt</span><span class="p">,</span> <span class="n">dt</span><span class="p">)</span>
+
+<span class="c1"># Initialize voltage array</span>
+<span class="n">V</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">time</span><span class="p">))</span>
+<span class="n">V</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">55</span>  <span class="c1"># Initial condition</span>
+
+<span class="c1"># Euler integration using a for loop</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">time</span><span class="p">)):</span>
+    <span class="n">dVdt</span> <span class="o">=</span> <span class="o">-</span><span class="p">(</span><span class="n">V</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">V_rest</span><span class="p">)</span> <span class="o">/</span> <span class="n">tau</span>
+    <span class="n">V</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">V</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">dt</span> <span class="o">*</span> <span class="n">dVdt</span>
+
+<span class="c1"># Plot the result</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">V</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (ms)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Membrane potential V (mV)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Euler&#39;s Method: Leaky Integrator&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Exercise: Plot the solution to the following differential equations:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( \frac{dx}{dt} = exp(t/\tau)\)</span>, <span class="math notranslate nohighlight">\(x(t=0)=1\)</span>. <span class="math notranslate nohighlight">\(\tau = 0.1\)</span>. Plot from t=-5 to 5. Try varying the <span class="math notranslate nohighlight">\(\Delta t\)</span>, and other parameters</p></li>
+<li><p><span class="math notranslate nohighlight">\( \frac{dx}{dt} = 2sin(2x)\)</span>, <span class="math notranslate nohighlight">\(x(t=0)=0\)</span>. Plot from t=-5 to 5. Try varying the <span class="math notranslate nohighlight">\(\Delta t\)</span>, and other parameters</p></li>
+<li><p><span class="math notranslate nohighlight">\( \frac{dx}{dt} = 2x^2\)</span>, Plot from t=-2 to 2. Try varying the <span class="math notranslate nohighlight">\(\Delta t\)</span>, and other parameters</p></li>
+</ul>
+</section>
+<section id="a-better-method-4th-order-runge-kutta">
+<h2><span class="section-number">2.5. </span>A better method: 4th order Runge-Kutta<a class="headerlink" href="#a-better-method-4th-order-runge-kutta" title="Link to this heading">#</a></h2>
+<p>A very popular numerical method for integrating ordinary differential equations is the 4th order Runge-Kutta (RK4). It improves on Euler’s method by taking multiple estimates of the slope at each step and combining them in a weighted average. Let us again look at the differential equation from above:</p>
+<div class="math notranslate nohighlight">
+\[\frac{dx}{dt} = f(x,t)\]</div>
+<p>The RK4 computes the values of <span class="math notranslate nohighlight">\(x_{n+1}\)</span> from the current value of <span class="math notranslate nohighlight">\(x_n\)</span> using the following set of estimations:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+k_1 = f(x_n,t_n) \\
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+k_2= f( x_n + \frac{\Delta t }{2}k_1, t_n + \frac{\Delta t }{2}) \\
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+k_3= f( x_n + \frac{\Delta t }{2}k_2, t_n + \frac{\Delta t }{2}) \\
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+k_4= f( x_n + \Delta t k_3, t_n + \Delta t ) \\
+\end{split}\]</div>
+<p>Then:</p>
+<div class="math notranslate nohighlight">
+\[
+x_{n+1} = x_n + \frac{\Delta t}{6}(k_1+2k_2 + 2k_3 +k_4 )
+\]</div>
+<p>Where</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(k_1\)</span> is the slope at the beginning of the interval.</p></li>
+<li><p><span class="math notranslate nohighlight">\(k_2\)</span> and <span class="math notranslate nohighlight">\(k_3\)</span> are slopes at the midpoint (with different estimates).</p></li>
+<li><p><span class="math notranslate nohighlight">\(k_4\)</span> is the slope at the end of the interval.</p></li>
+<li><p>The weighted average gives better accuracy than a single slope.</p></li>
+</ul>
+<p>In fact, the accuracy is</p>
+<div class="math notranslate nohighlight">
+\[
+Accuracy \sim (\frac{\Delta t}{T})^4
+\]</div>
+<p>which is 10.000 times better than when using Forward Euler method.</p>
+</section>
+<section id="lorenz-system-example-of-a-3-dimenstional-system">
+<h2><span class="section-number">2.6. </span>Lorenz system: example of a 3-dimenstional system<a class="headerlink" href="#lorenz-system-example-of-a-3-dimenstional-system" title="Link to this heading">#</a></h2>
+<p>The Lorenz system is a famous set of three coupled, nonlinear differential equations. Using the 4th Order Runge-Kutta (RK4) method to solve it numerically is a classic example in nonlinear dynamics and chaos theory.</p>
+<p>The Lorenz equations are:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{dx}{dt} = \sigma (y-x)
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\frac{dy}{dt} = x(\rho-z) -y
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\frac{dz}{dt} = xy -\beta z
+\]</div>
+<p>Where typical parameters are:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\sigma = 10\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\rho =28\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta = \frac{8}{3}\)</span></p></li>
+</ul>
+<p>Goal is to numerically integrate these equations using the RK4. Here is a suggestion of how to do it:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">mpl_toolkits.mplot3d</span><span class="w"> </span><span class="kn">import</span> <span class="n">Axes3D</span>
+
+<span class="c1"># Parameters</span>
+<span class="n">sigma</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">rho</span> <span class="o">=</span> <span class="mi">28</span>
+<span class="n">beta</span> <span class="o">=</span> <span class="mi">8</span> <span class="o">/</span> <span class="mi">3</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="mf">0.01</span>
+<span class="n">T</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="n">num_steps</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">T</span> <span class="o">/</span> <span class="n">dt</span><span class="p">)</span>
+
+<span class="c1"># Arrays to hold the results</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">num_steps</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">num_steps</span><span class="p">)</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">num_steps</span><span class="p">)</span>
+
+<span class="c1"># Initial conditions</span>
+<span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">z</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span>
+
+<span class="c1"># Lorenz system</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">lorenz</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
+    <span class="n">dx</span> <span class="o">=</span> <span class="n">sigma</span> <span class="o">*</span> <span class="p">(</span><span class="n">y</span> <span class="o">-</span> <span class="n">x</span><span class="p">)</span>
+    <span class="n">dy</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="p">(</span><span class="n">rho</span> <span class="o">-</span> <span class="n">z</span><span class="p">)</span> <span class="o">-</span> <span class="n">y</span>
+    <span class="n">dz</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span> <span class="o">-</span> <span class="n">beta</span> <span class="o">*</span> <span class="n">z</span>
+    <span class="k">return</span> <span class="n">dx</span><span class="p">,</span> <span class="n">dy</span><span class="p">,</span> <span class="n">dz</span>
+
+<span class="c1"># RK4 Integration</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_steps</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="n">dx1</span><span class="p">,</span> <span class="n">dy1</span><span class="p">,</span> <span class="n">dz1</span> <span class="o">=</span> <span class="n">lorenz</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">z</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    
+    <span class="n">dx2</span><span class="p">,</span> <span class="n">dy2</span><span class="p">,</span> <span class="n">dz2</span> <span class="o">=</span> <span class="n">lorenz</span><span class="p">(</span>
+        <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">dt</span> <span class="o">*</span> <span class="n">dx1</span><span class="p">,</span>
+        <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">dt</span> <span class="o">*</span> <span class="n">dy1</span><span class="p">,</span>
+        <span class="n">z</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">dt</span> <span class="o">*</span> <span class="n">dz1</span>
+    <span class="p">)</span>
+    
+    <span class="n">dx3</span><span class="p">,</span> <span class="n">dy3</span><span class="p">,</span> <span class="n">dz3</span> <span class="o">=</span> <span class="n">lorenz</span><span class="p">(</span>
+        <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">dt</span> <span class="o">*</span> <span class="n">dx2</span><span class="p">,</span>
+        <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">dt</span> <span class="o">*</span> <span class="n">dy2</span><span class="p">,</span>
+        <span class="n">z</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">dt</span> <span class="o">*</span> <span class="n">dz2</span>
+    <span class="p">)</span>
+    
+    <span class="n">dx4</span><span class="p">,</span> <span class="n">dy4</span><span class="p">,</span> <span class="n">dz4</span> <span class="o">=</span> <span class="n">lorenz</span><span class="p">(</span>
+        <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">dt</span> <span class="o">*</span> <span class="n">dx3</span><span class="p">,</span>
+        <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">dt</span> <span class="o">*</span> <span class="n">dy3</span><span class="p">,</span>
+        <span class="n">z</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">dt</span> <span class="o">*</span> <span class="n">dz3</span>
+    <span class="p">)</span>
+    
+    <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="p">(</span><span class="n">dt</span> <span class="o">/</span> <span class="mi">6</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">dx1</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">dx2</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">dx3</span> <span class="o">+</span> <span class="n">dx4</span><span class="p">)</span>
+    <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="p">(</span><span class="n">dt</span> <span class="o">/</span> <span class="mi">6</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">dy1</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">dy2</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">dy3</span> <span class="o">+</span> <span class="n">dy4</span><span class="p">)</span>
+    <span class="n">z</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">z</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="p">(</span><span class="n">dt</span> <span class="o">/</span> <span class="mi">6</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">dz1</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">dz2</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">dz3</span> <span class="o">+</span> <span class="n">dz4</span><span class="p">)</span>
+
+<span class="c1"># Plotting the Lorenz attractor</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Lorenz Attractor (RK4)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;X&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Y&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_zlabel</span><span class="p">(</span><span class="s2">&quot;Z&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>To animate the 3D properties of the Lorenz attractor:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot setup</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">)</span>
+<span class="n">line</span><span class="p">,</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([],</span> <span class="p">[],</span> <span class="p">[],</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">((</span><span class="nb">min</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">x</span><span class="p">)))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">((</span><span class="nb">min</span><span class="p">(</span><span class="n">y</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">y</span><span class="p">)))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_zlim</span><span class="p">((</span><span class="nb">min</span><span class="p">(</span><span class="n">z</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">z</span><span class="p">)))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Animated Lorenz Attractor&quot;</span><span class="p">)</span>
+
+<span class="c1"># Animation function</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">update</span><span class="p">(</span><span class="n">frame</span><span class="p">):</span>
+    <span class="n">line</span><span class="o">.</span><span class="n">set_data</span><span class="p">(</span><span class="n">x</span><span class="p">[:</span><span class="n">frame</span><span class="p">],</span> <span class="n">y</span><span class="p">[:</span><span class="n">frame</span><span class="p">])</span>
+    <span class="n">line</span><span class="o">.</span><span class="n">set_3d_properties</span><span class="p">(</span><span class="n">z</span><span class="p">[:</span><span class="n">frame</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">line</span><span class="p">,</span>
+
+<span class="c1"># Create animation</span>
+<span class="n">ani</span> <span class="o">=</span> <span class="n">FuncAnimation</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">update</span><span class="p">,</span> <span class="n">frames</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">interval</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">blit</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notebooks/dynamical_systems"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="dynamical_systems_intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">1. </span>Introduction modelling with differential equations</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Applications_LT.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>Dynamical systems as Linear Transformations</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-forward-euler-s-method-the-simple-but-imprecise-method">2.1. The forward Euler’s method: The simple but imprecise method.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-for-loop-to-solve-numerically">2.2. Using for-loop to solve numerically</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-integrate-the-membrane-equation-using-the-forward-euler-s-method">2.3. Exercise: Integrate the membrane  equation using the forward Euler’s method</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#euler-s-method-formula">2.4. Euler’s method formula:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-better-method-4th-order-runge-kutta">2.5. A better method: 4th order Runge-Kutta</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lorenz-system-example-of-a-3-dimenstional-system">2.6. Lorenz system: example of a 3-dimenstional system</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Elias Najarro & Rune Berg
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

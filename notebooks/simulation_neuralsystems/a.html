@@ -28,7 +28,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
@@ -501,7 +501,7 @@ document.write(`
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input above-output-prompt docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip3<span class="w"> </span>install<span class="w"> </span>brian2
-<span class="kn">from</span> <span class="nn">brian2</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">brian2</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 <span class="o">%</span><span class="k">matplotlib</span> inline
 </pre></div>
 </div>
@@ -512,29 +512,22 @@ document.write(`
 <span class="expanded">Hide code cell output</span>
 </summary>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting brian2
-  Using cached Brian2-2.8.0.4-cp312-cp312-win_amd64.whl.metadata (6.3 kB)
-Requirement already satisfied: numpy&gt;=1.23.5 in c:\users\jhc23\appdata\local\programs\python\python312\lib\site-packages (from brian2) (2.0.1)
-Collecting cython&gt;=0.29.21 (from brian2)
-  Using cached cython-3.1.0-cp312-cp312-win_amd64.whl.metadata (31 kB)
-Requirement already satisfied: sympy&gt;=1.2 in c:\users\jhc23\appdata\local\programs\python\python312\lib\site-packages (from brian2) (1.13.1)
-Requirement already satisfied: pyparsing in c:\users\jhc23\appdata\local\programs\python\python312\lib\site-packages (from brian2) (3.2.0)
-Requirement already satisfied: jinja2&gt;=2.7 in c:\users\jhc23\appdata\local\programs\python\python312\lib\site-packages (from brian2) (3.1.3)
-Collecting py-cpuinfo (from brian2)
-  Using cached py_cpuinfo-9.0.0-py3-none-any.whl.metadata (794 bytes)
-Requirement already satisfied: setuptools&gt;=61 in c:\users\jhc23\appdata\local\programs\python\python312\lib\site-packages (from brian2) (75.6.0)
-Requirement already satisfied: packaging in c:\users\jhc23\appdata\roaming\python\python312\site-packages (from brian2) (24.2)
-Requirement already satisfied: MarkupSafe&gt;=2.0 in c:\users\jhc23\appdata\local\programs\python\python312\lib\site-packages (from jinja2&gt;=2.7-&gt;brian2) (2.1.5)
-Requirement already satisfied: mpmath&lt;1.4,&gt;=1.1.0 in c:\users\jhc23\appdata\local\programs\python\python312\lib\site-packages (from sympy&gt;=1.2-&gt;brian2) (1.3.0)
-Using cached Brian2-2.8.0.4-cp312-cp312-win_amd64.whl (1.2 MB)
-Using cached cython-3.1.0-cp312-cp312-win_amd64.whl (2.7 MB)
-Using cached py_cpuinfo-9.0.0-py3-none-any.whl (22 kB)
-Installing collected packages: py-cpuinfo, cython, brian2
-Successfully installed brian2-2.8.0.4 cython-3.1.0 py-cpuinfo-9.0.0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: brian2 in /Users/rune/Documents/IN-KU/Teaching/Computational Neuroscience/Book/CompNeuroCourse2025/CompNeuroCourse/path_you_picked/compneurocourse/lib/python3.11/site-packages (2.9.0)
+Requirement already satisfied: numpy&gt;=1.23.5 in /Users/rune/Documents/IN-KU/Teaching/Computational Neuroscience/Book/CompNeuroCourse2025/CompNeuroCourse/path_you_picked/compneurocourse/lib/python3.11/site-packages (from brian2) (2.2.6)
+Requirement already satisfied: cython&gt;=0.29.21 in /Users/rune/Documents/IN-KU/Teaching/Computational Neuroscience/Book/CompNeuroCourse2025/CompNeuroCourse/path_you_picked/compneurocourse/lib/python3.11/site-packages (from brian2) (3.1.1)
+Requirement already satisfied: sympy&gt;=1.2 in /Users/rune/Documents/IN-KU/Teaching/Computational Neuroscience/Book/CompNeuroCourse2025/CompNeuroCourse/path_you_picked/compneurocourse/lib/python3.11/site-packages (from brian2) (1.14.0)
+Requirement already satisfied: pyparsing in /Users/rune/Documents/IN-KU/Teaching/Computational Neuroscience/Book/CompNeuroCourse2025/CompNeuroCourse/path_you_picked/compneurocourse/lib/python3.11/site-packages (from brian2) (3.2.3)
+Requirement already satisfied: jinja2&gt;=2.7 in /Users/rune/Documents/IN-KU/Teaching/Computational Neuroscience/Book/CompNeuroCourse2025/CompNeuroCourse/path_you_picked/compneurocourse/lib/python3.11/site-packages (from brian2) (3.1.6)
+Requirement already satisfied: setuptools&gt;=61 in /Users/rune/Documents/IN-KU/Teaching/Computational Neuroscience/Book/CompNeuroCourse2025/CompNeuroCourse/path_you_picked/compneurocourse/lib/python3.11/site-packages (from brian2) (65.5.0)
+Requirement already satisfied: packaging in /Users/rune/Documents/IN-KU/Teaching/Computational Neuroscience/Book/CompNeuroCourse2025/CompNeuroCourse/path_you_picked/compneurocourse/lib/python3.11/site-packages (from brian2) (25.0)
+Requirement already satisfied: MarkupSafe&gt;=2.0 in /Users/rune/Documents/IN-KU/Teaching/Computational Neuroscience/Book/CompNeuroCourse2025/CompNeuroCourse/path_you_picked/compneurocourse/lib/python3.11/site-packages (from jinja2&gt;=2.7-&gt;brian2) (3.0.2)
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[notice] A new release of pip is available: 25.0.1 -&gt; 25.1.1
-[notice] To update, run: python.exe -m pip install --upgrade pip
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: mpmath&lt;1.4,&gt;=1.1.0 in /Users/rune/Documents/IN-KU/Teaching/Computational Neuroscience/Book/CompNeuroCourse2025/CompNeuroCourse/path_you_picked/compneurocourse/lib/python3.11/site-packages (from sympy&gt;=1.2-&gt;brian2) (1.3.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> A new release of pip is available: <span class=" -Color -Color-Red">23.2.1</span> -&gt; <span class=" -Color -Color-Green">25.1.1</span>
+<span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> To update, run: <span class=" -Color -Color-Green">pip install --upgrade pip</span>
 </pre></div>
 </div>
 </div>
@@ -613,7 +606,7 @@ Successfully installed brian2-2.8.0.4 cython-3.1.0 py-cpuinfo-9.0.0
 <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="mi">5</span><span class="o">*</span><span class="n">amp</span><span class="o">+</span><span class="mi">10</span><span class="o">*</span><span class="n">volt</span>
 
-<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\site-packages\brian2\units\fundamentalunits.py:1193,</span> in <span class="ni">Quantity.__array_ufunc__</span><span class="nt">(self, uf, method, *inputs, **kwargs)</span>
+<span class="nn">File ~/Documents/IN-KU/Teaching/Computational Neuroscience/Book/CompNeuroCourse2025/CompNeuroCourse/path_you_picked/compneurocourse/lib/python3.11/site-packages/brian2/units/fundamentalunits.py:1193,</span> in <span class="ni">Quantity.__array_ufunc__</span><span class="nt">(self, uf, method, *inputs, **kwargs)</span>
 <span class="g g-Whitespace">   </span><span class="mi">1190</span> <span class="k">elif</span> <span class="n">uf</span><span class="o">.</span><span class="vm">__name__</span> <span class="ow">in</span> <span class="n">UFUNCS_MATCHING_DIMENSIONS</span> <span class="o">+</span> <span class="n">UFUNCS_COMPARISONS</span><span class="p">:</span>
 <span class="g g-Whitespace">   </span><span class="mi">1191</span>     <span class="c1"># Ok if dimension of arguments match (for reductions, they always do)</span>
 <span class="g g-Whitespace">   </span><span class="mi">1192</span>     <span class="k">if</span> <span class="n">method</span> <span class="o">==</span> <span class="s2">&quot;__call__&quot;</span><span class="p">:</span>
@@ -630,7 +623,7 @@ Successfully installed brian2-2.8.0.4 cython-3.1.0 py-cpuinfo-9.0.0
 <span class="g g-Whitespace">   </span><span class="mi">1203</span>     <span class="k">if</span> <span class="n">uf</span><span class="o">.</span><span class="vm">__name__</span> <span class="ow">in</span> <span class="n">UFUNCS_COMPARISONS</span><span class="p">:</span>
 <span class="g g-Whitespace">   </span><span class="mi">1204</span>         <span class="k">return</span> <span class="n">uf_method</span><span class="p">(</span><span class="o">*</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">inputs</span><span class="p">],</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
-<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\site-packages\brian2\units\fundamentalunits.py:266,</span> in <span class="ni">fail_for_dimension_mismatch</span><span class="nt">(obj1, obj2, error_message, **error_quantities)</span>
+<span class="nn">File ~/Documents/IN-KU/Teaching/Computational Neuroscience/Book/CompNeuroCourse2025/CompNeuroCourse/path_you_picked/compneurocourse/lib/python3.11/site-packages/brian2/units/fundamentalunits.py:266,</span> in <span class="ni">fail_for_dimension_mismatch</span><span class="nt">(obj1, obj2, error_message, **error_quantities)</span>
 <span class="g g-Whitespace">    </span><span class="mi">264</span>         <span class="k">raise</span> <span class="n">DimensionMismatchError</span><span class="p">(</span><span class="n">error_message</span><span class="p">,</span> <span class="n">dim1</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">265</span>     <span class="k">else</span><span class="p">:</span>
 <span class="ne">--&gt; </span><span class="mi">266</span>         <span class="k">raise</span> <span class="n">DimensionMismatchError</span><span class="p">(</span><span class="n">error_message</span><span class="p">,</span> <span class="n">dim1</span><span class="p">,</span> <span class="n">dim2</span><span class="p">)</span>
@@ -1088,7 +1081,7 @@ Note that we also changed the <code class="docutils literal notranslate"><span c
         },
         kernelOptions: {
             name: "python3",
-            path: "./notebooks\simulation_neuralsystems"
+            path: "./notebooks/simulation_neuralsystems"
         },
         predefinedOutput: true
     }

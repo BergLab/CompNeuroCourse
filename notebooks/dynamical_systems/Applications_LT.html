@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>2. Dynamical systems as Linear Transformations &#8212; Computational Neuroscience</title>
+    <title>3. Dynamical systems as Linear Transformations &#8212; Computational Neuroscience</title>
   
   
   
@@ -28,7 +28,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
@@ -66,7 +66,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="1. Simulating neural populations with Brian" href="../simulation_neuralsystems/neuralsimulation_intro.html" />
-    <link rel="prev" title="1. Introduction modelling with differential equations" href="dynamical_systems_intro.html" />
+    <link rel="prev" title="2. Solving differential equations: Numerical solution" href="numerical_solution.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -198,7 +198,8 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 2. Differential equations and neuron models</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="dynamical_systems_intro.html">1. Introduction modelling with differential equations</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">2. Dynamical systems as Linear Transformations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="numerical_solution.html">2. Solving differential equations: Numerical solution</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">3. Dynamical systems as Linear Transformations</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 3. Simulating neural populations with Brian</span></p>
 <ul class="nav bd-sidenav">
@@ -475,14 +476,14 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discrete-dynamical-systems">2.1. Discrete dynamical systems</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#infectious-disease-model">2.1.1. Infectious Disease Model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discrete-dynamical-systems">3.1. Discrete dynamical systems</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#infectious-disease-model">3.1.1. Infectious Disease Model</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">2.2. <strong>Exercises</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#infectious-disease-model-continuation">2.3. Infectious disease model - Continuation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">2.4. <strong>Exercises</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation-approach-to-finding-equilibrium-points">2.4.1. Simulation approach to finding equilibrium points</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">3.2. <strong>Exercises</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#infectious-disease-model-continuation">3.3. Infectious disease model - Continuation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">3.4. <strong>Exercises</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation-approach-to-finding-equilibrium-points">3.4.1. Simulation approach to finding equilibrium points</a></li>
 </ul>
 </li>
 </ul>
@@ -497,17 +498,17 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="dynamical-systems-as-linear-transformations">
-<h1><span class="section-number">2. </span>Dynamical systems as Linear Transformations<a class="headerlink" href="#dynamical-systems-as-linear-transformations" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">3. </span>Dynamical systems as Linear Transformations<a class="headerlink" href="#dynamical-systems-as-linear-transformations" title="Link to this heading">#</a></h1>
 <p><em><strong>Credit</strong>: <a class="reference external" href="https://bvanderlei.github.io/jupyter-guide-to-linear-algebra/">Ben Vanderlei’s Jupyter Guide to Linear Algebra</a> under CC BY 4.0 with minor adaptations.</em></p>
 <section id="discrete-dynamical-systems">
-<h2><span class="section-number">2.1. </span>Discrete dynamical systems<a class="headerlink" href="#discrete-dynamical-systems" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">3.1. </span>Discrete dynamical systems<a class="headerlink" href="#discrete-dynamical-systems" title="Link to this heading">#</a></h2>
 <p>In week 1 we learnt the basics of algebra, now we are going to see how these concepts we learn such vector, matrix or eigenvalues can be useful to study dynamical systems. Giving us a complentary view to that of differential equations.</p>
 <p>It is often useful to describe a structure that has multiple components with a single vector.  If that structure is changing in time due to some process, it is typical to refer to the vector as a <strong>state vector</strong> since it describes the <em>state</em> of the structure at some particular time. To be less abstract, an example would be if you want to quantify the concentration of different neurotransmitters in a synaptic cleft: you could represent the concentration of each of them as a value in a vector. Equivalently, if you are studying the movement of an animal, you could represent the position of each of animal joint as value in the vector so you can track its movement during an experiment.</p>
 <p>It is quite common to model such dynamic processes at discrete times and use linear transformations to model the evolution of the state vector from one time to the next.</p>
 <p>Let’s suppose that we aim to describe sequence of vectors at times <span class="math notranslate nohighlight">\(t=0, 1, 2, 3,\)</span>… with state vectors <span class="math notranslate nohighlight">\(X_0\)</span>, <span class="math notranslate nohighlight">\(X_1\)</span>, <span class="math notranslate nohighlight">\(X_2\)</span>, <span class="math notranslate nohighlight">\(X_3\)</span>…. at those times.  We propose to calculate the state vector <span class="math notranslate nohighlight">\(X_t\)</span> based only on the previous state vector <span class="math notranslate nohighlight">\(X_{t-1}\)</span>.  If we model the transition from <span class="math notranslate nohighlight">\(X_{t-1}\)</span> to <span class="math notranslate nohighlight">\(X_t\)</span> with a linear transformation, then there is a matrix such that <span class="math notranslate nohighlight">\(X_t = AX_{t-1}\)</span>.  This sort of model is known as a <strong>discrete dynamical system</strong> and is used in many areas from economics to biology.
 Although the underlying phenomena —eg. the movement of the animal articulations or chemical concentrations— may change continuously, any experimental measures will always be discrete and hence we need discrete models.</p>
 <section id="infectious-disease-model">
-<h3><span class="section-number">2.1.1. </span>Infectious Disease Model<a class="headerlink" href="#infectious-disease-model" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">3.1.1. </span>Infectious Disease Model<a class="headerlink" href="#infectious-disease-model" title="Link to this heading">#</a></h3>
 <p>In this example we consider a basic model of an infectious disease that is spreading within a population.  A well known family of models for this scenario is known as the <span class="math notranslate nohighlight">\(SIR\)</span> models.  The acronym comes from a basic modeling assumption that the population is divided into three categories: Susceptible, Infectious, and Recovered.  As the disease, spreads a portion of the Susceptible individuals become Infectious, and a portion of Infectious individuals become Recovered.  We will consider a small variation in the model which assumes that a portion of Recovered individuals return to the Susceptible category.  This variation, known as an <span class="math notranslate nohighlight">\(SIRS\)</span> model, would be a more accurate description of a disease which can be contracted multiple times.</p>
 <p>We suppose that the population is completely homogeneous in all regards, so that all individuals in a given category have the same probabilities to move to the next category.</p>
 <p>To model real-world epidemics, it is necessary to estimate some parameters that specify how quickly individuals move among the categories.  These parameters will be important in making any predictions with the model.  For our demonstration, we will create an example.  Let us suppose that our state vectors describe the population at time intervals of 1 week, and that every week, 5% of the Susceptible population becomes Infectious, and 20% of the Infectious population becomes Recovered.  We also suppose that 15% of the Recovered population again becomes Susceptible every week.</p>
@@ -542,7 +543,7 @@ X_0 = \left[ \begin{array}{r} 0.95 \\ 0.05 \\ 0  \end{array}\right]
 <p>We compute <span class="math notranslate nohighlight">\(X_1 = AX_0\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">0.95</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.15</span><span class="p">],[</span><span class="mf">0.05</span><span class="p">,</span><span class="mf">0.8</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.2</span><span class="p">,</span><span class="mf">0.85</span><span class="p">]])</span>
 
 <span class="c1">## X at time 0</span>
@@ -588,15 +589,15 @@ X_0 = \left[ \begin{array}{r} 0.95 \\ 0.05 \\ 0  \end{array}\right]
 </section>
 </section>
 <section id="exercises">
-<h2><span class="section-number">2.2. </span><strong>Exercises</strong><a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">3.2. </span><strong>Exercises</strong><a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Make a plot the evolution over time of the susceptible-infected-recovered population. Hint: you will have to create a list variable to store the values of each group over time and then apply the matrix <span class="math notranslate nohighlight">\(A\)</span> to the initial state vector <span class="math notranslate nohighlight">\(X_{0}\)</span> like we did in the previous code cell.</p></li>
 <li><p>Label the axes of the plot and add a legend.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
 <span class="c1">## Your code here</span>
 </pre></div>
@@ -605,7 +606,7 @@ X_0 = \left[ \begin{array}{r} 0.95 \\ 0.05 \\ 0  \end{array}\right]
 </div>
 </section>
 <section id="infectious-disease-model-continuation">
-<h2><span class="section-number">2.3. </span>Infectious disease model - Continuation<a class="headerlink" href="#infectious-disease-model-continuation" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">3.3. </span>Infectious disease model - Continuation<a class="headerlink" href="#infectious-disease-model-continuation" title="Link to this heading">#</a></h2>
 <p>The notions of eigenvalues and eigenvectors that we have talked about in the previous notebook can be very useful to study the dynamical systems like the spread of a virus in the SIR model:</p>
 <p>For the <span class="math notranslate nohighlight">\(SIRS\)</span> model of infectious disease, we had the following discrete dynamical system.</p>
 <div class="math notranslate nohighlight">
@@ -621,8 +622,8 @@ AX_{t-1}
 <p>In this case the components of the vector have individual meaning, so let’s calculate the first 30 iterations and plot <span class="math notranslate nohighlight">\(s_t\)</span>, <span class="math notranslate nohighlight">\(i_t\)</span>, and <span class="math notranslate nohighlight">\(r_t\)</span> to get a sense of how they are changing over 30 weeks.  For this calculation we store each vector <span class="math notranslate nohighlight">\(X_t\)</span> as a column in an array named <span class="math notranslate nohighlight">\(\texttt{results}\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="o">%</span><span class="k">matplotlib</span> inline
 
 <span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">0.95</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.15</span><span class="p">],[</span><span class="mf">0.05</span><span class="p">,</span><span class="mf">0.8</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.2</span><span class="p">,</span><span class="mf">0.85</span><span class="p">]])</span>
@@ -660,7 +661,7 @@ AX_{t-1}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/2ca82cbd5ff26ac194c883b2551e673296d523e7f98c18e8eba0c15898c3d9f2.png" src="../../_images/2ca82cbd5ff26ac194c883b2551e673296d523e7f98c18e8eba0c15898c3d9f2.png" />
+<img alt="../../_images/f6158283cf9a1bcca701212c572159544e9b166b5bb6ca1331eb7054f44e7173.png" src="../../_images/f6158283cf9a1bcca701212c572159544e9b166b5bb6ca1331eb7054f44e7173.png" />
 </div>
 </div>
 <p>Based on the calculation it appears that the state of the population has reached an <em>equilibrium</em> after 20 weeks.  In the equilibrium state, each category of the population, <span class="math notranslate nohighlight">\(S\)</span>, <span class="math notranslate nohighlight">\(I\)</span>, and <span class="math notranslate nohighlight">\(R\)</span>, have as many individuals entering the category as leaving it.  In terms of the matrix equation, if <span class="math notranslate nohighlight">\(X\)</span> is the vector that contains the equilibrium values of <span class="math notranslate nohighlight">\(s_t\)</span>, <span class="math notranslate nohighlight">\(i_t\)</span>, and <span class="math notranslate nohighlight">\(r_t\)</span>, then <span class="math notranslate nohighlight">\(X\)</span> must be a solution to the equation <span class="math notranslate nohighlight">\(AX=X\)</span>, since <span class="math notranslate nohighlight">\(X_{t-1}=X_t\)</span> when the components not changing.  The equation <span class="math notranslate nohighlight">\(AX=X\)</span> implies that <span class="math notranslate nohighlight">\(X\)</span> is an eigenvector of <span class="math notranslate nohighlight">\(A\)</span> corresponding to an eigenvalue of one. If you remember the geometrical interpretation of a matrix as a linear transformation in <a class="reference external" href="https://www.youtube.com/watch?v=PFDu9oVAE-g">3Blue1Brown eigenvectors and eigenvalues video</a>, the eigenvectors are the vectors who experience scaling by a factor of its eigenvalue but do not experience any change of direction. In other words, if we have a vector <span class="math notranslate nohighlight">\(X\)</span> that verifies <span class="math notranslate nohighlight">\(AX=X\)</span>, that vector <span class="math notranslate nohighlight">\(X\)</span> is an eigenvector of <span class="math notranslate nohighlight">\(A\)</span> with a corresponding eigenvalue <span class="math notranslate nohighlight">\(1\)</span>. That means that applying the matrix <span class="math notranslate nohighlight">\(A\)</span> —which we can see as a geometrical transformation— does not affect the vector at all. This is why if we find an vector <span class="math notranslate nohighlight">\(X\)</span> that verifies <span class="math notranslate nohighlight">\(AX=X\)</span>, we know the values of <span class="math notranslate nohighlight">\(X\)</span> are an equilibrium point of the system!</p>
@@ -669,7 +670,7 @@ AX_{t-1}
 <p>Notice that in our case the matrix is singular, meaning that its determinant is zero and hence it doesn’t have an inverse:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">linalg</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">linalg</span>
 <span class="n">AminusI</span> <span class="o">=</span> <span class="n">A</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">identity</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Determinant of A: </span><span class="si">{</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">AminusI</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
@@ -704,13 +705,13 @@ AX_{t-1}
 <p>This means that the system doesn’t have an unique solution, therefore it can either have none or infinite. Since we know there is at least the trivial solution <span class="math notranslate nohighlight">\(x={0,0,0}\)</span>, there must be an infinite amount of solution. If we want to find the equilibrium point of the system we will have to add additional constraints. We know for instance that the sum of the susceptible + infected + recovered must be equal to 1.</p>
 </section>
 <section id="id1">
-<h2><span class="section-number">2.4. </span><strong>Exercises</strong><a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">3.4. </span><strong>Exercises</strong><a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Use <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.eig.html">Scipy linalg.eig() function</a> to compute the eigenvalues and eigenvectors of the matrix <span class="math notranslate nohighlight">\(A\)</span>:</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.linalg</span> <span class="kn">import</span> <span class="n">eig</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">scipy.linalg</span><span class="w"> </span><span class="kn">import</span> <span class="n">eig</span>
 
 <span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">0.95</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.15</span><span class="p">],[</span><span class="mf">0.05</span><span class="p">,</span><span class="mf">0.8</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.2</span><span class="p">,</span><span class="mf">0.85</span><span class="p">]])</span>
 
@@ -772,7 +773,7 @@ AX_{t-1}
 </div>
 </div>
 <section id="simulation-approach-to-finding-equilibrium-points">
-<h3><span class="section-number">2.4.1. </span>Simulation approach to finding equilibrium points<a class="headerlink" href="#simulation-approach-to-finding-equilibrium-points" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">3.4.1. </span>Simulation approach to finding equilibrium points<a class="headerlink" href="#simulation-approach-to-finding-equilibrium-points" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Look at the equilibrium values that you obtained on your simulated SIRS model, write them as a state vector <span class="math notranslate nohighlight">\(X\)</span> using a numpy array and verify that this state vector is indeed a eigenvector of the system by verifying that <span class="math notranslate nohighlight">\(A&#64;X = X\)</span></p></li>
 </ul>
@@ -829,7 +830,7 @@ AX_{t-1}
         },
         kernelOptions: {
             name: "python3",
-            path: "./notebooks\dynamical_systems"
+            path: "./notebooks/dynamical_systems"
         },
         predefinedOutput: true
     }
@@ -847,12 +848,12 @@ AX_{t-1}
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="dynamical_systems_intro.html"
+       href="numerical_solution.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">1. </span>Introduction modelling with differential equations</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>Solving differential equations: Numerical solution</p>
       </div>
     </a>
     <a class="right-next"
@@ -880,14 +881,14 @@ AX_{t-1}
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discrete-dynamical-systems">2.1. Discrete dynamical systems</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#infectious-disease-model">2.1.1. Infectious Disease Model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discrete-dynamical-systems">3.1. Discrete dynamical systems</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#infectious-disease-model">3.1.1. Infectious Disease Model</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">2.2. <strong>Exercises</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#infectious-disease-model-continuation">2.3. Infectious disease model - Continuation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">2.4. <strong>Exercises</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation-approach-to-finding-equilibrium-points">2.4.1. Simulation approach to finding equilibrium points</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">3.2. <strong>Exercises</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#infectious-disease-model-continuation">3.3. Infectious disease model - Continuation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">3.4. <strong>Exercises</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation-approach-to-finding-equilibrium-points">3.4.1. Simulation approach to finding equilibrium points</a></li>
 </ul>
 </li>
 </ul>

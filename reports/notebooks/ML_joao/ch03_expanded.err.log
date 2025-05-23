@@ -1,0 +1,90 @@
+Traceback (most recent call last):
+  File "/Users/rune/Documents/IN-KU/Teaching/Computational Neuroscience/Book/CompNeuroCourse2025/CompNeuroCourse/path_you_picked/compneurocourse/lib/python3.11/site-packages/myst_nb/core/execute/inline.py", line 128, in code_cell_outputs
+    self._client.execute_cell(
+  File "/Users/rune/Documents/IN-KU/Teaching/Computational Neuroscience/Book/CompNeuroCourse2025/CompNeuroCourse/path_you_picked/compneurocourse/lib/python3.11/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.11/asyncio/base_events.py", line 653, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/Users/rune/Documents/IN-KU/Teaching/Computational Neuroscience/Book/CompNeuroCourse2025/CompNeuroCourse/path_you_picked/compneurocourse/lib/python3.11/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/Users/rune/Documents/IN-KU/Teaching/Computational Neuroscience/Book/CompNeuroCourse2025/CompNeuroCourse/path_you_picked/compneurocourse/lib/python3.11/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+from sklearn.linear_model import LogisticRegression
+from sklearn.svm import SVC
+from ipywidgets import interact, FloatLogSlider, Dropdown, fixed
+import matplotlib.pyplot as plt
+import numpy as np
+from matplotlib.colors import ListedColormap
+
+def plot_decision_regions(X, y, classifier, test_idx=None, resolution=0.02):
+    markers = ('o', 's', '^', 'v', '<')
+    colors = ('red', 'blue', 'lightgreen', 'gray', 'cyan')
+    cmap = ListedColormap(colors[:len(np.unique(y))])
+
+    x1_min, x1_max = X[:, 0].min() - 1, X[:, 0].max() + 1
+    x2_min, x2_max = X[:, 1].min() - 1, X[:, 1].max() + 1
+    xx1, xx2 = np.meshgrid(np.arange(x1_min, x1_max, resolution),
+                           np.arange(x2_min, x2_max, resolution))
+    lab = classifier.predict(np.array([xx1.ravel(), xx2.ravel()]).T)
+    lab = lab.reshape(xx1.shape)
+    plt.contourf(xx1, xx2, lab, alpha=0.3, cmap=cmap)
+    plt.xlim(xx1.min(), xx1.max())
+    plt.ylim(xx2.min(), xx2.max())
+
+    for idx, cl in enumerate(np.unique(y)):
+        plt.scatter(x=X[y == cl, 0], 
+                    y=X[y == cl, 1],
+                    alpha=0.8, 
+                    c=colors[idx],
+                    marker=markers[idx], 
+                    label=f'Class {cl}', 
+                    edgecolor='black')
+    if test_idx:
+        X_test, y_test = X[test_idx, :], y[test_idx]
+        plt.scatter(X_test[:, 0], X_test[:, 1], 
+                    facecolors='none', edgecolor='black', 
+                    linewidth=1, marker='o', 
+                    s=100, label='Test set')
+
+def interactive_classifier_demo(X_train, y_train, X_test, y_test):
+    X_combined = np.vstack((X_train, X_test))
+    y_combined = np.hstack((y_train, y_test))
+
+    @interact(
+        model=Dropdown(options=['Logistic Regression', 'SVM'], value='Logistic Regression'),
+        C=FloatLogSlider(value=1.0, base=10, min=-2, max=3, step=0.2, description='C (Reg)'),
+        gamma=FloatLogSlider(value=0.1, base=10, min=-3, max=1, step=0.2, description='Gamma')
+    )
+    def update(model, C, gamma):
+        if model == 'Logistic Regression':
+            clf = LogisticRegression(C=C, multi_class='ovr', solver='lbfgs', random_state=1)
+        else:
+            clf = SVC(kernel='rbf', C=C, gamma=gamma, random_state=1)
+
+        clf.fit(X_train, y_train)
+        plot_decision_regions(X_combined, y_combined, classifier=clf, test_idx=range(len(y_train), len(y_combined)))
+        plt.title(f"{model} Decision Boundary")
+        plt.xlabel("Feature 1 [standardized]")
+        plt.ylabel("Feature 2 [standardized]")
+        plt.legend(loc='upper left')
+        plt.show()
+
+
+------------------
+
+
+[31m---------------------------------------------------------------------------[39m
+[31mModuleNotFoundError[39m                       Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[4][39m[32m, line 3[39m
+[32m      1[39m [38;5;28;01mfrom[39;00m[38;5;250m [39m[34;01msklearn[39;00m[34;01m.[39;00m[34;01mlinear_model[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m LogisticRegression
+[32m      2[39m [38;5;28;01mfrom[39;00m[38;5;250m [39m[34;01msklearn[39;00m[34;01m.[39;00m[34;01msvm[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m SVC
+[32m----> [39m[32m3[39m [38;5;28;01mfrom[39;00m[38;5;250m [39m[34;01mipywidgets[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m interact, FloatLogSlider, Dropdown, fixed
+[32m      4[39m [38;5;28;01mimport[39;00m[38;5;250m [39m[34;01mmatplotlib[39;00m[34;01m.[39;00m[34;01mpyplot[39;00m[38;5;250m [39m[38;5;28;01mas[39;00m[38;5;250m [39m[34;01mplt[39;00m
+[32m      5[39m [38;5;28;01mimport[39;00m[38;5;250m [39m[34;01mnumpy[39;00m[38;5;250m [39m[38;5;28;01mas[39;00m[38;5;250m [39m[34;01mnp[39;00m
+
+[31mModuleNotFoundError[39m: No module named 'ipywidgets'
+

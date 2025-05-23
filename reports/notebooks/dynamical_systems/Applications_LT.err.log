@@ -1,15 +1,15 @@
 Traceback (most recent call last):
-  File "C:\Users\jhc23\AppData\Local\Programs\Python\Python312\Lib\site-packages\myst_nb\core\execute\inline.py", line 128, in code_cell_outputs
+  File "/Users/rune/Documents/IN-KU/Teaching/Computational Neuroscience/Book/CompNeuroCourse2025/CompNeuroCourse/path_you_picked/compneurocourse/lib/python3.11/site-packages/myst_nb/core/execute/inline.py", line 128, in code_cell_outputs
     self._client.execute_cell(
-  File "C:\Users\jhc23\AppData\Roaming\Python\Python312\site-packages\jupyter_core\utils\__init__.py", line 165, in wrapped
+  File "/Users/rune/Documents/IN-KU/Teaching/Computational Neuroscience/Book/CompNeuroCourse2025/CompNeuroCourse/path_you_picked/compneurocourse/lib/python3.11/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
     return loop.run_until_complete(inner)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\jhc23\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py", line 686, in run_until_complete
+  File "/opt/anaconda3/lib/python3.11/asyncio/base_events.py", line 653, in run_until_complete
     return future.result()
            ^^^^^^^^^^^^^^^
-  File "C:\Users\jhc23\AppData\Local\Programs\Python\Python312\Lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+  File "/Users/rune/Documents/IN-KU/Teaching/Computational Neuroscience/Book/CompNeuroCourse2025/CompNeuroCourse/path_you_picked/compneurocourse/lib/python3.11/site-packages/nbclient/client.py", line 1062, in async_execute_cell
     await self._check_raise_for_error(cell, cell_index, exec_reply)
-  File "C:\Users\jhc23\AppData\Local\Programs\Python\Python312\Lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+  File "/Users/rune/Documents/IN-KU/Teaching/Computational Neuroscience/Book/CompNeuroCourse2025/CompNeuroCourse/path_you_picked/compneurocourse/lib/python3.11/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
@@ -21,9 +21,9 @@ eigenvalues, eigenvectors = ## Your code here
 ------------------
 
 
-[1;36m  Cell [1;32mIn[7], line 5[1;36m[0m
-[1;33m    eigenvalues, eigenvectors = ## Your code here[0m
-[1;37m                                ^[0m
-[1;31mSyntaxError[0m[1;31m:[0m invalid syntax
+  [36mCell[39m[36m [39m[32mIn[7][39m[32m, line 5[39m
+[31m    [39m[31meigenvalues, eigenvectors = ## Your code here[39m
+                                ^
+[31mSyntaxError[39m[31m:[39m invalid syntax
 
 
