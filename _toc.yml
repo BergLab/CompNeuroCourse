@@ -24,8 +24,8 @@ parts:
   numbered: true
   chapters:
   - file: notebooks/dynamical_systems/dynamical_systems_intro
-  - file: notebooks/dynamical_systems/Applications_LT
   - file: notebooks/dynamical_systems/numerical_solution
+  - file: notebooks/dynamical_systems/Applications_LT
 - caption: Chapter 3. Simulating neural populations with Brian
   numbered: true
   chapters:
