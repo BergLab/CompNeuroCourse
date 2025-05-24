@@ -13,7 +13,7 @@ parts:
   numbered: false
   chapters:
   - file: notebooks/mathpython_intro/IntroColab
-  - file: notebooks/mathpython_intro/Numpy_Introduction
+#  - file: notebooks/mathpython_intro/Numpy_Introduction
   - file: notebooks/mathpython_intro/Linear_Algebra
 - caption: Chapter 1. Introduction to modeling in neuroscience
   numbered: true
