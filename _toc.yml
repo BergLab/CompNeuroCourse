@@ -13,7 +13,7 @@ parts:
   numbered: false
   chapters:
   - file: notebooks/mathpython_intro/IntroColab
-#  - file: notebooks/mathpython_intro/Numpy_Introduction
+  - file: notebooks/mathpython_intro/Numpy_Introduction
   - file: notebooks/mathpython_intro/Linear_Algebra
 - caption: Chapter 1. Introduction to modeling in neuroscience
   numbered: true
@@ -23,8 +23,8 @@ parts:
 - caption: Chapter 2. Differential equations and neuron models
   numbered: true
   chapters:
-  - file: notebooks/dynamical_systems/dynamical_systems_intro
   - file: notebooks/dynamical_systems/numerical_solution
+  - file: notebooks/dynamical_systems/dynamical_systems_intro
   - file: notebooks/dynamical_systems/Applications_LT
 - caption: Chapter 3. Simulating neural populations with Brian
   numbered: true

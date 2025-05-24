@@ -14,22 +14,22 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
@@ -38,16 +38,16 @@
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=9f7f7efb" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
     <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../_static/copybutton.js?v=f281be69"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -76,23 +76,27 @@
 
   
   
-  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
 
   
   <input type="checkbox"
           class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -114,13 +118,8 @@
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
-
-  <div class="pst-async-banner-revealer d-none">
-  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
-</div>
-
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
     </header>
   
 
@@ -144,8 +143,6 @@
         <div class="sidebar-primary-item">
 
   
-    
-  
 
 <a class="navbar-brand logo" href="../../intro.html">
   
@@ -167,7 +164,7 @@
 
  <script>
  document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass"></i>
     <span class="search-button__default-text">Search</span>
     <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
@@ -198,7 +195,8 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 2. Differential equations and neuron models</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../dynamical_systems/dynamical_systems_intro.html">1. Introduction modelling with differential equations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../dynamical_systems/Applications_LT.html">2. Dynamical systems as Linear Transformations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dynamical_systems/numerical_solution.html">2. Solving differential equations: Numerical solution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dynamical_systems/Applications_LT.html">3. Dynamical systems as Linear Transformations</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 3. Simulating neural populations with Brian</span></p>
 <ul class="current nav bd-sidenav">
@@ -228,6 +226,11 @@
 
 
 
+
+
+
+
+
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 5. Network theory</span></p>
 <ul class="nav bd-sidenav">
@@ -247,7 +250,7 @@
 
       </div>
       
-      <main id="main-content" class="bd-main" role="main">
+      <main id="main-content" class="bd-main">
         
         
 
@@ -256,14 +259,14 @@
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article d-print-none">
+              <div class="bd-header-article">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</button></div>
+</label></div>
       
     </div>
   
@@ -288,14 +291,14 @@
       
       <li><a href="https://colab.research.google.com/github/BergLab/CompNeuroBook/blob/main/notebooks/simulation_neuralsystems/b.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch on Colab"
+   title="Launch onColab"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img alt="Colab logo" src="../../_static/images/logo_colab.png">
+    <img src="../../_static/images/logo_colab.png">
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -436,10 +439,10 @@
 
 <script>
 document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
@@ -447,14 +450,14 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</button>
+</label>
 </div></div>
       
     </div>
@@ -510,27 +513,21 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip3<span class="w"> </span>install<span class="w"> </span>brian2
-<span class="kn">from</span><span class="w"> </span><span class="nn">brian2</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">brian2</span> <span class="kn">import</span> <span class="o">*</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: brian2 in /Users/rune/Documents/IN-KU/Teaching/Computational Neuroscience/Book/CompNeuroCourse2025/CompNeuroCourse/path_you_picked/compneurocourse/lib/python3.11/site-packages (2.9.0)
-Requirement already satisfied: numpy&gt;=1.23.5 in /Users/rune/Documents/IN-KU/Teaching/Computational Neuroscience/Book/CompNeuroCourse2025/CompNeuroCourse/path_you_picked/compneurocourse/lib/python3.11/site-packages (from brian2) (2.2.6)
-Requirement already satisfied: cython&gt;=0.29.21 in /Users/rune/Documents/IN-KU/Teaching/Computational Neuroscience/Book/CompNeuroCourse2025/CompNeuroCourse/path_you_picked/compneurocourse/lib/python3.11/site-packages (from brian2) (3.1.1)
-Requirement already satisfied: sympy&gt;=1.2 in /Users/rune/Documents/IN-KU/Teaching/Computational Neuroscience/Book/CompNeuroCourse2025/CompNeuroCourse/path_you_picked/compneurocourse/lib/python3.11/site-packages (from brian2) (1.14.0)
-Requirement already satisfied: pyparsing in /Users/rune/Documents/IN-KU/Teaching/Computational Neuroscience/Book/CompNeuroCourse2025/CompNeuroCourse/path_you_picked/compneurocourse/lib/python3.11/site-packages (from brian2) (3.2.3)
-Requirement already satisfied: jinja2&gt;=2.7 in /Users/rune/Documents/IN-KU/Teaching/Computational Neuroscience/Book/CompNeuroCourse2025/CompNeuroCourse/path_you_picked/compneurocourse/lib/python3.11/site-packages (from brian2) (3.1.6)
-Requirement already satisfied: setuptools&gt;=61 in /Users/rune/Documents/IN-KU/Teaching/Computational Neuroscience/Book/CompNeuroCourse2025/CompNeuroCourse/path_you_picked/compneurocourse/lib/python3.11/site-packages (from brian2) (65.5.0)
-Requirement already satisfied: packaging in /Users/rune/Documents/IN-KU/Teaching/Computational Neuroscience/Book/CompNeuroCourse2025/CompNeuroCourse/path_you_picked/compneurocourse/lib/python3.11/site-packages (from brian2) (25.0)
-Requirement already satisfied: MarkupSafe&gt;=2.0 in /Users/rune/Documents/IN-KU/Teaching/Computational Neuroscience/Book/CompNeuroCourse2025/CompNeuroCourse/path_you_picked/compneurocourse/lib/python3.11/site-packages (from jinja2&gt;=2.7-&gt;brian2) (3.0.2)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: mpmath&lt;1.4,&gt;=1.1.0 in /Users/rune/Documents/IN-KU/Teaching/Computational Neuroscience/Book/CompNeuroCourse2025/CompNeuroCourse/path_you_picked/compneurocourse/lib/python3.11/site-packages (from sympy&gt;=1.2-&gt;brian2) (1.3.0)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> A new release of pip is available: <span class=" -Color -Color-Red">23.2.1</span> -&gt; <span class=" -Color -Color-Green">25.1.1</span>
-<span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> To update, run: <span class=" -Color -Color-Green">pip install --upgrade pip</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: brian2 in /opt/anaconda3/lib/python3.11/site-packages (2.6.0)
+Requirement already satisfied: numpy&gt;=1.21 in /opt/anaconda3/lib/python3.11/site-packages (from brian2) (1.26.4)
+Requirement already satisfied: cython&gt;=0.29.21 in /opt/anaconda3/lib/python3.11/site-packages (from brian2) (3.0.10)
+Requirement already satisfied: sympy&gt;=1.2 in /opt/anaconda3/lib/python3.11/site-packages (from brian2) (1.14.0)
+Requirement already satisfied: pyparsing in /opt/anaconda3/lib/python3.11/site-packages (from brian2) (3.0.9)
+Requirement already satisfied: jinja2&gt;=2.7 in /opt/anaconda3/lib/python3.11/site-packages (from brian2) (3.1.3)
+Requirement already satisfied: setuptools&gt;=61 in /opt/anaconda3/lib/python3.11/site-packages (from brian2) (68.2.2)
+Requirement already satisfied: packaging in /opt/anaconda3/lib/python3.11/site-packages (from brian2) (23.1)
+Requirement already satisfied: MarkupSafe&gt;=2.0 in /opt/anaconda3/lib/python3.11/site-packages (from jinja2&gt;=2.7-&gt;brian2) (2.1.3)
+Requirement already satisfied: mpmath&lt;1.4,&gt;=1.1.0 in /opt/anaconda3/lib/python3.11/site-packages (from sympy&gt;=1.2-&gt;brian2) (1.3.0)
 </pre></div>
 </div>
 </div>
@@ -567,7 +564,7 @@ Requirement already satisfied: MarkupSafe&gt;=2.0 in /Users/rune/Documents/IN-KU
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/c8a8f82d5b6bf35b04b5a37580812c7bd665434adfe383714e9dc21e5fee5286.png" src="../../_images/c8a8f82d5b6bf35b04b5a37580812c7bd665434adfe383714e9dc21e5fee5286.png" />
+<img alt="../../_images/1374cf9473cdda4f07a1f0cc9747ab7537c9d352e03779501d7a9161f7954f8e.png" src="../../_images/1374cf9473cdda4f07a1f0cc9747ab7537c9d352e03779501d7a9161f7954f8e.png" />
 </div>
 </div>
 <p>There are a few things going on here. First of all, let’s recap what is going on with the <code class="docutils literal notranslate"><span class="pre">NeuronGroup</span></code>. We’ve created two neurons, each of which has the same differential equation but different values for parameters I and tau. Neuron 0 has <code class="docutils literal notranslate"><span class="pre">I=2</span></code> and <code class="docutils literal notranslate"><span class="pre">tau=10*ms</span></code> which means that is driven to repeatedly spike at a fairly high rate. Neuron 1 has <code class="docutils literal notranslate"><span class="pre">I=0</span></code> and <code class="docutils literal notranslate"><span class="pre">tau=100*ms</span></code> which means that on its own - without the synapses - it won’t spike at all (the driving current I is 0). You can prove this to yourself by commenting out the two lines that define the synapse.</p>
@@ -608,7 +605,7 @@ Requirement already satisfied: MarkupSafe&gt;=2.0 in /Users/rune/Documents/IN-KU
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/49e704e7e2b35593da55b6b685d9b14d80358b60b008e59ed5d9f29cb93da31f.png" src="../../_images/49e704e7e2b35593da55b6b685d9b14d80358b60b008e59ed5d9f29cb93da31f.png" />
+<img alt="../../_images/194dc1a7ea45439169817e06bafdf0e7707d5c2431110ff142df3c4269ae81da.png" src="../../_images/194dc1a7ea45439169817e06bafdf0e7707d5c2431110ff142df3c4269ae81da.png" />
 </div>
 </div>
 <p>This example behaves very similarly to the previous example, but now there’s a synaptic weight variable <code class="docutils literal notranslate"><span class="pre">w</span></code>. The string <code class="docutils literal notranslate"><span class="pre">'w</span> <span class="pre">:</span> <span class="pre">1'</span></code> is an equation string, precisely the same as for neurons, that defines a single dimensionless parameter <code class="docutils literal notranslate"><span class="pre">w</span></code>. We changed the behaviour on a spike to <code class="docutils literal notranslate"><span class="pre">on_pre='v_post</span> <span class="pre">+=</span> <span class="pre">w'</span></code> now, so that each synapse can behave differently depending on the value of <code class="docutils literal notranslate"><span class="pre">w</span></code>. To illustrate this, we’ve made a third neuron which behaves precisely the same as the second neuron, and connected neuron 0 to both neurons 1 and 2. We’ve also set the weights via <code class="docutils literal notranslate"><span class="pre">S.w</span> <span class="pre">=</span> <span class="pre">'j*0.2'</span></code>. When <code class="docutils literal notranslate"><span class="pre">i</span></code> and <code class="docutils literal notranslate"><span class="pre">j</span></code> occur in the context of synapses, <code class="docutils literal notranslate"><span class="pre">i</span></code> refers to the source neuron index, and <code class="docutils literal notranslate"><span class="pre">j</span></code> to the target neuron index. So this will give a synaptic connection from 0 to 1 with weight <code class="docutils literal notranslate"><span class="pre">0.2=0.2*1</span></code> and from 0 to 2 with weight <code class="docutils literal notranslate"><span class="pre">0.4=0.2*2</span></code>.</p>
@@ -637,7 +634,7 @@ Requirement already satisfied: MarkupSafe&gt;=2.0 in /Users/rune/Documents/IN-KU
 <p>Here we’ve created a dummy neuron group of N neurons and a dummy synapses model that doens’t actually do anything just to demonstrate the connectivity. The line <code class="docutils literal notranslate"><span class="pre">S.connect(condition='i!=j',</span> <span class="pre">p=1.0)</span></code> will connect all pairs of neurons <code class="docutils literal notranslate"><span class="pre">i</span></code> and <code class="docutils literal notranslate"><span class="pre">j</span></code> with probability 100% as long as the condition <code class="docutils literal notranslate"><span class="pre">i!=j</span></code> holds. So, how can we see that connectivity? Here’s a little function that will let us visualise it.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">visualise_connectivity</span><span class="p">(</span><span class="n">S</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">visualise_connectivity</span><span class="p">(</span><span class="n">S</span><span class="p">):</span>
     <span class="n">Ns</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">S</span><span class="o">.</span><span class="n">source</span><span class="p">)</span>
     <span class="n">Nt</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">S</span><span class="o">.</span><span class="n">target</span><span class="p">)</span>
     <span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
@@ -662,7 +659,7 @@ Requirement already satisfied: MarkupSafe&gt;=2.0 in /Users/rune/Documents/IN-KU
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/769f1294ec4fb85c44b44ba79636219ef989f01d5900a2a6d3afe51c0fd69480.png" src="../../_images/769f1294ec4fb85c44b44ba79636219ef989f01d5900a2a6d3afe51c0fd69480.png" />
+<img alt="../../_images/c49d0356c447ef2b9ddbad0bc53381a9474729f6ddb1434269a4615462cef13b.png" src="../../_images/c49d0356c447ef2b9ddbad0bc53381a9474729f6ddb1434269a4615462cef13b.png" />
 </div>
 </div>
 <p>There are two plots here. On the left hand side, you see a vertical line of circles indicating source neurons on the left, and a vertical line indicating target neurons on the right, and a line between two neurons that have a synapse. On the right hand side is another way of visualising the same thing. Here each black dot is a synapse, with x value the source neuron index, and y value the target neuron index.</p>
@@ -683,33 +680,9 @@ Requirement already satisfied: MarkupSafe&gt;=2.0 in /Users/rune/Documents/IN-KU
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING    The object &#39;synapses&#39; is getting deleted, but was never included in a network. This probably means that you did not store the object reference in a variable, or that the variable was not used to construct the network.
-The object was created here (most recent call only):
-  File &#39;/var/folders/l3/kmpmcyc11s55nh1p5qj8dr8r0000gp/T/ipykernel_33428/3703857024.py&#39;, line 5, in &lt;module&gt;
-    S = Synapses(G, G) [brian2.core.base.unused_brian_object]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING    The object &#39;neurongroup&#39; is getting deleted, but was never included in a network. This probably means that you did not store the object reference in a variable, or that the variable was not used to construct the network.
-The object was created here (most recent call only):
-  File &#39;/var/folders/l3/kmpmcyc11s55nh1p5qj8dr8r0000gp/T/ipykernel_33428/3703857024.py&#39;, line 4, in &lt;module&gt;
-    G = NeuronGroup(N, &#39;v:1&#39;) [brian2.core.base.unused_brian_object]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING    The object &#39;synapses_1&#39; is getting deleted, but was never included in a network. This probably means that you did not store the object reference in a variable, or that the variable was not used to construct the network.
-The object was created here (most recent call only):
-  File &#39;/var/folders/l3/kmpmcyc11s55nh1p5qj8dr8r0000gp/T/ipykernel_33428/2521570691.py&#39;, line 7, in &lt;module&gt;
-    S = Synapses(G, G) [brian2.core.base.unused_brian_object]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING    The object &#39;synapses&#39; is getting deleted, but was never included in a network. This probably means that you did not store the object reference in a variable, or that the variable was not used to construct the network.
-The object was created here (most recent call only):
-  File &#39;/var/folders/l3/kmpmcyc11s55nh1p5qj8dr8r0000gp/T/ipykernel_33428/2521570691.py&#39;, line 7, in &lt;module&gt;
-    S = Synapses(G, G) [brian2.core.base.unused_brian_object]
-</pre></div>
-</div>
-<img alt="../../_images/018db2042b24d976d53896b82516311d3562517a84f382eb81216ead79e5d1ad.png" src="../../_images/018db2042b24d976d53896b82516311d3562517a84f382eb81216ead79e5d1ad.png" />
-<img alt="../../_images/79048fd3cb29505ed1fbcf56a6afad3c138f4892fb96e8d87e2bf0f478ac946f.png" src="../../_images/79048fd3cb29505ed1fbcf56a6afad3c138f4892fb96e8d87e2bf0f478ac946f.png" />
-<img alt="../../_images/3ee119833c1932e5766f3bf15564f6ec100812e5c1c4547f2dab4c7914bb82d5.png" src="../../_images/3ee119833c1932e5766f3bf15564f6ec100812e5c1c4547f2dab4c7914bb82d5.png" />
+<img alt="../../_images/57343706e0a410ebfb6e6b661f5ae5281cadf1312b3a47c91fbac7f29080b01b.png" src="../../_images/57343706e0a410ebfb6e6b661f5ae5281cadf1312b3a47c91fbac7f29080b01b.png" />
+<img alt="../../_images/fcc2867cb9397db6c53e0554b6e38c2e4ef52532ae66fa5b81b7fbf4a696f35f.png" src="../../_images/fcc2867cb9397db6c53e0554b6e38c2e4ef52532ae66fa5b81b7fbf4a696f35f.png" />
+<img alt="../../_images/09502854dec1151d7ecf6d05ff07532b07f1d4e5e4b1f9e3179bf771bde67652.png" src="../../_images/09502854dec1151d7ecf6d05ff07532b07f1d4e5e4b1f9e3179bf771bde67652.png" />
 </div>
 </div>
 <p>And let’s see what another connectivity condition looks like. This one will only connect neighbouring neurons.</p>
@@ -727,19 +700,7 @@ The object was created here (most recent call only):
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING    The object &#39;synapses_1&#39; is getting deleted, but was never included in a network. This probably means that you did not store the object reference in a variable, or that the variable was not used to construct the network.
-The object was created here (most recent call only):
-  File &#39;/var/folders/l3/kmpmcyc11s55nh1p5qj8dr8r0000gp/T/ipykernel_33428/2521570691.py&#39;, line 7, in &lt;module&gt;
-    S = Synapses(G, G) [brian2.core.base.unused_brian_object]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING    The object &#39;neurongroup_2&#39; is getting deleted, but was never included in a network. This probably means that you did not store the object reference in a variable, or that the variable was not used to construct the network.
-The object was created here (most recent call only):
-  File &#39;/var/folders/l3/kmpmcyc11s55nh1p5qj8dr8r0000gp/T/ipykernel_33428/2521570691.py&#39;, line 4, in &lt;module&gt;
-    G = NeuronGroup(N, &#39;v:1&#39;) [brian2.core.base.unused_brian_object]
-</pre></div>
-</div>
-<img alt="../../_images/13a5763a3056acca80afdd950991ef42bb9a98cf8766a87b041ebc652dff892d.png" src="../../_images/13a5763a3056acca80afdd950991ef42bb9a98cf8766a87b041ebc652dff892d.png" />
+<img alt="../../_images/413476c7e93402196affdb136ce244d72bdfaf6cfef7f6b7f3651f31f66366c2.png" src="../../_images/413476c7e93402196affdb136ce244d72bdfaf6cfef7f6b7f3651f31f66366c2.png" />
 </div>
 </div>
 </section>
@@ -755,36 +716,36 @@ The object was created here (most recent call only):
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[-1.42719184e-03  2.50740449e-03 -4.66472101e-03  6.90049313e-03
-  -3.77741336e-03  3.15218249e-03  3.66823914e-03 -8.57921533e-03
-   7.10354905e-03 -5.43408674e-03]
- [-4.76509145e-03  4.00453454e-04  7.29927228e-03 -5.84942229e-04
-   5.90492905e-03  2.54671939e-03  8.25911336e-03 -2.07537588e-03
-  -4.18694521e-04 -2.19715799e-03]
- [-3.89215846e-03  2.62342661e-03 -8.46534926e-03  4.44274833e-04
-   1.22723426e-03 -7.69525417e-03  9.59011279e-03 -4.46123825e-08
-  -3.76129653e-03  1.56615900e-03]
- [-9.27777183e-03  1.18047720e-03  4.44689893e-05  7.41107638e-03
-  -8.68388380e-03  1.72609572e-03  5.37744605e-04 -6.87138389e-03
-  -8.62682734e-03 -2.24467321e-03]
- [-2.63200125e-03 -8.89006228e-03  2.49438365e-03 -4.93506452e-03
-  -2.88577443e-03 -4.54573931e-03 -6.91754060e-03  1.62773398e-03
-  -9.70636860e-04 -8.54907088e-03]
- [ 9.06269119e-03  5.72513877e-03  4.42776558e-04  2.85652344e-03
-  -8.30673437e-03 -3.90445882e-03  4.37815286e-03 -8.58018689e-04
-  -5.67927397e-03  5.22718028e-03]
- [-8.38547484e-03  4.13884593e-03  2.00963650e-03 -7.96685840e-03
-   9.51594900e-03 -4.96954013e-03  2.75962448e-03 -5.40460167e-03
-   1.79256919e-03  1.59037739e-03]
- [ 9.01459486e-03 -4.89725377e-03 -1.57774256e-03 -2.02162207e-03
-   9.43746229e-03 -4.27258440e-04 -7.04279491e-03  3.57305239e-03
-   7.40125509e-03  7.83850199e-03]
- [ 1.45916813e-03 -8.35492247e-03 -1.55131452e-03  4.64345614e-03
-  -8.99588369e-04 -4.10410708e-03  8.83575989e-03  2.44547821e-04
-   7.38730583e-03 -9.02333199e-03]
- [-6.73633572e-04  2.45207626e-03  5.64915910e-03  9.31947960e-03
-   6.83403451e-03  7.90924467e-03  7.66634758e-03 -4.67925867e-03
-  -7.04303200e-03  6.38233023e-03]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[-6.75054937e-03  9.84772992e-03 -7.35434028e-03  5.42855331e-03
+  -9.70992098e-03 -8.42976012e-03  6.48498871e-03  4.93807823e-03
+  -7.07534185e-04  9.39062721e-03]
+ [ 6.54530741e-03  3.89945130e-03  5.21839061e-03 -6.28887972e-03
+   6.33855491e-03  7.75069275e-04 -7.63526000e-03 -9.37663243e-03
+   9.07383828e-03  7.88617344e-03]
+ [ 8.46609483e-06 -2.75874694e-03 -2.57814531e-03 -6.44276130e-03
+  -6.62033054e-04 -8.33073129e-03 -6.20285149e-03 -2.54956866e-03
+   1.40776580e-03  3.52232870e-05]
+ [ 8.91011545e-03 -2.39844188e-03 -4.88790295e-03  3.35425590e-03
+  -1.94357174e-03  9.93204342e-03  4.51499601e-03  8.05918834e-03
+   4.68822020e-03  4.64916861e-03]
+ [ 6.57314463e-03 -4.72928056e-03  1.79984809e-03 -2.61290778e-03
+   1.17012452e-03 -4.02380629e-05  9.97106091e-03 -3.45824499e-03
+  -8.49614147e-03 -9.98762195e-03]
+ [ 8.19322251e-03  6.56411690e-03  5.06151130e-03 -8.01351072e-03
+   4.86727837e-03  8.37436056e-03 -4.88918492e-03  6.08500208e-03
+   1.52333748e-03 -4.86710512e-03]
+ [ 9.27459330e-03 -7.75310470e-03 -6.39826218e-03 -2.71781044e-03
+   9.93025972e-05  3.77598889e-03 -5.62290199e-03  7.55707415e-03
+   5.34973169e-03  7.37855288e-03]
+ [ 7.89691446e-03  8.21518826e-03  1.33782451e-03 -4.08111553e-03
+   6.62791595e-03  7.47258879e-04 -1.83877711e-03  2.92790126e-03
+  -5.30863179e-03 -5.27101500e-03]
+ [-9.16949308e-03 -4.11839718e-03  5.13653636e-03 -8.70529238e-03
+  -4.22600684e-04 -9.07042263e-03  5.07351659e-03 -1.11806093e-03
+  -9.74654778e-03 -9.92027046e-03]
+ [ 1.16610462e-04 -9.88823193e-04  4.62924274e-03  1.31807254e-03
+   9.75414468e-03  1.80740006e-03  2.62436973e-03  6.14831367e-03
+  -5.97337721e-03 -2.66428642e-03]]
 </pre></div>
 </div>
 </div>
@@ -799,20 +760,6 @@ The object was created here (most recent call only):
 <span class="n">S</span> <span class="o">=</span> <span class="n">Synapses</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s1">&#39;w : 1&#39;</span><span class="p">)</span>
 <span class="n">S</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span> 
 <span class="n">S</span><span class="o">.</span><span class="n">w</span> <span class="o">=</span> <span class="n">random_connectivity</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING    The object &#39;synapses&#39; is getting deleted, but was never included in a network. This probably means that you did not store the object reference in a variable, or that the variable was not used to construct the network.
-The object was created here (most recent call only):
-  File &#39;/var/folders/l3/kmpmcyc11s55nh1p5qj8dr8r0000gp/T/ipykernel_33428/2320515699.py&#39;, line 6, in &lt;module&gt;
-    S = Synapses(G, G) [brian2.core.base.unused_brian_object]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING    The object &#39;neurongroup&#39; is getting deleted, but was never included in a network. This probably means that you did not store the object reference in a variable, or that the variable was not used to construct the network.
-The object was created here (most recent call only):
-  File &#39;/var/folders/l3/kmpmcyc11s55nh1p5qj8dr8r0000gp/T/ipykernel_33428/2320515699.py&#39;, line 4, in &lt;module&gt;
-    G = NeuronGroup(N, &#39;v:1&#39;) [brian2.core.base.unused_brian_object]
 </pre></div>
 </div>
 </div>
@@ -906,22 +853,10 @@ The object was created here (most recent call only):
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING    The object &#39;synapses_1&#39; is getting deleted, but was never included in a network. This probably means that you did not store the object reference in a variable, or that the variable was not used to construct the network.
-The object was created here (most recent call only):
-  File &#39;/var/folders/l3/kmpmcyc11s55nh1p5qj8dr8r0000gp/T/ipykernel_33428/1705174122.py&#39;, line 5, in &lt;module&gt;
-    S = Synapses(G, G, model=&#39;w : 1&#39;) [brian2.core.base.unused_brian_object]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x16b477990&gt;
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING    The object &#39;neurongroup_2&#39; is getting deleted, but was never included in a network. This probably means that you did not store the object reference in a variable, or that the variable was not used to construct the network.
-The object was created here (most recent call only):
-  File &#39;/var/folders/l3/kmpmcyc11s55nh1p5qj8dr8r0000gp/T/ipykernel_33428/1705174122.py&#39;, line 4, in &lt;module&gt;
-    G = NeuronGroup(N, &#39;v:1&#39;) [brian2.core.base.unused_brian_object]
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x11d5d20d0&gt;
-</pre></div>
-</div>
-<img alt="../../_images/c7a8d619ffee1f7842186977c4178ab21f4eebc38961f65c9da57ac85c1ac1c5.png" src="../../_images/c7a8d619ffee1f7842186977c4178ab21f4eebc38961f65c9da57ac85c1ac1c5.png" />
+<img alt="../../_images/480d12cd8226e25007223b73f4549a3347a1e0f7cc707da077812735b03b4327.png" src="../../_images/480d12cd8226e25007223b73f4549a3347a1e0f7cc707da077812735b03b4327.png" />
 </div>
 </div>
 <p>As you can see, that’s as simple as adding a line <code class="docutils literal notranslate"><span class="pre">S.delay</span> <span class="pre">=</span> <span class="pre">'j*2*ms'</span></code> so that the synapse from 0 to 1 has a delay of 2 ms, and from 0 to 2 has a delay of 4 ms.</p>
@@ -955,7 +890,7 @@ A_{post} e^{\Delta t/\tau_{post}} &amp; \Delta t&lt;0
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/827822d1302f4f123808e7cd84fec978ef87318a4e4dccfc360ea469062ef844.png" src="../../_images/827822d1302f4f123808e7cd84fec978ef87318a4e4dccfc360ea469062ef844.png" />
+<img alt="../../_images/5e1705f087cbd53248a67846d90979de4026e9934bbf44c288ae0b12b6e674ed.png" src="../../_images/5e1705f087cbd53248a67846d90979de4026e9934bbf44c288ae0b12b6e674ed.png" />
 </div>
 </div>
 <p>Simulating it directly using this equation though would be very inefficient, because we would have to sum over all pairs of spikes. That would also be physiologically unrealistic because the neuron cannot remember all its previous spike times. It turns out there is a more efficient and physiologically more plausible way to get the same effect.</p>
@@ -1062,19 +997,7 @@ w &amp;\rightarrow w+a_{pre}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING    The object &#39;neurongroup_1&#39; is getting deleted, but was never included in a network. This probably means that you did not store the object reference in a variable, or that the variable was not used to construct the network.
-The object was created here (most recent call only):
-  File &#39;/var/folders/l3/kmpmcyc11s55nh1p5qj8dr8r0000gp/T/ipykernel_33428/2371042259.py&#39;, line 8, in &lt;module&gt;
-    G = NeuronGroup(1, &#39;v:1&#39;, threshold=&#39;v&gt;1&#39;, reset=&#39;&#39;) [brian2.core.base.unused_brian_object]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING    The object &#39;synapses_1&#39; is getting deleted, but was never included in a network. This probably means that you did not store the object reference in a variable, or that the variable was not used to construct the network.
-The object was created here (most recent call only):
-  File &#39;/var/folders/l3/kmpmcyc11s55nh1p5qj8dr8r0000gp/T/ipykernel_33428/2371042259.py&#39;, line 10, in &lt;module&gt;
-    S = Synapses(G, G, [brian2.core.base.unused_brian_object]
-</pre></div>
-</div>
-<img alt="../../_images/94ce86e63fcb6bb035e878f2dacec08eb57d547b5c15472127387d58765d5469.png" src="../../_images/94ce86e63fcb6bb035e878f2dacec08eb57d547b5c15472127387d58765d5469.png" />
+<img alt="../../_images/add73c185a8561c5f93a12fb30b054b9174192a4ffc3f559fceae42f2e401f44.png" src="../../_images/add73c185a8561c5f93a12fb30b054b9174192a4ffc3f559fceae42f2e401f44.png" />
 </div>
 </div>
 <p>A couple of things to note here. First of all, we’ve used a trick to make neuron 0 fire a spike at time 10 ms, and neuron 1 at time 20 ms. Can you see how that works?</p>
@@ -1125,7 +1048,7 @@ The object was created here (most recent call only):
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/ca7028cd07aba76b27dadd6706be02744baf9c1c75bec6be02d727cd8f2535ca.png" src="../../_images/ca7028cd07aba76b27dadd6706be02744baf9c1c75bec6be02d727cd8f2535ca.png" />
+<img alt="../../_images/adea413271ebe5591f8e93b865b0bb61c1b2c3e8f22340d6a89486d89c1b876d.png" src="../../_images/adea413271ebe5591f8e93b865b0bb61c1b2c3e8f22340d6a89486d89c1b876d.png" />
 </div>
 </div>
 </section>
@@ -1158,7 +1081,7 @@ The object was created here (most recent call only):
               
               
               
-                <footer class="prev-next-footer d-print-none">
+                <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
     <a class="left-prev"
@@ -1259,8 +1182,8 @@ By Elias Najarro & Rune Berg
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>

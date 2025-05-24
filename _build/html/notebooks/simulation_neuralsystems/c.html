@@ -14,22 +14,22 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
@@ -38,16 +38,16 @@
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=9f7f7efb" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
     <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../_static/copybutton.js?v=f281be69"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -74,23 +74,27 @@
 
   
   
-  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
 
   
   <input type="checkbox"
           class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -112,13 +116,8 @@
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
-
-  <div class="pst-async-banner-revealer d-none">
-  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
-</div>
-
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
     </header>
   
 
@@ -142,8 +141,6 @@
         <div class="sidebar-primary-item">
 
   
-    
-  
 
 <a class="navbar-brand logo" href="../../intro.html">
   
@@ -165,7 +162,7 @@
 
  <script>
  document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass"></i>
     <span class="search-button__default-text">Search</span>
     <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
@@ -196,7 +193,8 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 2. Differential equations and neuron models</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../dynamical_systems/dynamical_systems_intro.html">1. Introduction modelling with differential equations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../dynamical_systems/Applications_LT.html">2. Dynamical systems as Linear Transformations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dynamical_systems/numerical_solution.html">2. Solving differential equations: Numerical solution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dynamical_systems/Applications_LT.html">3. Dynamical systems as Linear Transformations</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 3. Simulating neural populations with Brian</span></p>
 <ul class="current nav bd-sidenav">
@@ -226,6 +224,11 @@
 
 
 
+
+
+
+
+
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 5. Network theory</span></p>
 <ul class="nav bd-sidenav">
@@ -245,7 +248,7 @@
 
       </div>
       
-      <main id="main-content" class="bd-main" role="main">
+      <main id="main-content" class="bd-main">
         
         
 
@@ -254,14 +257,14 @@
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article d-print-none">
+              <div class="bd-header-article">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</button></div>
+</label></div>
       
     </div>
   
@@ -286,14 +289,14 @@
       
       <li><a href="https://colab.research.google.com/github/BergLab/CompNeuroBook/blob/main/notebooks/simulation_neuralsystems/c.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch on Colab"
+   title="Launch onColab"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img alt="Colab logo" src="../../_static/images/logo_colab.png">
+    <img src="../../_static/images/logo_colab.png">
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -434,10 +437,10 @@
 
 <script>
 document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
@@ -445,14 +448,14 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</button>
+</label>
 </div></div>
       
     </div>
@@ -496,27 +499,23 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip3<span class="w"> </span>install<span class="w"> </span>brian2
-<span class="kn">from</span><span class="w"> </span><span class="nn">brian2</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">brian2</span> <span class="kn">import</span> <span class="o">*</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: brian2 in /Users/rune/Documents/IN-KU/Teaching/Computational Neuroscience/Book/CompNeuroCourse2025/CompNeuroCourse/path_you_picked/compneurocourse/lib/python3.11/site-packages (2.9.0)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: brian2 in /opt/anaconda3/lib/python3.11/site-packages (2.6.0)
+Requirement already satisfied: numpy&gt;=1.21 in /opt/anaconda3/lib/python3.11/site-packages (from brian2) (1.26.4)
+Requirement already satisfied: cython&gt;=0.29.21 in /opt/anaconda3/lib/python3.11/site-packages (from brian2) (3.0.10)
+Requirement already satisfied: sympy&gt;=1.2 in /opt/anaconda3/lib/python3.11/site-packages (from brian2) (1.14.0)
+Requirement already satisfied: pyparsing in /opt/anaconda3/lib/python3.11/site-packages (from brian2) (3.0.9)
+Requirement already satisfied: jinja2&gt;=2.7 in /opt/anaconda3/lib/python3.11/site-packages (from brian2) (3.1.3)
+Requirement already satisfied: setuptools&gt;=61 in /opt/anaconda3/lib/python3.11/site-packages (from brian2) (68.2.2)
+Requirement already satisfied: packaging in /opt/anaconda3/lib/python3.11/site-packages (from brian2) (23.1)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: numpy&gt;=1.23.5 in /Users/rune/Documents/IN-KU/Teaching/Computational Neuroscience/Book/CompNeuroCourse2025/CompNeuroCourse/path_you_picked/compneurocourse/lib/python3.11/site-packages (from brian2) (2.2.6)
-Requirement already satisfied: cython&gt;=0.29.21 in /Users/rune/Documents/IN-KU/Teaching/Computational Neuroscience/Book/CompNeuroCourse2025/CompNeuroCourse/path_you_picked/compneurocourse/lib/python3.11/site-packages (from brian2) (3.1.1)
-Requirement already satisfied: sympy&gt;=1.2 in /Users/rune/Documents/IN-KU/Teaching/Computational Neuroscience/Book/CompNeuroCourse2025/CompNeuroCourse/path_you_picked/compneurocourse/lib/python3.11/site-packages (from brian2) (1.14.0)
-Requirement already satisfied: pyparsing in /Users/rune/Documents/IN-KU/Teaching/Computational Neuroscience/Book/CompNeuroCourse2025/CompNeuroCourse/path_you_picked/compneurocourse/lib/python3.11/site-packages (from brian2) (3.2.3)
-Requirement already satisfied: jinja2&gt;=2.7 in /Users/rune/Documents/IN-KU/Teaching/Computational Neuroscience/Book/CompNeuroCourse2025/CompNeuroCourse/path_you_picked/compneurocourse/lib/python3.11/site-packages (from brian2) (3.1.6)
-Requirement already satisfied: setuptools&gt;=61 in /Users/rune/Documents/IN-KU/Teaching/Computational Neuroscience/Book/CompNeuroCourse2025/CompNeuroCourse/path_you_picked/compneurocourse/lib/python3.11/site-packages (from brian2) (65.5.0)
-Requirement already satisfied: packaging in /Users/rune/Documents/IN-KU/Teaching/Computational Neuroscience/Book/CompNeuroCourse2025/CompNeuroCourse/path_you_picked/compneurocourse/lib/python3.11/site-packages (from brian2) (25.0)
-Requirement already satisfied: MarkupSafe&gt;=2.0 in /Users/rune/Documents/IN-KU/Teaching/Computational Neuroscience/Book/CompNeuroCourse2025/CompNeuroCourse/path_you_picked/compneurocourse/lib/python3.11/site-packages (from jinja2&gt;=2.7-&gt;brian2) (3.0.2)
-Requirement already satisfied: mpmath&lt;1.4,&gt;=1.1.0 in /Users/rune/Documents/IN-KU/Teaching/Computational Neuroscience/Book/CompNeuroCourse2025/CompNeuroCourse/path_you_picked/compneurocourse/lib/python3.11/site-packages (from sympy&gt;=1.2-&gt;brian2) (1.3.0)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> A new release of pip is available: <span class=" -Color -Color-Red">23.2.1</span> -&gt; <span class=" -Color -Color-Green">25.1.1</span>
-<span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> To update, run: <span class=" -Color -Color-Green">pip install --upgrade pip</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: MarkupSafe&gt;=2.0 in /opt/anaconda3/lib/python3.11/site-packages (from jinja2&gt;=2.7-&gt;brian2) (2.1.3)
+Requirement already satisfied: mpmath&lt;1.4,&gt;=1.1.0 in /opt/anaconda3/lib/python3.11/site-packages (from sympy&gt;=1.2-&gt;brian2) (1.3.0)
 </pre></div>
 </div>
 </div>
@@ -558,7 +557,7 @@ Requirement already satisfied: mpmath&lt;1.4,&gt;=1.1.0 in /Users/rune/Documents
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/134dead4d12fca55c88c9981fc9dddc2d174b5b326a5914840f33efbff0072a6.png" src="../../_images/134dead4d12fca55c88c9981fc9dddc2d174b5b326a5914840f33efbff0072a6.png" />
+<img alt="../../_images/451ee62b24b8efba27dcc1d260b39e8e1238a7f7dad13cc759b12d5df441b7f0.png" src="../../_images/451ee62b24b8efba27dcc1d260b39e8e1238a7f7dad13cc759b12d5df441b7f0.png" />
 </div>
 </div>
 <p>Now if you’re running the notebook, you’ll see that this was a little slow to run. The reason is that for each loop, you’re recreating the objects from scratch. We can improve that by setting up the network just once. We store a copy of the state of the network before the loop, and restore it at the beginning of each iteration.</p>
@@ -594,7 +593,7 @@ Requirement already satisfied: mpmath&lt;1.4,&gt;=1.1.0 in /Users/rune/Documents
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/65f5cf128dac829f48f2d5baea282a3d0810c90f15f4d4cf8f780f900ee61c8a.png" src="../../_images/65f5cf128dac829f48f2d5baea282a3d0810c90f15f4d4cf8f780f900ee61c8a.png" />
+<img alt="../../_images/597bc11898726f5307957bcba3cf03327bdec585dd0d33e168f47c77cabf15b2.png" src="../../_images/597bc11898726f5307957bcba3cf03327bdec585dd0d33e168f47c77cabf15b2.png" />
 </div>
 </div>
 <p>That’s a very simple example of using store and restore, but you can use it in much more complicated situations. For example, you might want to run a long training run, and then run multiple test runs afterwards. Simply put a store after the long training run, and a restore before each testing run.</p>
@@ -643,7 +642,7 @@ Requirement already satisfied: mpmath&lt;1.4,&gt;=1.1.0 in /Users/rune/Documents
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/4ecf2c905953aa0dfa1c271fe0f1d6f122e174a1e6fbef2bd615e60fd7b5d496.png" src="../../_images/4ecf2c905953aa0dfa1c271fe0f1d6f122e174a1e6fbef2bd615e60fd7b5d496.png" />
+<img alt="../../_images/73787210d4067f2c634bc02696ec4e3ac02f0bf230095700fb69d75b977498f7.png" src="../../_images/73787210d4067f2c634bc02696ec4e3ac02f0bf230095700fb69d75b977498f7.png" />
 </div>
 </div>
 <p>You can see that now there is much less noise and it increases monotonically because the input spikes are the same each time, meaning we’re seeing the effect of the time constant, not the random spikes.</p>
@@ -679,10 +678,10 @@ Requirement already satisfied: mpmath&lt;1.4,&gt;=1.1.0 in /Users/rune/Documents
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING    &#39;tau&#39; is an internal variable of group &#39;neurongroup&#39;, but also exists in the run namespace with the value 10. * msecond. The internal variable will be used. [brian2.groups.group.Group.resolve.resolution_conflict]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING    &#39;tau&#39; is an internal variable of group &#39;neurongroup_2&#39;, but also exists in the run namespace with the value 10. * msecond. The internal variable will be used. [brian2.groups.group.Group.resolve.resolution_conflict]
 </pre></div>
 </div>
-<img alt="../../_images/6a8865368b3992a9f1352d61d6c9e0f1d07abfac48540605293aaa985a67b585.png" src="../../_images/6a8865368b3992a9f1352d61d6c9e0f1d07abfac48540605293aaa985a67b585.png" />
+<img alt="../../_images/e9309deb7dc4dfd5a661a38e41dad021c336ae7a83d5aa328c820bb7dd05802c.png" src="../../_images/e9309deb7dc4dfd5a661a38e41dad021c336ae7a83d5aa328c820bb7dd05802c.png" />
 </div>
 </div>
 <p>You can see that this is much faster again! It’s a little bit more complicated conceptually, and it’s not always possible to do this trick, but it can be much more efficient if it’s possible.</p>
@@ -704,7 +703,7 @@ Requirement already satisfied: mpmath&lt;1.4,&gt;=1.1.0 in /Users/rune/Documents
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/0edacdfe47a480fa20706cb24c89130ad61af5ec6ce1a62ab22689351ba18fd3.png" src="../../_images/0edacdfe47a480fa20706cb24c89130ad61af5ec6ce1a62ab22689351ba18fd3.png" />
+<img alt="../../_images/cc4b141e382cd290021a3de8042bd463e46da5f4487bfa1eb300fc4a0400b98d.png" src="../../_images/cc4b141e382cd290021a3de8042bd463e46da5f4487bfa1eb300fc4a0400b98d.png" />
 </div>
 </div>
 <p>Notice that we used the <code class="docutils literal notranslate"><span class="pre">spike_trains()</span></code> method of <code class="docutils literal notranslate"><span class="pre">SpikeMonitor</span></code>. This is a dictionary with keys being the indices of the neurons and values being the array of spike times for that neuron.</p>
@@ -757,7 +756,7 @@ Requirement already satisfied: mpmath&lt;1.4,&gt;=1.1.0 in /Users/rune/Documents
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/f7f5bea024d0503cb3f5f39abcbe196eaf8431dfa5dd0d9ac77e2851001a72f9.png" src="../../_images/f7f5bea024d0503cb3f5f39abcbe196eaf8431dfa5dd0d9ac77e2851001a72f9.png" />
+<img alt="../../_images/4173f13e204248e3fee1e1495d773c697c6625247d0d88707aed1ed2a1236202.png" src="../../_images/4173f13e204248e3fee1e1495d773c697c6625247d0d88707aed1ed2a1236202.png" />
 </div>
 </div>
 <p>In the code above, we used a loop over multiple runs to achieve this. That’s fine, but it’s not the most efficient way to do it because each time we call <code class="docutils literal notranslate"><span class="pre">run</span></code> we have to do a lot of initialisation work that slows everything down. It also won’t work as well with the more efficient standalone mode of Brian. Here’s another way.</p>
@@ -787,7 +786,7 @@ Requirement already satisfied: mpmath&lt;1.4,&gt;=1.1.0 in /Users/rune/Documents
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/61095ba7fe93646749e0c9f62619ba1e20bde2d9802a3431b4e34c9f722def98.png" src="../../_images/61095ba7fe93646749e0c9f62619ba1e20bde2d9802a3431b4e34c9f722def98.png" />
+<img alt="../../_images/aa60b1eddebc145fabd08f1c1f3045f4aa2d1850090ad08699df2eef81f668de.png" src="../../_images/aa60b1eddebc145fabd08f1c1f3045f4aa2d1850090ad08699df2eef81f668de.png" />
 </div>
 </div>
 <p>We’ve replaced the loop that had multiple <code class="docutils literal notranslate"><span class="pre">run</span></code> calls with a <code class="docutils literal notranslate"><span class="pre">run_regularly</span></code>. This makes the specified block of code run every <code class="docutils literal notranslate"><span class="pre">dt=10*ms</span></code>. The <code class="docutils literal notranslate"><span class="pre">run_regularly</span></code> lets you run code specific to a single <code class="docutils literal notranslate"><span class="pre">NeuronGroup</span></code>, but sometimes you might need more flexibility. For this, you can use <code class="docutils literal notranslate"><span class="pre">network_operation</span></code> which lets you run arbitrary Python code (but won’t work with the standalone mode).</p>
@@ -803,7 +802,7 @@ Requirement already satisfied: mpmath&lt;1.4,&gt;=1.1.0 in /Users/rune/Documents
 <span class="n">spikemon</span> <span class="o">=</span> <span class="n">SpikeMonitor</span><span class="p">(</span><span class="n">group</span><span class="p">,</span> <span class="n">variables</span><span class="o">=</span><span class="s1">&#39;v&#39;</span><span class="p">)</span>
 <span class="c1"># we replace the loop with a network_operation</span>
 <span class="nd">@network_operation</span><span class="p">(</span><span class="n">dt</span><span class="o">=</span><span class="mi">10</span><span class="o">*</span><span class="n">ms</span><span class="p">)</span>
-<span class="k">def</span><span class="w"> </span><span class="nf">change_I</span><span class="p">():</span>
+<span class="k">def</span> <span class="nf">change_I</span><span class="p">():</span>
     <span class="n">group</span><span class="o">.</span><span class="n">I</span> <span class="o">=</span> <span class="n">rand</span><span class="p">()</span><span class="o">*</span><span class="mi">50</span><span class="o">*</span><span class="n">nA</span>
 <span class="n">run</span><span class="p">(</span><span class="mi">50</span><span class="o">*</span><span class="n">ms</span><span class="p">)</span>
 <span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
@@ -818,7 +817,7 @@ Requirement already satisfied: mpmath&lt;1.4,&gt;=1.1.0 in /Users/rune/Documents
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/8f01f2b21ecc3a73278fb02d98ae0cbef6eb20277555d8a35eb5835fbf28ded6.png" src="../../_images/8f01f2b21ecc3a73278fb02d98ae0cbef6eb20277555d8a35eb5835fbf28ded6.png" />
+<img alt="../../_images/96755450a3544378f7476126505c96ce675eba045c4675584a58db8f825110b4.png" src="../../_images/96755450a3544378f7476126505c96ce675eba045c4675584a58db8f825110b4.png" />
 </div>
 </div>
 <p>Now let’s extend this example to run on multiple neurons, each with a different capacitance to see how that affects the behaviour of the cell.</p>
@@ -859,7 +858,7 @@ Requirement already satisfied: mpmath&lt;1.4,&gt;=1.1.0 in /Users/rune/Documents
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/2e7bb8e00d72a58dc198c06c8d2874b87ccd3cd946d98e4298340301e7d03399.png" src="../../_images/2e7bb8e00d72a58dc198c06c8d2874b87ccd3cd946d98e4298340301e7d03399.png" />
+<img alt="../../_images/bd1817f948494cb60aaea15be7737a64be17dfd88a8d8853421d31fd73168056.png" src="../../_images/bd1817f948494cb60aaea15be7737a64be17dfd88a8d8853421d31fd73168056.png" />
 </div>
 </div>
 <p>So that runs, but something looks wrong! The injected currents look like they’re different for all the different neurons! Let’s check:</p>
@@ -872,7 +871,7 @@ Requirement already satisfied: mpmath&lt;1.4,&gt;=1.1.0 in /Users/rune/Documents
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/d7b79c385f9de68a8d015e83fbed82cd87175e4fe83302667d7ecadd00dc82da.png" src="../../_images/d7b79c385f9de68a8d015e83fbed82cd87175e4fe83302667d7ecadd00dc82da.png" />
+<img alt="../../_images/412522f39b60ccb70018f0f7812493298bf967804631945f1589d5821bca8fe3.png" src="../../_images/412522f39b60ccb70018f0f7812493298bf967804631945f1589d5821bca8fe3.png" />
 </div>
 </div>
 <p>Sure enough, it’s different each time. But why? We wrote <code class="docutils literal notranslate"><span class="pre">group.run_regularly('I</span> <span class="pre">=</span> <span class="pre">rand()*50*nA',</span> <span class="pre">dt=10*ms)</span></code> which seems like it should give the same value of I for each neuron. But, like threshold and reset statements, <code class="docutils literal notranslate"><span class="pre">run_regularly</span></code> code is interpreted as being run separately for each neuron, and because I is a parameter, it can be different for each neuron. We can fix this by making I into a <em>shared</em> variable, meaning it has the same value for each neuron.</p>
@@ -911,7 +910,7 @@ Requirement already satisfied: mpmath&lt;1.4,&gt;=1.1.0 in /Users/rune/Documents
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/f04a64dd9c44cee5aae19d1f71ae8dcb4184359f9132c280ced0d4595c762be9.png" src="../../_images/f04a64dd9c44cee5aae19d1f71ae8dcb4184359f9132c280ced0d4595c762be9.png" />
+<img alt="../../_images/91afebcfb6ba415284c1620c00638bb294d70acd2ff6505036e2e26921f98135.png" src="../../_images/91afebcfb6ba415284c1620c00638bb294d70acd2ff6505036e2e26921f98135.png" />
 </div>
 </div>
 <p>Ahh, that’s more like it!</p>
@@ -941,7 +940,7 @@ Requirement already satisfied: mpmath&lt;1.4,&gt;=1.1.0 in /Users/rune/Documents
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/0eeb28c2b672d02b7ccf53c90936e3b348a1c89e383f9c2e0d0b7a8e045bdc2c.png" src="../../_images/0eeb28c2b672d02b7ccf53c90936e3b348a1c89e383f9c2e0d0b7a8e045bdc2c.png" />
+<img alt="../../_images/a29bc1105a37305b7f62d8a3f69879110992cc13f4cc3454dc267659071ec43d.png" src="../../_images/a29bc1105a37305b7f62d8a3f69879110992cc13f4cc3454dc267659071ec43d.png" />
 </div>
 </div>
 <p>So far, so good and the sort of thing we saw in the first tutorial. Now, what if that input current were something we had recorded and saved in a file? In that case, we can use <code class="docutils literal notranslate"><span class="pre">TimedArray</span></code>. Let’s start by reproducing the picture above but using <code class="docutils literal notranslate"><span class="pre">TimedArray</span></code>.</p>
@@ -970,7 +969,7 @@ Requirement already satisfied: mpmath&lt;1.4,&gt;=1.1.0 in /Users/rune/Documents
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/52d7b27b6b7e9aa0253fea631715633859b94b816cd70af25ca5b956f4f84b48.png" src="../../_images/52d7b27b6b7e9aa0253fea631715633859b94b816cd70af25ca5b956f4f84b48.png" />
+<img alt="../../_images/8b7ef9d15213a58c95979554b550a2ec49a2df42215c2c963fc325079ec3231f.png" src="../../_images/8b7ef9d15213a58c95979554b550a2ec49a2df42215c2c963fc325079ec3231f.png" />
 </div>
 </div>
 <p>Note that for the example where we put the <code class="docutils literal notranslate"><span class="pre">sin</span></code> function directly in the equations, we had to use the <code class="docutils literal notranslate"><span class="pre">method='euler'</span></code> argument because the exact integrator wouldn’t work here (try it!). However, <code class="docutils literal notranslate"><span class="pre">TimedArray</span></code> is considered to be constant over its time step and so the linear integrator can be used. This means you won’t get the same behaviour from these two methods for two reasons. Firstly, the numerical integration methods <code class="docutils literal notranslate"><span class="pre">exact</span></code> and <code class="docutils literal notranslate"><span class="pre">euler</span></code> give slightly different results. Secondly, <code class="docutils literal notranslate"><span class="pre">sin</span></code> is not constant over a timestep whereas <code class="docutils literal notranslate"><span class="pre">TimedArray</span></code> is.</p>
@@ -1005,7 +1004,7 @@ Requirement already satisfied: mpmath&lt;1.4,&gt;=1.1.0 in /Users/rune/Documents
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/e29675678251549e5b9bf2d7b67c7a947cb2a4f7b6b9409d847ea23b180dbe9e.png" src="../../_images/e29675678251549e5b9bf2d7b67c7a947cb2a4f7b6b9409d847ea23b180dbe9e.png" />
+<img alt="../../_images/621003948ea7570fb61d82f44049fc721069b1ca0a20d44843f0e66eb570e3c6.png" src="../../_images/621003948ea7570fb61d82f44049fc721069b1ca0a20d44843f0e66eb570e3c6.png" />
 </div>
 </div>
 </section>
@@ -1038,7 +1037,7 @@ Requirement already satisfied: mpmath&lt;1.4,&gt;=1.1.0 in /Users/rune/Documents
               
               
               
-                <footer class="prev-next-footer d-print-none">
+                <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
     <a class="left-prev"
@@ -1126,8 +1125,8 @@ By Elias Najarro & Rune Berg
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>
