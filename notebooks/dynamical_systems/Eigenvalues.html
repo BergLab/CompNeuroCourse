@@ -65,7 +65,7 @@
     <link rel="icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="8. Dynamical systems as Linear Transformations" href="Applications_LT.html" />
+    <link rel="next" title="4. Dynamical systems as Linear Transformations" href="Applications_LT.html" />
     <link rel="prev" title="2. Solving differential equations: Numerical solution" href="numerical_solution.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -197,11 +197,7 @@
 <li class="toctree-l1"><a class="reference internal" href="dynamical_systems_intro.html">1. Introduction modelling with differential equations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="numerical_solution.html">2. Solving differential equations: Numerical solution</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">3. Two-Dimensional Linear Systems: Eigenvalues, Eigenvectors and solutions</a></li>
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="Applications_LT.html">8. Dynamical systems as Linear Transformations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Applications_LT.html">4. Dynamical systems as Linear Transformations</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 3. Simulating neural populations with Brian</span></p>
 <ul class="nav bd-sidenav">
@@ -473,17 +469,13 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">3. Two-Dimensional Linear Systems: Eigenvalues, Eigenvectors and solutions</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-try-plotting-the-following-vectors-in-a-coordinate-system">4. Exercise: Try plotting the following vectors in a coordinate system:</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#eigenvector-and-eigenvalues">5. Eigenvector and eigenvalues</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#solutions-to-the-linear-system">6. Solutions to the linear system</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complex-numbers-a-short-introduction">6.1. Complex numbers: a short introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-solution">6.2. General solution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-try-plotting-the-following-vectors-in-a-coordinate-system">3.1. Exercise: Try plotting the following vectors in a coordinate system:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eigenvector-and-eigenvalues">3.2. Eigenvector and eigenvalues</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solutions-to-the-linear-system">3.3. Solutions to the linear system</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complex-numbers-a-short-introduction">3.4. Complex numbers: a short introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-solution">3.5. General solution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-does-av-lambda-v-does-have-to-do-with-dot-x-ax">3.6. What does <span class="math notranslate nohighlight">\(Av=\lambda v\)</span> does have to do with <span class="math notranslate nohighlight">\(\dot X = AX\)</span>?</a></li>
 </ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#what-does-av-lambda-v-does-have-to-do-with-dot-x-ax">7. What does <span class="math notranslate nohighlight">\(Av=\lambda v\)</span> does have to do with <span class="math notranslate nohighlight">\(\dot X = AX\)</span>?</a></li>
-</ul>
-
             </nav>
         </div>
     </div>
@@ -540,9 +532,8 @@ b_1y + b_2y \\
 \end{bmatrix}  
 \end{split}\]</div>
 <p>This transformation can be seen as both a rotation and a stretch/compression of the vector.</p>
-</section>
 <section id="exercise-try-plotting-the-following-vectors-in-a-coordinate-system">
-<h1><span class="section-number">4. </span>Exercise: Try plotting the following vectors in a coordinate system:<a class="headerlink" href="#exercise-try-plotting-the-following-vectors-in-a-coordinate-system" title="Link to this heading">#</a></h1>
+<h2><span class="section-number">3.1. </span>Exercise: Try plotting the following vectors in a coordinate system:<a class="headerlink" href="#exercise-try-plotting-the-following-vectors-in-a-coordinate-system" title="Link to this heading">#</a></h2>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 v_1 = \begin{bmatrix}  
@@ -582,7 +573,7 @@ v_1'= \begin{bmatrix}
 <p>Notice any difference between the two transformations? The last one has ones in the diagonal and zeroes at the rest of the elements. This arrangement returns the same vector as was put into it. Because of this property, this matrix called the identity matrix. For more see: <a class="reference external" href="https://en.wikipedia.org/wiki/Identity_matrix">https://en.wikipedia.org/wiki/Identity_matrix</a>.</p>
 </section>
 <section id="eigenvector-and-eigenvalues">
-<h1><span class="section-number">5. </span>Eigenvector and eigenvalues<a class="headerlink" href="#eigenvector-and-eigenvalues" title="Link to this heading">#</a></h1>
+<h2><span class="section-number">3.2. </span>Eigenvector and eigenvalues<a class="headerlink" href="#eigenvector-and-eigenvalues" title="Link to this heading">#</a></h2>
 <p>Now, imagine that we continue applying the same matrix transformation on the vector, different things can happen. If the transformation converges towards a stable solution, then the transformation on that vector will no longer do anything. There may be more than one vector that has the property that the matrix transformation does not change the vector. Or at least it does not change the direction of the vector, but perhaps the length of the vector. Finding these vectors is called solving the eigenvector-eigenvalue problem, which is solving this equation:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -619,7 +610,7 @@ v_y  \\
 <p>What about the eigenvectors? Once, we have the eigenvalues, we can plugg in the values into the eigenvalue equation and find the corresponding eigenvector.</p>
 </section>
 <section id="solutions-to-the-linear-system">
-<h1><span class="section-number">6. </span>Solutions to the linear system<a class="headerlink" href="#solutions-to-the-linear-system" title="Link to this heading">#</a></h1>
+<h2><span class="section-number">3.3. </span>Solutions to the linear system<a class="headerlink" href="#solutions-to-the-linear-system" title="Link to this heading">#</a></h2>
 <p>Generally a solution to the coupled differential equations above (eq. 1) eigenvectors can be written as:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -638,8 +629,9 @@ v_y \\
 <p style="text-align:center;"><img src="../dynamical_systems/media/real_eigenvalues.png" width="600"/>
 </div>
 <p>When <span class="math notranslate nohighlight">\(\beta^2 &lt; 4\gamma\)</span> there is not real valued solution to the \sqrt{\beta^2 -4\gamma} part of the eigenvalue polynomium. The means the eigenvalues will now become complex numbers rather than real valued. But what are complex numbers?</p>
+</section>
 <section id="complex-numbers-a-short-introduction">
-<h2><span class="section-number">6.1. </span>Complex numbers: a short introduction<a class="headerlink" href="#complex-numbers-a-short-introduction" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">3.4. </span>Complex numbers: a short introduction<a class="headerlink" href="#complex-numbers-a-short-introduction" title="Link to this heading">#</a></h2>
 <p>Complex numbers are a mathematical abstraction with the initial purpose to warrant a solution to equations like the quadratic equation, where there are square roots that can make give problems when you only use real numbers.</p>
 <p>Definition: A complex number is typically expressed in the form:
 $<span class="math notranslate nohighlight">\(
@@ -664,7 +656,7 @@ This is where the link to oscillations come in. If the eigenvalues have complex 
 </div>
 </section>
 <section id="general-solution">
-<h2><span class="section-number">6.2. </span>General solution<a class="headerlink" href="#general-solution" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">3.5. </span>General solution<a class="headerlink" href="#general-solution" title="Link to this heading">#</a></h2>
 <p>The general solution to (1) is actually a sum of the eigenvectors multiplied by the exponential function of the corresponding eigenvalues and time:
 $<span class="math notranslate nohighlight">\(
 \vec{x}(t)= c_1\vec{v_1}e^{\lambda_1 t} + c_2\vec{v_2}e^{\lambda_2 t}
@@ -687,9 +679,8 @@ v_y2 \\
 \end{split}\]</div>
 <p>We may note that this can be generalized to higher dimensional systems, where the sum will include more eigenvectors and eigenvalues.</p>
 </section>
-</section>
 <section id="what-does-av-lambda-v-does-have-to-do-with-dot-x-ax">
-<h1><span class="section-number">7. </span>What does <span class="math notranslate nohighlight">\(Av=\lambda v\)</span> does have to do with <span class="math notranslate nohighlight">\(\dot X = AX\)</span>?<a class="headerlink" href="#what-does-av-lambda-v-does-have-to-do-with-dot-x-ax" title="Link to this heading">#</a></h1>
+<h2><span class="section-number">3.6. </span>What does <span class="math notranslate nohighlight">\(Av=\lambda v\)</span> does have to do with <span class="math notranslate nohighlight">\(\dot X = AX\)</span>?<a class="headerlink" href="#what-does-av-lambda-v-does-have-to-do-with-dot-x-ax" title="Link to this heading">#</a></h2>
 <p>Above we postulate that the eigenvector-eigenvalue equation (<span class="math notranslate nohighlight">\(Av=\lambda v\)</span>) provide the solution for our dynamical system <span class="math notranslate nohighlight">\(\dot X = AX\)</span>, and the solution is given as <span class="math notranslate nohighlight">\(ve^{\lambda t}\)</span>. This can be understood through the following. We propose <span class="math notranslate nohighlight">\(x(t)=ve^{\lambda t}\)</span> is a solution to <span class="math notranslate nohighlight">\(\dot x = Ax\)</span> if it satisfies the eigenvalue equation <span class="math notranslate nohighlight">\(Av=\lambda v\)</span>. Let us see this by inserting the solution in the equation:<br />
 $<span class="math notranslate nohighlight">\(
 \dot x = Ax
@@ -711,6 +702,7 @@ v\lambda e^{\lambda t} = Ave^{\lambda t}
 v\lambda  = Av \\
 Av  = \lambda v \end{split}\]</div>
 <p>We conclude that <span class="math notranslate nohighlight">\(\dot x = Ax\)</span> has solution <span class="math notranslate nohighlight">\(x(t)= ve^{\lambda t}\)</span> for any vector <span class="math notranslate nohighlight">\(v\)</span> and scalar <span class="math notranslate nohighlight">\(\lambda\)</span> that satisfy the eigenvector-eigenvalue problem <span class="math notranslate nohighlight">\(Av  = \lambda v\)</span>. The trivial solution <span class="math notranslate nohighlight">\(v=0\)</span> corresponds to the steady state at the origin (x(t)=0).</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -757,7 +749,7 @@ Av  = \lambda v \end{split}\]</div>
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">8. </span>Dynamical systems as Linear Transformations</p>
+        <p class="prev-next-title"><span class="section-number">4. </span>Dynamical systems as Linear Transformations</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -777,17 +769,13 @@ Av  = \lambda v \end{split}\]</div>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">3. Two-Dimensional Linear Systems: Eigenvalues, Eigenvectors and solutions</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-try-plotting-the-following-vectors-in-a-coordinate-system">4. Exercise: Try plotting the following vectors in a coordinate system:</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#eigenvector-and-eigenvalues">5. Eigenvector and eigenvalues</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#solutions-to-the-linear-system">6. Solutions to the linear system</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complex-numbers-a-short-introduction">6.1. Complex numbers: a short introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-solution">6.2. General solution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-try-plotting-the-following-vectors-in-a-coordinate-system">3.1. Exercise: Try plotting the following vectors in a coordinate system:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eigenvector-and-eigenvalues">3.2. Eigenvector and eigenvalues</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solutions-to-the-linear-system">3.3. Solutions to the linear system</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complex-numbers-a-short-introduction">3.4. Complex numbers: a short introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-solution">3.5. General solution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-does-av-lambda-v-does-have-to-do-with-dot-x-ax">3.6. What does <span class="math notranslate nohighlight">\(Av=\lambda v\)</span> does have to do with <span class="math notranslate nohighlight">\(\dot X = AX\)</span>?</a></li>
 </ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#what-does-av-lambda-v-does-have-to-do-with-dot-x-ax">7. What does <span class="math notranslate nohighlight">\(Av=\lambda v\)</span> does have to do with <span class="math notranslate nohighlight">\(\dot X = AX\)</span>?</a></li>
-</ul>
-
   </nav></div>
 
 </div></div>
