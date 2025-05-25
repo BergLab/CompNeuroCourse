@@ -634,19 +634,20 @@ v_y \\
 <h2><span class="section-number">3.4. </span>Complex numbers: a short introduction<a class="headerlink" href="#complex-numbers-a-short-introduction" title="Link to this heading">#</a></h2>
 <p>Complex numbers are a mathematical abstraction with the initial purpose to warrant a solution to equations like the quadratic equation, where there are square roots that can make give problems when you only use real numbers.</p>
 <p>Definition: A complex number is typically expressed in the form:
-$<span class="math notranslate nohighlight">\( z=a+bi\)</span><span class="math notranslate nohighlight">\(
-where \)</span>a<span class="math notranslate nohighlight">\( and \)</span>b<span class="math notranslate nohighlight">\( are real numbers. \)</span>i<span class="math notranslate nohighlight">\( is the imaginary unit, defined by the property 
-\)</span><span class="math notranslate nohighlight">\( i^2=−1 \)</span><span class="math notranslate nohighlight">\(
-Where real numbers can be represented as a line, complex numbers can be represented graphically on a complex plane, where the horizontal axis represents the real part and the vertical axis represents the imaginary part. Since \)</span>z$ is a point in the complex plane, it can also be represented as a point on a circle:</p>
+<span class="math notranslate nohighlight">\(z=a+bi\)</span>
+where <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> are real numbers. <span class="math notranslate nohighlight">\(i\)</span> is the imaginary unit, defined by the property
+<span class="math notranslate nohighlight">\(i^2=−1\)</span>
+Where real numbers can be represented as a line, complex numbers can be represented graphically on a complex plane, where the horizontal axis represents the real part and the vertical axis represents the imaginary part. Since <span class="math notranslate nohighlight">\(z\)</span> is a point in the complex plane, it can also be represented as a point on a circle:</p>
 <div class="math notranslate nohighlight">
 \[
 z=re^{i\theta}
 \]</div>
-<p>Last important point: there is a simple relationship between complex numbers and the trigonometric functions sine and consine. That is called Euler’s formula (not to confuse with Euler’s method):
-$<span class="math notranslate nohighlight">\(
+<p>Last important point: there is a simple relationship between complex numbers and the trigonometric functions sine and consine. That is called Euler’s formula (not to confuse with Euler’s method):</p>
+<div class="math notranslate nohighlight">
+\[
 e^{i\theta} = cos(\theta) + isin(\theta)
-\)</span><span class="math notranslate nohighlight">\(
-This is where the link to oscillations come in. If the eigenvalues have complex values, then the time dependence of the solution to (1) will have trigonometric functions where the argument is dependent on time. That is oscillations. That bring us back to the when \)</span>\beta^2 &lt; 4\gamma<span class="math notranslate nohighlight">\(. Here, there is not real valued solution to the \sqrt{\beta^2 -4\gamma} and therefore the eigenvalues are complex numbers, i.e. the \)</span>e^{\lambda t}<span class="math notranslate nohighlight">\( gives a trigonometric contribution. The cases are as shown in the figure below. If \)</span>\mu &lt; 0<span class="math notranslate nohighlight">\( (which is the real part of the eigenvalue) then the solution is rotating and stable, i.e. spiralling inwards (left). If \)</span>\mu =0<span class="math notranslate nohighlight">\( the eigenvalues are purely imaginary, hence there is no exponential decay or explosion. Therefore we get a clean rotation in the state space (middle). When \)</span>\mu &gt; 0$ we get both rotation and exponential increase in amplitude, hence and unstable spiral (right).</p>
+\]</div>
+<p>This is where the link to oscillations come in. If the eigenvalues have complex values, then the time dependence of the solution to (1) will have trigonometric functions where the argument is dependent on time. That is oscillations. That bring us back to the when <span class="math notranslate nohighlight">\(\beta^2 &lt; 4\gamma\)</span>. Here, there is not real valued solution to the \sqrt{\beta^2 -4\gamma} and therefore the eigenvalues are complex numbers, i.e. the <span class="math notranslate nohighlight">\(e^{\lambda t}\)</span> gives a trigonometric contribution. The cases are as shown in the figure below. If <span class="math notranslate nohighlight">\(\mu &lt; 0\)</span> (which is the real part of the eigenvalue) then the solution is rotating and stable, i.e. spiralling inwards (left). If <span class="math notranslate nohighlight">\(\mu =0\)</span> the eigenvalues are purely imaginary, hence there is no exponential decay or explosion. Therefore we get a clean rotation in the state space (middle). When <span class="math notranslate nohighlight">\(\mu &gt; 0\)</span> we get both rotation and exponential increase in amplitude, hence and unstable spiral (right).</p>
 <div align="center">
 <p style="text-align:center;"><img src="../dynamical_systems/media/imaginary_eigenvalues.png" width="600"/>
 </div>
