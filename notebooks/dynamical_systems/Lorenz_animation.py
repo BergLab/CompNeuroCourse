@@ -1,5 +1,3 @@
-
-
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.integrate import odeint
@@ -30,15 +28,23 @@ solution = odeint(lorenz, initial_state, t, args=(sigma, rho, beta))
 x, y, z = solution.T  # Transpose to get individual arrays
 
 # Set up 3D plot
-fig = plt.figure()
-ax = fig.add_subplot(111, projection='3d')
-line, = ax.plot([], [], [], lw=0.8)
+fig = plt.figure(facecolor='black')  # Set figure background color
+ax = fig.add_subplot(111, projection='3d', facecolor='black')  # Set axes background color
+line, = ax.plot([], [], [], lw=0.8, color='cyan')  # Set line color
 
 # Set axis limits
 ax.set_xlim(np.min(x), np.max(x))
 ax.set_ylim(np.min(y), np.max(y))
 ax.set_zlim(np.min(z), np.max(z))
-ax.set_title("Lorenz Attractor (Animated with odeint)")
+ax.set_title("Lorenz Attractor (Animated with odeint)", color='white')  # Set title color
+
+# Set grid and tick colors
+ax.xaxis.label.set_color('white')
+ax.yaxis.label.set_color('white')
+ax.zaxis.label.set_color('white')
+ax.tick_params(axis='x', colors='white')
+ax.tick_params(axis='y', colors='white')
+ax.tick_params(axis='z', colors='white')
 
 # Animation update function
 def update(num):
@@ -48,6 +54,5 @@ def update(num):
 
 # Create animation (no blitting for 3D!)
 ani = FuncAnimation(fig, update, frames=len(t), interval=1, blit=False)
-plt.style.use('dark_background')
 
 plt.show()
