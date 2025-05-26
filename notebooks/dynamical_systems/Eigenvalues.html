@@ -490,9 +490,11 @@ document.write(`
 <h1><span class="section-number">3. </span>Two-Dimensional Linear Systems: Eigenvalues, Eigenvectors and solutions<a class="headerlink" href="#two-dimensional-linear-systems-eigenvalues-eigenvectors-and-solutions" title="Link to this heading">#</a></h1>
 <p>Let us start by looking at a 2d system of the following coupled differential equations:</p>
 <div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned}
-\dot x = ax+by\\\begin{split}\\ 
-\dot y = cx+dy\end{split}\end{aligned}\end{align} \]</div>
+\[\begin{split}
+\dot x = ax+by
+\\ 
+\dot y = cx+dy
+\end{split}\]</div>
 <p>Where a, b, c, and d are constants. x and y are the two variables. Remember that <span class="math notranslate nohighlight">\(\dot x\)</span> is just a different notation for <span class="math notranslate nohighlight">\(\frac{dx}{dt}\)</span>. So, we can alternatively write the above as:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -500,15 +502,18 @@ document.write(`
 \]</div>
 <div class="math notranslate nohighlight">
 \[
-\frac{dy}{dt} = cx+dy\]</div>
+\frac{dy}{dt} = cx+dy
+\]</div>
 <p>This can be written as a vector and matrix equation:</p>
-<p>\begin{equation}
-\frac{d}{dt} \begin{bmatrix} x \ y \end{bmatrix} = \begin{bmatrix} a &amp; b \ c &amp; d \end{bmatrix} \begin{bmatrix} x \ y \end{bmatrix}
-\end{equation}</p>
-<p>This can be written in compact notation, using vectors and a matrix:
-$<span class="math notranslate nohighlight">\(
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\frac{d}{dt} \begin{bmatrix} x \\ y \end{bmatrix} = \begin{bmatrix} a &amp; b \\ c &amp; d \end{bmatrix} \begin{bmatrix} x \\ y \end{bmatrix}
+\end{split}\]</div>
+<p>This can be written in compact notation, using vectors and a matrix:</p>
+<div class="math notranslate nohighlight">
+\[
 \dot X = A X
-\)</span>$</p>
+\]</div>
 <p>where</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -539,7 +544,8 @@ b_1y + b_2y \\
 v_1 = \begin{bmatrix}  
 2 \\
 3 \\  
-\end{bmatrix}, \end{split}\]</div>
+\end{bmatrix}, 
+\end{split}\]</div>
 <p>Now, try multiplying these vectors by the following matrices:</p>
 <div class="math notranslate nohighlight">
 \[ \begin{align}\begin{aligned}\begin{split}
