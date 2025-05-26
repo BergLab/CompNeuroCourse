@@ -473,8 +473,9 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eigenvector-and-eigenvalues">3.2. Eigenvector and eigenvalues</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solutions-to-the-linear-system">3.3. Solutions to the linear system</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complex-numbers-a-short-introduction">3.4. Complex numbers: a short introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-solution">3.5. General solution</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-does-av-lambda-v-does-have-to-do-with-dot-x-ax">3.6. What does <span class="math notranslate nohighlight">\(Av=\lambda v\)</span> does have to do with <span class="math notranslate nohighlight">\(\dot X = AX\)</span>?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">3.5. Exercise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-solution">3.6. General solution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-does-av-lambda-v-does-have-to-do-with-dot-x-ax">3.7. What does <span class="math notranslate nohighlight">\(Av=\lambda v\)</span> does have to do with <span class="math notranslate nohighlight">\(\dot X = AX\)</span>?</a></li>
 </ul>
             </nav>
         </div>
@@ -667,8 +668,19 @@ e^{i\theta} = cos(\theta) + isin(\theta)
 <p style="text-align:center;"><img src="https://github.com/BergLab/CompNeuroCourse/blob/main/notebooks/dynamical_systems/media/Imaginary_eigenvalues.png" width="600"/>
 </div>
 </section>
+<section id="exercise">
+<h2><span class="section-number">3.5. </span>Exercise<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h2>
+<p>Plot first cosine as a function of time. Then plot sine as a function of time. Now plot the same sine versus the same cosine as a function of time.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Put your code here:</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 <section id="general-solution">
-<h2><span class="section-number">3.5. </span>General solution<a class="headerlink" href="#general-solution" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">3.6. </span>General solution<a class="headerlink" href="#general-solution" title="Link to this heading">#</a></h2>
 <p>The general solution to (1) is actually a sum of the eigenvectors multiplied by the exponential function of the corresponding eigenvalues and time:
 $<span class="math notranslate nohighlight">\(
 \vec{x}(t)= c_1\vec{v_1}e^{\lambda_1 t} + c_2\vec{v_2}e^{\lambda_2 t}
@@ -692,7 +704,7 @@ v_y2 \\
 <p>We may note that this can be generalized to higher dimensional systems, where the sum will include more eigenvectors and eigenvalues.</p>
 </section>
 <section id="what-does-av-lambda-v-does-have-to-do-with-dot-x-ax">
-<h2><span class="section-number">3.6. </span>What does <span class="math notranslate nohighlight">\(Av=\lambda v\)</span> does have to do with <span class="math notranslate nohighlight">\(\dot X = AX\)</span>?<a class="headerlink" href="#what-does-av-lambda-v-does-have-to-do-with-dot-x-ax" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">3.7. </span>What does <span class="math notranslate nohighlight">\(Av=\lambda v\)</span> does have to do with <span class="math notranslate nohighlight">\(\dot X = AX\)</span>?<a class="headerlink" href="#what-does-av-lambda-v-does-have-to-do-with-dot-x-ax" title="Link to this heading">#</a></h2>
 <p>Above we postulate that the eigenvector-eigenvalue equation (<span class="math notranslate nohighlight">\(Av=\lambda v\)</span>) provide the solution for our dynamical system <span class="math notranslate nohighlight">\(\dot X = AX\)</span>, and the solution is given as <span class="math notranslate nohighlight">\(ve^{\lambda t}\)</span>. This can be understood through the following. We propose <span class="math notranslate nohighlight">\(x(t)=ve^{\lambda t}\)</span> is a solution to <span class="math notranslate nohighlight">\(\dot x = Ax\)</span> if it satisfies the eigenvalue equation <span class="math notranslate nohighlight">\(Av=\lambda v\)</span>. Let us see this by inserting the solution in the equation:<br />
 $<span class="math notranslate nohighlight">\(
 \dot x = Ax
@@ -785,8 +797,9 @@ Av  = \lambda v \end{split}\]</div>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eigenvector-and-eigenvalues">3.2. Eigenvector and eigenvalues</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solutions-to-the-linear-system">3.3. Solutions to the linear system</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complex-numbers-a-short-introduction">3.4. Complex numbers: a short introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-solution">3.5. General solution</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-does-av-lambda-v-does-have-to-do-with-dot-x-ax">3.6. What does <span class="math notranslate nohighlight">\(Av=\lambda v\)</span> does have to do with <span class="math notranslate nohighlight">\(\dot X = AX\)</span>?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">3.5. Exercise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-solution">3.6. General solution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-does-av-lambda-v-does-have-to-do-with-dot-x-ax">3.7. What does <span class="math notranslate nohighlight">\(Av=\lambda v\)</span> does have to do with <span class="math notranslate nohighlight">\(\dot X = AX\)</span>?</a></li>
 </ul>
   </nav></div>
 
