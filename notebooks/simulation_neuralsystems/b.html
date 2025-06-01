@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>7. Introduction to Brian part 2: Synapses &#8212; Computational Neuroscience</title>
+    <title>11. Introduction to Brian part 2: Synapses &#8212; Computational Neuroscience</title>
   
   
   
@@ -65,8 +65,8 @@
     <link rel="icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="8. Introduction to Brian part 3: Simulations" href="c.html" />
-    <link rel="prev" title="6. Introduction to Brian part 1: Neurons" href="a.html" />
+    <link rel="next" title="12. Introduction to Brian part 3: Simulations" href="c.html" />
+    <link rel="prev" title="10. Introduction to Brian part 1: Neurons" href="a.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -206,9 +206,13 @@
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="a.html">6. Introduction to Brian part 1: Neurons</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">7. Introduction to Brian part 2: Synapses</a></li>
-<li class="toctree-l1"><a class="reference internal" href="c.html">8. Introduction to Brian part 3: Simulations</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="a.html">10. Introduction to Brian part 1: Neurons</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">11. Introduction to Brian part 2: Synapses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="c.html">12. Introduction to Brian part 3: Simulations</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 4. Data Analysis and Machine Learning</span></p>
 <ul class="nav bd-sidenav">
@@ -473,22 +477,22 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-simplest-synapse">7.1. The simplest Synapse</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-a-weight">7.2. Adding a weight</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">7.2.1. Exercise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-simplest-synapse">11.1. The simplest Synapse</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-a-weight">11.2. Adding a weight</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">11.2.1. Exercise</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-complex-connectivity">7.3. More complex connectivity</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-synapses-via-weight-matrix">7.4. Creating synapses via weight matrix</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">7.4.1. Exercise</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-exercises">7.4.1.1. Bonus exercises</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-exercise-2-simulation-of-a-balance-network">7.4.1.2. Bonus exercise 2: Simulation of a balance network</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-complex-connectivity">11.3. More complex connectivity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-synapses-via-weight-matrix">11.4. Creating synapses via weight matrix</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">11.4.1. Exercise</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-exercises">11.4.1.1. Bonus exercises</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-exercise-2-simulation-of-a-balance-network">11.4.1.2. Bonus exercise 2: Simulation of a balance network</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-content-introducing-a-delay">7.5. Bonus content: Introducing a delay</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-content-more-complex-synapse-models-stdp">7.6. Bonus content: More complex synapse models: STDP</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-content-introducing-a-delay">11.5. Bonus content: Introducing a delay</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-content-more-complex-synapse-models-stdp">11.6. Bonus content: More complex synapse models: STDP</a></li>
 </ul>
             </nav>
         </div>
@@ -501,7 +505,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-brian-part-2-synapses">
-<h1><span class="section-number">7. </span>Introduction to Brian part 2: Synapses<a class="headerlink" href="#introduction-to-brian-part-2-synapses" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">11. </span>Introduction to Brian part 2: Synapses<a class="headerlink" href="#introduction-to-brian-part-2-synapses" title="Link to this heading">#</a></h1>
 <p><em>Credit: The first three notebooks from week3 are part of the <a class="reference internal" href="#%5Bbrian2.readthedocs.io%5D(https://brian2.readthedocs.io/en/stable/)"><span class="xref myst">Brian2 documentation</span></a></em> with minor changes.</p>
 <p>If you haven’t yet read part 1: Neurons, go read that now.</p>
 <p>As before we start by importing the Brian package and setting up matplotlib for IPython:</p>
@@ -528,7 +532,7 @@ Requirement already satisfied: mpmath&lt;1.4,&gt;=1.1.0 in /opt/anaconda3/lib/py
 </div>
 </div>
 <section id="the-simplest-synapse">
-<h2><span class="section-number">7.1. </span>The simplest Synapse<a class="headerlink" href="#the-simplest-synapse" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">11.1. </span>The simplest Synapse<a class="headerlink" href="#the-simplest-synapse" title="Link to this heading">#</a></h2>
 <p>Once you have some neurons, the next step is to connect them up via synapses. We’ll start out with doing the simplest possible type of synapse that causes an instantaneous change in a variable after a spike.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -567,7 +571,7 @@ Requirement already satisfied: mpmath&lt;1.4,&gt;=1.1.0 in /opt/anaconda3/lib/py
 <p>However, at this point we have only defined the synapse model, we haven’t actually created any synapses. The next line <code class="docutils literal notranslate"><span class="pre">S.connect(i=0,</span> <span class="pre">j=1)</span></code> creates a synapse from neuron 0 to neuron 1.</p>
 </section>
 <section id="adding-a-weight">
-<h2><span class="section-number">7.2. </span>Adding a weight<a class="headerlink" href="#adding-a-weight" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">11.2. </span>Adding a weight<a class="headerlink" href="#adding-a-weight" title="Link to this heading">#</a></h2>
 <p>In the previous section, we hard coded the weight of the synapse to be the value 0.2 by indicating <code class="docutils literal notranslate"><span class="pre">on_pre='v_post</span> <span class="pre">+=</span> <span class="pre">0.2'</span></code>, but often we would to allow this to be different for different synapses. We do that by introducing synapse equations, we use tha argument <code class="docutils literal notranslate"> <span class="pre">on_pre='v_post</span> <span class="pre">+=</span> <span class="pre">w'</span></code> in the synapses model and then specify the synaptic values values <span class="math notranslate nohighlight">\(w\)</span>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -605,14 +609,14 @@ Requirement already satisfied: mpmath&lt;1.4,&gt;=1.1.0 in /opt/anaconda3/lib/py
 </div>
 <p>This example behaves very similarly to the previous example, but now there’s a synaptic weight variable <code class="docutils literal notranslate"><span class="pre">w</span></code>. The string <code class="docutils literal notranslate"><span class="pre">'w</span> <span class="pre">:</span> <span class="pre">1'</span></code> is an equation string, precisely the same as for neurons, that defines a single dimensionless parameter <code class="docutils literal notranslate"><span class="pre">w</span></code>. We changed the behaviour on a spike to <code class="docutils literal notranslate"><span class="pre">on_pre='v_post</span> <span class="pre">+=</span> <span class="pre">w'</span></code> now, so that each synapse can behave differently depending on the value of <code class="docutils literal notranslate"><span class="pre">w</span></code>. To illustrate this, we’ve made a third neuron which behaves precisely the same as the second neuron, and connected neuron 0 to both neurons 1 and 2. We’ve also set the weights via <code class="docutils literal notranslate"><span class="pre">S.w</span> <span class="pre">=</span> <span class="pre">'j*0.2'</span></code>. When <code class="docutils literal notranslate"><span class="pre">i</span></code> and <code class="docutils literal notranslate"><span class="pre">j</span></code> occur in the context of synapses, <code class="docutils literal notranslate"><span class="pre">i</span></code> refers to the source neuron index, and <code class="docutils literal notranslate"><span class="pre">j</span></code> to the target neuron index. So this will give a synaptic connection from 0 to 1 with weight <code class="docutils literal notranslate"><span class="pre">0.2=0.2*1</span></code> and from 0 to 2 with weight <code class="docutils literal notranslate"><span class="pre">0.4=0.2*2</span></code>.</p>
 <section id="exercise">
-<h3><span class="section-number">7.2.1. </span>Exercise<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">11.2.1. </span>Exercise<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Comment out the lines defined the synapses and re-run the simulation. How does this affect the resulting activity of the population?</p></li>
 </ul>
 </section>
 </section>
 <section id="more-complex-connectivity">
-<h2><span class="section-number">7.3. </span>More complex connectivity<a class="headerlink" href="#more-complex-connectivity" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">11.3. </span>More complex connectivity<a class="headerlink" href="#more-complex-connectivity" title="Link to this heading">#</a></h2>
 <p>So far, we specified the synaptic connectivity explicitly, but for larger networks this isn’t usually possible. For that, we usually want to specify some condition.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -700,7 +704,7 @@ Requirement already satisfied: mpmath&lt;1.4,&gt;=1.1.0 in /opt/anaconda3/lib/py
 </div>
 </section>
 <section id="creating-synapses-via-weight-matrix">
-<h2><span class="section-number">7.4. </span>Creating synapses via weight matrix<a class="headerlink" href="#creating-synapses-via-weight-matrix" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">11.4. </span>Creating synapses via weight matrix<a class="headerlink" href="#creating-synapses-via-weight-matrix" title="Link to this heading">#</a></h2>
 <p>Another option to define the synapses of a network is explicitly providing a weight matrix.</p>
 <p>We start by sampling a random connectivity matrix:</p>
 <div class="cell docutils container">
@@ -756,7 +760,7 @@ Requirement already satisfied: mpmath&lt;1.4,&gt;=1.1.0 in /opt/anaconda3/lib/py
 <li><p>We had to add the units, in this case <code class="docutils literal notranslate"><span class="pre">mV</span></code>.</p></li>
 </ul>
 <section id="id1">
-<h3><span class="section-number">7.4.1. </span>Exercise<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">11.4.1. </span>Exercise<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Add SpikeMonitor to track the spiking activity of one of the previously simulated populations and create a raster plot.</p></li>
 </ul>
@@ -768,7 +772,7 @@ Requirement already satisfied: mpmath&lt;1.4,&gt;=1.1.0 in /opt/anaconda3/lib/py
 </div>
 </div>
 <section id="bonus-exercises">
-<h4><span class="section-number">7.4.1.1. </span>Bonus exercises<a class="headerlink" href="#bonus-exercises" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">11.4.1.1. </span>Bonus exercises<a class="headerlink" href="#bonus-exercises" title="Link to this heading">#</a></h4>
 <p>Create a population of 100 neurons with the following properties:</p>
 <ul class="simple">
 <li><p>A weight matrix sampled from a Normal distribution <span class="math notranslate nohighlight">\(N(0,1)mV\)</span></p></li>
@@ -786,7 +790,7 @@ Requirement already satisfied: mpmath&lt;1.4,&gt;=1.1.0 in /opt/anaconda3/lib/py
 </div>
 </section>
 <section id="bonus-exercise-2-simulation-of-a-balance-network">
-<h4><span class="section-number">7.4.1.2. </span>Bonus exercise 2: Simulation of a balance network<a class="headerlink" href="#bonus-exercise-2-simulation-of-a-balance-network" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">11.4.1.2. </span>Bonus exercise 2: Simulation of a balance network<a class="headerlink" href="#bonus-exercise-2-simulation-of-a-balance-network" title="Link to this heading">#</a></h4>
 <p>In the previous exercises we have been creating neuron populations and connecting them to themselves. Now, we will create two different populations —one of excitatory neurons and one inhibitory— and connect them to each other.</p>
 <p>Create two two populations of neurons <span class="math notranslate nohighlight">\(G_{exct}\)</span> and <span class="math notranslate nohighlight">\(G_{inhb}\)</span> using the same parameters indicated in the previous exercise, except:</p>
 <ul class="simple">
@@ -804,7 +808,7 @@ Requirement already satisfied: mpmath&lt;1.4,&gt;=1.1.0 in /opt/anaconda3/lib/py
 </section>
 </section>
 <section id="bonus-content-introducing-a-delay">
-<h2><span class="section-number">7.5. </span>Bonus content: Introducing a delay<a class="headerlink" href="#bonus-content-introducing-a-delay" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">11.5. </span>Bonus content: Introducing a delay<a class="headerlink" href="#bonus-content-introducing-a-delay" title="Link to this heading">#</a></h2>
 <p>So far, the synapses have been instantaneous, but we can also make them act with a certain delay.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -847,7 +851,7 @@ Requirement already satisfied: mpmath&lt;1.4,&gt;=1.1.0 in /opt/anaconda3/lib/py
 <p>As you can see, that’s as simple as adding a line <code class="docutils literal notranslate"><span class="pre">S.delay</span> <span class="pre">=</span> <span class="pre">'j*2*ms'</span></code> so that the synapse from 0 to 1 has a delay of 2 ms, and from 0 to 2 has a delay of 4 ms.</p>
 </section>
 <section id="bonus-content-more-complex-synapse-models-stdp">
-<h2><span class="section-number">7.6. </span>Bonus content: More complex synapse models: STDP<a class="headerlink" href="#bonus-content-more-complex-synapse-models-stdp" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">11.6. </span>Bonus content: More complex synapse models: STDP<a class="headerlink" href="#bonus-content-more-complex-synapse-models-stdp" title="Link to this heading">#</a></h2>
 <p><em>This section of the notebook is optional, come to back to if you want after completing notebook 3 of this week.</em></p>
 <p>Brian’s synapse framework is very general and can do things like short-term plasticity (STP) or spike-timing dependent plasticity (STDP). Let’s see how that works for STDP.</p>
 <p>STDP is normally defined by an equation something like this:</p>
@@ -1075,7 +1079,7 @@ w &amp;\rightarrow w+a_{pre}
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">6. </span>Introduction to Brian part 1: Neurons</p>
+        <p class="prev-next-title"><span class="section-number">10. </span>Introduction to Brian part 1: Neurons</p>
       </div>
     </a>
     <a class="right-next"
@@ -1083,7 +1087,7 @@ w &amp;\rightarrow w+a_{pre}
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">8. </span>Introduction to Brian part 3: Simulations</p>
+        <p class="prev-next-title"><span class="section-number">12. </span>Introduction to Brian part 3: Simulations</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1103,22 +1107,22 @@ w &amp;\rightarrow w+a_{pre}
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-simplest-synapse">7.1. The simplest Synapse</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-a-weight">7.2. Adding a weight</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">7.2.1. Exercise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-simplest-synapse">11.1. The simplest Synapse</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-a-weight">11.2. Adding a weight</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">11.2.1. Exercise</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-complex-connectivity">7.3. More complex connectivity</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-synapses-via-weight-matrix">7.4. Creating synapses via weight matrix</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">7.4.1. Exercise</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-exercises">7.4.1.1. Bonus exercises</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-exercise-2-simulation-of-a-balance-network">7.4.1.2. Bonus exercise 2: Simulation of a balance network</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-complex-connectivity">11.3. More complex connectivity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-synapses-via-weight-matrix">11.4. Creating synapses via weight matrix</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">11.4.1. Exercise</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-exercises">11.4.1.1. Bonus exercises</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-exercise-2-simulation-of-a-balance-network">11.4.1.2. Bonus exercise 2: Simulation of a balance network</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-content-introducing-a-delay">7.5. Bonus content: Introducing a delay</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-content-more-complex-synapse-models-stdp">7.6. Bonus content: More complex synapse models: STDP</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-content-introducing-a-delay">11.5. Bonus content: Introducing a delay</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-content-more-complex-synapse-models-stdp">11.6. Bonus content: More complex synapse models: STDP</a></li>
 </ul>
   </nav></div>
 

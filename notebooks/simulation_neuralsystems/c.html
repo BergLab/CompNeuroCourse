@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>8. Introduction to Brian part 3: Simulations &#8212; Computational Neuroscience</title>
+    <title>12. Introduction to Brian part 3: Simulations &#8212; Computational Neuroscience</title>
   
   
   
@@ -64,7 +64,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="1. Introduction to Machine Learning for Neuroscience" href="../ML_joao/ch01_expanded.html" />
-    <link rel="prev" title="7. Introduction to Brian part 2: Synapses" href="b.html" />
+    <link rel="prev" title="11. Introduction to Brian part 2: Synapses" href="b.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -204,9 +204,13 @@
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="a.html">6. Introduction to Brian part 1: Neurons</a></li>
-<li class="toctree-l1"><a class="reference internal" href="b.html">7. Introduction to Brian part 2: Synapses</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">8. Introduction to Brian part 3: Simulations</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="a.html">10. Introduction to Brian part 1: Neurons</a></li>
+<li class="toctree-l1"><a class="reference internal" href="b.html">11. Introduction to Brian part 2: Synapses</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">12. Introduction to Brian part 3: Simulations</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 4. Data Analysis and Machine Learning</span></p>
 <ul class="nav bd-sidenav">
@@ -471,9 +475,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-runs">8.1. Multiple runs</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#changing-things-during-a-run">8.2. Changing things during a run</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-input">8.3. Adding input</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-runs">12.1. Multiple runs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#changing-things-during-a-run">12.2. Changing things during a run</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-input">12.3. Adding input</a></li>
 </ul>
             </nav>
         </div>
@@ -486,7 +490,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-brian-part-3-simulations">
-<h1><span class="section-number">8. </span>Introduction to Brian part 3: Simulations<a class="headerlink" href="#introduction-to-brian-part-3-simulations" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">12. </span>Introduction to Brian part 3: Simulations<a class="headerlink" href="#introduction-to-brian-part-3-simulations" title="Link to this heading">#</a></h1>
 <p>*Credit: The first three notebooks from week3 are part of the <a class="reference internal" href="#%5Bbrian2.readthedocs.io%5D(https://brian2.readthedocs.io/en/stable/)"><span class="xref myst">Brian2 documentation</span></a>.</p>
 <p>If you haven’t yet read parts 1 and 2 on Neurons and Synapses, go read them first.</p>
 <p>This tutorial is about managing the slightly more complicated tasks that crop up in research problems, rather than the toy examples we’ve been looking at so far. So we cover things like inputting sensory data, modelling experimental conditions, etc.</p>
@@ -514,7 +518,7 @@ Requirement already satisfied: mpmath&lt;1.4,&gt;=1.1.0 in /opt/anaconda3/lib/py
 </div>
 </div>
 <section id="multiple-runs">
-<h2><span class="section-number">8.1. </span>Multiple runs<a class="headerlink" href="#multiple-runs" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">12.1. </span>Multiple runs<a class="headerlink" href="#multiple-runs" title="Link to this heading">#</a></h2>
 <p>Let’s start by looking at a very common task: doing multiple runs of a simulation with some parameter that changes. Let’s start off with something very simple, how does the firing rate of a leaky integrate-and-fire neuron driven by Poisson spiking neurons change depending on its membrane time constant? Let’s set that up.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -702,7 +706,7 @@ Requirement already satisfied: mpmath&lt;1.4,&gt;=1.1.0 in /opt/anaconda3/lib/py
 <p>Notice that we used the <code class="docutils literal notranslate"><span class="pre">spike_trains()</span></code> method of <code class="docutils literal notranslate"><span class="pre">SpikeMonitor</span></code>. This is a dictionary with keys being the indices of the neurons and values being the array of spike times for that neuron.</p>
 </section>
 <section id="changing-things-during-a-run">
-<h2><span class="section-number">8.2. </span>Changing things during a run<a class="headerlink" href="#changing-things-during-a-run" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">12.2. </span>Changing things during a run<a class="headerlink" href="#changing-things-during-a-run" title="Link to this heading">#</a></h2>
 <p>Imagine an experiment where you inject current into a neuron, and change the amplitude randomly every 10 ms. Let’s see if we can model that using a Hodgkin-Huxley type neuron.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -909,7 +913,7 @@ Requirement already satisfied: mpmath&lt;1.4,&gt;=1.1.0 in /opt/anaconda3/lib/py
 <p>Ahh, that’s more like it!</p>
 </section>
 <section id="adding-input">
-<h2><span class="section-number">8.3. </span>Adding input<a class="headerlink" href="#adding-input" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">12.3. </span>Adding input<a class="headerlink" href="#adding-input" title="Link to this heading">#</a></h2>
 <p>Now let’s think about a neuron being driven by a sinusoidal input. Let’s go back to a leaky integrate-and-fire to simplify the equations a bit.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1039,7 +1043,7 @@ Requirement already satisfied: mpmath&lt;1.4,&gt;=1.1.0 in /opt/anaconda3/lib/py
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">7. </span>Introduction to Brian part 2: Synapses</p>
+        <p class="prev-next-title"><span class="section-number">11. </span>Introduction to Brian part 2: Synapses</p>
       </div>
     </a>
     <a class="right-next"
@@ -1067,9 +1071,9 @@ Requirement already satisfied: mpmath&lt;1.4,&gt;=1.1.0 in /opt/anaconda3/lib/py
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-runs">8.1. Multiple runs</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#changing-things-during-a-run">8.2. Changing things during a run</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-input">8.3. Adding input</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-runs">12.1. Multiple runs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#changing-things-during-a-run">12.2. Changing things during a run</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-input">12.3. Adding input</a></li>
 </ul>
   </nav></div>
 

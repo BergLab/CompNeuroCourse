@@ -65,7 +65,7 @@
     <link rel="icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="6. Introduction to Brian part 1: Neurons" href="a.html" />
+    <link rel="next" title="10. Introduction to Brian part 1: Neurons" href="a.html" />
     <link rel="prev" title="1. Simulating neural populations with Brian" href="neuralsimulation_intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -206,9 +206,13 @@
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="a.html">6. Introduction to Brian part 1: Neurons</a></li>
-<li class="toctree-l1"><a class="reference internal" href="b.html">7. Introduction to Brian part 2: Synapses</a></li>
-<li class="toctree-l1"><a class="reference internal" href="c.html">8. Introduction to Brian part 3: Simulations</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="a.html">10. Introduction to Brian part 1: Neurons</a></li>
+<li class="toctree-l1"><a class="reference internal" href="b.html">11. Introduction to Brian part 2: Synapses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="c.html">12. Introduction to Brian part 3: Simulations</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 4. Data Analysis and Machine Learning</span></p>
 <ul class="nav bd-sidenav">
@@ -475,8 +479,15 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">2. Firing Rate model</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#recurrent-network-simple-rate-based-network">3. Recurrent network: Simple rate based network</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#example-of-a-random-network">4. Example of a Random network</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#illustrating-the-network-structure">5. Illustrating the network structure</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#bifurcation-a-qualitative-and-abrupt-change-in-dynamics-when-changing-a-parameter">4. Bifurcation: a qualitative and abrupt change in dynamics when changing a parameter</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#example-of-a-random-network">5. Example of a Random network</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">6. Exercise:</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#illustrating-the-network-structure">7. Illustrating the network structure</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">8. Exercise:</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-stability-analysis-of-rate-based-network">9. Linear stability analysis of rate based network</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">9.1. Exercise:</a></li>
+</ul>
+</li>
 </ul>
 
             </nav>
@@ -511,20 +522,59 @@ r_i = f_i(I_i)
 </section>
 <section id="recurrent-network-simple-rate-based-network">
 <h1><span class="section-number">3. </span>Recurrent network: Simple rate based network<a class="headerlink" href="#recurrent-network-simple-rate-based-network" title="Link to this heading">#</a></h1>
+<p>Reverberating activity in a local recurrent network, has been proposed as a mechanism for memory. At least it is a mechanisms for producing persistent spiking activity. Such network often has at least two stable states, hence called a <em>bistable network</em>. Some external event can then put the network either in one or the other state, and in this way represent a memory of that external event. We can model this as a rate based network as described above, but where the input in the input output function is the output of the system itself, hence a recurrent network. This can then be modeled using a single differential equation:</p>
+<div class="math notranslate nohighlight">
+\[
+\tau_E \frac{dr_E}{dt}= -r_E + F(J_{EE}r_E + I_{ext} )
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\tau_E\)</span> is the firing rate time constant of the network with the subscript <em>E</em> to emphasize that it is an excitatory recurrent network. The <span class="math notranslate nohighlight">\(r_E\)</span> is the population firing rate of the network. <span class="math notranslate nohighlight">\(J_{EE}\)</span> is the synaptic strength of the feedback connections, hence the subscript <em>EE</em>. <span class="math notranslate nohighlight">\(I_{ext}\)</span> is some external common drive. <span class="math notranslate nohighlight">\(F\)</span> is the neuronal input output function given the input, <span class="math notranslate nohighlight">\(I\)</span>. Usually this is sigmoidally shaped with some threshold. The steady-state solution is represented by <span class="math notranslate nohighlight">\(\frac{dr_E}{dt}=0\)</span> where <span class="math notranslate nohighlight">\(r_E= F(I)\)</span>. The firing rate is zero when <span class="math notranslate nohighlight">\(I&lt;I_c\)</span> where <span class="math notranslate nohighlight">\(I_c\)</span> is the critical value for <span class="math notranslate nohighlight">\(F(I)\)</span> being larger than zero.  What is the criterion for having non-zero firing rate when the external drive is zero? Then
+$<span class="math notranslate nohighlight">\(
+r_E=F(J_{EE}r_E)
+\)</span>$</p>
+<p>which may or may not be solvable depending on what the function <span class="math notranslate nohighlight">\(F\)</span> is. Nevertheless, we can plot the right and left hand side of the equation and do a graphical solution, i.e. look for when those two plots intersect (equal to each other). Below is shown the blue curve, which is the instantaneous output firing rate <span class="math notranslate nohighlight">\(r_E\)</span> being exactly equal to the input of the neurons. The orange shows the steady state firing rate <span class="math notranslate nohighlight">\(F(I)\)</span> where <span class="math notranslate nohighlight">\(I\)</span> is the synaptic coupling times the firing rate, <span class="math notranslate nohighlight">\(I=J_{EE}r_E\)</span></p>
 <div align="center">
-<p style="text-align:center;"><img src="../simulation_neuralsystems/media/RNN_1.jpg" width="600"/>
+<p style="text-align:center;"><img src="../simulation_neuralsystems/media/RNN_1.jpg" width="300"/>
 </div>
+<p>When the synaptic strength is below a certain value, a critical coupling <span class="math notranslate nohighlight">\(J_c\)</span>, the input is not strong enough to keep sustained activity. The steady state firing rate is therefore zero, which is also the only intersection between the two curves (blue dot).</p>
+<p>When the synaptic strength of the feedback coupling increases to the critical value (<span class="math notranslate nohighlight">\(J_{EE}=J_c\)</span>) the two curves have a second intersection, which is around <span class="math notranslate nohighlight">\(r_E=100\)</span> Hz (see open circle in below figure).</p>
+<div align="center">
+<p style="text-align:center;"><img src="../simulation_neuralsystems/media/RNN_2.jpg" width="300"/>
+</div>
+<p>Increasing the synaptic coupling further, which is equivalent to moving the orange curve to the left, the intersection at 100 Hz slits up into two intersections. Hence, this results in total of three intersections, which represents three solutions to the equation, i.e. three firing rates <span class="math notranslate nohighlight">\(r_1\)</span>, <span class="math notranslate nohighlight">\(r_2\)</span> and <span class="math notranslate nohighlight">\(r_3\)</span> (see below figure).</p>
+<div align="center">
+<p style="text-align:center;"><img src="../simulation_neuralsystems/media/RNN_3.jpg" width="300"/>
+</div>
+<p>These three solutions are not all stable. It turns out that only the solution at zero and around 150 Hz are stable. The solution in the middle is unstable, indicated by the open circle. The instability of the middle solution can be verified by introducing a little increase or decrease away from the solution, also known as a <em>pertubation</em>. If we are slightly above the point, the orange curve is above the input rate (blue), which means that when this larger firing rate is fed back into the network, it will result in an even larger firing rate. In other words, a small increace will keep growing away from the point, hence the solution is unstable. The opposite is the case for the right most solution: any increase in firing rate will result in a slightly smaller feedback input, hence the activity will decay back to the point.</p>
+</section>
+<section id="bifurcation-a-qualitative-and-abrupt-change-in-dynamics-when-changing-a-parameter">
+<h1><span class="section-number">4. </span>Bifurcation: a qualitative and abrupt change in dynamics when changing a parameter<a class="headerlink" href="#bifurcation-a-qualitative-and-abrupt-change-in-dynamics-when-changing-a-parameter" title="Link to this heading">#</a></h1>
+<p>The system that we have just described has gone through what is called <em>a bifurcation</em> in dynamics. A bifurcation represents a qualitative and abrupt change in dynamics when changing a parameter. Here, the parameter is the synaptic strength, <span class="math notranslate nohighlight">\(J_{EE}\)</span>. The qualitative change is that the system goes from having one solution to having three. Further, the change is abrupt: the change come suddenly. It is not a continuous change. Bifurcations are often visualized with a bifurcation diagram, where the stable and unstable solutions are plotted on the y-axis and the x-axis has the parameter, which causes the birfurcation, see figure below.</p>
+<div align="center">
+<p style="text-align:center;"><img src="../simulation_neuralsystems/media/Bifurcation.jpg" width="300"/>
+</div>
+The solid lines represent the stable solutions, and the broken line represents the unstable solution. Note that $r_E=0$ remains a stable solution for all values.
+<p>Hence, the system becomes a <em>bistable</em> system after the synaptic strength has increased over the critical value. That means the network can function as a memory device, where a brief external input can put the system either in the active or silent state.</p>
 </section>
 <section id="example-of-a-random-network">
-<h1><span class="section-number">4. </span>Example of a Random network<a class="headerlink" href="#example-of-a-random-network" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">5. </span>Example of a Random network<a class="headerlink" href="#example-of-a-random-network" title="Link to this heading">#</a></h1>
 <p>Here, we model a recurrent network with input and output of individual neurons.</p>
-<p>The code below provides a basic illustration of how firing rates might evolve in a random recurrent neural network. The external input <span class="math notranslate nohighlight">\(J\)</span> also has some randomness.  You can modify the parameters and the structure of the network to explore different dynamics.</p>
-<p>The input output function is here modeled as a sigmoidal function called <em>hyperbolic tanget</em>:</p>
+<p>The code below provides a basic illustration of how firing rates might evolve in a random recurrent neural network. The external input <span class="math notranslate nohighlight">\(J\)</span> also has some randomness.  We use the following function The input output function is modelled as:</p>
+<div class="math notranslate nohighlight">
+\[
+f(I) = \sum w_i\cdot tanh(r_i) + J
+\]</div>
+<p>such that we have a system of differential equations, written in compact vector and matrix notation:</p>
+<div class="math notranslate nohighlight">
+\[
+\tau \frac{dr}{dt}= -r +w \cdot tanh(r) +J
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(r\)</span> is a vector with the neuronal firing rates, <span class="math notranslate nohighlight">\(w\)</span> is the connectivity matrix, and <span class="math notranslate nohighlight">\(J\)</span> is the external drive.</p>
+<p>The active part of the input output function is here modeled as a sigmoidal function called <em>hyperbolic tanget</em>:</p>
 <div class="math notranslate nohighlight">
 \[
 tanh(x) = \frac{e^x -e^{-x}}{e^x + e^{-x}} 
 \]</div>
-<p>which is a sigmoidal input output function commonly used in recurrent neural networks.</p>
+<p>which is a sigmoidal input output function commonly used in recurrent neural networks. You can modify the parameters and the structure of the network to explore different dynamics.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -566,12 +616,21 @@ tanh(x) = \frac{e^x -e^{-x}}{e^x + e^{-x}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/469155affb77f83c6dd7d5addeb3292ce724f8387978e93fe880853317f02952.png" src="../../_images/469155affb77f83c6dd7d5addeb3292ce724f8387978e93fe880853317f02952.png" />
+<img alt="../../_images/bf2f4c6e22c66629bd0f5b3a9d6b82c025e405990629c04184fd3bbe02a0b4c1.png" src="../../_images/bf2f4c6e22c66629bd0f5b3a9d6b82c025e405990629c04184fd3bbe02a0b4c1.png" />
 </div>
 </div>
 </section>
+<section id="exercise">
+<h1><span class="section-number">6. </span>Exercise:<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p>Try changing the different parameters.</p></li>
+<li><p>Instead of plotting firing rates against time, try plotting the firing rate of one neuron against another</p></li>
+<li><p>Think about what the eigenvalues of the system is. Is the system stable or unstable? What would constitute an unstable network?</p></li>
+<li><p>Is this a linear or nonlinear system?</p></li>
+</ul>
+</section>
 <section id="illustrating-the-network-structure">
-<h1><span class="section-number">5. </span>Illustrating the network structure<a class="headerlink" href="#illustrating-the-network-structure" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">7. </span>Illustrating the network structure<a class="headerlink" href="#illustrating-the-network-structure" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -579,7 +638,7 @@ tanh(x) = \frac{e^x -e^{-x}}{e^x + e^{-x}}
 <span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
 
 <span class="c1"># Parameters</span>
-<span class="n">N</span> <span class="o">=</span> <span class="mi">100</span>  <span class="c1"># Number of neurons</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">10</span>  <span class="c1"># Number of neurons - making it smaller than the above network for illustrative purposes.</span>
 <span class="n">w</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>  <span class="c1"># Recurrent weight matrix</span>
 
 <span class="c1"># Create a directed graph</span>
@@ -601,9 +660,90 @@ tanh(x) = \frac{e^x -e^{-x}}{e^x + e^{-x}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/28c1afdfcb8d6a53bad18db19d7e8d82d2379623eb6fe6fb866b724de0d6da45.png" src="../../_images/28c1afdfcb8d6a53bad18db19d7e8d82d2379623eb6fe6fb866b724de0d6da45.png" />
+<img alt="../../_images/725cf455979aba87ecedd95cca8f56b723a887ab050537f97659546793c6aaf2.png" src="../../_images/725cf455979aba87ecedd95cca8f56b723a887ab050537f97659546793c6aaf2.png" />
 </div>
 </div>
+</section>
+<section id="id1">
+<h1><span class="section-number">8. </span>Exercise:<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p>Try changing the size of the network</p></li>
+</ul>
+</section>
+<section id="linear-stability-analysis-of-rate-based-network">
+<h1><span class="section-number">9. </span>Linear stability analysis of rate based network<a class="headerlink" href="#linear-stability-analysis-of-rate-based-network" title="Link to this heading">#</a></h1>
+<p>The question is: Can we use the tools we learned in chapter 2.3 (Two dimensional linear systems: Eigenvalues, eigenvectors and solutions) to help us predict and understand the network behavior os the above network? Let us look again at the system that was written as coupled differential equations in compact vector and matrix notation:</p>
+<div class="math notranslate nohighlight">
+\[
+\tau \frac{dr}{dt}= -r +w \cdot tanh(r) +J
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(r\)</span> is a vector with the neuronal firing rates, <span class="math notranslate nohighlight">\(w\)</span> is the connectivity matrix, and <span class="math notranslate nohighlight">\(J\)</span> is the external drive. The tanh-function is a non-linear function, so we cannot directly apply the linear stability analysis. Nevertheless, we can look at the activity close to zero, where the tanh-function is approximately linear. Hence, we can perform the approximation:</p>
+<div class="math notranslate nohighlight">
+\[
+tanh(r) \approx r
+\]</div>
+<p>which is valid if <span class="math notranslate nohighlight">\(r\)</span> is close to 0.
+Hence, we can rewrite the equations as:</p>
+<div class="math notranslate nohighlight">
+\[
+\tau \frac{dr}{dt}= -r +w \cdot r +J
+\]</div>
+<p>and rearrange to the following eqution:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{dr}{dt}= \frac{1}{\tau}(w - I)r
+\]</div>
+<p>assuming <span class="math notranslate nohighlight">\(J=0\)</span> for now. When redefining the parameters we get:
+$<span class="math notranslate nohighlight">\(
+\frac{dr}{dt}= Ar
+\)</span>$</p>
+<p>where <span class="math notranslate nohighlight">\(A=\frac{1}{\tau}(w - I)\)</span>, which we call the <em>effective connectivity matrix</em>. This is in fact identical to the <span class="math notranslate nohighlight">\(\dot X = AX\)</span> that we discussed in chapter 2. We found that the eigenvectors and eigenvalues of this equation is important for predicting the stability of the network. Please recall that the eigenvalues <span class="math notranslate nohighlight">\(\lambda\)</span> and eigenvectors <span class="math notranslate nohighlight">\(r\)</span> of A are found from the equation:</p>
+<div class="math notranslate nohighlight">
+\[
+Ar = \lambda r
+\]</div>
+<p>Hence, it is very helpful to look at the eigenvalues of the effective connectivity matrix, A. Since A is proportional to w (divided by <span class="math notranslate nohighlight">\(\tau\)</span> ) and subtracted by a constant (the identity matrix I), we may as well look at the eigenspectrum of w itself.  Keep in mind that the eigenvalues can be complex. There is an eigenvalue for every equation. Below we find all the eigenvalues plotted in a <em>spectrum</em> of eigenvalues.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># Parameters</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">10</span>  <span class="c1"># Number of neurons</span>
+<span class="n">w</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>  <span class="c1"># Recurrent weight matrix</span>
+
+<span class="c1"># Calculate the eigenvalues of the weight matrix w</span>
+<span class="n">eigenvalues</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eigvals</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
+
+<span class="c1"># Plot the eigenvalues on the complex plane</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">eigenvalues</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">imag</span><span class="p">(</span><span class="n">eigenvalues</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Eigenvalues&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Eigenvalues of the Weight Matrix&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Real Part&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Imaginary Part&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/c5d25ed4d73c3a03fe02066578beb10e9d98956c68c4ea91672e450a563e2434.png" src="../../_images/c5d25ed4d73c3a03fe02066578beb10e9d98956c68c4ea91672e450a563e2434.png" />
+</div>
+</div>
+<section id="id2">
+<h2><span class="section-number">9.1. </span>Exercise:<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>From the eigenvalue spectrum consider whether the system is stable or unstable. Explain why.</p></li>
+<li><p>Does the system oscillate?</p></li>
+<li><p>What could change the eigenvalue spectrum and hence the stability/instability of the system?</p></li>
+<li><p>try to make those changes and see the effect in dynamics and in the eigenvalue spectrum</p></li>
+</ul>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -650,7 +790,7 @@ tanh(x) = \frac{e^x -e^{-x}}{e^x + e^{-x}}
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">6. </span>Introduction to Brian part 1: Neurons</p>
+        <p class="prev-next-title"><span class="section-number">10. </span>Introduction to Brian part 1: Neurons</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -672,8 +812,15 @@ tanh(x) = \frac{e^x -e^{-x}}{e^x + e^{-x}}
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">2. Firing Rate model</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#recurrent-network-simple-rate-based-network">3. Recurrent network: Simple rate based network</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#example-of-a-random-network">4. Example of a Random network</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#illustrating-the-network-structure">5. Illustrating the network structure</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#bifurcation-a-qualitative-and-abrupt-change-in-dynamics-when-changing-a-parameter">4. Bifurcation: a qualitative and abrupt change in dynamics when changing a parameter</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#example-of-a-random-network">5. Example of a Random network</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">6. Exercise:</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#illustrating-the-network-structure">7. Illustrating the network structure</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">8. Exercise:</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-stability-analysis-of-rate-based-network">9. Linear stability analysis of rate based network</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">9.1. Exercise:</a></li>
+</ul>
+</li>
 </ul>
 
   </nav></div>
