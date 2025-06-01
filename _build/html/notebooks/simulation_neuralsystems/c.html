@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>4. Introduction to Brian part 3: Simulations &#8212; Computational Neuroscience</title>
+    <title>8. Introduction to Brian part 3: Simulations &#8212; Computational Neuroscience</title>
   
   
   
@@ -64,7 +64,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="1. Introduction to Machine Learning for Neuroscience" href="../ML_joao/ch01_expanded.html" />
-    <link rel="prev" title="3. Introduction to Brian part 2: Synapses" href="b.html" />
+    <link rel="prev" title="7. Introduction to Brian part 2: Synapses" href="b.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -200,9 +200,13 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 3. Simulating neural populations with Brian</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="neuralsimulation_intro.html">1. Simulating neural populations with Brian</a></li>
-<li class="toctree-l1"><a class="reference internal" href="a.html">2. Introduction to Brian part 1: Neurons</a></li>
-<li class="toctree-l1"><a class="reference internal" href="b.html">3. Introduction to Brian part 2: Synapses</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">4. Introduction to Brian part 3: Simulations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rate_based_model.html">2. Firing Rate model</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="a.html">6. Introduction to Brian part 1: Neurons</a></li>
+<li class="toctree-l1"><a class="reference internal" href="b.html">7. Introduction to Brian part 2: Synapses</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">8. Introduction to Brian part 3: Simulations</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 4. Data Analysis and Machine Learning</span></p>
 <ul class="nav bd-sidenav">
@@ -467,9 +471,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-runs">4.1. Multiple runs</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#changing-things-during-a-run">4.2. Changing things during a run</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-input">4.3. Adding input</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-runs">8.1. Multiple runs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#changing-things-during-a-run">8.2. Changing things during a run</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-input">8.3. Adding input</a></li>
 </ul>
             </nav>
         </div>
@@ -482,7 +486,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-brian-part-3-simulations">
-<h1><span class="section-number">4. </span>Introduction to Brian part 3: Simulations<a class="headerlink" href="#introduction-to-brian-part-3-simulations" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">8. </span>Introduction to Brian part 3: Simulations<a class="headerlink" href="#introduction-to-brian-part-3-simulations" title="Link to this heading">#</a></h1>
 <p>*Credit: The first three notebooks from week3 are part of the <a class="reference internal" href="#%5Bbrian2.readthedocs.io%5D(https://brian2.readthedocs.io/en/stable/)"><span class="xref myst">Brian2 documentation</span></a>.</p>
 <p>If you haven’t yet read parts 1 and 2 on Neurons and Synapses, go read them first.</p>
 <p>This tutorial is about managing the slightly more complicated tasks that crop up in research problems, rather than the toy examples we’ve been looking at so far. So we cover things like inputting sensory data, modelling experimental conditions, etc.</p>
@@ -504,15 +508,13 @@ Requirement already satisfied: jinja2&gt;=2.7 in /opt/anaconda3/lib/python3.11/s
 Requirement already satisfied: setuptools&gt;=61 in /opt/anaconda3/lib/python3.11/site-packages (from brian2) (68.2.2)
 Requirement already satisfied: packaging in /opt/anaconda3/lib/python3.11/site-packages (from brian2) (23.1)
 Requirement already satisfied: MarkupSafe&gt;=2.0 in /opt/anaconda3/lib/python3.11/site-packages (from jinja2&gt;=2.7-&gt;brian2) (2.1.3)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: mpmath&lt;1.4,&gt;=1.1.0 in /opt/anaconda3/lib/python3.11/site-packages (from sympy&gt;=1.2-&gt;brian2) (1.3.0)
+Requirement already satisfied: mpmath&lt;1.4,&gt;=1.1.0 in /opt/anaconda3/lib/python3.11/site-packages (from sympy&gt;=1.2-&gt;brian2) (1.3.0)
 </pre></div>
 </div>
 </div>
 </div>
 <section id="multiple-runs">
-<h2><span class="section-number">4.1. </span>Multiple runs<a class="headerlink" href="#multiple-runs" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.1. </span>Multiple runs<a class="headerlink" href="#multiple-runs" title="Link to this heading">#</a></h2>
 <p>Let’s start by looking at a very common task: doing multiple runs of a simulation with some parameter that changes. Let’s start off with something very simple, how does the firing rate of a leaky integrate-and-fire neuron driven by Poisson spiking neurons change depending on its membrane time constant? Let’s set that up.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -548,7 +550,7 @@ Requirement already satisfied: MarkupSafe&gt;=2.0 in /opt/anaconda3/lib/python3.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/4a4f6434b9dc3f163c4dfeacb2561a4175c0fa2414feb13182fbc88ad4982694.png" src="../../_images/4a4f6434b9dc3f163c4dfeacb2561a4175c0fa2414feb13182fbc88ad4982694.png" />
+<img alt="../../_images/3ef899d30766921e4db6e45c9874479d2bb74682c6476a4f0967eb0bb1bd2445.png" src="../../_images/3ef899d30766921e4db6e45c9874479d2bb74682c6476a4f0967eb0bb1bd2445.png" />
 </div>
 </div>
 <p>Now if you’re running the notebook, you’ll see that this was a little slow to run. The reason is that for each loop, you’re recreating the objects from scratch. We can improve that by setting up the network just once. We store a copy of the state of the network before the loop, and restore it at the beginning of each iteration.</p>
@@ -584,7 +586,7 @@ Requirement already satisfied: MarkupSafe&gt;=2.0 in /opt/anaconda3/lib/python3.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/843754c7cd857b22e93fb3eb84c9c39ae283425b1d62a70ff31f46856e51285d.png" src="../../_images/843754c7cd857b22e93fb3eb84c9c39ae283425b1d62a70ff31f46856e51285d.png" />
+<img alt="../../_images/211d196878dab8decb3ad3d3166be15dfad46d9f806879c4170862f0e156ffc4.png" src="../../_images/211d196878dab8decb3ad3d3166be15dfad46d9f806879c4170862f0e156ffc4.png" />
 </div>
 </div>
 <p>That’s a very simple example of using store and restore, but you can use it in much more complicated situations. For example, you might want to run a long training run, and then run multiple test runs afterwards. Simply put a store after the long training run, and a restore before each testing run.</p>
@@ -633,7 +635,7 @@ Requirement already satisfied: MarkupSafe&gt;=2.0 in /opt/anaconda3/lib/python3.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/bf510e2139253ffbbe9f5fa39b87a067ca4a765e01b1901bdc1a7343acacae31.png" src="../../_images/bf510e2139253ffbbe9f5fa39b87a067ca4a765e01b1901bdc1a7343acacae31.png" />
+<img alt="../../_images/078d8b4efdcdb3d4dbb2cb055f8ebbc787232590b6e556588c022f9dba897ad1.png" src="../../_images/078d8b4efdcdb3d4dbb2cb055f8ebbc787232590b6e556588c022f9dba897ad1.png" />
 </div>
 </div>
 <p>You can see that now there is much less noise and it increases monotonically because the input spikes are the same each time, meaning we’re seeing the effect of the time constant, not the random spikes.</p>
@@ -672,7 +674,7 @@ Requirement already satisfied: MarkupSafe&gt;=2.0 in /opt/anaconda3/lib/python3.
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING    &#39;tau&#39; is an internal variable of group &#39;neurongroup_2&#39;, but also exists in the run namespace with the value 10. * msecond. The internal variable will be used. [brian2.groups.group.Group.resolve.resolution_conflict]
 </pre></div>
 </div>
-<img alt="../../_images/f9c731af218e6c89ac0f0324eda8458b6dc5b363025f8ff01febb44a96c18af3.png" src="../../_images/f9c731af218e6c89ac0f0324eda8458b6dc5b363025f8ff01febb44a96c18af3.png" />
+<img alt="../../_images/f7ec4750479378dd0c0133c789385e3de46d0656ee8b371c7291c41777c4785f.png" src="../../_images/f7ec4750479378dd0c0133c789385e3de46d0656ee8b371c7291c41777c4785f.png" />
 </div>
 </div>
 <p>You can see that this is much faster again! It’s a little bit more complicated conceptually, and it’s not always possible to do this trick, but it can be much more efficient if it’s possible.</p>
@@ -694,13 +696,13 @@ Requirement already satisfied: MarkupSafe&gt;=2.0 in /opt/anaconda3/lib/python3.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/09851278fb76ea24f4a3eb586232ffb3f2a103392eed383cdaaba2e33ba85fb0.png" src="../../_images/09851278fb76ea24f4a3eb586232ffb3f2a103392eed383cdaaba2e33ba85fb0.png" />
+<img alt="../../_images/13cce6f6e8a229486fc6f8a1c2c8b467a36cec313ac0e219d8c2e875c34d2ec3.png" src="../../_images/13cce6f6e8a229486fc6f8a1c2c8b467a36cec313ac0e219d8c2e875c34d2ec3.png" />
 </div>
 </div>
 <p>Notice that we used the <code class="docutils literal notranslate"><span class="pre">spike_trains()</span></code> method of <code class="docutils literal notranslate"><span class="pre">SpikeMonitor</span></code>. This is a dictionary with keys being the indices of the neurons and values being the array of spike times for that neuron.</p>
 </section>
 <section id="changing-things-during-a-run">
-<h2><span class="section-number">4.2. </span>Changing things during a run<a class="headerlink" href="#changing-things-during-a-run" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.2. </span>Changing things during a run<a class="headerlink" href="#changing-things-during-a-run" title="Link to this heading">#</a></h2>
 <p>Imagine an experiment where you inject current into a neuron, and change the amplitude randomly every 10 ms. Let’s see if we can model that using a Hodgkin-Huxley type neuron.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -747,7 +749,7 @@ Requirement already satisfied: MarkupSafe&gt;=2.0 in /opt/anaconda3/lib/python3.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/c68eb000b79f0b20b46c60db98bda7fbab0eb7ec0533a88596bff5ca30122c2b.png" src="../../_images/c68eb000b79f0b20b46c60db98bda7fbab0eb7ec0533a88596bff5ca30122c2b.png" />
+<img alt="../../_images/8d1c3d9e62cc22db3bac98a4d244f5244a6c61a695db762b476fa8d811b9c0d6.png" src="../../_images/8d1c3d9e62cc22db3bac98a4d244f5244a6c61a695db762b476fa8d811b9c0d6.png" />
 </div>
 </div>
 <p>In the code above, we used a loop over multiple runs to achieve this. That’s fine, but it’s not the most efficient way to do it because each time we call <code class="docutils literal notranslate"><span class="pre">run</span></code> we have to do a lot of initialisation work that slows everything down. It also won’t work as well with the more efficient standalone mode of Brian. Here’s another way.</p>
@@ -777,7 +779,7 @@ Requirement already satisfied: MarkupSafe&gt;=2.0 in /opt/anaconda3/lib/python3.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/bd84dbe8ee9c88a8e54bef20d1fd410c380bec7a018841b57a4d7c4a09e087e5.png" src="../../_images/bd84dbe8ee9c88a8e54bef20d1fd410c380bec7a018841b57a4d7c4a09e087e5.png" />
+<img alt="../../_images/2cb686b4b1d4001d291f765bcbf63e89acb6b3d9ef3cabadaa96f3078163f390.png" src="../../_images/2cb686b4b1d4001d291f765bcbf63e89acb6b3d9ef3cabadaa96f3078163f390.png" />
 </div>
 </div>
 <p>We’ve replaced the loop that had multiple <code class="docutils literal notranslate"><span class="pre">run</span></code> calls with a <code class="docutils literal notranslate"><span class="pre">run_regularly</span></code>. This makes the specified block of code run every <code class="docutils literal notranslate"><span class="pre">dt=10*ms</span></code>. The <code class="docutils literal notranslate"><span class="pre">run_regularly</span></code> lets you run code specific to a single <code class="docutils literal notranslate"><span class="pre">NeuronGroup</span></code>, but sometimes you might need more flexibility. For this, you can use <code class="docutils literal notranslate"><span class="pre">network_operation</span></code> which lets you run arbitrary Python code (but won’t work with the standalone mode).</p>
@@ -808,7 +810,7 @@ Requirement already satisfied: MarkupSafe&gt;=2.0 in /opt/anaconda3/lib/python3.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/9aaf49f9a1793018a716d5f444ecee895a3f7e4f56f3d60b851b2f119c46705a.png" src="../../_images/9aaf49f9a1793018a716d5f444ecee895a3f7e4f56f3d60b851b2f119c46705a.png" />
+<img alt="../../_images/247a1a783593214536f20cb207f94f86701e79f4695b3fa3195b22ae139df4bd.png" src="../../_images/247a1a783593214536f20cb207f94f86701e79f4695b3fa3195b22ae139df4bd.png" />
 </div>
 </div>
 <p>Now let’s extend this example to run on multiple neurons, each with a different capacitance to see how that affects the behaviour of the cell.</p>
@@ -849,7 +851,7 @@ Requirement already satisfied: MarkupSafe&gt;=2.0 in /opt/anaconda3/lib/python3.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/5ff6de4147a48361b22065e2906dc0491333cd91dd97895af9ba7c3cdd7788fb.png" src="../../_images/5ff6de4147a48361b22065e2906dc0491333cd91dd97895af9ba7c3cdd7788fb.png" />
+<img alt="../../_images/e76c5043722ea107c723be4be8a576d059aaf88ab805a754bdb19dcc89736e1f.png" src="../../_images/e76c5043722ea107c723be4be8a576d059aaf88ab805a754bdb19dcc89736e1f.png" />
 </div>
 </div>
 <p>So that runs, but something looks wrong! The injected currents look like they’re different for all the different neurons! Let’s check:</p>
@@ -862,7 +864,7 @@ Requirement already satisfied: MarkupSafe&gt;=2.0 in /opt/anaconda3/lib/python3.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/d9ac477a7fb740333999611a2b4b6c34fdf633120ddc35eeb6b868512311c86b.png" src="../../_images/d9ac477a7fb740333999611a2b4b6c34fdf633120ddc35eeb6b868512311c86b.png" />
+<img alt="../../_images/27d9e13d0763adf46a4283c2e2f9612feddccca203da082aa59e08723ce69a76.png" src="../../_images/27d9e13d0763adf46a4283c2e2f9612feddccca203da082aa59e08723ce69a76.png" />
 </div>
 </div>
 <p>Sure enough, it’s different each time. But why? We wrote <code class="docutils literal notranslate"><span class="pre">group.run_regularly('I</span> <span class="pre">=</span> <span class="pre">rand()*50*nA',</span> <span class="pre">dt=10*ms)</span></code> which seems like it should give the same value of I for each neuron. But, like threshold and reset statements, <code class="docutils literal notranslate"><span class="pre">run_regularly</span></code> code is interpreted as being run separately for each neuron, and because I is a parameter, it can be different for each neuron. We can fix this by making I into a <em>shared</em> variable, meaning it has the same value for each neuron.</p>
@@ -901,13 +903,13 @@ Requirement already satisfied: MarkupSafe&gt;=2.0 in /opt/anaconda3/lib/python3.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/29683961a103458d2502af9cf1b54a48b9241457bff871d5b4762b4ceda2dd44.png" src="../../_images/29683961a103458d2502af9cf1b54a48b9241457bff871d5b4762b4ceda2dd44.png" />
+<img alt="../../_images/77549147e7eacf6cfb9799ba7291f56b9284893bb9d03b02c462ab53cae59969.png" src="../../_images/77549147e7eacf6cfb9799ba7291f56b9284893bb9d03b02c462ab53cae59969.png" />
 </div>
 </div>
 <p>Ahh, that’s more like it!</p>
 </section>
 <section id="adding-input">
-<h2><span class="section-number">4.3. </span>Adding input<a class="headerlink" href="#adding-input" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.3. </span>Adding input<a class="headerlink" href="#adding-input" title="Link to this heading">#</a></h2>
 <p>Now let’s think about a neuron being driven by a sinusoidal input. Let’s go back to a leaky integrate-and-fire to simplify the equations a bit.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -995,7 +997,7 @@ Requirement already satisfied: MarkupSafe&gt;=2.0 in /opt/anaconda3/lib/python3.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/7562ee4679c77ef10e0b9edc252b3dca7b845887281bce1a2d851bc52845fce4.png" src="../../_images/7562ee4679c77ef10e0b9edc252b3dca7b845887281bce1a2d851bc52845fce4.png" />
+<img alt="../../_images/281a2d46a800f7e090beca0ab1092448062d297e4512ae0016665a3d7d550ddf.png" src="../../_images/281a2d46a800f7e090beca0ab1092448062d297e4512ae0016665a3d7d550ddf.png" />
 </div>
 </div>
 </section>
@@ -1037,7 +1039,7 @@ Requirement already satisfied: MarkupSafe&gt;=2.0 in /opt/anaconda3/lib/python3.
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">3. </span>Introduction to Brian part 2: Synapses</p>
+        <p class="prev-next-title"><span class="section-number">7. </span>Introduction to Brian part 2: Synapses</p>
       </div>
     </a>
     <a class="right-next"
@@ -1065,9 +1067,9 @@ Requirement already satisfied: MarkupSafe&gt;=2.0 in /opt/anaconda3/lib/python3.
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-runs">4.1. Multiple runs</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#changing-things-during-a-run">4.2. Changing things during a run</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-input">4.3. Adding input</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-runs">8.1. Multiple runs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#changing-things-during-a-run">8.2. Changing things during a run</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-input">8.3. Adding input</a></li>
 </ul>
   </nav></div>
 

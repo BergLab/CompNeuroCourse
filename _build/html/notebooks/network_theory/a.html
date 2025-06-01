@@ -201,9 +201,13 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 3. Simulating neural populations with Brian</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../simulation_neuralsystems/neuralsimulation_intro.html">1. Simulating neural populations with Brian</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../simulation_neuralsystems/a.html">2. Introduction to Brian part 1: Neurons</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../simulation_neuralsystems/b.html">3. Introduction to Brian part 2: Synapses</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../simulation_neuralsystems/c.html">4. Introduction to Brian part 3: Simulations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simulation_neuralsystems/rate_based_model.html">2. Firing Rate model</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../simulation_neuralsystems/a.html">6. Introduction to Brian part 1: Neurons</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simulation_neuralsystems/b.html">7. Introduction to Brian part 2: Synapses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simulation_neuralsystems/c.html">8. Introduction to Brian part 3: Simulations</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 4. Data Analysis and Machine Learning</span></p>
 <ul class="nav bd-sidenav">
@@ -644,7 +648,7 @@ Examples of applications of network science are ecosystems, biological pathways,
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/50cd27aad7168d2a196a7f113545faba7cd566f4f9ddc303b3a0ae48715a9734.png" src="../../_images/50cd27aad7168d2a196a7f113545faba7cd566f4f9ddc303b3a0ae48715a9734.png" />
+<img alt="../../_images/487a1bc58f49733dbfaeb50cef5f8deb137367d08c3f9ed14636237d40ec78df.png" src="../../_images/487a1bc58f49733dbfaeb50cef5f8deb137367d08c3f9ed14636237d40ec78df.png" />
 </div>
 </div>
 <p>Instead of adding the nodes and edges one by one we can use a loop. Let’s create a random graph. Notice that since we’re randomly sampling the edges we may get a disjoint graph.</p>
@@ -671,7 +675,7 @@ Examples of applications of network science are ecosystems, biological pathways,
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/5a48096e83910c23a3a8af785715bda7b93ac2963599d51b99f18a6e5a743cf0.png" src="../../_images/5a48096e83910c23a3a8af785715bda7b93ac2963599d51b99f18a6e5a743cf0.png" />
+<img alt="../../_images/222dcc0170756fe282dd27d8f20e58b12ed1e0965913592a649b7a53f61b0b99.png" src="../../_images/222dcc0170756fe282dd27d8f20e58b12ed1e0965913592a649b7a53f61b0b99.png" />
 </div>
 </div>
 <p>We can easily obtain the adjacency matrix representation of the graph:</p>
@@ -683,16 +687,16 @@ Examples of applications of network science are ecosystems, biological pathways,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0. 1. 0. 1. 0. 0. 0. 0. 0. 0.]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1. 1. 0. 1. 0. 1. 0. 0. 0. 0.]
  [1. 0. 0. 1. 0. 0. 0. 0. 0. 0.]
- [0. 0. 1. 1. 0. 1. 1. 1. 1. 1.]
- [1. 1. 1. 0. 0. 0. 0. 0. 1. 0.]
- [0. 0. 0. 0. 0. 1. 0. 0. 0. 1.]
- [0. 0. 1. 0. 1. 0. 0. 1. 0. 0.]
- [0. 0. 1. 0. 0. 0. 0. 1. 0. 0.]
- [0. 0. 1. 0. 0. 1. 1. 0. 1. 0.]
- [0. 0. 1. 1. 0. 0. 0. 1. 0. 0.]
- [0. 0. 1. 0. 1. 0. 0. 0. 0. 0.]]
+ [0. 0. 0. 1. 1. 0. 0. 1. 0. 0.]
+ [1. 1. 1. 0. 0. 0. 1. 0. 0. 0.]
+ [0. 0. 1. 0. 0. 1. 0. 0. 1. 0.]
+ [1. 0. 0. 0. 1. 0. 1. 1. 1. 1.]
+ [0. 0. 0. 1. 0. 1. 0. 0. 0. 0.]
+ [0. 0. 1. 0. 0. 1. 0. 0. 0. 1.]
+ [0. 0. 0. 0. 1. 1. 0. 0. 1. 0.]
+ [0. 0. 0. 0. 0. 1. 0. 1. 0. 0.]]
 </pre></div>
 </div>
 </div>
@@ -717,16 +721,16 @@ Examples of applications of network science are ecosystems, biological pathways,
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/fa749b1fa6e4c92a1fe55d5c515cebebe09fde9848458549cf709dd997dcaab8.png" src="../../_images/fa749b1fa6e4c92a1fe55d5c515cebebe09fde9848458549cf709dd997dcaab8.png" />
+<img alt="../../_images/af56db00aa57c8ee56f09364e893a95cedfa58aa6db12c4572d217e7b82b8a20.png" src="../../_images/af56db00aa57c8ee56f09364e893a95cedfa58aa6db12c4572d217e7b82b8a20.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Adjacency matrix:
 
-[[0 1 1 1 0 1 0]
- [1 1 0 0 1 1 0]
- [1 0 0 0 1 1 1]
- [1 0 1 0 1 0 0]
- [0 1 0 1 0 1 0]
- [0 0 1 0 1 0 1]
- [1 0 1 1 1 0 0]]
+[[0 1 1 0 1 1 1]
+ [1 1 0 1 1 0 0]
+ [0 0 0 1 0 1 0]
+ [1 1 1 0 1 0 0]
+ [1 1 1 0 0 1 1]
+ [1 1 0 0 1 0 1]
+ [0 1 0 0 1 0 0]]
 </pre></div>
 </div>
 </div>
@@ -751,7 +755,7 @@ Examples of applications of network science are ecosystems, biological pathways,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Graph with 10 nodes and 18 edges
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Graph with 10 nodes and 19 edges
 </pre></div>
 </div>
 </div>
@@ -793,7 +797,7 @@ Examples of applications of network science are ecosystems, biological pathways,
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/4f3903f67ae7f886bd984f5de90cb278f5b9f70635700abdf75bfc5f98ba408e.png" src="../../_images/4f3903f67ae7f886bd984f5de90cb278f5b9f70635700abdf75bfc5f98ba408e.png" />
+<img alt="../../_images/a700b3536f2607aff25919f22daad483150e9d0d238c597245a715764b8a2028.png" src="../../_images/a700b3536f2607aff25919f22daad483150e9d0d238c597245a715764b8a2028.png" />
 </div>
 </div>
 <section id="exercises">
@@ -851,27 +855,27 @@ Another quantification of a node centrality is <em>betweenness</em>. <strong>Bet
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(0, 7), (1, 10), (2, 7), (3, 13), (4, 7), (5, 12), (6, 7), (7, 11), (8, 5), (9, 14), (10, 11), (11, 10), (12, 8), (13, 10), (14, 10), (15, 7), (16, 12), (17, 13), (18, 10), (19, 8)]
-Node 0 has degree 7
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(0, 14), (1, 10), (2, 11), (3, 12), (4, 11), (5, 9), (6, 10), (7, 14), (8, 6), (9, 10), (10, 10), (11, 11), (12, 9), (13, 13), (14, 13), (15, 12), (16, 8), (17, 9), (18, 9), (19, 11)]
+Node 0 has degree 14
 Node 1 has degree 10
-Node 2 has degree 7
-Node 3 has degree 13
-Node 4 has degree 7
-Node 5 has degree 12
-Node 6 has degree 7
-Node 7 has degree 11
-Node 8 has degree 5
-Node 9 has degree 14
-Node 10 has degree 11
-Node 11 has degree 10
-Node 12 has degree 8
-Node 13 has degree 10
-Node 14 has degree 10
-Node 15 has degree 7
-Node 16 has degree 12
-Node 17 has degree 13
-Node 18 has degree 10
-Node 19 has degree 8
+Node 2 has degree 11
+Node 3 has degree 12
+Node 4 has degree 11
+Node 5 has degree 9
+Node 6 has degree 10
+Node 7 has degree 14
+Node 8 has degree 6
+Node 9 has degree 10
+Node 10 has degree 10
+Node 11 has degree 11
+Node 12 has degree 9
+Node 13 has degree 13
+Node 14 has degree 13
+Node 15 has degree 12
+Node 16 has degree 8
+Node 17 has degree 9
+Node 18 has degree 9
+Node 19 has degree 11
 </pre></div>
 </div>
 </div>
@@ -890,7 +894,7 @@ Node 19 has degree 8
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/b041848b90c3f300b70a6a2a3505d29c2dd6a6a4a39b15aa4b1f7a651370e27c.png" src="../../_images/b041848b90c3f300b70a6a2a3505d29c2dd6a6a4a39b15aa4b1f7a651370e27c.png" />
+<img alt="../../_images/66c0079e9c2a8659c919fb8551ee86b9a15c4a340240ae154817b5557b7bab1b.png" src="../../_images/66c0079e9c2a8659c919fb8551ee86b9a15c4a340240ae154817b5557b7bab1b.png" />
 </div>
 </div>
 <p>Now that we know the degree of each node we can compute the <strong>degree distribution</strong>:</p>
@@ -909,7 +913,7 @@ Node 19 has degree 8
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/bc0a6bd11831cc9ad8331ad3d08e59b32f73059900187193fad4c1c946fc35ba.png" src="../../_images/bc0a6bd11831cc9ad8331ad3d08e59b32f73059900187193fad4c1c946fc35ba.png" />
+<img alt="../../_images/0866e1bd3011955f96a9904340564a8f97f7c10975d08e2451167e03388dfbff.png" src="../../_images/0866e1bd3011955f96a9904340564a8f97f7c10975d08e2451167e03388dfbff.png" />
 </div>
 </div>
 <p>Let’s also compute the other quantities we have introduced:</p>
@@ -924,11 +928,11 @@ Node 19 has degree 8
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Graph with 20 nodes and 96 edges
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Graph with 20 nodes and 106 edges
 Number of nodes: 20
-Number of edges: 96
+Number of edges: 106
 Network diameter: 2
-Average shortest path: 1.4947368421052631
+Average shortest path: 1.4421052631578948
 </pre></div>
 </div>
 </div>
@@ -984,26 +988,26 @@ Average shortest path: 1.4947368421052631
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{0: 0.43636363636363634,
- 1: 0.4642857142857143,
- 2: 0.4,
- 3: 0.4,
- 4: 0.38461538461538464,
- 5: 0.6190476190476191,
- 6: 0.4722222222222222,
- 7: 0.42857142857142855,
- 8: 0.3611111111111111,
- 9: 0.5357142857142857,
- 10: 0.7333333333333333,
- 11: 0.6,
- 12: 0.4727272727272727,
- 13: 0.32142857142857145,
- 14: 0.3111111111111111,
- 15: 0.7,
- 16: 0.37777777777777777,
- 17: 0.4722222222222222,
- 18: 0.42857142857142855,
- 19: 0.4722222222222222}
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{0: 0.35714285714285715,
+ 1: 0.4166666666666667,
+ 2: 0.4642857142857143,
+ 3: 0.44871794871794873,
+ 4: 0.5238095238095238,
+ 5: 0.5238095238095238,
+ 6: 0.5714285714285714,
+ 7: 0.4444444444444444,
+ 8: 0.5277777777777778,
+ 9: 0.5333333333333333,
+ 10: 0.5238095238095238,
+ 11: 0.5111111111111111,
+ 12: 0.4696969696969697,
+ 13: 0.3333333333333333,
+ 14: 0.42857142857142855,
+ 15: 0.39285714285714285,
+ 16: 0.23809523809523808,
+ 17: 0.39285714285714285,
+ 18: 0.45054945054945056,
+ 19: 0.5833333333333334}
 </pre></div>
 </div>
 </div>
@@ -1017,7 +1021,7 @@ Average shortest path: 1.4947368421052631
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The global CC of the network is 0.469566267066267
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The global CC of the network is 0.4567815517815518
 </pre></div>
 </div>
 </div>
@@ -1075,8 +1079,8 @@ Average shortest path: 1.4947368421052631
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/0a9432510a4c78e31ce2bed033ce5867beb2def900463c18683f040913bc6c2a.png" src="../../_images/0a9432510a4c78e31ce2bed033ce5867beb2def900463c18683f040913bc6c2a.png" />
-<img alt="../../_images/cafe0afab2f076ee69d2c12efead63220b01504e680640c7b8d36025a75c9461.png" src="../../_images/cafe0afab2f076ee69d2c12efead63220b01504e680640c7b8d36025a75c9461.png" />
+<img alt="../../_images/9f4c36ed0bd9624e3e3a39378e0bc0d3366f059c80a97aa808d7dd944ca854c4.png" src="../../_images/9f4c36ed0bd9624e3e3a39378e0bc0d3366f059c80a97aa808d7dd944ca854c4.png" />
+<img alt="../../_images/66d2f6078d309f301f0e1c4df278cc373485ebed1ad01eec4a50f904724a1a3b.png" src="../../_images/66d2f6078d309f301f0e1c4df278cc373485ebed1ad01eec4a50f904724a1a3b.png" />
 </div>
 </div>
 <p>NetowrkX also allows us to generate small-world networks:</p>
@@ -1094,7 +1098,7 @@ Average shortest path: 1.4947368421052631
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/1ec18299d45c5cd8f6a5e9a426b157340d63786aa0d3f20af3c13d783565a30e.png" src="../../_images/1ec18299d45c5cd8f6a5e9a426b157340d63786aa0d3f20af3c13d783565a30e.png" />
+<img alt="../../_images/c0fc8284de3212ea3487465adbe20468bb3e188b4c235a14d24f8ecc7a938447.png" src="../../_images/c0fc8284de3212ea3487465adbe20468bb3e188b4c235a14d24f8ecc7a938447.png" />
 </div>
 </div>
 <p>Bonus: <span class="math notranslate nohighlight">\(\sigma\)</span> and <span class="math notranslate nohighlight">\(\omega\)</span> are two quantities used to charectise small world networks. Let’s compare their values for a random and small world network.</p>
@@ -1110,7 +1114,7 @@ Average shortest path: 1.4947368421052631
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Omega of the network is -0.0998206238635263 and it took 3.8364322185516357 seconds to compute it
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Omega of the network is -0.17813085458999833 and it took 3.7003109455108643 seconds to compute it
 </pre></div>
 </div>
 </div>
@@ -1126,7 +1130,7 @@ Average shortest path: 1.4947368421052631
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sigma of the network is 3.9511282333516786 and it took 35.15842604637146 seconds to compute it
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sigma of the network is 5.030784134761653 and it took 34.88930082321167 seconds to compute it
 </pre></div>
 </div>
 </div>
@@ -1140,7 +1144,7 @@ Average shortest path: 1.4947368421052631
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Omega: -0.17420023014959718, Sigma: 5.774414220307029
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Omega: -0.22434068309554678, Sigma: 5.645446029687274
 </pre></div>
 </div>
 </div>
@@ -1204,11 +1208,11 @@ Average shortest path: 1.4947368421052631
   warn(np.VisibleDeprecationWarning(
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Largest eigenvalue: 1.4282089358836951
-Smallest eigenvalue: 1.0761108579335932e-16
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Largest eigenvalue: 1.4274494662388473
+Smallest eigenvalue: 1.9783539492699705e-16
 </pre></div>
 </div>
-<img alt="../../_images/927ac2cb7408c347ef7aa70f8b75a064e2fa8751b4f34ab0dc1084b487f1ba1c.png" src="../../_images/927ac2cb7408c347ef7aa70f8b75a064e2fa8751b4f34ab0dc1084b487f1ba1c.png" />
+<img alt="../../_images/e54be99b98912036d8d6e5f66ad4d1366a8ad37c411370f65ee611d10488a208.png" src="../../_images/e54be99b98912036d8d6e5f66ad4d1366a8ad37c411370f65ee611d10488a208.png" />
 </div>
 </div>
 </section>
