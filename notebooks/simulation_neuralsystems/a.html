@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>2. Introduction to Brian part 1: Neurons &#8212; Computational Neuroscience</title>
+    <title>6. Introduction to Brian part 1: Neurons &#8212; Computational Neuroscience</title>
   
   
   
@@ -65,8 +65,8 @@
     <link rel="icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="3. Introduction to Brian part 2: Synapses" href="b.html" />
-    <link rel="prev" title="1. Simulating neural populations with Brian" href="neuralsimulation_intro.html" />
+    <link rel="next" title="7. Introduction to Brian part 2: Synapses" href="b.html" />
+    <link rel="prev" title="2. Firing Rate model" href="rate_based_model.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -202,9 +202,13 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 3. Simulating neural populations with Brian</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="neuralsimulation_intro.html">1. Simulating neural populations with Brian</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">2. Introduction to Brian part 1: Neurons</a></li>
-<li class="toctree-l1"><a class="reference internal" href="b.html">3. Introduction to Brian part 2: Synapses</a></li>
-<li class="toctree-l1"><a class="reference internal" href="c.html">4. Introduction to Brian part 3: Simulations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rate_based_model.html">2. Firing Rate model</a></li>
+
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">6. Introduction to Brian part 1: Neurons</a></li>
+<li class="toctree-l1"><a class="reference internal" href="b.html">7. Introduction to Brian part 2: Synapses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="c.html">8. Introduction to Brian part 3: Simulations</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 4. Data Analysis and Machine Learning</span></p>
 <ul class="nav bd-sidenav">
@@ -469,14 +473,14 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#units-system">2.1. Units system</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-simple-model">2.2. A simple model</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-spikes">2.3. Adding spikes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#refractoriness">2.4. Refractoriness</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-neurons">2.5. Multiple neurons</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parameters">2.6. Parameters</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stochastic-neurons">2.7. Stochastic neurons</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">2.8. Exercises</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#units-system">6.1. Units system</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-simple-model">6.2. A simple model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-spikes">6.3. Adding spikes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#refractoriness">6.4. Refractoriness</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-neurons">6.5. Multiple neurons</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parameters">6.6. Parameters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stochastic-neurons">6.7. Stochastic neurons</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">6.8. Exercises</a></li>
 </ul>
             </nav>
         </div>
@@ -489,7 +493,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-brian-part-1-neurons">
-<h1><span class="section-number">2. </span>Introduction to Brian part 1: Neurons<a class="headerlink" href="#introduction-to-brian-part-1-neurons" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">6. </span>Introduction to Brian part 1: Neurons<a class="headerlink" href="#introduction-to-brian-part-1-neurons" title="Link to this heading">#</a></h1>
 <p><em>Credit: The first three notebooks from week3 are part of the <a class="reference external" href="https://brian2.readthedocs.io/en/stable/">Brian2 documentation</a></em> with minor changes.</p>
 <p>All Brian scripts start with the following. If you’re trying this notebook out in the Jupyter notebook, you should start by running this cell.</p>
 <div class="cell tag_hide-output docutils container">
@@ -507,9 +511,7 @@ document.write(`
 </summary>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: brian2 in /opt/anaconda3/lib/python3.11/site-packages (2.6.0)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: numpy&gt;=1.21 in /opt/anaconda3/lib/python3.11/site-packages (from brian2) (1.26.4)
+Requirement already satisfied: numpy&gt;=1.21 in /opt/anaconda3/lib/python3.11/site-packages (from brian2) (1.26.4)
 Requirement already satisfied: cython&gt;=0.29.21 in /opt/anaconda3/lib/python3.11/site-packages (from brian2) (3.0.10)
 Requirement already satisfied: sympy&gt;=1.2 in /opt/anaconda3/lib/python3.11/site-packages (from brian2) (1.14.0)
 Requirement already satisfied: pyparsing in /opt/anaconda3/lib/python3.11/site-packages (from brian2) (3.0.9)
@@ -517,14 +519,16 @@ Requirement already satisfied: jinja2&gt;=2.7 in /opt/anaconda3/lib/python3.11/s
 Requirement already satisfied: setuptools&gt;=61 in /opt/anaconda3/lib/python3.11/site-packages (from brian2) (68.2.2)
 Requirement already satisfied: packaging in /opt/anaconda3/lib/python3.11/site-packages (from brian2) (23.1)
 Requirement already satisfied: MarkupSafe&gt;=2.0 in /opt/anaconda3/lib/python3.11/site-packages (from jinja2&gt;=2.7-&gt;brian2) (2.1.3)
-Requirement already satisfied: mpmath&lt;1.4,&gt;=1.1.0 in /opt/anaconda3/lib/python3.11/site-packages (from sympy&gt;=1.2-&gt;brian2) (1.3.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: mpmath&lt;1.4,&gt;=1.1.0 in /opt/anaconda3/lib/python3.11/site-packages (from sympy&gt;=1.2-&gt;brian2) (1.3.0)
 </pre></div>
 </div>
 </div>
 </details>
 </div>
 <section id="units-system">
-<h2><span class="section-number">2.1. </span>Units system<a class="headerlink" href="#units-system" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.1. </span>Units system<a class="headerlink" href="#units-system" title="Link to this heading">#</a></h2>
 <p>Brian has a system for using quantities with physical dimensions:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -632,7 +636,7 @@ Requirement already satisfied: mpmath&lt;1.4,&gt;=1.1.0 in /opt/anaconda3/lib/py
 <p>If you see a traceback, what you want to do is start at the bottom and scan up the sections until you find your own file because that’s most likely where the problem is. (Of course, your code might be correct and Brian may have a bug in which case, please let us know on the email support list.)</p>
 </section>
 <section id="a-simple-model">
-<h2><span class="section-number">2.2. </span>A simple model<a class="headerlink" href="#a-simple-model" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.2. </span>A simple model<a class="headerlink" href="#a-simple-model" title="Link to this heading">#</a></h2>
 <p>Let’s start by defining a simple neuron model. In Brian, all models are defined by systems of differential equations. Here’s a simple example of what that looks like:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -754,7 +758,7 @@ Note that this is not the unit of the two sides of the equation (which would be 
 </div>
 </section>
 <section id="adding-spikes">
-<h2><span class="section-number">2.3. </span>Adding spikes<a class="headerlink" href="#adding-spikes" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.3. </span>Adding spikes<a class="headerlink" href="#adding-spikes" title="Link to this heading">#</a></h2>
 <p>So far we haven’t done anything neuronal, just played around with differential equations. Now let’s start adding spiking behaviour.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -818,7 +822,7 @@ Note that this is not the unit of the two sides of the equation (which would be 
 <p>Now try changing the strings for <code class="docutils literal notranslate"><span class="pre">threshold</span></code> and <code class="docutils literal notranslate"><span class="pre">reset</span></code> in the cell above to see what happens.</p>
 </section>
 <section id="refractoriness">
-<h2><span class="section-number">2.4. </span>Refractoriness<a class="headerlink" href="#refractoriness" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.4. </span>Refractoriness<a class="headerlink" href="#refractoriness" title="Link to this heading">#</a></h2>
 <p>A common feature of neuron models is refractoriness. This means that after the neuron fires a spike it becomes refractory for a certain duration and cannot fire another spike until this period is over. Here’s how we do that in Brian.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -878,7 +882,7 @@ Note that this is not the unit of the two sides of the equation (which would be 
 <p>Note that you can do more complicated and interesting things with refractoriness. See the full documentation for more details about how it works.</p>
 </section>
 <section id="multiple-neurons">
-<h2><span class="section-number">2.5. </span>Multiple neurons<a class="headerlink" href="#multiple-neurons" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.5. </span>Multiple neurons<a class="headerlink" href="#multiple-neurons" title="Link to this heading">#</a></h2>
 <p>So far we’ve only been working with a single neuron. Let’s do something interesting with multiple neurons.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -909,7 +913,7 @@ Note that this is not the unit of the two sides of the equation (which would be 
 <p>As well as the variable <code class="docutils literal notranslate"><span class="pre">spikemon.t</span></code> with the times of all the spikes, we’ve also used the variable <code class="docutils literal notranslate"><span class="pre">spikemon.i</span></code> which gives the corresponding neuron index for each spike, and plotted a single black dot with time on the x-axis and neuron index on the y-value. This is the standard “raster plot” used in neuroscience.</p>
 </section>
 <section id="parameters">
-<h2><span class="section-number">2.6. </span>Parameters<a class="headerlink" href="#parameters" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.6. </span>Parameters<a class="headerlink" href="#parameters" title="Link to this heading">#</a></h2>
 <p>To make these multiple neurons do something more interesting, let’s introduce per-neuron parameters that don’t have a differential equation attached to them.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -951,7 +955,7 @@ Note that this is not the unit of the two sides of the equation (which would be 
 <p>Note that in the plot we’ve used the <code class="docutils literal notranslate"><span class="pre">count</span></code> variable of the <code class="docutils literal notranslate"><span class="pre">SpikeMonitor</span></code>: this is an array of the number of spikes each neuron in the group fired. Dividing this by the duration of the run gives the firing rate.</p>
 </section>
 <section id="stochastic-neurons">
-<h2><span class="section-number">2.7. </span>Stochastic neurons<a class="headerlink" href="#stochastic-neurons" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.7. </span>Stochastic neurons<a class="headerlink" href="#stochastic-neurons" title="Link to this heading">#</a></h2>
 <p>Often when making models of neurons, we include a random element to model the effect of various forms of neural noise. In Brian, we can do this by using the symbol <code class="docutils literal notranslate"><span class="pre">xi</span></code> in differential equations. Strictly speaking, this symbol is a “stochastic differential” but you can sort of thinking of it as just a Gaussian random variable with mean 0 and standard deviation 1. We do have to take into account the way stochastic differentials scale with time, which is why we multiply it by <code class="docutils literal notranslate"><span class="pre">tau**-0.5</span></code> in the equations below (see a textbook on stochastic differential equations for more details).
 Note that we also changed the <code class="docutils literal notranslate"><span class="pre">method</span></code> keyword argument to use <code class="docutils literal notranslate"><span class="pre">'euler'</span></code> (which stands for the <a class="reference external" href="https://en.wikipedia.org/wiki/Euler%E2%80%93Maruyama_method">Euler-Maruyama method</a>); the <code class="docutils literal notranslate"><span class="pre">'exact'</span></code> method that we used earlier is not applicable to stochastic differential equations.</p>
 <div class="cell docutils container">
@@ -992,7 +996,7 @@ Note that we also changed the <code class="docutils literal notranslate"><span c
 <p>That’s the same figure as in the previous section but with some noise added. Note how the curve has changed shape: instead of a sharp jump from firing at rate 0 to firing at a positive rate, it now increases in a sigmoidal fashion. This is because no matter how small the driving force the randomness may cause it to fire a spike.</p>
 </section>
 <section id="exercises">
-<h2><span class="section-number">2.8. </span>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.8. </span>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
 <p>The cell below has a new simulation example.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1089,12 +1093,12 @@ Note that we also changed the <code class="docutils literal notranslate"><span c
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="neuralsimulation_intro.html"
+       href="rate_based_model.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">1. </span>Simulating neural populations with Brian</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>Firing Rate model</p>
       </div>
     </a>
     <a class="right-next"
@@ -1102,7 +1106,7 @@ Note that we also changed the <code class="docutils literal notranslate"><span c
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">3. </span>Introduction to Brian part 2: Synapses</p>
+        <p class="prev-next-title"><span class="section-number">7. </span>Introduction to Brian part 2: Synapses</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1122,14 +1126,14 @@ Note that we also changed the <code class="docutils literal notranslate"><span c
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#units-system">2.1. Units system</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-simple-model">2.2. A simple model</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-spikes">2.3. Adding spikes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#refractoriness">2.4. Refractoriness</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-neurons">2.5. Multiple neurons</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parameters">2.6. Parameters</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stochastic-neurons">2.7. Stochastic neurons</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">2.8. Exercises</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#units-system">6.1. Units system</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-simple-model">6.2. A simple model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-spikes">6.3. Adding spikes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#refractoriness">6.4. Refractoriness</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-neurons">6.5. Multiple neurons</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parameters">6.6. Parameters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stochastic-neurons">6.7. Stochastic neurons</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">6.8. Exercises</a></li>
 </ul>
   </nav></div>
 
