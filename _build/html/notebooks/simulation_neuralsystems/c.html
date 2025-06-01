@@ -548,7 +548,7 @@ Requirement already satisfied: MarkupSafe&gt;=2.0 in /opt/anaconda3/lib/python3.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/d0821320eff7d81cbc4b47bf911097d15d5eeadd673721155a3fce1174436ee2.png" src="../../_images/d0821320eff7d81cbc4b47bf911097d15d5eeadd673721155a3fce1174436ee2.png" />
+<img alt="../../_images/4a4f6434b9dc3f163c4dfeacb2561a4175c0fa2414feb13182fbc88ad4982694.png" src="../../_images/4a4f6434b9dc3f163c4dfeacb2561a4175c0fa2414feb13182fbc88ad4982694.png" />
 </div>
 </div>
 <p>Now if you’re running the notebook, you’ll see that this was a little slow to run. The reason is that for each loop, you’re recreating the objects from scratch. We can improve that by setting up the network just once. We store a copy of the state of the network before the loop, and restore it at the beginning of each iteration.</p>
@@ -584,7 +584,7 @@ Requirement already satisfied: MarkupSafe&gt;=2.0 in /opt/anaconda3/lib/python3.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/0bf17cf74f6215e15b7d6853dd7de43ecbf8697d6056b0eca2dd73c8ac00ee67.png" src="../../_images/0bf17cf74f6215e15b7d6853dd7de43ecbf8697d6056b0eca2dd73c8ac00ee67.png" />
+<img alt="../../_images/843754c7cd857b22e93fb3eb84c9c39ae283425b1d62a70ff31f46856e51285d.png" src="../../_images/843754c7cd857b22e93fb3eb84c9c39ae283425b1d62a70ff31f46856e51285d.png" />
 </div>
 </div>
 <p>That’s a very simple example of using store and restore, but you can use it in much more complicated situations. For example, you might want to run a long training run, and then run multiple test runs afterwards. Simply put a store after the long training run, and a restore before each testing run.</p>
@@ -633,7 +633,7 @@ Requirement already satisfied: MarkupSafe&gt;=2.0 in /opt/anaconda3/lib/python3.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/12d794ea6327bc7603da54ef3cea62830d1543c9bcef0b90aaf97ac9398ba592.png" src="../../_images/12d794ea6327bc7603da54ef3cea62830d1543c9bcef0b90aaf97ac9398ba592.png" />
+<img alt="../../_images/bf510e2139253ffbbe9f5fa39b87a067ca4a765e01b1901bdc1a7343acacae31.png" src="../../_images/bf510e2139253ffbbe9f5fa39b87a067ca4a765e01b1901bdc1a7343acacae31.png" />
 </div>
 </div>
 <p>You can see that now there is much less noise and it increases monotonically because the input spikes are the same each time, meaning we’re seeing the effect of the time constant, not the random spikes.</p>
@@ -672,7 +672,7 @@ Requirement already satisfied: MarkupSafe&gt;=2.0 in /opt/anaconda3/lib/python3.
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING    &#39;tau&#39; is an internal variable of group &#39;neurongroup_2&#39;, but also exists in the run namespace with the value 10. * msecond. The internal variable will be used. [brian2.groups.group.Group.resolve.resolution_conflict]
 </pre></div>
 </div>
-<img alt="../../_images/deb136d8ff18d205d168ede30e37fdf308b92e267525e44396830762186f52ab.png" src="../../_images/deb136d8ff18d205d168ede30e37fdf308b92e267525e44396830762186f52ab.png" />
+<img alt="../../_images/f9c731af218e6c89ac0f0324eda8458b6dc5b363025f8ff01febb44a96c18af3.png" src="../../_images/f9c731af218e6c89ac0f0324eda8458b6dc5b363025f8ff01febb44a96c18af3.png" />
 </div>
 </div>
 <p>You can see that this is much faster again! It’s a little bit more complicated conceptually, and it’s not always possible to do this trick, but it can be much more efficient if it’s possible.</p>
@@ -694,7 +694,7 @@ Requirement already satisfied: MarkupSafe&gt;=2.0 in /opt/anaconda3/lib/python3.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/9344ebab16cf776551f64cb1eede3bb09af47b066bb0e952b5dc5194b3cb1efd.png" src="../../_images/9344ebab16cf776551f64cb1eede3bb09af47b066bb0e952b5dc5194b3cb1efd.png" />
+<img alt="../../_images/09851278fb76ea24f4a3eb586232ffb3f2a103392eed383cdaaba2e33ba85fb0.png" src="../../_images/09851278fb76ea24f4a3eb586232ffb3f2a103392eed383cdaaba2e33ba85fb0.png" />
 </div>
 </div>
 <p>Notice that we used the <code class="docutils literal notranslate"><span class="pre">spike_trains()</span></code> method of <code class="docutils literal notranslate"><span class="pre">SpikeMonitor</span></code>. This is a dictionary with keys being the indices of the neurons and values being the array of spike times for that neuron.</p>
@@ -747,7 +747,7 @@ Requirement already satisfied: MarkupSafe&gt;=2.0 in /opt/anaconda3/lib/python3.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/944cac9e30bc8391c033eeee84fe5fb18d7fe1d610d7a8f515b22b3c319d7b82.png" src="../../_images/944cac9e30bc8391c033eeee84fe5fb18d7fe1d610d7a8f515b22b3c319d7b82.png" />
+<img alt="../../_images/c68eb000b79f0b20b46c60db98bda7fbab0eb7ec0533a88596bff5ca30122c2b.png" src="../../_images/c68eb000b79f0b20b46c60db98bda7fbab0eb7ec0533a88596bff5ca30122c2b.png" />
 </div>
 </div>
 <p>In the code above, we used a loop over multiple runs to achieve this. That’s fine, but it’s not the most efficient way to do it because each time we call <code class="docutils literal notranslate"><span class="pre">run</span></code> we have to do a lot of initialisation work that slows everything down. It also won’t work as well with the more efficient standalone mode of Brian. Here’s another way.</p>
@@ -777,7 +777,7 @@ Requirement already satisfied: MarkupSafe&gt;=2.0 in /opt/anaconda3/lib/python3.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/4a4b16f6808474a9a4e7174de33895bf513780fd4fcd531b9e1cf75a1640b590.png" src="../../_images/4a4b16f6808474a9a4e7174de33895bf513780fd4fcd531b9e1cf75a1640b590.png" />
+<img alt="../../_images/bd84dbe8ee9c88a8e54bef20d1fd410c380bec7a018841b57a4d7c4a09e087e5.png" src="../../_images/bd84dbe8ee9c88a8e54bef20d1fd410c380bec7a018841b57a4d7c4a09e087e5.png" />
 </div>
 </div>
 <p>We’ve replaced the loop that had multiple <code class="docutils literal notranslate"><span class="pre">run</span></code> calls with a <code class="docutils literal notranslate"><span class="pre">run_regularly</span></code>. This makes the specified block of code run every <code class="docutils literal notranslate"><span class="pre">dt=10*ms</span></code>. The <code class="docutils literal notranslate"><span class="pre">run_regularly</span></code> lets you run code specific to a single <code class="docutils literal notranslate"><span class="pre">NeuronGroup</span></code>, but sometimes you might need more flexibility. For this, you can use <code class="docutils literal notranslate"><span class="pre">network_operation</span></code> which lets you run arbitrary Python code (but won’t work with the standalone mode).</p>
@@ -808,7 +808,7 @@ Requirement already satisfied: MarkupSafe&gt;=2.0 in /opt/anaconda3/lib/python3.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/eb50d0e56f9142cc0f3c2cccaa847a38f11e29a44a0f1fc6fc4dbc242da27feb.png" src="../../_images/eb50d0e56f9142cc0f3c2cccaa847a38f11e29a44a0f1fc6fc4dbc242da27feb.png" />
+<img alt="../../_images/9aaf49f9a1793018a716d5f444ecee895a3f7e4f56f3d60b851b2f119c46705a.png" src="../../_images/9aaf49f9a1793018a716d5f444ecee895a3f7e4f56f3d60b851b2f119c46705a.png" />
 </div>
 </div>
 <p>Now let’s extend this example to run on multiple neurons, each with a different capacitance to see how that affects the behaviour of the cell.</p>
@@ -849,7 +849,7 @@ Requirement already satisfied: MarkupSafe&gt;=2.0 in /opt/anaconda3/lib/python3.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/0cdbb7d48e9000c03b7b58347b2ba5a22da3ec757c270d421dc2f6f7c4fd8971.png" src="../../_images/0cdbb7d48e9000c03b7b58347b2ba5a22da3ec757c270d421dc2f6f7c4fd8971.png" />
+<img alt="../../_images/5ff6de4147a48361b22065e2906dc0491333cd91dd97895af9ba7c3cdd7788fb.png" src="../../_images/5ff6de4147a48361b22065e2906dc0491333cd91dd97895af9ba7c3cdd7788fb.png" />
 </div>
 </div>
 <p>So that runs, but something looks wrong! The injected currents look like they’re different for all the different neurons! Let’s check:</p>
@@ -862,7 +862,7 @@ Requirement already satisfied: MarkupSafe&gt;=2.0 in /opt/anaconda3/lib/python3.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/b84c6a0b0c1e9e110ba8bc897633a1e225e108acc2da010f1689f5b6d94193e2.png" src="../../_images/b84c6a0b0c1e9e110ba8bc897633a1e225e108acc2da010f1689f5b6d94193e2.png" />
+<img alt="../../_images/d9ac477a7fb740333999611a2b4b6c34fdf633120ddc35eeb6b868512311c86b.png" src="../../_images/d9ac477a7fb740333999611a2b4b6c34fdf633120ddc35eeb6b868512311c86b.png" />
 </div>
 </div>
 <p>Sure enough, it’s different each time. But why? We wrote <code class="docutils literal notranslate"><span class="pre">group.run_regularly('I</span> <span class="pre">=</span> <span class="pre">rand()*50*nA',</span> <span class="pre">dt=10*ms)</span></code> which seems like it should give the same value of I for each neuron. But, like threshold and reset statements, <code class="docutils literal notranslate"><span class="pre">run_regularly</span></code> code is interpreted as being run separately for each neuron, and because I is a parameter, it can be different for each neuron. We can fix this by making I into a <em>shared</em> variable, meaning it has the same value for each neuron.</p>
@@ -901,7 +901,7 @@ Requirement already satisfied: MarkupSafe&gt;=2.0 in /opt/anaconda3/lib/python3.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/ac154825b9b14c6bf2f34e8d1e6e543a01f8f3143208af3cfb550b7498f746f8.png" src="../../_images/ac154825b9b14c6bf2f34e8d1e6e543a01f8f3143208af3cfb550b7498f746f8.png" />
+<img alt="../../_images/29683961a103458d2502af9cf1b54a48b9241457bff871d5b4762b4ceda2dd44.png" src="../../_images/29683961a103458d2502af9cf1b54a48b9241457bff871d5b4762b4ceda2dd44.png" />
 </div>
 </div>
 <p>Ahh, that’s more like it!</p>
@@ -995,7 +995,7 @@ Requirement already satisfied: MarkupSafe&gt;=2.0 in /opt/anaconda3/lib/python3.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/b4ebadd9b64dbd0814c9f2f715e036b7cc84e78370479aa1427504d1877b206a.png" src="../../_images/b4ebadd9b64dbd0814c9f2f715e036b7cc84e78370479aa1427504d1877b206a.png" />
+<img alt="../../_images/7562ee4679c77ef10e0b9edc252b3dca7b845887281bce1a2d851bc52845fce4.png" src="../../_images/7562ee4679c77ef10e0b9edc252b3dca7b845887281bce1a2d851bc52845fce4.png" />
 </div>
 </div>
 </section>

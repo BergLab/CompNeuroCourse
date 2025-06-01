@@ -31,6 +31,7 @@ parts:
   numbered: true
   chapters:
   - file: notebooks/simulation_neuralsystems/neuralsimulation_intro
+  - file: notebooks/simulation_neuralsystems/rate_based_model
   - file: notebooks/simulation_neuralsystems/a
   - file: notebooks/simulation_neuralsystems/b
   - file: notebooks/simulation_neuralsystems/c
