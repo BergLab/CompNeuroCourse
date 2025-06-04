@@ -4,6 +4,7 @@
 
 format: jb-book
 root: intro
+
 parts:
 # - caption: Coding tools for researchers 
 #   numbered: false
@@ -40,7 +41,7 @@ parts:
   chapters:
   - file: notebooks/ML_joao/ch01_expanded
   - file: notebooks/ML_joao/ch02_expanded
-#  - file: notebooks/ML_joao/ch03_expanded
+  - file: notebooks/ML_joao/ch03_expanded
 ##
 #  - file: notebooks/ML/b
 #  - file: notebooks/ML/CompNeuro_Basic_ML_Exercises.ipynb

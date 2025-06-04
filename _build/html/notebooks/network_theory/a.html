@@ -14,22 +14,22 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
@@ -38,16 +38,16 @@
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=9f7f7efb" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
-  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../_static/copybutton.js?v=f281be69"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -65,7 +65,7 @@
     <link rel="icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="prev" title="6. Training Simple Machine Learning Algorithms for Classification" href="../ML_joao/ch02_expanded.html" />
+    <link rel="prev" title="15. A Tour of Machine Learning Classifiers and Dimensionality Reduction" href="../ML_joao/ch03_expanded.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -75,27 +75,23 @@
 
   
   
-  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -117,8 +113,13 @@
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
     </header>
   
 
@@ -142,6 +143,8 @@
         <div class="sidebar-primary-item">
 
   
+    
+  
 
 <a class="navbar-brand logo" href="../../intro.html">
   
@@ -163,7 +166,7 @@
 
  <script>
  document.write(`
-   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass"></i>
     <span class="search-button__default-text">Search</span>
     <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
@@ -205,9 +208,13 @@
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="../simulation_neuralsystems/a.html">6. Introduction to Brian part 1: Neurons</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../simulation_neuralsystems/b.html">7. Introduction to Brian part 2: Synapses</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../simulation_neuralsystems/c.html">8. Introduction to Brian part 3: Simulations</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../simulation_neuralsystems/a.html">10. Introduction to Brian part 1: Neurons</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simulation_neuralsystems/b.html">11. Introduction to Brian part 2: Synapses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simulation_neuralsystems/c.html">12. Introduction to Brian part 3: Simulations</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 4. Data Analysis and Machine Learning</span></p>
 <ul class="nav bd-sidenav">
@@ -217,6 +224,16 @@
 
 
 <li class="toctree-l1"><a class="reference internal" href="../ML_joao/ch02_expanded.html">6. Training Simple Machine Learning Algorithms for Classification</a></li>
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../ML_joao/ch03_expanded.html">15. A Tour of Machine Learning Classifiers and Dimensionality Reduction</a></li>
+
 
 
 
@@ -244,7 +261,7 @@
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -253,14 +270,14 @@
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -285,14 +302,14 @@
       
       <li><a href="https://colab.research.google.com/github/BergLab/CompNeuroBook/blob/main/notebooks/network_theory/a.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onColab"
+   title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../../_static/images/logo_colab.png">
+    <img alt="Colab logo" src="../../_static/images/logo_colab.png">
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -433,10 +450,10 @@
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
@@ -444,14 +461,14 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -648,7 +665,7 @@ Examples of applications of network science are ecosystems, biological pathways,
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/487a1bc58f49733dbfaeb50cef5f8deb137367d08c3f9ed14636237d40ec78df.png" src="../../_images/487a1bc58f49733dbfaeb50cef5f8deb137367d08c3f9ed14636237d40ec78df.png" />
+<img alt="../../_images/90fd3fa812a42b4843193737658930c1c5e4cfda48c9cdad6f131795019e64cb.png" src="../../_images/90fd3fa812a42b4843193737658930c1c5e4cfda48c9cdad6f131795019e64cb.png" />
 </div>
 </div>
 <p>Instead of adding the nodes and edges one by one we can use a loop. Let’s create a random graph. Notice that since we’re randomly sampling the edges we may get a disjoint graph.</p>
@@ -675,7 +692,7 @@ Examples of applications of network science are ecosystems, biological pathways,
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/222dcc0170756fe282dd27d8f20e58b12ed1e0965913592a649b7a53f61b0b99.png" src="../../_images/222dcc0170756fe282dd27d8f20e58b12ed1e0965913592a649b7a53f61b0b99.png" />
+<img alt="../../_images/e348057feb001dcacac6bd3dd875c0f9227eca0df52c12ce53031031b2b922f5.png" src="../../_images/e348057feb001dcacac6bd3dd875c0f9227eca0df52c12ce53031031b2b922f5.png" />
 </div>
 </div>
 <p>We can easily obtain the adjacency matrix representation of the graph:</p>
@@ -687,16 +704,16 @@ Examples of applications of network science are ecosystems, biological pathways,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1. 1. 0. 1. 0. 1. 0. 0. 0. 0.]
- [1. 0. 0. 1. 0. 0. 0. 0. 0. 0.]
- [0. 0. 0. 1. 1. 0. 0. 1. 0. 0.]
- [1. 1. 1. 0. 0. 0. 1. 0. 0. 0.]
- [0. 0. 1. 0. 0. 1. 0. 0. 1. 0.]
- [1. 0. 0. 0. 1. 0. 1. 1. 1. 1.]
- [0. 0. 0. 1. 0. 1. 0. 0. 0. 0.]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0. 1. 0. 0. 1. 1. 0. 0. 0. 1.]
+ [1. 0. 1. 0. 0. 1. 0. 0. 0. 1.]
+ [0. 1. 1. 0. 0. 0. 1. 1. 0. 0.]
+ [0. 0. 0. 0. 1. 1. 0. 0. 0. 0.]
+ [1. 0. 0. 1. 0. 0. 0. 1. 1. 0.]
+ [1. 1. 0. 1. 0. 0. 1. 0. 1. 0.]
  [0. 0. 1. 0. 0. 1. 0. 0. 0. 1.]
- [0. 0. 0. 0. 1. 1. 0. 0. 1. 0.]
- [0. 0. 0. 0. 0. 1. 0. 1. 0. 0.]]
+ [0. 0. 1. 0. 1. 0. 0. 0. 1. 0.]
+ [0. 0. 0. 0. 1. 1. 0. 1. 0. 0.]
+ [1. 1. 0. 0. 0. 0. 1. 0. 0. 0.]]
 </pre></div>
 </div>
 </div>
@@ -721,16 +738,16 @@ Examples of applications of network science are ecosystems, biological pathways,
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/af56db00aa57c8ee56f09364e893a95cedfa58aa6db12c4572d217e7b82b8a20.png" src="../../_images/af56db00aa57c8ee56f09364e893a95cedfa58aa6db12c4572d217e7b82b8a20.png" />
+<img alt="../../_images/08d795279bd08ef78428104c903e2abcfec951d0c13a46c04007f3eb4afa6456.png" src="../../_images/08d795279bd08ef78428104c903e2abcfec951d0c13a46c04007f3eb4afa6456.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Adjacency matrix:
 
-[[0 1 1 0 1 1 1]
- [1 1 0 1 1 0 0]
- [0 0 0 1 0 1 0]
- [1 1 1 0 1 0 0]
+[[0 0 0 1 0 0 0]
+ [1 0 1 1 1 0 1]
+ [1 1 0 1 0 0 1]
+ [1 0 1 1 0 0 0]
  [1 1 1 0 0 1 1]
- [1 1 0 0 1 0 1]
- [0 1 0 0 1 0 0]]
+ [1 1 0 0 0 1 0]
+ [0 1 1 0 0 0 1]]
 </pre></div>
 </div>
 </div>
@@ -755,7 +772,7 @@ Examples of applications of network science are ecosystems, biological pathways,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Graph with 10 nodes and 19 edges
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Graph with 10 nodes and 20 edges
 </pre></div>
 </div>
 </div>
@@ -797,7 +814,7 @@ Examples of applications of network science are ecosystems, biological pathways,
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/a700b3536f2607aff25919f22daad483150e9d0d238c597245a715764b8a2028.png" src="../../_images/a700b3536f2607aff25919f22daad483150e9d0d238c597245a715764b8a2028.png" />
+<img alt="../../_images/b6a8085189cb65ddf962f1bfa9f8a79461004a8ac3add4d734dfb92b1eaae894.png" src="../../_images/b6a8085189cb65ddf962f1bfa9f8a79461004a8ac3add4d734dfb92b1eaae894.png" />
 </div>
 </div>
 <section id="exercises">
@@ -855,27 +872,27 @@ Another quantification of a node centrality is <em>betweenness</em>. <strong>Bet
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(0, 14), (1, 10), (2, 11), (3, 12), (4, 11), (5, 9), (6, 10), (7, 14), (8, 6), (9, 10), (10, 10), (11, 11), (12, 9), (13, 13), (14, 13), (15, 12), (16, 8), (17, 9), (18, 9), (19, 11)]
-Node 0 has degree 14
-Node 1 has degree 10
-Node 2 has degree 11
-Node 3 has degree 12
-Node 4 has degree 11
-Node 5 has degree 9
-Node 6 has degree 10
-Node 7 has degree 14
-Node 8 has degree 6
-Node 9 has degree 10
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(0, 10), (1, 9), (2, 12), (3, 11), (4, 12), (5, 7), (6, 12), (7, 9), (8, 7), (9, 9), (10, 10), (11, 8), (12, 9), (13, 10), (14, 8), (15, 13), (16, 11), (17, 14), (18, 12), (19, 9)]
+Node 0 has degree 10
+Node 1 has degree 9
+Node 2 has degree 12
+Node 3 has degree 11
+Node 4 has degree 12
+Node 5 has degree 7
+Node 6 has degree 12
+Node 7 has degree 9
+Node 8 has degree 7
+Node 9 has degree 9
 Node 10 has degree 10
-Node 11 has degree 11
+Node 11 has degree 8
 Node 12 has degree 9
-Node 13 has degree 13
-Node 14 has degree 13
-Node 15 has degree 12
-Node 16 has degree 8
-Node 17 has degree 9
-Node 18 has degree 9
-Node 19 has degree 11
+Node 13 has degree 10
+Node 14 has degree 8
+Node 15 has degree 13
+Node 16 has degree 11
+Node 17 has degree 14
+Node 18 has degree 12
+Node 19 has degree 9
 </pre></div>
 </div>
 </div>
@@ -894,7 +911,7 @@ Node 19 has degree 11
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/66c0079e9c2a8659c919fb8551ee86b9a15c4a340240ae154817b5557b7bab1b.png" src="../../_images/66c0079e9c2a8659c919fb8551ee86b9a15c4a340240ae154817b5557b7bab1b.png" />
+<img alt="../../_images/37b093dcb51d248b748ff44d3bde0f6c553cef376b96ef41a05f147d210f4729.png" src="../../_images/37b093dcb51d248b748ff44d3bde0f6c553cef376b96ef41a05f147d210f4729.png" />
 </div>
 </div>
 <p>Now that we know the degree of each node we can compute the <strong>degree distribution</strong>:</p>
@@ -913,7 +930,7 @@ Node 19 has degree 11
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/0866e1bd3011955f96a9904340564a8f97f7c10975d08e2451167e03388dfbff.png" src="../../_images/0866e1bd3011955f96a9904340564a8f97f7c10975d08e2451167e03388dfbff.png" />
+<img alt="../../_images/28699f2d14e44754d45efee5b458358c4c36b106d9f63d43928ab66de8ab531b.png" src="../../_images/28699f2d14e44754d45efee5b458358c4c36b106d9f63d43928ab66de8ab531b.png" />
 </div>
 </div>
 <p>Let’s also compute the other quantities we have introduced:</p>
@@ -928,11 +945,11 @@ Node 19 has degree 11
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Graph with 20 nodes and 106 edges
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Graph with 20 nodes and 101 edges
 Number of nodes: 20
-Number of edges: 106
+Number of edges: 101
 Network diameter: 2
-Average shortest path: 1.4421052631578948
+Average shortest path: 1.4684210526315788
 </pre></div>
 </div>
 </div>
@@ -950,7 +967,7 @@ Average shortest path: 1.4421052631578948
 <h3><span class="section-number">1.4.4. </span>Clustering coefficient<a class="headerlink" href="#clustering-coefficient" title="Link to this heading">#</a></h3>
 <p>The clustering coefficient (CC) —or cliquishness— of node represents the fraction of interconnections between neighbors of node i. It’s a measure of how much nodes in the network tend to cluster together. Eg. In a social graph it measures the proportion of your friends that are also friends with each other. The global CC of network is simply the average of the CC of all the nodes.</p>
 <div align="center">
-<p style="text-align:center;"><img src="https://github.com/BergLab/CompNeuroCourse/blob/main/notebooks/network_theory/media/cc.png?raw=True" width="500"/>
+<p style="text-align:center;"><img src="media/cc.png" width="500"/>
 <!-- <p style="text-align:center;"><img src="../network_theory/media/cc.png" width="500"/> -->
 </div>
 <p>A large clustering coefficient (CC) indicates large locality in the sense that neighbors of a given node tend to be directly connected while if a node has low CC it means that its neighbors aren’t connected to each other, eg. high CC is a society where nearly everybody has common friends while low CC: people have friends but these friends don’t tend to know each other.</p>
@@ -974,7 +991,7 @@ Average shortest path: 1.4421052631578948
 <h3><span class="section-number">1.4.6. </span>Motifs and motifs analysis<a class="headerlink" href="#motifs-and-motifs-analysis" title="Link to this heading">#</a></h3>
 <p>Motifs are sub-graphs present in a network that are responsible for the functions of a network. Some motifs —like positive and negative feedback— are found across networks describing many phenomena. However, much more complex motifs exist. When networks are small we can try to understand the motifs present, however, when network are too big to be understood directly, we can do a <strong>motif network analysis</strong>: we create a set of random networks and compare the distribution of motifs present  in the real network vs the random ones.</p>
 <div align="center">
-<p style="text-align:center;"><img src="https://github.com/BergLab/CompNeuroCourse/blob/main/notebooks/network_theory/media/motifs.png?raw=True" width="500"/>
+<p style="text-align:center;"><img src="media/motifs.png" width="500"/>
 </div><p>We can easily compute the clustering coefficient of a graph with NetworkX:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -988,26 +1005,26 @@ Average shortest path: 1.4421052631578948
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{0: 0.35714285714285715,
- 1: 0.4166666666666667,
- 2: 0.4642857142857143,
- 3: 0.44871794871794873,
- 4: 0.5238095238095238,
- 5: 0.5238095238095238,
- 6: 0.5714285714285714,
- 7: 0.4444444444444444,
- 8: 0.5277777777777778,
- 9: 0.5333333333333333,
- 10: 0.5238095238095238,
- 11: 0.5111111111111111,
- 12: 0.4696969696969697,
- 13: 0.3333333333333333,
- 14: 0.42857142857142855,
- 15: 0.39285714285714285,
- 16: 0.23809523809523808,
- 17: 0.39285714285714285,
- 18: 0.45054945054945056,
- 19: 0.5833333333333334}
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{0: 0.5641025641025641,
+ 1: 0.6944444444444444,
+ 2: 0.5512820512820513,
+ 3: 0.5277777777777778,
+ 4: 0.5818181818181818,
+ 5: 0.4909090909090909,
+ 6: 0.5333333333333333,
+ 7: 0.47619047619047616,
+ 8: 0.45454545454545453,
+ 9: 0.5277777777777778,
+ 10: 0.5833333333333334,
+ 11: 0.6666666666666666,
+ 12: 0.2857142857142857,
+ 13: 0.5714285714285714,
+ 14: 0.5555555555555556,
+ 15: 0.6190476190476191,
+ 16: 0.5333333333333333,
+ 17: 0.42857142857142855,
+ 18: 0.6071428571428571,
+ 19: 0.3888888888888889}
 </pre></div>
 </div>
 </div>
@@ -1021,7 +1038,7 @@ Average shortest path: 1.4421052631578948
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The global CC of the network is 0.4567815517815518
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The global CC of the network is 0.5320931845931847
 </pre></div>
 </div>
 </div>
@@ -1037,7 +1054,7 @@ Average shortest path: 1.4421052631578948
 <h3><span class="section-number">1.4.7. </span>Scale free networks<a class="headerlink" href="#scale-free-networks" title="Link to this heading">#</a></h3>
 <p>Intuitively, a network is said to be scale-free if we zoom it to a subpart of the network it will look the same as if we zoom out. We can formalize this intuition by noting that the degree distribution <span class="math notranslate nohighlight">\(P(k)\)</span> of a scale-free network follows a power law: <span class="math notranslate nohighlight">\(P(k) \propto k^{-\gamma}\)</span>, where typically <span class="math notranslate nohighlight">\(\gamma \in [2,3]\)</span> . That is, we compute the dree of each node, create an histogram and look at the resulting distribution it will be thick-tailed (ie. decays slower than exponential).</p>
 <div align="center">
-<p style="text-align:center;"><img src="https://github.com/BergLab/CompNeuroCourse/blob/main/notebooks/network_theory/media/scale-free.png?raw=True" width="500"/>
+<p style="text-align:center;"><img src="media/scale-free.png" width="500"/>
 </div></section>
 <section id="small-world-networks">
 <h3><span class="section-number">1.4.8. </span>Small-world networks<a class="headerlink" href="#small-world-networks" title="Link to this heading">#</a></h3>
@@ -1079,8 +1096,8 @@ Average shortest path: 1.4421052631578948
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/9f4c36ed0bd9624e3e3a39378e0bc0d3366f059c80a97aa808d7dd944ca854c4.png" src="../../_images/9f4c36ed0bd9624e3e3a39378e0bc0d3366f059c80a97aa808d7dd944ca854c4.png" />
-<img alt="../../_images/66d2f6078d309f301f0e1c4df278cc373485ebed1ad01eec4a50f904724a1a3b.png" src="../../_images/66d2f6078d309f301f0e1c4df278cc373485ebed1ad01eec4a50f904724a1a3b.png" />
+<img alt="../../_images/53323f0b68666aa4ad7c747c2a0d996f2aa2bc1cce2b4683158c0d5f65a4d6f7.png" src="../../_images/53323f0b68666aa4ad7c747c2a0d996f2aa2bc1cce2b4683158c0d5f65a4d6f7.png" />
+<img alt="../../_images/183835f6054d4e4c34d35cb7f4c53318561d93c239ed4eb89eb940a8d4bf3dc4.png" src="../../_images/183835f6054d4e4c34d35cb7f4c53318561d93c239ed4eb89eb940a8d4bf3dc4.png" />
 </div>
 </div>
 <p>NetowrkX also allows us to generate small-world networks:</p>
@@ -1098,7 +1115,7 @@ Average shortest path: 1.4421052631578948
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/c0fc8284de3212ea3487465adbe20468bb3e188b4c235a14d24f8ecc7a938447.png" src="../../_images/c0fc8284de3212ea3487465adbe20468bb3e188b4c235a14d24f8ecc7a938447.png" />
+<img alt="../../_images/06c83a0c9f31089e2ed946768dfc8a38a6e10bde6f39425a97b325fad10e49e3.png" src="../../_images/06c83a0c9f31089e2ed946768dfc8a38a6e10bde6f39425a97b325fad10e49e3.png" />
 </div>
 </div>
 <p>Bonus: <span class="math notranslate nohighlight">\(\sigma\)</span> and <span class="math notranslate nohighlight">\(\omega\)</span> are two quantities used to charectise small world networks. Let’s compare their values for a random and small world network.</p>
@@ -1114,7 +1131,7 @@ Average shortest path: 1.4421052631578948
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Omega of the network is -0.17813085458999833 and it took 3.7003109455108643 seconds to compute it
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Omega of the network is -0.21036059366683946 and it took 10.056773662567139 seconds to compute it
 </pre></div>
 </div>
 </div>
@@ -1130,7 +1147,7 @@ Average shortest path: 1.4421052631578948
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sigma of the network is 5.030784134761653 and it took 34.88930082321167 seconds to compute it
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sigma of the network is 5.452027845036319 and it took 68.65710616111755 seconds to compute it
 </pre></div>
 </div>
 </div>
@@ -1144,7 +1161,7 @@ Average shortest path: 1.4421052631578948
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Omega: -0.22434068309554678, Sigma: 5.645446029687274
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Omega: -0.21464580617122997, Sigma: 7.38797023563456
 </pre></div>
 </div>
 </div>
@@ -1204,15 +1221,18 @@ Average shortest path: 1.4421052631578948
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/anaconda3/lib/python3.11/site-packages/scipy/sparse/_base.py:719: VisibleDeprecationWarning: `.A` is deprecated and will be removed in v1.13.0. Use `.toarray()` instead.
-  warn(np.VisibleDeprecationWarning(
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">22</span><span class="p">],</span> <span class="n">line</span> <span class="mi">8</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">gnm_random_graph</span><span class="p">(</span><span class="n">networkSize</span><span class="p">,</span> <span class="n">numberOfEdges</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">L</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">normalized_laplacian_matrix</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">8</span> <span class="n">e</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eigvals</span><span class="p">(</span><span class="n">L</span><span class="o">.</span><span class="n">A</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Largest eigenvalue:&quot;</span><span class="p">,</span> <span class="nb">max</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Smallest eigenvalue:&quot;</span><span class="p">,</span> <span class="nb">min</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+
+<span class="ne">AttributeError</span>: &#39;csr_array&#39; object has no attribute &#39;A&#39;
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Largest eigenvalue: 1.4274494662388473
-Smallest eigenvalue: 1.9783539492699705e-16
-</pre></div>
-</div>
-<img alt="../../_images/e54be99b98912036d8d6e5f66ad4d1366a8ad37c411370f65ee611d10488a208.png" src="../../_images/e54be99b98912036d8d6e5f66ad4d1366a8ad37c411370f65ee611d10488a208.png" />
 </div>
 </div>
 </section>
@@ -1232,7 +1252,7 @@ Smallest eigenvalue: 1.9783539492699705e-16
         },
         kernelOptions: {
             name: "python3",
-            path: "./notebooks/network_theory"
+            path: "./notebooks\network_theory"
         },
         predefinedOutput: true
     }
@@ -1246,16 +1266,16 @@ Smallest eigenvalue: 1.9783539492699705e-16
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../ML_joao/ch02_expanded.html"
+       href="../ML_joao/ch03_expanded.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">6. </span>Training Simple Machine Learning Algorithms for Classification</p>
+        <p class="prev-next-title"><span class="section-number">15. </span>A Tour of Machine Learning Classifiers and Dimensionality Reduction</p>
       </div>
     </a>
 </div>
@@ -1364,8 +1384,8 @@ By Elias Najarro & Rune Berg
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

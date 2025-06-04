@@ -8,28 +8,28 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>6. Introduction to Brian part 1: Neurons &#8212; Computational Neuroscience</title>
+    <title>10. Introduction to Brian part 1: Neurons &#8212; Computational Neuroscience</title>
   
   
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
@@ -38,16 +38,16 @@
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=9f7f7efb" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
-  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../_static/copybutton.js?v=f281be69"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -65,7 +65,7 @@
     <link rel="icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="7. Introduction to Brian part 2: Synapses" href="b.html" />
+    <link rel="next" title="11. Introduction to Brian part 2: Synapses" href="b.html" />
     <link rel="prev" title="2. Firing Rate model" href="rate_based_model.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -76,27 +76,23 @@
 
   
   
-  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -118,8 +114,13 @@
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
     </header>
   
 
@@ -143,6 +144,8 @@
         <div class="sidebar-primary-item">
 
   
+    
+  
 
 <a class="navbar-brand logo" href="../../intro.html">
   
@@ -164,7 +167,7 @@
 
  <script>
  document.write(`
-   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass"></i>
     <span class="search-button__default-text">Search</span>
     <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
@@ -206,9 +209,13 @@
 
 
 
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">6. Introduction to Brian part 1: Neurons</a></li>
-<li class="toctree-l1"><a class="reference internal" href="b.html">7. Introduction to Brian part 2: Synapses</a></li>
-<li class="toctree-l1"><a class="reference internal" href="c.html">8. Introduction to Brian part 3: Simulations</a></li>
+
+
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">10. Introduction to Brian part 1: Neurons</a></li>
+<li class="toctree-l1"><a class="reference internal" href="b.html">11. Introduction to Brian part 2: Synapses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="c.html">12. Introduction to Brian part 3: Simulations</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 4. Data Analysis and Machine Learning</span></p>
 <ul class="nav bd-sidenav">
@@ -218,6 +225,16 @@
 
 
 <li class="toctree-l1"><a class="reference internal" href="../ML_joao/ch02_expanded.html">6. Training Simple Machine Learning Algorithms for Classification</a></li>
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../ML_joao/ch03_expanded.html">15. A Tour of Machine Learning Classifiers and Dimensionality Reduction</a></li>
+
 
 
 
@@ -245,7 +262,7 @@
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -254,14 +271,14 @@
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -286,14 +303,14 @@
       
       <li><a href="https://colab.research.google.com/github/BergLab/CompNeuroBook/blob/main/notebooks/simulation_neuralsystems/a.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onColab"
+   title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../../_static/images/logo_colab.png">
+    <img alt="Colab logo" src="../../_static/images/logo_colab.png">
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -434,10 +451,10 @@
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
@@ -445,14 +462,14 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -473,14 +490,14 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#units-system">6.1. Units system</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-simple-model">6.2. A simple model</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-spikes">6.3. Adding spikes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#refractoriness">6.4. Refractoriness</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-neurons">6.5. Multiple neurons</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parameters">6.6. Parameters</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stochastic-neurons">6.7. Stochastic neurons</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">6.8. Exercises</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#units-system">10.1. Units system</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-simple-model">10.2. A simple model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-spikes">10.3. Adding spikes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#refractoriness">10.4. Refractoriness</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-neurons">10.5. Multiple neurons</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parameters">10.6. Parameters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stochastic-neurons">10.7. Stochastic neurons</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">10.8. Exercises</a></li>
 </ul>
             </nav>
         </div>
@@ -493,42 +510,20 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-brian-part-1-neurons">
-<h1><span class="section-number">6. </span>Introduction to Brian part 1: Neurons<a class="headerlink" href="#introduction-to-brian-part-1-neurons" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">10. </span>Introduction to Brian part 1: Neurons<a class="headerlink" href="#introduction-to-brian-part-1-neurons" title="Link to this heading">#</a></h1>
 <p><em>Credit: The first three notebooks from week3 are part of the <a class="reference external" href="https://brian2.readthedocs.io/en/stable/">Brian2 documentation</a></em> with minor changes.</p>
 <p>All Brian scripts start with the following. If you’re trying this notebook out in the Jupyter notebook, you should start by running this cell.</p>
 <div class="cell tag_hide-output docutils container">
-<div class="cell_input above-output-prompt docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip3<span class="w"> </span>install<span class="w"> </span>brian2
 <span class="kn">from</span> <span class="nn">brian2</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="o">%</span><span class="k">matplotlib</span> inline
 </pre></div>
 </div>
 </div>
-<details class="hide below-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell output</span>
-<span class="expanded">Hide code cell output</span>
-</summary>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: brian2 in /opt/anaconda3/lib/python3.11/site-packages (2.6.0)
-Requirement already satisfied: numpy&gt;=1.21 in /opt/anaconda3/lib/python3.11/site-packages (from brian2) (1.26.4)
-Requirement already satisfied: cython&gt;=0.29.21 in /opt/anaconda3/lib/python3.11/site-packages (from brian2) (3.0.10)
-Requirement already satisfied: sympy&gt;=1.2 in /opt/anaconda3/lib/python3.11/site-packages (from brian2) (1.14.0)
-Requirement already satisfied: pyparsing in /opt/anaconda3/lib/python3.11/site-packages (from brian2) (3.0.9)
-Requirement already satisfied: jinja2&gt;=2.7 in /opt/anaconda3/lib/python3.11/site-packages (from brian2) (3.1.3)
-Requirement already satisfied: setuptools&gt;=61 in /opt/anaconda3/lib/python3.11/site-packages (from brian2) (68.2.2)
-Requirement already satisfied: packaging in /opt/anaconda3/lib/python3.11/site-packages (from brian2) (23.1)
-Requirement already satisfied: MarkupSafe&gt;=2.0 in /opt/anaconda3/lib/python3.11/site-packages (from jinja2&gt;=2.7-&gt;brian2) (2.1.3)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: mpmath&lt;1.4,&gt;=1.1.0 in /opt/anaconda3/lib/python3.11/site-packages (from sympy&gt;=1.2-&gt;brian2) (1.3.0)
-</pre></div>
-</div>
-</div>
-</details>
 </div>
 <section id="units-system">
-<h2><span class="section-number">6.1. </span>Units system<a class="headerlink" href="#units-system" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">10.1. </span>Units system<a class="headerlink" href="#units-system" title="Link to this heading">#</a></h2>
 <p>Brian has a system for using quantities with physical dimensions:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -600,7 +595,7 @@ Requirement already satisfied: MarkupSafe&gt;=2.0 in /opt/anaconda3/lib/python3.
 <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="mi">5</span><span class="o">*</span><span class="n">amp</span><span class="o">+</span><span class="mi">10</span><span class="o">*</span><span class="n">volt</span>
 
-<span class="nn">File /opt/anaconda3/lib/python3.11/site-packages/brian2/units/fundamentalunits.py:1193,</span> in <span class="ni">Quantity.__array_ufunc__</span><span class="nt">(self, uf, method, *inputs, **kwargs)</span>
+<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\site-packages\brian2\units\fundamentalunits.py:1193,</span> in <span class="ni">Quantity.__array_ufunc__</span><span class="nt">(self, uf, method, *inputs, **kwargs)</span>
 <span class="g g-Whitespace">   </span><span class="mi">1190</span> <span class="k">elif</span> <span class="n">uf</span><span class="o">.</span><span class="vm">__name__</span> <span class="ow">in</span> <span class="n">UFUNCS_MATCHING_DIMENSIONS</span> <span class="o">+</span> <span class="n">UFUNCS_COMPARISONS</span><span class="p">:</span>
 <span class="g g-Whitespace">   </span><span class="mi">1191</span>     <span class="c1"># Ok if dimension of arguments match (for reductions, they always do)</span>
 <span class="g g-Whitespace">   </span><span class="mi">1192</span>     <span class="k">if</span> <span class="n">method</span> <span class="o">==</span> <span class="s2">&quot;__call__&quot;</span><span class="p">:</span>
@@ -617,7 +612,7 @@ Requirement already satisfied: MarkupSafe&gt;=2.0 in /opt/anaconda3/lib/python3.
 <span class="g g-Whitespace">   </span><span class="mi">1203</span>     <span class="k">if</span> <span class="n">uf</span><span class="o">.</span><span class="vm">__name__</span> <span class="ow">in</span> <span class="n">UFUNCS_COMPARISONS</span><span class="p">:</span>
 <span class="g g-Whitespace">   </span><span class="mi">1204</span>         <span class="k">return</span> <span class="n">uf_method</span><span class="p">(</span><span class="o">*</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">inputs</span><span class="p">],</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
-<span class="nn">File /opt/anaconda3/lib/python3.11/site-packages/brian2/units/fundamentalunits.py:266,</span> in <span class="ni">fail_for_dimension_mismatch</span><span class="nt">(obj1, obj2, error_message, **error_quantities)</span>
+<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\site-packages\brian2\units\fundamentalunits.py:266,</span> in <span class="ni">fail_for_dimension_mismatch</span><span class="nt">(obj1, obj2, error_message, **error_quantities)</span>
 <span class="g g-Whitespace">    </span><span class="mi">264</span>         <span class="k">raise</span> <span class="n">DimensionMismatchError</span><span class="p">(</span><span class="n">error_message</span><span class="p">,</span> <span class="n">dim1</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">265</span>     <span class="k">else</span><span class="p">:</span>
 <span class="ne">--&gt; </span><span class="mi">266</span>         <span class="k">raise</span> <span class="n">DimensionMismatchError</span><span class="p">(</span><span class="n">error_message</span><span class="p">,</span> <span class="n">dim1</span><span class="p">,</span> <span class="n">dim2</span><span class="p">)</span>
@@ -636,7 +631,7 @@ Requirement already satisfied: MarkupSafe&gt;=2.0 in /opt/anaconda3/lib/python3.
 <p>If you see a traceback, what you want to do is start at the bottom and scan up the sections until you find your own file because that’s most likely where the problem is. (Of course, your code might be correct and Brian may have a bug in which case, please let us know on the email support list.)</p>
 </section>
 <section id="a-simple-model">
-<h2><span class="section-number">6.2. </span>A simple model<a class="headerlink" href="#a-simple-model" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">10.2. </span>A simple model<a class="headerlink" href="#a-simple-model" title="Link to this heading">#</a></h2>
 <p>Let’s start by defining a simple neuron model. In Brian, all models are defined by systems of differential equations. Here’s a simple example of what that looks like:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -758,7 +753,7 @@ Note that this is not the unit of the two sides of the equation (which would be 
 </div>
 </section>
 <section id="adding-spikes">
-<h2><span class="section-number">6.3. </span>Adding spikes<a class="headerlink" href="#adding-spikes" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">10.3. </span>Adding spikes<a class="headerlink" href="#adding-spikes" title="Link to this heading">#</a></h2>
 <p>So far we haven’t done anything neuronal, just played around with differential equations. Now let’s start adding spiking behaviour.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -822,7 +817,7 @@ Note that this is not the unit of the two sides of the equation (which would be 
 <p>Now try changing the strings for <code class="docutils literal notranslate"><span class="pre">threshold</span></code> and <code class="docutils literal notranslate"><span class="pre">reset</span></code> in the cell above to see what happens.</p>
 </section>
 <section id="refractoriness">
-<h2><span class="section-number">6.4. </span>Refractoriness<a class="headerlink" href="#refractoriness" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">10.4. </span>Refractoriness<a class="headerlink" href="#refractoriness" title="Link to this heading">#</a></h2>
 <p>A common feature of neuron models is refractoriness. This means that after the neuron fires a spike it becomes refractory for a certain duration and cannot fire another spike until this period is over. Here’s how we do that in Brian.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -882,7 +877,7 @@ Note that this is not the unit of the two sides of the equation (which would be 
 <p>Note that you can do more complicated and interesting things with refractoriness. See the full documentation for more details about how it works.</p>
 </section>
 <section id="multiple-neurons">
-<h2><span class="section-number">6.5. </span>Multiple neurons<a class="headerlink" href="#multiple-neurons" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">10.5. </span>Multiple neurons<a class="headerlink" href="#multiple-neurons" title="Link to this heading">#</a></h2>
 <p>So far we’ve only been working with a single neuron. Let’s do something interesting with multiple neurons.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -913,7 +908,7 @@ Note that this is not the unit of the two sides of the equation (which would be 
 <p>As well as the variable <code class="docutils literal notranslate"><span class="pre">spikemon.t</span></code> with the times of all the spikes, we’ve also used the variable <code class="docutils literal notranslate"><span class="pre">spikemon.i</span></code> which gives the corresponding neuron index for each spike, and plotted a single black dot with time on the x-axis and neuron index on the y-value. This is the standard “raster plot” used in neuroscience.</p>
 </section>
 <section id="parameters">
-<h2><span class="section-number">6.6. </span>Parameters<a class="headerlink" href="#parameters" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">10.6. </span>Parameters<a class="headerlink" href="#parameters" title="Link to this heading">#</a></h2>
 <p>To make these multiple neurons do something more interesting, let’s introduce per-neuron parameters that don’t have a differential equation attached to them.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -955,7 +950,7 @@ Note that this is not the unit of the two sides of the equation (which would be 
 <p>Note that in the plot we’ve used the <code class="docutils literal notranslate"><span class="pre">count</span></code> variable of the <code class="docutils literal notranslate"><span class="pre">SpikeMonitor</span></code>: this is an array of the number of spikes each neuron in the group fired. Dividing this by the duration of the run gives the firing rate.</p>
 </section>
 <section id="stochastic-neurons">
-<h2><span class="section-number">6.7. </span>Stochastic neurons<a class="headerlink" href="#stochastic-neurons" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">10.7. </span>Stochastic neurons<a class="headerlink" href="#stochastic-neurons" title="Link to this heading">#</a></h2>
 <p>Often when making models of neurons, we include a random element to model the effect of various forms of neural noise. In Brian, we can do this by using the symbol <code class="docutils literal notranslate"><span class="pre">xi</span></code> in differential equations. Strictly speaking, this symbol is a “stochastic differential” but you can sort of thinking of it as just a Gaussian random variable with mean 0 and standard deviation 1. We do have to take into account the way stochastic differentials scale with time, which is why we multiply it by <code class="docutils literal notranslate"><span class="pre">tau**-0.5</span></code> in the equations below (see a textbook on stochastic differential equations for more details).
 Note that we also changed the <code class="docutils literal notranslate"><span class="pre">method</span></code> keyword argument to use <code class="docutils literal notranslate"><span class="pre">'euler'</span></code> (which stands for the <a class="reference external" href="https://en.wikipedia.org/wiki/Euler%E2%80%93Maruyama_method">Euler-Maruyama method</a>); the <code class="docutils literal notranslate"><span class="pre">'exact'</span></code> method that we used earlier is not applicable to stochastic differential equations.</p>
 <div class="cell docutils container">
@@ -996,7 +991,7 @@ Note that we also changed the <code class="docutils literal notranslate"><span c
 <p>That’s the same figure as in the previous section but with some noise added. Note how the curve has changed shape: instead of a sharp jump from firing at rate 0 to firing at a positive rate, it now increases in a sigmoidal fashion. This is because no matter how small the driving force the randomness may cause it to fire a spike.</p>
 </section>
 <section id="exercises">
-<h2><span class="section-number">6.8. </span>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">10.8. </span>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
 <p>The cell below has a new simulation example.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1075,7 +1070,7 @@ Note that we also changed the <code class="docutils literal notranslate"><span c
         },
         kernelOptions: {
             name: "python3",
-            path: "./notebooks/simulation_neuralsystems"
+            path: "./notebooks\simulation_neuralsystems"
         },
         predefinedOutput: true
     }
@@ -1089,7 +1084,7 @@ Note that we also changed the <code class="docutils literal notranslate"><span c
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
     <a class="left-prev"
@@ -1106,7 +1101,7 @@ Note that we also changed the <code class="docutils literal notranslate"><span c
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">7. </span>Introduction to Brian part 2: Synapses</p>
+        <p class="prev-next-title"><span class="section-number">11. </span>Introduction to Brian part 2: Synapses</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1126,14 +1121,14 @@ Note that we also changed the <code class="docutils literal notranslate"><span c
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#units-system">6.1. Units system</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-simple-model">6.2. A simple model</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-spikes">6.3. Adding spikes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#refractoriness">6.4. Refractoriness</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-neurons">6.5. Multiple neurons</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parameters">6.6. Parameters</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stochastic-neurons">6.7. Stochastic neurons</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">6.8. Exercises</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#units-system">10.1. Units system</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-simple-model">10.2. A simple model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-spikes">10.3. Adding spikes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#refractoriness">10.4. Refractoriness</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-neurons">10.5. Multiple neurons</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parameters">10.6. Parameters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stochastic-neurons">10.7. Stochastic neurons</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">10.8. Exercises</a></li>
 </ul>
   </nav></div>
 
@@ -1182,8 +1177,8 @@ By Elias Najarro & Rune Berg
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>
