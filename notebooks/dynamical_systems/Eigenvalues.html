@@ -1,0 +1,858 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>3. Two-Dimensional Linear Systems: Eigenvalues, Eigenvectors and solutions &#8212; Computational Neuroscience</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=9f7f7efb" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/dynamical_systems/Eigenvalues';</script>
+    <script src="../../_static/custom.js?v=1fd2e2ea"></script>
+    <link rel="icon" href="../../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="4. Dynamical systems as Linear Transformations" href="Applications_LT.html" />
+    <link rel="prev" title="2. Solving differential equations: Numerical solution" href="numerical_solution.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/cajal1.png" class="logo__image only-light" alt="Computational Neuroscience - Home"/>
+    <script>document.write(`<img src="../../_static/cajal1.png" class="logo__image only-dark" alt="Computational Neuroscience - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Course overview
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Math review with Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../mathpython_intro/IntroColab.html">Google’s Colab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mathpython_intro/Numpy_Introduction.html">Introduction to NumPy and Matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mathpython_intro/Linear_Algebra.html">Linear Algebra basics</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 1. Introduction to modeling in neuroscience</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../modelling_intro/week0-Intro-RWB.html">1. What is computational neuroscience?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modelling_intro/b.html">2. Predator–prey dynamics: Simulation</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 2. Differential equations and neuron models</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="dynamical_systems_intro.html">1. Introduction modelling with differential equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="numerical_solution.html">2. Solving differential equations: Numerical solution</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">3. Two-Dimensional Linear Systems: Eigenvalues, Eigenvectors and solutions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Applications_LT.html">4. Dynamical systems as Linear Transformations</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 3. Simulating neural populations with Brian</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../simulation_neuralsystems/neuralsimulation_intro.html">1. Simulating neural populations with Brian</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simulation_neuralsystems/rate_based_model.html">2. Firing Rate model</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../simulation_neuralsystems/a.html">10. Introduction to Brian part 1: Neurons</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simulation_neuralsystems/b.html">11. Introduction to Brian part 2: Synapses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simulation_neuralsystems/c.html">12. Introduction to Brian part 3: Simulations</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 4. Data Analysis and Machine Learning</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../ML_joao/ch01_expanded.html">1. Introduction to Machine Learning for Neuroscience</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../ML_joao/ch02_expanded.html">6. Training Simple Machine Learning Algorithms for Classification</a></li>
+
+
+
+
+
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 5. Network theory</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../network_theory/a.html">1. Network science</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/BergLab/CompNeuroBook/blob/main/notebooks/dynamical_systems/Eigenvalues.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/BergLab/CompNeuroBook" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/BergLab/CompNeuroBook/edit/main/notebooks/dynamical_systems/Eigenvalues.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/BergLab/CompNeuroBook/issues/new?title=Issue%20on%20page%20%2Fnotebooks/dynamical_systems/Eigenvalues.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/notebooks/dynamical_systems/Eigenvalues.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Two-Dimensional Linear Systems: Eigenvalues, Eigenvectors and solutions</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-try-plotting-the-following-vectors-in-a-coordinate-system">3.1. Exercise: Try plotting the following vectors in a coordinate system:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eigenvector-and-eigenvalues">3.2. Eigenvector and eigenvalues</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solutions-to-the-linear-system">3.3. Solutions to the linear system</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complex-numbers-a-short-introduction">3.4. Complex numbers: a short introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">3.5. Exercise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-solution">3.6. General solution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-does-av-lambda-v-does-have-to-do-with-dot-x-ax">3.7. What does <span class="math notranslate nohighlight">\(Av=\lambda v\)</span> does have to do with <span class="math notranslate nohighlight">\(\dot X = AX\)</span>?</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="two-dimensional-linear-systems-eigenvalues-eigenvectors-and-solutions">
+<h1><span class="section-number">3. </span>Two-Dimensional Linear Systems: Eigenvalues, Eigenvectors and solutions<a class="headerlink" href="#two-dimensional-linear-systems-eigenvalues-eigenvectors-and-solutions" title="Link to this heading">#</a></h1>
+<p>Let us start by looking at a 2d system of the following coupled differential equations:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\dot x = ax+by
+\\ 
+\dot y = cx+dy
+\end{split}\]</div>
+<p>Where a, b, c, and d are constants. x and y are the two variables. Remember that <span class="math notranslate nohighlight">\(\dot x\)</span> is just a different notation for <span class="math notranslate nohighlight">\(\frac{dx}{dt}\)</span>. So, we can alternatively write the above as:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{dx}{dt} = ax+by
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\frac{dy}{dt} = cx+dy
+\]</div>
+<p>This can be written as a vector and matrix equation:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\frac{d}{dt} \begin{bmatrix} x \\ y \end{bmatrix} = \begin{bmatrix} a &amp; b \\ c &amp; d \end{bmatrix} \begin{bmatrix} x \\ y \end{bmatrix}
+\end{split}\]</div>
+<p>This can be written in compact notation, using vectors and a matrix:</p>
+<div class="math notranslate nohighlight">
+\[
+\dot X = A X
+\]</div>
+<p>where</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+X= \begin{bmatrix} x \\ y \end{bmatrix}, A=\begin{bmatrix} a &amp; b \\ c &amp; d \end{bmatrix}
+\end{split}\]</div>
+<p>Please note that the since the multiplication of <span class="math notranslate nohighlight">\(X\)</span> by the matrix <span class="math notranslate nohighlight">\(A\)</span> can be seen as a transformation of the vector, <span class="math notranslate nohighlight">\(A\)</span> has a special meaning for the rate of change of <span class="math notranslate nohighlight">\(X\)</span> and therefore the dynamics. Also, remember that multiplication of a vector by a matrix happens by multplying each element in a row of the matrix by each element in the column of the vector and adding those together:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{bmatrix}  
+a_1 &amp; a_2  \\  
+b_1 &amp; b_2  \\  
+\end{bmatrix}  
+\begin{bmatrix}  
+x \\  
+y \\  
+\end{bmatrix}  
+=
+\begin{bmatrix}  
+a_1x + a_2y \\
+b_1x + b_2y \\  
+\end{bmatrix}  
+\end{split}\]</div>
+<p>This transformation can be seen as both a rotation and a stretch/compression of the vector.</p>
+<section id="exercise-try-plotting-the-following-vectors-in-a-coordinate-system">
+<h2><span class="section-number">3.1. </span>Exercise: Try plotting the following vectors in a coordinate system:<a class="headerlink" href="#exercise-try-plotting-the-following-vectors-in-a-coordinate-system" title="Link to this heading">#</a></h2>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+v_1 = \begin{bmatrix}  
+2 \\
+3 \\  
+\end{bmatrix}, 
+\end{split}\]</div>
+<p>Now, try multiplying these vectors by the following matrices:</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\begin{split}
+M_1= \begin{bmatrix}  
+2 &amp; 1  \\  
+3 &amp; 2  \\  
+\end{bmatrix}, \end{split}\\\begin{split}M_2= \begin{bmatrix}  
+1 &amp; 0  \\  
+0 &amp; 1  \\  
+\end{bmatrix}.
+\end{split}\end{aligned}\end{align} \]</div>
+<p>In other words, plot the following vectors:</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\begin{split}
+v_1'= \begin{bmatrix}  
+2 &amp; 1  \\  
+3 &amp; 2  \\  
+\end{bmatrix}
+\begin{bmatrix}  
+2 \\
+3 \\  
+\end{bmatrix}, \end{split}\\\begin{split}v_1''= \begin{bmatrix}  
+1 &amp; 0  \\  
+0 &amp; 1  \\  
+\end{bmatrix}
+\begin{bmatrix}  
+2 \\
+3 \\  
+\end{bmatrix}  .
+\end{split}\end{aligned}\end{align} \]</div>
+<p>Notice any difference between the two transformations? The last one has ones in the diagonal and zeroes at the rest of the elements. This arrangement returns the same vector as was put into it. Because of this property, this matrix called the identity matrix. For more see: <a class="reference external" href="https://en.wikipedia.org/wiki/Identity_matrix">https://en.wikipedia.org/wiki/Identity_matrix</a>.</p>
+</section>
+<section id="eigenvector-and-eigenvalues">
+<h2><span class="section-number">3.2. </span>Eigenvector and eigenvalues<a class="headerlink" href="#eigenvector-and-eigenvalues" title="Link to this heading">#</a></h2>
+<p>Now, imagine that we continue applying the same matrix transformation on the vector, different things can happen. If the transformation converges towards a stable solution, then the transformation on that vector will no longer do anything. There may be more than one vector that has the property that the matrix transformation does not change the vector. Or at least it does not change the direction of the vector, but perhaps the length of the vector. Finding these vectors is called solving the eigenvector-eigenvalue problem, which is solving this equation:</p>
+<div class="math notranslate nohighlight">
+\[
+Av = \lambda v
+\]</div>
+<p><span class="math notranslate nohighlight">\(A\)</span> is the matrix for which we want to find the solutions. <span class="math notranslate nohighlight">\(v\)</span> is the vector that is a solution to the equation, called <em>the eigenvector</em>, and <span class="math notranslate nohighlight">\(\lambda\)</span> is the associated <em>eigenvalue</em>. Each eigenvector has an associated eigenvalue. The eigenvalue represent how the transformation scales the vector. The matrix transformation of the eigenvector has the same direction as the eigenvector, but it will be shorter if <span class="math notranslate nohighlight">\(\lambda &lt; 1\)</span> and longer if <span class="math notranslate nohighlight">\(\lambda &gt; 1\)</span>. If <span class="math notranslate nohighlight">\(\lambda =1\)</span> it means that the matrix transformation does not change anything on the eigenvector.</p>
+<p>The eigenvector equation can be written more explicitly as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{bmatrix}  
+a &amp; b  \\  
+c &amp; d  \\  
+\end{bmatrix}
+\begin{bmatrix}  
+v_x \\
+v_y \\  
+\end{bmatrix}
+= \lambda \begin{bmatrix}  
+v_x  \\  
+v_y  \\  
+\end{bmatrix}
+\end{split}\]</div>
+<p>Again, <span class="math notranslate nohighlight">\(A\)</span> is given and we have to solve for the unknowns, i.e. <span class="math notranslate nohighlight">\(\lambda\)</span> and  <span class="math notranslate nohighlight">\(v\)</span>. There is a trivial solution which is <span class="math notranslate nohighlight">\(v = 0\)</span>. When considering each row separately and multiplying out the elements as we did in the exercise above, we see that <span class="math notranslate nohighlight">\(\lambda\)</span> has to satisfy the quadratic equation:</p>
+<div class="math notranslate nohighlight">
+\[
+\lambda^2-\beta \lambda +\gamma = 0
+\]</div>
+<p>This has the following solutions:</p>
+<div class="math notranslate nohighlight">
+\[
+\lambda = \frac{\beta \pm \sqrt{\beta^2 -4\gamma} }{2}
+\]</div>
+<p>which has two solutions. The Greek letters <span class="math notranslate nohighlight">\(\beta\)</span> and <span class="math notranslate nohighlight">\(\gamma\)</span> are substitutions containing the matrix elements where <span class="math notranslate nohighlight">\(\beta = a+b\)</span> and <span class="math notranslate nohighlight">\(\gamma=ad-bc\)</span>. There is as many solutions as there are dimension in the system. In our case, the system has two variables (two dimensions) <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> and therefore two solutions. Some can be <em>degenerate</em>, which is a special case where the two solutions are identical. Notice that if <span class="math notranslate nohighlight">\(4\gamma &gt; \beta^2\)</span> the square root has no real solution. In this case, the eigenvalue will be <em>complex</em>, which usually results in oscillations in the system.</p>
+<p>What about the eigenvectors? Once, we have the eigenvalues, we can plugg in the values into the eigenvalue equation and find the corresponding eigenvector.</p>
+</section>
+<section id="solutions-to-the-linear-system">
+<h2><span class="section-number">3.3. </span>Solutions to the linear system<a class="headerlink" href="#solutions-to-the-linear-system" title="Link to this heading">#</a></h2>
+<p>Generally a solution to the coupled differential equations above (eq. 1) eigenvectors can be written as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\vec{x}(t)=
+\begin{bmatrix}  
+x(t) \\
+y(t) \\  
+\end{bmatrix} =
+\begin{bmatrix}  
+v_x \\
+v_y \\  
+\end{bmatrix} e^{\lambda t}
+\end{split}\]</div>
+<p>If <span class="math notranslate nohighlight">\(\beta^2 = 4\gamma\)</span> the two eigenvalues, <span class="math notranslate nohighlight">\(\lambda_1\)</span> and <span class="math notranslate nohighlight">\(\lambda_2\)</span>, are equal to each other. When <span class="math notranslate nohighlight">\(\beta^2 &gt; 4\gamma\)</span> the eigenvalues are not equal to each other and they are both real valued. Graphical solution to the equation can be illustrated with flow maps (see below figure). When the eigenvalues are both negative (left) the flow will be towards the origin, which represents a <em>stable node</em>. From the solution equation we can see that the flow towards the stable node follows an exponential decay (<span class="math notranslate nohighlight">\(e^{\lambda t}\)</span>). Actually there are two exponential decays: one for each eigenvector. If both eigenvalues are positive the opposite will happen: exponential increase in both directions (middle figure). The last case is where one is positive and one is negative: trajectories will explode in one direction and decay in the other. A physical analogy is a saddle where there is an upward curvature in one directions (which works as stabilizing) and a downward curvature which has an unstabilizing effect in the other direction.</p>
+<p><img alt="figure caption" src="../../_images/Real_eigenvalues.png" /></p>
+<p>When <span class="math notranslate nohighlight">\(\beta^2 &lt; 4\gamma\)</span> there is not real valued solution to the \sqrt{\beta^2 -4\gamma} part of the eigenvalue polynomium. The means the eigenvalues will now become complex numbers rather than real valued. But what are complex numbers?</p>
+</section>
+<section id="complex-numbers-a-short-introduction">
+<h2><span class="section-number">3.4. </span>Complex numbers: a short introduction<a class="headerlink" href="#complex-numbers-a-short-introduction" title="Link to this heading">#</a></h2>
+<p>Complex numbers are a mathematical abstraction with the initial purpose to warrant a solution to equations like the quadratic equation, where there are square roots that can make give problems when you only use real numbers.</p>
+<p>Definition: A complex number is typically expressed in the form:</p>
+<div class="math notranslate nohighlight">
+\[
+z=a+bi
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> are real numbers. <span class="math notranslate nohighlight">\(i\)</span> is the imaginary unit, defined by the property</p>
+<div class="math notranslate nohighlight">
+\[
+i^2=−1
+\]</div>
+<p>Where real numbers can be represented as a line, complex numbers can be represented graphically on a complex plane, where the horizontal axis represents the real part and the vertical axis represents the imaginary part. Since <span class="math notranslate nohighlight">\(z\)</span> is a point in the complex plane, it can also be represented as a point on a circle:</p>
+<div class="math notranslate nohighlight">
+\[
+z=re^{i\theta}
+\]</div>
+<p>Last important point: there is a simple relationship between complex numbers and the trigonometric functions sine and consine. That is called Euler’s formula (not to confuse with Euler’s method):</p>
+<div class="math notranslate nohighlight">
+\[
+e^{i\theta} = cos(\theta) + isin(\theta)
+\]</div>
+<p>This is where the link to oscillations come in. If the eigenvalues have complex values, then the time dependence of the solution to (1) will have trigonometric functions where the argument is dependent on time. That is oscillations. That bring us back to the when <span class="math notranslate nohighlight">\(\beta^2 &lt; 4\gamma\)</span> . Here, there is not real valued solution to the \sqrt{\beta^2 -4\gamma} and therefore the eigenvalues are complex numbers, i.e. the <span class="math notranslate nohighlight">\(e^{\lambda t}\)</span> gives a trigonometric contribution. The cases are as shown in the figure below. If <span class="math notranslate nohighlight">\(\mu &lt; 0\)</span> (which is the real part of the eigenvalue) then the solution is rotating and stable, i.e. spiralling inwards (left). If <span class="math notranslate nohighlight">\(\mu =0\)</span> the eigenvalues are purely imaginary, hence there is no exponential decay or explosion. Therefore we get a clean rotation in the state space (middle). When <span class="math notranslate nohighlight">\(\mu &gt; 0\)</span> we get both rotation and exponential increase in amplitude, hence and unstable spiral (right).</p>
+<p><img alt="figure caption" src="../../_images/Imaginary_eigenvalues.png" /></p>
+</section>
+<section id="exercise">
+<h2><span class="section-number">3.5. </span>Exercise<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h2>
+<p>Plot first cosine as a function of time. Then plot sine as a function of time. Now plot the same sine versus the same cosine as a function of time.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Put your code here:</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="general-solution">
+<h2><span class="section-number">3.6. </span>General solution<a class="headerlink" href="#general-solution" title="Link to this heading">#</a></h2>
+<p>The general solution to (1) is actually a sum of the eigenvectors multiplied by the exponential function of the corresponding eigenvalues and time:
+$<span class="math notranslate nohighlight">\(
+\vec{x}(t)= c_1\vec{v_1}e^{\lambda_1 t} + c_2\vec{v_2}e^{\lambda_2 t}
+\)</span>$</p>
+<p>where the <span class="math notranslate nohighlight">\(\vec{v_1}\)</span>, <span class="math notranslate nohighlight">\(\lambda_1\)</span> and <span class="math notranslate nohighlight">\(\vec{v_2}\)</span>, <span class="math notranslate nohighlight">\(\lambda_2\)</span> are the eigenvector and eigenvalue pairs. <span class="math notranslate nohighlight">\(c_1\)</span> and <span class="math notranslate nohighlight">\(c_2\)</span> are real arbitrary constants. In expanded form this can be equivalently written:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{bmatrix}  
+x(t) \\
+y(t) \\  
+\end{bmatrix} =
+c_1 \begin{bmatrix}  
+v_x1 \\
+v_y1 \\  
+\end{bmatrix} e^{\lambda_1 t}+
+c_2 \begin{bmatrix}  
+v_x2 \\
+v_y2 \\  
+\end{bmatrix} e^{\lambda_2 t}
+\end{split}\]</div>
+<p>We may note that this can be generalized to higher dimensional systems, where the sum will include more eigenvectors and eigenvalues.</p>
+</section>
+<section id="what-does-av-lambda-v-does-have-to-do-with-dot-x-ax">
+<h2><span class="section-number">3.7. </span>What does <span class="math notranslate nohighlight">\(Av=\lambda v\)</span> does have to do with <span class="math notranslate nohighlight">\(\dot X = AX\)</span>?<a class="headerlink" href="#what-does-av-lambda-v-does-have-to-do-with-dot-x-ax" title="Link to this heading">#</a></h2>
+<p>Above we postulate that the eigenvector-eigenvalue equation (<span class="math notranslate nohighlight">\(Av=\lambda v\)</span>) provide the solution for our dynamical system <span class="math notranslate nohighlight">\(\dot X = AX\)</span>, and the solution is given as <span class="math notranslate nohighlight">\(ve^{\lambda t}\)</span>. This can be understood through the following. We propose <span class="math notranslate nohighlight">\(x(t)=ve^{\lambda t}\)</span> is a solution to <span class="math notranslate nohighlight">\(\dot x = Ax\)</span> if it satisfies the eigenvalue equation <span class="math notranslate nohighlight">\(Av=\lambda v\)</span>. Let us see this by inserting the solution in the equation:<br />
+$<span class="math notranslate nohighlight">\(
+\dot x = Ax
+\)</span>$</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d}{dt}[ ve^{\lambda t}] = A [ve^{\lambda t}]
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+v\frac{d}{dt}[ e^{\lambda t}] = Ave^{\lambda t}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+v\lambda e^{\lambda t} = Ave^{\lambda t}
+\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+v\lambda  = Av \\
+Av  = \lambda v \end{split}\]</div>
+<p>We conclude that <span class="math notranslate nohighlight">\(\dot x = Ax\)</span> has solution <span class="math notranslate nohighlight">\(x(t)= ve^{\lambda t}\)</span> for any vector <span class="math notranslate nohighlight">\(v\)</span> and scalar <span class="math notranslate nohighlight">\(\lambda\)</span> that satisfy the eigenvector-eigenvalue problem <span class="math notranslate nohighlight">\(Av  = \lambda v\)</span>. The trivial solution <span class="math notranslate nohighlight">\(v=0\)</span> corresponds to the steady state at the origin (x(t)=0).</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notebooks/dynamical_systems"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="numerical_solution.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>Solving differential equations: Numerical solution</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Applications_LT.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">4. </span>Dynamical systems as Linear Transformations</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-try-plotting-the-following-vectors-in-a-coordinate-system">3.1. Exercise: Try plotting the following vectors in a coordinate system:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eigenvector-and-eigenvalues">3.2. Eigenvector and eigenvalues</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solutions-to-the-linear-system">3.3. Solutions to the linear system</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complex-numbers-a-short-introduction">3.4. Complex numbers: a short introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">3.5. Exercise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-solution">3.6. General solution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-does-av-lambda-v-does-have-to-do-with-dot-x-ax">3.7. What does <span class="math notranslate nohighlight">\(Av=\lambda v\)</span> does have to do with <span class="math notranslate nohighlight">\(\dot X = AX\)</span>?</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Elias Najarro & Rune Berg
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
