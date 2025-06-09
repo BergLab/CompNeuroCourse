@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=87e54e7c" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=9f7f7efb" />
@@ -532,21 +532,18 @@ $<span class="math notranslate nohighlight">\(
 r_E=F(J_{EE}r_E)
 \)</span>$</p>
 <p>which may or may not be solvable depending on what the function <span class="math notranslate nohighlight">\(F\)</span> is. Nevertheless, we can plot the right and left hand side of the equation and do a graphical solution, i.e. look for when those two plots intersect (equal to each other). Below is shown the blue curve, which is the instantaneous output firing rate <span class="math notranslate nohighlight">\(r_E\)</span> being exactly equal to the input of the neurons. The orange shows the steady state firing rate <span class="math notranslate nohighlight">\(F(I)\)</span> where <span class="math notranslate nohighlight">\(I\)</span> is the synaptic coupling times the firing rate, <span class="math notranslate nohighlight">\(I=J_{EE}r_E\)</span></p>
-<p><img alt="figure caption" src="notebooks/simulation_neuralsystems/media/RNN_1.png" /></p>
+<p><img alt="figure caption" src="../../_images/RNN_1.jpg" /></p>
 <p>When the synaptic strength is below a certain value, a critical coupling <span class="math notranslate nohighlight">\(J_c\)</span>, the input is not strong enough to keep sustained activity. The steady state firing rate is therefore zero, which is also the only intersection between the two curves (blue dot).</p>
 <p>When the synaptic strength of the feedback coupling increases to the critical value (<span class="math notranslate nohighlight">\(J_{EE}=J_c\)</span>) the two curves have a second intersection, which is around <span class="math notranslate nohighlight">\(r_E=100\)</span> Hz (see open circle in below figure).</p>
-<p><img alt="figure caption" src="notebooks/simulation_neuralsystems/media/RNN_2.png" /></p>
+<p><img alt="figure caption" src="../../_images/RNN_2.jpg" /></p>
 <p>Increasing the synaptic coupling further, which is equivalent to moving the orange curve to the left, the intersection at 100 Hz slits up into two intersections. Hence, this results in total of three intersections, which represents three solutions to the equation, i.e. three firing rates <span class="math notranslate nohighlight">\(r_1\)</span>, <span class="math notranslate nohighlight">\(r_2\)</span> and <span class="math notranslate nohighlight">\(r_3\)</span> (see below figure).</p>
-<p><img alt="figure caption" src="notebooks/simulation_neuralsystems/media/RNN_3.png" /></p>
+<p><img alt="figure caption" src="../../_images/RNN_3.jpg" /></p>
 <p>These three solutions are not all stable. It turns out that only the solution at zero and around 150 Hz are stable. The solution in the middle is unstable, indicated by the open circle. The instability of the middle solution can be verified by introducing a little increase or decrease away from the solution, also known as a <em>pertubation</em>. If we are slightly above the point, the orange curve is above the input rate (blue), which means that when this larger firing rate is fed back into the network, it will result in an even larger firing rate. In other words, a small increace will keep growing away from the point, hence the solution is unstable. The opposite is the case for the right most solution: any increase in firing rate will result in a slightly smaller feedback input, hence the activity will decay back to the point.</p>
 </section>
 <section id="bifurcation-a-qualitative-and-abrupt-change-in-dynamics-when-changing-a-parameter">
 <h1><span class="section-number">4. </span>Bifurcation: a qualitative and abrupt change in dynamics when changing a parameter<a class="headerlink" href="#bifurcation-a-qualitative-and-abrupt-change-in-dynamics-when-changing-a-parameter" title="Link to this heading">#</a></h1>
 <p>The system that we have just described has gone through what is called <em>a bifurcation</em> in dynamics. A bifurcation represents a qualitative and abrupt change in dynamics when changing a parameter. Here, the parameter is the synaptic strength, <span class="math notranslate nohighlight">\(J_{EE}\)</span>. The qualitative change is that the system goes from having one solution to having three. Further, the change is abrupt: the change come suddenly. It is not a continuous change. Bifurcations are often visualized with a bifurcation diagram, where the stable and unstable solutions are plotted on the y-axis and the x-axis has the parameter, which causes the birfurcation, see figure below.</p>
-<div align="center">
-<p style="text-align:center;"><img src="media/Bifurcation.jpg" width="300"/>
-</div>
-<p><img alt="figure caption" src="notebooks/simulation_neuralsystems/media/Bifurcation.png" /></p>
+<p><img alt="figure caption" src="../../_images/Bifurcation.jpg" /></p>
 <p>The solid lines represent the stable solutions, and the broken line represents the unstable solution. Note that <span class="math notranslate nohighlight">\(r_E=0\)</span> remains a stable solution for all values.</p>
 <p>Hence, the system becomes a <em>bistable</em> system after the synaptic strength has increased over the critical value. That means the network can function as a memory device, where a brief external input can put the system either in the active or silent state.</p>
 </section>
@@ -611,7 +608,7 @@ tanh(x) = \frac{e^x -e^{-x}}{e^x + e^{-x}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/684b1d0689f495f8478057847da05d45d0cff3ea86616ec5bb3f1629f61e259b.png" src="../../_images/684b1d0689f495f8478057847da05d45d0cff3ea86616ec5bb3f1629f61e259b.png" />
+<img alt="../../_images/84b4d07b6b4febc44af4147c8d1dbed224aab9e889cd428263f45ef6c9ead56b.png" src="../../_images/84b4d07b6b4febc44af4147c8d1dbed224aab9e889cd428263f45ef6c9ead56b.png" />
 </div>
 </div>
 </section>
@@ -655,7 +652,7 @@ tanh(x) = \frac{e^x -e^{-x}}{e^x + e^{-x}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/d4f23467b19867b8d8120d95b1adb5f457de420255023781a4c4a1de070ddc0f.png" src="../../_images/d4f23467b19867b8d8120d95b1adb5f457de420255023781a4c4a1de070ddc0f.png" />
+<img alt="../../_images/482c9e4cbcef66f6ae51f99e1eff4e200b7819588a5f0ace82e7c6714bf9860d.png" src="../../_images/482c9e4cbcef66f6ae51f99e1eff4e200b7819588a5f0ace82e7c6714bf9860d.png" />
 </div>
 </div>
 </section>
@@ -727,7 +724,7 @@ Ar = \lambda r
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/fe4afb67fc415780ee6b4aaada3271a53692e6e6495bf29db1826f73b4cf7ad1.png" src="../../_images/fe4afb67fc415780ee6b4aaada3271a53692e6e6495bf29db1826f73b4cf7ad1.png" />
+<img alt="../../_images/fd423f72a80fb13dc0c88805e161c7acc7db4d2ea9c69ac8f42f7394afd75fdb.png" src="../../_images/fd423f72a80fb13dc0c88805e161c7acc7db4d2ea9c69ac8f42f7394afd75fdb.png" />
 </div>
 </div>
 <section id="id2">
